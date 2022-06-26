@@ -1,132 +1,2526 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/vikinger-landing/css/styles.min.css">
+    <!-- favicon -->
+    <link rel="icon" href="/assets/vikinger-landing/img/favicon.ico">
+    <title>Vikinger | Landing</title>
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<body>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+    <!-- NAVIGATION WRAP -->
+    <div class="navigation-wrap">
+        <!-- NAVIGATION -->
+        <nav class="navigation grid-limit">
+            <!-- LOGO -->
+            <div class="logo void">
+                <!-- LOGO ICON -->
+                <svg class="logo-icon icon-logo-vikinger">
+                    <use xlink:href="#svg-logo-vikinger"></use>
+                </svg>
+                <!-- /LOGO ICON -->
             </div>
+            <!-- /LOGO -->
+
+            <!-- MENU -->
+            <ul class="menu">
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#top">Home</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#demos">Demo Pages</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#features">Features</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf0eoKtG-aaC-5MsEpBDIFbgii3SSoAFfvYtXtqz1uopr0ERg/viewform"
+                        target="_blank">WP Version</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="https://themeforest.net/user/odin_design" target="_blank">Our
+                        Profile</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+            </ul>
+            <!-- /MENU -->
+
+            <!-- BUTTON -->
+            <a class="button small primary"
+                href="https://themeforest.net/item/vikinger-social-community-and-marketplace-html-template/25715500"
+                target="_blank">Buy it Now!</a>
+            <!-- /BUTTON -->
+        </nav>
+        <!-- /NAVIGATION -->
+    </div>
+    <!-- /NAVIGATION WRAP -->
+
+    <!-- BANNER WRAP -->
+    <div id="top" class="banner-wrap">
+        <!-- BANNER -->
+        <div class="banner grid-limit">
+            <!-- BANNER INFO -->
+            <div class="banner-info">
+                <!-- BANNER IMAGE -->
+                <img class="banner-image" src="/assets/vikinger-landing/img/banner/banner-tag.png" alt="HTML Version">
+                <!-- /BANNER IMAGE -->
+
+                <!-- BANNER PRETITLE -->
+                <p class="banner-pretitle">Welcome To</p>
+                <!-- /BANNER PRETITLE -->
+
+                <!-- BANNER TITLE -->
+                <p class="banner-title">Vikinger</p>
+                <!-- /BANNER TITLE -->
+
+                <!-- BANNER TEXT -->
+                <p class="banner-text">The next generation social network &amp; community! Connect with your friends and
+                    play with our quests and badges gamification system!</p>
+                <!-- /BANNER TEXT -->
+
+                <!-- BUTTON -->
+                <a class="button" href="#demos">Check all Demos</a>
+                <!-- /BUTTON -->
+            </div>
+            <!-- /BANNER INFO -->
         </div>
-    </body>
+        <!-- /BANNER -->
+    </div>
+    <!-- /BANNER WRAP -->
+
+    <!-- ARCHITECTURE ITEM LIST -->
+    <div class="architecture-item-list">
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/html.png" alt="feature-html">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/html-hover.png"
+                alt="feature-html-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/css.png" alt="feature-css">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/css-hover.png"
+                alt="feature-css-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/js.png" alt="feature-js">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/js-hover.png"
+                alt="feature-js-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/sass.png" alt="feature-sass">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/sass-hover.png"
+                alt="feature-sass-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/googlef.png"
+                alt="feature-googlef">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/googlef-hover.png"
+                alt="feature-googlef-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+    </div>
+    <!-- /ARCHITECTURE ITEM LIST -->
+
+    <!-- SECTION WRAP -->
+    <div id="demos" class="section-wrap">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">Vikinger HTML</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Demo Pages</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">Browse all pages included in the template right here! From super complete
+                    community and profile pages to gamification, forum and marketplace ones and many more so you can
+                    create your perfect website!</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- GRID -->
+            <div class="grid grid-3">
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/landing.jpg" alt="page-landing">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Landing</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-timeline.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-timeline.jpg"
+                                alt="page-profile-timeline">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Timeline</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-timeline.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-timeline.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/newsfeed.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/newsfeed.jpg" alt="page-newsfeed">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Newsfeed</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/newsfeed.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/newsfeed.html" target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-about.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-about.jpg" alt="page-profile-about">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile About</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/profile-about.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-about.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-friends.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-friends.jpg"
+                                alt="page-profile-friends">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Friends</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-friends.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-friends.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-friends-small-grid.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-friends-small-grid.jpg"
+                                alt="page-profile-friends-small-grid">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Friends Small Grid</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-friends-small-grid.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-friends-small-grid.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-friends-list.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-friends-list.jpg"
+                                alt="page-profile-friends-list">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Friends List</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-friends-list.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-friends-list.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-groups.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-groups.jpg" alt="page-profile-groups">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Groups</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-groups.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-groups.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-groups-small-grid.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-groups-small-grid.jpg"
+                                alt="page-profile-groups-small-grid">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Groups Small Grid</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-groups-small-grid.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-groups-small-grid.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-groups-list.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-groups-list.jpg"
+                                alt="page-profile-groups-list">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Groups List</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-groups-list.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-groups-list.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-photos.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-photos.jpg" alt="page-profile-photos">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Photos</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-photos.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-photos.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-photos-inside.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-photos-inside.jpg"
+                                alt="page-profile-photos-inside">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Photos Inside</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-photos-inside.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-photos-inside.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-videos.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-videos.jpg" alt="page-profile-videos">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Videos</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-videos.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-videos.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-badges.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-badges.jpg" alt="page-profile-badges">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Badges</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-badges.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-badges.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-stream.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-stream.jpg" alt="page-profile-stream">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Stream</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/profile-stream.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-stream.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-blog.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-blog.jpg" alt="page-profile-blog">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Blog</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/profile-blog.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-blog.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-post.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-post.jpg" alt="page-profile-post">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Post</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/profile-post.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-post.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-forum.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-forum.jpg" alt="page-profile-forum">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Forum</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/profile-forum.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-forum.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/profile-store.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/profile-store.jpg" alt="page-profile-store">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Profile Store</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/profile-store.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/profile-store.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/overview.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/overview.jpg" alt="page-overview">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Overview</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/overview.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/overview.html" target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/groups.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/groups.jpg" alt="page-groups">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Groups</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/groups.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/groups.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/group-timeline.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/group-timeline.jpg" alt="page-group-timeline">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Group Timeline</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/group-timeline.html" target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/group-timeline.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/group-info.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/group-info.jpg" alt="page-group-info">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Group Info</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/group-info.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/group-info.html" target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/group-members.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/group-members.jpg" alt="page-group-members">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Group Members</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/group-members.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/group-members.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/group-events.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/group-events.jpg" alt="page-group-events">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Group Events</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/group-events.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/group-events.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/members.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/members.jpg" alt="page-members">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Members</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/members.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/members.html" target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/badges.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/badges.jpg" alt="page-badges">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Badges</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/badges.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/badges.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/quests.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/quests.jpg" alt="page-quests">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Quests</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/quests.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/quests.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/streams.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/streams.jpg" alt="page-streams">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Streams</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/streams.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/streams.html" target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/events.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/events.jpg" alt="page-events">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Events</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/events.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/events.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/events-weekly.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/events-weekly.jpg" alt="page-events-weekly">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Events Weekly</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/events-weekly.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/events-weekly.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/events-daily.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/events-daily.jpg" alt="page-events-daily">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Events Daily</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/events-daily.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/events-daily.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/forums.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/forums.jpg" alt="page-forums">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Forums</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/forums.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/forums.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/forums-category.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/forums-category.jpg"
+                                alt="page-forums-category">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Forums Category</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/forums-category.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/forums-category.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/forums-discussion.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/forums-discussion.jpg"
+                                alt="page-forums-discussion">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Forums Discussion</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/forums-discussion.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/forums-discussion.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/marketplace.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/marketplace.jpg" alt="page-marketplace">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Marketplace</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/marketplace.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/marketplace.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/marketplace-category.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/marketplace-category.jpg"
+                                alt="page-marketplace-category">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Marketplace Category</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/marketplace-category.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/marketplace-category.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/marketplace-product.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/marketplace-product.jpg"
+                                alt="page-marketplace-product">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Marketplace Product</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/marketplace-product.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/marketplace-product.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/marketplace-cart.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/marketplace-cart.jpg"
+                                alt="page-marketplace-cart">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Marketplace Cart</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/marketplace-cart.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/marketplace-cart.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/marketplace-checkout.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/marketplace-checkout.jpg"
+                                alt="page-marketplace-checkout">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Marketplace Checkout</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/marketplace-checkout.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/marketplace-checkout.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-profile-info.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-profile-info.jpg"
+                                alt="page-hub-profile-info">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Profile Info</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-profile-info.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-profile-info.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-profile-social.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-profile-social.jpg"
+                                alt="page-hub-profile-social">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Profile Social</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-profile-social.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-profile-social.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-profile-notifications.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-profile-notifications.jpg"
+                                alt="page-hub-profile-notifications">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Profile Notifications</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-profile-notifications.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-profile-notifications.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-profile-messages.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-profile-messages.jpg"
+                                alt="page-hub-profile-messages">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Profile Messages</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-profile-messages.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-profile-messages.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-profile-requests.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-profile-requests.jpg"
+                                alt="page-hub-profile-requests">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Profile Requests</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-profile-requests.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-profile-requests.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-account-info.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-account-info.jpg"
+                                alt="page-hub-account-info">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Account Info</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-account-info.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-account-info.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-account-password.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-account-password.jpg"
+                                alt="page-hub-account-password">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Account Password</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-account-password.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-account-password.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-account-settings.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-account-settings.jpg"
+                                alt="page-hub-account-settings">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Account Settings</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-account-settings.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-account-settings.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-group-management.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-group-management.jpg"
+                                alt="page-hub-group-management">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Group Management</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-group-management.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-group-management.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-group-invitations.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-group-invitations.jpg"
+                                alt="page-hub-group-invitations">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Group Invitations</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-group-invitations.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-group-invitations.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-store-account.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-store-account.jpg"
+                                alt="page-hub-store-account">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Store Account</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-store-account.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-store-account.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-store-statement.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-store-statement.jpg"
+                                alt="page-hub-store-statement">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Store Statement</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-store-statement.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-store-statement.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-store-items.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-store-items.jpg"
+                                alt="page-hub-store-items">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Store Items</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-store-items.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-store-items.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/hub-store-downloads.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/hub-store-downloads.jpg"
+                                alt="page-hub-store-downloads">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Hub Store Downloads</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/hub-store-downloads.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/hub-store-downloads.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/404.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/404.jpg" alt="page-404">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">404</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary" href="https://odindesignthemes.com/vikinger/404.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary" href="https://odindesignthemes.com/vikinger-dark/404.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+
+                <!-- DEMO BOX -->
+                <div class="demo-box">
+                    <a href="https://odindesignthemes.com/vikinger/logged-out-and-icons.html" target="_blank">
+                        <!-- DEMO BOX COVER -->
+                        <figure class="demo-box-cover liquid">
+                            <img src="/assets/vikinger-landing/img/page/logged-out-and-icons.jpg"
+                                alt="page-logged-out-and-icons">
+                        </figure>
+                        <!-- /DEMO BOX COVER -->
+                    </a>
+
+                    <!-- DEMO BOX TITLE -->
+                    <p class="demo-box-title">Logged Out &amp; Icons</p>
+                    <!-- /DEMO BOX TITLE -->
+
+                    <!-- DEMO BOX ACTIONS -->
+                    <div class="demo-box-actions">
+                        <!-- BUTTON -->
+                        <a class="button tiny primary"
+                            href="https://odindesignthemes.com/vikinger/logged-out-and-icons.html"
+                            target="_blank">Light</a>
+                        <!-- /BUTTON -->
+
+                        <!-- BUTTON -->
+                        <a class="button tiny secondary"
+                            href="https://odindesignthemes.com/vikinger-dark/logged-out-and-icons.html"
+                            target="_blank">Dark</a>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /DEMO BOX ACTIONS -->
+                </div>
+                <!-- /DEMO BOX -->
+            </div>
+            <!-- /GRID -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+    <!-- SECTION WRAP -->
+    <div id="features" class="section-wrap">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">Vikinger HTML</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Template Features</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">Read here about all the cool features and sections that the template includes!
+                    We made sure that the template is easy to customize including Google Fonts, Help Documentation, PSD
+                    Files, Custom Icons and more!</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- GRID -->
+            <div class="grid grid-4">
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/html5.png"
+                        alt="feature-html5">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">HTML, CSS &amp; JS Files</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">We included in the pack 55 HTML files with css animations, popups and
+                        a help file so you can easily customize them!</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/bootstrap.png"
+                        alt="feature-bootstrap">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">Bootstrap Compatible</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">We made the template compatible with Bootstrap v4.4.1, and ensured
+                        that there are no style conflicts.</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/psd.png"
+                        alt="feature-psd">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">PSD Files! (Save $12!)</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">We included in the pack 56 Photoshop PSD files for you to customize
+                        them all you like! (Photos not included).</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/sass.png"
+                        alt="feature-sass">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">SASS</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">Easily customize styles by using variables, nesting, mixins,
+                        inheritance and more!</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/illustrations.png"
+                        alt="feature-illustrations">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">Illustrations Included</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">You'll find inside the PSD files all illustrations, like the forum
+                        icons, badges, banners and more! </p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/npmgrunt.png"
+                        alt="feature-npmgrunt">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">npm &amp; Grunt</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">Includes a preconfigured version using npm &amp; Grunt, just start
+                        customizing and let them do the work!.</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/svg.png"
+                        alt="feature-svg">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">SVG Custom Icons</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">Inside the pack you'll find custom SVG icons made for this template!
+                        Easily change things like color via code!</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/responsive.png"
+                        alt="feature-responsive">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">Fully Responsive</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">Vikinger is fully responsive so you can easily browse it from any
+                        device: desktop, tablets and smartphones.</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+
+                <!-- FEATURE ITEM -->
+                <article class="feature-item">
+                    <!-- FEATURE ITEM IMAGE -->
+                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/documentation.png"
+                        alt="feature-documentation">
+                    <!-- /FEATURE ITEM IMAGE -->
+
+                    <!-- FEATURE ITEM TITLE -->
+                    <h2 class="feature-item-title">Help Documentation</h2>
+                    <!-- /FEATURE ITEM TITLE -->
+
+                    <!-- FEATURE ITEM TEXT -->
+                    <p class="feature-item-text">Inside the documentation file you'll find help to guide you with all
+                        the features and plugins included.</p>
+                    <!-- /FEATURE ITEM TEXT -->
+                </article>
+                <!-- /FEATURE ITEM -->
+            </div>
+            <!-- /GRID -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+    <!-- SECTION WRAP -->
+    <div class="section-wrap">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">Features</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Discover Tons of Widgets!</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">We carefully crafted lots of widgets for you to have an incredible amount of
+                    customization options! Everything you may need like different post updates, badge boxes, about
+                    boxes, calendars, product boxes, media, quests, infographics, streams, discussions, blog posts and
+                    much more!</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- SECTION IMAGE -->
+            <img class="section-image" src="/assets/vikinger-landing/img/section/01.png" alt="section-image-01">
+            <!-- /SECTION IMAGE -->
+
+            <!-- SECTION BUTTON -->
+            <a class="section-button button tertiary"
+                href="https://odindesignthemes.com/vikinger/profile-timeline.html" target="_blank">Browse all in the
+                Live Demo!</a>
+            <!-- /SECTION BUTTON -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Super Complete Profile<br>&amp; Newsfeed Pages</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We created a super complete profile page with a sleek design and a slider
+                    for easier access to all profile sections. Inside the profile you'll find the following sections:
+                    about, timeline, friends, groups, photos, videos, badges, stream, posts, discussions &amp; store.
+                </p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/02.png"
+                alt="section-image-02">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section inverted grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Profile Posts Templates<br>+ Post Reactions!</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We designed several variations of posts templates to show a wide range of
+                    uses, like messages, pinned, 2 versions of links, shared post, blog post, photos and more!.</p>
+                <!-- /PROMO SECTION TEXT -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We also included in the template 8 different reaction emoticons, designed
+                    by us specifically for this!</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/03.png"
+                alt="section-image-03">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Groups Timeline<br>&amp; Pages</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">Besides the common profile page, we also included a group page timeline,
+                    and other pages, like group events or browse groups, with 3 diferent group views.</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/04.png"
+                alt="section-image-04">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section inverted grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Gamification with<br>Badges &amp; Quests!</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">To add a gamification element to the community, we designed two ways of
+                    having fun: one is collecting badges and the other is completing quests. All elements (36 badges,
+                    each one with big and small versions, and the quest coins) were designed by us for this template and
+                    are included in the pack!</p>
+                <!-- /PROMO SECTION TEXT -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">Also, all badges and coin elements were made with PS vectors, so you can
+                    customize them with just a few clicks!</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/05.png"
+                alt="section-image-05">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Overview<br>and Statistics Page</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We designed this overview section to showcase main stats about your
+                    profile, gamification and account analytics. Inside you’ll find info like account level and
+                    experience, activity, most liked post, reaction stats, montlhy reports and much more!</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/06.png"
+                alt="section-image-06">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section inverted grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Streams<br>&amp; Events Pages</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">Keep in touch and interact with the community! We designed a streams
+                    page where people browse all members streams. We also created a really complete events page with
+                    monthly, weekly and daily calendars, plus events boxes.</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/07.png"
+                alt="section-image-07">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Forums<br>&amp; Marketplace Pages</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">Besides the profile pages, we created a forum so people can open
+                    discussions and share about the things they are most passionate about!</p>
+                <!-- /PROMO SECTION TEXT -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We also designed super complete marketplace pages, thought for people to
+                    sell their creations. The design includes main item page, category, market home, statement,
+                    dashboard and more! </p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/08.png"
+                alt="section-image-08">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- PROMO SECTION WRAP -->
+    <div class="promo-section-wrap">
+        <!-- PROMO SECTION -->
+        <section class="promo-section inverted grid-limit">
+            <!-- PROMO SECTION INFO -->
+            <div class="promo-section-info">
+                <!-- PROMO SECTION PRETITLE -->
+                <p class="promo-section-pretitle">Features</p>
+                <!-- /PROMO SECTION PRETITLE -->
+
+                <!-- PROMO SECTION TITLE -->
+                <h2 class="promo-section-title">Super Complete<br>Account Hub Pages</h2>
+                <!-- /PROMO SECTION TITLE -->
+
+                <!-- PROMO SECTION TEXT -->
+                <p class="promo-section-text">We created an account hub with all the important info pages you might
+                    need, like profile and account info, social networking, general settings, manage groups, items and
+                    complete store stats including statements, earnings reports and much more!</p>
+                <!-- /PROMO SECTION TEXT -->
+            </div>
+            <!-- /PROMO SECTION INFO -->
+
+            <!-- PROMO SECTION IMAGE -->
+            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/09.png"
+                alt="section-image-09">
+            <!-- /PROMO SECTION IMAGE -->
+        </section>
+        <!-- /PROMO SECTION -->
+    </div>
+    <!-- /PROMO SECTION WRAP -->
+
+    <!-- SECTION WRAP -->
+    <div class="section-wrap">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">Features</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Illustrations and Icons Included!</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">Yes! All illustrations like the one in the landing, the people illustrations,
+                    the badges, all the banners, forum icons and more were designed for this template by us and are all
+                    included in the PSD folder of the pack! We also included all icons in SVG and PS vectors!</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- SECTION IMAGE -->
+            <img class="section-image" src="/assets/vikinger-landing/img/section/10.png" alt="section-image-10">
+            <!-- /SECTION IMAGE -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+    <!-- app -->
+    <script src="/assets/vikinger-landing/app.bundle.min.js"></script>
+</body>
+
 </html>
