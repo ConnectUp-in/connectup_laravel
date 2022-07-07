@@ -19,9 +19,22 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            // role, active, stream, college, bio, about, graduation_year,  interests,  cover_image
+            $table->integer('role')->default(0);
+            $table->boolean('active')->default(false);
+            $table->string('stream')->nullable();
+            $table->string('college')->nullable();
+            $table->string('bio')->nullable();
+            $table->string('about')->nullable();
+            $table->integer('graduation_year')->nullable();
+            $table->json('interests')->default(json_encode([]));
+            $table->string('cover_image')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('google_id')->nullable();
+            $table->string('linkedin_id')->nullable();
+            $table->string('github_id')->nullable();
             $table->timestamps();
         });
     }
