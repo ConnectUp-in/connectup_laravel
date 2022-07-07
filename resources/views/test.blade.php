@@ -71,8 +71,8 @@
                         <div class="form-item">
                             <!-- FORM INPUT -->
                             <div class="form-input">
-                                <label for="login-username">Your Email</label>
-                                <input type="text" id="login-username" name="email">
+                                <label for="login-username">Username or Email</label>
+                                <input type="text" id="login-username" name="login_username">
                             </div>
                             <!-- /FORM INPUT -->
                         </div>
@@ -87,7 +87,7 @@
                             <!-- FORM INPUT -->
                             <div class="form-input">
                                 <label for="login-password">Password</label>
-                                <input type="password" id="login-password" name="password">
+                                <input type="password" id="login-password" name="login_password">
                             </div>
                             <!-- /FORM INPUT -->
                         </div>
@@ -101,7 +101,7 @@
                         <div class="form-item">
                             <!-- CHECKBOX WRAP -->
                             <div class="checkbox-wrap">
-                                <input type="checkbox" id="login-remember" name="remember" checked>
+                                <input type="checkbox" id="login-remember" name="login_remember" checked>
                                 <!-- CHECKBOX BOX -->
                                 <div class="checkbox-box">
                                     <!-- ICON CROSS -->
