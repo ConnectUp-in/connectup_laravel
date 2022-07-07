@@ -1637,6 +1637,12 @@ figure > img {
 .social-link.instagram {
     background-color: #f8468d;
 }
+.social-link.linkedin {
+    background-color: #0077b5;
+}
+.social-link.github {
+    background-color: #333;
+}
 .social-link.patreon {
     background-color: #ff7a51;
 }

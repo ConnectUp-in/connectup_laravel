@@ -147,45 +147,24 @@
 
                 <!-- SOCIAL LINKS -->
                 <div class="social-links">
+
                     <!-- SOCIAL LINK -->
-                    <a class="social-link facebook" href="#">
-                        <!-- ICON FACEBOOK -->
-                        <svg class="icon-facebook">
-                            <use xlink:href="#svg-facebook"></use>
-                        </svg>
-                        <!-- /ICON FACEBOOK -->
+                    <a class="social-link youtube" href="/auth/google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <!-- /SOCIAL LINK -->
+                    <!-- SOCIAL LINK -->
+                    <a class="social-link github" href="/auth/github">
+                        <i class="fab fa-github"></i>
                     </a>
                     <!-- /SOCIAL LINK -->
 
                     <!-- SOCIAL LINK -->
-                    <a class="social-link twitter" href="#">
-                        <!-- ICON TWITTER -->
-                        <svg class="icon-twitter">
-                            <use xlink:href="#svg-twitter"></use>
-                        </svg>
-                        <!-- /ICON TWITTER -->
+                    <a class="social-link linkedin" href="/auth/linkedin">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                     <!-- /SOCIAL LINK -->
 
-                    <!-- SOCIAL LINK -->
-                    <a class="social-link twitch" href="#">
-                        <!-- ICON TWITCH -->
-                        <svg class="icon-twitch">
-                            <use xlink:href="#svg-twitch"></use>
-                        </svg>
-                        <!-- /ICON TWITCH -->
-                    </a>
-                    <!-- /SOCIAL LINK -->
-
-                    <!-- SOCIAL LINK -->
-                    <a class="social-link youtube" href="#">
-                        <!-- ICON YOUTUBE -->
-                        <svg class="icon-youtube">
-                            <use xlink:href="#svg-youtube"></use>
-                        </svg>
-                        <!-- /ICON YOUTUBE -->
-                    </a>
-                    <!-- /SOCIAL LINK -->
                 </div>
                 <!-- /SOCIAL LINKS -->
             </div>
