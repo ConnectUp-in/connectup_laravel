@@ -29,3 +29,7 @@ Route::middleware([
 
 
 Route::view('test', 'test');
+Route::get('logout', function () {
+    auth()->logout();
+    return redirect('/login');
+});
