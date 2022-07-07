@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,13 @@ Route::get('logout', function () {
     auth()->logout();
     return redirect('/login');
 });
+
+
+
+// Social Authentication Routes
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirectToGoogle');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('handleGoogleCallback');
+Route::get('auth/linkedin', [LinkedinController::class, 'linkedinRedirect'])->name('redirectToLinkedin');
+Route::get('auth/linkedin/callback', [LinkedinController::class, 'linkedinCallback']);
+Route::get('auth/github', [GitHubController::class, 'gitRedirect'])->name('redirectToGithub');
+Route::get('auth/github/callback', [GitHubController::class, 'gitCallback']);
