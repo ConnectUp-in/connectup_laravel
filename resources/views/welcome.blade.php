@@ -32,7 +32,7 @@
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#top">Home</a>
+                    <a class="menu-item-link" href="#top">Dashboard</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
