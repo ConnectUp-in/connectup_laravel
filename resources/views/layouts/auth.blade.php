@@ -9,7 +9,7 @@
     <!-- styles -->
     <link rel="stylesheet" href="/assets/vikinger/css/styles.min.css">
     <!-- favicon -->
-    <link rel="icon" href="/assets/vikinger/img/favicon.ico">
+    <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
     <title>ConnectUp | Home</title>
 
     {{-- Import fontawesome --}}
