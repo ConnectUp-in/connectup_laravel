@@ -7,8 +7,9 @@
     <!-- styles -->
     <link rel="stylesheet" href="/assets/vikinger-landing/css/styles.min.css">
     <!-- favicon -->
-    <link rel="icon" href="/assets/vikinger-landing/img/favicon.ico">
-    <title>Vikinger | Landing</title>
+    <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
+
+    <title>ConnectUp | Home</title>
 </head>
 
 <body>
@@ -19,11 +20,9 @@
         <nav class="navigation grid-limit">
             <!-- LOGO -->
             <div class="logo void">
-                <!-- LOGO ICON -->
-                <svg class="logo-icon icon-logo-vikinger">
-                    <use xlink:href="#svg-logo-vikinger"></use>
-                </svg>
-                <!-- /LOGO ICON -->
+                <a href="/">
+                    <img src="/assets/vikinger/img/landing/logo.png" width="50px" alt="logo">
+                </a>
             </div>
             <!-- /LOGO -->
 
@@ -77,7 +76,7 @@
             <!-- BUTTON -->
             <a class="button small primary"
                 href="https://themeforest.net/item/vikinger-social-community-and-marketplace-html-template/25715500"
-                target="_blank">Buy it Now!</a>
+                target="_blank">Join Now</a>
             <!-- /BUTTON -->
         </nav>
         <!-- /NAVIGATION -->
@@ -90,16 +89,16 @@
         <div class="banner grid-limit">
             <!-- BANNER INFO -->
             <div class="banner-info">
-                <!-- BANNER IMAGE -->
+                {{-- <!-- BANNER IMAGE -->
                 <img class="banner-image" src="/assets/vikinger-landing/img/banner/banner-tag.png" alt="HTML Version">
-                <!-- /BANNER IMAGE -->
+                <!-- /BANNER IMAGE --> --}}
 
                 <!-- BANNER PRETITLE -->
                 <p class="banner-pretitle">Welcome To</p>
                 <!-- /BANNER PRETITLE -->
 
                 <!-- BANNER TITLE -->
-                <p class="banner-title">Vikinger</p>
+                <p class="banner-title">ConnectUp</p>
                 <!-- /BANNER TITLE -->
 
                 <!-- BANNER TEXT -->

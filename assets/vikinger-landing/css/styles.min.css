@@ -363,21 +363,28 @@ figure > img {
     }
 }
 .banner-wrap {
-    background: url(/assets/vikinger-landing/img/banner/banner-people.png)
+    /* background: url(/assets/vikinger-landing/img/banner/banner-people.png)
             no-repeat 0 100%,
         url(/assets/vikinger-landing/img/banner/banner-rocket.png) no-repeat
             right 520px top 158px,
         url(/assets/vikinger-landing/img/banner/banner-screens.png) no-repeat
             right -25px bottom,
         url(/assets/vikinger-landing/img/banner/banner-bg.jpg) no-repeat 50%;
-    background-size: auto, auto, auto, cover;
+    background-size: auto, auto, auto, cover; */
+    background: url(/assets/vikinger-landing/img/banner/landing.png) no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 .banner {
-    min-height: 960px;
+    min-height: 110vh;
 }
 .banner .banner-info {
-    padding: 216px 0 0 100px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20vh 5vh;
 }
 .banner .banner-info .banner-image {
     position: absolute;
