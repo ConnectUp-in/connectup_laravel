@@ -31,7 +31,7 @@
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#top">Dashboard</a>
+                    <a class="menu-item-link" href="#benefits">Benefits</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
@@ -39,7 +39,7 @@
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#demos">Demo Pages</a>
+                    <a class="menu-item-link" href="#about">About</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
@@ -47,7 +47,7 @@
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#features">Features</a>
+                    <a class="menu-item-link" href="#program">Programmes</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
@@ -55,28 +55,16 @@
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSf0eoKtG-aaC-5MsEpBDIFbgii3SSoAFfvYtXtqz1uopr0ERg/viewform"
-                        target="_blank">WP Version</a>
+                    <a class="menu-item-link" href="mailto:connectup.in@gmail.com">Support</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
 
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="https://themeforest.net/user/odin_design" target="_blank">Our
-                        Profile</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
             </ul>
             <!-- /MENU -->
 
             <!-- BUTTON -->
-            <a class="button small primary"
-                href="https://themeforest.net/item/vikinger-social-community-and-marketplace-html-template/25715500"
-                target="_blank">Join Now</a>
+            <a class="button small primary" href="/app">Join Now</a>
             <!-- /BUTTON -->
         </nav>
         <!-- /NAVIGATION -->
@@ -107,7 +95,11 @@
                 <!-- /BANNER TEXT -->
 
                 <!-- BUTTON -->
-                <a class="button" href="#demos">Check all Demos</a>
+                <div>
+
+                    <a class="button" href="#demos">Join Now</a>
+                    <a class="button" href="#demos">Register StartUp</a>
+                </div>
                 <!-- /BUTTON -->
             </div>
             <!-- /BANNER INFO -->
