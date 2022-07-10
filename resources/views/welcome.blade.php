@@ -180,17 +180,17 @@
 
 
     <!-- SECTION WRAP -->
-    <div id="features" class="section-wrap">
+    <div id="benefits" class="section-wrap">
         <!-- SECTION -->
         <section class="section grid-limit">
             <!-- SECTION INFO -->
             <div class="section-info">
                 <!-- SECTION PRETITLE -->
-                <p class="section-pretitle">Vikinger HTML</p>
+                <p class="section-pretitle">What you'll get</p>
                 <!-- /SECTION PRETITLE -->
 
                 <!-- SECTION TITLE -->
-                <h2 class="section-title">Template Features</h2>
+                <h2 class="section-title">Benefits & Perks</h2>
                 <!-- /SECTION TITLE -->
 
                 <!-- SECTION TEXT -->
@@ -203,166 +203,78 @@
 
             <!-- GRID -->
             <div class="grid grid-4">
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/html5.png"
-                        alt="feature-html5">
-                    <!-- /FEATURE ITEM IMAGE -->
 
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">HTML, CSS &amp; JS Files</h2>
-                    <!-- /FEATURE ITEM TITLE -->
 
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">We included in the pack 55 HTML files with css animations, popups and
-                        a help file so you can easily customize them!</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
+                <?php
+                
+                $benefits = [
+                    [
+                        'title' => 'HTML, CSS & JS Files',
+                        'text' => 'We included in the pack HTML, CSS and JS files for you to customize them all you like! (Photos not included).',
+                        'image' => '/assets/vikinger-landing/img/feature/html5.png',
+                    ],
+                    [
+                        'title' => 'Bootstrap Compatible',
+                        'text' => 'We made the template compatible with Bootstrap v4.4.1, and ensured that there are no style conflicts.',
+                        'image' => '/assets/vikinger-landing/img/feature/bootstrap.png',
+                    ],
+                    [
+                        'title' => "PSD Files! (Save $12!)",
+                        'text' => 'We included in the pack 56 Photoshop PSD files for you to customize them all you like! (Photos not included).',
+                        'image' => '/assets/vikinger-landing/img/feature/psd.png',
+                    ],
+                    [
+                        'title' => 'SASS',
+                        'text' => 'Easily customize styles by using variables, nesting, mixins, inheritance and more!',
+                        'image' => '/assets/vikinger-landing/img/feature/sass.png',
+                    ],
+                    [
+                        'title' => 'Illustrations Included',
+                        'text' => "You'll find inside the PSD files all illustrations, like the forum icons, badges, banners and more!",
+                        'image' => '/assets/vikinger-landing/img/feature/illustrations.png',
+                    ],
+                    [
+                        'title' => 'npm &amp; Grunt',
+                        'text' => 'Includes a preconfigured version using npm &amp; Grunt, just start customizing and let them do the work!',
+                        'image' => '/assets/vikinger-landing/img/feature/npmgrunt.png',
+                    ],
+                    [
+                        'title' => 'SVG Custom Icons',
+                        'text' => "Inside the pack you'll find custom SVG icons made for this template! Easily change things like color via code!",
+                        'image' => '/assets/vikinger-landing/img/feature/svg.png',
+                    ],
+                    [
+                        'title' => 'Fully Responsive',
+                        'text' => 'Vikinger is fully responsive so you can easily browse it from any device: desktop, tablets and smartphones.',
+                        'image' => '/assets/vikinger-landing/img/feature/responsive.png',
+                    ],
+                    [
+                        'title' => 'Help Documentation',
+                        'text' => "Inside the documentation file you'll find help to guide you with all the features and plugins included.",
+                        'image' => '/assets/vikinger-landing/img/feature/documentation.png',
+                    ],
+                ];
+                
+                ?>
 
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/bootstrap.png"
-                        alt="feature-bootstrap">
-                    <!-- /FEATURE ITEM IMAGE -->
 
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">Bootstrap Compatible</h2>
-                    <!-- /FEATURE ITEM TITLE -->
+                @foreach ($benefits as $b)
+                    <article class="feature-item">
+                        <!-- FEATURE ITEM IMAGE -->
+                        <img class="feature-item-image" src="{{ $b['image'] }}">
+                        <!-- /FEATURE ITEM IMAGE -->
 
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">We made the template compatible with Bootstrap v4.4.1, and ensured
-                        that there are no style conflicts.</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
+                        <!-- FEATURE ITEM TITLE -->
+                        <h2 class="feature-item-title">{{ $b['title'] }}</h2>
+                        <!-- /FEATURE ITEM TITLE -->
 
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/psd.png"
-                        alt="feature-psd">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">PSD Files! (Save $12!)</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">We included in the pack 56 Photoshop PSD files for you to customize
-                        them all you like! (Photos not included).</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/sass.png"
-                        alt="feature-sass">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">SASS</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">Easily customize styles by using variables, nesting, mixins,
-                        inheritance and more!</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/illustrations.png"
-                        alt="feature-illustrations">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">Illustrations Included</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">You'll find inside the PSD files all illustrations, like the forum
-                        icons, badges, banners and more! </p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/npmgrunt.png"
-                        alt="feature-npmgrunt">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">npm &amp; Grunt</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">Includes a preconfigured version using npm &amp; Grunt, just start
-                        customizing and let them do the work!.</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/svg.png"
-                        alt="feature-svg">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">SVG Custom Icons</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">Inside the pack you'll find custom SVG icons made for this template!
-                        Easily change things like color via code!</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/responsive.png"
-                        alt="feature-responsive">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">Fully Responsive</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">Vikinger is fully responsive so you can easily browse it from any
-                        device: desktop, tablets and smartphones.</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
-                <!-- /FEATURE ITEM -->
-
-                <!-- FEATURE ITEM -->
-                <article class="feature-item">
-                    <!-- FEATURE ITEM IMAGE -->
-                    <img class="feature-item-image" src="/assets/vikinger-landing/img/feature/documentation.png"
-                        alt="feature-documentation">
-                    <!-- /FEATURE ITEM IMAGE -->
-
-                    <!-- FEATURE ITEM TITLE -->
-                    <h2 class="feature-item-title">Help Documentation</h2>
-                    <!-- /FEATURE ITEM TITLE -->
-
-                    <!-- FEATURE ITEM TEXT -->
-                    <p class="feature-item-text">Inside the documentation file you'll find help to guide you with all
-                        the features and plugins included.</p>
-                    <!-- /FEATURE ITEM TEXT -->
-                </article>
+                        <!-- FEATURE ITEM TEXT -->
+                        <p class="feature-item-text">
+                            {{ $b['text'] }}
+                        </p>
+                        <!-- /FEATURE ITEM TEXT -->
+                    </article>
+                @endforeach
                 <!-- /FEATURE ITEM -->
             </div>
             <!-- /GRID -->
@@ -372,17 +284,17 @@
     <!-- /SECTION WRAP -->
 
     <!-- SECTION WRAP -->
-    <div class="section-wrap">
+    <div class="section-wrap" id="about">
         <!-- SECTION -->
         <section class="section grid-limit">
             <!-- SECTION INFO -->
             <div class="section-info">
                 <!-- SECTION PRETITLE -->
-                <p class="section-pretitle">Features</p>
+                <p class="section-pretitle">What we are</p>
                 <!-- /SECTION PRETITLE -->
 
                 <!-- SECTION TITLE -->
-                <h2 class="section-title">Discover Tons of Widgets!</h2>
+                <h2 class="section-title">About ConnectUp</h2>
                 <!-- /SECTION TITLE -->
 
                 <!-- SECTION TEXT -->
