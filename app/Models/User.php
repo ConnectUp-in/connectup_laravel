@@ -10,6 +10,9 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+// Import Str
+use Illuminate\Support\Str;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -58,4 +61,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+
+    // If id is not present while creating a new user, then generate a random id.
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            if (! $user->id) {
+                $user->id = (string) Str::uuid();
+            }
+        });
+    }
+
 }
