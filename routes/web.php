@@ -29,11 +29,18 @@ Route::middleware([
 });
 
 
-Route::view('test', 'test');
+Route::get('test', function(){
+    return md5(uniqid('post_',true));
+} );
 Route::get('logout', function () {
     auth()->logout();
     return redirect('/login');
 });
+
+
+Route::view('feed', 'pages.feed');
+
+Route::get('title', [Controller::class, 'title']);
 
 
 
