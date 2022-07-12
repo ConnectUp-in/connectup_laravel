@@ -90,8 +90,12 @@
                 <!-- /BANNER TITLE -->
 
                 <!-- BANNER TEXT -->
-                <p class="banner-text">The next generation social network &amp; community! Connect with your friends and
-                    play with our quests and badges gamification system!</p>
+                <p class="banner-text">The next generation Entrepreneurs community! <br>
+                    {{-- Platform that brings together startups, entrepreneurs, investors, and friends to come together to 
+                    share ideas, and discuss opportunities for collaboration. --}}
+
+
+                </p>
                 <!-- /BANNER TEXT -->
 
                 <!-- BUTTON -->
