@@ -34,12 +34,13 @@ class Post extends Model
                 'shares' => 'array',
                 'likes' => 'array',
                 'dislikes' => 'array',
+                'id' => 'string',
             ];
             
             
             public function getUserAttribute($value)
             {
-                return User::find($this->attributes['user_id'])->select('id', 'name', 'email')->first();
+                return User::where('id',$this->attributes['user_id'])->select('id', 'name', 'email')->first();
             }
 
 
@@ -49,15 +50,15 @@ class Post extends Model
             }
 
 
-            public function getMetaAttribute($value)
-            {
-                if(getURLfromText($this->attributes['caption']) != ""){
-                    $url = getURLfromText($this->attributes['caption']);
-                    $meta = getMetaData($url);
-                    return $meta;           
-                }
-                return null;
-            }
+            // public function getMetaAttribute($value)
+            // {
+            //     if(getURLfromText($this->attributes['caption']) != ""){
+            //         $url = getURLfromText($this->attributes['caption']);
+            //         $meta = getMetaData($url);
+            //         return $meta;           
+            //     }
+            //     return null;
+            // }
             
 
 }
