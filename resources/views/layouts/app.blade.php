@@ -19,7 +19,7 @@
 
 <body>
 
-    <!-- PAGE LOADER -->
+    {{-- <!-- PAGE LOADER -->
     <div class="page-loader">
         <!-- PAGE LOADER DECORATION -->
         <div class="page-loader-decoration">
@@ -52,7 +52,7 @@
         </div>
         <!-- /PAGE LOADER INDICATOR -->
     </div>
-    <!-- /PAGE LOADER -->
+    <!-- /PAGE LOADER --> --}}
 
     {{-- <!-- NAVIGATION WIDGET -->
     <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
