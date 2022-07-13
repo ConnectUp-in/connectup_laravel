@@ -29,7 +29,7 @@ class GitHubController extends Controller
       
                 Auth::login($searchUser);
      
-                return redirect('/dash');
+                return redirect('/feed');
       
             }else{
                 $gitUser = User::create([

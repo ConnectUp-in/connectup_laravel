@@ -37,7 +37,7 @@ class GoogleController extends Controller
        
                 Auth::login($finduser);
       
-                return redirect()->intended('dash');
+                return redirect()->intended('feed');
        
             }else{
                 $newUser = User::create([

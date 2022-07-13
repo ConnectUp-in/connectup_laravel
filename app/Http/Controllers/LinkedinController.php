@@ -29,7 +29,7 @@ class LinkedinController extends Controller
       
                 Auth::login($linkedinUser);
      
-                return redirect('/dash');
+                return redirect('/feed');
       
             }else{
                 $user = User::create([
