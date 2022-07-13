@@ -38,7 +38,7 @@ Route::get('logout', function () {
 });
 
 
-Route::view('feed', 'pages.feed');
+Route::get('feed', [AppController::class, 'feed'])->name('feed');
 
 Route::get('title', [Controller::class, 'title']);
 
