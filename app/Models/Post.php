@@ -40,7 +40,7 @@ class Post extends Model
             
             public function getUserAttribute($value)
             {
-                return User::where('id',$this->attributes['user_id'])->select('id', 'name', 'email')->first();
+                return User::where('id',$this->attributes['user_id'])->select('id', 'name', 'email','username')->first();
             }
 
 

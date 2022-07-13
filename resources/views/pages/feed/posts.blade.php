@@ -18,7 +18,7 @@
                 <!-- SIMPLE DROPDOWN -->
                 <div class="simple-dropdown widget-box-post-settings-dropdown">
                     <!-- SIMPLE DROPDOWN LINK -->
-                    <p class="simple-dropdown-link">View Post</p>
+                    <a href="{{ route('post', $post->id) }}" class="simple-dropdown-link">View Post</a>
                     <!-- /SIMPLE DROPDOWN LINK -->
                 </div>
                 <!-- /SIMPLE DROPDOWN -->
@@ -34,7 +34,7 @@
                 <!-- USER STATUS -->
                 <div class="user-status">
                     <!-- USER STATUS AVATAR -->
-                    <a class="user-status-avatar" href="profile-timeline.html">
+                    <a class="user-status-avatar" href="{{ route('user', $post->user->username) }}">
                         <!-- USER AVATAR -->
                         <div class="user-avatar small no-outline">
                             <!-- USER AVATAR CONTENT -->
@@ -93,8 +93,8 @@
 
                     <!-- USER STATUS TITLE -->
                     <p class="user-status-title medium"><a class="bold"
-                            href="profile-timeline.html">{{ $post->user->name }}</a> shared a <span
-                            class="bold">post</span></p>
+                            href="{{ route('user', $post->user->username) }}">{{ $post->user->name }}</a> shared a
+                        <span class="bold">post</span></p>
                     <!-- /USER STATUS TITLE -->
 
                     <!-- USER STATUS TEXT -->
