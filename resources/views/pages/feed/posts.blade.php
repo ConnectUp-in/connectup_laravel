@@ -119,6 +119,40 @@
                 <!-- /IFRAME WRAP -->
             @endif
 
+
+            @if (isset($post->meta))
+                <div class="widget-box-status-content">
+
+                    <!-- VIDEO STATUS -->
+                    <a class="video-status" href="{{ $post->meta['url'] }}" target="_blank">
+                        <!-- VIDEO STATUS IMAGE -->
+                        <img class="video-status-image" src="{{ $post->meta['image_url'] }}"
+                            alt="{{ $post->meta['title'] }}" onerror="this.style.display='none'">
+                        <!-- /VIDEO STATUS IMAGE -->
+
+                        <!-- VIDEO STATUS INFO -->
+                        <div class="video-status-info">
+                            <!-- VIDEO STATUS META -->
+                            <p class="video-status-meta">{{ $post->meta['url'] }}</p>
+                            <!-- /VIDEO STATUS META -->
+
+                            <!-- VIDEO STATUS TITLE -->
+                            <p class="video-status-title">
+                                <span class="bold">{{ $post->meta['title'] }}</span>
+                            </p>
+                            <!-- /VIDEO STATUS TITLE -->
+
+                            <!-- VIDEO STATUS TEXT -->
+                            <p class="video-status-text">{{ $post->meta['body'] }}</p>
+                            <!-- /VIDEO STATUS TEXT -->
+                        </div>
+                        <!-- /VIDEO STATUS INFO -->
+                    </a>
+                    <!-- /VIDEO STATUS -->
+                </div>
+            @endif
+
+
             <!-- WIDGET BOX STATUS CONTENT -->
             <div class="widget-box-status-content">
                 <!-- TAG LIST -->
@@ -542,7 +576,7 @@
 @empty
 @endforelse
 
-{{-- <!-- WIDGET BOX -->
+<!-- WIDGET BOX -->
 <div class="widget-box no-padding">
     <!-- WIDGET BOX SETTINGS -->
     <div class="widget-box-settings">
@@ -3131,8 +3165,7 @@
                         <!-- VIDEO STATUS -->
                         <a class="video-status" href="https://www.twitch.tv/" target="_blank">
                             <!-- VIDEO STATUS IMAGE -->
-                            <img class="video-status-image" src="/assets/vikinger/img/cover/51.jpg"
-                                alt="cover-51">
+                            <img class="video-status-image" src="/assets/vikinger/img/cover/51.jpg" alt="cover-51">
                             <!-- /VIDEO STATUS IMAGE -->
 
                             <!-- VIDEO STATUS INFO -->
@@ -5692,4 +5725,4 @@
     </div>
     <!-- /POST OPTIONS -->
 </div>
-<!-- /WIDGET BOX --> --}}
+<!-- /WIDGET BOX -->
