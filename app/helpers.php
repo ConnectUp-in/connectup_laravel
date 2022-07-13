@@ -66,3 +66,19 @@ function getMetaData($url){
     );
     return $output;
 }
+
+
+function getYoutubeVideoId($url){
+    $url = parse_url($url);
+    if (isset($url['query'])) {
+        parse_str($url['query'], $output);
+        if (isset($output['v'])) {
+            return $output['v'];
+        }
+    }
+    if (isset($url['path'])) {
+        $path = explode('/', $url['path']);
+        return $path[count($path) - 1];
+    }
+    return false;
+}
