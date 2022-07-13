@@ -2828,7 +2828,8 @@ figure > img {
     font-size: 0.75rem;
     font-weight: 500;
 }
-.reaction-options {
+.reaction-options,
+.share-options {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -2839,14 +2840,17 @@ figure > img {
     background-color: #293249;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.12);
 }
-.reaction-options.small {
+.reaction-options.small,
+.share-options.small {
     height: 40px;
 }
-.reaction-options.small .reaction-option {
+.reaction-options.small .reaction-option,
+.share-options.small .reaction-option {
     width: 20px;
     height: 20px;
 }
-.reaction-options .reaction-option {
+.reaction-options .reaction-option,
+.share-options .reaction-option {
     width: 40px;
     height: 40px;
     margin-right: 8px;
@@ -2862,7 +2866,8 @@ figure > img {
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
 }
-.reaction-options .reaction-option .reaction-option-image {
+.reaction-options .reaction-option .reaction-option-image,
+.share-options .reaction-option .reaction-option-image {
     width: 100%;
     height: 100%;
 }

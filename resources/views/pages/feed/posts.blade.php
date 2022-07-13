@@ -40,8 +40,10 @@
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
-                                <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                <div class="hexagon-image-30-32" data-src="{{ $post->user->profile_photo_url }}">
+                                </div>
                                 <!-- /HEXAGON -->
+                                {{-- <img src="{{ $post->user->profile_photo_url }}" alt=""> --}}
                             </div>
                             <!-- /USER AVATAR CONTENT -->
 
@@ -61,7 +63,7 @@
                             </div>
                             <!-- /USER AVATAR PROGRESS BORDER -->
 
-                            <!-- USER AVATAR BADGE -->
+                            {{-- <!-- USER AVATAR BADGE -->
                             <div class="user-avatar-badge">
                                 <!-- USER AVATAR BADGE BORDER -->
                                 <div class="user-avatar-badge-border">
@@ -83,7 +85,7 @@
                                 <p class="user-avatar-badge-text">12</p>
                                 <!-- /USER AVATAR BADGE TEXT -->
                             </div>
-                            <!-- /USER AVATAR BADGE -->
+                            <!-- /USER AVATAR BADGE --> --}}
                         </div>
                         <!-- /USER AVATAR -->
                     </a>
@@ -108,16 +110,6 @@
                 <!-- /WIDGET BOX STATUS TEXT -->
             </div>
             <!-- /WIDGET BOX STATUS CONTENT -->
-
-
-            @if (isset($post->ytlink))
-                <!-- IFRAME WRAP -->
-                <div class="iframe-wrap">
-                    <iframe src="https://www.youtube.com/embed/{{ getYoutubeVideoId($post->ytlink) }}"
-                        allowfullscreen></iframe>
-                </div>
-                <!-- /IFRAME WRAP -->
-            @endif
 
 
             @if (isset($post->meta))
@@ -151,6 +143,19 @@
                     <!-- /VIDEO STATUS -->
                 </div>
             @endif
+            @if (isset($post->ytlink))
+                <div class="widget-box-status-content">
+
+                    <!-- IFRAME WRAP -->
+                    <div class="iframe-wrap">
+                        <iframe src="https://www.youtube.com/embed/{{ getYoutubeVideoId($post->ytlink) }}"
+                            allowfullscreen></iframe>
+                    </div>
+                    <!-- /IFRAME WRAP -->
+                </div>
+            @endif
+
+
 
 
             <!-- WIDGET BOX STATUS CONTENT -->
@@ -556,19 +561,38 @@
             </div>
             <!-- /POST OPTION -->
 
-            <!-- POST OPTION -->
-            <div class="post-option">
-                <!-- POST OPTION ICON -->
-                <svg class="post-option-icon icon-share">
-                    <use xlink:href="#svg-share"></use>
-                </svg>
-                <!-- /POST OPTION ICON -->
+            <div class="post-option-wrap">
 
-                <!-- POST OPTION TEXT -->
-                <p class="post-option-text">Share</p>
-                <!-- /POST OPTION TEXT -->
+                <!-- POST OPTION -->
+                <div class="post-option share-options-dropdown-trigger">
+                    <!-- POST OPTION ICON -->
+                    <svg class="post-option-icon icon-share">
+                        <use xlink:href="#svg-share"></use>
+                    </svg>
+                    <!-- /POST OPTION ICON -->
+
+                    <!-- POST OPTION TEXT -->
+                    <p class="post-option-text">Share</p>
+                    <!-- /POST OPTION TEXT -->
+                </div>
+                <!-- /POST OPTION -->
+
+
+                <!-- REACTION OPTIONS -->
+                <div class="share-options-dropdown share-options ">
+
+                    <div class="reaction-option text-tooltip-tft" data-title="Like">
+                        <a href="whatsapp://send?text=https://connectup.in/post/{{ $post->id }}">
+                            <!-- REACTION OPTION
+                            IMAGE -->
+                            <img class="reaction-option-image"
+                                src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
+                                alt="reaction-like">
+                            <!-- /REACTION OPTION IMAGE -->
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- /POST OPTION -->
         </div>
         <!-- /POST OPTIONS -->
     </div>
@@ -576,7 +600,7 @@
 @empty
 @endforelse
 
-<!-- WIDGET BOX -->
+{{-- <!-- WIDGET BOX -->
 <div class="widget-box no-padding">
     <!-- WIDGET BOX SETTINGS -->
     <div class="widget-box-settings">
@@ -5725,4 +5749,4 @@
     </div>
     <!-- /POST OPTIONS -->
 </div>
-<!-- /WIDGET BOX -->
+<!-- /WIDGET BOX --> --}}
