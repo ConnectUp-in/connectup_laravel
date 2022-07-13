@@ -21,6 +21,10 @@ class Post extends Model
         });
     }
 
+    protected $appends = [
+        'user',
+    ];
+
             // json fields - images, tags, options, shares, likes, dislikes
             protected $casts = [
                 'images' => 'array',
@@ -32,7 +36,16 @@ class Post extends Model
             ];
             
             
+            public function getUserAttribute($value)
+            {
+                return User::find($this->attributes['user_id'])->select('id', 'name', 'email')->first();
+            }
 
 
+            public function getCaptionAttribute($value)
+            {
+                return makeHyperText($value);
+            }
+            
 
 }
