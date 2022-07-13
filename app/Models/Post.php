@@ -50,15 +50,15 @@ class Post extends Model
             }
 
 
-            // public function getMetaAttribute($value)
-            // {
-            //     if(getURLfromText($this->attributes['caption']) != ""){
-            //         $url = getURLfromText($this->attributes['caption']);
-            //         $meta = getMetaData($url);
-            //         return $meta;           
-            //     }
-            //     return null;
-            // }
+            public function getMetaAttribute($value)
+            {
+                // if(getURLfromText($this->attributes['caption']) != ""){
+                //     $url = getURLfromText($this->attributes['caption']);
+                //     $meta = getMetaData($url);
+                //     return $meta;           
+                // }
+                return null;
+            }
             
 
 }
