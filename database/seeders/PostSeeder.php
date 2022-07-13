@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 // Import Faker
 use Faker\Factory as Faker;
-
+use App\Models\User;
 class PostSeeder extends Seeder
 {
     /**
@@ -24,7 +24,7 @@ class PostSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             $post = new Post();
-            $post->user_id = $faker->numberBetween(1, 2);
+            $post->user_id = User::all()->random()->id;
             $post->caption = $faker->sentence(10);
            $post->tags = [$faker->word, $faker->word, $faker->word];
             $post->question = $faker->sentence(10);
