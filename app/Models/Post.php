@@ -23,6 +23,7 @@ class Post extends Model
 
     protected $appends = [
         'user',
+        'meta'
     ];
 
             // json fields - images, tags, options, shares, likes, dislikes
@@ -45,6 +46,17 @@ class Post extends Model
             public function getCaptionAttribute($value)
             {
                 return makeHyperText($value);
+            }
+
+
+            public function getMetaAttribute($value)
+            {
+                if(getURLfromText($this->attributes['caption']) != ""){
+                    $url = getURLfromText($this->attributes['caption']);
+                    $meta = getMetaData($url);
+                    return $meta;           
+                }
+                return null;
             }
             
 
