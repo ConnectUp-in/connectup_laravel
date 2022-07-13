@@ -165,7 +165,7 @@
 
                     @forelse ($post->tags as $tag)
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">{{ $tag }}</a>
+                        <a class="tag-item secondary" href="#">{{ $tag }}</a>
                         <!-- /TAG ITEM -->
                     @empty
                     @endforelse
@@ -581,7 +581,10 @@
                 <!-- REACTION OPTIONS -->
                 <div class="share-options-dropdown share-options ">
 
-                    <div class="reaction-option text-tooltip-tft" data-title="Like">
+                    {{-- Copy Link, Whatsapp, Linkedin, Twitter --}}
+
+                    <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
+
                         <a href="whatsapp://send?text=https://connectup.in/post/{{ $post->id }}">
                             <!-- REACTION OPTION
                             IMAGE -->
@@ -591,6 +594,46 @@
                             <!-- /REACTION OPTION IMAGE -->
                         </a>
                     </div>
+
+                    {{-- Linkedin share option --}}
+                    <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
+                        <a
+                            href="https://www.linkedin.com/shareArticle?mini=true&url=https://connectup.in/post/{{ $post->id }}&title={{ $post->caption }}&source=https://connectup.in">
+                            <!-- REACTION OPTION
+                            IMAGE -->
+                            <img class="reaction-option-image"
+                                src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
+                                alt="reaction-like">
+                            <!-- /REACTION OPTION IMAGE -->
+                        </a>
+                    </div>
+
+                    {{-- Twitter share option --}}
+                    <div class="reaction-option text-tooltip-tft" data-title="Twitter">
+                        <a
+                            href="https://twitter.com/intent/tweet?text=https://connectup.in/post/{{ $post->id }}&via=connectup">
+                            <!-- REACTION OPTION
+                            IMAGE -->
+                            <img class="reaction-option-image"
+                                src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
+                                alt="reaction-like">
+                            <!-- /REACTION OPTION IMAGE -->
+                        </a>
+                    </div>
+
+                    {{-- Copy Link share option --}}
+                    <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
+                        <a onclick="navigator.clipboard.writeText(`https://connectup.in/post/{{ $post->id }}`)">
+
+                            <!-- REACTION OPTION
+                            IMAGE -->
+                            <img class="reaction-option-image"
+                                src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
+                                alt="reaction-like">
+                            <!-- /REACTION OPTION IMAGE -->
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>

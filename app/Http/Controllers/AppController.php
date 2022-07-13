@@ -11,6 +11,7 @@ class AppController extends Controller
     //
     public function feed()
     {
+        page('feed');
         $posts = Post::all();
 
         $data = [

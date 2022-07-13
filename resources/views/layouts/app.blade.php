@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/assets/vikinger/css/vendor/tiny-slider.css">
     <!-- favicon -->
     <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
-    <title>Vikinger | Newsfeed</title>
+    <title>Feed | ConnectUp</title>
 </head>
 
 <body>
