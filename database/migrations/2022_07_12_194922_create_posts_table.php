@@ -17,7 +17,7 @@ return new class extends Migration
             // id, user, caption, images, tags, ytlink, type, question,  options, answer, active, shares, likes, dislikes, created_at, updated_at
             $table->string('id');
             $table->primary('id');
-            $table->foreignId('user_id');
+            $table->string('user_id');
             $table->string('caption')->nullable();
             $table->json('images')->default(json_encode([]));
             $table->json('tags')->default(json_encode([]));
