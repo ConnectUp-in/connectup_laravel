@@ -32,14 +32,14 @@
                         <div class="progress-arc-wrap">
                             <!-- PROGRESS ARC -->
                             <div class="progress-arc">
-                                <canvas id="profile-completion-chart"></canvas>
+                                <canvas id="profile-completion-chart" data-percentage="80"></canvas>
                             </div>
                             <!-- PROGRESS ARC -->
 
                             <!-- PROGRESS ARC INFO -->
                             <div class="progress-arc-info">
                                 <!-- PROGRESS ARC TITLE -->
-                                <p class="progress-arc-title">59%</p>
+                                <p class="progress-arc-title">80%</p>
                                 <!-- /PROGRESS ARC TITLE -->
                             </div>
                             <!-- /PROGRESS ARC INFO -->
@@ -53,19 +53,24 @@
                             <!-- /PROGRESS ARC SUMMARY TITLE -->
 
                             <!-- PROGRESS ARC SUMMARY TITLE -->
-                            <p class="progress-arc-summary-subtitle">Marina Valentine</p>
+                            <p class="progress-arc-summary-subtitle">@founder</p>
                             <!-- /PROGRESS ARC SUMMARY TITLE -->
 
-                            <!-- PROGRESS ARC SUMMARY TITLE -->
-                            <p class="progress-arc-summary-text">Complete your profile by filling profile info fields,
-                                completing quests &amp; unlocking badges</p>
-                            <!-- /PROGRESS ARC SUMMARY TITLE -->
+                            {{-- <!-- PROGRESS ARC SUMMARY TITLE -->
+                            <p class="progress-arc-summary-text">Complete your profile by filling profile info fields.</p>
+                            <!-- /PROGRESS ARC SUMMARY TITLE --> --}}
                         </div>
                         <!-- /PROGRESS ARC SUMMARY INFO -->
                     </div>
                     <!-- /PROGRESS ARC SUMMARY -->
 
-                    <!-- ACHIEVEMENT STATUS LIST -->
+                    {{-- Button for Profile Completion --}}
+                    <div>
+
+                        <a href="/profile" class="button primary w-100 mt-3">Complete Your Profile</a>
+                    </div>
+
+                    {{-- <!-- ACHIEVEMENT STATUS LIST -->
                     <div class="achievement-status-list">
                         <!-- ACHIEVEMENT STATUS -->
                         <div class="achievement-status">
@@ -117,11 +122,11 @@
                         </div>
                         <!-- /ACHIEVEMENT STATUS -->
                     </div>
-                    <!-- /ACHIEVEMENT STATUS LIST -->
+                    <!-- /ACHIEVEMENT STATUS LIST --> --}}
                 </div>
                 <!-- /WIDGET BOX -->
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX CONTROLS -->
                     <div class="widget-box-controls">
@@ -375,8 +380,8 @@
                                         <!-- USER AVATAR CONTENT -->
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                            </div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -790,15 +795,15 @@
                     </div>
                     <!-- WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
 
-                <!-- BANNER PROMO -->
+                {{-- <!-- BANNER PROMO -->
                 <a class="banner-promo" href="https://themeforest.net/user/odin_design" target="_blank">
                     <img src="/assets/vikinger/img/banner/banner-promo.jpg" alt="banner-promo">
                 </a>
-                <!-- /BANNER PROMO -->
+                <!-- /BANNER PROMO --> --}}
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -990,7 +995,7 @@
                     <a class="widget-box-button button small white" href="quests.html">See all Quests!</a>
                     <!-- /WIDGET BOX BUTTON -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
             </div>
             <!-- /GRID COLUMN -->
 
@@ -1381,7 +1386,7 @@
                 </div>
                 <!-- /STATS BOX SLIDER -->
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX CONTROLS -->
                     <div class="widget-box-controls">
@@ -1583,9 +1588,9 @@
                     </div>
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box no-padding">
                     <!-- WIDGET BOX CONTROLS -->
                     <div class="widget-box-controls">
@@ -2082,7 +2087,7 @@
                     </div>
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
 
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
@@ -2113,13 +2118,15 @@
                     <!-- /WIDGET BOX SETTINGS -->
 
                     <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Friends Activity</p>
+                    <p class="widget-box-title">Your Refferals</p>
                     <!-- /WIDGET BOX TITLE -->
 
                     <!-- WIDGET BOX CONTENT -->
                     <div class="widget-box-content">
                         <!-- USER STATUS LIST -->
                         <div class="user-status-list">
+
+
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -2129,8 +2136,8 @@
                                         <!-- USER AVATAR CONTENT -->
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg">
+                                            </div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -2151,38 +2158,14 @@
                                         </div>
                                         <!-- /USER AVATAR PROGRESS BORDER -->
 
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
-
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">12</p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
                                     </div>
                                     <!-- /USER AVATAR -->
                                 </a>
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Neko
-                                        Bebop</a> commented on Destroy Dex's <a class="highlighted"
-                                        href="profile-timeline.html">photo</a></p>
+                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Ankur
+                                        Gupta</a> joined using your Refferal</p>
                                 <!-- /USER STATUS TITLE -->
 
                                 <!-- USER STATUS TIMESTAMP -->
@@ -2191,289 +2174,6 @@
                             </div>
                             <!-- /USER STATUS -->
 
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/03.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
-
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">16</p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Nick
-                                        Grissom</a> liked Marina Valentine's <a class="highlighted"
-                                        href="profile-timeline.html">status update</a></p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TIMESTAMP -->
-                                <p class="user-status-timestamp">12 minutes ago</p>
-                                <!-- /USER STATUS TIMESTAMP -->
-                            </div>
-                            <!-- /USER STATUS -->
-
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/10.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
-
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">5</p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">The
-                                        Green Goo</a> liked Nick Grissom's <a class="highlighted"
-                                        href="profile-timeline.html">video</a></p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TIMESTAMP -->
-                                <p class="user-status-timestamp">17 minutes ago</p>
-                                <!-- /USER STATUS TIMESTAMP -->
-                            </div>
-                            <!-- /USER STATUS -->
-
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/03.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
-
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">16</p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Nick
-                                        Grissom</a> changed his <a class="highlighted"
-                                        href="profile-timeline.html">profile picture</a></p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TIMESTAMP -->
-                                <p class="user-status-timestamp">33 minutes ago</p>
-                                <!-- /USER STATUS TIMESTAMP -->
-                            </div>
-                            <!-- /USER STATUS -->
-
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/02.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
-
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">19</p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Destroy
-                                        Dex</a> commented on Rosie Sakura's <a class="highlighted"
-                                        href="profile-timeline.html">profile</a></p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TIMESTAMP -->
-                                <p class="user-status-timestamp">41 minutes ago</p>
-                                <!-- /USER STATUS TIMESTAMP -->
-                            </div>
-                            <!-- /USER STATUS -->
                         </div>
                         <!-- /USER STATUS LIST -->
                     </div>
@@ -2481,7 +2181,7 @@
                 </div>
                 <!-- /WIDGET BOX -->
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -2757,7 +2457,7 @@
                     </div>
                     <!-- WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
             </div>
             <!-- /GRID COLUMN -->
         </div>
