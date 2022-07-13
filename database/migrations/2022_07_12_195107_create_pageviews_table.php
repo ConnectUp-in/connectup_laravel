@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('pageviews', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->nullable();
+            $table->string('page')->nullable();
+            $table->string('ip_address')->nullable();
+            $table->string('user_agent')->nullable();
             $table->timestamps();
         });
     }
