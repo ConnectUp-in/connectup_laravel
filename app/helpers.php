@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Import DOMDocument class
 // use DOMDocument;
-
+use App\Models\PageView;
 
 function makeHyperText($text){
     return preg_replace('!(https://[a-z0-9_./?=&-]+)!i', '<a href="$1">$1</a> ', $text." ");
@@ -81,4 +81,15 @@ function getYoutubeVideoId($url){
         return $path[count($path) - 1];
     }
     return false;
+}
+
+function page($page){
+    $p = new PageView();
+    if(Auth::check()){
+        $p->user_id = Auth::user()->id;
+    }
+    $p->page = $page;
+    $p->ip_address = request()->ip();
+    $p->user_agent = request()->header('User-Agent');
+    $p->save();
 }
