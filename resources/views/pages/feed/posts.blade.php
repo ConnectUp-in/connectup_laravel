@@ -1,4 +1,568 @@
-<!-- WIDGET BOX -->
+@php
+function getYoutubeVideoId($url)
+{
+    $url = parse_url($url);
+    if (isset($url['query'])) {
+        parse_str($url['query'], $output);
+        if (isset($output['v'])) {
+            return $output['v'];
+        }
+    }
+    if (isset($url['path'])) {
+        $path = explode('/', $url['path']);
+        return $path[count($path) - 1];
+    }
+    return false;
+}
+@endphp
+
+
+
+@forelse ($posts as $post)
+    <!-- WIDGET BOX -->
+    <div class="widget-box no-padding">
+        <!-- WIDGET BOX SETTINGS -->
+        <div class="widget-box-settings">
+            <!-- POST SETTINGS WRAP -->
+            <div class="post-settings-wrap">
+                <!-- POST SETTINGS -->
+                <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                    <!-- POST SETTINGS ICON -->
+                    <svg class="post-settings-icon icon-more-dots">
+                        <use xlink:href="#svg-more-dots"></use>
+                    </svg>
+                    <!-- /POST SETTINGS ICON -->
+                </div>
+                <!-- /POST SETTINGS -->
+
+                <!-- SIMPLE DROPDOWN -->
+                <div class="simple-dropdown widget-box-post-settings-dropdown">
+                    <!-- SIMPLE DROPDOWN LINK -->
+                    <p class="simple-dropdown-link">View Post</p>
+                    <!-- /SIMPLE DROPDOWN LINK -->
+                </div>
+                <!-- /SIMPLE DROPDOWN -->
+            </div>
+            <!-- /POST SETTINGS WRAP -->
+        </div>
+        <!-- /WIDGET BOX SETTINGS -->
+
+        <!-- WIDGET BOX STATUS -->
+        <div class="widget-box-status">
+            <!-- WIDGET BOX STATUS CONTENT -->
+            <div class="widget-box-status-content">
+                <!-- USER STATUS -->
+                <div class="user-status">
+                    <!-- USER STATUS AVATAR -->
+                    <a class="user-status-avatar" href="profile-timeline.html">
+                        <!-- USER AVATAR -->
+                        <div class="user-avatar small no-outline">
+                            <!-- USER AVATAR CONTENT -->
+                            <div class="user-avatar-content">
+                                <!-- HEXAGON -->
+                                <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                <!-- /HEXAGON -->
+                            </div>
+                            <!-- /USER AVATAR CONTENT -->
+
+                            <!-- USER AVATAR PROGRESS -->
+                            <div class="user-avatar-progress">
+                                <!-- HEXAGON -->
+                                <div class="hexagon-progress-40-44"></div>
+                                <!-- /HEXAGON -->
+                            </div>
+                            <!-- /USER AVATAR PROGRESS -->
+
+                            <!-- USER AVATAR PROGRESS BORDER -->
+                            <div class="user-avatar-progress-border">
+                                <!-- HEXAGON -->
+                                <div class="hexagon-border-40-44"></div>
+                                <!-- /HEXAGON -->
+                            </div>
+                            <!-- /USER AVATAR PROGRESS BORDER -->
+
+                            <!-- USER AVATAR BADGE -->
+                            <div class="user-avatar-badge">
+                                <!-- USER AVATAR BADGE BORDER -->
+                                <div class="user-avatar-badge-border">
+                                    <!-- HEXAGON -->
+                                    <div class="hexagon-22-24"></div>
+                                    <!-- /HEXAGON -->
+                                </div>
+                                <!-- /USER AVATAR BADGE BORDER -->
+
+                                <!-- USER AVATAR BADGE CONTENT -->
+                                <div class="user-avatar-badge-content">
+                                    <!-- HEXAGON -->
+                                    <div class="hexagon-dark-16-18"></div>
+                                    <!-- /HEXAGON -->
+                                </div>
+                                <!-- /USER AVATAR BADGE CONTENT -->
+
+                                <!-- USER AVATAR BADGE TEXT -->
+                                <p class="user-avatar-badge-text">12</p>
+                                <!-- /USER AVATAR BADGE TEXT -->
+                            </div>
+                            <!-- /USER AVATAR BADGE -->
+                        </div>
+                        <!-- /USER AVATAR -->
+                    </a>
+                    <!-- /USER STATUS AVATAR -->
+
+                    <!-- USER STATUS TITLE -->
+                    <p class="user-status-title medium"><a class="bold"
+                            href="profile-timeline.html">{{ $post->user->name }}</a> shared a <span
+                            class="bold">post</span></p>
+                    <!-- /USER STATUS TITLE -->
+
+                    <!-- USER STATUS TEXT -->
+                    <p class="user-status-text small">
+                        {{ $post->created_at->diffForHumans() }}
+                    </p>
+                    <!-- /USER STATUS TEXT -->
+                </div>
+                <!-- /USER STATUS -->
+
+                <!-- WIDGET BOX STATUS TEXT -->
+                <p class="widget-box-status-text">{!! $post->caption !!}</p>
+                <!-- /WIDGET BOX STATUS TEXT -->
+            </div>
+            <!-- /WIDGET BOX STATUS CONTENT -->
+
+
+            @if (isset($post->ytlink))
+                <!-- IFRAME WRAP -->
+                <div class="iframe-wrap">
+                    <iframe src="https://www.youtube.com/embed/{{ getYoutubeVideoId($post->ytlink) }}"
+                        allowfullscreen></iframe>
+                </div>
+                <!-- /IFRAME WRAP -->
+            @endif
+
+            <!-- WIDGET BOX STATUS CONTENT -->
+            <div class="widget-box-status-content">
+                <!-- TAG LIST -->
+                <div class="tag-list">
+
+                    @forelse ($post->tags as $tag)
+                        <!-- TAG ITEM -->
+                        <a class="tag-item secondary" href="newsfeed.html">{{ $tag }}</a>
+                        <!-- /TAG ITEM -->
+                    @empty
+                    @endforelse
+
+
+                </div>
+                <!-- /TAG LIST -->
+
+                {{-- <!-- CONTENT ACTIONS -->
+                <div class="content-actions">
+                    <!-- CONTENT ACTION -->
+                    <div class="content-action">
+                        <!-- META LINE -->
+                        <div class="meta-line">
+                            <!-- META LINE LIST -->
+                            <div class="meta-line-list reaction-item-list">
+                                <!-- REACTION ITEM -->
+                                <div class="reaction-item">
+                                    <!-- REACTION IMAGE -->
+                                    <img class="reaction-image reaction-item-dropdown-trigger"
+                                        src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    <!-- /REACTION IMAGE -->
+
+                                    <!-- SIMPLE DROPDOWN -->
+                                    <div class="simple-dropdown padded reaction-item-dropdown">
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text"><img class="reaction"
+                                                src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                                class="bold">Love</span>
+                                        </p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Matt Parker</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Destroy Dex</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">The Green Goo</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+                                    </div>
+                                    <!-- /SIMPLE DROPDOWN -->
+                                </div>
+                                <!-- /REACTION ITEM -->
+
+                                <!-- REACTION ITEM -->
+                                <div class="reaction-item">
+                                    <!-- REACTION IMAGE -->
+                                    <img class="reaction-image reaction-item-dropdown-trigger"
+                                        src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                    <!-- /REACTION IMAGE -->
+
+                                    <!-- SIMPLE DROPDOWN -->
+                                    <div class="simple-dropdown padded reaction-item-dropdown">
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text"><img class="reaction"
+                                                src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                            <span class="bold">Happy</span>
+                                        </p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Sandra Strange</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Jane Rodgers</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+                                    </div>
+                                    <!-- /SIMPLE DROPDOWN -->
+                                </div>
+                                <!-- /REACTION ITEM -->
+
+                                <!-- REACTION ITEM -->
+                                <div class="reaction-item">
+                                    <!-- REACTION IMAGE -->
+                                    <img class="reaction-image reaction-item-dropdown-trigger"
+                                        src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    <!-- /REACTION IMAGE -->
+
+                                    <!-- SIMPLE DROPDOWN -->
+                                    <div class="simple-dropdown padded reaction-item-dropdown">
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text"><img class="reaction"
+                                                src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                                class="bold">Like</span>
+                                        </p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Neko Bebop</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Nick Grissom</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Sarah Diamond</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Jett Spiegel</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text">Marcus Jhonson</p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                                        <!-- SIMPLE DROPDOWN TEXT -->
+                                        <p class="simple-dropdown-text"><span class="bold">and 6
+                                                more...</span></p>
+                                        <!-- /SIMPLE DROPDOWN TEXT -->
+                                    </div>
+                                    <!-- /SIMPLE DROPDOWN -->
+                                </div>
+                                <!-- /REACTION ITEM -->
+                            </div>
+                            <!-- /META LINE LIST -->
+
+                            <!-- META LINE TEXT -->
+                            <p class="meta-line-text">{{ count($post->likes) }}</p>
+                            <!-- /META LINE TEXT -->
+                        </div>
+                        <!-- /META LINE -->
+
+                        <!-- META LINE -->
+                        <div class="meta-line">
+                            <!-- META LINE LIST -->
+                            <div class="meta-line-list user-avatar-list">
+                                <!-- USER AVATAR -->
+                                <div class="user-avatar micro no-stats">
+                                    <!-- USER AVATAR BORDER -->
+                                    <div class="user-avatar-border">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-22-24"></div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR BORDER -->
+
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </div>
+                                <!-- /USER AVATAR -->
+
+                                <!-- USER AVATAR -->
+                                <div class="user-avatar micro no-stats">
+                                    <!-- USER AVATAR BORDER -->
+                                    <div class="user-avatar-border">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-22-24"></div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR BORDER -->
+
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20"
+                                            data-src="/assets/vikinger/img/avatar/13.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </div>
+                                <!-- /USER AVATAR -->
+
+                                <!-- USER AVATAR -->
+                                <div class="user-avatar micro no-stats">
+                                    <!-- USER AVATAR BORDER -->
+                                    <div class="user-avatar-border">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-22-24"></div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR BORDER -->
+
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20"
+                                            data-src="/assets/vikinger/img/avatar/22.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </div>
+                                <!-- /USER AVATAR -->
+
+                                <!-- USER AVATAR -->
+                                <div class="user-avatar micro no-stats">
+                                    <!-- USER AVATAR BORDER -->
+                                    <div class="user-avatar-border">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-22-24"></div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR BORDER -->
+
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20"
+                                            data-src="/assets/vikinger/img/avatar/10.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </div>
+                                <!-- /USER AVATAR -->
+
+                                <!-- USER AVATAR -->
+                                <div class="user-avatar micro no-stats">
+                                    <!-- USER AVATAR BORDER -->
+                                    <div class="user-avatar-border">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-22-24"></div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR BORDER -->
+
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20"
+                                            data-src="/assets/vikinger/img/avatar/08.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </div>
+                                <!-- /USER AVATAR -->
+                            </div>
+                            <!-- /META LINE LIST -->
+
+                            <!-- META LINE TEXT -->
+                            <p class="meta-line-text">19 Participants</p>
+                            <!-- /META LINE TEXT -->
+                        </div>
+                        <!-- /META LINE -->
+                    </div>
+                    <!-- /CONTENT ACTION -->
+
+                    <!-- CONTENT ACTION -->
+                    <div class="content-action">
+                        <!-- META LINE -->
+                        <div class="meta-line">
+                            <!-- META LINE LINK -->
+                            <p class="meta-line-link">2 Comments</p>
+                            <!-- /META LINE LINK -->
+                        </div>
+                        <!-- /META LINE -->
+
+                        <!-- META LINE -->
+                        <div class="meta-line">
+                            <!-- META LINE TEXT -->
+                            <p class="meta-line-text">{{ count($post->shares) }} Shares</p>
+                            <!-- /META LINE TEXT -->
+                        </div>
+                        <!-- /META LINE -->
+                    </div>
+                    <!-- /CONTENT ACTION -->
+                </div>
+                <!-- /CONTENT ACTIONS --> --}}
+            </div>
+            <!-- /WIDGET BOX STATUS CONTENT -->
+        </div>
+        <!-- /WIDGET BOX STATUS -->
+
+        <!-- POST OPTIONS -->
+        <div class="post-options">
+            <!-- POST OPTION WRAP -->
+            <div class="post-option-wrap">
+                <!-- POST OPTION -->
+                <div class="post-option reaction-options-dropdown-trigger">
+                    <!-- POST OPTION ICON -->
+                    <svg class="post-option-icon icon-thumbs-up">
+                        <use xlink:href="#svg-thumbs-up"></use>
+                    </svg>
+                    <!-- /POST OPTION ICON -->
+
+                    <!-- POST OPTION TEXT -->
+                    <p class="post-option-text">React!</p>
+                    <!-- /POST OPTION TEXT -->
+                </div>
+                <!-- /POST OPTION -->
+
+                <!-- REACTION OPTIONS -->
+                <div class="reaction-options reaction-options-dropdown"
+                    style="height: auto;color:white;padding:5px initial">
+                    Feature on way..
+                </div>
+                {{-- <!-- REACTION OPTIONS -->
+                    <div class="reaction-options reaction-options-dropdown">
+
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Like">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                            alt="reaction-like">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Love">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                            alt="reaction-love">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Dislike">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                            alt="reaction-dislike">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Happy">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                            alt="reaction-happy">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Funny">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                            alt="reaction-funny">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Wow">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                            alt="reaction-wow">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Angry">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                            alt="reaction-angry">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+
+                    <!-- REACTION OPTION -->
+                    <div class="reaction-option text-tooltip-tft" data-title="Sad">
+                        <!-- REACTION OPTION IMAGE -->
+                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                            alt="reaction-sad">
+                        <!-- /REACTION OPTION IMAGE -->
+                    </div>
+                    <!-- /REACTION OPTION -->
+                </div> --}}
+                <!-- /REACTION OPTIONS -->
+            </div>
+            <!-- /POST OPTION WRAP -->
+
+            <!-- POST OPTION -->
+            <div class="post-option reaction-options-dropdown-trigger">
+                <!-- POST OPTION ICON -->
+                <svg class="post-option-icon icon-comment">
+                    <use xlink:href="#svg-comment"></use>
+                </svg>
+                <!-- /POST OPTION ICON -->
+
+                <!-- POST OPTION TEXT -->
+                <p class="post-option-text">Comment</p>
+                <!-- /POST OPTION TEXT -->
+            </div>
+            <!-- /POST OPTION -->
+
+            <!-- POST OPTION -->
+            <div class="post-option">
+                <!-- POST OPTION ICON -->
+                <svg class="post-option-icon icon-share">
+                    <use xlink:href="#svg-share"></use>
+                </svg>
+                <!-- /POST OPTION ICON -->
+
+                <!-- POST OPTION TEXT -->
+                <p class="post-option-text">Share</p>
+                <!-- /POST OPTION TEXT -->
+            </div>
+            <!-- /POST OPTION -->
+        </div>
+        <!-- /POST OPTIONS -->
+    </div>
+    <!-- /WIDGET BOX -->
+@empty
+@endforelse
+
+{{-- <!-- WIDGET BOX -->
 <div class="widget-box no-padding">
     <!-- WIDGET BOX SETTINGS -->
     <div class="widget-box-settings">
@@ -2485,7 +3049,8 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Nick Grissom</a>
+                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Nick
+                        Grissom</a>
                     shared a <span class="bold">post</span></p>
                 <!-- /USER STATUS TITLE -->
 
@@ -2586,7 +3151,8 @@
                         <!-- VIDEO STATUS -->
                         <a class="video-status" href="https://www.twitch.tv/" target="_blank">
                             <!-- VIDEO STATUS IMAGE -->
-                            <img class="video-status-image" src="/assets/vikinger/img/cover/51.jpg" alt="cover-51">
+                            <img class="video-status-image" src="/assets/vikinger/img/cover/51.jpg"
+                                alt="cover-51">
                             <!-- /VIDEO STATUS IMAGE -->
 
                             <!-- VIDEO STATUS INFO -->
@@ -2666,8 +3232,8 @@
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy"> <span
-                                            class="bold">Happy</span>
+                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                        <span class="bold">Happy</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
 
@@ -5146,4 +5712,4 @@
     </div>
     <!-- /POST OPTIONS -->
 </div>
-<!-- /WIDGET BOX -->
+<!-- /WIDGET BOX --> --}}

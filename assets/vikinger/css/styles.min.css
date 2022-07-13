@@ -2008,6 +2008,7 @@ figure > img {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-top: -12px;
+    margin-bottom: 1em;
 }
 .tag-list .tag-item {
     margin: 12px 12px 0 0;
