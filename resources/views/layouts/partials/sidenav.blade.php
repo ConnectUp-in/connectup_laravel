@@ -4,12 +4,12 @@ $menuitems = [
     ['title' => 'Feed', 'url' => 'feed', 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
     ['title' => 'User Account', 'url' => 'account', 'svg' => 'profile', 'icon' => 'icon-members'],
     ['title' => 'Members | Coming soon', 'url' => 'groups', 'svg' => 'group', 'icon' => 'icon-group'],
-    ['title' => 'Startups', 'url' => 'quests', 'svg' => 'quests', 'icon' => 'icon-quests'],
+    ['title' => 'StartUps', 'url' => 'quests', 'svg' => 'quests', 'icon' => 'icon-quests'],
     // ['title' => 'Badges', 'url' => 'badges', 'svg' => 'badges', 'icon' => 'icon-badges'],
     // ['title' => 'Streams', 'url' => 'streams', 'svg' => 'streams', 'icon' => 'icon-streams'],
     ['title' => 'Events - Launching Soon', 'url' => 'events', 'svg' => 'events', 'icon' => 'icon-events'],
     ['title' => 'Forums - Coming Soon', 'url' => 'forums', 'svg' => 'forums', 'icon' => 'icon-forums'],
-    ['title' => 'Opportunity Marketplace', 'url' => 'marketplace', 'svg' => 'store', 'icon' => 'icon-marketplace'],
+    ['title' => 'Join StartUp', 'url' => 'marketplace', 'svg' => 'store', 'icon' => 'icon-marketplace'],
 ];
 
 // Get url from current page
@@ -55,146 +55,6 @@ $current_url = end($current_url);
 
     <!-- MENU -->
     <ul class="menu small">
-        {{-- <!-- MENU ITEM -->
-        <li class="menu-item active">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="newsfeed.html" data-title="Newsfeed">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-newsfeed">
-                    <use xlink:href="#svg-newsfeed"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="overview.html" data-title="Overview">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-overview">
-                    <use xlink:href="#svg-overview"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="groups.html" data-title="Groups">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-group">
-                    <use xlink:href="#svg-group"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="members.html" data-title="Members">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-members">
-                    <use xlink:href="#svg-members"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="badges.html" data-title="Badges">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-badges">
-                    <use xlink:href="#svg-badges"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="quests.html" data-title="Quests">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-quests">
-                    <use xlink:href="#svg-quests"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="streams.html" data-title="Streams">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-streams">
-                    <use xlink:href="#svg-streams"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="events.html" data-title="Events">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-events">
-                    <use xlink:href="#svg-events"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="forums.html" data-title="Forums">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-forums">
-                    <use xlink:href="#svg-forums"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM -->
-
-        <!-- MENU ITEM -->
-        <li class="menu-item">
-            <!-- MENU ITEM LINK -->
-            <a class="menu-item-link text-tooltip-tfr" href="marketplace.html" data-title="Marketplace">
-                <!-- MENU ITEM LINK ICON -->
-                <svg class="menu-item-link-icon icon-marketplace">
-                    <use xlink:href="#svg-marketplace"></use>
-                </svg>
-                <!-- /MENU ITEM LINK ICON -->
-            </a>
-            <!-- /MENU ITEM LINK -->
-        </li>
-        <!-- /MENU ITEM --> --}}
-
         @foreach ($menuitems as $menu)
             <li class="menu-item 
             @if ($menu['url'] == $current_url) active @endif">
