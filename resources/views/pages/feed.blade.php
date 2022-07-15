@@ -53,7 +53,7 @@
                             <!-- /PROGRESS ARC SUMMARY TITLE -->
 
                             <!-- PROGRESS ARC SUMMARY TITLE -->
-                            <p class="progress-arc-summary-subtitle">@founder</p>
+                            <p class="progress-arc-summary-subtitle">{{ '@' . Auth::user()->username }}</p>
                             <!-- /PROGRESS ARC SUMMARY TITLE -->
 
                             {{-- <!-- PROGRESS ARC SUMMARY TITLE -->
