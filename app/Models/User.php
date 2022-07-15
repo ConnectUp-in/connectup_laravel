@@ -24,6 +24,8 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
+        return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=7F9CF5&background=EBF4FF';
+     * 
      * @var string[]
      */
     protected $fillable = [
@@ -61,7 +63,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
+        // 'profile_photo_url',
     ];
 
 
@@ -76,6 +78,17 @@ class User extends Authenticatable
                 $user->id = (string) Str::uuid();
             }
         });
+    }
+
+    // Get the user's profile photo URL attribute.
+    public function getProfilePhotoPathAttribute($image)
+    {
+        if(!$image){
+            return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+        }
+
+        return $image;
+
     }
 
 }
