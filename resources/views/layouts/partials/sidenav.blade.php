@@ -1,5 +1,16 @@
 @php
-$menuitems = [['title' => 'Newsfeed', 'url' => 'feed', 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'], ['title' => 'Overview', 'url' => 'overview', 'svg' => 'overview', 'icon' => 'icon-overview'], ['title' => 'Groups', 'url' => 'groups', 'svg' => 'group', 'icon' => 'icon-group'], ['title' => 'Members', 'url' => 'members', 'svg' => 'members', 'icon' => 'icon-members'], ['title' => 'Badges', 'url' => 'badges', 'svg' => 'badges', 'icon' => 'icon-badges'], ['title' => 'Quests', 'url' => 'quests', 'svg' => 'quests', 'icon' => 'icon-quests'], ['title' => 'Streams', 'url' => 'streams', 'svg' => 'streams', 'icon' => 'icon-streams'], ['title' => 'Events', 'url' => 'events', 'svg' => 'events', 'icon' => 'icon-events'], ['title' => 'Forums', 'url' => 'forums', 'svg' => 'forums', 'icon' => 'icon-forums'], ['title' => 'Marketplace', 'url' => 'marketplace', 'svg' => 'marketplace', 'icon' => 'icon-marketplace']];
+$menuitems = [
+    ['title' => 'Dashboard | Coming Soon', 'url' => 'overview', 'svg' => 'overview', 'icon' => 'icon-overview'],
+    ['title' => 'Feed', 'url' => 'feed', 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
+    ['title' => 'User Account', 'url' => 'account', 'svg' => 'profile', 'icon' => 'icon-members'],
+    ['title' => 'Members | Coming soon', 'url' => 'groups', 'svg' => 'group', 'icon' => 'icon-group'],
+    ['title' => 'Startups', 'url' => 'quests', 'svg' => 'quests', 'icon' => 'icon-quests'],
+    // ['title' => 'Badges', 'url' => 'badges', 'svg' => 'badges', 'icon' => 'icon-badges'],
+    // ['title' => 'Streams', 'url' => 'streams', 'svg' => 'streams', 'icon' => 'icon-streams'],
+    ['title' => 'Events - Launching Soon', 'url' => 'events', 'svg' => 'events', 'icon' => 'icon-events'],
+    ['title' => 'Forums - Coming Soon', 'url' => 'forums', 'svg' => 'forums', 'icon' => 'icon-forums'],
+    ['title' => 'Opportunity Marketplace', 'url' => 'marketplace', 'svg' => 'store', 'icon' => 'icon-marketplace'],
+];
 
 // Get url from current page
 $current_url = Request::url();
