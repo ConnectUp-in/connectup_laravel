@@ -40,7 +40,7 @@
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
-                                <div class="hexagon-image-30-32" data-src="{{ $post->user->profile_photo_url }}">
+                                <div class="hexagon-image-30-32" data-src="{{ $post->user->profile_photo_path }}">
                                 </div>
                                 <!-- /HEXAGON -->
                                 {{-- <img src="{{ $post->user->profile_photo_url }}" alt=""> --}}
@@ -94,7 +94,8 @@
                     <!-- USER STATUS TITLE -->
                     <p class="user-status-title medium"><a class="bold"
                             href="{{ route('user', $post->user->username) }}">{{ $post->user->name }}</a> shared a
-                        <span class="bold">post</span></p>
+                        <span class="bold">post</span>
+                    </p>
                     <!-- /USER STATUS TITLE -->
 
                     <!-- USER STATUS TEXT -->

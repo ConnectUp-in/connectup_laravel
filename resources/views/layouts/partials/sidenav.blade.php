@@ -24,35 +24,37 @@ $current_url = end($current_url);
 
 <!-- NAVIGATION WIDGET -->
 <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
-    <!-- USER AVATAR -->
-    <a class="user-avatar small no-outline online" href="profile-timeline.html">
-        <!-- USER AVATAR CONTENT -->
-        <div class="user-avatar-content">
-            <!-- HEXAGON -->
-            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/01.jpg"></div>
-            <!-- /HEXAGON -->
-        </div>
-        <!-- /USER AVATAR CONTENT -->
 
-        <!-- USER AVATAR PROGRESS -->
-        <div class="user-avatar-progress">
-            <!-- HEXAGON -->
-            <div class="hexagon-progress-40-44"></div>
-            <!-- /HEXAGON -->
-        </div>
-        <!-- /USER AVATAR PROGRESS -->
+    @if (Auth::check())
+        <!-- USER AVATAR -->
+        <a class="user-avatar small no-outline online" href="{{ route('user', Auth::user()->username) }}">
+            <!-- USER AVATAR CONTENT -->
+            <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-30-32" data-src="{{ Auth::user()->profile_photo_path }}"></div>
+                <!-- /HEXAGON -->
+            </div>
+            <!-- /USER AVATAR CONTENT -->
 
-        <!-- USER AVATAR PROGRESS BORDER -->
-        <div class="user-avatar-progress-border">
-            <!-- HEXAGON -->
-            <div class="hexagon-border-40-44"></div>
-            <!-- /HEXAGON -->
-        </div>
-        <!-- /USER AVATAR PROGRESS BORDER -->
+            <!-- USER AVATAR PROGRESS -->
+            <div class="user-avatar-progress">
+                <!-- HEXAGON -->
+                <div class="hexagon-progress-40-44"></div>
+                <!-- /HEXAGON -->
+            </div>
+            <!-- /USER AVATAR PROGRESS -->
 
-    </a>
-    <!-- /USER AVATAR -->
+            <!-- USER AVATAR PROGRESS BORDER -->
+            <div class="user-avatar-progress-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-border-40-44"></div>
+                <!-- /HEXAGON -->
+            </div>
+            <!-- /USER AVATAR PROGRESS BORDER -->
 
+        </a>
+        <!-- /USER AVATAR -->
+    @endif
     <!-- MENU -->
     <ul class="menu small">
         @foreach ($menuitems as $menu)
