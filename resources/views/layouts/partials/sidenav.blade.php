@@ -442,29 +442,6 @@ $current_url = end($current_url);
                 </div>
                 <!-- /USER AVATAR PROGRESS BORDER -->
 
-                <!-- USER AVATAR BADGE -->
-                <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-dark-16-18"></div>
-                        <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">24</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                </div>
-                <!-- /USER AVATAR BADGE -->
             </a>
             <!-- /USER AVATAR -->
 
@@ -485,12 +462,12 @@ $current_url = end($current_url);
     <!-- /NAVIGATION WIDGET INFO WRAP -->
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->
-    <p class="navigation-widget-section-title">Sections</p>
+    <p class="navigation-widget-section-title">Menu</p>
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
     <!-- MENU -->
     <ul class="menu">
-        <!-- MENU ITEM -->
+        {{-- <!-- MENU ITEM -->
         <li class="menu-item active">
             <!-- MENU ITEM LINK -->
             <a class="menu-item-link" href="newsfeed.html">
@@ -638,11 +615,26 @@ $current_url = end($current_url);
             </a>
             <!-- /MENU ITEM LINK -->
         </li>
-        <!-- /MENU ITEM -->
+        <!-- /MENU ITEM --> --}}
+
+        @foreach ($menuitems as $menu)
+            <li class="menu-item @if ($menu['url'] == $current_url) active @endif">
+                <!-- MENU ITEM LINK -->
+                <a class="menu-item-link" href="{{ $menu['url'] }}">
+                    <!-- MENU ITEM LINK ICON -->
+                    <svg class="menu-item-link-icon icon-{{ $menu['svg'] }}">
+                        <use xlink:href="#svg-{{ $menu['svg'] }}"></use>
+                    </svg>
+                    <!-- /MENU ITEM LINK ICON -->
+                    {{ $menu['title'] }}
+                </a>
+                <!-- /MENU ITEM LINK -->
+            </li>
+        @endforeach
     </ul>
     <!-- /MENU -->
 
-    <!-- NAVIGATION WIDGET SECTION TITLE -->
+    {{-- <!-- NAVIGATION WIDGET SECTION TITLE -->
     <p class="navigation-widget-section-title">My Profile</p>
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
@@ -745,6 +737,6 @@ $current_url = end($current_url);
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
     <a class="navigation-widget-section-link" href="#">Privacy Policy</a>
-    <!-- /NAVIGATION WIDGET SECTION LINK -->
+    <!-- /NAVIGATION WIDGET SECTION LINK --> --}}
 </nav>
 <!-- /NAVIGATION WIDGET -->
