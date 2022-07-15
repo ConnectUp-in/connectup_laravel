@@ -1175,7 +1175,7 @@
                 </div>
                 <!-- /SIMPLE TAB ITEMS --> --}}
 
-                @include('pages.feed.posts')
+                @include('pages.components.posts')
 
                 <!-- LOADER BARS -->
                 <div class="loader-bars">
