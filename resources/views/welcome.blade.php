@@ -63,8 +63,13 @@
             </ul>
             <!-- /MENU -->
 
+
             <!-- BUTTON -->
-            <a class="button small primary" href="/app">Join Now</a>
+            @if (Auth::check())
+                <a href="/feed" class="button small primary">Go to Feed</a>
+            @else
+                <a class="button small primary" href="/login">Join Now</a>
+            @endif
             <!-- /BUTTON -->
         </nav>
         <!-- /NAVIGATION -->
