@@ -35,8 +35,8 @@ class GoogleController extends Controller
        
             if($finduser){
        
-                Auth::login($finduser);
-      
+                Auth::login($finduser, true);
+                // return Auth::user()->name;
                 return redirect()->intended('feed');
        
             }else{
@@ -44,12 +44,13 @@ class GoogleController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'password' => encrypt('123456dummy')
+                    'password' => encrypt('123456dummy'),
+                    'username' => strtolower(str_replace(' ', '', $user->name))
                 ]);
       
-                Auth::login($newUser);
+                Auth::login($newUser, true);
       
-                return redirect()->intended('dash');
+                return redirect()->intended('feed');
             }
       
         } catch (Exception $e) {
