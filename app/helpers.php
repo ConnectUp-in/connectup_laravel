@@ -83,13 +83,29 @@ function getYoutubeVideoId($url){
     return false;
 }
 
-function page($page){
+function page($page, $profile_id=null){
     $p = new PageView();
     if(Auth::check()){
         $p->user_id = Auth::user()->id;
     }
     $p->page = $page;
     $p->ip_address = request()->ip();
+    $p->profile_id = $profile_id;
     $p->user_agent = request()->header('User-Agent');
     $p->save();
+}
+
+function profileview($profile_id){
+    $count = PageView::where('profile_id', $profile_id)->count();
+    return $count;
+}
+
+function changeIntoKMG($number){
+    if($number > 100000){
+        return round($number/1000000, 1).'M';
+    }elseif($number > 100){
+        return round($number/1000, 1).'K';
+    }else{
+        return $number;
+    }
 }
