@@ -40,7 +40,7 @@ Route::get('logout', function () {
 
 Route::get('feed', [AppController::class, 'feed'])->name('feed');
 Route::get('post/{id}', [AppController::class, 'post'])->name('post');
-Route::get('user/{id}', [AppController::class, 'user'])->name('user');
+Route::get('user/{username}', [ProfileController::class, 'user'])->name('user');
 
 Route::get('title', [Controller::class, 'title']);
 
