@@ -515,53 +515,19 @@
                                 <!-- /INFORMATION LINE -->
                             @endif
 
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">City</p>
-                                <!-- /INFORMATION LINE TITLE -->
+                            @if (isset($user->website))
+                                <!-- INFORMATION LINE -->
+                                <div class="information-line">
+                                    <!-- INFORMATION LINE TITLE -->
+                                    <p class="information-line-title">Web</p>
+                                    <!-- /INFORMATION LINE TITLE -->
 
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">Los Angeles, California</p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
-
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Country</p>
-                                <!-- /INFORMATION LINE TITLE -->
-
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">United States</p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
-
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Age</p>
-                                <!-- /INFORMATION LINE TITLE -->
-
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">32 Years</p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
-
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Web</p>
-                                <!-- /INFORMATION LINE TITLE -->
-
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text"><a href="#">www.gamehuntress.com</a></p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
+                                    <!-- INFORMATION LINE TEXT -->
+                                    <p class="information-line-text"><a href="#">{{ $user->website }}</a></p>
+                                    <!-- /INFORMATION LINE TEXT -->
+                                </div>
+                                <!-- /INFORMATION LINE -->
+                            @endif
                         </div>
                         <!-- /INFORMATION LINE LIST -->
                     </div>
