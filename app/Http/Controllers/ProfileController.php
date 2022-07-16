@@ -11,6 +11,7 @@ class ProfileController extends Controller
     //
     function user($username){
         $user = User::where('username', $username)->first();
+        page('user/{username}', $user->id);
         return view('pages.profile.timeline', compact('user'));
 
     }
