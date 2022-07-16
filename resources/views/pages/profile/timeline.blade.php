@@ -7,7 +7,7 @@
         <div class="profile-header">
             <!-- PROFILE HEADER COVER -->
             <figure class="profile-header-cover liquid">
-                <img src="/assets/vikinger/img/cover/23.jpg" alt="cover-01">
+                <img src="{{ $user->cover_photo_path }}" alt="cover-01">
             </figure>
             <!-- /PROFILE HEADER COVER -->
 
@@ -247,7 +247,7 @@
                                 class="hide-text-mobile">Profile</span></a>
                     @else
                         <!-- PROFILE HEADER INFO ACTION -->
-                        <a href="#" class="profile-header-info-action button secondary"><span
+                        {{-- <a href="#" class="profile-header-info-action button secondary"><span
                                 class="hide-text-mobile">Add</span>
                             Friend +</a>
                         <!-- /PROFILE HEADER INFO ACTION -->
@@ -255,6 +255,9 @@
                         <!-- PROFILE HEADER INFO ACTION -->
                         <p class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span>
                             Message</p>
+                        <!-- /PROFILE HEADER INFO ACTION --> --}}
+                        <!-- PROFILE HEADER INFO ACTION -->
+                        <p class="profile-header-info-action button primary">Follow</p>
                         <!-- /PROFILE HEADER INFO ACTION -->
                     @endif
                 </div>
@@ -489,8 +492,7 @@
                     <!-- WIDGET BOX CONTENT -->
                     <div class="widget-box-content">
                         <!-- PARAGRAPH -->
-                        <p class="paragraph">Hi! My name is Marina but some people may know me as GameHuntress! I have a
-                            Twitch channel where I stream, play and review all the newest games.</p>
+                        <p class="paragraph">{{ $user->bio }}</p>
                         <!-- /PARAGRAPH -->
 
                         <!-- INFORMATION LINE LIST -->
@@ -498,11 +500,11 @@
                             <!-- INFORMATION LINE -->
                             <div class="information-line">
                                 <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Joined</p>
+                                <p class="information-line-title">Background</p>
                                 <!-- /INFORMATION LINE TITLE -->
 
                                 <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">March 26th, 2017</p>
+                                <p class="information-line-text">{{ $user->academic_background->display_name }}</p>
                                 <!-- /INFORMATION LINE TEXT -->
                             </div>
                             <!-- /INFORMATION LINE -->
@@ -561,7 +563,7 @@
                 </div>
                 <!-- /WIDGET BOX -->
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -1442,7 +1444,7 @@
                     </div>
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
             </div>
             <!-- /GRID COLUMN -->
 
@@ -1494,7 +1496,7 @@
 
                     <!-- WIDGET BOX STATUS -->
                     <div class="widget-box-status">
-                        <!-- TAG STICKER -->
+                        {{-- <!-- TAG STICKER -->
                         <div class="tag-sticker">
                             <!-- TAG STICKER ICON -->
                             <svg class="tag-sticker-icon primary icon-pinned">
@@ -1502,7 +1504,7 @@
                             </svg>
                             <!-- /TAG STICKER ICON -->
                         </div>
-                        <!-- /TAG STICKER -->
+                        <!-- /TAG STICKER --> --}}
 
                         <!-- WIDGET BOX STATUS CONTENT -->
                         <div class="widget-box-status-content">
@@ -5198,7 +5200,7 @@
 
             <!-- GRID COLUMN -->
             <div class="grid-column">
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box no-padding">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -5266,7 +5268,7 @@
                     </div>
                     <!-- WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
 
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
@@ -5297,7 +5299,7 @@
                     <!-- /WIDGET BOX SETTINGS -->
 
                     <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Photos <span class="highlighted">74</span></p>
+                    <p class="widget-box-title">Startups <span class="highlighted">7</span></p>
                     <!-- /WIDGET BOX TITLE -->
 
                     <!-- WIDGET BOX CONTENT -->
@@ -5438,7 +5440,7 @@
                 </div>
                 <!-- /WIDGET BOX -->
 
-                <!-- WIDGET BOX -->
+                {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -5824,7 +5826,7 @@
                     </div>
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX --> --}}
             </div>
             <!-- /GRID COLUMN -->
         </div>
