@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PostSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(AcadBackSeeder::class);
+        $this->call(InterestSeeder::class);
     }
 }
