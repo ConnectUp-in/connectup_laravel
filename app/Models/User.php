@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Country;
 use App\Models\AcademicBackground as AB;
+use App\Models\Post;
 // Import Str
 use Illuminate\Support\Str;
 
@@ -67,6 +68,7 @@ class User extends Authenticatable
      */
     protected $appends = [
         // 'profile_photo_url',
+        'postcount'
     ];
 
 
@@ -77,6 +79,11 @@ class User extends Authenticatable
         static::creating(function ($user) {
             if (! $user->id) {
                 $user->id = (string) Str::uuid();
+            }
+            if (! $user->invite_refferal) {
+                // Generate Refferal using $user->name initials + random number
+                $name_initials = substr($user->name, 0, 2);
+                $user->invite_refferal =  $name_initials.'_'.rand(1000, 9999);
             }
         });
     }
@@ -96,5 +103,9 @@ class User extends Authenticatable
 
     function getAcademicBackgroundAttribute($value){
         return AB::find($value);
+    }
+
+    public function getPostcountAttribute(){
+        return Post::where('user_id',$this->id)->count();
     }
 }
