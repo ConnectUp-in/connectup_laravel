@@ -28,7 +28,21 @@ class UserSeeder extends Seeder
                 'email' => 'harshprogrammer782@gmail.com',
                 'password' => bcrypt('password'),
                 'username' => 'founder',
+                'profile_photo_path' => 'https://avatars.githubusercontent.com/u/64343449?v=4',
+                'cover_photo_path' => 'https://lh4.googleusercontent.com/vyC6IpovxWhnAirkg-CbUisiejZzaOxnvPtU3B1mtn844oibIUuwRsLpfoiTppjPdIhIJeJCugaveXrItR3mRlI0Dpksd85e7JulZVCNggkvF_npIMP8fnnIWDMpvr0vfA=w1996',
                 'role' => 111,
+                'country'=>98,
+                'bio' => 'A guy who likes to build and learn new things. Also the one who built this platform.',
+                'academic_background' => 2,
+                'graduation_year' => 2024,
+                'socials' => [
+                    'github' => 'https://github.com/meinhoonharsh',
+                    'linkedin' => 'https://www.linkedin.com/in/meinhoonharsh',
+                    'facebook' => 'https://www.facebook.com/meinhoonharsh',
+                    'instagram' => 'https://www.instagram.com/meinhoonharsh',
+                    'twitter' => 'https://twitter.com/meinhoonharsh',
+                    'youtube' => 'https://www.youtube.com/c/harshvishwakarma7',
+                ],
             ]
     
     ];
