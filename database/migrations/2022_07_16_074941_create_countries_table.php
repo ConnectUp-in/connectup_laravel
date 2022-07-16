@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pageviews', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->nullable();
-            $table->string('page')->nullable();
-            $table->string('profile_id')->nullable();
-            $table->string('ip_address')->nullable();
-            $table->string('user_agent')->nullable();
-            $table->timestamps();
+            $table->string('name');
+        $table->string('code');
+            $table->string('phone_code');
+            $table->boolean('active')->default(true);
+            // $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pageviews');
+        Schema::dropIfExists('countries');
     }
 };
