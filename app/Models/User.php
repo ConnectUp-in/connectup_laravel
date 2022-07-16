@@ -9,7 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
+use App\Models\Country;
+use App\Models\AcademicBackground as AB;
 // Import Str
 use Illuminate\Support\Str;
 
@@ -55,6 +56,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'id' => 'string',
+        'socials' => 'array',
+        'skills' => 'array',
     ];
 
     /**
@@ -69,10 +72,8 @@ class User extends Authenticatable
 
 
     // If id is not present while creating a new user, then generate a random id.
-    public static function boot()
-    {
+    public static function boot(){
         parent::boot();
-
         static::creating(function ($user) {
             if (! $user->id) {
                 $user->id = (string) Str::uuid();
@@ -81,14 +82,19 @@ class User extends Authenticatable
     }
 
     // Get the user's profile photo URL attribute.
-    public function getProfilePhotoPathAttribute($image)
-    {
+    public function getProfilePhotoPathAttribute($image){
         if(!$image){
             return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
         }
-
         return $image;
-
     }
 
+
+    public  function getCountryAttribute($value){
+        return Country::find($value);
+    }
+
+    function getAcademicBackgroundAttribute($value){
+        return AB::find($value);
+    }
 }
