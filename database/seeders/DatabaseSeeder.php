@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         // Import our seeders
         $this->call(UserSeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(CountrySeeder::class);
     }
 }
