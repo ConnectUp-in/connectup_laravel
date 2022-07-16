@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            // role, active, stream, college, bio, about, graduation_year,  interests,  cover_image
             $table->integer('role')->default(0);
             $table->boolean('active')->default(false);
             $table->string('academic_background')->nullable();
@@ -31,6 +30,7 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->string('graduation_year')->nullable();
             $table->json('skills')->default(json_encode([]));
+            $table->json('interests')->default(json_encode([]));
             $table->json('socials')->default(json_encode([]));
             $table->string('cover_photo_path')->nullable();
             $table->rememberToken();
