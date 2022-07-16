@@ -39,7 +39,8 @@ return new class extends Migration
             $table->string('google_id')->nullable();
             $table->string('linkedin_id')->nullable();
             $table->string('github_id')->nullable();
-            $table->string('refferal')->nullable();
+            $table->string('invite_refferal')->unique();
+            $table->string('invited_by')->nullable();
             $table->timestamps();
         });
     }
