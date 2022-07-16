@@ -35,6 +35,9 @@ class UserSeeder extends Seeder
                 'bio' => 'A guy who likes to build and learn new things. Also the one who built this platform.',
                 'academic_background' => 2,
                 'graduation_year' => 2024,
+                'website' => 'https://connectup.in',
+                'interests' => [1,2,3,4],
+                'skills' => [1,2,3,4],
                 'socials' => [
                     'github' => 'https://github.com/meinhoonharsh',
                     'linkedin' => 'https://www.linkedin.com/in/meinhoonharsh',

@@ -29,6 +29,7 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->text('about')->nullable();
             $table->string('graduation_year')->nullable();
+            $table->string('website')->nullable();
             $table->json('skills')->default(json_encode([]));
             $table->json('interests')->default(json_encode([]));
             $table->json('socials')->default(json_encode([]));
