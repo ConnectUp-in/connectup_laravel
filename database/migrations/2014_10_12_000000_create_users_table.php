@@ -24,13 +24,15 @@ return new class extends Migration
             // role, active, stream, college, bio, about, graduation_year,  interests,  cover_image
             $table->integer('role')->default(0);
             $table->boolean('active')->default(false);
-            $table->string('stream')->nullable();
+            $table->string('academic_background')->nullable();
             $table->string('college')->nullable();
-            $table->string('bio')->nullable();
-            $table->string('about')->nullable();
-            $table->integer('graduation_year')->nullable();
-            $table->json('interests')->default(json_encode([]));
-            $table->string('cover_image')->nullable();
+            $table->integer('country')->default(98);
+            $table->text('bio')->nullable();
+            $table->text('about')->nullable();
+            $table->string('graduation_year')->nullable();
+            $table->json('skills')->default(json_encode([]));
+            $table->json('socials')->default(json_encode([]));
+            $table->string('cover_photo_path')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
@@ -44,7 +46,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     text
      * @return void
      */
     public function down()
