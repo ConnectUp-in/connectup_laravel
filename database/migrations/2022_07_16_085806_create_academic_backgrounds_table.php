@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('academic_backgrounds', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->timestamps();
+            $table->string('display_name');
+                        // $table->timestamps();
         });
     }
 

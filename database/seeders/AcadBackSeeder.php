@@ -16,27 +16,28 @@ class AcadBackSeeder extends Seeder
     {
 
         $streams = [
-            'Management MBA/BBA',
-            'Engineering B.Tech and B.Arch, M.Tech, ME, BE',
-            'Computer Application-BCA/MCA',
-            'Designing - Fashion/Interior/Web',
-            'Mass-communication/Journalism BJMC',
-            'Hospitality (Hotel) - Hotel Management',
-            'Medical-BDS and MBBS',
-            'Finance -B.Com/CA',
-            'Arts Psychology and Sociology',
-            'Law B.ALLB/LLB',
-            'Education Teaching-B.Ed/M.Ed',
-            'Pharmacy B.Pharma/M.Pharma',
-            'Tourism management - B.Sc.',
-            'Fine Arts B.F.A',
-            'Nursing B.Sc. and M.Sc. in Nursing',
-            'Other'
+            ['Management MBA/BBA','Management'],
+            ['Engineering B.Tech and B.Arch, M.Tech, ME, BE','Engineering'],
+            ['Computer Application-BCA/MCA','Computer Application'],
+            ['Designing - Fashion/Interior/Web','Designing'],
+            ['Mass-communication/Journalism BJMC','Mass Communication'],
+            ['Hospitality (Hotel) - Hotel Management','Hospitality'],
+            ['Medical-BDS and MBBS','Medical'],
+            ['Finance -B.Com/CA','Finance'],
+            ['Arts Psychology and Sociology','Arts'],
+            ['Law B.ALLB/LLB','Law'],
+            ['Education Teaching-B.Ed/M.Ed','Education'],
+            ['Pharmacy B.Pharma/M.Pharma','Pharmacy'],
+            ['Tourism management - B.Sc.','Tourism'],
+            ['Fine Arts B.F.A','Fine Arts'],
+            ['Nursing B.Sc. and M.Sc. in Nursing','Nursing'],
+            ['Other','Other']
         ];
 
         foreach ($streams as $stream) {
             AcademicBackground::create([
-                'name' => $stream
+                'name' => $stream[0],
+                'display_name' => $stream[1]
             ]);
         }
 
