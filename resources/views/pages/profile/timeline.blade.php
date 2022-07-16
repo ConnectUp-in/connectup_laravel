@@ -519,11 +519,32 @@
                                 <!-- INFORMATION LINE -->
                                 <div class="information-line">
                                     <!-- INFORMATION LINE TITLE -->
-                                    <p class="information-line-title">Web</p>
+                                    <p class="information-line-title">Website</p>
                                     <!-- /INFORMATION LINE TITLE -->
 
                                     <!-- INFORMATION LINE TEXT -->
                                     <p class="information-line-text"><a href="#">{{ $user->website }}</a></p>
+                                    <!-- /INFORMATION LINE TEXT -->
+                                </div>
+                                <!-- /INFORMATION LINE -->
+                            @endif
+
+                            @if (isset($user->interests))
+                                <!-- INFORMATION LINE -->
+                                <div class="information-line">
+                                    <!-- INFORMATION LINE TITLE -->
+                                    <p class="information-line-title">Interests</p>
+                                    <!-- /INFORMATION LINE TITLE -->
+
+                                    <!-- INFORMATION LINE TEXT -->
+                                    <p class="information-line-text">
+                                        @foreach ($user->interests as $i)
+                                            {{ $i['name'] }}
+                                            @if (!$loop->last)
+                                                ,
+                                            @endif
+                                        @endforeach
+                                    </p>
                                     <!-- /INFORMATION LINE TEXT -->
                                 </div>
                                 <!-- /INFORMATION LINE -->

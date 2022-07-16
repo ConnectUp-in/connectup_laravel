@@ -59,6 +59,7 @@ class User extends Authenticatable
         'id' => 'string',
         'socials' => 'array',
         'skills' => 'array',
+        'interests' => 'array',
     ];
 
     /**
