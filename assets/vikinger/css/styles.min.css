@@ -833,10 +833,12 @@ textarea::placeholder {
 .icon-patreon,
 .icon-twitch,
 .icon-twitter,
-.icon-youtube {
+.icon-youtube,
+.icon-icon {
     fill: #fff;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    aspect-ratio: 1/1;
+    /* height: 12px; */
 }
 .icon-logo-vikinger {
     fill: #fff;
@@ -1643,14 +1645,16 @@ figure > img {
 .social-link.github {
     background-color: #333;
 }
+
 .social-link.patreon {
     background-color: #ff7a51;
 }
 .social-link.discord {
     background-color: #7289da;
 }
-.social-link.google {
-    background-color: #ffc529;
+.social-link.google,
+.social-link.email {
+    background-color: #ff7a51;
 }
 .social-link.behance {
     background-color: #3486f5;
@@ -8153,6 +8157,8 @@ figure > img {
     padding-top: 4px;
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: flex-end;
 }
 .profile-header
     .profile-header-info
