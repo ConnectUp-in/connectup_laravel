@@ -15,6 +15,7 @@
     <!-- favicon -->
     <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
     <title>Feed | ConnectUp</title>
+    @yield('styles')
 </head>
 
 <body>
@@ -1575,6 +1576,8 @@
     <script src="/assets/vikinger/js/global/global.popups.js"></script>
     <!-- global.charts -->
     <script src="/assets/vikinger/js/global/global.charts.js"></script>
+    <!-- global.accordion -->
+    <script src="/assets/vikinger/js/global/global.accordions.js"></script>
     <!-- header -->
     <script src="/assets/vikinger/js/header/header.js"></script>
     <!-- sidebar -->
@@ -1585,6 +1588,8 @@
     <script src="/assets/vikinger/js/form/form.utils.js"></script>
     <!-- SVG icons -->
     <script src="/assets/vikinger/js/utils/svg-loader.js"></script>
+
+    @yield('scripts')
 </body>
 
 </html>
