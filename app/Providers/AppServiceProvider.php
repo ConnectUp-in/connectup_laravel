@@ -47,6 +47,10 @@ class AppServiceProvider extends ServiceProvider
             $args = Blade::stripParentheses($args);
             return "<?php echo \$__env->make('pages.components.widgets.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
         });
+        Blade::directive('grid', function ($args) {
+            $args = Blade::stripParentheses($args);
+            return "<?php echo \$__env->make('pages.components.grids.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
+        });
 
     }
 }
