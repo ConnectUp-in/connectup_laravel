@@ -42,7 +42,7 @@
         {{-- Button for Profile Completion --}}
         <div>
 
-            <a href="/profile" class="button primary w-100 mt-3">Complete Your Profile</a>
+            <a href="{{ route('profile.info') }}" class="button primary w-100 mt-3">Complete Your Profile</a>
         </div>
 
         {{-- <!-- ACHIEVEMENT STATUS LIST -->
