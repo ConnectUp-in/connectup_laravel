@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('interests', function (Blueprint $table) {
             $table->id();
+            $table->string('category')->nullable();
             $table->string('name');
         });
     }
