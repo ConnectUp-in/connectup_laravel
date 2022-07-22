@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\Interest;
 use Auth;
 use App\Models\Country;
+use App\Models\College;
+use App\Models\AcademicBackground as AcadBack;
 
 class ProfileController extends Controller
 {
@@ -26,7 +28,9 @@ class ProfileController extends Controller
         $data = [
             'user' => $user,
             'countries' => Country::all(),
-            'interests' => Interest::all()
+            'interests' => Interest::all(),
+            'colleges' => College::all(),
+            'backgrounds' => AcadBack::all(),
         ];
         // return $user;
         return view('pages.profile.info', $data);
