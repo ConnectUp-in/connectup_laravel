@@ -42,6 +42,7 @@ ul {
 button,
 input[type="password"],
 input[type="text"],
+input[type="date"],
 label,
 select,
 textarea {
@@ -56,6 +57,7 @@ label {
 button,
 input[type="password"],
 input[type="text"],
+input[type="date"],
 select,
 textarea {
     width: 100%;
@@ -65,6 +67,7 @@ textarea {
 }
 input[type="password"],
 input[type="text"],
+input[type="date"],
 select,
 textarea {
     background-color: #1d2333;
@@ -74,11 +77,13 @@ textarea {
 }
 input[type="password"]:focus,
 input[type="text"]:focus,
+input[type="date"]:focus,
 select:focus,
 textarea:focus {
     border-color: #7750f8;
 }
 input[type="password"],
+input[type="date"],
 input[type="text"] {
     height: 54px;
     padding: 0 18px;
@@ -225,6 +230,7 @@ textarea::placeholder {
 }
 .form-input.dark input[type="password"],
 .form-input.dark input[type="text"],
+.form-input.dark input[type="date"],
 .form-input.dark textarea {
     border: none;
     background-color: #5538b5;
