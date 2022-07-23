@@ -44,9 +44,12 @@ Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/info', [ProfileController::class, 'info'])->name('profile.info');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-Route::get('title', [Controller::class, 'title']);
+Route::post('title', function(){
+    return view('title');
+});
 
 
 

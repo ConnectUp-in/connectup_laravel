@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
@@ -35,5 +34,15 @@ class ProfileController extends Controller
         // return $user;
         return view('pages.profile.info', $data);
 
+    }
+    
+    function update(Request $request){
+        $user = Auth::user();
+        $user->update($request->all());
+        // return [
+        //     'user' => $user,
+        //     'request' => $request->all()
+        // ];
+        return redirect()->back()->with('success', 'Profile updated successfully');
     }
 }
