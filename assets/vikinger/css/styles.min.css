@@ -1025,7 +1025,7 @@ textarea::placeholder {
 }
 .content-grid .section,
 .content-grid .section-header {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 .content-grid .section-banner + .section-filters-bar {
     margin-top: 64px;

@@ -12,7 +12,7 @@ $sidebaritems = [
             ],
             [
                 'title' => 'Social & Streams',
-                'url' => 'hub-profile-social.html',
+                'url' => route('profile.socials'),
             ],
             [
                 'title' => 'Notifications',
@@ -346,12 +346,13 @@ $current_url = Request::url();
 
         <!-- SIDEBAR BOX FOOTER -->
         <div class="sidebar-box-footer">
-            <!-- BUTTON -->
+            {{-- <!-- BUTTON -->
             <p class="button primary">Save Changes!</p>
-            <!-- /BUTTON -->
+            <!-- /BUTTON --> --}}
 
             <!-- BUTTON -->
-            <p class="button white small-space">Discard All</p>
+            <p class="button white small-space" onclick="window.location.reload()">
+                Discard All</p>
             <!-- /BUTTON -->
         </div>
         <!-- /SIDEBAR BOX FOOTER -->
