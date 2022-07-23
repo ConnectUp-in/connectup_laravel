@@ -225,8 +225,8 @@
                                             <!-- FORM INPUT -->
                                             <div class="form-input small active">
                                                 <label for="profile-birthday">Birthday</label>
-                                                <input type="date" id="profile-birthday" name="profile_birthday"
-                                                    value="August 24th, 1987">
+                                                <input type="date" id="profile-birthday" name="birthday"
+                                                    value="{{ $user->birthday }}">
                                             </div>
                                             <!-- /FORM INPUT -->
 
@@ -245,9 +245,9 @@
                                     <div class="form-item">
                                         <!-- FORM SELECT -->
                                         <div class="form-select">
-                                            <label for="profile-country">Country</label>
-                                            <select class="select2" id="profile-country" name="country">
-                                                <option value="0" selected disabled>Select your Country</option>
+                                            {{-- <label for="country">Country</label> --}}
+                                            <select class="select2" id="country" name="country" placeholder="Nahi yaar">
+                                                <option value="" selected disabled></option>
                                                 @foreach ($countries as $country)
                                                     <option value="{{ $country->id }}"
                                                         @if ($country->id == $user->country->id) selected @endif>
@@ -275,10 +275,14 @@
                                     <div class="form-item">
                                         <!-- FORM SELECT -->
                                         <div class="form-select">
-                                            <label for="profile-city">Academic Background</label>
-                                            <select id="profile-city" name="profile_city">
-                                                <option value="0">Select your City</option>
-                                                <option value="1" selected>New York</option>
+                                            {{-- <label for="background">Academic Background</label> --}}
+                                            <select id="background" placeholder="aabra ka dabra" name="background">
+                                                <option value="" selected disabled></option>
+                                                @foreach ($backgrounds as $background)
+                                                    <option value="{{ $background->id }}"
+                                                        @if (false) selected @endif>
+                                                        {{ $background->name }}</option>
+                                                @endforeach
                                             </select>
                                             <!-- FORM SELECT ICON -->
                                             <svg class="form-select-icon icon-small-arrow">
@@ -294,10 +298,17 @@
                                     <div class="form-item">
                                         <!-- FORM SELECT -->
                                         <div class="form-select">
-                                            <label for="profile-city">Institute or College</label>
-                                            <select id="profile-city" name="profile_city">
-                                                <option value="0">Select your City</option>
-                                                <option value="1" selected>New York</option>
+                                            {{-- <label for="profile-city">Institute or College</label> --}}
+                                            {{-- <input type="text" list="colleges-list"> --}}
+                                            <select id="college" name="college">
+                                                {{-- <datalist id="colleges-list"> --}}
+                                                <option disabled selected>Select your Institute</option>
+                                                {{-- @foreach ($colleges as $college)
+                                                    <option value="{{ $college->id }}"
+                                                        @if ($college->id == $user->college) selected @endif>
+                                                        {{ $college->name }}</option>
+                                                @endforeach --}}
+                                                {{-- </datalist> --}}
                                             </select>
                                             <!-- FORM SELECT ICON -->
                                             <svg class="form-select-icon icon-small-arrow">
@@ -320,8 +331,14 @@
                                     <div class="form-item">
                                         <!-- FORM INPUT -->
                                         <div class="form-input small">
-                                            <label for="profile-birthplace">Interests</label>
-                                            <input type="text" id="profile-birthplace" name="profile_birthplace">
+                                            <label for="interests">Interests</label>
+                                            <select id="interests" name="interests[]" multiple>
+                                                @foreach ($interests as $interest)
+                                                    <option value="{{ $interest->id }}"
+                                                        @if (in_array($interest->id, $user->interests)) selected @endif>
+                                                        {{ $interest->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <!-- /FORM INPUT -->
                                     </div>
@@ -799,30 +816,110 @@
 @endsection
 
 @section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.css"
+        integrity="sha512-6skR4yyaANUKXypVS+nB+HMmq8Xd17CSwFsBEHCRaa3UicPlksbwVtBTZl13Fea6zqsnnmqc7fRH97/M6JcwCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .selectize-input {
+            background-color: #1d2333 !important;
+            border: 1px solid #3f485f;
+            color: #fff;
+            transition: border-color 0.2s ease-in-out;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            height: 48px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        .selectize-input,
+        .selectize-control.single .selectize-input.input-active {
+            display: flex;
+        }
+
+        .selectize-input,
+        .selectize-control.single .selectize-input.input-active {
+            border-radius: 12px;
+        }
+
+        .selectize-dropdown-content {
+
+            background-color: #1d2333 !important;
+            color: #fff;
+            transition: border-color 0.2s ease-in-out;
+            width: 100%;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        /* add custom scrollbar*/
+        .selectize-dropdown-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .selectize-dropdown {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        .selectize-control.multi .selectize-input>div {
+            margin: 0px 5px 5px 0;
+            padding: 5px 10px;
+            background: #f2f2f233;
+            color: #fffc;
+            border-radius: 5px;
+        }
+
+        .selectize-control.multi .selectize-input.has-items {
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+        .selectize-input.has-items>input {
+            color: #fffc;
+        }
+
+        .selectize-control.single .selectize-input.input-active,
+        .selectize-control.single .selectize-input.input-active input {
+            color: #fffc;
+        }
+    </style>
 @endsection
 
-@section('scriptfgs')
+@section('scripts')
     {{-- import jquery from cdn --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    {{-- import selectize --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.4/sifter.min.js"
+        integrity="sha512-B60IUvYpG4cibCeQ30J8k/+qtN+fxKAIENb3DL2DVdzIt76IDIynAt92chPEwlCuKejOt//+OZL61i1xsvCIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microplugin/0.0.3/microplugin.min.js"
+        integrity="sha512-7amIsiQ/hxbdPNawBZwmWBWPiwQRNEJlxTj6eVO+xmWd71fs79Iydr4rYARHwDf0rKHpysFxWbj64fjPRHbqfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/selectize.min.js"
         integrity="sha512-DBOconMAY06o4R79zeXKKM3h/g5pca647Eabb+6viK4dRpiMOlZFS4gsbukTbHo+ppdKx4yr+/0m2JnpeAIrSw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script>
         $(document).ready(function() {
-            // selectize
-            $('.select2').selectize({
-                plugins: ['remove_button'],
-                delimiter: ',',
-                persist: false,
-                create: function(input) {
-                    return {
-                        value: input,
-                        text: input
-                    }
-                }
+            $('#background').selectize({
+                placeholder: "Select Academic Background",
+            });
+            $('#country').selectize({
+                placeholder: "Select your Country",
+            });
+            $('#interests').selectize({
+                placeholder: "Select your Interests",
+                plugins: ["remove_button"],
             });
         });
     </script>
