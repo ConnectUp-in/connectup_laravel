@@ -42,7 +42,7 @@ Route::get('feed', [AppController::class, 'feed'])->name('feed');
 Route::get('post/{id}', [AppController::class, 'post'])->name('post');
 Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 
-Route::prefix('user')->group(function () {
+Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/info', [ProfileController::class, 'info'])->name('profile.info');
 });
 
