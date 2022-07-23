@@ -1590,6 +1590,7 @@
     <script src="/assets/vikinger/js/utils/svg-loader.js"></script>
 
     @yield('scripts')
+    @yield('customscript')
 </body>
 
 </html>
