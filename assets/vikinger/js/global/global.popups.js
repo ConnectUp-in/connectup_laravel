@@ -99,6 +99,19 @@ app.plugins.createPopup({
         translateOffset: 40,
     },
 });
+app.plugins.createPopup({
+    container: ".popup-cover-upload",
+    trigger: ".popup-cover-upload-trigger",
+    overlay: {
+        color: "21, 21, 31",
+        opacity: 0.96,
+    },
+    animation: {
+        type: "translate-in-fade",
+        speed: 0.3,
+        translateOffset: 40,
+    },
+});
 
 app.plugins.createPopup({
     container: ".popup-manage-item",
