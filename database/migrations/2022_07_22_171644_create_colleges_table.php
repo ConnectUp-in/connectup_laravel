@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('colleges', function (Blueprint $table) {
             $table->id();
-            $table->string('university')->nullable();
-            $table->string('college')->nullable();
-            $table->string('college_type')->nullable();
+            $table->text('university')->nullable();
+            $table->text('name')->nullable();
+            $table->string('type')->nullable();
             $table->string('state')->nullable();
             $table->string('district')->nullable();
             $table->boolean('active')->default(true);
