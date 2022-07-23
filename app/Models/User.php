@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Country;
+use App\Models\College;
 use App\Models\AcademicBackground as AB;
 use App\Models\Post;
 // Import Str
@@ -35,6 +36,15 @@ class User extends Authenticatable
         'email',
         'username',
         'password',
+        'bio',
+        'website',
+        'birthday',
+        'country',
+        'college',
+        'academic_background',
+        'interests',
+        'skills',
+        'socials'
     ];
 
     /**
@@ -109,4 +119,8 @@ class User extends Authenticatable
     public function getPostcountAttribute(){
         return Post::where('user_id',$this->id)->count();
     }
+    public function getCollegeAttribute($value){
+        return College::find($value);
+    }
+
 }
