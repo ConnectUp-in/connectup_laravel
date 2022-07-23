@@ -25,133 +25,137 @@
 
             <!-- GRID COLUMN -->
             <div class="account-hub-content">
-                <!-- SECTION HEADER -->
-                <div class="section-header">
-                    <!-- SECTION HEADER INFO -->
-                    <div class="section-header-info">
-                        <!-- SECTION PRETITLE -->
-                        <p class="section-pretitle">My Profile</p>
-                        <!-- /SECTION PRETITLE -->
 
-                        <!-- SECTION TITLE -->
-                        <h2 class="section-title">Profile Info</h2>
-                        <!-- /SECTION TITLE -->
+                <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <!-- SECTION HEADER -->
+                    <div class="section-header">
+                        <!-- SECTION HEADER INFO -->
+                        <div class="section-header-info">
+                            <!-- SECTION PRETITLE -->
+                            <p class="section-pretitle">My Profile</p>
+                            <!-- /SECTION PRETITLE -->
+
+                            <!-- SECTION TITLE -->
+                            <h2 class="section-title">Profile Info</h2>
+                            <!-- /SECTION TITLE -->
+                        </div>
+                        <!-- /SECTION HEADER INFO -->
+
+
+                        <button class="button primary" style="padding:0 30px; width:fit-content">Save Changes!</button>
                     </div>
-                    <!-- /SECTION HEADER INFO -->
+                    <!-- /SECTION HEADER -->
 
+                    <!-- GRID COLUMN -->
+                    <div class="grid-column">
+                        <!-- GRID -->
+                        <div class="grid grid-3-3-3 centered">
+                            <!-- USER PREVIEW -->
+                            <div class="user-preview small fixed-height">
+                                <!-- USER PREVIEW COVER -->
+                                <figure class="user-preview-cover liquid">
+                                    <img src="{{ $user->cover_photo_path }}" alt="cover-01">
+                                </figure>
+                                <!-- /USER PREVIEW COVER -->
 
-                    <p class="button primary" style="padding:0 30px">Save Changes!</p>
-                </div>
-                <!-- /SECTION HEADER -->
-
-                <!-- GRID COLUMN -->
-                <div class="grid-column">
-                    <!-- GRID -->
-                    <div class="grid grid-3-3-3 centered">
-                        <!-- USER PREVIEW -->
-                        <div class="user-preview small fixed-height">
-                            <!-- USER PREVIEW COVER -->
-                            <figure class="user-preview-cover liquid">
-                                <img src="{{ $user->cover_photo_path }}" alt="cover-01">
-                            </figure>
-                            <!-- /USER PREVIEW COVER -->
-
-                            <!-- USER PREVIEW INFO -->
-                            <div class="user-preview-info">
-                                <!-- USER SHORT DESCRIPTION -->
-                                <div class="user-short-description small">
-                                    <!-- USER SHORT DESCRIPTION AVATAR -->
-                                    <div class="user-short-description-avatar user-avatar">
-                                        <!-- USER AVATAR BORDER -->
-                                        <div class="user-avatar-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-100-110"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR BORDER -->
-
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-68-74" data-src="{{ $user->profile_photo_path }}">
+                                <!-- USER PREVIEW INFO -->
+                                <div class="user-preview-info">
+                                    <!-- USER SHORT DESCRIPTION -->
+                                    <div class="user-short-description small">
+                                        <!-- USER SHORT DESCRIPTION AVATAR -->
+                                        <div class="user-short-description-avatar user-avatar">
+                                            <!-- USER AVATAR BORDER -->
+                                            <div class="user-avatar-border">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-100-110"></div>
+                                                <!-- /HEXAGON -->
                                             </div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
+                                            <!-- /USER AVATAR BORDER -->
 
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-84-92"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
+                                            <!-- USER AVATAR CONTENT -->
+                                            <div class="user-avatar-content">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-image-68-74" data-src="{{ $user->profile_photo_path }}">
+                                                </div>
+                                                <!-- /HEXAGON -->
+                                            </div>
+                                            <!-- /USER AVATAR CONTENT -->
 
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-84-92"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
+                                            <!-- USER AVATAR PROGRESS -->
+                                            <div class="user-avatar-progress">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-progress-84-92"></div>
+                                                <!-- /HEXAGON -->
+                                            </div>
+                                            <!-- /USER AVATAR PROGRESS -->
 
+                                            <!-- USER AVATAR PROGRESS BORDER -->
+                                            <div class="user-avatar-progress-border">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-border-84-92"></div>
+                                                <!-- /HEXAGON -->
+                                            </div>
+                                            <!-- /USER AVATAR PROGRESS BORDER -->
+
+                                        </div>
+                                        <!-- /USER SHORT DESCRIPTION AVATAR -->
                                     </div>
-                                    <!-- /USER SHORT DESCRIPTION AVATAR -->
+                                    <!-- /USER SHORT DESCRIPTION -->
                                 </div>
-                                <!-- /USER SHORT DESCRIPTION -->
+                                <!-- /USER PREVIEW INFO -->
                             </div>
-                            <!-- /USER PREVIEW INFO -->
+                            <!-- /USER PREVIEW -->
+
+                            <!-- UPLOAD BOX -->
+                            <div class="upload-box">
+                                <!-- UPLOAD BOX ICON -->
+                                <svg class="upload-box-icon icon-members">
+                                    <use xlink:href="#svg-members"></use>
+                                </svg>
+                                <!-- /UPLOAD BOX ICON -->
+
+                                <!-- UPLOAD BOX TITLE -->
+                                <p class="upload-box-title">Change Avatar</p>
+                                <!-- /UPLOAD BOX TITLE -->
+
+                                <!-- UPLOAD BOX TEXT -->
+                                <p class="upload-box-text">110x110px size minimum</p>
+                                <!-- /UPLOAD BOX TEXT -->
+                            </div>
+                            <!-- /UPLOAD BOX -->
+
+                            <!-- UPLOAD BOX -->
+                            <div class="upload-box">
+                                <!-- UPLOAD BOX ICON -->
+                                <svg class="upload-box-icon icon-photos">
+                                    <use xlink:href="#svg-photos"></use>
+                                </svg>
+                                <!-- /UPLOAD BOX ICON -->
+
+                                <!-- UPLOAD BOX TITLE -->
+                                <p class="upload-box-title">Change Cover</p>
+                                <!-- /UPLOAD BOX TITLE -->
+
+                                <!-- UPLOAD BOX TEXT -->
+                                <p class="upload-box-text">1184x300px size minimum</p>
+                                <!-- /UPLOAD BOX TEXT -->
+                            </div>
+                            <!-- /UPLOAD BOX -->
                         </div>
-                        <!-- /USER PREVIEW -->
+                        <!-- /GRID -->
 
-                        <!-- UPLOAD BOX -->
-                        <div class="upload-box">
-                            <!-- UPLOAD BOX ICON -->
-                            <svg class="upload-box-icon icon-members">
-                                <use xlink:href="#svg-members"></use>
-                            </svg>
-                            <!-- /UPLOAD BOX ICON -->
+                        <!-- WIDGET BOX -->
+                        <div class="widget-box">
+                            <!-- WIDGET BOX TITLE -->
+                            <p class="widget-box-title">About Your Profile</p>
+                            <!-- /WIDGET BOX TITLE -->
 
-                            <!-- UPLOAD BOX TITLE -->
-                            <p class="upload-box-title">Change Avatar</p>
-                            <!-- /UPLOAD BOX TITLE -->
-
-                            <!-- UPLOAD BOX TEXT -->
-                            <p class="upload-box-text">110x110px size minimum</p>
-                            <!-- /UPLOAD BOX TEXT -->
-                        </div>
-                        <!-- /UPLOAD BOX -->
-
-                        <!-- UPLOAD BOX -->
-                        <div class="upload-box">
-                            <!-- UPLOAD BOX ICON -->
-                            <svg class="upload-box-icon icon-photos">
-                                <use xlink:href="#svg-photos"></use>
-                            </svg>
-                            <!-- /UPLOAD BOX ICON -->
-
-                            <!-- UPLOAD BOX TITLE -->
-                            <p class="upload-box-title">Change Cover</p>
-                            <!-- /UPLOAD BOX TITLE -->
-
-                            <!-- UPLOAD BOX TEXT -->
-                            <p class="upload-box-text">1184x300px size minimum</p>
-                            <!-- /UPLOAD BOX TEXT -->
-                        </div>
-                        <!-- /UPLOAD BOX -->
-                    </div>
-                    <!-- /GRID -->
-
-                    <!-- WIDGET BOX -->
-                    <div class="widget-box">
-                        <!-- WIDGET BOX TITLE -->
-                        <p class="widget-box-title">About Your Profile</p>
-                        <!-- /WIDGET BOX TITLE -->
-
-                        <!-- WIDGET BOX CONTENT -->
-                        <div class="widget-box-content">
-                            <!-- FORM -->
-                            <form class="form">
+                            <!-- WIDGET BOX CONTENT -->
+                            <div class="widget-box-content">
+                                <!-- FORM -->
+                                {{-- <form class="form"> --}}
                                 <!-- FORM ROW -->
                                 <div class="form-row split">
                                     <!-- FORM ITEM -->
@@ -196,9 +200,8 @@
                                     <div class="form-item">
                                         <!-- FORM INPUT -->
                                         <div class="form-input small active">
-                                            <label for="profile-public-email">Public Email</label>
-                                            <input type="text" id="profile-public-email" name="profile_public_email"
-                                                value="{{ $user->email }}">
+                                            <label for="email">Public Email</label>
+                                            <input type="text" id="email" name="email" value="{{ $user->email }}">
                                         </div>
                                         <!-- /FORM INPUT -->
 
@@ -224,8 +227,8 @@
                                         <div class="form-input-decorated">
                                             <!-- FORM INPUT -->
                                             <div class="form-input small active">
-                                                <label for="profile-birthday">Birthday</label>
-                                                <input type="date" id="profile-birthday" name="birthday"
+                                                <label for="birthday">Birthday</label>
+                                                <input type="date" id="birthday" name="birthday"
                                                     value="{{ $user->birthday }}">
                                             </div>
                                             <!-- /FORM INPUT -->
@@ -276,11 +279,12 @@
                                         <!-- FORM SELECT -->
                                         <div class="form-select">
                                             {{-- <label for="background">Academic Background</label> --}}
-                                            <select id="background" placeholder="aabra ka dabra" name="background">
+                                            <select id="background" placeholder="aabra ka dabra"
+                                                name="academic_background">
                                                 <option value="" selected disabled></option>
                                                 @foreach ($backgrounds as $background)
                                                     <option value="{{ $background->id }}"
-                                                        @if (false) selected @endif>
+                                                        @if ($background->id == $user->academic_background->id) selected @endif>
                                                         {{ $background->name }}</option>
                                                 @endforeach
                                             </select>
@@ -302,13 +306,11 @@
                                             {{-- <input type="text" list="colleges-list"> --}}
                                             <select id="college" name="college">
                                                 {{-- <datalist id="colleges-list"> --}}
-                                                <option disabled selected>Select your Institute</option>
-                                                {{-- @foreach ($colleges as $college)
-                                                    <option value="{{ $college->id }}"
-                                                        @if ($college->id == $user->college) selected @endif>
-                                                        {{ $college->name }}</option>
-                                                @endforeach --}}
-                                                {{-- </datalist> --}}
+                                                <option value="" disabled selected>Select your Institute</option>
+                                                @if (isset($user->college))
+                                                    <option value="{{ $user->college->id }}" selected>
+                                                        {{ $user->college->name }}</option>
+                                                @endif
                                             </select>
                                             <!-- FORM SELECT ICON -->
                                             <svg class="form-select-icon icon-small-arrow">
@@ -361,14 +363,14 @@
                                 </div>
                                 <!-- /FORM ROW -->
 
-                            </form>
-                            <!-- /FORM -->
+                                {{-- </form> --}}
+                                <!-- /FORM -->
+                            </div>
+                            <!-- WIDGET BOX CONTENT -->
                         </div>
-                        <!-- WIDGET BOX CONTENT -->
-                    </div>
-                    <!-- /WIDGET BOX -->
+                        <!-- /WIDGET BOX -->
 
-                    {{-- <!-- WIDGET BOX -->
+                        {{-- <!-- WIDGET BOX -->
                     <div class="widget-box">
                         <!-- WIDGET BOX TITLE -->
                         <p class="widget-box-title">Manage Badges</p>
@@ -805,8 +807,9 @@
                         <!-- WIDGET BOX CONTENT -->
                     </div>
                     <!-- /WIDGET BOX --> --}}
-                </div>
-                <!-- /GRID COLUMN -->
+                    </div>
+                    <!-- /GRID COLUMN -->
+                </form>
             </div>
             <!-- /GRID COLUMN -->
         </div>
@@ -919,8 +922,43 @@
             });
             $('#interests').selectize({
                 placeholder: "Select your Interests",
-                plugins: ["remove_button"],
+                plugins: ["remove_button", "restore_on_backspace"],
             });
+
+
+            $("#college").selectize({
+                valueField: "id",
+                labelField: "name",
+                searchField: "name",
+                create: false,
+                placeholder: "Select your Institute",
+                render: {
+                    option: function(item, escape) {
+                        console.log(item);
+                        return (
+                            `
+                            <div class="option" data-selectable="" data-value="${item.id}">${item.name}</div>
+                            `
+                        );
+                    },
+                },
+                load: function(query, callback) {
+                    if (!query.length) return callback();
+                    $.ajax({
+                        url: "/api/search/college/" + encodeURIComponent(
+                            query),
+                        type: "GET",
+                        error: function() {
+                            callback();
+                        },
+                        success: function(res) {
+                            console.log(res);
+                            callback(res.slice(0, 10));
+                        },
+                    });
+                },
+            });
+
         });
     </script>
 @endsection
