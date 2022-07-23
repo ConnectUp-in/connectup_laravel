@@ -33,6 +33,7 @@ return new class extends Migration
             $table->json('skills')->default(json_encode([]));
             $table->json('interests')->default(json_encode([]));
             $table->json('socials')->default(json_encode([]));
+            $table->date('birthday')->nullable();
             $table->string('cover_photo_path')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

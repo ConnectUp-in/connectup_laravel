@@ -38,6 +38,7 @@ class UserSeeder extends Seeder
                 'website' => 'https://connectup.in',
                 'interests' => [1,2,3,4],
                 'skills' => [1,2,3,4],
+                'birthday' => '2002-08-07',
                 'socials' => [
                     'github' => 'https://github.com/meinhoonharsh',
                     'linkedin' => 'https://www.linkedin.com/in/meinhoonharsh',
