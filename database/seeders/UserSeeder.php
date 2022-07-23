@@ -39,14 +39,15 @@ class UserSeeder extends Seeder
                 'interests' => [1,2,3,4],
                 'skills' => [1,2,3,4],
                 'birthday' => '2002-08-07',
-                'socials' => [
+                'college' => 28772,
+                'socials' => json_encode([
                     'github' => 'https://github.com/meinhoonharsh',
                     'linkedin' => 'https://www.linkedin.com/in/meinhoonharsh',
                     'facebook' => 'https://www.facebook.com/meinhoonharsh',
                     'instagram' => 'https://www.instagram.com/meinhoonharsh',
                     'twitter' => 'https://twitter.com/meinhoonharsh',
                     'youtube' => 'https://www.youtube.com/c/harshvishwakarma7',
-                ],
+                ]),
             ]
     
     ];
