@@ -44,6 +44,7 @@ Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/info', [ProfileController::class, 'info'])->name('profile.info');
+    Route::get('/profile/socials', [ProfileController::class, 'socials'])->name('profile.socials');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
@@ -51,6 +52,8 @@ Route::post('title', function(){
     return view('title');
 });
 
+
+Route::view('test', 'test');
 
 
 // Social Authentication Routes

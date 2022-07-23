@@ -35,14 +35,15 @@ class ProfileController extends Controller
         return view('pages.profile.info', $data);
 
     }
+    function socials(){
+        $user = Auth::user();
+        return view('pages.profile.socials', compact('user'));
+    }
     
     function update(Request $request){
         $user = Auth::user();
         $user->update($request->all());
-        // return [
-        //     'user' => $user,
-        //     'request' => $request->all()
-        // ];
+        // return $request->all();
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
 }
