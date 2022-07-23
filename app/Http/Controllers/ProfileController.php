@@ -29,7 +29,7 @@ class ProfileController extends Controller
             'user' => $user,
             'countries' => Country::all(),
             'interests' => Interest::all(),
-            'colleges' => College::all(),
+            'colleges' => College::select('id', 'name')->get(),
             'backgrounds' => AcadBack::all(),
         ];
         // return $user;
