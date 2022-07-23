@@ -44,7 +44,9 @@ class User extends Authenticatable
         'academic_background',
         'interests',
         'skills',
-        'socials'
+        'socials',
+        'profile_photo_path',
+        'cover_photo_path',
     ];
 
     /**
