@@ -108,16 +108,16 @@ $socials = array_chunk($socials, 2);
     <!-- /CONTENT GRID -->
 @endsection
 
-@section('styles')
+@push('styles')
     <style>
         .form-input.social-input .social-link {
             height: calc(100% - 8px);
         }
     </style>
-@endsection
+@endpush
 
 
-@section('scripts')
+@push('scripts')
     {{-- import jquery from cdn --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -136,4 +136,4 @@ $socials = array_chunk($socials, 2);
             console.log(socials);
         }
     </script>
-@endsection
+@endpush
