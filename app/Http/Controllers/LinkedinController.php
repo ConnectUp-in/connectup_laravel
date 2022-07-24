@@ -27,7 +27,7 @@ class LinkedinController extends Controller
       
             if($linkedinUser){
       
-                Auth::login($linkedinUser);
+                Auth::login($linkedinUser, true);
      
                 return redirect('/feed');
       
@@ -39,7 +39,7 @@ class LinkedinController extends Controller
                     'password' => encrypt('admin12345')
                 ]);
      
-                Auth::login($user);
+                Auth::login($user, true);
       
                 return redirect('/dash');
             }

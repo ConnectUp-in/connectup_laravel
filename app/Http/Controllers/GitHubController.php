@@ -27,7 +27,7 @@ class GitHubController extends Controller
       
             if($searchUser){
       
-                Auth::login($searchUser);
+                Auth::login($searchUser, true);
      
                 return redirect('/feed');
       
@@ -39,7 +39,7 @@ class GitHubController extends Controller
                     'password' => encrypt('gitpwd059')
                 ]);
      
-                Auth::login($gitUser);
+                Auth::login($gitUser, true);
       
                 return redirect('/dash');
             }
