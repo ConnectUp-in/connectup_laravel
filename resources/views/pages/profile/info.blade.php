@@ -824,7 +824,7 @@
     @popup('coverupload')
 @endsection
 
-@section('styles')
+@push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.css"
         integrity="sha512-6skR4yyaANUKXypVS+nB+HMmq8Xd17CSwFsBEHCRaa3UicPlksbwVtBTZl13Fea6zqsnnmqc7fRH97/M6JcwCA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -902,9 +902,9 @@
             color: #fffc;
         }
     </style>
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
     {{-- import jquery from cdn --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -968,4 +968,4 @@
 
         });
     </script>
-@endsection
+@endpush

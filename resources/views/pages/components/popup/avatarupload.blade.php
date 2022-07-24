@@ -118,7 +118,7 @@
 <!-- /POPUP BOX -->
 
 
-@section('styles')
+@push('styles')
     <style>
         .avatar-container {
             display: flex;
@@ -171,10 +171,10 @@
             width: 70%;
         }
     </style>
-@endsection
+@endpush
 
 
-@section('customscript')
+@push('customscript')
     <script>
         $(document).ready(function() {
 
@@ -188,4 +188,4 @@
 
         });
     </script>
-@endsection
+@endpush

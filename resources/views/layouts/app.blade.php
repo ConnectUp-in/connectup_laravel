@@ -15,12 +15,12 @@
     <!-- favicon -->
     <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
     <title>Feed | ConnectUp</title>
-    @yield('styles')
+    @stack('styles')
 </head>
 
 <body>
 
-    {{-- <!-- PAGE LOADER -->
+    <!-- PAGE LOADER -->
     <div class="page-loader">
         <!-- PAGE LOADER DECORATION -->
         <div class="page-loader-decoration">
@@ -53,7 +53,7 @@
         </div>
         <!-- /PAGE LOADER INDICATOR -->
     </div>
-    <!-- /PAGE LOADER --> --}}
+    <!-- /PAGE LOADER -->
 
 
     @include('layouts/partials/sidenav')
@@ -1589,8 +1589,8 @@
     <!-- SVG icons -->
     <script src="/assets/vikinger/js/utils/svg-loader.js"></script>
 
-    @yield('scripts')
-    @yield('customscript')
+    @stack('scripts')
+    @stack('customscript')
 </body>
 
 </html>
