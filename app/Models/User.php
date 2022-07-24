@@ -98,6 +98,10 @@ class User extends Authenticatable
                 $name_initials = substr($user->name, 0, 2);
                 $user->invite_refferal =  $name_initials.'_'.rand(1000, 9999);
             }
+            if (! $user->username) {
+                $email = explode('@', $user->email);
+                $user->username = $email[0];
+            }
         });
     }
 
