@@ -19,17 +19,17 @@ return new class extends Migration
             $table->primary('id');
             $table->string('user_id');
             $table->string('caption')->nullable();
-            $table->json('images')->default(json_encode([]));
-            $table->json('tags')->default(json_encode([]));
+            $table->json('images')->nullable();
+            $table->json('tags')->nullable();
             $table->string('ytlink')->nullable();
             $table->string('type')->default('n');
             $table->string('question')->nullable();
-            $table->json('options')->default(json_encode([]));
+            $table->json('options')->nullable();
             $table->string('answer')->nullable();
             $table->boolean('active')->default(true);
-            $table->json('shares')->default(json_encode([]));
-            $table->json('likes')->default(json_encode([]));
-            $table->json('dislikes')->default(json_encode([]));
+            $table->json('shares')->nullable();
+            $table->json('likes')->nullable();
+            $table->json('dislikes')->nullable();
             $table->timestamps();
         });
     }

@@ -30,9 +30,9 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->string('graduation_year')->nullable();
             $table->string('website')->nullable();
-            $table->json('skills')->default(json_encode([]));
-            $table->json('interests')->default(json_encode([]));
-            $table->json('socials')->default(json_encode([]));
+            $table->json('skills')->nullable();
+            $table->json('interests')->nullable();
+            $table->json('socials')->nullable();
             $table->date('birthday')->nullable();
             $table->string('cover_photo_path')->nullable();
             $table->rememberToken();
