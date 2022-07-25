@@ -458,6 +458,7 @@
             <!-- GRID COLUMN -->
             <div class="grid-column">
 
+                @widget('redeemrefferal')
                 @if (Auth::check() && Auth::user()->id == $user->id)
                     @widget('profilecompletion')
                 @endif
@@ -1503,8 +1504,7 @@
                                         <!-- USER AVATAR CONTENT -->
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="{{ $user->profile_photo_path }}">
+                                            <div class="hexagon-image-30-32" data-src="{{ $user->profile_photo_path }}">
                                             </div>
                                             <!-- /HEXAGON -->
                                         </div>
