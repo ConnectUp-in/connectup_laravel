@@ -284,7 +284,7 @@
                                                 <option value="" selected disabled></option>
                                                 @foreach ($backgrounds as $background)
                                                     <option value="{{ $background->id }}"
-                                                        @if ($background->id == $user->academic_background->id) selected @endif>
+                                                        @if ($background->id == ($user->academic_background->id ?? '')) selected @endif>
                                                         {{ $background->name }}</option>
                                                 @endforeach
                                             </select>
@@ -337,7 +337,7 @@
                                             <select id="interests" name="interests[]" multiple>
                                                 @foreach ($interests as $interest)
                                                     <option value="{{ $interest->id }}"
-                                                        @if (in_array($interest->id, $user->interests)) selected @endif>
+                                                        @if (in_array($interest->id, $user->interests ?? [])) selected @endif>
                                                         {{ $interest->name }}</option>
                                                 @endforeach
                                             </select>
