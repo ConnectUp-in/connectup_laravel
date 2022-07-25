@@ -26,26 +26,30 @@
             <!-- /POST SETTINGS WRAP -->
         </div>
         <!-- /WIDGET BOX SETTINGS -->
+        <form action="{{ route('profile.update') }}" method="POST">
+            @csrf
+            <!-- WIDGET BOX TITLE -->
+            <p class="widget-box-title mb-3">Refferal Code</p>
 
-        <!-- WIDGET BOX TITLE -->
-        <p class="widget-box-title">Refferal Code</p>
 
+            <!-- /WIDGET BOX TITLE -->
 
-        <!-- /WIDGET BOX TITLE -->
+            <span style="color:#fffb;">
+                Fill out the referral code for the individual who invited you.
+            </span>
+            <!-- WIDGET BOX CONTENT -->
+            <div class="widget-box-content mt-4">
+                <div class="form-input  active">
+                    <label for="invited_by">Refferal Code</label>
+                    <input type="text" id="invited_by" name="invited_by" value="">
+                </div>
+                <button class="button primary w-100 mt-3">Apply Refferal</button>
 
-        <span style="color:#fffa;">
-            Fill out the referral code for the individual who invited you.
-        </span>
-        <!-- WIDGET BOX CONTENT -->
-        <div class="widget-box-content">
-            <div class="form-input  active">
-                <label for="invited_by">Refferal Code</label>
-                <input type="text" id="invited_by" name="name" value="">
             </div>
-            <a href="/startups/create" class="button primary w-100 mt-3">Apply Refferal</a>
+            <!-- /WIDGET BOX CONTENT -->
 
-        </div>
-        <!-- /WIDGET BOX CONTENT -->
+        </form>
+
     </div>
     <!-- /WIDGET BOX -->
 @endif

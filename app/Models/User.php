@@ -47,6 +47,7 @@ class User extends Authenticatable
         'socials',
         'profile_photo_path',
         'cover_photo_path',
+        'invited_by',
     ];
 
     /**
