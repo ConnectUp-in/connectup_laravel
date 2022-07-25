@@ -116,8 +116,7 @@
         <!-- /BANNER -->
     </div>
     <!-- /BANNER WRAP -->
-
-    <!-- ARCHITECTURE ITEM LIST -->
+    {{-- <!-- ARCHITECTURE ITEM LIST -->
     <div class="architecture-item-list">
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
@@ -620,7 +619,7 @@
         </section>
         <!-- /SECTION -->
     </div>
-    <!-- /SECTION WRAP -->
+    <!-- /SECTION WRAP --> --}}
 
     <!-- app -->
     <script src="/assets/vikinger-landing/app.bundle.min.js"></script>
