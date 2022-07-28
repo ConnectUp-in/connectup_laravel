@@ -17,6 +17,9 @@ class ProfileController extends Controller
         $user = User::where('username', $username)->first();
         $user->startups = [];
         $user->interests = Interest::whereIn('id', $user->interests)->get();
+        if(!$user->interests){
+            $user->interests = [];
+         }
         page('user/{username}', $user->id);
         // return $user;
         return view('pages.profile.timeline', compact('user'));

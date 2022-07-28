@@ -129,6 +129,9 @@ class User extends Authenticatable
     public function getCollegeAttribute($value){
         return College::find($value);
     }
+    // public function getSocialsAttribute($value){
+    //     return $value ?? [];
+    // }
     public function setSocialsAttribute($value){
         $this->attributes['socials'] = json_encode(json_decode($value));
     }
