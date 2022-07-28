@@ -95,13 +95,18 @@ class User extends Authenticatable
                 $user->id = (string) Str::uuid();
             }
             if (! $user->invite_refferal) {
-                // Generate Refferal using $user->name initials + random number
                 $name_initials = substr($user->name, 0, 2);
                 $user->invite_refferal =  $name_initials.'_'.rand(1000, 9999);
             }
             if (! $user->username) {
                 $email = explode('@', $user->email);
                 $user->username = $email[0];
+            }
+            if(!$user->socials){
+                $user->socials = '{}';
+            }
+            if(!$user->interests){
+                $user->interests = [];
             }
         });
     }
@@ -129,9 +134,6 @@ class User extends Authenticatable
     public function getCollegeAttribute($value){
         return College::find($value);
     }
-    // public function getSocialsAttribute($value){
-    //     return $value ?? [];
-    // }
     public function setSocialsAttribute($value){
         $this->attributes['socials'] = json_encode(json_decode($value));
     }
