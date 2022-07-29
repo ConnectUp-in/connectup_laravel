@@ -1,3 +1,8 @@
+@php
+$page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
+
+@endphp
+
 @extends('layouts/app')
 
 
