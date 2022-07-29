@@ -13,36 +13,129 @@
     <!-- POPUP BOX BODY -->
     <div class="popup-box-body">
 
-        <div class="dropzone">dsfsfsfsdfsf</div>
+        <div class="container">
+            <div class="my-3 w-100">
+                <img id="preview_cover" src="{{ $user->cover_photo_path }}" alt="" style="width: 100%">
+            </div>
+            <div>
+                <label class="droparea" for="upload_cover">
+                    Select a file
+                </label>
 
+                <div class="cropper-container">
+
+                    <div id="image_demo"></div>
+                </div>
+                <div class="button-container">
+                    <div>
+                        <form action="{{ route('profile.update.cover') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <!-- Limit only Image File -->
+                            {{-- <input type="file" name="abc" id=""> --}}
+                            <input type="file" id="upload_cover" name="upload_cover" accept="image/*">
+                            <input type="hidden" name="cover_photo_path" id="cover_photo_path">
+                            <button class="button secondary" type="button" id="crop_button">Crop</button>
+                            <button class="button primary" type="submit" id="upload_button">Upload</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /POPUP BOX BODY -->
 </div>
 <!-- /POPUP BOX -->
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-
+    {{-- Import Croppie css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css" />
     <style>
-        .dropzone {
-            border: 2px dashed #0087ff;
-            border-radius: 5px;
-            background: white;
-            min-height: 200px;
-            width: 100%;
-            padding: 10px;
+        .droparea {
+            margin: 1em 2em;
+            padding: 2em;
+            /* width: 100%; */
+            box-sizing: border-box;
+            min-height: 100px;
+            border: 3px dashed #fff5;
+            border-radius: 10px;
+            font-size: 2em;
+            color: #fff9;
             text-align: center;
+        }
+
+        input[name="upload_cover"] {
+            display: none;
+        }
+
+        .cropper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-container {
+            /* display: none; */
+        }
+
+        .button-container>div {
+            display: flex;
+        }
+
+        .button-container>div>button {
+            margin: 0 1em;
         }
     </style>
 @endpush
 
 
 @push('scripts')
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    {{-- Import CroppieJS --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>
+
     <script>
-        // Dropzone has been added as a global variable.
-        const dropzone = new Dropzone("div.dropzone", {
-            url: "/file/post"
+        $(document).ready(function() {
+
+            const config = {
+                enableExif: true,
+                viewport: {
+                    width: 600,
+                    height: 200,
+                    type: 'square'
+                },
+                boundary: {
+                    width: '100%',
+                    height: 400
+                }
+            }
+
+            $('input[type="file"]').change(function() {
+                var file = this.files[0];
+                var reader = new FileReader();
+                $crop = $('#image_demo').croppie(config);
+                reader.onload = function(event) {
+                    $('.droparea').hide();
+                    $('.button-container').show();
+                    $crop.croppie('bind', {
+                        url: event.target.result
+                    }).then(function() {
+                        $('#submitbtn').removeClass('btn-primary').addClass('btn-dark').prop(
+                            'disabled', true);
+                    });
+                }
+                reader.readAsDataURL(file);
+
+
+                $('#crop_button').click(function() {
+                    $crop.croppie('result', {
+                        type: 'canvas',
+                        size: 'original'
+                    }).then(function(response) {
+                        $('#preview_cover').attr('src', response);
+                        $('#cover_photo_path').val(response);
+                    });
+                });
+
+            });
         });
     </script>
 @endpush

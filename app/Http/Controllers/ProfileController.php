@@ -10,8 +10,18 @@ use App\Models\Country;
 use App\Models\College;
 use App\Models\AcademicBackground as AcadBack;
 
+
 class ProfileController extends Controller
 {
+
+    function saveBase64($base64, $path = '/uploads/'){
+            $image = str_replace('data:image/png;base64,', '', $base64);
+            $image = str_replace(' ', '+', $image);
+            $imageName = $path.Auth::user()->name.time().'.'.'png';
+            \File::put(storage_path() . $imageName, base64_decode($image));
+            return '/storage'.$imageName;
+    }
+
     //
     function user($username){
         $user = User::where('username', $username)->first();
@@ -48,5 +58,16 @@ class ProfileController extends Controller
         $user->update($request->all());
         // return $request->all();
         return redirect()->back()->with('success', 'Profile updated successfully');
+    }
+    function updateCoverPhoto(Request $request){
+        $user = Auth::user();
+        if($request->cover_photo_path){
+            $image = $this->saveBase64($request->cover_photo_path, '/uploads/cover_photos/');
+            $user->cover_photo_path = $image;
+            $user->save();
+        }
+        return redirect()->back()->with('success', 'Cover Image Updated');
+
+
     }
 }

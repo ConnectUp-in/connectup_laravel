@@ -1589,6 +1589,7 @@
     <!-- SVG icons -->
     <script src="/assets/vikinger/js/utils/svg-loader.js"></script>
 
+    @yield('scripts')
     @stack('scripts')
     @stack('customscript')
 </body>

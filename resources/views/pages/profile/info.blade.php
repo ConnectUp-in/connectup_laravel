@@ -904,10 +904,13 @@
     </style>
 @endpush
 
-@push('scripts')
+@section('scripts')
     {{-- import jquery from cdn --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+@endsection
+
+@push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.4/sifter.min.js"
         integrity="sha512-B60IUvYpG4cibCeQ30J8k/+qtN+fxKAIENb3DL2DVdzIt76IDIynAt92chPEwlCuKejOt//+OZL61i1xsvCIDQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
