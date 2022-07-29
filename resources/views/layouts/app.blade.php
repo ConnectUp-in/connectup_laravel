@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/assets/template/css/vendor/tiny-slider.css">
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
-    <title>Feed | ConnectUp</title>
+    @include('layouts.partials.meta')
     @stack('styles')
 </head>
 
