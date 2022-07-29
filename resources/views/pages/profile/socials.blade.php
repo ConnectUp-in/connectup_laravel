@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-
 @php
 
 $socials = ['github', 'linkedin', 'facebook', 'instagram', 'twitter', 'youtube'];
@@ -10,7 +7,11 @@ $socials = ['github', 'linkedin', 'facebook', 'instagram', 'twitter', 'youtube']
 // Group socials in pair of two
 $socials = array_chunk($socials, 2);
 
+$page['title'] = 'Edit Socials | ' . $user->name . ' | ConnectUp';
+
 @endphp
+@extends('layouts.app')
+
 
 
 @section('content')

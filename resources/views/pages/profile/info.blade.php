@@ -1,3 +1,9 @@
+@php
+$page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
+
+@endphp
+
+
 @extends('layouts.app')
 
 @section('content')

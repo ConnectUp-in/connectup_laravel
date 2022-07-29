@@ -1,3 +1,9 @@
+@php
+$page['title'] = $user->name . '`s Profile Timeline | ConnectUp';
+$page['image'] = $user->profile_photo_path;
+$page['description'] = $user->bio ?? null;
+
+@endphp
 @extends('layouts.app')
 
 @section('content')
