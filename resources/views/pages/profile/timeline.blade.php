@@ -243,8 +243,8 @@
 
 
                     @if (Auth::check() && $user->username == Auth::user()->username)
-                        <a href="#" class="profile-header-info-action button secondary">Edit <span
-                                class="hide-text-mobile">Profile</span></a>
+                        <a href="{{ route('profile.info') }}" class="profile-header-info-action button secondary">Edit
+                            <span class="hide-text-mobile">Profile</span></a>
                     @else
                         <!-- PROFILE HEADER INFO ACTION -->
                         {{-- <a href="#" class="profile-header-info-action button secondary"><span

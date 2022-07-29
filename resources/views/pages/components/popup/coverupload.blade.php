@@ -14,7 +14,7 @@
     <div class="popup-box-body">
 
         <div class="container">
-            <div class="my-3 w-100">
+            <div class="my-3 w-100 preview-container">
                 <img id="preview_cover" src="{{ $user->cover_photo_path }}" alt="" style="width: 100%">
             </div>
             <div>
@@ -51,6 +51,10 @@
     {{-- Import Croppie css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css" />
     <style>
+        .preview-container {
+            display: none;
+        }
+
         .droparea {
             margin: 1em 2em;
             padding: 2em;
@@ -74,15 +78,24 @@
         }
 
         .button-container {
-            /* display: none; */
+            display: none;
+            margin-bottom: 1em;
         }
 
-        .button-container>div {
+        .button-container>div>form {
             display: flex;
+            justify-content: center;
         }
 
-        .button-container>div>button {
+        .button-container>div button {
             margin: 0 1em;
+            width: fit-content;
+            padding: 0 20px;
+            min-width: 100px;
+        }
+
+        #upload_button {
+            display: none;
         }
     </style>
 @endpush
@@ -99,11 +112,11 @@
                 enableExif: true,
                 viewport: {
                     width: 600,
-                    height: 200,
+                    height: 150,
                     type: 'square'
                 },
                 boundary: {
-                    width: '100%',
+                    width: 800,
                     height: 400
                 }
             }
@@ -132,6 +145,10 @@
                     }).then(function(response) {
                         $('#preview_cover').attr('src', response);
                         $('#cover_photo_path').val(response);
+                        $('#upload_button').show();
+                        $('#crop_button').hide();
+                        $('#image_demo').hide();
+                        $('.preview-container').show();
                     });
                 });
 
