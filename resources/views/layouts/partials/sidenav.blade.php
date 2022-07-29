@@ -92,7 +92,7 @@ $current_url = end($current_url);
 <nav id="navigation-widget" class="navigation-widget navigation-widget-desktop sidebar left hidden" data-simplebar>
     <!-- NAVIGATION WIDGET COVER -->
     <figure class="navigation-widget-cover liquid">
-        <img src="/assets/vikinger/img/cover/01.jpg" alt="cover-01">
+        <img src="/assets/template/img/cover/01.jpg" alt="cover-01">
     </figure>
     <!-- /NAVIGATION WIDGET COVER -->
 
@@ -111,7 +111,7 @@ $current_url = end($current_url);
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
                 <!-- HEXAGON -->
-                <div class="hexagon-image-82-90" data-src="/assets/vikinger/img/avatar/01.jpg"></div>
+                <div class="hexagon-image-82-90" data-src="/assets/template/img/avatar/01.jpg"></div>
                 <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
@@ -172,31 +172,31 @@ $current_url = end($current_url);
     <div class="badge-list small">
         <!-- BADGE ITEM -->
         <div class="badge-item">
-            <img src="/assets/vikinger/img/badge/gold-s.png" alt="badge-gold-s">
+            <img src="/assets/template/img/badge/gold-s.png" alt="badge-gold-s">
         </div>
         <!-- /BADGE ITEM -->
 
         <!-- BADGE ITEM -->
         <div class="badge-item">
-            <img src="/assets/vikinger/img/badge/age-s.png" alt="badge-age-s">
+            <img src="/assets/template/img/badge/age-s.png" alt="badge-age-s">
         </div>
         <!-- /BADGE ITEM -->
 
         <!-- BADGE ITEM -->
         <div class="badge-item">
-            <img src="/assets/vikinger/img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
+            <img src="/assets/template/img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
         </div>
         <!-- /BADGE ITEM -->
 
         <!-- BADGE ITEM -->
         <div class="badge-item">
-            <img src="/assets/vikinger/img/badge/warrior-s.png" alt="badge-warrior-s">
+            <img src="/assets/template/img/badge/warrior-s.png" alt="badge-warrior-s">
         </div>
         <!-- /BADGE ITEM -->
 
         <!-- BADGE ITEM -->
         <a class="badge-item" href="profile-badges.html">
-            <img src="/assets/vikinger/img/badge/blank-s.png" alt="badge-blank-s">
+            <img src="/assets/template/img/badge/blank-s.png" alt="badge-blank-s">
             <!-- BADGE ITEM TEXT -->
             <p class="badge-item-text">+9</p>
             <!-- /BADGE ITEM TEXT -->
@@ -423,7 +423,7 @@ $current_url = end($current_url);
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/01.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/01.jpg"></div>
                     <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->

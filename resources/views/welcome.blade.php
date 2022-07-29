@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/vikinger-landing/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/template-landing/css/styles.min.css">
     <!-- favicon -->
-    <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
+    <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
     <title>ConnectUp | Home</title>
 </head>
@@ -21,7 +21,7 @@
             <!-- LOGO -->
             <div class="logo void">
                 <a href="/">
-                    <img src="/assets/vikinger/img/landing/logo.png" width="50px" alt="logo">
+                    <img src="/assets/template/img/landing/logo.png" width="50px" alt="logo">
                 </a>
             </div>
             <!-- /LOGO -->
@@ -83,7 +83,7 @@
             <!-- BANNER INFO -->
             <div class="banner-info">
                 {{-- <!-- BANNER IMAGE -->
-                <img class="banner-image" src="/assets/vikinger-landing/img/banner/banner-tag.png" alt="HTML Version">
+                <img class="banner-image" src="/assets/template-landing/img/banner/banner-tag.png" alt="HTML Version">
                 <!-- /BANNER IMAGE --> --}}
 
                 <!-- BANNER PRETITLE -->
@@ -121,11 +121,11 @@
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/html.png" alt="feature-html">
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/html.png" alt="feature-html">
             <!-- /ARCHITECTURE IMAGE -->
 
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/html-hover.png"
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/html-hover.png"
                 alt="feature-html-hover">
             <!-- /ARCHITECTURE IMAGE -->
         </div>
@@ -134,11 +134,11 @@
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/css.png" alt="feature-css">
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/css.png" alt="feature-css">
             <!-- /ARCHITECTURE IMAGE -->
 
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/css-hover.png"
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/css-hover.png"
                 alt="feature-css-hover">
             <!-- /ARCHITECTURE IMAGE -->
         </div>
@@ -147,11 +147,11 @@
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/js.png" alt="feature-js">
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/js.png" alt="feature-js">
             <!-- /ARCHITECTURE IMAGE -->
 
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/js-hover.png"
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/js-hover.png"
                 alt="feature-js-hover">
             <!-- /ARCHITECTURE IMAGE -->
         </div>
@@ -160,11 +160,11 @@
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/sass.png" alt="feature-sass">
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/sass.png" alt="feature-sass">
             <!-- /ARCHITECTURE IMAGE -->
 
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/sass-hover.png"
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/sass-hover.png"
                 alt="feature-sass-hover">
             <!-- /ARCHITECTURE IMAGE -->
         </div>
@@ -173,12 +173,12 @@
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image" src="/assets/vikinger-landing/img/architecture/googlef.png"
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/googlef.png"
                 alt="feature-googlef">
             <!-- /ARCHITECTURE IMAGE -->
 
             <!-- ARCHITECTURE IMAGE -->
-            <img class="architecture-image-hover" src="/assets/vikinger-landing/img/architecture/googlef-hover.png"
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/googlef-hover.png"
                 alt="feature-googlef-hover">
             <!-- /ARCHITECTURE IMAGE -->
         </div>
@@ -219,47 +219,47 @@
                     [
                         'title' => 'HTML, CSS & JS Files',
                         'text' => 'We included in the pack HTML, CSS and JS files for you to customize them all you like! (Photos not included).',
-                        'image' => '/assets/vikinger-landing/img/feature/html5.png',
+                        'image' => '/assets/template-landing/img/feature/html5.png',
                     ],
                     [
                         'title' => 'Bootstrap Compatible',
                         'text' => 'We made the template compatible with Bootstrap v4.4.1, and ensured that there are no style conflicts.',
-                        'image' => '/assets/vikinger-landing/img/feature/bootstrap.png',
+                        'image' => '/assets/template-landing/img/feature/bootstrap.png',
                     ],
                     [
                         'title' => "PSD Files! (Save $12!)",
                         'text' => 'We included in the pack 56 Photoshop PSD files for you to customize them all you like! (Photos not included).',
-                        'image' => '/assets/vikinger-landing/img/feature/psd.png',
+                        'image' => '/assets/template-landing/img/feature/psd.png',
                     ],
                     [
                         'title' => 'SASS',
                         'text' => 'Easily customize styles by using variables, nesting, mixins, inheritance and more!',
-                        'image' => '/assets/vikinger-landing/img/feature/sass.png',
+                        'image' => '/assets/template-landing/img/feature/sass.png',
                     ],
                     [
                         'title' => 'Illustrations Included',
                         'text' => "You'll find inside the PSD files all illustrations, like the forum icons, badges, banners and more!",
-                        'image' => '/assets/vikinger-landing/img/feature/illustrations.png',
+                        'image' => '/assets/template-landing/img/feature/illustrations.png',
                     ],
                     [
                         'title' => 'npm &amp; Grunt',
                         'text' => 'Includes a preconfigured version using npm &amp; Grunt, just start customizing and let them do the work!',
-                        'image' => '/assets/vikinger-landing/img/feature/npmgrunt.png',
+                        'image' => '/assets/template-landing/img/feature/npmgrunt.png',
                     ],
                     [
                         'title' => 'SVG Custom Icons',
                         'text' => "Inside the pack you'll find custom SVG icons made for this template! Easily change things like color via code!",
-                        'image' => '/assets/vikinger-landing/img/feature/svg.png',
+                        'image' => '/assets/template-landing/img/feature/svg.png',
                     ],
                     [
                         'title' => 'Fully Responsive',
-                        'text' => 'Vikinger is fully responsive so you can easily browse it from any device: desktop, tablets and smartphones.',
-                        'image' => '/assets/vikinger-landing/img/feature/responsive.png',
+                        'text' => 'template is fully responsive so you can easily browse it from any device: desktop, tablets and smartphones.',
+                        'image' => '/assets/template-landing/img/feature/responsive.png',
                     ],
                     [
                         'title' => 'Help Documentation',
                         'text' => "Inside the documentation file you'll find help to guide you with all the features and plugins included.",
-                        'image' => '/assets/vikinger-landing/img/feature/documentation.png',
+                        'image' => '/assets/template-landing/img/feature/documentation.png',
                     ],
                 ];
                 
@@ -315,12 +315,12 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/vikinger-landing/img/section/01.png" alt="section-image-01">
+            <img class="section-image" src="/assets/template-landing/img/section/01.png" alt="section-image-01">
             <!-- /SECTION IMAGE -->
 
             <!-- SECTION BUTTON -->
             <a class="section-button button tertiary"
-                href="https://odindesignthemes.com/vikinger/profile-timeline.html" target="_blank">Browse all in the
+                href="https://odindesignthemes.com/template/profile-timeline.html" target="_blank">Browse all in the
                 Live Demo!</a>
             <!-- /SECTION BUTTON -->
         </section>
@@ -352,7 +352,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/02.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/02.png"
                 alt="section-image-02">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -387,7 +387,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/03.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/03.png"
                 alt="section-image-03">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -417,7 +417,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/04.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/04.png"
                 alt="section-image-04">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -454,7 +454,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/05.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/05.png"
                 alt="section-image-05">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -485,7 +485,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/06.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/06.png"
                 alt="section-image-06">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -516,7 +516,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/07.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/07.png"
                 alt="section-image-07">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -552,7 +552,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/08.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/08.png"
                 alt="section-image-08">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -583,7 +583,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/vikinger-landing/img/section/09.png"
+            <img class="promo-section-image" src="/assets/template-landing/img/section/09.png"
                 alt="section-image-09">
             <!-- /PROMO SECTION IMAGE -->
         </section>
@@ -614,7 +614,7 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/vikinger-landing/img/section/10.png" alt="section-image-10">
+            <img class="section-image" src="/assets/template-landing/img/section/10.png" alt="section-image-10">
             <!-- /SECTION IMAGE -->
         </section>
         <!-- /SECTION -->
@@ -622,7 +622,7 @@
     <!-- /SECTION WRAP --> --}}
 
     <!-- app -->
-    <script src="/assets/vikinger-landing/app.bundle.min.js"></script>
+    <script src="/assets/template-landing/app.bundle.min.js"></script>
 </body>
 
 </html>

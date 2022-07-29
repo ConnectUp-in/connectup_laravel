@@ -6,7 +6,7 @@
         {{-- <!-- SECTION BANNER -->
         <div class="section-banner">
             <!-- SECTION BANNER ICON -->
-            <img class="section-banner-icon" src="/assets/vikinger/img/banner/accounthub-icon.png" alt="accounthub-icon">
+            <img class="section-banner-icon" src="/assets/template/img/banner/accounthub-icon.png" alt="accounthub-icon">
             <!-- /SECTION BANNER ICON -->
 
             <!-- SECTION BANNER TITLE -->
@@ -384,7 +384,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/gold-s.png" alt="badge-gold-s">
+                                        <img src="/assets/template/img/badge/gold-s.png" alt="badge-gold-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -394,7 +394,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/age-s.png" alt="badge-age-s">
+                                        <img src="/assets/template/img/badge/age-s.png" alt="badge-age-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -404,7 +404,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
+                                        <img src="/assets/template/img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -414,7 +414,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/warrior-s.png" alt="badge-warrior-s">
+                                        <img src="/assets/template/img/badge/warrior-s.png" alt="badge-warrior-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -424,7 +424,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/traveller-s.png" alt="badge-traveller-s">
+                                        <img src="/assets/template/img/badge/traveller-s.png" alt="badge-traveller-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -434,7 +434,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/scientist-s.png" alt="badge-scientist-s">
+                                        <img src="/assets/template/img/badge/scientist-s.png" alt="badge-scientist-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -444,7 +444,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/ncreature-s.png" alt="badge-ncreature-s">
+                                        <img src="/assets/template/img/badge/ncreature-s.png" alt="badge-ncreature-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -454,7 +454,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/mightiers-s.png" alt="badge-mightiers-s">
+                                        <img src="/assets/template/img/badge/mightiers-s.png" alt="badge-mightiers-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -464,7 +464,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/phantom-s.png" alt="badge-phantom-s">
+                                        <img src="/assets/template/img/badge/phantom-s.png" alt="badge-phantom-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -474,7 +474,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/collector-s.png" alt="badge-collector-s">
+                                        <img src="/assets/template/img/badge/collector-s.png" alt="badge-collector-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -484,7 +484,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/bronzec-s.png" alt="badge-bronzec-s">
+                                        <img src="/assets/template/img/badge/bronzec-s.png" alt="badge-bronzec-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -494,7 +494,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/silverc-s.png" alt="badge-silverc-s">
+                                        <img src="/assets/template/img/badge/silverc-s.png" alt="badge-silverc-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>
@@ -504,7 +504,7 @@
                                 <div class="draggable-item">
                                     <!-- BADGE ITEM -->
                                     <div class="badge-item">
-                                        <img src="/assets/vikinger/img/badge/goldc-s.png" alt="badge-goldc-s">
+                                        <img src="/assets/template/img/badge/goldc-s.png" alt="badge-goldc-s">
                                     </div>
                                     <!-- /BADGE ITEM -->
                                 </div>

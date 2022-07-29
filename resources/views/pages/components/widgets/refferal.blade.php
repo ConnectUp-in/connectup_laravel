@@ -46,7 +46,7 @@
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
-                                <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg">
+                                <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/05.jpg">
                                 </div>
                                 <!-- /HEXAGON -->
                             </div>

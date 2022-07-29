@@ -187,14 +187,14 @@
                                 <div class="reaction-item">
                                     <!-- REACTION IMAGE -->
                                     <img class="reaction-image reaction-item-dropdown-trigger"
-                                        src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                        src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                     <!-- /REACTION IMAGE -->
 
                                     <!-- SIMPLE DROPDOWN -->
                                     <div class="simple-dropdown padded reaction-item-dropdown">
                                         <!-- SIMPLE DROPDOWN TEXT -->
                                         <p class="simple-dropdown-text"><img class="reaction"
-                                                src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                                src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                                 class="bold">Love</span>
                                         </p>
                                         <!-- /SIMPLE DROPDOWN TEXT -->
@@ -219,14 +219,14 @@
                                 <div class="reaction-item">
                                     <!-- REACTION IMAGE -->
                                     <img class="reaction-image reaction-item-dropdown-trigger"
-                                        src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                        src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                     <!-- /REACTION IMAGE -->
 
                                     <!-- SIMPLE DROPDOWN -->
                                     <div class="simple-dropdown padded reaction-item-dropdown">
                                         <!-- SIMPLE DROPDOWN TEXT -->
                                         <p class="simple-dropdown-text"><img class="reaction"
-                                                src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                                src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                             <span class="bold">Happy</span>
                                         </p>
                                         <!-- /SIMPLE DROPDOWN TEXT -->
@@ -247,14 +247,14 @@
                                 <div class="reaction-item">
                                     <!-- REACTION IMAGE -->
                                     <img class="reaction-image reaction-item-dropdown-trigger"
-                                        src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                        src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                     <!-- /REACTION IMAGE -->
 
                                     <!-- SIMPLE DROPDOWN -->
                                     <div class="simple-dropdown padded reaction-item-dropdown">
                                         <!-- SIMPLE DROPDOWN TEXT -->
                                         <p class="simple-dropdown-text"><img class="reaction"
-                                                src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                                src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                                 class="bold">Like</span>
                                         </p>
                                         <!-- /SIMPLE DROPDOWN TEXT -->
@@ -313,7 +313,7 @@
                                     <!-- USER AVATAR CONTENT -->
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
-                                        <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                         </div>
                                         <!-- /HEXAGON -->
                                     </div>
@@ -335,7 +335,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/13.jpg">
+                                            data-src="/assets/template/img/avatar/13.jpg">
                                         </div>
                                         <!-- /HEXAGON -->
                                     </div>
@@ -357,7 +357,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/22.jpg">
+                                            data-src="/assets/template/img/avatar/22.jpg">
                                         </div>
                                         <!-- /HEXAGON -->
                                     </div>
@@ -379,7 +379,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/10.jpg">
+                                            data-src="/assets/template/img/avatar/10.jpg">
                                         </div>
                                         <!-- /HEXAGON -->
                                     </div>
@@ -401,7 +401,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/08.jpg">
+                                            data-src="/assets/template/img/avatar/08.jpg">
                                         </div>
                                         <!-- /HEXAGON -->
                                     </div>
@@ -475,7 +475,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Like">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                             alt="reaction-like">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -484,7 +484,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Love">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                             alt="reaction-love">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -493,7 +493,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                             alt="reaction-dislike">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -502,7 +502,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Happy">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                             alt="reaction-happy">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -511,7 +511,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Funny">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                             alt="reaction-funny">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -520,7 +520,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Wow">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                             alt="reaction-wow">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -529,7 +529,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Angry">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                             alt="reaction-angry">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -538,7 +538,7 @@
                     <!-- REACTION OPTION -->
                     <div class="reaction-option text-tooltip-tft" data-title="Sad">
                         <!-- REACTION OPTION IMAGE -->
-                        <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                        <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                             alt="reaction-sad">
                         <!-- /REACTION OPTION IMAGE -->
                     </div>
@@ -701,7 +701,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/05.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -809,14 +809,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -841,14 +841,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                    src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy"> <span
+                                            src="/assets/template/img/reaction/happy.png" alt="reaction-happy"> <span
                                             class="bold">Happy</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -869,14 +869,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -935,7 +935,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -956,7 +956,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/13.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/13.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -977,7 +977,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/22.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/22.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -998,7 +998,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/10.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/10.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1019,7 +1019,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1086,7 +1086,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1095,7 +1095,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1104,7 +1104,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1113,7 +1113,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1122,7 +1122,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1131,7 +1131,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1140,7 +1140,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1149,7 +1149,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1248,7 +1248,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/07.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1409,14 +1409,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/funny.png" alt="reaction-funny">
+                                    src="/assets/template/img/reaction/funny.png" alt="reaction-funny">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/funny.png" alt="reaction-funny"> <span
+                                            src="/assets/template/img/reaction/funny.png" alt="reaction-funny"> <span
                                             class="bold">Funny</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -1441,14 +1441,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -1469,14 +1469,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -1526,7 +1526,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/09.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/09.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1547,7 +1547,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1568,7 +1568,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/12.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/12.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1589,7 +1589,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/16.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/16.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1610,7 +1610,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/06.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/06.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -1677,7 +1677,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1686,7 +1686,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1695,7 +1695,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1704,7 +1704,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1713,7 +1713,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1722,7 +1722,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1731,7 +1731,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1740,7 +1740,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -1839,7 +1839,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/02.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/02.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1915,7 +1915,7 @@
                         <div class="photo-preview">
                             <!-- PHOTO PREVIEW IMAGE -->
                             <figure class="photo-preview-image liquid">
-                                <img src="/assets/vikinger/img/cover/10.jpg" alt="photo-preview-10">
+                                <img src="/assets/template/img/cover/10.jpg" alt="photo-preview-10">
                             </figure>
                             <!-- /PHOTO PREVIEW IMAGE -->
 
@@ -1965,7 +1965,7 @@
                         <div class="photo-preview">
                             <!-- PHOTO PREVIEW IMAGE -->
                             <figure class="photo-preview-image liquid">
-                                <img src="/assets/vikinger/img/cover/12.jpg" alt="photo-preview-12">
+                                <img src="/assets/template/img/cover/12.jpg" alt="photo-preview-12">
                             </figure>
                             <!-- /PHOTO PREVIEW IMAGE -->
 
@@ -2019,7 +2019,7 @@
                         <div class="photo-preview">
                             <!-- PHOTO PREVIEW IMAGE -->
                             <figure class="photo-preview-image liquid">
-                                <img src="/assets/vikinger/img/cover/16.jpg" alt="photo-preview-16">
+                                <img src="/assets/template/img/cover/16.jpg" alt="photo-preview-16">
                             </figure>
                             <!-- /PHOTO PREVIEW IMAGE -->
 
@@ -2069,7 +2069,7 @@
                         <div class="photo-preview">
                             <!-- PHOTO PREVIEW IMAGE -->
                             <figure class="photo-preview-image liquid">
-                                <img src="/assets/vikinger/img/cover/08.jpg" alt="photo-preview-08">
+                                <img src="/assets/template/img/cover/08.jpg" alt="photo-preview-08">
                             </figure>
                             <!-- /PHOTO PREVIEW IMAGE -->
 
@@ -2127,7 +2127,7 @@
                         <div class="photo-preview">
                             <!-- PHOTO PREVIEW IMAGE -->
                             <figure class="photo-preview-image liquid">
-                                <img src="/assets/vikinger/img/cover/14.jpg" alt="photo-preview-14">
+                                <img src="/assets/template/img/cover/14.jpg" alt="photo-preview-14">
                             </figure>
                             <!-- /PHOTO PREVIEW IMAGE -->
 
@@ -2203,14 +2203,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/wow.png" alt="reaction-wow">
+                                    src="/assets/template/img/reaction/wow.png" alt="reaction-wow">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/wow.png" alt="reaction-wow"> <span
+                                            src="/assets/template/img/reaction/wow.png" alt="reaction-wow"> <span
                                             class="bold">Wow</span></p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
 
@@ -2226,14 +2226,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -2275,7 +2275,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/03.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/03.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2296,7 +2296,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/15.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/15.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2317,7 +2317,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/14.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/14.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2338,7 +2338,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2405,7 +2405,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2414,7 +2414,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2423,7 +2423,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2432,7 +2432,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2441,7 +2441,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2450,7 +2450,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2459,7 +2459,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2468,7 +2468,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2567,7 +2567,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/04.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/04.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -2646,14 +2646,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/dislike.png" alt="reaction-dislike">
+                                    src="/assets/template/img/reaction/dislike.png" alt="reaction-dislike">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/dislike.png" alt="reaction-dislike">
+                                            src="/assets/template/img/reaction/dislike.png" alt="reaction-dislike">
                                         <span class="bold">Dislike</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -2678,14 +2678,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -2706,14 +2706,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -2768,7 +2768,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2789,7 +2789,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/11.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/11.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2810,7 +2810,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/06.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/06.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2831,7 +2831,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2852,7 +2852,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/10.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/10.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -2919,7 +2919,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2928,7 +2928,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2937,7 +2937,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2946,7 +2946,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2955,7 +2955,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2964,7 +2964,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2973,7 +2973,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -2982,7 +2982,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3081,7 +3081,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/03.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -3163,7 +3163,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-30-32"
-                                            data-src="/assets/vikinger/img/avatar/02.jpg"></div>
+                                            data-src="/assets/template/img/avatar/02.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -3233,7 +3233,7 @@
                         <!-- VIDEO STATUS -->
                         <a class="video-status" href="https://www.twitch.tv/" target="_blank">
                             <!-- VIDEO STATUS IMAGE -->
-                            <img class="video-status-image" src="/assets/vikinger/img/cover/51.jpg" alt="cover-51">
+                            <img class="video-status-image" src="/assets/template/img/cover/51.jpg" alt="cover-51">
                             <!-- /VIDEO STATUS IMAGE -->
 
                             <!-- VIDEO STATUS INFO -->
@@ -3274,14 +3274,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3306,14 +3306,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                    src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                            src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                         <span class="bold">Happy</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3330,14 +3330,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3400,7 +3400,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3421,7 +3421,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/13.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/13.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3442,7 +3442,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/22.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/22.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3463,7 +3463,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/10.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/10.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3484,7 +3484,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3551,7 +3551,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3560,7 +3560,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3569,7 +3569,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3578,7 +3578,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3587,7 +3587,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3596,7 +3596,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3605,7 +3605,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3614,7 +3614,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -3713,7 +3713,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/05.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -3780,7 +3780,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/24.jpg"></div>
+                            <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/24.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -3823,14 +3823,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3855,14 +3855,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                    src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                            src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                         <span class="bold">Happy</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3879,14 +3879,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -3949,7 +3949,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3970,7 +3970,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/13.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/13.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -3991,7 +3991,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/22.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/22.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4012,7 +4012,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/10.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/10.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4033,7 +4033,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4100,7 +4100,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4109,7 +4109,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4118,7 +4118,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4127,7 +4127,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4136,7 +4136,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4145,7 +4145,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4154,7 +4154,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4163,7 +4163,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4262,7 +4262,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/03.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -4349,14 +4349,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -4381,14 +4381,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                    src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/happy.png" alt="reaction-happy">
+                                            src="/assets/template/img/reaction/happy.png" alt="reaction-happy">
                                         <span class="bold">Happy</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -4409,14 +4409,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -4475,7 +4475,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4496,7 +4496,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/13.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/13.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4517,7 +4517,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/22.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/22.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4538,7 +4538,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/10.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/10.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4559,7 +4559,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -4626,7 +4626,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4635,7 +4635,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4644,7 +4644,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4653,7 +4653,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4662,7 +4662,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4671,7 +4671,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4680,7 +4680,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4689,7 +4689,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -4788,7 +4788,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/07.jpg"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -4903,7 +4903,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/10.jpg"></div>
+                                            data-src="/assets/template/img/avatar/10.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -4924,7 +4924,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                            data-src="/assets/template/img/avatar/05.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -4945,7 +4945,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/09.jpg"></div>
+                                            data-src="/assets/template/img/avatar/09.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -4966,7 +4966,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/08.jpg"></div>
+                                            data-src="/assets/template/img/avatar/08.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -4987,7 +4987,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/12.jpg"></div>
+                                            data-src="/assets/template/img/avatar/12.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5008,7 +5008,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/16.jpg"></div>
+                                            data-src="/assets/template/img/avatar/16.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5029,7 +5029,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/06.jpg"></div>
+                                            data-src="/assets/template/img/avatar/06.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5050,7 +5050,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/13.jpg"></div>
+                                            data-src="/assets/template/img/avatar/13.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5071,7 +5071,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/11.jpg"></div>
+                                            data-src="/assets/template/img/avatar/11.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5092,7 +5092,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/30.jpg"></div>
+                                            data-src="/assets/template/img/avatar/30.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5113,7 +5113,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                                            data-src="/assets/template/img/avatar/03.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5134,7 +5134,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/04.jpg"></div>
+                                            data-src="/assets/template/img/avatar/04.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5188,7 +5188,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/11.jpg"></div>
+                                            data-src="/assets/template/img/avatar/11.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5209,7 +5209,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/22.jpg"></div>
+                                            data-src="/assets/template/img/avatar/22.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5230,7 +5230,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/21.jpg"></div>
+                                            data-src="/assets/template/img/avatar/21.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5251,7 +5251,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/19.jpg"></div>
+                                            data-src="/assets/template/img/avatar/19.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5272,7 +5272,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/14.jpg"></div>
+                                            data-src="/assets/template/img/avatar/14.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5293,7 +5293,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/15.jpg"></div>
+                                            data-src="/assets/template/img/avatar/15.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5314,7 +5314,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                                            data-src="/assets/template/img/avatar/07.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5368,7 +5368,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/18.jpg"></div>
+                                            data-src="/assets/template/img/avatar/18.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5389,7 +5389,7 @@
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-18-20"
-                                            data-src="/assets/vikinger/img/avatar/02.jpg"></div>
+                                            data-src="/assets/template/img/avatar/02.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -5422,14 +5422,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/funny.png" alt="reaction-funny">
+                                    src="/assets/template/img/reaction/funny.png" alt="reaction-funny">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/funny.png" alt="reaction-funny">
+                                            src="/assets/template/img/reaction/funny.png" alt="reaction-funny">
                                         <span class="bold">Funny</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -5454,14 +5454,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                    src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/like.png" alt="reaction-like"> <span
+                                            src="/assets/template/img/reaction/like.png" alt="reaction-like"> <span
                                             class="bold">Like</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -5482,14 +5482,14 @@
                             <div class="reaction-item">
                                 <!-- REACTION IMAGE -->
                                 <img class="reaction-image reaction-item-dropdown-trigger"
-                                    src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                    src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                 <!-- /REACTION IMAGE -->
 
                                 <!-- SIMPLE DROPDOWN -->
                                 <div class="simple-dropdown padded reaction-item-dropdown">
                                     <!-- SIMPLE DROPDOWN TEXT -->
                                     <p class="simple-dropdown-text"><img class="reaction"
-                                            src="/assets/vikinger/img/reaction/love.png" alt="reaction-love"> <span
+                                            src="/assets/template/img/reaction/love.png" alt="reaction-love"> <span
                                             class="bold">Love</span>
                                     </p>
                                     <!-- /SIMPLE DROPDOWN TEXT -->
@@ -5539,7 +5539,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/09.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/09.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -5560,7 +5560,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/08.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/08.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -5581,7 +5581,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/12.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/12.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -5602,7 +5602,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/16.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/16.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -5623,7 +5623,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-18-20" data-src="/assets/vikinger/img/avatar/06.jpg">
+                                    <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/06.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -5690,7 +5690,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/like.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/like.png"
                         alt="reaction-like">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5699,7 +5699,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/love.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/love.png"
                         alt="reaction-love">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5708,7 +5708,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/dislike.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/dislike.png"
                         alt="reaction-dislike">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5717,7 +5717,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/happy.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/happy.png"
                         alt="reaction-happy">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5726,7 +5726,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/funny.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/funny.png"
                         alt="reaction-funny">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5735,7 +5735,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/wow.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
                         alt="reaction-wow">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5744,7 +5744,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/angry.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/angry.png"
                         alt="reaction-angry">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>
@@ -5753,7 +5753,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                     <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/vikinger/img/reaction/sad.png"
+                    <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
                         alt="reaction-sad">
                     <!-- /REACTION OPTION IMAGE -->
                 </div>

@@ -7,7 +7,7 @@
         {{-- <!-- SECTION BANNER -->
         <div class="section-banner">
             <!-- SECTION BANNER ICON -->
-            <img class="section-banner-icon" src="/assets/vikinger/img/banner/newsfeed-icon.png" alt="newsfeed-icon">
+            <img class="section-banner-icon" src="/assets/template/img/banner/newsfeed-icon.png" alt="newsfeed-icon">
             <!-- /SECTION BANNER ICON -->
 
             <!-- SECTION BANNER TITLE -->
@@ -80,7 +80,7 @@
                                     <!-- /TEXT STICKER -->
 
                                     <!-- BADGE ITEM STAT IMAGE -->
-                                    <img class="badge-item-stat-image" src="/assets/vikinger/img/badge/uexp-b.png"
+                                    <img class="badge-item-stat-image" src="/assets/template/img/badge/uexp-b.png"
                                         alt="badge-uexp-b">
                                     <!-- /BADGE ITEM STAT IMAGE -->
 
@@ -129,7 +129,7 @@
                                     <!-- /TEXT STICKER -->
 
                                     <!-- BADGE ITEM STAT IMAGE -->
-                                    <img class="badge-item-stat-image" src="/assets/vikinger/img/badge/verifieds-b.png"
+                                    <img class="badge-item-stat-image" src="/assets/template/img/badge/verifieds-b.png"
                                         alt="badge-verifieds-b">
                                     <!-- /BADGE ITEM STAT IMAGE -->
 
@@ -179,7 +179,7 @@
                                     <!-- /TEXT STICKER -->
 
                                     <!-- BADGE ITEM STAT IMAGE -->
-                                    <img class="badge-item-stat-image" src="/assets/vikinger/img/badge/qconq-b.png"
+                                    <img class="badge-item-stat-image" src="/assets/template/img/badge/qconq-b.png"
                                         alt="badge-qconq-b">
                                     <!-- /BADGE ITEM STAT IMAGE -->
 
@@ -280,7 +280,7 @@
                                         <!-- USER AVATAR CONTENT -->
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/07.jpg">
+                                            <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/07.jpg">
                                             </div>
                                             <!-- /HEXAGON -->
                                         </div>
@@ -365,7 +365,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                                                data-src="/assets/template/img/avatar/03.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -449,7 +449,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/23.jpg"></div>
+                                                data-src="/assets/template/img/avatar/23.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -533,7 +533,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/15.jpg"></div>
+                                                data-src="/assets/template/img/avatar/15.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -617,7 +617,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/04.jpg"></div>
+                                                data-src="/assets/template/img/avatar/04.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -699,7 +699,7 @@
 
                 {{-- <!-- BANNER PROMO -->
                 <a class="banner-promo" href="https://themeforest.net/user/odin_design" target="_blank">
-                    <img src="/assets/vikinger/img/banner/banner-promo.jpg" alt="banner-promo">
+                    <img src="/assets/template/img/banner/banner-promo.jpg" alt="banner-promo">
                 </a>
                 <!-- /BANNER PROMO --> --}}
 
@@ -744,7 +744,7 @@
                                 <!-- QUEST PREVIEW INFO -->
                                 <div class="quest-preview-info">
                                     <!-- QUEST PREVIEW IMAGE -->
-                                    <img class="quest-preview-image" src="/assets/vikinger/img/quest/openq-s.png"
+                                    <img class="quest-preview-image" src="/assets/template/img/quest/openq-s.png"
                                         alt="openq-s">
                                     <!-- /QUEST PREVIEW IMAGE -->
 
@@ -774,7 +774,7 @@
                                 <!-- QUEST PREVIEW INFO -->
                                 <div class="quest-preview-info">
                                     <!-- QUEST PREVIEW IMAGE -->
-                                    <img class="quest-preview-image" src="/assets/vikinger/img/quest/openq-s.png"
+                                    <img class="quest-preview-image" src="/assets/template/img/quest/openq-s.png"
                                         alt="openq-s">
                                     <!-- /QUEST PREVIEW IMAGE -->
 
@@ -804,7 +804,7 @@
                                 <!-- QUEST PREVIEW INFO -->
                                 <div class="quest-preview-info">
                                     <!-- QUEST PREVIEW IMAGE -->
-                                    <img class="quest-preview-image" src="/assets/vikinger/img/quest/openq-s.png"
+                                    <img class="quest-preview-image" src="/assets/template/img/quest/openq-s.png"
                                         alt="openq-s">
                                     <!-- /QUEST PREVIEW IMAGE -->
 
@@ -834,7 +834,7 @@
                                 <!-- QUEST PREVIEW INFO -->
                                 <div class="quest-preview-info">
                                     <!-- QUEST PREVIEW IMAGE -->
-                                    <img class="quest-preview-image" src="/assets/vikinger/img/quest/openq-s.png"
+                                    <img class="quest-preview-image" src="/assets/template/img/quest/openq-s.png"
                                         alt="openq-s">
                                     <!-- /QUEST PREVIEW IMAGE -->
 
@@ -863,7 +863,7 @@
                                 <!-- QUEST PREVIEW INFO -->
                                 <div class="quest-preview-info">
                                     <!-- QUEST PREVIEW IMAGE -->
-                                    <img class="quest-preview-image" src="/assets/vikinger/img/quest/openq-s.png"
+                                    <img class="quest-preview-image" src="/assets/template/img/quest/openq-s.png"
                                         alt="openq-s">
                                     <!-- /QUEST PREVIEW IMAGE -->
 
@@ -1204,7 +1204,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/like.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/like.png"
                                             alt="reaction-like">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1221,7 +1221,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/love.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/love.png"
                                             alt="reaction-love">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1242,7 +1242,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/dislike.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/dislike.png"
                                             alt="reaction-dislike">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1259,7 +1259,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/happy.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/happy.png"
                                             alt="reaction-happy">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1284,7 +1284,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/funny.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/funny.png"
                                             alt="reaction-funny">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1301,7 +1301,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/wow.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/wow.png"
                                             alt="reaction-wow">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1322,7 +1322,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/angry.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/angry.png"
                                             alt="reaction-angry">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1339,7 +1339,7 @@
                                     <!-- REACTION STAT -->
                                     <div class="reaction-stat">
                                         <!-- REACTION STAT IMAGE -->
-                                        <img class="reaction-stat-image" src="/assets/vikinger/img/reaction/sad.png"
+                                        <img class="reaction-stat-image" src="/assets/template/img/reaction/sad.png"
                                             alt="reaction-sad">
                                         <!-- /REACTION STAT IMAGE -->
 
@@ -1926,7 +1926,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-40-44"
-                                                data-src="/assets/vikinger/img/avatar/29.jpg"></div>
+                                                data-src="/assets/template/img/avatar/29.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1970,7 +1970,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-40-44"
-                                                data-src="/assets/vikinger/img/avatar/24.jpg"></div>
+                                                data-src="/assets/template/img/avatar/24.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -2014,7 +2014,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-40-44"
-                                                data-src="/assets/vikinger/img/avatar/25.jpg"></div>
+                                                data-src="/assets/template/img/avatar/25.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -2058,7 +2058,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-40-44"
-                                                data-src="/assets/vikinger/img/avatar/28.jpg"></div>
+                                                data-src="/assets/template/img/avatar/28.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -2102,7 +2102,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-40-44"
-                                                data-src="/assets/vikinger/img/avatar/27.jpg"></div>
+                                                data-src="/assets/template/img/avatar/27.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->

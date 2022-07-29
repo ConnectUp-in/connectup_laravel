@@ -7,7 +7,7 @@
             <!-- LOGO -->
             <div class="logo">
                 <!-- LOGO IMAGE -->
-                <img src="/assets/vikinger/img/landing/logo.png" alt="Vikinger" width="50px">
+                <img src="/assets/template/img/landing/logo.png" alt="template" width="50px">
                 <!-- /LOGO IMAGE -->
             </div>
             <!-- /LOGO -->
@@ -186,7 +186,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/05.jpg">
+                                    <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/05.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -269,7 +269,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/15.jpg">
+                                    <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/15.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -364,7 +364,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-40-44" data-src="/assets/vikinger/img/avatar/24.jpg">
+                                    <div class="hexagon-image-40-44" data-src="/assets/template/img/avatar/24.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>
@@ -416,7 +416,7 @@
                         <div class="user-status-avatar">
                             <!-- PICTURE -->
                             <figure class="picture small round liquid">
-                                <img src="/assets/vikinger/img/marketplace/items/07.jpg" alt="item-07">
+                                <img src="/assets/template/img/marketplace/items/07.jpg" alt="item-07">
                             </figure>
                             <!-- /PICTURE -->
                         </div>
@@ -506,7 +506,7 @@
                                 <a class="cart-item-preview-image" href="marketplace-product.html">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
-                                        <img src="/assets/vikinger/img/marketplace/items/01.jpg" alt="item-01">
+                                        <img src="/assets/template/img/marketplace/items/01.jpg" alt="item-01">
                                     </figure>
                                     <!-- /PICTURE -->
                                 </a>
@@ -548,7 +548,7 @@
                                 <a class="cart-item-preview-image" href="marketplace-product.html">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
-                                        <img src="/assets/vikinger/img/marketplace/items/11.jpg" alt="item-11">
+                                        <img src="/assets/template/img/marketplace/items/11.jpg" alt="item-11">
                                     </figure>
                                     <!-- /PICTURE -->
                                 </a>
@@ -589,7 +589,7 @@
                                 <a class="cart-item-preview-image" href="marketplace-product.html">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
-                                        <img src="/assets/vikinger/img/marketplace/items/10.jpg" alt="item-10">
+                                        <img src="/assets/template/img/marketplace/items/10.jpg" alt="item-10">
                                     </figure>
                                     <!-- /PICTURE -->
                                 </a>
@@ -631,7 +631,7 @@
                                 <a class="cart-item-preview-image" href="marketplace-product.html">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
-                                        <img src="/assets/vikinger/img/marketplace/items/04.jpg" alt="item-04">
+                                        <img src="/assets/template/img/marketplace/items/04.jpg" alt="item-04">
                                     </figure>
                                     <!-- /PICTURE -->
                                 </a>
@@ -751,7 +751,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/16.jpg"></div>
+                                                data-src="/assets/template/img/avatar/16.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -849,7 +849,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/14.jpg"></div>
+                                                data-src="/assets/template/img/avatar/14.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -947,7 +947,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/11.jpg"></div>
+                                                data-src="/assets/template/img/avatar/11.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1092,7 +1092,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/04.jpg"></div>
+                                                data-src="/assets/template/img/avatar/04.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1169,7 +1169,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                                data-src="/assets/template/img/avatar/05.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1246,7 +1246,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                                                data-src="/assets/template/img/avatar/03.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1323,7 +1323,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                                                data-src="/assets/template/img/avatar/07.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1400,7 +1400,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/12.jpg"></div>
+                                                data-src="/assets/template/img/avatar/12.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1477,7 +1477,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/10.jpg"></div>
+                                                data-src="/assets/template/img/avatar/10.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1601,7 +1601,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/03.jpg"></div>
+                                                data-src="/assets/template/img/avatar/03.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1686,7 +1686,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/07.jpg"></div>
+                                                data-src="/assets/template/img/avatar/07.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1738,7 +1738,7 @@
                                 <!-- USER STATUS TITLE -->
                                 <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah
                                         Diamond</a> left a like <img class="reaction"
-                                        src="/assets/vikinger/img/reaction/like.png" alt="reaction-like">
+                                        src="/assets/template/img/reaction/like.png" alt="reaction-like">
                                     reaction on your <a class="highlighted" href="profile-timeline.html">status
                                         update</a></p>
                                 <!-- /USER STATUS TITLE -->
@@ -1773,7 +1773,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/02.jpg"></div>
+                                                data-src="/assets/template/img/avatar/02.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1858,7 +1858,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/10.jpg"></div>
+                                                data-src="/assets/template/img/avatar/10.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -1910,7 +1910,7 @@
                                 <!-- USER STATUS TITLE -->
                                 <p class="user-status-title"><a class="bold" href="profile-timeline.html">The
                                         Green Goo</a> left a love <img class="reaction"
-                                        src="/assets/vikinger/img/reaction/love.png" alt="reaction-love">
+                                        src="/assets/template/img/reaction/love.png" alt="reaction-love">
                                     reaction on your <a class="highlighted" href="profile-timeline.html">status
                                         update</a></p>
                                 <!-- /USER STATUS TITLE -->
@@ -1945,7 +1945,7 @@
                                         <div class="user-avatar-content">
                                             <!-- HEXAGON -->
                                             <div class="hexagon-image-30-32"
-                                                data-src="/assets/vikinger/img/avatar/05.jpg"></div>
+                                                data-src="/assets/template/img/avatar/05.jpg"></div>
                                             <!-- /HEXAGON -->
                                         </div>
                                         <!-- /USER AVATAR CONTENT -->
@@ -2056,7 +2056,7 @@
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-30-32" data-src="/assets/vikinger/img/avatar/01.jpg">
+                                    <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/01.jpg">
                                     </div>
                                     <!-- /HEXAGON -->
                                 </div>

@@ -13,7 +13,7 @@
         <div class="landing-info">
             <!-- LOGO -->
             <div class="logo">
-                <img src="/assets/vikinger/img/landing/logo.png" alt="logo" width="70">
+                <img src="/assets/template/img/landing/logo.png" alt="logo" width="70">
             </div>
             <!-- /LOGO -->
 
@@ -49,7 +49,7 @@
             <!-- FORM BOX -->
             <div class="form-box login-register-form-element">
                 <!-- FORM BOX DECORATION -->
-                <img class="form-box-decoration overflowing" src="/assets/vikinger/img/landing/rocket.png" alt="rocket">
+                <img class="form-box-decoration overflowing" src="/assets/template/img/landing/rocket.png" alt="rocket">
                 <!-- /FORM BOX DECORATION -->
 
                 <!-- FORM BOX TITLE -->
@@ -173,7 +173,7 @@
             <!-- FORM BOX -->
             <div class="form-box login-register-form-element">
                 <!-- FORM BOX DECORATION -->
-                <img class="form-box-decoration" src="/assets/vikinger/img/landing/rocket.png" alt="rocket">
+                <img class="form-box-decoration" src="/assets/template/img/landing/rocket.png" alt="rocket">
                 <!-- /FORM BOX DECORATION -->
 
                 <!-- FORM BOX TITLE -->

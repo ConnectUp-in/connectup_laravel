@@ -7,9 +7,9 @@
     <!-- bootstrap 4.3.1 -->
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/vikinger/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/template/css/styles.min.css">
     <!-- favicon -->
-    <link rel="icon" href="/assets/vikinger/img/landing/favicon.png">
+    <link rel="icon" href="/assets/template/img/landing/favicon.png">
     <title>ConnectUp | Home</title>
 
     {{-- Import fontawesome --}}
@@ -23,15 +23,15 @@
     @yield('content')
 
     <!-- app -->
-    <script src="/assets/vikinger/js/utils/app.js"></script>
+    <script src="/assets/template/js/utils/app.js"></script>
     <!-- XM_Plugins -->
-    <script src="/assets/vikinger/js/vendor/xm_plugins.min.js"></script>
+    <script src="/assets/template/js/vendor/xm_plugins.min.js"></script>
     <!-- form.utils -->
-    <script src="/assets/vikinger/js/form/form.utils.js"></script>
+    <script src="/assets/template/js/form/form.utils.js"></script>
     <!-- landing.tabs -->
-    <script src="/assets/vikinger/js/landing/landing.tabs.js"></script>
+    <script src="/assets/template/js/landing/landing.tabs.js"></script>
     <!-- SVG icons -->
-    <script src="/assets/vikinger/js/utils/svg-loader.js"></script>
+    <script src="/assets/template/js/utils/svg-loader.js"></script>
 
     @yield('scripts')
 </body>

@@ -66,7 +66,7 @@
                             <!-- /ACHIEVEMENT STATUS INFO -->
 
                             <!-- ACHIEVEMENT STATUS IMAGE -->
-                            <img class="achievement-status-image" src="/assets/vikinger/img/badge/completedq-s.png"
+                            <img class="achievement-status-image" src="/assets/template/img/badge/completedq-s.png"
                                 alt="bdage-completedq-s">
                             <!-- /ACHIEVEMENT STATUS IMAGE -->
                         </div>
@@ -91,7 +91,7 @@
                             <!-- /ACHIEVEMENT STATUS INFO -->
 
                             <!-- ACHIEVEMENT STATUS IMAGE -->
-                            <img class="achievement-status-image" src="/assets/vikinger/img/badge/unlocked-badge.png"
+                            <img class="achievement-status-image" src="/assets/template/img/badge/unlocked-badge.png"
                                 alt="bdage-unlocked-badge">
                             <!-- /ACHIEVEMENT STATUS IMAGE -->
                         </div>

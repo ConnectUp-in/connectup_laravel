@@ -39,7 +39,7 @@
                 <div class="picture-item">
                     <!-- PICTURE -->
                     <figure class="picture round liquid">
-                        <img src="/assets/vikinger/img/avatar/01.jpg" alt="avatar-01">
+                        <img src="/assets/template/img/avatar/01.jpg" alt="avatar-01">
                     </figure>
                     <!-- /PICTURE -->
                 </div>
@@ -51,7 +51,7 @@
                     <a class="picture-item" href="profile-photos.html">
                         <!-- PICTURE -->
                         <figure class="picture round liquid">
-                            <img src="/assets/vikinger/img/cover/17.jpg" alt="avatar-17">
+                            <img src="/assets/template/img/cover/17.jpg" alt="avatar-17">
                         </figure>
                         <!-- /PICTURE -->
 
