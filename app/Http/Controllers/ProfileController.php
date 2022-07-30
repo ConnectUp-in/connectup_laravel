@@ -31,8 +31,10 @@ class ProfileController extends Controller
             $user->interests = [];
          }
         page('user/{username}', $user->id);
+        $refferals = User::where('invited_by', $user->invite_refferal)->select('name', 'username','email', 'profile_photo_path', 'created_at')->get();
+
         // return $user;
-        return view('pages.profile.timeline', compact('user'));
+        return view('pages.profile.timeline', compact('user', 'refferals'));
     }
     function info(){
         $user = Auth::user();

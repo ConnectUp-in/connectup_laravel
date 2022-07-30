@@ -1629,7 +1629,7 @@
             toastr.error("{{ Session::get('error') }}")
         @endif
 
-        toastr.success("Yeh to mast chal rha hai")
+        // toastr.success("Yeh to mast chal rha hai")
     </script>
     @yield('scripts')
     @stack('scripts')
