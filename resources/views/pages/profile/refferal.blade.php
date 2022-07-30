@@ -60,20 +60,65 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                         <!-- /UPLOAD BOX -->
 
                         <!-- UPLOAD BOX -->
-                        <div class="upload-box popup-cover-upload-trigger">
-                            <!-- UPLOAD BOX ICON -->
-                            <svg class="upload-box-icon icon-photos">
-                                <use xlink:href="#svg-photos"></use>
-                            </svg>
-                            <!-- /UPLOAD BOX ICON -->
+                        <div class="upload-box">
 
-                            <!-- UPLOAD BOX TITLE -->
-                            <p class="upload-box-title">Change Cover</p>
-                            <!-- /UPLOAD BOX TITLE -->
+                            <!-- REACTION OPTIONS -->
+                            <div class=" share-options ">
 
-                            <!-- UPLOAD BOX TEXT -->
-                            <p class="upload-box-text">1184x300px size minimum</p>
-                            <!-- /UPLOAD BOX TEXT -->
+                                {{-- Copy Link, Whatsapp, Linkedin, Twitter --}}
+
+                                <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
+
+                                    <a href="whatsapp://send?text=https://connectup.in/post/asdf">
+                                        <!-- REACTION OPTION
+                                        IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                                {{-- Linkedin share option --}}
+                                <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
+                                    <a
+                                        href="https://www.linkedin.com/shareArticle?mini=true&url=https://connectup.in/post/sdaf&title=sdf&source=https://connectup.in">
+                                        <!-- REACTION OPTION
+                                        IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                                {{-- Twitter share option --}}
+                                <div class="reaction-option text-tooltip-tft" data-title="Twitter">
+                                    <a
+                                        href="https://twitter.com/intent/tweet?text=https://connectup.in/post/asdf&via=connectup">
+                                        <!-- REACTION OPTION
+                                        IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                                {{-- Copy Link share option --}}
+                                <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
+                                    <a onclick="navigator.clipboard.writeText(`https://connectup.in/post/sdf`)">
+
+                                        <!-- REACTION OPTION
+                                        IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                            </div>
                         </div>
                         <!-- /UPLOAD BOX -->
                     </div>
