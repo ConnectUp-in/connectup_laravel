@@ -199,16 +199,14 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
 @endpush
 
 @section('scripts')
-    {{-- import jquery from cdn --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 @endsection
 
 @push('scripts')
     <script>
         function copyCode(code) {
             navigator.clipboard.writeText(code)
-            alert('Copied to clipboard')
+            // notify using toastr
+            toastr.success('Copied to clipboard')
         }
     </script>
 @endpush

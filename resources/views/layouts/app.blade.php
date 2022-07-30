@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/assets/template/css/vendor/simplebar.css">
     <!-- tiny-slider styles -->
     <link rel="stylesheet" href="/assets/template/css/vendor/tiny-slider.css">
+    <!-- toasterjs css from cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
     @include('layouts.partials.meta')
@@ -1589,6 +1591,31 @@
     <!-- SVG icons -->
     <script src="/assets/template/js/utils/svg-loader.js"></script>
 
+    {{-- import jquery from cdn --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    {{-- Import Toasterjs from cdn --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
     @yield('scripts')
     @stack('scripts')
     @stack('customscript')
