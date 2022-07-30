@@ -37,53 +37,57 @@
             <div class="user-status-list">
 
 
-                <!-- USER STATUS -->
-                <div class="user-status">
-                    <!-- USER STATUS AVATAR -->
-                    <a class="user-status-avatar" href="profile-timeline.html">
-                        <!-- USER AVATAR -->
-                        <div class="user-avatar small no-outline">
-                            <!-- USER AVATAR CONTENT -->
-                            <div class="user-avatar-content">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/05.jpg">
+                @forelse ($refferals as $user)
+                    <!-- USER STATUS -->
+                    <div class="user-status">
+                        <!-- USER STATUS AVATAR -->
+                        <a class="user-status-avatar" href="profile-timeline.html">
+                            <!-- USER AVATAR -->
+                            <div class="user-avatar small no-outline">
+                                <!-- USER AVATAR CONTENT -->
+                                <div class="user-avatar-content">
+                                    <!-- HEXAGON -->
+                                    <div class="hexagon-image-30-32" data-src="{{ $user->profile_photo_path }}">
+                                    </div>
+                                    <!-- /HEXAGON -->
                                 </div>
-                                <!-- /HEXAGON -->
+                                <!-- /USER AVATAR CONTENT -->
+
+                                <!-- USER AVATAR PROGRESS -->
+                                <div class="user-avatar-progress">
+                                    <!-- HEXAGON -->
+                                    <div class="hexagon-progress-40-44"></div>
+                                    <!-- /HEXAGON -->
+                                </div>
+                                <!-- /USER AVATAR PROGRESS -->
+
+                                <!-- USER AVATAR PROGRESS BORDER -->
+                                <div class="user-avatar-progress-border">
+                                    <!-- HEXAGON -->
+                                    <div class="hexagon-border-40-44"></div>
+                                    <!-- /HEXAGON -->
+                                </div>
+                                <!-- /USER AVATAR PROGRESS BORDER -->
+
                             </div>
-                            <!-- /USER AVATAR CONTENT -->
+                            <!-- /USER AVATAR -->
+                        </a>
+                        <!-- /USER STATUS AVATAR -->
 
-                            <!-- USER AVATAR PROGRESS -->
-                            <div class="user-avatar-progress">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-progress-40-44"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR PROGRESS -->
+                        <!-- USER STATUS TITLE -->
+                        <p class="user-status-title"><a class="bold"
+                                href="profile-timeline.html">{{ $user->name }}</a> joined using your
+                            Refferal</p>
+                        <!-- /USER STATUS TITLE -->
 
-                            <!-- USER AVATAR PROGRESS BORDER -->
-                            <div class="user-avatar-progress-border">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-border-40-44"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR PROGRESS BORDER -->
-
-                        </div>
-                        <!-- /USER AVATAR -->
-                    </a>
-                    <!-- /USER STATUS AVATAR -->
-
-                    <!-- USER STATUS TITLE -->
-                    <p class="user-status-title"><a class="bold" href="profile-timeline.html">Ankur
-                            Gupta</a> joined using your Refferal</p>
-                    <!-- /USER STATUS TITLE -->
-
-                    <!-- USER STATUS TIMESTAMP -->
-                    <p class="user-status-timestamp">3 minutes ago</p>
-                    <!-- /USER STATUS TIMESTAMP -->
-                </div>
-                <!-- /USER STATUS -->
-
+                        <!-- USER STATUS TIMESTAMP -->
+                        <p class="user-status-timestamp">{{ $user->created_at->diffForHumans() }}</p>
+                        <!-- /USER STATUS TIMESTAMP -->
+                    </div>
+                    <!-- /USER STATUS -->
+                @empty
+                    <p>No Refferals</p>
+                @endforelse
             </div>
             <!-- /USER STATUS LIST -->
         </div>

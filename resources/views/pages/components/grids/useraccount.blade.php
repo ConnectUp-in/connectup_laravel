@@ -15,16 +15,8 @@ $sidebaritems = [
                 'url' => route('profile.socials'),
             ],
             [
-                'title' => 'Notifications',
-                'url' => 'hub-profile-notifications.html',
-            ],
-            [
-                'title' => 'Messages',
-                'url' => 'hub-profile-messages.html',
-            ],
-            [
-                'title' => 'Friend Requests',
-                'url' => 'hub-profile-requests.html',
+                'title' => 'Refferals',
+                'url' => route('profile.refferals'),
             ],
         ],
     ],

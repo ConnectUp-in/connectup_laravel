@@ -67,7 +67,11 @@ class ProfileController extends Controller
             $user->save();
         }
         return redirect()->back()->with('success', 'Cover Image Updated');
-
-
+    }
+    function refferals(){
+        $user = Auth::user();
+        $refferals = User::where('invited_by', $user->invite_refferal)->select('name', 'username','email', 'profile_photo_path', 'created_at')->get();
+        // return $refferals;
+        return view('pages.profile.refferal', compact('user','refferals'));
     }
 }

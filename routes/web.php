@@ -47,6 +47,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/socials', [ProfileController::class, 'socials'])->name('profile.socials');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/update-cover-photo', [ProfileController::class, 'updateCoverPhoto'])->name('profile.update.cover');
+    Route::get('/profile/refferals', [ProfileController::class, 'refferals'])->name('profile.refferals');
 });
 
 Route::post('title', function(){
