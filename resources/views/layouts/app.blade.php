@@ -1555,7 +1555,6 @@
         <!-- /POPUP PICTURE IMAGE WRAP -->
     </div> --}}
     <!-- /POPUP PICTURE -->
-
     <!-- app -->
     <script src="/assets/template/js/utils/app.js"></script>
     <!-- page loader -->
@@ -1615,6 +1614,22 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
+
+        // Flash Messages (Toastr)
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+        @if (Session::has('info'))
+            toastr.info("{{ Session::get('info') }}")
+        @endif
+        @if (Session::has('warning'))
+            toastr.warning("{{ Session::get('warning') }}")
+        @endif
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}")
+        @endif
+
+        toastr.success("Yeh to mast chal rha hai")
     </script>
     @yield('scripts')
     @stack('scripts')

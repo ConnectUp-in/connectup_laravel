@@ -57,6 +57,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user->update($request->all());
         // return $request->all();
+        // session()->flash('success', 'Profile updated successfully');
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
     function updateCoverPhoto(Request $request){
