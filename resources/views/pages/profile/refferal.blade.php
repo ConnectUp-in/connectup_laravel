@@ -1,6 +1,10 @@
 @php
 $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
-
+$message = [
+    'content' => 'Hey, I am now a Member at ConnectUp. Join now and get lots of early bird benefits.',
+    'code' => 'Here is my Refferal Code: ' . $user->invite_refferal,
+    'link' => 'https://connectup.in/login?refferal=' . $user->invite_refferal,
+];
 @endphp
 
 
@@ -39,7 +43,7 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                 <!-- GRID COLUMN -->
                 <div class="grid-column">
                     <!-- GRID -->
-                    <div class="grid grid-3-9 centered">
+                    <div class="grid grid-3-6-3 centered">
 
                         <!-- UPLOAD BOX -->
                         <div class="upload-box " onclick="copyCode('{{ $user->invite_refferal }}')">
@@ -60,18 +64,26 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                         <!-- /UPLOAD BOX -->
 
                         <!-- UPLOAD BOX -->
-                        <div class="upload-box">
+                        <div class="upload-box nohover">
+
+                            <div class="social-refferal">
+                                <span>
+                                    Share your Refferal Code
+                                </span>
+
+                            </div>
 
                             <!-- REACTION OPTIONS -->
-                            <div class=" share-options ">
+                            <div class=" share-options nobg ">
 
                                 {{-- Copy Link, Whatsapp, Linkedin, Twitter --}}
 
                                 <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
 
-                                    <a href="whatsapp://send?text=https://connectup.in/post/asdf">
+                                    <a
+                                        href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}">
                                         <!-- REACTION OPTION
-                                        IMAGE -->
+                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
                                             alt="reaction-like">
@@ -82,9 +94,9 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                                 {{-- Linkedin share option --}}
                                 <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
                                     <a
-                                        href="https://www.linkedin.com/shareArticle?mini=true&url=https://connectup.in/post/sdaf&title=sdf&source=https://connectup.in">
+                                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . ' ' . $message['code'] }}&source=https://connectup.in">
                                         <!-- REACTION OPTION
-                                        IMAGE -->
+                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
                                             alt="reaction-like">
@@ -97,7 +109,7 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                                     <a
                                         href="https://twitter.com/intent/tweet?text=https://connectup.in/post/asdf&via=connectup">
                                         <!-- REACTION OPTION
-                                        IMAGE -->
+                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
                                             alt="reaction-like">
@@ -107,10 +119,11 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
 
                                 {{-- Copy Link share option --}}
                                 <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
-                                    <a onclick="navigator.clipboard.writeText(`https://connectup.in/post/sdf`)">
+                                    <a
+                                        onclick="copyCode('{{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
 
                                         <!-- REACTION OPTION
-                                        IMAGE -->
+                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
                                             alt="reaction-like">
@@ -121,6 +134,23 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                             </div>
                         </div>
                         <!-- /UPLOAD BOX -->
+
+                        <div class="upload-box nohover">
+                            {{-- <!-- UPLOAD BOX ICON -->
+                            <svg class="upload-box-icon icon-share">
+                                <use xlink:href="#svg-members"></use>
+                            </svg>
+                            <!-- /UPLOAD BOX ICON --> --}}
+                            <p class="upload-box-text">Total Members till date</p>
+
+                            <!-- UPLOAD BOX TITLE -->
+                            <p class="upload-box-title refferal_count" id="refferal_code">{{ $refferals->count() }}</p>
+                            <!-- /UPLOAD BOX TITLE -->
+
+                            <!-- UPLOAD BOX TEXT -->
+                            <p class="upload-box-text">joined using your Refferal </p>
+                            <!-- /UPLOAD BOX TEXT -->
+                        </div>
                     </div>
                     <!-- /GRID -->
 
@@ -165,7 +195,7 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
                                     <!-- USER STATUS -->
                                     <div class="user-status">
                                         <!-- USER STATUS AVATAR -->
-                                        <a class="user-status-avatar" href="profile-timeline.html">
+                                        <a class="user-status-avatar" href="{{ route('user', $user->username) }}">
                                             <!-- USER AVATAR -->
                                             <div class="user-avatar small no-outline">
                                                 <!-- USER AVATAR CONTENT -->
@@ -201,7 +231,8 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
 
                                         <!-- USER STATUS TITLE -->
                                         <p class="user-status-title"><a class="bold"
-                                                href="profile-timeline.html">{{ $user->name }}</a> joined using your
+                                                href="{{ route('user', $user->username) }}">{{ $user->name }}</a> joined
+                                            using your
                                             Refferal</p>
                                         <!-- /USER STATUS TITLE -->
 
@@ -239,6 +270,26 @@ $page['title'] = 'Refferals | ' . $user->name . ' | ConnectUp';
     <style>
         .refferal_code {
             font-size: 1.6em !important;
+        }
+
+        .refferal_count {
+            font-size: 3em !important;
+            margin-top: 2px !important;
+        }
+
+        .nohover:hover {
+            transform: translateY(0px);
+        }
+
+        .nobg {
+            background: transparent;
+        }
+
+        .social-refferal {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            font-family: Rajdhani;
         }
     </style>
 @endpush
