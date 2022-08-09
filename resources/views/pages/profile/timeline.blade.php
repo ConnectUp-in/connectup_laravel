@@ -72,7 +72,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-82-90" data-src="/assets/template/img/avatar/01.jpg"></div>
+                            <div class="hexagon-image-82-90" data-src="{{ $user->profile_photo_path }}"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -93,29 +93,6 @@ $page['description'] = $user->bio ?? null;
                         </div>
                         <!-- /USER AVATAR PROGRESS BORDER -->
 
-                        <!-- USER AVATAR BADGE -->
-                        <div class="user-avatar-badge">
-                            <!-- USER AVATAR BADGE BORDER -->
-                            <div class="user-avatar-badge-border">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-32-36"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR BADGE BORDER -->
-
-                            <!-- USER AVATAR BADGE CONTENT -->
-                            <div class="user-avatar-badge-content">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-dark-26-28"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                            <!-- USER AVATAR BADGE TEXT -->
-                            <p class="user-avatar-badge-text">24</p>
-                            <!-- /USER AVATAR BADGE TEXT -->
-                        </div>
-                        <!-- /USER AVATAR BADGE -->
                     </a>
                     <!-- /USER SHORT DESCRIPTION AVATAR -->
 
