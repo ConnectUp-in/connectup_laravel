@@ -25,6 +25,9 @@ class ProfileController extends Controller
     //
     function user($username){
         $user = User::where('username', $username)->first();
+        if(!$user){
+            return view('pages.profile.404');
+        }
         $user->startups = [];
         $user->interests = Interest::whereIn('id', $user->interests)->get();
         if(!$user->interests){
