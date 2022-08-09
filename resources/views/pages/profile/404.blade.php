@@ -94,35 +94,9 @@ $page['image'] = '/assets/defaults/404cover.png';
                         </div>
                         <!-- /USER AVATAR PROGRESS BORDER -->
 
-                        <!-- USER AVATAR BADGE -->
-                        <div class="user-avatar-badge">
-                            <!-- USER AVATAR BADGE BORDER -->
-                            <div class="user-avatar-badge-border">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-32-36"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR BADGE BORDER -->
-
-                            <!-- USER AVATAR BADGE CONTENT -->
-                            <div class="user-avatar-badge-content">
-                                <!-- HEXAGON -->
-                                <div class="hexagon-dark-26-28"></div>
-                                <!-- /HEXAGON -->
-                            </div>
-                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                            <!-- USER AVATAR BADGE TEXT -->
-                            <p class="user-avatar-badge-text">24</p>
-                            <!-- /USER AVATAR BADGE TEXT -->
-                        </div>
-                        <!-- /USER AVATAR BADGE -->
                     </a>
                     <!-- /USER SHORT DESCRIPTION AVATAR -->
 
-                    <!-- USER SHORT DESCRIPTION TITLE -->
-                    <p class="user-short-description-title"><a href="profile-timeline.html">Profile Not Found</a></p>
-                    <!-- /USER SHORT DESCRIPTION TITLE -->
 
                 </div>
                 <!-- /USER SHORT DESCRIPTION -->
