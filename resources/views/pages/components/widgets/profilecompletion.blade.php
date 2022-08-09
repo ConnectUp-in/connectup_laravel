@@ -7,14 +7,14 @@
             <div class="progress-arc-wrap">
                 <!-- PROGRESS ARC -->
                 <div class="progress-arc">
-                    <canvas id="profile-completion-chart" data-percentage="80"></canvas>
+                    <canvas id="profile-completion-chart" data-percentage="{{ profileNotCompleted() }}"></canvas>
                 </div>
                 <!-- PROGRESS ARC -->
 
                 <!-- PROGRESS ARC INFO -->
                 <div class="progress-arc-info">
                     <!-- PROGRESS ARC TITLE -->
-                    <p class="progress-arc-title">80%</p>
+                    <p class="progress-arc-title">{{ profileNotCompleted() }}%</p>
                     <!-- /PROGRESS ARC TITLE -->
                 </div>
                 <!-- /PROGRESS ARC INFO -->
