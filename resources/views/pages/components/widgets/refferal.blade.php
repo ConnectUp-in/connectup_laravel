@@ -86,7 +86,7 @@
                     </div>
                     <!-- /USER STATUS -->
                 @empty
-                    <p>No Refferals</p>
+                    <p>No one joined with your Refferal yet</p>
                 @endforelse
             </div>
             <!-- /USER STATUS LIST -->
