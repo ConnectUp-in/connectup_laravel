@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 // Import DOMDocument class
 // use DOMDocument;
 use App\Models\PageView;
+use App\Models\Redirect;
 
 function makeHyperText($text){
     return preg_replace('!(https://[a-z0-9_./?=&-]+)!i', '<a href="$1">$1</a> ', $text." ");
@@ -112,6 +113,5 @@ function changeIntoKMG($number){
 
 function shorten($url){
     $url = urlencode($url);
-
     return url('/redirect?url='.$url);
 }

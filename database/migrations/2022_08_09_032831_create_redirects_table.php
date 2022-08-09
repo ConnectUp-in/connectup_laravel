@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('redirects', function (Blueprint $table) {
             $table->id();
             $table->text('url');
+            $table->string('user')->nullable();
             $table->text('agent');
             $table->timestamps();
         });
