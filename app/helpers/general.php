@@ -109,3 +109,9 @@ function changeIntoKMG($number){
         return $number;
     }
 }
+
+function shorten($url){
+    $url = urlencode($url);
+
+    return url('/redirect?url='.$url);
+}

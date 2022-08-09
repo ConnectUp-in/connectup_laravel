@@ -41,6 +41,7 @@ Route::get('logout', function () {
 Route::get('feed', [AppController::class, 'feed'])->name('feed');
 Route::get('post/{id}', [AppController::class, 'post'])->name('post');
 Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
+Route::get('redirect', [HelperController::class, 'redirect']);
 
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/info', [ProfileController::class, 'info'])->name('profile.info');

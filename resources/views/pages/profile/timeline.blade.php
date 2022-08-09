@@ -150,7 +150,7 @@ $page['description'] = $user->bio ?? null;
                         @foreach ($user->socials as $social => $link)
                             <div class="profile-header-social-link">
                                 <!-- SOCIAL LINK -->
-                                <a class="social-link {{ $social }}" href="{{ $link }}">
+                                <a class="social-link {{ $social }}" href="{{ shorten($link) }}">
                                     <!-- ICON FACEBOOK -->
                                     <svg class="icon-icon">
                                         <use xlink:href="#svg-{{ $social }}"></use>
