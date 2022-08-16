@@ -45,6 +45,7 @@
         .toast {
             box-shadow: none !important;
             border-radius: 10px !important;
+            font-weight: bold !important;
         }
     </style>
 

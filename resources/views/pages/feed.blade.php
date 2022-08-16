@@ -1013,10 +1013,10 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                             <!-- STATS BOX VALUE WRAP -->
                             <div class="stats-box-value-wrap">
                                 <!-- STATS BOX VALUE -->
-                                <p class="stats-box-value">87.365</p>
+                                <p class="stats-box-value">{{ profileview(Auth::id()) }}</p>
                                 <!-- /STATS BOX VALUE -->
 
-                                <!-- STATS BOX DIFF -->
+                                {{-- <!-- STATS BOX DIFF -->
                                 <div class="stats-box-diff">
                                     <!-- STATS BOX DIFF ICON -->
                                     <div class="stats-box-diff-icon positive">
@@ -1032,7 +1032,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                                     <p class="stats-box-diff-value">3.2%</p>
                                     <!-- /STATS BOX DIFF VALUE -->
                                 </div>
-                                <!-- /STATS BOX DIFF -->
+                                <!-- /STATS BOX DIFF --> --}}
                             </div>
                             <!-- /STATS BOX VALUE WRAP -->
 
@@ -1051,10 +1051,10 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                             <!-- STATS BOX VALUE WRAP -->
                             <div class="stats-box-value-wrap">
                                 <!-- STATS BOX VALUE -->
-                                <p class="stats-box-value">294</p>
+                                <p class="stats-box-value">0</p>
                                 <!-- /STATS BOX VALUE -->
 
-                                <!-- STATS BOX DIFF -->
+                                {{-- <!-- STATS BOX DIFF -->
                                 <div class="stats-box-diff">
                                     <!-- STATS BOX DIFF ICON -->
                                     <div class="stats-box-diff-icon positive">
@@ -1070,7 +1070,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                                     <p class="stats-box-diff-value">0.4%</p>
                                     <!-- /STATS BOX DIFF VALUE -->
                                 </div>
-                                <!-- /STATS BOX DIFF -->
+                                <!-- /STATS BOX DIFF --> --}}
                             </div>
                             <!-- /STATS BOX VALUE WRAP -->
 
@@ -1089,10 +1089,10 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                             <!-- STATS BOX VALUE WRAP -->
                             <div class="stats-box-value-wrap">
                                 <!-- STATS BOX VALUE -->
-                                <p class="stats-box-value">2560</p>
+                                <p class="stats-box-value">0</p>
                                 <!-- /STATS BOX VALUE -->
 
-                                <!-- STATS BOX DIFF -->
+                                {{-- <!-- STATS BOX DIFF -->
                                 <div class="stats-box-diff">
                                     <!-- STATS BOX DIFF ICON -->
                                     <div class="stats-box-diff-icon negative">
@@ -1108,7 +1108,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                                     <p class="stats-box-diff-value">1.8%</p>
                                     <!-- /STATS BOX DIFF VALUE -->
                                 </div>
-                                <!-- /STATS BOX DIFF -->
+                                <!-- /STATS BOX DIFF --> --}}
                             </div>
                             <!-- /STATS BOX VALUE WRAP -->
 
@@ -1127,10 +1127,10 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                             <!-- STATS BOX VALUE WRAP -->
                             <div class="stats-box-value-wrap">
                                 <!-- STATS BOX VALUE -->
-                                <p class="stats-box-value">947</p>
+                                <p class="stats-box-value">0</p>
                                 <!-- /STATS BOX VALUE -->
 
-                                <!-- STATS BOX DIFF -->
+                                {{-- <!-- STATS BOX DIFF -->
                                 <div class="stats-box-diff">
                                     <!-- STATS BOX DIFF ICON -->
                                     <div class="stats-box-diff-icon positive">
@@ -1146,7 +1146,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
                                     <p class="stats-box-diff-value">4.5%</p>
                                     <!-- /STATS BOX DIFF VALUE -->
                                 </div>
-                                <!-- /STATS BOX DIFF -->
+                                <!-- /STATS BOX DIFF --> --}}
                             </div>
                             <!-- /STATS BOX VALUE WRAP -->
 
