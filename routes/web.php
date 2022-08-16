@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +30,9 @@ Route::get('/', function () {
 // });
 
 
-Route::get('test', function(){
-    return md5(uniqid('post_',true));
-} );
+Route::get('test', function () {
+    return md5(uniqid('post_', true));
+});
 Route::get('logout', function () {
     auth()->logout();
     return redirect('/login');
@@ -51,12 +52,13 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile/refferals', [ProfileController::class, 'refferals'])->name('profile.refferals');
 });
 
-Route::post('title', function(){
+Route::post('title', function () {
     return view('title');
 });
 
 
-Route::view('test', 'test');
+Route::get('/testmail', [HelperController::class, 'testmail']);
+Route::view('viewmail', 'emails.test');
 
 
 // Social Authentication Routes
