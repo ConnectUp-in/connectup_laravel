@@ -42,7 +42,7 @@
                                     <td style="padding:0;width:50%;" align="left">
                                         <p
                                             style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-                                            Copyright @ 2022 | <a href="http://www.example.com"
+                                            Copyright @ 2022 | <a href="http://connectup.in"
                                                 style="color:#ffffff;text-decoration:underline;">ConnectUp</a>
                                         </p>
                                     </td>
@@ -51,15 +51,17 @@
                                             style="border-collapse:collapse;border:0;border-spacing:0;">
                                             <tr>
                                                 <td style="padding:0 0 0 10px;width:38px;">
-                                                    <a href="http://www.twitter.com/" style="color:#ffffff;"><img
+                                                    <a href="http://instagram.com/connectup.in" style="color:#ffffff;"
+                                                        target="_blank"><img
                                                             src="https://www.iconsdb.com/icons/preview/white/instagram-6-xxl.png"
-                                                            alt="Twitter" width="38"
+                                                            alt="ConnectUp Instagram" width="38"
                                                             style="height:auto;display:block;border:0;" /></a>
                                                 </td>
                                                 <td style="padding:0 0 0 10px;width:38px;">
-                                                    <a href="http://www.facebook.com/" style="color:#ffffff;"><img
+                                                    <a href="http://linkedin.com/company/connectupin"
+                                                        style="color:#ffffff;" target="_blank"><img
                                                             src="https://www.iconsdb.com/icons/preview/white/linkedin-4-xxl.png"
-                                                            alt="LinkedIn" width="38"
+                                                            alt="ConnectUp LinkedIn" width="38"
                                                             style="height:auto;display:block;border:0;" /></a>
                                                 </td>
                                             </tr>
