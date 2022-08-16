@@ -30,6 +30,8 @@ class GoogleController extends Controller
         try {
       
             $user = Socialite::driver('google')->user();
+            // return all data from user
+            // return (array) $user;
        
             $finduser = User::where('google_id', $user->id)->orWhere('email',$user->email)->first();
        
@@ -45,7 +47,8 @@ class GoogleController extends Controller
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => encrypt('123456dummy'),
-                    'username' => strtolower(str_replace(' ', '', $user->name))
+                    'username' => strtolower(str_replace(' ', '', $user->name)),
+                    'profile_photo_path' => $user->avatar_original,
                 ]);
       
                 Auth::login($newUser, true);

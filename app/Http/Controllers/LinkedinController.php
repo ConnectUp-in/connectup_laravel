@@ -22,6 +22,7 @@ class LinkedinController extends Controller
         try {
      
             $user = Socialite::driver('linkedin')->user();
+            // return (array) $user;
       
             $linkedinUser = User::where('linkedin_id', $user->id)->orWhere('email',$user->email)->first();
       
@@ -36,7 +37,8 @@ class LinkedinController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'linkedin_id' => $user->id,
-                    'password' => encrypt('admin12345')
+                    'password' => encrypt('admin12345'),
+                    'profile_photo_path' => $user->avatar_original,
                 ]);
      
                 Auth::login($user, true);
