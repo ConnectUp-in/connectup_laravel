@@ -59,10 +59,32 @@ class ProfileController extends Controller
     }
     
     function update(Request $request){
+
+        // if $request contains invited_by
+        if($request->invited_by){
+            $refferedby = User::where('invite_refferal', $request->invited_by)->first();
+            if($refferedby){
+                
+                $data = [
+                    'found' => true,
+                    'name' => $refferedby->name,
+                    'username' => $refferedby->username,
+                ];
+             }
+             else{
+                $data = [
+                    'found' => false
+                ];
+             }
+
+             sendRefferalAppliedMail($data);
+            
+        }
+
+
+
         $user = Auth::user();
         $user->update($request->all());
-        // return $request->all();
-        // session()->flash('success', 'Profile updated successfully');
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
     function updateCoverPhoto(Request $request){

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-
+// use Mail;
 
 function profileNotCompleted()
 {
@@ -38,4 +38,27 @@ function profileNotCompleted()
     } else {
         return $percent;
     }
+}
+
+
+function sendRegistrationMail($user){
+    $data = [
+        'name' => $user->name,
+        'email' => $user->email
+    ];
+    Mail::send('emails.register', $data, function ($message) use ($user) {
+        $message->from('connectup.in@gmail.com');
+        $message->to($user->email);
+        $message->subject('Welcome to ConnectUp');
+    });
+    
+
+}
+
+function sendRefferalAppliedMail($data){
+    Mail::send('emails.refferal', $data, function ($message) use ($data) {
+        $message->from('connectup.in@gmail.com');
+        $message->to(Auth::user()->email);
+        $message->subject('Your refferal has been applied');
+    });
 }

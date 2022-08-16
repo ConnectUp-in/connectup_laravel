@@ -50,18 +50,18 @@
                                         <table role="presentation"
                                             style="border-collapse:collapse;border:0;border-spacing:0;">
                                             <tr>
-                                                <td style="padding:0 0 0 10px;width:38px;">
+                                                <td style="padding:10px;width:20px;">
                                                     <a href="http://instagram.com/connectup.in" style="color:#ffffff;"
                                                         target="_blank"><img
                                                             src="https://www.iconsdb.com/icons/preview/white/instagram-6-xxl.png"
-                                                            alt="ConnectUp Instagram" width="38"
+                                                            alt="ConnectUp Instagram" width="20"
                                                             style="height:auto;display:block;border:0;" /></a>
                                                 </td>
-                                                <td style="padding:0 0 0 10px;width:38px;">
+                                                <td style="padding:10px;width:20px;">
                                                     <a href="http://linkedin.com/company/connectupin"
                                                         style="color:#ffffff;" target="_blank"><img
                                                             src="https://www.iconsdb.com/icons/preview/white/linkedin-4-xxl.png"
-                                                            alt="ConnectUp LinkedIn" width="38"
+                                                            alt="ConnectUp LinkedIn" width="20"
                                                             style="height:auto;display:block;border:0;" /></a>
                                                 </td>
                                             </tr>
