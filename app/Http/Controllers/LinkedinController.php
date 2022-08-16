@@ -40,6 +40,7 @@ class LinkedinController extends Controller
                 ]);
      
                 Auth::login($user, true);
+                sendRegistrationMail($user);
       
                 return redirect('/dash');
             }

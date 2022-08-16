@@ -40,6 +40,7 @@ class GitHubController extends Controller
                 ]);
      
                 Auth::login($gitUser, true);
+                sendRegistrationMail($gitUser);
       
                 return redirect('/dash');
             }

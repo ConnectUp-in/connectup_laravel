@@ -49,6 +49,7 @@ class GoogleController extends Controller
                 ]);
       
                 Auth::login($newUser, true);
+                sendRegistrationMail($newUser);
       
                 return redirect()->intended('feed');
             }
