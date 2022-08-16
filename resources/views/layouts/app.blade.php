@@ -16,6 +16,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
+
+
+    {{-- <div id="toast-container" class="toast-bottom-right">
+        <div class="toast toast-success" aria-live="polite" style="opacity: 0.212;">
+            <div class="toast-progress" style="width: 0.12%;"></div>
+            <div class="toast-message">Copied to clipboard</div>
+        </div>
+    </div> --}}
+    <style>
+        .toast-success {
+            background-color: #40d04f;
+        }
+
+        .toast-error {
+            background-color: #ff5b57;
+        }
+
+        .toast-info {
+            background-color: #00bcd4;
+        }
+
+        .toast-warning {
+            background-color: #ff9800;
+        }
+
+
+        .toast {
+            box-shadow: none !important;
+            border-radius: 10px !important;
+        }
+    </style>
+
     @include('layouts.partials.meta')
     @stack('styles')
 </head>
@@ -1612,8 +1644,13 @@
             "showEasing": "swing",
             "hideEasing": "linear",
             "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
+            "hideMethod": "fadeOut",
+
+
         }
+        // improve toastr styling
+
+
 
         // Flash Messages (Toastr)
         @if (Session::has('success'))
