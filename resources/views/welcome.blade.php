@@ -10,6 +10,8 @@
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
     <title>ConnectUp | Home</title>
+    @include('layouts.partials.meta')
+
 </head>
 
 <body>
