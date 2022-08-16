@@ -70,6 +70,8 @@ class ProfileController extends Controller
                     'name' => $refferedby->name,
                     'username' => $refferedby->username,
                 ];
+
+                sendJoinedUsingRefferalMail($refferedby->email);
              }
              else{
                 $data = [

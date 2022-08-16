@@ -62,3 +62,15 @@ function sendRefferalAppliedMail($data){
         $message->subject('Your refferal has been applied');
     });
 }
+
+function sendJoinedUsingRefferalMail($email){
+    $data = [
+        'name' => Auth::user()->name,
+        'username' => Auth::user()->username
+    ];
+    Mail::send('emails.joined', $data, function ($message) use ($email) {
+        $message->from('connectup.in@gmail.com');
+        $message->to($email);
+        $message->subject(Auth::user()->name.' has joined using using Your refferal');
+    });
+}
