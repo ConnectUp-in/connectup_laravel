@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
+// import response
+// use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +74,8 @@ Route::get('auth/github/callback', [GitHubController::class, 'gitCallback']);
 
 
 Route::post('register', [AuthController::class, 'register'])->name('register');
+
+
+Route::get('/sitemap', function(){
+   return response()->view('sitemap')->header('Content-Type', 'application/xml');
+});
