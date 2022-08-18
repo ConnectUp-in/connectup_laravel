@@ -14,7 +14,8 @@
     <div class="popup-box-body">
         <!-- POPUP BOX SIDEBAR -->
         <div class="popup-box-sidebar">
-            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('profile.update') }}" method="POST" class="avataruploadform"
+                enctype="multipart/form-data">
                 @csrf
                 {{-- <!-- USER PREVIEW -->
                 <div class="user-preview small">
@@ -169,6 +170,41 @@
 
         .popup-box .popup-box-body .popup-box-content {
             width: 70%;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .avatar-item {
+                width: calc(25% - 10px);
+            }
+
+            .popup-box .popup-box-body {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+
+            .popup-box .popup-box-body {
+                display: block;
+            }
+
+            .avataruploadform {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .popup-box .popup-box-body .popup-box-sidebar {
+                width: 100%;
+            }
+
+            .popup-box .popup-box-body .popup-box-content {
+                width: 100%;
+            }
         }
     </style>
 @endpush
