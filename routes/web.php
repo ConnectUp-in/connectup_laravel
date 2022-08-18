@@ -41,7 +41,7 @@ Route::get('logout', function () {
 
 
 Route::get('feed', [AppController::class, 'feed'])->name('feed');
-Route::get('post/{id}', [AppController::class, 'post'])->name('post');
+Route::get('post/{id}', [PostController::class, 'post'])->name('post');
 Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 Route::get('redirect', [HelperController::class, 'redirect']);
 

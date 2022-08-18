@@ -27,13 +27,4 @@ class AppController extends Controller
         return view('pages.feed', $data);
     }
 
-    public function post($id){
-        page('post');
-        $post = Post::find($id);
-        $data = [
-            'post' => $post,
-        ];
-        return $data;
-        return view('pages.post', $data);
-    }
 }
