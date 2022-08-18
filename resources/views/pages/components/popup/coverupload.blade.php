@@ -13,7 +13,7 @@
     <!-- POPUP BOX BODY -->
     <div class="popup-box-body">
 
-        <div class="container">
+        <div class="container" id="coveruploadbody">
             <div class="my-3 w-100 preview-container">
                 <img id="preview_cover" src="{{ $user->cover_photo_path }}" alt="" style="width: 100%">
             </div>
@@ -68,6 +68,7 @@
             text-align: center;
         }
 
+
         input[name="upload_cover"] {
             display: none;
         }
@@ -75,6 +76,7 @@
         .cropper-container {
             width: 100%;
             height: 100%;
+            margin-top: 1em;
         }
 
         .button-container {
@@ -97,6 +99,21 @@
         #upload_button {
             display: none;
         }
+
+
+
+        @media (max-width: 768px) {
+            .droparea {
+                margin: 1em 1em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .droparea {
+                margin: 1em 0.5em;
+                padding: 1em;
+            }
+        }
     </style>
 @endpush
 
@@ -107,17 +124,18 @@
 
     <script>
         $(document).ready(function() {
-
+            const bodywidth = $('#coveruploadbody').width();
+            const width = bodywidth * 0.9;
             const config = {
                 enableExif: true,
                 viewport: {
-                    width: 600,
-                    height: 150,
+                    width: width,
+                    height: width / 4,
                     type: 'square'
                 },
                 boundary: {
-                    width: 800,
-                    height: 400
+                    width: width * 1.06,
+                    height: width / 2
                 }
             }
 
