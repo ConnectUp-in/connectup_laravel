@@ -69,3 +69,6 @@ Route::get('auth/linkedin', [LinkedinController::class, 'linkedinRedirect'])->na
 Route::get('auth/linkedin/callback', [LinkedinController::class, 'linkedinCallback']);
 Route::get('auth/github', [GitHubController::class, 'gitRedirect'])->name('redirectToGithub');
 Route::get('auth/github/callback', [GitHubController::class, 'gitCallback']);
+
+
+Route::post('register', [AuthController::class, 'register'])->name('register');

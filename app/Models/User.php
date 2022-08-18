@@ -23,7 +23,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -68,7 +68,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        // 'email_verified_at' => 'datetime',
         'id' => 'string',
         'socials' => 'array',
         'skills' => 'array',
@@ -91,14 +91,12 @@ class User extends Authenticatable
     public static function boot(){
         parent::boot();
         static::creating(function ($user) {
-            if (! $user->id) {
                 $user->id = (string) Str::uuid();
-            }
-            if (! $user->invite_refferal) {
+            if (!$user->invite_refferal) {
                 $name_initials = substr($user->name, 0, 2);
                 $user->invite_refferal =  $name_initials.'_'.rand(1000, 9999);
             }
-            if (! $user->username) {
+            if (!$user->username) {
                 $email = explode('@', $user->email);
                 $user->username = $email[0];
             }
