@@ -28,10 +28,8 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        // return $user;
+        sendRegistrationMail($user);
         Auth::login($user, true);
         return redirect('/feed');
-
-        return "Everything went cool";
     }
 }
