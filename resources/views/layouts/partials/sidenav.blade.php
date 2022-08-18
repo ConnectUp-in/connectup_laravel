@@ -159,7 +159,7 @@ $current_url = end($current_url);
         <!-- /USER SHORT DESCRIPTION AVATAR -->
 
         <!-- USER SHORT DESCRIPTION TITLE -->
-        <p class="user-short-description-title"><a href="profile-timeline.html">Marina Valentine</a></p>
+        <p class="user-short-description-title"><a href="profile-timeline.html">Harsh Valentine</a></p>
         <!-- /USER SHORT DESCRIPTION TITLE -->
 
         <!-- USER SHORT DESCRIPTION TEXT -->
@@ -414,54 +414,58 @@ $current_url = end($current_url);
     </div>
     <!-- /NAVIGATION WIDGET CLOSE BUTTON -->
 
-    <!-- NAVIGATION WIDGET INFO WRAP -->
-    <div class="navigation-widget-info-wrap">
-        <!-- NAVIGATION WIDGET INFO -->
-        <div class="navigation-widget-info">
-            <!-- USER AVATAR -->
-            <a class="user-avatar small no-outline" href="profile-timeline.html">
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/template/img/avatar/01.jpg"></div>
-                    <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
+    @if (Auth::check())
+        <!-- NAVIGATION WIDGET INFO WRAP -->
+        <div class="navigation-widget-info-wrap">
+            <!-- NAVIGATION WIDGET INFO -->
+            <div class="navigation-widget-info">
+                <!-- USER AVATAR -->
+                <a class="user-avatar small no-outline" href="{{ route('user', Auth::user()->username) }}">
+                    <!-- USER AVATAR CONTENT -->
+                    <div class="user-avatar-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-image-30-32" data-src="{{ Auth::user()->profile_photo_path }}"></div>
+                        <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR CONTENT -->
 
-                <!-- USER AVATAR PROGRESS -->
-                <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR PROGRESS -->
+                    <!-- USER AVATAR PROGRESS -->
+                    <div class="user-avatar-progress">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-progress-40-44"></div>
+                        <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR PROGRESS -->
 
-                <!-- USER AVATAR PROGRESS BORDER -->
-                <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR PROGRESS BORDER -->
+                    <!-- USER AVATAR PROGRESS BORDER -->
+                    <div class="user-avatar-progress-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-border-40-44"></div>
+                        <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR PROGRESS BORDER -->
 
-            </a>
-            <!-- /USER AVATAR -->
+                </a>
+                <!-- /USER AVATAR -->
 
-            <!-- NAVIGATION WIDGET INFO TITLE -->
-            <p class="navigation-widget-info-title"><a href="profile-timeline.html">Marina Valentine</a></p>
-            <!-- /NAVIGATION WIDGET INFO TITLE -->
+                <!-- NAVIGATION WIDGET INFO TITLE -->
+                <p class="navigation-widget-info-title"><a
+                        href="{{ route('user', Auth::user()->username) }}">{{ Auth::user()->name }}</a>
+                </p>
+                <!-- /NAVIGATION WIDGET INFO TITLE -->
 
-            <!-- NAVIGATION WIDGET INFO TEXT -->
-            <p class="navigation-widget-info-text">Welcome Back!</p>
-            <!-- /NAVIGATION WIDGET INFO TEXT -->
+                <!-- NAVIGATION WIDGET INFO TEXT -->
+                <p class="navigation-widget-info-text">Welcome Back!</p>
+                <!-- /NAVIGATION WIDGET INFO TEXT -->
+            </div>
+            <!-- /NAVIGATION WIDGET INFO -->
+
+            <!-- NAVIGATION WIDGET BUTTON -->
+            <a href="/logout" class="navigation-widget-info-button button small secondary">Logout</a>
+            <!-- /NAVIGATION WIDGET BUTTON -->
         </div>
-        <!-- /NAVIGATION WIDGET INFO -->
-
-        <!-- NAVIGATION WIDGET BUTTON -->
-        <p class="navigation-widget-info-button button small secondary">Logout</p>
-        <!-- /NAVIGATION WIDGET BUTTON -->
-    </div>
-    <!-- /NAVIGATION WIDGET INFO WRAP -->
+        <!-- /NAVIGATION WIDGET INFO WRAP -->
+    @endif
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->
     <p class="navigation-widget-section-title">Menu</p>
