@@ -24,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/search/college/{query}',[SearchController::class,'college']);
 
 Route::get('/getposts',[PostController::class,'getposts'])->name('getposts');
+
+Route::get('/isavailable/username',[ProfileController::class,'isavailableusername'])->name('isavailable.username');

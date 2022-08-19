@@ -104,4 +104,14 @@ class ProfileController extends Controller
         // return $refferals;
         return view('pages.profile.refferal', compact('user','refferals'));
     }
+
+
+    function isavailableusername(Request $request){
+        $user = User::where('username', $request->username)->first();
+        if($user){
+            return $this->sendResponse(false, 'Username is not available');
+        }else{
+            return $this->sendResponse(true, 'Username is available');
+        }
+    }
 }

@@ -50,7 +50,8 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                         <!-- /SECTION HEADER INFO -->
 
 
-                        <button class="button primary" style="padding:0 30px; width:fit-content">Save Changes!</button>
+                        <button id="submitbutton" class="button primary" style="padding:0 30px; width:fit-content">Save
+                            Changes!</button>
                     </div>
                     <!-- /SECTION HEADER -->
 
@@ -907,6 +908,15 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
         .selectize-control.single .selectize-input.input-active input {
             color: #fffc;
         }
+
+
+        input.is-valid {
+            border-color: #28a745 !important;
+        }
+
+        input.is-invalid {
+            border-color: #dc3545 !important;
+        }
     </style>
 @endpush
 
@@ -972,6 +982,35 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
             });
 
 
+
+            $('input[name="username"]').on('keyup', function() {
+                var prevusername = "{{ Auth::user()->username }}";
+                var username = $(this).val();
+                if (username != prevusername) {
+                    $.get('{{ route('isavailable.username') }}', {
+                        username: username
+                    }, function(data) {
+                        if (data.success) {
+                            if (data.data) {
+                                $('input[name="username"]').removeClass('is-invalid');
+                                $('input[name="username"]').addClass('is-valid');
+                                $('#submitbutton').prop('disabled', false);
+                            } else {
+                                $('input[name="username"]').removeClass('is-valid');
+                                $('input[name="username"]').addClass('is-invalid');
+                                $('#submitbutton').prop('disabled', true);
+                            }
+                        } else {
+                            toastr.error(data.message);
+
+                        }
+                    });
+                } else {
+                    $('input[name="username"]').removeClass('is-invalid');
+                    $('input[name="username"]').removeClass('is-valid');
+                    $('#submitbutton').prop('disabled', false);
+                }
+            });
         });
     </script>
 @endpush
