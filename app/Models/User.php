@@ -17,6 +17,16 @@ use App\Models\Post;
 // Import Str
 use Illuminate\Support\Str;
 
+function getUniqueRefferal($refferal)
+{
+    $user = User::where('invite_refferal', $refferal)->first();
+    if ($user) {
+        $refferal = $refferal . rand(1, 9);
+        return getUniqueRefferal($refferal);
+    } else {
+        return $refferal;
+    }
+}
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -83,20 +93,20 @@ class User extends Authenticatable
      */
     protected $appends = [
         // 'profile_photo_url',
-        'postcount'
+        'postcount',
     ];
 
-
-
     // If id is not present while creating a new user, then generate a random id.
-    public static function boot(){
+    public static function boot()
+    {
         parent::boot();
         static::creating(function ($user) {
-                $user->id = (string) Str::uuid();
+            $user->id = (string) Str::uuid();
             if (!$user->username) {
                 $email = explode('@', $user->email);
                 $username = $email[0];
-                function getUniqueUsername($username) {
+                function getUniqueUsername($username)
+                {
                     $user = User::where('username', $username)->first();
                     if ($user) {
                         $username = $username . rand(1, 9);
@@ -107,59 +117,57 @@ class User extends Authenticatable
                 }
                 $user->username = getUniqueUsername($username);
             }
-            
+
             if (!$user->invite_refferal) {
                 $name_initials = substr($user->name, 0, 2);
-                $refferal =  $name_initials.'_'.rand(1000, 9999);
-                function getUniqueRefferal($refferal) {
-                    $user = User::where('invite_refferal', $refferal)->first();
-                    if ($user) {
-                        $refferal = $refferal . rand(1, 9);
-                        return getUniqueRefferal($refferal);
-                    } else {
-                        return $refferal;
-                    }
-                }
+                $refferal = $name_initials . '_' . rand(1000, 9999);
                 $user->invite_refferal = getUniqueRefferal($refferal);
             }
-            if(!$user->socials){
+            if (!$user->socials) {
                 $user->socials = '{}';
             }
-            if(!$user->interests){
+            if (!$user->interests) {
                 $user->interests = [];
             }
-            if(!$user->cover_photo_path){
+            if (!$user->cover_photo_path) {
                 // generater a random cover photo from /assets/defaults/covers
-                $user->cover_photo_path = '/assets/defaults/covers/'.rand(1, 22).'.jpg';
-              }
+                $user->cover_photo_path =
+                    '/assets/defaults/covers/' . rand(1, 22) . '.jpg';
+            }
         });
     }
 
     // Get the user's profile photo URL attribute.
-    public function getProfilePhotoPathAttribute($image){
-        if(!$image){
-            return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+    public function getProfilePhotoPathAttribute($image)
+    {
+        if (!$image) {
+            return 'https://ui-avatars.com/api/?name=' .
+                urlencode($this->name) .
+                '&color=7F9CF5&background=EBF4FF';
         }
         return $image;
     }
 
-
-    public  function getCountryAttribute($value){
+    public function getCountryAttribute($value)
+    {
         return Country::find($value);
     }
 
-    function getAcademicBackgroundAttribute($value){
+    function getAcademicBackgroundAttribute($value)
+    {
         return AB::find($value);
     }
 
-    public function getPostcountAttribute(){
-        return Post::where('user_id',$this->id)->count();
+    public function getPostcountAttribute()
+    {
+        return Post::where('user_id', $this->id)->count();
     }
-    public function getCollegeAttribute($value){
+    public function getCollegeAttribute($value)
+    {
         return College::find($value);
     }
-    public function setSocialsAttribute($value){
+    public function setSocialsAttribute($value)
+    {
         $this->attributes['socials'] = json_encode(json_decode($value));
     }
-
 }
