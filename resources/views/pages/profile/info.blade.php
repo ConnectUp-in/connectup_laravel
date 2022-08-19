@@ -995,70 +995,89 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
             $('input[name="username"]').on('keyup', function() {
                 var prevusername = "{{ Auth::user()->username }}";
                 var username = $(this).val();
-                if (username != prevusername) {
-                    $('#submitbutton').prop('disabled', true);
 
-                    $.get('{{ route('isavailable.username') }}', {
-                        username: username
-                    }, function(data) {
-                        if (data.success) {
-                            if (data.data) {
-                                $('input[name="username"]').removeClass('is-invalid');
-                                $('input[name="username"]').addClass('is-valid');
-                                allgood[0] = true;
-                                updateButton();
+                if (username != '') {
+                    if (username != prevusername) {
+                        $('#submitbutton').prop('disabled', true);
 
+                        $.get('{{ route('isavailable.username') }}', {
+                            username: username
+                        }, function(data) {
+                            if (data.success) {
+                                if (data.data) {
+                                    $('input[name="username"]').removeClass('is-invalid');
+                                    $('input[name="username"]').addClass('is-valid');
+                                    allgood[0] = true;
+                                    updateButton();
+
+                                } else {
+                                    $('input[name="username"]').removeClass('is-valid');
+                                    $('input[name="username"]').addClass('is-invalid');
+                                    allgood[0] = false;
+                                    updateButton();
+
+                                }
                             } else {
-                                $('input[name="username"]').removeClass('is-valid');
-                                $('input[name="username"]').addClass('is-invalid');
-                                allgood[0] = false;
-                                updateButton();
+                                toastr.error(data.message);
 
                             }
-                        } else {
-                            toastr.error(data.message);
-
-                        }
-                    });
+                        });
+                    } else {
+                        $('input[name="username"]').removeClass('is-invalid');
+                        $('input[name="username"]').removeClass('is-valid');
+                        allgood[0] = true;
+                        updateButton();
+                    }
                 } else {
-                    $('input[name="username"]').removeClass('is-invalid');
                     $('input[name="username"]').removeClass('is-valid');
-                    allgood[0] = true;
+                    $('input[name="username"]').addClass('is-invalid');
+                    allgood[0] = false;
                     updateButton();
+
                 }
             });
 
             $('input[name="email"]').on('keyup', function() {
                 var prevemail = "{{ Auth::user()->email }}";
                 var email = $(this).val();
-                if (email != prevemail) {
-                    $('#submitbutton').prop('disabled', true);
 
-                    $.get('{{ route('isavailable.email') }}', {
-                        email: email
-                    }, function(data) {
-                        console.log(data);
-                        if (data.success) {
-                            if (data.data) {
-                                $('input[name="email"]').removeClass('is-invalid');
-                                $('input[name="email"]').addClass('is-valid');
-                                allgood[1] = true;
-                                updateButton();
+
+                if (email != '') {
+                    if (email != prevemail) {
+                        $('#submitbutton').prop('disabled', true);
+
+                        $.get('{{ route('isavailable.email') }}', {
+                            email: email
+                        }, function(data) {
+                            console.log(data);
+                            if (data.success) {
+                                if (data.data) {
+                                    $('input[name="email"]').removeClass('is-invalid');
+                                    $('input[name="email"]').addClass('is-valid');
+                                    allgood[1] = true;
+                                    updateButton();
+                                } else {
+                                    $('input[name="email"]').removeClass('is-valid');
+                                    $('input[name="email"]').addClass('is-invalid');
+                                    allgood[1] = false;
+                                    updateButton();
+                                }
                             } else {
-                                $('input[name="email"]').removeClass('is-valid');
-                                $('input[name="email"]').addClass('is-invalid');
-                                allgood[1] = false;
-                                updateButton();
-                            }
-                        } else {
-                            toastr.error(data.message);
+                                toastr.error(data.message);
 
-                        }
-                    });
+                            }
+                        });
+                    } else {
+                        $('input[name="email"]').removeClass('is-invalid');
+                        $('input[name="email"]').removeClass('is-valid');
+                        allgood[1] = true;
+                        updateButton();
+                    }
                 } else {
-                    $('input[name="email"]').removeClass('is-invalid');
+
                     $('input[name="email"]').removeClass('is-valid');
-                    allgood[1] = true;
+                    $('input[name="email"]').addClass('is-invalid');
+                    allgood[1] = false;
                     updateButton();
                 }
             });
