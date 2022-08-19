@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Country;
 use App\Models\College;
+use App\Models\User;
 use App\Models\AcademicBackground as AB;
 use App\Models\Post;
 // Import Str
@@ -98,7 +99,17 @@ class User extends Authenticatable
             }
             if (!$user->username) {
                 $email = explode('@', $user->email);
-                $user->username = $email[0];
+                $username = $email[0];
+                function getUniqueUsername($username) {
+                    $user = User::where('username', $username)->first();
+                    if ($user) {
+                        $username = $username . rand(1, 9);
+                        return getUniqueUsername($username);
+                    } else {
+                        return $username;
+                    }
+                }
+                $user->username = getUniqueUsername($username);
             }
             if(!$user->socials){
                 $user->socials = '{}';
