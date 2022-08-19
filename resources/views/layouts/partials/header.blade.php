@@ -2141,7 +2141,10 @@ $sidebaritems = [
                             <!-- /USER STATUS AVATAR -->
 
                             <!-- USER STATUS TITLE -->
-                            <p class="user-status-title"><span class="bold">Hi {{ Auth::user()->name }}!</span></p>
+                            <p class="user-status-title"><span class="bold">Hi
+                                    <!-- trim Auth::user()->name to first word -->
+                                    {{ strtok(Auth::user()->name, ' ') }}!
+                                </span></p>
                             <!-- /USER STATUS TITLE -->
 
                             <!-- USER STATUS TEXT -->
