@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('academic_background')->nullable();
             $table->string('college')->nullable();
             $table->integer('country')->default(98);
+            $table->integer('contact')->default();
             $table->text('bio')->nullable();
             $table->text('about')->nullable();
             $table->string('graduation_year')->nullable();
