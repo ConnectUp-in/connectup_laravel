@@ -27,6 +27,16 @@ function getUniqueRefferal($refferal)
         return $refferal;
     }
 }
+function getUniqueUsername($username)
+{
+    $user = User::where('username', $username)->first();
+    if ($user) {
+        $username = $username . rand(1, 9);
+        return getUniqueUsername($username);
+    } else {
+        return $username;
+    }
+}
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -105,16 +115,7 @@ class User extends Authenticatable
             if (!$user->username) {
                 $email = explode('@', $user->email);
                 $username = $email[0];
-                function getUniqueUsername($username)
-                {
-                    $user = User::where('username', $username)->first();
-                    if ($user) {
-                        $username = $username . rand(1, 9);
-                        return getUniqueUsername($username);
-                    } else {
-                        return $username;
-                    }
-                }
+
                 $user->username = getUniqueUsername($username);
             }
 
