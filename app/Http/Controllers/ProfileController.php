@@ -114,4 +114,13 @@ class ProfileController extends Controller
             return $this->sendResponse(true, 'Username is available');
         }
     }
+
+    function isavailableemail(Request $request){
+        $user = User::where('email', $request->email)->first();
+        if($user){
+            return $this->sendResponse(false, 'Email is not available');
+        }else{
+            return $this->sendResponse(true, 'Email is available');
+        }
+    }
 }

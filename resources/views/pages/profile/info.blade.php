@@ -917,6 +917,13 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
         input.is-invalid {
             border-color: #dc3545 !important;
         }
+
+        #submitbutton[disabled] {
+            background-color: #1d2333 !important;
+            cursor: not-allowed;
+            box-shadow: none;
+            color: #fff !important;
+        }
     </style>
 @endpush
 
@@ -1008,6 +1015,36 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                 } else {
                     $('input[name="username"]').removeClass('is-invalid');
                     $('input[name="username"]').removeClass('is-valid');
+                    $('#submitbutton').prop('disabled', false);
+                }
+            });
+
+            $('input[name="email"]').on('keyup', function() {
+                var prevemail = "{{ Auth::user()->email }}";
+                var email = $(this).val();
+                if (email != prevemail) {
+                    $.get('{{ route('isavailable.email') }}', {
+                        email: email
+                    }, function(data) {
+                        console.log(data);
+                        if (data.success) {
+                            if (data.data) {
+                                $('input[name="email"]').removeClass('is-invalid');
+                                $('input[name="email"]').addClass('is-valid');
+                                $('#submitbutton').prop('disabled', false);
+                            } else {
+                                $('input[name="email"]').removeClass('is-valid');
+                                $('input[name="email"]').addClass('is-invalid');
+                                $('#submitbutton').prop('disabled', true);
+                            }
+                        } else {
+                            toastr.error(data.message);
+
+                        }
+                    });
+                } else {
+                    $('input[name="email"]').removeClass('is-invalid');
+                    $('input[name="email"]').removeClass('is-valid');
                     $('#submitbutton').prop('disabled', false);
                 }
             });
