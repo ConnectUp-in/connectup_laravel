@@ -93,10 +93,6 @@ class User extends Authenticatable
         parent::boot();
         static::creating(function ($user) {
                 $user->id = (string) Str::uuid();
-            if (!$user->invite_refferal) {
-                $name_initials = substr($user->name, 0, 2);
-                $user->invite_refferal =  $name_initials.'_'.rand(1000, 9999);
-            }
             if (!$user->username) {
                 $email = explode('@', $user->email);
                 $username = $email[0];
@@ -110,6 +106,21 @@ class User extends Authenticatable
                     }
                 }
                 $user->username = getUniqueUsername($username);
+            }
+            
+            if (!$user->invite_refferal) {
+                $name_initials = substr($user->name, 0, 2);
+                $refferal =  $name_initials.'_'.rand(1000, 9999);
+                function getUniqueRefferal($refferal) {
+                    $user = User::where('invite_refferal', $refferal)->first();
+                    if ($user) {
+                        $refferal = $refferal . rand(1, 9);
+                        return getUniqueRefferal($refferal);
+                    } else {
+                        return $refferal;
+                    }
+                }
+                $user->invite_refferal = getUniqueRefferal($refferal);
             }
             if(!$user->socials){
                 $user->socials = '{}';
