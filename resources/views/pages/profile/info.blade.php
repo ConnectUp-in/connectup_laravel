@@ -942,6 +942,8 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
         integrity="sha512-DBOconMAY06o4R79zeXKKM3h/g5pca647Eabb+6viK4dRpiMOlZFS4gsbukTbHo+ppdKx4yr+/0m2JnpeAIrSw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        var allgood = [true, true]
+
         $(document).ready(function() {
             $('#background').selectize({
                 placeholder: "Select Academic Background",
@@ -994,6 +996,8 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                 var prevusername = "{{ Auth::user()->username }}";
                 var username = $(this).val();
                 if (username != prevusername) {
+                    $('#submitbutton').prop('disabled', true);
+
                     $.get('{{ route('isavailable.username') }}', {
                         username: username
                     }, function(data) {
@@ -1001,11 +1005,15 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                             if (data.data) {
                                 $('input[name="username"]').removeClass('is-invalid');
                                 $('input[name="username"]').addClass('is-valid');
-                                $('#submitbutton').prop('disabled', false);
+                                allgood[0] = true;
+                                updateButton();
+
                             } else {
                                 $('input[name="username"]').removeClass('is-valid');
                                 $('input[name="username"]').addClass('is-invalid');
-                                $('#submitbutton').prop('disabled', true);
+                                allgood[0] = false;
+                                updateButton();
+
                             }
                         } else {
                             toastr.error(data.message);
@@ -1015,7 +1023,8 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                 } else {
                     $('input[name="username"]').removeClass('is-invalid');
                     $('input[name="username"]').removeClass('is-valid');
-                    $('#submitbutton').prop('disabled', false);
+                    allgood[0] = true;
+                    updateButton();
                 }
             });
 
@@ -1023,6 +1032,8 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                 var prevemail = "{{ Auth::user()->email }}";
                 var email = $(this).val();
                 if (email != prevemail) {
+                    $('#submitbutton').prop('disabled', true);
+
                     $.get('{{ route('isavailable.email') }}', {
                         email: email
                     }, function(data) {
@@ -1031,11 +1042,13 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                             if (data.data) {
                                 $('input[name="email"]').removeClass('is-invalid');
                                 $('input[name="email"]').addClass('is-valid');
-                                $('#submitbutton').prop('disabled', false);
+                                allgood[1] = true;
+                                updateButton();
                             } else {
                                 $('input[name="email"]').removeClass('is-valid');
                                 $('input[name="email"]').addClass('is-invalid');
-                                $('#submitbutton').prop('disabled', true);
+                                allgood[1] = false;
+                                updateButton();
                             }
                         } else {
                             toastr.error(data.message);
@@ -1045,9 +1058,20 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                 } else {
                     $('input[name="email"]').removeClass('is-invalid');
                     $('input[name="email"]').removeClass('is-valid');
-                    $('#submitbutton').prop('disabled', false);
+                    allgood[1] = true;
+                    updateButton();
                 }
             });
         });
+
+
+        function updateButton() {
+            console.log(allgood);
+            if (allgood.includes(false)) {
+                $('#submitbutton').prop('disabled', true);
+            } else {
+                $('#submitbutton').prop('disabled', false);
+            }
+        }
     </script>
 @endpush
