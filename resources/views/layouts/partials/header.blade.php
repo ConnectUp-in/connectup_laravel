@@ -21,26 +21,26 @@ $sidebaritems = [
             ],
         ],
     ],
-    [
-        'title' => 'Account',
-        'svg' => 'settings',
-        'text' => 'Change settings, configure notifications, and review your privacy',
-        'identifier' => 'account',
-        'links' => [
-            [
-                'title' => 'Account Info',
-                'url' => 'hub-account-settings.html',
-            ],
-            [
-                'title' => 'Change Password',
-                'url' => 'hub-account-notifications.html',
-            ],
-            [
-                'title' => 'General Settings',
-                'url' => 'hub-account-privacy.html',
-            ],
-        ],
-    ],
+    // [
+    //     'title' => 'Account',
+    //     'svg' => 'settings',
+    //     'text' => 'Change settings, configure notifications, and review your privacy',
+    //     'identifier' => 'account',
+    //     'links' => [
+    //         [
+    //             'title' => 'Account Info',
+    //             'url' => 'hub-account-settings.html',
+    //         ],
+    //         [
+    //             'title' => 'Change Password',
+    //             'url' => 'hub-account-notifications.html',
+    //         ],
+    //         [
+    //             'title' => 'General Settings',
+    //             'url' => 'hub-account-privacy.html',
+    //         ],
+    //     ],
+    // ],
 ];
 @endphp
 
