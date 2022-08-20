@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>
-        Hello {{ $name ?? 'Entrepreneur' }},
+        Hello Superpreneur,
     </h2>
     <a href="{{ shorten(url('/e/' . $username ?? 'abc')) }}">{{ $name ?? 'Entrepreneur' }}</a> joined using your refferal
     code.
