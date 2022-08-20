@@ -464,7 +464,8 @@ $page['description'] = $user->bio ?? null;
                             <!-- SIMPLE DROPDOWN -->
                             <div class="simple-dropdown widget-box-post-settings-dropdown">
                                 <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Widget Settings</p>
+                                <a href="{{ route('profile.info') }}" class="simple-dropdown-link">Edit Profile</a>
+
                                 <!-- /SIMPLE DROPDOWN LINK -->
                             </div>
                             <!-- /SIMPLE DROPDOWN -->
