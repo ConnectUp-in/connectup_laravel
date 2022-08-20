@@ -133,7 +133,7 @@ class User extends Authenticatable
             if (!$user->cover_photo_path) {
                 // generater a random cover photo from /assets/defaults/covers
                 $user->cover_photo_path =
-                    '/assets/defaults/covers/' . rand(1, 22) . '.jpg';
+                    '/assets/defaults/covers/' . rand(1, 21) . '.jpg';
             }
         });
     }

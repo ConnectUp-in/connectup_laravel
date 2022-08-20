@@ -5,7 +5,7 @@
         Hello {{ $name ?? 'Entrepreneur' }},
     </h2>
     Thank you for joining ConnectUp. <br>
-    We are excited to have at our network and we look forward to connecting with you and developing startup and
+    We are excited to have you at our network and we look forward to connecting with you and developing startup and
     entrepreneurship ecosystem in India.<br>
     <br>
     Your Refferal Code is <b>{{ $invite_refferal ?? 'Oops, Unable to create' }}</b>.<br>
