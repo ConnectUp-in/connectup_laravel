@@ -18,7 +18,7 @@
                 <!-- SIMPLE DROPDOWN -->
                 <div class="simple-dropdown widget-box-post-settings-dropdown">
                     <!-- SIMPLE DROPDOWN LINK -->
-                    <p class="simple-dropdown-link">Widget Settings</p>
+                    <a href="{{ route('profile.refferals') }}" class="simple-dropdown-link">Manage Refferals</a>
                     <!-- /SIMPLE DROPDOWN LINK -->
                 </div>
                 <!-- /SIMPLE DROPDOWN -->
