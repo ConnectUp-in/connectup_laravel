@@ -186,7 +186,7 @@ $sidebaritems = [
     <div class="header-actions search-bar">
         <!-- INTERACTIVE INPUT -->
         <div class="interactive-input dark">
-            <input type="text" id="search-main" name="search_main" placeholder="Search here for people or groups">
+            <input type="text" id="search-main" name="search_main" placeholder="Search here...">
             <!-- INTERACTIVE INPUT ICON WRAP -->
             <div class="interactive-input-icon-wrap">
                 <!-- INTERACTIVE INPUT ICON -->
@@ -214,12 +214,12 @@ $sidebaritems = [
             <!-- DROPDOWN BOX CATEGORY -->
             <div class="dropdown-box-category">
                 <!-- DROPDOWN BOX CATEGORY TITLE -->
-                <p class="dropdown-box-category-title">Members</p>
+                <p class="dropdown-box-category-title">Sorry, Nothing to Display</p>
                 <!-- /DROPDOWN BOX CATEGORY TITLE -->
             </div>
             <!-- /DROPDOWN BOX CATEGORY -->
 
-            <!-- DROPDOWN BOX LIST -->
+            {{-- <!-- DROPDOWN BOX LIST -->
             <div class="dropdown-box-list small no-scroll">
                 <!-- DROPDOWN BOX LIST ITEM -->
                 <a class="dropdown-box-list-item" href="profile-timeline.html">
@@ -490,7 +490,7 @@ $sidebaritems = [
                 </a>
                 <!-- /DROPDOWN BOX LIST ITEM -->
             </div>
-            <!-- /DROPDOWN BOX LIST -->
+            <!-- /DROPDOWN BOX LIST --> --}}
         </div>
         <!-- /DROPDOWN BOX -->
     </div>
