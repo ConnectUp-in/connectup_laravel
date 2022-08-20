@@ -95,7 +95,7 @@
     {{-- @include('layouts/partials/chatwidget') --}}
     @include('layouts/partials/header')
 
-    <!-- FLOATY BAR -->
+    {{-- <!-- FLOATY BAR -->
     <aside class="floaty-bar">
         <!-- BAR ACTIONS -->
         <div class="bar-actions">
@@ -179,7 +179,7 @@
         </div>
         <!-- /BAR ACTIONS -->
     </aside>
-    <!-- /FLOATY BAR -->
+    <!-- /FLOATY BAR --> --}}
 
     @yield('content')
 
