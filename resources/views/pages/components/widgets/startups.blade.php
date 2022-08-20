@@ -1,6 +1,6 @@
 <!-- WIDGET BOX -->
 <div class="widget-box">
-    <!-- WIDGET BOX SETTINGS -->
+    {{-- <!-- WIDGET BOX SETTINGS -->
     <div class="widget-box-settings">
         <!-- POST SETTINGS WRAP -->
         <div class="post-settings-wrap">
@@ -17,17 +17,17 @@
             <!-- SIMPLE DROPDOWN -->
             <div class="simple-dropdown widget-box-post-settings-dropdown">
                 <!-- SIMPLE DROPDOWN LINK -->
-                <p class="simple-dropdown-link">Widget Settings</p>
+                <p class="simple-dropdown-link">Great Try, </p>
                 <!-- /SIMPLE DROPDOWN LINK -->
             </div>
             <!-- /SIMPLE DROPDOWN -->
         </div>
         <!-- /POST SETTINGS WRAP -->
     </div>
-    <!-- /WIDGET BOX SETTINGS -->
+    <!-- /WIDGET BOX SETTINGS --> --}}
 
     <!-- WIDGET BOX TITLE -->
-    <p class="widget-box-title">Startups <span class="highlighted">7</span></p>
+    <p class="widget-box-title">Startups <span class="highlighted">0</span></p>
     <!-- /WIDGET BOX TITLE -->
 
     <!-- WIDGET BOX CONTENT -->
@@ -76,7 +76,7 @@
     <p>No startups Created Yet</p>
 
     @if (Auth::check() && Auth::user()->id == $user->id)
-        <a href="/startups/create" class="button warning w-100 mt-3">Create Startup</a>
+        <a style="cursor: not-allowed" href="#" class="button warning w-100 mt-3">Create Startup</a>
     @endif
 </div>
 <!-- /WIDGET BOX CONTENT -->
