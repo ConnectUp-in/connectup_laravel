@@ -354,7 +354,7 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                                     <!-- /FORM ITEM -->
                                 </div>
                                 <!-- /FORM ROW -->
-                                <!-- FORM ROW -->
+                                {{-- <!-- FORM ROW -->
                                 <div class="form-row ">
 
                                     <!-- FORM ITEM -->
@@ -368,7 +368,7 @@ $page['title'] = 'Info | ' . $user->name . ' | ConnectUp';
                                     </div>
                                     <!-- /FORM ITEM -->
                                 </div>
-                                <!-- /FORM ROW -->
+                                <!-- /FORM ROW --> --}}
 
                                 {{-- </form> --}}
                                 <!-- /FORM -->
