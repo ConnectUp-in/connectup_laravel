@@ -21,24 +21,33 @@ $message = [
             <!-- GRID COLUMN -->
             <div class="account-hub-content">
 
-                {{-- <!-- SECTION HEADER -->
+                <!-- SECTION HEADER -->
                 <div class="section-header">
                     <!-- SECTION HEADER INFO -->
                     <div class="section-header-info">
                         <!-- SECTION PRETITLE -->
-                        <p class="section-pretitle">My Profile</p>
+                        <p class="section-pretitle">Refferals</p>
                         <!-- /SECTION PRETITLE -->
 
                         <!-- SECTION TITLE -->
-                        <h2 class="section-title">Profile Info</h2>
+                        <h2 class="section-title">Your Refferals</h2>
                         <!-- /SECTION TITLE -->
                     </div>
                     <!-- /SECTION HEADER INFO -->
 
+                    <!-- SECTION HEADER INFO -->
+                    <div class="section-header-info  align-right">
+                        <!-- SECTION PRETITLE -->
+                        <p class="section-pretitle">Connect Coins</p>
+                        <!-- /SECTION PRETITLE -->
 
-                    <button class="button primary" style="padding:0 30px; width:fit-content">Save Changes!</button>
+                        <!-- SECTION TITLE -->
+                        <h2 class="section-title">{{ $refferals->count() * 10 }} CC</h2>
+                        <!-- /SECTION TITLE -->
+                    </div>
+                    <!-- /SECTION HEADER INFO -->
                 </div>
-                <!-- /SECTION HEADER --> --}}
+                <!-- /SECTION HEADER -->
 
                 <!-- GRID COLUMN -->
                 <div class="grid-column">
@@ -83,7 +92,7 @@ $message = [
                                     <a
                                         href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
                                             alt="reaction-like">
@@ -96,7 +105,7 @@ $message = [
                                     <a
                                         href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . ' ' . $message['code'] }}&source=https://connectup.in">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
                                             alt="reaction-like">
@@ -109,7 +118,7 @@ $message = [
                                     <a
                                         href="https://twitter.com/intent/tweet?text=https://connectup.in/post/asdf&via=connectup">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
                                             alt="reaction-like">
@@ -123,7 +132,7 @@ $message = [
                                         onclick="copyCode('{{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
 
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
                                             alt="reaction-like">
@@ -290,6 +299,10 @@ $message = [
             font-size: 1.2em;
             font-weight: bold;
             font-family: Rajdhani;
+        }
+
+        .align-right {
+            text-align: right;
         }
     </style>
 @endpush
