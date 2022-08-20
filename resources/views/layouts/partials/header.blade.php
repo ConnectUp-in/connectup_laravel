@@ -66,7 +66,7 @@ $sidebaritems = [
     </div>
     <!-- /HEADER ACTIONS -->
 
-    {{-- <!-- HEADER ACTIONS -->
+    <!-- HEADER ACTIONS -->
     <div class="header-actions">
         <!-- SIDEMENU TRIGGER -->
         <div class="sidemenu-trigger navigation-widget-trigger">
@@ -180,7 +180,7 @@ $sidebaritems = [
         </nav>
         <!-- /NAVIGATION -->
     </div>
-    <!-- /HEADER ACTIONS --> --}}
+    <!-- /HEADER ACTIONS -->
 
     <!-- HEADER ACTIONS -->
     <div class="header-actions search-bar">
