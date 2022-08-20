@@ -68,7 +68,7 @@ $sidebaritems = [
 
     <!-- HEADER ACTIONS -->
     <div class="header-actions">
-        <!-- SIDEMENU TRIGGER -->
+        {{-- <!-- SIDEMENU TRIGGER -->
         <div class="sidemenu-trigger navigation-widget-trigger">
             <!-- ICON GRID -->
             <svg class="icon-grid">
@@ -76,7 +76,7 @@ $sidebaritems = [
             </svg>
             <!-- /ICON GRID -->
         </div>
-        <!-- /SIDEMENU TRIGGER -->
+        <!-- /SIDEMENU TRIGGER --> --}}
 
         <!-- MOBILEMENU TRIGGER -->
         <div class="mobilemenu-trigger navigation-widget-mobile-trigger">
@@ -98,7 +98,7 @@ $sidebaritems = [
         </div>
         <!-- /MOBILEMENU TRIGGER -->
 
-        <!-- NAVIGATION -->
+        {{-- <!-- NAVIGATION -->
         <nav class="navigation">
             <!-- MENU MAIN -->
             <ul class="menu-main">
@@ -178,7 +178,7 @@ $sidebaritems = [
             </ul>
             <!-- /MENU MAIN -->
         </nav>
-        <!-- /NAVIGATION -->
+        <!-- /NAVIGATION --> --}}
     </div>
     <!-- /HEADER ACTIONS -->
 
