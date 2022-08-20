@@ -1535,7 +1535,7 @@ $page['description'] = $user->bio ?? null;
 
                         <!-- WIDGET BOX PICTURE -->
                         <figure class="widget-box-picture popup-picture-trigger">
-                            <img src="/assets/template/img/cover/04.jpg" alt="cover-04">
+                            <img src="/assets/defaults/post.png" alt="cover-04">
                         </figure>
                         <!-- /WIDGET BOX PICTURE -->
 
