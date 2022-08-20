@@ -1297,7 +1297,7 @@ textarea::placeholder {
     }
     .grid.grid-3-6-3.mobile-prefer-content .grid-column:first-child,
     .grid.grid-3-6-3.mobile-prefer-content .grid-column:nth-child(3) {
-        display: none;
+        /* display: none; */
     }
     .grid.grid-3-6_9,
     .grid.grid-3-9,
