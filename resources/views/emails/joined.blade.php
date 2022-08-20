@@ -9,6 +9,6 @@
 
     <br>
     <br>
-    Best Regards, <br>
+    Happy Hustling, <br>
     <b>Team ConnectUp</b>
 @endsection

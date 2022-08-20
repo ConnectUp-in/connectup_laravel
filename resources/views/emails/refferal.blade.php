@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>
-        Hello {{ $name ?? 'Entrepreneur' }},
+        Hello Superpreneur,
     </h2>
     @if ($found)
         You've successfully applied refferal of <a
@@ -12,6 +12,6 @@
     @endif
     <br>
     <br>
-    Best Regards, <br>
+    Happy Hustling, <br>
     <b>Team ConnectUp</b>
 @endsection

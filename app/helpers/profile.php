@@ -44,7 +44,8 @@ function profileNotCompleted()
 function sendRegistrationMail($user){
     $data = [
         'name' => $user->name,
-        'email' => $user->email
+        'email' => $user->email,
+        'invite_refferal' => $user->invite_refferal,
     ];
     Mail::send('emails.register', $data, function ($message) use ($user) {
         $message->from('connectup.in@gmail.com');
