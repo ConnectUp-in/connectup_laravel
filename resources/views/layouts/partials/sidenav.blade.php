@@ -1,15 +1,15 @@
 @php
 $menuitems = [
-    ['title' => 'Dashboard | Coming Soon', 'url' => 'overview', 'svg' => 'overview', 'icon' => 'icon-overview'],
+    ['title' => 'Dashboard | Coming Soon', 'url' => false, 'svg' => 'overview', 'icon' => 'icon-overview'],
     ['title' => 'Feed', 'url' => 'feed', 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
-    ['title' => 'User Account', 'url' => 'account', 'svg' => 'profile', 'icon' => 'icon-members'],
-    ['title' => 'Members | Coming soon', 'url' => 'groups', 'svg' => 'group', 'icon' => 'icon-group'],
-    ['title' => 'StartUps', 'url' => 'quests', 'svg' => 'quests', 'icon' => 'icon-quests'],
-    // ['title' => 'Badges', 'url' => 'badges', 'svg' => 'badges', 'icon' => 'icon-badges'],
-    // ['title' => 'Streams', 'url' => 'streams', 'svg' => 'streams', 'icon' => 'icon-streams'],
-    ['title' => 'Events - Launching Soon', 'url' => 'events', 'svg' => 'events', 'icon' => 'icon-events'],
-    ['title' => 'Forums - Coming Soon', 'url' => 'forums', 'svg' => 'forums', 'icon' => 'icon-forums'],
-    ['title' => 'Join StartUp', 'url' => 'marketplace', 'svg' => 'store', 'icon' => 'icon-marketplace'],
+    ['title' => 'User Account', 'url' => 'user/profile/info', 'svg' => 'profile', 'icon' => 'icon-members'],
+    ['title' => 'Members | Coming soon', 'url' => false, 'svg' => 'group', 'icon' => 'icon-group'],
+    ['title' => 'StartUps - Launching soon', 'url' => false, 'svg' => 'quests', 'icon' => 'icon-quests'],
+    // ['title' => 'Badges', 'url' => false, 'svg' => 'badges', 'icon' => 'icon-badges'],
+    // ['title' => 'Streams', 'url' => false, 'svg' => 'streams', 'icon' => 'icon-streams'],
+    ['title' => 'Events - Launching Soon', 'url' => false, 'svg' => 'events', 'icon' => 'icon-events'],
+    ['title' => 'Forums - Coming Soon', 'url' => false, 'svg' => 'forums', 'icon' => 'icon-forums'],
+    ['title' => 'Join StartUp - Launching Soon', 'url' => false, 'svg' => 'store', 'icon' => 'icon-marketplace'],
 ];
 
 // Get url from current page
@@ -61,7 +61,7 @@ $current_url = end($current_url);
             <li class="menu-item 
             @if ($menu['url'] == $current_url) active @endif">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr " href="/{{ $menu['url'] }}"
+                <a class="menu-item-link text-tooltip-tfr " href="{{ $menu['url'] ? '/' . $menu['url'] : '#' }}"
                     data-title="{{ $menu['title'] }}">
                     <!-- MENU ITEM LINK ICON -->
 
