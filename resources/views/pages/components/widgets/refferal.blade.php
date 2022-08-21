@@ -76,7 +76,7 @@
 
                         <!-- USER STATUS TITLE -->
                         <p class="user-status-title"><a class="bold"
-                                href="profile-timeline.html">{{ $user->name }}</a> joined using your
+                                href="{{ route('user', $user->username) }}">{{ $user->name }}</a> joined using your
                             Refferal</p>
                         <!-- /USER STATUS TITLE -->
 
