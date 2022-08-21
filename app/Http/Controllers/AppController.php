@@ -9,22 +9,33 @@ use Auth;
 class AppController extends Controller
 {
     //
-    public function feed(){
+    public function feed()
+    {
         page('feed');
-        $posts = Post::all();
-        if(Auth::check()){
-
-            $refferals = User::where('invited_by', Auth::user()->invite_refferal)->select('name', 'username','email', 'profile_photo_path', 'created_at')->get();
-        }
-        else{
+        $posts = Post::where('active', 1)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        if (Auth::check()) {
+            $refferals = User::where(
+                'invited_by',
+                Auth::user()->invite_refferal
+            )
+                ->select(
+                    'name',
+                    'username',
+                    'email',
+                    'profile_photo_path',
+                    'created_at'
+                )
+                ->get();
+        } else {
             $refferals = [];
         }
         $data = [
-        'posts' => $posts,
-        'refferals' => $refferals,
+            'posts' => $posts,
+            'refferals' => $refferals,
         ];
 
         return view('pages.feed', $data);
     }
-
 }
