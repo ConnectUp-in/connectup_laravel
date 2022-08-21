@@ -22,16 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
 Route::get('test', function () {
     return md5(uniqid('post_', true));
 });
@@ -44,6 +34,7 @@ Route::get('feed', [AppController::class, 'feed'])->name('feed');
 Route::get('post/{id}', [PostController::class, 'post'])->name('post');
 Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 Route::get('redirect', [HelperController::class, 'redirect']);
+Route::get('startups', [AppController::class, 'startups'])->name('startups');
 
 Route::prefix('user')
     ->middleware('auth')
