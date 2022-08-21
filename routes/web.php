@@ -102,3 +102,9 @@ Route::prefix('join')->group(function () {
         return redirect('https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc');
     });
 });
+
+Route::prefix('startup')->group(function () {
+    Route::get('/{username}', [StartupController::class, 'startup'])->name(
+        'startup'
+    );
+});
