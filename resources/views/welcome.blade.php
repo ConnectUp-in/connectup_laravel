@@ -9,7 +9,7 @@
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
-    <title>ConnectUp | Home</title>
+    <title>Home | ConnectUp - Connecting the Dots...</title>
     @include('layouts.partials.meta')
 
 </head>

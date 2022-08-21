@@ -1,3 +1,9 @@
+@php
+$page['title'] = 'Login | ConnectUp | Connecting the Dots...';
+
+@endphp
+
+
 @extends('layouts/auth')
 
 

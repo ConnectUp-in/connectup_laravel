@@ -11,6 +11,8 @@
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
     <title>ConnectUp | Home</title>
+    @include('layouts.partials.meta')
+
 
     {{-- Import fontawesome --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
