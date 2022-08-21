@@ -29,6 +29,7 @@ return new class extends Migration {
             $table->json('shares')->nullable();
             $table->json('likes')->nullable();
             $table->json('dislikes')->nullable();
+            $table->json('metadata')->nullable();
             $table->timestamps();
         });
     }
