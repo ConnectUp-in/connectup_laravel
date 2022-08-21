@@ -93,7 +93,7 @@ $message = [
                                     <a
                                         href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                        IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
                                             alt="reaction-like">
@@ -106,7 +106,7 @@ $message = [
                                     <a
                                         href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . ' ' . $message['code'] }}&source=https://connectup.in">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                        IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
                                             alt="reaction-like">
@@ -117,9 +117,9 @@ $message = [
                                 {{-- Twitter share option --}}
                                 <div class="reaction-option text-tooltip-tft" data-title="Twitter">
                                     <a
-                                        href="https://twitter.com/intent/tweet?text=https://connectup.in/post/asdf&via=connectup">
+                                        href="https://twitter.com/intent/tweet?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}&via=connectup">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                        IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
                                             alt="reaction-like">
@@ -133,7 +133,7 @@ $message = [
                                         onclick="copyCode('{{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
 
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                                                                                                                                                                                                                                                                                                        IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
                                             alt="reaction-like">
