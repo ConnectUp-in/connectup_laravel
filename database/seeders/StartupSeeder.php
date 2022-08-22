@@ -29,6 +29,7 @@ class StartupSeeder extends Seeder
                 'logo' => '/assets/defaults/logo.png',
                 'cover' => '/assets/defaults/cover.png',
                 'username' => 'connectup',
+                'website' => 'https://connectup.in',
                 'socials' => [
                     'linkedin' =>
                         'https://www.linkedin.com/company/connectupin',
@@ -56,6 +57,7 @@ class StartupSeeder extends Seeder
                 'cover' =>
                     'https://media-exp1.licdn.com/dms/image/C4D16AQEUUuv1htmSuw/profile-displaybackgroundimage-shrink_350_1400/0/1646210107350?e=1666828800&v=beta&t=g0sKt7kXurn8PxiWldDluRVv9OY-tbM72VUz6ffVsJw',
                 'username' => 'brickstox',
+                'website' => 'https://brickstox.in',
                 'socials' => [
                     'linkedin' => 'https://www.linkedin.com/company/brickstox',
                     'instagram' => 'https://www.instagram.com/brickstox',

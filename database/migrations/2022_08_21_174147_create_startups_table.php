@@ -14,7 +14,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('startups', function (Blueprint $table) {
-            // id, name, image.pngbio, about, logo, cover, socials, founded_at, contact_email, hiring_email, founder, category, stage, contact, funded, interests, active, lookingfor, created_at, updated_at
+            // id, name, image.pngbio, about, logo, cover,website, socials, founded_at, contact_email, hiring_email, founder, category, stage, contact, funded, interests, active, lookingfor, created_at, updated_at
 
             $table->string('id');
             $table->primary('id');
@@ -24,6 +24,7 @@ return new class extends Migration {
             $table->string('username')->unique();
             $table->string('logo')->nullable();
             $table->string('cover')->nullable();
+            $table->string('website')->nullable();
             $table->json('socials')->nullable();
             $table->date('founded_at')->nullable();
             $table->string('contact_email')->nullable();
