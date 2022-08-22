@@ -146,7 +146,8 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
                         <!-- USER SHORT DESCRIPTION -->
                         <div class="user-short-description">
                             <!-- USER SHORT DESCRIPTION AVATAR -->
-                            <a class="user-short-description-avatar user-avatar medium no-stats" href="group-timeline.html">
+                            <a class="user-short-description-avatar user-avatar medium no-stats"
+                                href="{{ route('startup', $startup->username) }}">
                                 <!-- USER AVATAR BORDER -->
                                 <div class="user-avatar-border">
                                     <!-- HEXAGON -->
@@ -167,7 +168,7 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
 
                             <!-- USER SHORT DESCRIPTION TITLE -->
                             <p class="user-short-description-title">
-                                <a href="group-timeline.html">{{ $startup->name }}</a>
+                                <a href="{{ route('startup', $startup->username) }}">{{ $startup->name }}</a>
                             </p>
                             <!-- /USER SHORT DESCRIPTION TITLE -->
 
