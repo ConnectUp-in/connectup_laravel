@@ -6,6 +6,17 @@ foreach ($requests as $key => $value) {
     $currenturl .= '&' . $key . '=' . $value;
 }
 
+$tabitems = [
+    'new' => 'Newly Created',
+    'members' => 'Most Members',
+    'alpha' => 'Alphabetical',
+];
+if ($requests['sort'] ?? '') {
+    $stab = $requests['sort'];
+} else {
+    $stab = 'new';
+}
+
 @endphp
 
 @extends('layouts/app')
@@ -25,7 +36,7 @@ foreach ($requests as $key => $value) {
                     <div class="form-input small with-button {{ $requests['q'] ?? '' ? 'active' : '' }}">
                         <label for="groups-search ">Search Groups</label>
                         <input type="text" id="groups-search" name="q" value="{{ $requests['q'] ?? '' }}" />
-                        <input type="hidden" name="sort" value="{{ $requests['sort'] ?? 'new' }}" />
+                        <input type="hidden" name="sort" value="{{ $stab }}" />
 
                         <!-- BUTTON -->
                         <button class="button primary">
@@ -60,18 +71,6 @@ foreach ($requests as $key => $value) {
                 <!-- FILTER TABS -->
                 <div class="filter-tabs">
 
-                    @php
-                        $tabitems = [
-                            'new' => 'Newly Created',
-                            'members' => 'Most Members',
-                            'alpha' => 'Alphabetical',
-                        ];
-                        if ($requests['sort'] ?? '') {
-                            $stab = $requests['sort'];
-                        } else {
-                            $stab = 'new';
-                        }
-                    @endphp
 
                     @foreach ($tabitems as $tab => $title)
                         <!-- FILTER TAB -->
@@ -88,7 +87,7 @@ foreach ($requests as $key => $value) {
             </div>
             <!-- /SECTION FILTERS BAR ACTIONS -->
 
-            <!-- SECTION FILTERS BAR ACTIONS -->
+            {{-- <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
                 <!-- VIEW ACTIONS -->
                 <div class="view-actions">
@@ -124,7 +123,7 @@ foreach ($requests as $key => $value) {
                 </div>
                 <!-- /VIEW ACTIONS -->
             </div>
-            <!-- /SECTION FILTERS BAR ACTIONS -->
+            <!-- /SECTION FILTERS BAR ACTIONS --> --}}
         </div>
         <!-- /SECTION FILTERS BAR -->
 
@@ -217,7 +216,7 @@ foreach ($requests as $key => $value) {
                             <!-- USER STAT -->
                             <div class="user-stat">
                                 <!-- USER STAT TITLE -->
-                                <p class="user-stat-title">7</p>
+                                <p class="user-stat-title">{{ changeIntoKMG(profileview($startup->id)) }}</p>
                                 <!-- /USER STAT TITLE -->
 
                                 <!-- USER STAT TEXT -->
@@ -373,7 +372,7 @@ foreach ($requests as $key => $value) {
                         <!-- USER PREVIEW ACTIONS -->
                         <div class="user-preview-actions">
                             <!-- BUTTON -->
-                            <p class="button secondary full">
+                            <p class="button secondary full" style="cursor: not-allowed">
                                 <!-- BUTTON ICON -->
                                 <svg class="button-icon icon-join-group">
                                     <use xlink:href="#svg-join-group"></use>
