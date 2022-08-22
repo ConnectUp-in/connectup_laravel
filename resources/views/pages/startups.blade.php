@@ -140,15 +140,18 @@ if ($requests['sort'] ?? '') {
 
                     <!-- USER PREVIEW INFO -->
                     <div class="user-preview-info">
-                        <!-- TAG STICKER -->
-                        <div class="tag-sticker">
-                            <!-- TAG STICKER ICON -->
-                            <svg class="tag-sticker-icon icon-public">
-                                <use xlink:href="#svg-{{ $startup->funded ? 'funded' : 'public' }}"></use>
-                            </svg>
-                            <!-- /TAG STICKER ICON -->
-                        </div>
-                        <!-- /TAG STICKER -->
+
+                        @if ($startup->website)
+                            <!-- TAG STICKER -->
+                            <a class="tag-sticker" href="{{ $startup->website }}" target="_blank" style="z-index: 2">
+                                <!-- TAG STICKER ICON -->
+                                <svg class="tag-sticker-icon icon-public">
+                                    <use xlink:href="#svg-public"></use>
+                                </svg>
+                                <!-- /TAG STICKER ICON -->
+                            </a>
+                            <!-- /TAG STICKER -->
+                        @endif
 
                         <!-- USER SHORT DESCRIPTION -->
                         <div class="user-short-description">
