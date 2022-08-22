@@ -1,10 +1,10 @@
 @php
 $menuitems = [
     ['title' => 'Dashboard | Coming Soon', 'url' => false, 'svg' => 'overview', 'icon' => 'icon-overview'],
-    ['title' => 'Feed', 'url' => 'feed', 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
-    ['title' => 'User Account', 'url' => 'user/profile/info', 'svg' => 'profile', 'icon' => 'icon-members'],
+    ['title' => 'Feed', 'url' => route('feed'), 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
+    ['title' => 'User Account', 'url' => route('profile.info'), 'svg' => 'profile', 'icon' => 'icon-members'],
     ['title' => 'Members | Coming soon', 'url' => false, 'svg' => 'group', 'icon' => 'icon-group'],
-    ['title' => 'StartUps - Launching soon', 'url' => false, 'svg' => 'quests', 'icon' => 'icon-quests'],
+    ['title' => 'StartUps', 'url' => route('startups'), 'svg' => 'quests', 'icon' => 'icon-quests'],
     // ['title' => 'Badges', 'url' => false, 'svg' => 'badges', 'icon' => 'icon-badges'],
     // ['title' => 'Streams', 'url' => false, 'svg' => 'streams', 'icon' => 'icon-streams'],
     ['title' => 'Events - Launching Soon', 'url' => false, 'svg' => 'events', 'icon' => 'icon-events'],
@@ -14,9 +14,8 @@ $menuitems = [
 
 // Get url from current page
 $current_url = Request::url();
-$current_url = explode('/', $current_url);
-$current_url = end($current_url);
-
+// $current_url = explode('/', $current_url);
+// $current_url = end($current_url);
 @endphp
 
 
@@ -61,7 +60,7 @@ $current_url = end($current_url);
             <li class="menu-item 
             @if ($menu['url'] == $current_url) active @endif">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr " href="{{ $menu['url'] ? '/' . $menu['url'] : '#' }}"
+                <a class="menu-item-link text-tooltip-tfr " href="{{ $menu['url'] ? $menu['url'] : '#' }}"
                     data-title="{{ $menu['title'] }}">
                     <!-- MENU ITEM LINK ICON -->
 
