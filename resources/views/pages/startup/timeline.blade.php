@@ -85,14 +85,14 @@ $page['description'] = $startup->about;
                         <div class="user-stat-icon">
                             <!-- ICON PUBLIC -->
                             <svg class="icon-public">
-                                <use xlink:href="#svg-public"></use>
+                                <use xlink:href="#svg-{{ $startup->funded ? 'funded' : 'public' }}"></use>
                             </svg>
                             <!-- /ICON PUBLIC -->
                         </div>
                         <!-- /USER STAT ICON -->
 
                         <!-- USER STAT TEXT -->
-                        <p class="user-stat-text">public</p>
+                        <p class="user-stat-text">{{ $startup->funded ? 'Funded' : 'Bootstrap' }}</p>
                         <!-- /USER STAT TEXT -->
                     </div>
                     <!-- /USER STAT -->
@@ -139,7 +139,7 @@ $page['description'] = $startup->about;
                 <div class="tag-sticker">
                     <!-- TAG STICKER ICON -->
                     <svg class="tag-sticker-icon icon-public">
-                        <use xlink:href="#svg-public"></use>
+                        <use xlink:href="#svg-{{ $startup->funded ? 'funded' : 'public' }}"></use>
                     </svg>
                     <!-- /TAG STICKER ICON -->
                 </div>
@@ -148,7 +148,7 @@ $page['description'] = $startup->about;
                 <!-- PROFILE HEADER INFO ACTIONS -->
                 <div class="profile-header-info-actions">
                     <!-- PROFILE HEADER INFO ACTION -->
-                    <p class="profile-header-info-action button secondary">
+                    <p class="profile-header-info-action button secondary" style="cursor: not-allowed">
                         <!-- ICON JOIN GROUP -->
                         <svg class="icon-join-group">
                             <use xlink:href="#svg-join-group"></use>
@@ -157,15 +157,18 @@ $page['description'] = $startup->about;
                     </p>
                     <!-- /PROFILE HEADER INFO ACTION -->
 
-                    <!-- PROFILE HEADER INFO ACTION -->
-                    <a class="profile-header-info-action button" href="hub-group-management.html">
-                        <!-- ICON MORE DOTS -->
-                        <svg class="icon-more-dots">
-                            <use xlink:href="#svg-more-dots"></use>
-                        </svg>
-                        <!-- /ICON MORE DOTS -->
-                    </a>
-                    <!-- /PROFILE HEADER INFO ACTION -->
+
+                    @if (Auth::check() && Auth::user()->id == $startup->founder)
+                        <!-- PROFILE HEADER INFO ACTION -->
+                        <a class="profile-header-info-action button" href="#">
+                            <!-- ICON MORE DOTS -->
+                            <svg class="icon-icon">
+                                <use xlink:href="#svg-manage"></use>
+                            </svg>
+                            <!-- /ICON MORE DOTS -->
+                        </a>
+                        <!-- /PROFILE HEADER INFO ACTION -->
+                    @endif
                 </div>
                 <!-- /PROFILE HEADER INFO ACTIONS -->
             </div>
@@ -307,7 +310,6 @@ $page['description'] = $startup->about;
         <div class="grid grid-3-6-3 mobile-prefer-content">
             <!-- GRID COLUMN -->
             <div class="grid-column">
-                @widget('socials', ['socials' => $startup->socials])
 
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
@@ -347,70 +349,49 @@ $page['description'] = $startup->about;
                     <div class="widget-box-content">
                         <!-- PARAGRAPH -->
                         <p class="paragraph">
-                            Hello everyone! This is a group open to all for
-                            cosplayers around the world to talk about their
-                            passion, trade tips, ask for opinions and have a
-                            great time!
+                            {{ $startup->about }}
                         </p>
                         <!-- /PARAGRAPH -->
 
                         <!-- INFORMATION LINE LIST -->
                         <div class="information-line-list">
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">
-                                    Created
-                                </p>
-                                <!-- /INFORMATION LINE TITLE -->
+                            @php
+                                $infos = [
+                                    'Founded' => ['type' => 'date', 'data' => $startup->founded_at],
+                                    'Website' => ['type' => 'url', 'data' => $startup->website],
+                                    'Type' => ['type' => 'text', 'data' => $startup->funded ? 'Funded' : 'Bootstrap'],
+                                    'Email' => ['type' => 'email', 'data' => $startup->contact_email],
+                                ];
+                            @endphp
+                            @foreach ($infos as $key => $value)
+                                @if ($value['data'])
+                                    <!-- INFORMATION LINE -->
+                                    <div class="information-line">
+                                        <!-- INFORMATION LINE TITLE -->
+                                        <p class="information-line-title">
+                                            {{ $key }}
+                                        </p>
+                                        <!-- /INFORMATION LINE TITLE -->
 
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">
-                                    April 9th, 2018
-                                </p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
+                                        <!-- INFORMATION LINE TEXT -->
+                                        <p class="information-line-text">
+                                            @if ($value['type'] == 'date')
+                                                {{ Carbon::parse($value['data'])->format('d M Y') }}
+                                            @elseif ($value['type'] == 'url')
+                                                <a href="{{ $value['data'] }}" target="_blank">{{ $value['data'] }}</a>
+                                            @elseif ($value['type'] == 'email')
+                                                <a href="mailto:{{ $value['data'] }}">{{ $value['data'] }}</a>
+                                            @else
+                                                {{ $value['data'] }}
+                                            @endif
 
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Type</p>
-                                <!-- /INFORMATION LINE TITLE -->
+                                        </p>
+                                        <!-- /INFORMATION LINE TEXT -->
+                                    </div>
+                                    <!-- /INFORMATION LINE -->
+                                @endif
+                            @endforeach
 
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">Public</p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
-
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Email</p>
-                                <!-- /INFORMATION LINE TITLE -->
-
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">
-                                    <a href="#">info@cosworld.com</a>
-                                </p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
-
-                            <!-- INFORMATION LINE -->
-                            <div class="information-line">
-                                <!-- INFORMATION LINE TITLE -->
-                                <p class="information-line-title">Web</p>
-                                <!-- /INFORMATION LINE TITLE -->
-
-                                <!-- INFORMATION LINE TEXT -->
-                                <p class="information-line-text">
-                                    <a href="#">www.cosplayworld.com</a>
-                                </p>
-                                <!-- /INFORMATION LINE TEXT -->
-                            </div>
-                            <!-- /INFORMATION LINE -->
                         </div>
                         <!-- /INFORMATION LINE LIST -->
                     </div>
@@ -1449,6 +1430,8 @@ $page['description'] = $startup->about;
 
             <!-- GRID COLUMN -->
             <div class="grid-column">
+
+                @widget('socials', ['socials' => $startup->socials])
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
@@ -1480,773 +1463,676 @@ $page['description'] = $startup->about;
                     <!-- /WIDGET BOX SETTINGS -->
 
                     <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Group Organizers</p>
+                    <p class="widget-box-title">Founder Info</p>
                     <!-- /WIDGET BOX TITLE -->
 
                     <!-- WIDGET BOX CONTENT -->
                     <div class="widget-box-content">
-                        <!-- USER STATUS LIST -->
-                        <div class="user-status-list">
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/template/img/avatar/01.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
+                        @if ($startup->founder)
+                            <!-- USER STATUS LIST -->
+                            <div class="user-status-list">
+                                <!-- USER STATUS -->
+                                <div class="user-status">
+                                    <!-- USER STATUS AVATAR -->
+                                    <a class="user-status-avatar" href="{{ route('user', $startup->founder->id) }}">
+                                        <!-- USER AVATAR -->
+                                        <div class="user-avatar small no-outline">
+                                            <!-- USER AVATAR CONTENT -->
+                                            <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
+                                                <div class="hexagon-image-30-32"
+                                                    data-src="{{ $startup->founder->profile_photo_path }}"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
+                                            <!-- /USER AVATAR CONTENT -->
 
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
+                                            <!-- USER AVATAR PROGRESS -->
+                                            <div class="user-avatar-progress">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
+                                                <div class="hexagon-progress-40-44"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
+                                            <!-- /USER AVATAR PROGRESS -->
 
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">
-                                                24
-                                            </p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
-                                        </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title">
-                                    <a class="bold" href="profile-timeline.html">Marina Valentine</a>
-                                </p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TEXT -->
-                                <p class="user-status-text small">
-                                    2 friends in common
-                                </p>
-                                <!-- /USER STATUS TEXT -->
-                            </div>
-                            <!-- /USER STATUS -->
-
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32"
-                                                data-src="/assets/template/img/avatar/05.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
-
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
-
-                                        <!-- USER AVATAR BADGE -->
-                                        <div class="user-avatar-badge">
-                                            <!-- USER AVATAR BADGE BORDER -->
-                                            <div class="user-avatar-badge-border">
+                                            <!-- USER AVATAR PROGRESS BORDER -->
+                                            <div class="user-avatar-progress-border">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-22-24"></div>
+                                                <div class="hexagon-border-40-44"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
-                                            <!-- /USER AVATAR BADGE BORDER -->
+                                            <!-- /USER AVATAR PROGRESS BORDER -->
 
-                                            <!-- USER AVATAR BADGE CONTENT -->
-                                            <div class="user-avatar-badge-content">
-                                                <!-- HEXAGON -->
-                                                <div class="hexagon-dark-16-18"></div>
-                                                <!-- /HEXAGON -->
-                                            </div>
-                                            <!-- /USER AVATAR BADGE CONTENT -->
-
-                                            <!-- USER AVATAR BADGE TEXT -->
-                                            <p class="user-avatar-badge-text">
-                                                12
-                                            </p>
-                                            <!-- /USER AVATAR BADGE TEXT -->
                                         </div>
-                                        <!-- /USER AVATAR BADGE -->
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
+                                        <!-- /USER AVATAR -->
+                                    </a>
+                                    <!-- /USER STATUS AVATAR -->
 
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title">
-                                    <a class="bold" href="profile-timeline.html">Neko Bebop</a>
-                                </p>
-                                <!-- /USER STATUS TITLE -->
+                                    <!-- USER STATUS TITLE -->
+                                    <p class="user-status-title">
+                                        <a class="bold"
+                                            href="{{ route('user', $startup->founder->username) }}">{{ $startup->founder->name }}</a>
+                                    </p>
+                                    <!-- /USER STATUS TITLE -->
 
-                                <!-- USER STATUS TEXT -->
-                                <p class="user-status-text small">
-                                    1 friends in common
-                                </p>
-                                <!-- /USER STATUS TEXT -->
-                            </div>
-                            <!-- /USER STATUS -->
-                        </div>
-                        <!-- /USER STATUS LIST -->
+                                    <!-- USER STATUS TEXT -->
+                                    <p class="user-status-text small">
+                                        {{ '@' . $startup->founder->username }}
+                                    </p>
+                                    <!-- /USER STATUS TEXT -->
+                                </div>
+                                <!-- /USER STATUS -->
+                        @endif
                     </div>
-                    <!-- /WIDGET BOX CONTENT -->
+                    <!-- /USER STATUS LIST -->
                 </div>
-                <!-- /WIDGET BOX -->
+                <!-- /WIDGET BOX CONTENT -->
+            </div>
+            <!-- /WIDGET BOX -->
 
-                <!-- WIDGET BOX -->
-                <div class="widget-box">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
-                            </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">
-                                    Widget Settings
-                                </p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
+            <!-- WIDGET BOX -->
+            <div class="widget-box">
+                <!-- WIDGET BOX SETTINGS -->
+                <div class="widget-box-settings">
+                    <!-- POST SETTINGS WRAP -->
+                    <div class="post-settings-wrap">
+                        <!-- POST SETTINGS -->
+                        <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                            <!-- POST SETTINGS ICON -->
+                            <svg class="post-settings-icon icon-more-dots">
+                                <use xlink:href="#svg-more-dots"></use>
+                            </svg>
+                            <!-- /POST SETTINGS ICON -->
                         </div>
-                        <!-- /POST SETTINGS WRAP -->
+                        <!-- /POST SETTINGS -->
+
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown widget-box-post-settings-dropdown">
+                            <!-- SIMPLE DROPDOWN LINK -->
+                            <p class="simple-dropdown-link">
+                                Widget Settings
+                            </p>
+                            <!-- /SIMPLE DROPDOWN LINK -->
+                        </div>
+                        <!-- /SIMPLE DROPDOWN -->
                     </div>
-                    <!-- /WIDGET BOX SETTINGS -->
+                    <!-- /POST SETTINGS WRAP -->
+                </div>
+                <!-- /WIDGET BOX SETTINGS -->
 
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">
-                        Photos <span class="highlighted">30</span>
-                    </p>
-                    <!-- /WIDGET BOX TITLE -->
+                <!-- WIDGET BOX TITLE -->
+                <p class="widget-box-title">
+                    Photos <span class="highlighted">30</span>
+                </p>
+                <!-- /WIDGET BOX TITLE -->
 
-                    <!-- WIDGET BOX CONTENT -->
-                    <div class="widget-box-content">
-                        <!-- PICTURE ITEM LIST -->
-                        <div class="picture-item-list small">
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/avatar/24.jpg" alt="avatar-24" />
-                                </figure>
-                                <!-- /PICTURE -->
+                <!-- WIDGET BOX CONTENT -->
+                <div class="widget-box-content">
+                    <!-- PICTURE ITEM LIST -->
+                    <div class="picture-item-list small">
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/avatar/24.jpg" alt="avatar-24" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/30.jpg" alt="cover-30" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/45.jpg" alt="cover-45" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/34.jpg" alt="cover-34" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/27.jpg" alt="cover-27" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/38.jpg" alt="cover-38" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/35.jpg" alt="cover-35" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/31.jpg" alt="cover-31" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/44.jpg" alt="cover-44" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/42.jpg" alt="cover-42" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <div class="picture-item popup-picture-trigger">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/37.jpg" alt="cover-37" />
+                            </figure>
+                            <!-- /PICTURE -->
+                        </div>
+                        <!-- /PICTURE ITEM -->
+
+                        <!-- PICTURE ITEM -->
+                        <a class="picture-item" href="#">
+                            <!-- PICTURE -->
+                            <figure class="picture round liquid">
+                                <img src="/assets/template/img/cover/29.jpg" alt="cover-29" />
+                            </figure>
+                            <!-- /PICTURE -->
+
+                            <!-- PICTURE ITEM OVERLAY -->
+                            <div class="picture-item-overlay round">
+                                <!-- PICTURE ITEM OVERLAY TEXT -->
+                                <p class="picture-item-overlay-text">
+                                    +61
+                                </p>
+                                <!-- /PICTURE ITEM OVERLAY TEXT -->
                             </div>
-                            <!-- /PICTURE ITEM -->
+                            <!-- /PICTURE ITEM OVERLAY -->
+                        </a>
+                        <!-- /PICTURE ITEM -->
+                    </div>
+                    <!-- /PICTURE ITEM LIST -->
+                </div>
+                <!-- /WIDGET BOX CONTENT -->
+            </div>
+            <!-- /WIDGET BOX -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
+            <!-- WIDGET BOX -->
+            <div class="widget-box">
+                <!-- WIDGET BOX SETTINGS -->
+                <div class="widget-box-settings">
+                    <!-- POST SETTINGS WRAP -->
+                    <div class="post-settings-wrap">
+                        <!-- POST SETTINGS -->
+                        <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                            <!-- POST SETTINGS ICON -->
+                            <svg class="post-settings-icon icon-more-dots">
+                                <use xlink:href="#svg-more-dots"></use>
+                            </svg>
+                            <!-- /POST SETTINGS ICON -->
+                        </div>
+                        <!-- /POST SETTINGS -->
+
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown widget-box-post-settings-dropdown">
+                            <!-- SIMPLE DROPDOWN LINK -->
+                            <p class="simple-dropdown-link">
+                                Widget Settings
+                            </p>
+                            <!-- /SIMPLE DROPDOWN LINK -->
+                        </div>
+                        <!-- /SIMPLE DROPDOWN -->
+                    </div>
+                    <!-- /POST SETTINGS WRAP -->
+                </div>
+                <!-- /WIDGET BOX SETTINGS -->
+
+                <!-- WIDGET BOX TITLE -->
+                <p class="widget-box-title">
+                    Discussions <span class="highlighted">16</span>
+                </p>
+                <!-- /WIDGET BOX TITLE -->
+
+                <!-- WIDGET BOX CONTENT -->
+                <div class="widget-box-content">
+                    <!-- FILTERS -->
+                    <div class="filters">
+                        <!-- FILTER -->
+                        <p class="filter">Newest</p>
+                        <!-- /FILTER -->
+
+                        <!-- FILTER -->
+                        <p class="filter active">Popular</p>
+                        <!-- /FILTER -->
+                    </div>
+                    <!-- /FILTERS -->
+
+                    <!-- POST PREVIEW LINE LIST -->
+                    <div class="post-preview-line-list">
+                        <!-- POST PREVIEW LINE -->
+                        <div class="post-preview-line">
+                            <!-- POST PREVIEW LINE TITLE -->
+                            <p class="post-preview-line-title">
+                                <a href="forums-discussion.html">In your opinion, who has the best
+                                    cosplay?</a>
+                            </p>
+                            <!-- /POST PREVIEW LINE TITLE -->
+
+                            <!-- POST PREVIEW LINE META -->
+                            <div class="post-preview-line-meta">
+                                <!-- USER AVATAR -->
+                                <a class="user-avatar micro no-border" href="profile-timeline.html">
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/05.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </a>
+                                <!-- /USER AVATAR -->
+
+                                <!-- POST PREVIEW LINE AUTHOR -->
+                                <p class="post-preview-line-author">
+                                    <a href="profile-timeline.html">By Neko Bebop</a>
+                                </p>
+                                <!-- /POST PREVIEW LINE AUTHOR -->
+
+                                <!-- POST PREVIEW LINE TIMESTAMP -->
+                                <p class="post-preview-line-timestamp">
+                                    2 weeks ago
+                                </p>
+                                <!-- /POST PREVIEW LINE TIMESTAMP -->
+                            </div>
+                            <!-- /POST PREVIEW LINE META -->
+                        </div>
+                        <!-- /POST PREVIEW LINE -->
+
+                        <!-- POST PREVIEW LINE -->
+                        <div class="post-preview-line">
+                            <!-- POST PREVIEW LINE TITLE -->
+                            <p class="post-preview-line-title">
+                                <a href="forums-discussion.html">Preparing everything for CosWorld
+                                    2019, show your works here!</a>
+                            </p>
+                            <!-- /POST PREVIEW LINE TITLE -->
+
+                            <!-- POST PREVIEW LINE META -->
+                            <div class="post-preview-line-meta">
+                                <!-- USER AVATAR -->
+                                <a class="user-avatar micro no-border" href="profile-timeline.html">
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/03.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </a>
+                                <!-- /USER AVATAR -->
+
+                                <!-- POST PREVIEW LINE AUTHOR -->
+                                <p class="post-preview-line-author">
+                                    <a href="profile-timeline.html">By Nick Grissom</a>
+                                </p>
+                                <!-- /POST PREVIEW LINE AUTHOR -->
+
+                                <!-- POST PREVIEW LINE TIMESTAMP -->
+                                <p class="post-preview-line-timestamp">
+                                    13 hours ago
+                                </p>
+                                <!-- /POST PREVIEW LINE TIMESTAMP -->
+                            </div>
+                            <!-- /POST PREVIEW LINE META -->
+                        </div>
+                        <!-- /POST PREVIEW LINE -->
+
+                        <!-- POST PREVIEW LINE -->
+                        <div class="post-preview-line">
+                            <!-- POST PREVIEW LINE TITLE -->
+                            <p class="post-preview-line-title">
+                                <a href="forums-discussion.html">Official Topic! Let's organize the
+                                    global meetups for all
+                                    continents!</a>
+                            </p>
+                            <!-- /POST PREVIEW LINE TITLE -->
+
+                            <!-- POST PREVIEW LINE META -->
+                            <div class="post-preview-line-meta">
+                                <!-- USER AVATAR -->
+                                <a class="user-avatar micro no-border" href="profile-timeline.html">
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/02.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </a>
+                                <!-- /USER AVATAR -->
+
+                                <!-- POST PREVIEW LINE AUTHOR -->
+                                <p class="post-preview-line-author">
+                                    <a href="profile-timeline.html">By Destroy Dex</a>
+                                </p>
+                                <!-- /POST PREVIEW LINE AUTHOR -->
+
+                                <!-- POST PREVIEW LINE TIMESTAMP -->
+                                <p class="post-preview-line-timestamp">
+                                    5 days ago
+                                </p>
+                                <!-- /POST PREVIEW LINE TIMESTAMP -->
+                            </div>
+                            <!-- /POST PREVIEW LINE META -->
+                        </div>
+                        <!-- /POST PREVIEW LINE -->
+
+                        <!-- POST PREVIEW LINE -->
+                        <div class="post-preview-line">
+                            <!-- POST PREVIEW LINE TITLE -->
+                            <p class="post-preview-line-title">
+                                <a href="forums-discussion.html">Share your cosplay tips here!
+                                    Tutorials, DIY's, paints and more</a>
+                            </p>
+                            <!-- /POST PREVIEW LINE TITLE -->
+
+                            <!-- POST PREVIEW LINE META -->
+                            <div class="post-preview-line-meta">
+                                <!-- USER AVATAR -->
+                                <a class="user-avatar micro no-border" href="profile-timeline.html">
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/05.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </a>
+                                <!-- /USER AVATAR -->
+
+                                <!-- POST PREVIEW LINE AUTHOR -->
+                                <p class="post-preview-line-author">
+                                    <a href="profile-timeline.html">By Neko Bebop</a>
+                                </p>
+                                <!-- /POST PREVIEW LINE AUTHOR -->
+
+                                <!-- POST PREVIEW LINE TIMESTAMP -->
+                                <p class="post-preview-line-timestamp">
+                                    20 hours ago
+                                </p>
+                                <!-- /POST PREVIEW LINE TIMESTAMP -->
+                            </div>
+                            <!-- /POST PREVIEW LINE META -->
+                        </div>
+                        <!-- /POST PREVIEW LINE -->
+
+                        <!-- POST PREVIEW LINE -->
+                        <div class="post-preview-line">
+                            <!-- POST PREVIEW LINE TITLE -->
+                            <p class="post-preview-line-title">
+                                <a href="forums-discussion.html">Check out all the pictures I took
+                                    at the CosplayWonder 2018</a>
+                            </p>
+                            <!-- /POST PREVIEW LINE TITLE -->
+
+                            <!-- POST PREVIEW LINE META -->
+                            <div class="post-preview-line-meta">
+                                <!-- USER AVATAR -->
+                                <a class="user-avatar micro no-border" href="profile-timeline.html">
+                                    <!-- USER AVATAR CONTENT -->
+                                    <div class="user-avatar-content">
+                                        <!-- HEXAGON -->
+                                        <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/07.jpg">
+                                        </div>
+                                        <!-- /HEXAGON -->
+                                    </div>
+                                    <!-- /USER AVATAR CONTENT -->
+                                </a>
+                                <!-- /USER AVATAR -->
+
+                                <!-- POST PREVIEW LINE AUTHOR -->
+                                <p class="post-preview-line-author">
+                                    <a href="profile-timeline.html">By Sarah Diamond</a>
+                                </p>
+                                <!-- /POST PREVIEW LINE AUTHOR -->
+
+                                <!-- POST PREVIEW LINE TIMESTAMP -->
+                                <p class="post-preview-line-timestamp">
+                                    19 days ago
+                                </p>
+                                <!-- /POST PREVIEW LINE TIMESTAMP -->
+                            </div>
+                            <!-- /POST PREVIEW LINE META -->
+                        </div>
+                        <!-- /POST PREVIEW LINE -->
+                    </div>
+                    <!-- /POST PREVIEW LINE LIST -->
+                </div>
+                <!-- WIDGET BOX CONTENT -->
+            </div>
+            <!-- /WIDGET BOX -->
+
+            <!-- WIDGET BOX -->
+            <div class="widget-box">
+                <!-- WIDGET BOX SETTINGS -->
+                <div class="widget-box-settings">
+                    <!-- POST SETTINGS WRAP -->
+                    <div class="post-settings-wrap">
+                        <!-- POST SETTINGS -->
+                        <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                            <!-- POST SETTINGS ICON -->
+                            <svg class="post-settings-icon icon-more-dots">
+                                <use xlink:href="#svg-more-dots"></use>
+                            </svg>
+                            <!-- /POST SETTINGS ICON -->
+                        </div>
+                        <!-- /POST SETTINGS -->
+
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown widget-box-post-settings-dropdown">
+                            <!-- SIMPLE DROPDOWN LINK -->
+                            <p class="simple-dropdown-link">
+                                Widget Settings
+                            </p>
+                            <!-- /SIMPLE DROPDOWN LINK -->
+                        </div>
+                        <!-- /SIMPLE DROPDOWN -->
+                    </div>
+                    <!-- /POST SETTINGS WRAP -->
+                </div>
+                <!-- /WIDGET BOX SETTINGS -->
+
+                <!-- WIDGET BOX TITLE -->
+                <p class="widget-box-title">
+                    Videos <span class="highlighted">4</span>
+                </p>
+                <!-- /WIDGET BOX TITLE -->
+
+                <!-- WIDGET BOX CONTENT -->
+                <div class="widget-box-content">
+                    <!-- VIDEO BOX LIST -->
+                    <div class="video-box-list">
+                        <!-- VIDEO BOX -->
+                        <div class="video-box small">
+                            <!-- VIDEO BOX COVER -->
+                            <div class="video-box-cover popup-video-trigger">
+                                <!-- VIDEO BOX COVER IMAGE -->
+                                <figure class="video-box-cover-image liquid">
                                     <img src="/assets/template/img/cover/30.jpg" alt="cover-30" />
                                 </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
+                                <!-- /VIDEO BOX COVER IMAGE -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/45.jpg" alt="cover-45" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
+                                <!-- PLAY BUTTON -->
+                                <div class="play-button">
+                                    <!-- PLAY BUTTON ICON -->
+                                    <svg class="play-button-icon icon-play">
+                                        <use xlink:href="#svg-play"></use>
+                                    </svg>
+                                    <!-- /PLAY BUTTON ICON -->
+                                </div>
+                                <!-- /PLAY BUTTON -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/34.jpg" alt="cover-34" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
+                                <!-- VIDEO BOX INFO -->
+                                <div class="video-box-info">
+                                    <!-- VIDEO BOX TITLE -->
+                                    <p class="video-box-title">
+                                        My Latest Cosplay
+                                    </p>
+                                    <!-- /VIDEO BOX TITLE -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/27.jpg" alt="cover-27" />
-                                </figure>
-                                <!-- /PICTURE -->
+                                    <!-- VIDEO BOX TEXT -->
+                                    <p class="video-box-text">
+                                        1 hour ago
+                                    </p>
+                                    <!-- /VIDEO BOX TEXT -->
+                                </div>
+                                <!-- /VIDEO BOX INFO -->
                             </div>
-                            <!-- /PICTURE ITEM -->
+                            <!-- /VIDEO BOX COVER -->
+                        </div>
+                        <!-- /VIDEO BOX -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/38.jpg" alt="cover-38" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
-
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/35.jpg" alt="cover-35" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
-
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/31.jpg" alt="cover-31" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
-
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
+                        <!-- VIDEO BOX -->
+                        <div class="video-box small">
+                            <!-- VIDEO BOX COVER -->
+                            <div class="video-box-cover popup-video-trigger">
+                                <!-- VIDEO BOX COVER IMAGE -->
+                                <figure class="video-box-cover-image liquid">
                                     <img src="/assets/template/img/cover/44.jpg" alt="cover-44" />
                                 </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
+                                <!-- /VIDEO BOX COVER IMAGE -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
+                                <!-- PLAY BUTTON -->
+                                <div class="play-button">
+                                    <!-- PLAY BUTTON ICON -->
+                                    <svg class="play-button-icon icon-play">
+                                        <use xlink:href="#svg-play"></use>
+                                    </svg>
+                                    <!-- /PLAY BUTTON ICON -->
+                                </div>
+                                <!-- /PLAY BUTTON -->
+
+                                <!-- VIDEO BOX INFO -->
+                                <div class="video-box-info">
+                                    <!-- VIDEO BOX TITLE -->
+                                    <p class="video-box-title">
+                                        Jenny primary Photoshoot
+                                    </p>
+                                    <!-- /VIDEO BOX TITLE -->
+
+                                    <!-- VIDEO BOX TEXT -->
+                                    <p class="video-box-text">
+                                        12 days ago
+                                    </p>
+                                    <!-- /VIDEO BOX TEXT -->
+                                </div>
+                                <!-- /VIDEO BOX INFO -->
+                            </div>
+                            <!-- /VIDEO BOX COVER -->
+                        </div>
+                        <!-- /VIDEO BOX -->
+
+                        <!-- VIDEO BOX -->
+                        <div class="video-box small">
+                            <!-- VIDEO BOX COVER -->
+                            <div class="video-box-cover popup-video-trigger">
+                                <!-- VIDEO BOX COVER IMAGE -->
+                                <figure class="video-box-cover-image liquid">
                                     <img src="/assets/template/img/cover/42.jpg" alt="cover-42" />
                                 </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
+                                <!-- /VIDEO BOX COVER IMAGE -->
 
-                            <!-- PICTURE ITEM -->
-                            <div class="picture-item popup-picture-trigger">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/37.jpg" alt="cover-37" />
-                                </figure>
-                                <!-- /PICTURE -->
-                            </div>
-                            <!-- /PICTURE ITEM -->
-
-                            <!-- PICTURE ITEM -->
-                            <a class="picture-item" href="#">
-                                <!-- PICTURE -->
-                                <figure class="picture round liquid">
-                                    <img src="/assets/template/img/cover/29.jpg" alt="cover-29" />
-                                </figure>
-                                <!-- /PICTURE -->
-
-                                <!-- PICTURE ITEM OVERLAY -->
-                                <div class="picture-item-overlay round">
-                                    <!-- PICTURE ITEM OVERLAY TEXT -->
-                                    <p class="picture-item-overlay-text">
-                                        +61
-                                    </p>
-                                    <!-- /PICTURE ITEM OVERLAY TEXT -->
+                                <!-- PLAY BUTTON -->
+                                <div class="play-button">
+                                    <!-- PLAY BUTTON ICON -->
+                                    <svg class="play-button-icon icon-play">
+                                        <use xlink:href="#svg-play"></use>
+                                    </svg>
+                                    <!-- /PLAY BUTTON ICON -->
                                 </div>
-                                <!-- /PICTURE ITEM OVERLAY -->
-                            </a>
-                            <!-- /PICTURE ITEM -->
-                        </div>
-                        <!-- /PICTURE ITEM LIST -->
-                    </div>
-                    <!-- /WIDGET BOX CONTENT -->
-                </div>
-                <!-- /WIDGET BOX -->
+                                <!-- /PLAY BUTTON -->
 
-                <!-- WIDGET BOX -->
-                <div class="widget-box">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
-                            </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">
-                                    Widget Settings
-                                </p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /WIDGET BOX SETTINGS -->
-
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">
-                        Discussions <span class="highlighted">16</span>
-                    </p>
-                    <!-- /WIDGET BOX TITLE -->
-
-                    <!-- WIDGET BOX CONTENT -->
-                    <div class="widget-box-content">
-                        <!-- FILTERS -->
-                        <div class="filters">
-                            <!-- FILTER -->
-                            <p class="filter">Newest</p>
-                            <!-- /FILTER -->
-
-                            <!-- FILTER -->
-                            <p class="filter active">Popular</p>
-                            <!-- /FILTER -->
-                        </div>
-                        <!-- /FILTERS -->
-
-                        <!-- POST PREVIEW LINE LIST -->
-                        <div class="post-preview-line-list">
-                            <!-- POST PREVIEW LINE -->
-                            <div class="post-preview-line">
-                                <!-- POST PREVIEW LINE TITLE -->
-                                <p class="post-preview-line-title">
-                                    <a href="forums-discussion.html">In your opinion, who has the best
-                                        cosplay?</a>
-                                </p>
-                                <!-- /POST PREVIEW LINE TITLE -->
-
-                                <!-- POST PREVIEW LINE META -->
-                                <div class="post-preview-line-meta">
-                                    <!-- USER AVATAR -->
-                                    <a class="user-avatar micro no-border" href="profile-timeline.html">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-18-20"
-                                                data-src="/assets/template/img/avatar/05.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-                                    </a>
-                                    <!-- /USER AVATAR -->
-
-                                    <!-- POST PREVIEW LINE AUTHOR -->
-                                    <p class="post-preview-line-author">
-                                        <a href="profile-timeline.html">By Neko Bebop</a>
+                                <!-- VIDEO BOX INFO -->
+                                <div class="video-box-info">
+                                    <!-- VIDEO BOX TITLE -->
+                                    <p class="video-box-title">
+                                        Tabatha Arcade Gaming Tips
                                     </p>
-                                    <!-- /POST PREVIEW LINE AUTHOR -->
+                                    <!-- /VIDEO BOX TITLE -->
 
-                                    <!-- POST PREVIEW LINE TIMESTAMP -->
-                                    <p class="post-preview-line-timestamp">
-                                        2 weeks ago
-                                    </p>
-                                    <!-- /POST PREVIEW LINE TIMESTAMP -->
-                                </div>
-                                <!-- /POST PREVIEW LINE META -->
-                            </div>
-                            <!-- /POST PREVIEW LINE -->
-
-                            <!-- POST PREVIEW LINE -->
-                            <div class="post-preview-line">
-                                <!-- POST PREVIEW LINE TITLE -->
-                                <p class="post-preview-line-title">
-                                    <a href="forums-discussion.html">Preparing everything for CosWorld
-                                        2019, show your works here!</a>
-                                </p>
-                                <!-- /POST PREVIEW LINE TITLE -->
-
-                                <!-- POST PREVIEW LINE META -->
-                                <div class="post-preview-line-meta">
-                                    <!-- USER AVATAR -->
-                                    <a class="user-avatar micro no-border" href="profile-timeline.html">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-18-20"
-                                                data-src="/assets/template/img/avatar/03.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-                                    </a>
-                                    <!-- /USER AVATAR -->
-
-                                    <!-- POST PREVIEW LINE AUTHOR -->
-                                    <p class="post-preview-line-author">
-                                        <a href="profile-timeline.html">By Nick Grissom</a>
-                                    </p>
-                                    <!-- /POST PREVIEW LINE AUTHOR -->
-
-                                    <!-- POST PREVIEW LINE TIMESTAMP -->
-                                    <p class="post-preview-line-timestamp">
-                                        13 hours ago
-                                    </p>
-                                    <!-- /POST PREVIEW LINE TIMESTAMP -->
-                                </div>
-                                <!-- /POST PREVIEW LINE META -->
-                            </div>
-                            <!-- /POST PREVIEW LINE -->
-
-                            <!-- POST PREVIEW LINE -->
-                            <div class="post-preview-line">
-                                <!-- POST PREVIEW LINE TITLE -->
-                                <p class="post-preview-line-title">
-                                    <a href="forums-discussion.html">Official Topic! Let's organize the
-                                        global meetups for all
-                                        continents!</a>
-                                </p>
-                                <!-- /POST PREVIEW LINE TITLE -->
-
-                                <!-- POST PREVIEW LINE META -->
-                                <div class="post-preview-line-meta">
-                                    <!-- USER AVATAR -->
-                                    <a class="user-avatar micro no-border" href="profile-timeline.html">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-18-20"
-                                                data-src="/assets/template/img/avatar/02.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-                                    </a>
-                                    <!-- /USER AVATAR -->
-
-                                    <!-- POST PREVIEW LINE AUTHOR -->
-                                    <p class="post-preview-line-author">
-                                        <a href="profile-timeline.html">By Destroy Dex</a>
-                                    </p>
-                                    <!-- /POST PREVIEW LINE AUTHOR -->
-
-                                    <!-- POST PREVIEW LINE TIMESTAMP -->
-                                    <p class="post-preview-line-timestamp">
+                                    <!-- VIDEO BOX TEXT -->
+                                    <p class="video-box-text">
                                         5 days ago
                                     </p>
-                                    <!-- /POST PREVIEW LINE TIMESTAMP -->
+                                    <!-- /VIDEO BOX TEXT -->
                                 </div>
-                                <!-- /POST PREVIEW LINE META -->
+                                <!-- /VIDEO BOX INFO -->
                             </div>
-                            <!-- /POST PREVIEW LINE -->
-
-                            <!-- POST PREVIEW LINE -->
-                            <div class="post-preview-line">
-                                <!-- POST PREVIEW LINE TITLE -->
-                                <p class="post-preview-line-title">
-                                    <a href="forums-discussion.html">Share your cosplay tips here!
-                                        Tutorials, DIY's, paints and more</a>
-                                </p>
-                                <!-- /POST PREVIEW LINE TITLE -->
-
-                                <!-- POST PREVIEW LINE META -->
-                                <div class="post-preview-line-meta">
-                                    <!-- USER AVATAR -->
-                                    <a class="user-avatar micro no-border" href="profile-timeline.html">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-18-20"
-                                                data-src="/assets/template/img/avatar/05.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-                                    </a>
-                                    <!-- /USER AVATAR -->
-
-                                    <!-- POST PREVIEW LINE AUTHOR -->
-                                    <p class="post-preview-line-author">
-                                        <a href="profile-timeline.html">By Neko Bebop</a>
-                                    </p>
-                                    <!-- /POST PREVIEW LINE AUTHOR -->
-
-                                    <!-- POST PREVIEW LINE TIMESTAMP -->
-                                    <p class="post-preview-line-timestamp">
-                                        20 hours ago
-                                    </p>
-                                    <!-- /POST PREVIEW LINE TIMESTAMP -->
-                                </div>
-                                <!-- /POST PREVIEW LINE META -->
-                            </div>
-                            <!-- /POST PREVIEW LINE -->
-
-                            <!-- POST PREVIEW LINE -->
-                            <div class="post-preview-line">
-                                <!-- POST PREVIEW LINE TITLE -->
-                                <p class="post-preview-line-title">
-                                    <a href="forums-discussion.html">Check out all the pictures I took
-                                        at the CosplayWonder 2018</a>
-                                </p>
-                                <!-- /POST PREVIEW LINE TITLE -->
-
-                                <!-- POST PREVIEW LINE META -->
-                                <div class="post-preview-line-meta">
-                                    <!-- USER AVATAR -->
-                                    <a class="user-avatar micro no-border" href="profile-timeline.html">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-18-20"
-                                                data-src="/assets/template/img/avatar/07.jpg"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR CONTENT -->
-                                    </a>
-                                    <!-- /USER AVATAR -->
-
-                                    <!-- POST PREVIEW LINE AUTHOR -->
-                                    <p class="post-preview-line-author">
-                                        <a href="profile-timeline.html">By Sarah Diamond</a>
-                                    </p>
-                                    <!-- /POST PREVIEW LINE AUTHOR -->
-
-                                    <!-- POST PREVIEW LINE TIMESTAMP -->
-                                    <p class="post-preview-line-timestamp">
-                                        19 days ago
-                                    </p>
-                                    <!-- /POST PREVIEW LINE TIMESTAMP -->
-                                </div>
-                                <!-- /POST PREVIEW LINE META -->
-                            </div>
-                            <!-- /POST PREVIEW LINE -->
+                            <!-- /VIDEO BOX COVER -->
                         </div>
-                        <!-- /POST PREVIEW LINE LIST -->
+                        <!-- /VIDEO BOX -->
                     </div>
-                    <!-- WIDGET BOX CONTENT -->
+                    <!-- /VIDEO BOX LIST -->
                 </div>
-                <!-- /WIDGET BOX -->
-
-                <!-- WIDGET BOX -->
-                <div class="widget-box">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
-                            </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">
-                                    Widget Settings
-                                </p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /WIDGET BOX SETTINGS -->
-
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">
-                        Videos <span class="highlighted">4</span>
-                    </p>
-                    <!-- /WIDGET BOX TITLE -->
-
-                    <!-- WIDGET BOX CONTENT -->
-                    <div class="widget-box-content">
-                        <!-- VIDEO BOX LIST -->
-                        <div class="video-box-list">
-                            <!-- VIDEO BOX -->
-                            <div class="video-box small">
-                                <!-- VIDEO BOX COVER -->
-                                <div class="video-box-cover popup-video-trigger">
-                                    <!-- VIDEO BOX COVER IMAGE -->
-                                    <figure class="video-box-cover-image liquid">
-                                        <img src="/assets/template/img/cover/30.jpg" alt="cover-30" />
-                                    </figure>
-                                    <!-- /VIDEO BOX COVER IMAGE -->
-
-                                    <!-- PLAY BUTTON -->
-                                    <div class="play-button">
-                                        <!-- PLAY BUTTON ICON -->
-                                        <svg class="play-button-icon icon-play">
-                                            <use xlink:href="#svg-play"></use>
-                                        </svg>
-                                        <!-- /PLAY BUTTON ICON -->
-                                    </div>
-                                    <!-- /PLAY BUTTON -->
-
-                                    <!-- VIDEO BOX INFO -->
-                                    <div class="video-box-info">
-                                        <!-- VIDEO BOX TITLE -->
-                                        <p class="video-box-title">
-                                            My Latest Cosplay
-                                        </p>
-                                        <!-- /VIDEO BOX TITLE -->
-
-                                        <!-- VIDEO BOX TEXT -->
-                                        <p class="video-box-text">
-                                            1 hour ago
-                                        </p>
-                                        <!-- /VIDEO BOX TEXT -->
-                                    </div>
-                                    <!-- /VIDEO BOX INFO -->
-                                </div>
-                                <!-- /VIDEO BOX COVER -->
-                            </div>
-                            <!-- /VIDEO BOX -->
-
-                            <!-- VIDEO BOX -->
-                            <div class="video-box small">
-                                <!-- VIDEO BOX COVER -->
-                                <div class="video-box-cover popup-video-trigger">
-                                    <!-- VIDEO BOX COVER IMAGE -->
-                                    <figure class="video-box-cover-image liquid">
-                                        <img src="/assets/template/img/cover/44.jpg" alt="cover-44" />
-                                    </figure>
-                                    <!-- /VIDEO BOX COVER IMAGE -->
-
-                                    <!-- PLAY BUTTON -->
-                                    <div class="play-button">
-                                        <!-- PLAY BUTTON ICON -->
-                                        <svg class="play-button-icon icon-play">
-                                            <use xlink:href="#svg-play"></use>
-                                        </svg>
-                                        <!-- /PLAY BUTTON ICON -->
-                                    </div>
-                                    <!-- /PLAY BUTTON -->
-
-                                    <!-- VIDEO BOX INFO -->
-                                    <div class="video-box-info">
-                                        <!-- VIDEO BOX TITLE -->
-                                        <p class="video-box-title">
-                                            Jenny primary Photoshoot
-                                        </p>
-                                        <!-- /VIDEO BOX TITLE -->
-
-                                        <!-- VIDEO BOX TEXT -->
-                                        <p class="video-box-text">
-                                            12 days ago
-                                        </p>
-                                        <!-- /VIDEO BOX TEXT -->
-                                    </div>
-                                    <!-- /VIDEO BOX INFO -->
-                                </div>
-                                <!-- /VIDEO BOX COVER -->
-                            </div>
-                            <!-- /VIDEO BOX -->
-
-                            <!-- VIDEO BOX -->
-                            <div class="video-box small">
-                                <!-- VIDEO BOX COVER -->
-                                <div class="video-box-cover popup-video-trigger">
-                                    <!-- VIDEO BOX COVER IMAGE -->
-                                    <figure class="video-box-cover-image liquid">
-                                        <img src="/assets/template/img/cover/42.jpg" alt="cover-42" />
-                                    </figure>
-                                    <!-- /VIDEO BOX COVER IMAGE -->
-
-                                    <!-- PLAY BUTTON -->
-                                    <div class="play-button">
-                                        <!-- PLAY BUTTON ICON -->
-                                        <svg class="play-button-icon icon-play">
-                                            <use xlink:href="#svg-play"></use>
-                                        </svg>
-                                        <!-- /PLAY BUTTON ICON -->
-                                    </div>
-                                    <!-- /PLAY BUTTON -->
-
-                                    <!-- VIDEO BOX INFO -->
-                                    <div class="video-box-info">
-                                        <!-- VIDEO BOX TITLE -->
-                                        <p class="video-box-title">
-                                            Tabatha Arcade Gaming Tips
-                                        </p>
-                                        <!-- /VIDEO BOX TITLE -->
-
-                                        <!-- VIDEO BOX TEXT -->
-                                        <p class="video-box-text">
-                                            5 days ago
-                                        </p>
-                                        <!-- /VIDEO BOX TEXT -->
-                                    </div>
-                                    <!-- /VIDEO BOX INFO -->
-                                </div>
-                                <!-- /VIDEO BOX COVER -->
-                            </div>
-                            <!-- /VIDEO BOX -->
-                        </div>
-                        <!-- /VIDEO BOX LIST -->
-                    </div>
-                    <!-- WIDGET BOX CONTENT -->
-                </div>
-                <!-- /WIDGET BOX -->
+                <!-- WIDGET BOX CONTENT -->
             </div>
-            <!-- /GRID COLUMN -->
+            <!-- /WIDGET BOX -->
         </div>
-        <!-- /GRID -->
+        <!-- /GRID COLUMN -->
+    </div>
+    <!-- /GRID -->
     </div>
     <!-- /CONTENT GRID -->
 
@@ -3391,8 +3277,8 @@ $page['description'] = $startup->about;
                                         <!-- REACTION OPTION -->
                                         <div class="reaction-option text-tooltip-tft" data-title="Wow">
                                             <!-- REACTION OPTION IMAGE -->
-                                            <img class="reaction-option-image"
-                                                src="/assets/template/img/reaction/wow.png" alt="reaction-wow" />
+                                            <img class="reaction-option-image" src="/assets/template/img/reaction/wow.png"
+                                                alt="reaction-wow" />
                                             <!-- /REACTION OPTION IMAGE -->
                                         </div>
                                         <!-- /REACTION OPTION -->
@@ -3409,8 +3295,8 @@ $page['description'] = $startup->about;
                                         <!-- REACTION OPTION -->
                                         <div class="reaction-option text-tooltip-tft" data-title="Sad">
                                             <!-- REACTION OPTION IMAGE -->
-                                            <img class="reaction-option-image"
-                                                src="/assets/template/img/reaction/sad.png" alt="reaction-sad" />
+                                            <img class="reaction-option-image" src="/assets/template/img/reaction/sad.png"
+                                                alt="reaction-sad" />
                                             <!-- /REACTION OPTION IMAGE -->
                                         </div>
                                         <!-- /REACTION OPTION -->
