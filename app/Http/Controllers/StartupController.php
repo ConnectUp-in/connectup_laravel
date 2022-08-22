@@ -17,9 +17,14 @@ class StartupController extends Controller
         }
         page('startup/{username}', $startup->id);
 
+        $startup->founder = User::where('id', $startup->founder)
+            ->select('id', 'name', 'username', 'profile_photo_path')
+            ->first();
+
         $data = [
             'startup' => $startup,
         ];
+        // return $data;
 
         return view('pages.startup.timeline', $data);
     }
