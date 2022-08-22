@@ -1,5 +1,10 @@
 @php
 $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
+$currenturl = Request::url() . '?';
+$requests = Request::all();
+foreach ($requests as $key => $value) {
+    $currenturl .= '&' . $key . '=' . $value;
+}
 
 @endphp
 
@@ -15,11 +20,13 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
             <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
                 <!-- FORM -->
-                <form class="form">
+                <form class="form" action="{{ $currenturl }}">
                     <!-- FORM INPUT -->
-                    <div class="form-input small with-button">
-                        <label for="groups-search">Search Groups</label>
-                        <input type="text" id="groups-search" name="groups_search" />
+                    <div class="form-input small with-button {{ $requests['q'] ?? '' ? 'active' : '' }}">
+                        <label for="groups-search ">Search Groups</label>
+                        <input type="text" id="groups-search" name="q" value="{{ $requests['q'] ?? '' }}" />
+                        <input type="hidden" name="sort" value="{{ $requests['sort'] ?? 'new' }}" />
+
                         <!-- BUTTON -->
                         <button class="button primary">
                             <!-- ICON MAGNIFYING GLASS -->
@@ -32,7 +39,7 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
                     </div>
                     <!-- /FORM INPUT -->
 
-                    <!-- FORM SELECT -->
+                    {{-- <!-- FORM SELECT -->
                     <div class="form-select">
                         <label for="groups-filter-category">Filter By</label>
                         <select id="groups-filter-category" name="groups_filter_category">
@@ -46,35 +53,36 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
                         </svg>
                         <!-- /FORM SELECT ICON -->
                     </div>
-                    <!-- /FORM SELECT -->
+                    <!-- /FORM SELECT --> --}}
                 </form>
                 <!-- /FORM -->
 
                 <!-- FILTER TABS -->
                 <div class="filter-tabs">
-                    <!-- FILTER TAB -->
-                    <div class="filter-tab active">
-                        <!-- FILTER TAB TEXT -->
-                        <p class="filter-tab-text">Newly Created</p>
-                        <!-- /FILTER TAB TEXT -->
-                    </div>
-                    <!-- /FILTER TAB -->
 
-                    <!-- FILTER TAB -->
-                    <div class="filter-tab">
-                        <!-- FILTER TAB TEXT -->
-                        <p class="filter-tab-text">Most Members</p>
-                        <!-- /FILTER TAB TEXT -->
-                    </div>
-                    <!-- /FILTER TAB -->
+                    @php
+                        $tabitems = [
+                            'new' => 'Newly Created',
+                            'members' => 'Most Members',
+                            'alpha' => 'Alphabetical',
+                        ];
+                        if ($requests['sort'] ?? '') {
+                            $stab = $requests['sort'];
+                        } else {
+                            $stab = 'new';
+                        }
+                    @endphp
 
-                    <!-- FILTER TAB -->
-                    <div class="filter-tab">
-                        <!-- FILTER TAB TEXT -->
-                        <p class="filter-tab-text">Alphabetical</p>
-                        <!-- /FILTER TAB TEXT -->
-                    </div>
-                    <!-- /FILTER TAB -->
+                    @foreach ($tabitems as $tab => $title)
+                        <!-- FILTER TAB -->
+                        <div class="filter-tab {{ $stab == $tab ? 'active' : '' }}">
+                            <!-- FILTER TAB TEXT -->
+                            <a href="{{ $currenturl }}&sort={{ $tab }}"
+                                class="filter-tab-text">{{ $title }}</a>
+                            <!-- /FILTER TAB TEXT -->
+                        </div>
+                        <!-- /FILTER TAB -->
+                    @endforeach
                 </div>
                 <!-- /FILTER TABS -->
             </div>
@@ -137,7 +145,7 @@ $page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
                         <div class="tag-sticker">
                             <!-- TAG STICKER ICON -->
                             <svg class="tag-sticker-icon icon-public">
-                                <use xlink:href="#svg-public"></use>
+                                <use xlink:href="#svg-{{ $startup->funded ? 'funded' : 'public' }}"></use>
                             </svg>
                             <!-- /TAG STICKER ICON -->
                         </div>
