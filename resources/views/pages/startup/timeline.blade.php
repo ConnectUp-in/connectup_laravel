@@ -158,9 +158,9 @@ $page['description'] = $startup->about;
                     <!-- /PROFILE HEADER INFO ACTION -->
 
 
-                    @if (Auth::check() && Auth::user()->id == $startup->founder)
+                    @if (Auth::check() && Auth::user()->id == $startup->founder->id)
                         <!-- PROFILE HEADER INFO ACTION -->
-                        <a class="profile-header-info-action button" href="#">
+                        <a class="profile-header-info-action button" href="{{ route('startup.manage') }}">
                             <!-- ICON MORE DOTS -->
                             <svg class="icon-icon">
                                 <use xlink:href="#svg-manage"></use>
