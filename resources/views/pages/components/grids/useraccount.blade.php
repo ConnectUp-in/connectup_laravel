@@ -40,6 +40,18 @@ $sidebaritems = [
     //         ],
     //     ],
     // ],
+    [
+        'title' => 'My Startups',
+        'svg' => 'profile',
+        'text' => 'Create new groups, manage the ones you created or accept invites!',
+        'identifier' => 'startup',
+        'links' => [
+            [
+                'title' => 'Manage Startups',
+                'url' => route('startup.manage'),
+            ],
+        ],
+    ],
 ];
 
 // Get url from current page
