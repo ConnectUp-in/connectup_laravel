@@ -58,6 +58,12 @@ Route::prefix('user')
             ProfileController::class,
             'refferals',
         ])->name('profile.refferals');
+
+        Route::prefix('startup')->group(function () {
+            Route::get('/manage', [StartupController::class, 'manage'])->name(
+                'startup.manage'
+            );
+        });
     });
 
 Route::post('title', function () {

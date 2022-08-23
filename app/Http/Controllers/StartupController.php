@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Startup;
-
+use Auth;
 class StartupController extends Controller
 {
     //
@@ -27,5 +27,15 @@ class StartupController extends Controller
         // return $data;
 
         return view('pages.startup.timeline', $data);
+    }
+
+    function manage()
+    {
+        page('startup/manage');
+        $startups = Startup::where('founder', Auth::user()->id)->get();
+        $data = [
+            'startups' => $startups,
+        ];
+        return view('pages.startup.manage', $data);
     }
 }
