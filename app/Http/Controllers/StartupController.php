@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Startup;
 use Auth;
+use App\Models\Interest;
+use App\Models\Stage;
 class StartupController extends Controller
 {
     //
@@ -33,8 +35,12 @@ class StartupController extends Controller
     {
         page('startup/manage');
         $startups = Startup::where('founder', Auth::user()->id)->get();
+        $interests = Interest::all();
+        $stages = Stage::where('active', 1)->get();
         $data = [
             'startups' => $startups,
+            'interests' => $interests,
+            'stages' => $stages,
         ];
         return view('pages.startup.manage', $data);
     }
