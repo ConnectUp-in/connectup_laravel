@@ -36,7 +36,7 @@ return new class extends Migration {
             $table->boolean('funded')->default(false);
             $table->json('interests')->nullable();
             $table->boolean('active')->default(true);
-            $table->json('lookingfor')->nullable();
+            $table->json('objectives')->nullable();
             $table->timestamps();
         });
     }

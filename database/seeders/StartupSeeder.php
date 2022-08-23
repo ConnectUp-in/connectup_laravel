@@ -16,7 +16,7 @@ class StartupSeeder extends Seeder
      */
     public function run()
     {
-        // id, name, bio, about, logo, cover, socials, founded_at, contact_email, hiring_email, founder, category, stage, contact, funded, interests, active, lookingfor, created_at, updated_at
+        // id, name, bio, about, logo, cover, socials, founded_at, contact_email, hiring_email, founder, category, stage, contact, funded, interests, active, objectives, created_at, updated_at
         $founder = User::where('username', 'founder')->first();
         $rkdy49 = User::where('username', 'rkdy49')->first();
 
@@ -45,7 +45,7 @@ class StartupSeeder extends Seeder
                 'funded' => false,
                 'interests' => [1, 2, 3, 4, 5],
                 'active' => true,
-                'lookingfor' => [1, 2, 3, 4, 5],
+                'objectives' => [1, 2, 3, 4, 5],
             ],
             [
                 'name' => 'Brickstox',
@@ -72,7 +72,7 @@ class StartupSeeder extends Seeder
                 'funded' => false,
                 'interests' => [1, 2, 3, 4, 5],
                 'active' => true,
-                'lookingfor' => [1, 2, 3, 4, 5],
+                'objectives' => [1, 2, 3, 4, 5],
             ],
         ];
 
