@@ -229,29 +229,163 @@ $page['title'] = 'Manage Startups | ConnectUp';
                 <div class="sidebar-menu-item">
                     <!-- SIDEBAR MENU BODY -->
                     <div class="sidebar-menu-body secondary">
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link active">Group Info</p>
-                        <!-- /SIDEBAR MENU LINK -->
 
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link">Avatar and Cover</p>
-                        <!-- /SIDEBAR MENU LINK -->
-
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link">Social Networks</p>
-                        <!-- /SIDEBAR MENU LINK -->
-
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link">Settings</p>
-                        <!-- /SIDEBAR MENU LINK -->
-
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link">Members</p>
-                        <!-- /SIDEBAR MENU LINK -->
-
-                        <!-- SIDEBAR MENU LINK -->
-                        <p class="sidebar-menu-link">Delete Group</p>
-                        <!-- /SIDEBAR MENU LINK -->
+                        @php
+                            $sideitems = [
+                                [
+                                    'title' => 'General Info',
+                                    'identifier' => 'generalinfo',
+                                    'active' => true,
+                                    'fields' => [
+                                        [
+                                            'title' => 'Startup Name',
+                                            'identifier' => 'name',
+                                            'type' => 'text',
+                                            'required' => true,
+                                        ],
+                                        [
+                                            'title' => 'Username',
+                                            'identifier' => 'username',
+                                            'type' => 'text',
+                                            'required' => true,
+                                        ],
+                                        [
+                                            'title' => 'Tagline',
+                                            'identifier' => 'bio',
+                                            'type' => 'text',
+                                            'required' => false,
+                                        ],
+                                        [
+                                            'title' => 'About',
+                                            'identifier' => 'about',
+                                            'type' => 'textarea',
+                                            'value' => 'Write a little description about the startup...',
+                                            'required' => false,
+                                        ],
+                            
+                                        [
+                                            'title' => 'Public',
+                                            'identifier' => 'active',
+                                            'type' => 'boolean',
+                                            'placeholder' => 'Make Startup Public or Private',
+                                            'value' => true,
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                                [
+                                    'title' => 'Logo and Cover',
+                                    'identifier' => 'logocover',
+                                    'active' => false,
+                                ],
+                                [
+                                    'title' => 'Contact Details',
+                                    'identifier' => 'contact',
+                                    'active' => false,
+                            
+                                    'fields' => [
+                                        [
+                                            'title' => 'Contact Email',
+                                            'identifier' => 'contact_email',
+                                            'type' => 'email',
+                                            'required' => true,
+                                        ],
+                                        [
+                                            'title' => 'Hiring Email',
+                                            'identifier' => 'hiring_email',
+                                            'type' => 'email',
+                                            'required' => false,
+                                        ],
+                                        [
+                                            'title' => 'Website',
+                                            'identifier' => 'website',
+                                            'type' => 'url',
+                                            'required' => false,
+                                        ],
+                                        [
+                                            'title' => 'Contact Number',
+                                            'identifier' => 'contact',
+                                            'type' => 'text',
+                                            'required' => false,
+                                        ],
+                                        [
+                                            'title' => 'Founded At',
+                                            'identifier' => 'founded_at',
+                                            'type' => 'date',
+                                            'required' => false,
+                                            'value' => date('Y-m-d'),
+                                        ],
+                                        [
+                                            'title' => 'Funded',
+                                            'identifier' => 'funded',
+                                            'type' => 'select',
+                                            'required' => false,
+                                            'options' => [
+                                                [
+                                                    'title' => 'Yes, Funded',
+                                                    'value' => 1,
+                                                ],
+                                                [
+                                                    'title' => 'No, Bootstrapped',
+                                                    'value' => 0,
+                                                    'selected' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                [
+                                    'title' => 'Social Networks',
+                                    'identifier' => 'social',
+                                    'active' => false,
+                                ],
+                                [
+                                    'title' => 'Startup Info',
+                                    'identifier' => 'startupinfo',
+                                    'active' => false,
+                            
+                                    'fields' => [
+                                        [
+                                            'title' => 'Stage',
+                                            'identifier' => 'stage',
+                                            'type' => 'select',
+                                            'required' => false,
+                                            'multiple' => false,
+                                            'options' => $stages
+                                                ->map(function ($stages) {
+                                                    return [
+                                                        'title' => $stages->name,
+                                                        'value' => $stages->id,
+                                                    ];
+                                                })
+                                                ->toArray(),
+                                        ],
+                                        [
+                                            'title' => 'Interests',
+                                            'identifier' => 'interests[]',
+                                            'type' => 'select',
+                                            'required' => false,
+                                            'multiple' => true,
+                                            'options' => $interests
+                                                ->map(function ($interest) {
+                                                    return [
+                                                        'title' => $interest->name,
+                                                        'value' => $interest->id,
+                                                    ];
+                                                })
+                                                ->toArray(),
+                                        ],
+                                    ],
+                                ],
+                            ];
+                            
+                        @endphp
+                        @foreach ($sideitems as $sideitem)
+                            <!-- SIDEBAR MENU LINK -->
+                            <p class="sidebar-menu-link tabitem {{ $sideitem['active'] ? 'active' : '' }}"
+                                data-identifier="{{ $sideitem['identifier'] }}">{{ $sideitem['title'] }}</p>
+                            <!-- /SIDEBAR MENU LINK -->
+                        @endforeach
                     </div>
                     <!-- /SIDEBAR MENU BODY -->
                 </div>
@@ -277,98 +411,91 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
             <!-- POPUP BOX CONTENT -->
             <div class="popup-box-content">
-                <!-- WIDGET BOX -->
-                <div class="widget-box">
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Group Info</p>
-                    <!-- /WIDGET BOX TITLE -->
 
-                    <!-- WIDGET BOX CONTENT -->
-                    <div class="widget-box-content">
-                        <!-- FORM -->
-                        <form class="form">
+                @foreach ($sideitems as $block)
+                    <!-- WIDGET BOX -->
+                    <div class="widget-box datablock" style="display: {{ $block['active'] ? 'block' : 'none' }}"
+                        id="{{ $block['identifier'] }}">
+                        <!-- WIDGET BOX TITLE -->
+                        <p class="widget-box-title">{{ $block['title'] }}</p>
+                        <!-- /WIDGET BOX TITLE -->
+                        <!-- WIDGET BOX CONTENT -->
+                        <div class="widget-box-content">
+                            <!-- FORM -->
                             <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input small active">
-                                        <label for="group-name">Group Name</label>
-                                        <input type="text" id="group-name" name="group_name"
-                                            value="Cosplayers of the World" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
+                            @foreach ($block['fields'] ?? [] as $field)
+                                <div class="form-row">
 
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input small active">
-                                        <label for="group-tagline">Tagline</label>
-                                        <input type="text" id="group-tagline" name="group_tagline"
-                                            value="All Cosplayers Welcome!" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
+                                    @if ($field['type'] == 'select')
+                                        <!-- FORM ITEM -->
+                                        <div class="form-item">
+                                            <!-- FORM SELECT -->
+                                            <div class="form-select">
+                                                <span class="form-select-title">{{ $field['title'] }}</span>
+                                                <select id="{{ $field['identifier'] }}" name="{{ $field['identifier'] }}"
+                                                    data-title="{{ $field['title'] }}"
+                                                    {{ $field['multiple'] ?? '' ? 'multiple class=multi-select' : 'class=single-select' }}>
+                                                    @foreach ($field['options'] ?? [] as $option)
+                                                        <option value="{{ $option['value'] }}"
+                                                            {{ $option['selected'] ?? false ? 'selected' : '' }}>
+                                                            {{ $option['title'] }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <!-- /FORM SELECT -->
+                                        </div>
+                                        <!-- /FORM ITEM -->
+                                    @elseif ($field['type'] == 'boolean')
+                                        <div class="switch-option w-100">
+                                            <p class="switch-option-title">
+                                                {{ $field['title'] }}
+                                            </p>
+                                            <p class="switch-option-text">
+                                                {{ $field['placeholder'] ?? '' }}
+                                            </p>
+                                            <div class="form-switch {{ $field['value'] ? 'active' : '' }}"
+                                                onclick="updateCheck(this)">
+                                                <input type="hidden" name="{{ $field['identifier'] }}"
+                                                    value="{{ $field['value'] ?? '0' }}">
+                                                <!-- FORM SWITCH BUTTON -->
+                                                <div class="form-switch-button"></div>
+                                                <!-- /FORM SWITCH BUTTON -->
+                                            </div>
+                                            <!-- /FORM SWITCH -->
+                                        </div>
+                                        <!-- /SWITCH OPTION -->
+                                    @else
+                                        <!-- FORM ITEM -->
+                                        <div class="form-item">
+                                            <!-- FORM INPUT -->
+                                            <div
+                                                class="form-input {{ $field['value'] ?? '' ? 'active' : '' }} {{ $field['type'] == 'textarea' ? 'mid-textarea' : '' }} {{ $field['required'] ? 'required' : '' }}">
+                                                <label for="{{ $field['identifier'] }}">{{ $field['title'] }}</label>
+                                                @if ($field['type'] == 'textarea')
+                                                    <textarea id="{{ $field['identifier'] }}" name="{{ $field['identifier'] }}"
+                                                        placeholder="{{ $field['placeholder'] ?? '' }}">{{ $field['value'] ?? '' }}</textarea>
+                                                @elseif ($field['type'] == 'select')
+                                                @else
+                                                    <input type="{{ $field['type'] }}" id="{{ $field['identifier'] }}"
+                                                        name="{{ $field['identifier'] }}"
+                                                        value="{{ $field['value'] ?? '' }}"
+                                                        placeholder="{{ $field['placeholder'] ?? '' }}" />
+                                                @endif
+                                            </div>
+                                            <!-- /FORM INPUT -->
+                                        </div>
+                                        <!-- /FORM ITEM -->
+                                    @endif
                                 </div>
-                                <!-- /FORM ITEM -->
-                            </div>
+                            @endforeach
                             <!-- /FORM ROW -->
-
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input small mid-textarea">
-                                        <textarea id="group-description" name="group_description" placeholder="Write a little description about the group..."></textarea>
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
-
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input small active">
-                                        <label for="group-public-email">Public Email</label>
-                                        <input type="text" id="group-public-email" name="group_public_email"
-                                            value="info@cosworld.com" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
-
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input small">
-                                        <label for="group-public-website">Public Website</label>
-                                        <input type="text" id="group-public-website" name="group_public_website" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
-                        </form>
-                        <!-- /FORM -->
+                            <!-- /FORM -->
+                        </div>
+                        <!-- WIDGET BOX CONTENT -->
                     </div>
-                    <!-- WIDGET BOX CONTENT -->
-                </div>
-                <!-- /WIDGET BOX -->
+                    <!-- /WIDGET BOX -->
+                @endforeach
+
             </div>
             <!-- /POPUP BOX CONTENT -->
         </div>
@@ -378,10 +505,149 @@ $page['title'] = 'Manage Startups | ConnectUp';
 @endsection
 
 @push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.css"
+        integrity="sha512-6skR4yyaANUKXypVS+nB+HMmq8Xd17CSwFsBEHCRaa3UicPlksbwVtBTZl13Fea6zqsnnmqc7fRH97/M6JcwCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .selectize-input {
+            background-color: #1d2333 !important;
+            border: 1px solid #3f485f;
+            color: #fff;
+            transition: border-color 0.2s ease-in-out;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            height: 48px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        .selectize-input,
+        .selectize-control.single .selectize-input.input-active {
+            display: flex;
+        }
+
+        .selectize-input,
+        .selectize-control.single .selectize-input.input-active {
+            border-radius: 12px;
+        }
+
+        .selectize-dropdown-content {
+
+            background-color: #1d2333 !important;
+            color: #fff;
+            transition: border-color 0.2s ease-in-out;
+            width: 100%;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        /* add custom scrollbar*/
+        .selectize-dropdown-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .selectize-dropdown {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        .selectize-control.multi .selectize-input>div {
+            margin: 0px 5px 5px 0;
+            padding: 5px 10px;
+            background: #f2f2f233;
+            color: #fffc;
+            border-radius: 5px;
+        }
+
+        .selectize-control.multi .selectize-input.has-items {
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+        .selectize-input.has-items>input {
+            color: #fffc;
+        }
+
+        .selectize-control.single .selectize-input.input-active,
+        .selectize-control.single .selectize-input.input-active input {
+            color: #fffc;
+        }
+
+
+        input.is-valid {
+            border-color: #28a745 !important;
+        }
+
+        input.is-invalid {
+            border-color: #dc3545 !important;
+        }
+
+        #submitbutton[disabled] {
+            background-color: #1d2333 !important;
+            cursor: not-allowed;
+            box-shadow: none;
+            color: #fff !important;
+        }
+
+        .form-select-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            margin-left: 10px
+        }
+    </style>
 @endpush
 
 @section('scripts')
 @endsection
 
 @push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.4/sifter.min.js"
+        integrity="sha512-B60IUvYpG4cibCeQ30J8k/+qtN+fxKAIENb3DL2DVdzIt76IDIynAt92chPEwlCuKejOt//+OZL61i1xsvCIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microplugin/0.0.3/microplugin.min.js"
+        integrity="sha512-7amIsiQ/hxbdPNawBZwmWBWPiwQRNEJlxTj6eVO+xmWd71fs79Iydr4rYARHwDf0rKHpysFxWbj64fjPRHbqfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/selectize.min.js"
+        integrity="sha512-DBOconMAY06o4R79zeXKKM3h/g5pca647Eabb+6viK4dRpiMOlZFS4gsbukTbHo+ppdKx4yr+/0m2JnpeAIrSw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            $('.tabitem').click(function() {
+                $('.tabitem').removeClass('active');
+                $(this).addClass('active');
+                var identifier = $(this).data('identifier');
+                $('.datablock').hide();
+                $('#' + identifier).show();
+            });
+
+
+            $('.multi-select').selectize({
+                placeholder: 'Select...',
+                plugins: ["remove_button", "restore_on_backspace"],
+            });
+
+            $('.single-select').selectize({
+                placeholder: 'Select...',
+            });
+        });
+
+        function updateCheck(el) {
+            var input = $(el).find('input');
+            if (input.val() == '1') {
+                input.val('0');
+            } else {
+                input.val('1');
+            }
+        }
+    </script>
 @endpush
