@@ -66,7 +66,7 @@ app.plugins.createDropdown({
     triggerEvent: "click",
     offset: {
         bottom: 54,
-        left: -16,
+        right: -16,
     },
     animation: {
         type: "translate-bottom",
