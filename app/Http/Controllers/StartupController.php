@@ -8,6 +8,8 @@ use App\Models\Startup;
 use Auth;
 use App\Models\Interest;
 use App\Models\Stage;
+use App\Models\Category;
+use App\Models\Objective;
 class StartupController extends Controller
 {
     //
@@ -37,10 +39,14 @@ class StartupController extends Controller
         $startups = Startup::where('founder', Auth::user()->id)->get();
         $interests = Interest::all();
         $stages = Stage::where('active', 1)->get();
+        $categories = Category::where('active', 1)->get();
+        $objectives = Objective::where('active', 1)->get();
         $data = [
             'startups' => $startups,
             'interests' => $interests,
             'stages' => $stages,
+            'categories' => $categories,
+            'objectives' => $objectives,
         ];
         return view('pages.startup.manage', $data);
     }

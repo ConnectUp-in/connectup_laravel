@@ -209,13 +209,13 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
                             <!-- USER SHORT DESCRIPTION TITLE -->
                             <p class="user-short-description-title small">
-                                <a href="group-timeline.html">Cosplayers of the World</a>
+                                <span id="preview-name">Startup Name</span>
                             </p>
                             <!-- /USER SHORT DESCRIPTION TITLE -->
 
                             <!-- USER SHORT DESCRIPTION TEXT -->
-                            <p class="user-short-description-text regular">
-                                Group Organizer
+                            <p class="user-short-description-text regular" id="preview-bio">
+                                Startup Bio or Tagline
                             </p>
                             <!-- /USER SHORT DESCRIPTION TEXT -->
                         </div>
@@ -361,7 +361,22 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                                 ->toArray(),
                                         ],
                                         [
-                                            'title' => 'Interests',
+                                            'title' => 'Category',
+                                            'identifier' => 'category',
+                                            'type' => 'select',
+                                            'required' => false,
+                                            'multiple' => false,
+                                            'options' => $categories
+                                                ->map(function ($categories) {
+                                                    return [
+                                                        'title' => $categories->name,
+                                                        'value' => $categories->id,
+                                                    ];
+                                                })
+                                                ->toArray(),
+                                        ],
+                                        [
+                                            'title' => 'Startup Interests/Domains',
                                             'identifier' => 'interests[]',
                                             'type' => 'select',
                                             'required' => false,
@@ -375,9 +390,26 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                                 })
                                                 ->toArray(),
                                         ],
+                                        [
+                                            'title' => 'Objective/Reason to Join',
+                                            'identifier' => 'objectives[]',
+                                            'type' => 'select',
+                                            'required' => false,
+                                            'multiple' => true,
+                                            'options' => $objectives
+                                                ->map(function ($objectives) {
+                                                    return [
+                                                        'title' => $objectives->name,
+                                                        'value' => $objectives->id,
+                                                    ];
+                                                })
+                                                ->toArray(),
+                                        ],
                                     ],
                                 ],
                             ];
+                            
+                            $socials = ['github', 'linkedin', 'facebook', 'instagram', 'twitter', 'youtube'];
                             
                         @endphp
                         @foreach ($sideitems as $sideitem)
@@ -413,88 +445,157 @@ $page['title'] = 'Manage Startups | ConnectUp';
             <div class="popup-box-content">
 
                 @foreach ($sideitems as $block)
-                    <!-- WIDGET BOX -->
-                    <div class="widget-box datablock" style="display: {{ $block['active'] ? 'block' : 'none' }}"
-                        id="{{ $block['identifier'] }}">
-                        <!-- WIDGET BOX TITLE -->
-                        <p class="widget-box-title">{{ $block['title'] }}</p>
-                        <!-- /WIDGET BOX TITLE -->
-                        <!-- WIDGET BOX CONTENT -->
-                        <div class="widget-box-content">
-                            <!-- FORM -->
-                            <!-- FORM ROW -->
-                            @foreach ($block['fields'] ?? [] as $field)
-                                <div class="form-row">
+                    @if ($block['fields'] ?? false)
+                        <!-- WIDGET BOX -->
+                        <div class="widget-box datablock" style="display: {{ $block['active'] ? 'block' : 'none' }}"
+                            id="{{ $block['identifier'] }}">
+                            <!-- WIDGET BOX TITLE -->
+                            <p class="widget-box-title">{{ $block['title'] }}</p>
+                            <!-- /WIDGET BOX TITLE -->
+                            <!-- WIDGET BOX CONTENT -->
+                            <div class="widget-box-content">
+                                <!-- FORM -->
+                                <!-- FORM ROW -->
+                                @foreach ($block['fields'] ?? [] as $field)
+                                    <div class="form-row {{ $field['type'] == 'select' ? 'nogap' : '' }}">
 
-                                    @if ($field['type'] == 'select')
-                                        <!-- FORM ITEM -->
-                                        <div class="form-item">
-                                            <!-- FORM SELECT -->
-                                            <div class="form-select">
-                                                <span class="form-select-title">{{ $field['title'] }}</span>
-                                                <select id="{{ $field['identifier'] }}" name="{{ $field['identifier'] }}"
-                                                    data-title="{{ $field['title'] }}"
-                                                    {{ $field['multiple'] ?? '' ? 'multiple class=multi-select' : 'class=single-select' }}>
-                                                    @foreach ($field['options'] ?? [] as $option)
-                                                        <option value="{{ $option['value'] }}"
-                                                            {{ $option['selected'] ?? false ? 'selected' : '' }}>
-                                                            {{ $option['title'] }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <!-- /FORM SELECT -->
-                                        </div>
-                                        <!-- /FORM ITEM -->
-                                    @elseif ($field['type'] == 'boolean')
-                                        <div class="switch-option w-100">
-                                            <p class="switch-option-title">
-                                                {{ $field['title'] }}
-                                            </p>
-                                            <p class="switch-option-text">
-                                                {{ $field['placeholder'] ?? '' }}
-                                            </p>
-                                            <div class="form-switch {{ $field['value'] ? 'active' : '' }}"
-                                                onclick="updateCheck(this)">
-                                                <input type="hidden" name="{{ $field['identifier'] }}"
-                                                    value="{{ $field['value'] ?? '0' }}">
-                                                <!-- FORM SWITCH BUTTON -->
-                                                <div class="form-switch-button"></div>
-                                                <!-- /FORM SWITCH BUTTON -->
-                                            </div>
-                                            <!-- /FORM SWITCH -->
-                                        </div>
-                                        <!-- /SWITCH OPTION -->
-                                    @else
-                                        <!-- FORM ITEM -->
-                                        <div class="form-item">
-                                            <!-- FORM INPUT -->
-                                            <div
-                                                class="form-input {{ $field['value'] ?? '' ? 'active' : '' }} {{ $field['type'] == 'textarea' ? 'mid-textarea' : '' }} {{ $field['required'] ? 'required' : '' }}">
-                                                <label for="{{ $field['identifier'] }}">{{ $field['title'] }}</label>
-                                                @if ($field['type'] == 'textarea')
-                                                    <textarea id="{{ $field['identifier'] }}" name="{{ $field['identifier'] }}"
-                                                        placeholder="{{ $field['placeholder'] ?? '' }}">{{ $field['value'] ?? '' }}</textarea>
-                                                @elseif ($field['type'] == 'select')
-                                                @else
-                                                    <input type="{{ $field['type'] }}" id="{{ $field['identifier'] }}"
+                                        @if ($field['type'] == 'select')
+                                            <!-- FORM ITEM -->
+                                            <div class="form-item">
+                                                <!-- FORM SELECT -->
+                                                <div class="form-select">
+                                                    <span class="form-select-title">{{ $field['title'] }}</span>
+                                                    <select id="{{ $field['identifier'] }}"
                                                         name="{{ $field['identifier'] }}"
-                                                        value="{{ $field['value'] ?? '' }}"
-                                                        placeholder="{{ $field['placeholder'] ?? '' }}" />
-                                                @endif
+                                                        data-title="{{ $field['title'] }}"
+                                                        {{ $field['multiple'] ?? '' ? 'multiple class=multi-select' : 'class=single-select' }}>
+                                                        @foreach ($field['options'] ?? [] as $option)
+                                                            <option value="{{ $option['value'] }}"
+                                                                {{ $option['selected'] ?? false ? 'selected' : '' }}>
+                                                                {{ $option['title'] }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <!-- /FORM SELECT -->
                                             </div>
-                                            <!-- /FORM INPUT -->
-                                        </div>
-                                        <!-- /FORM ITEM -->
-                                    @endif
-                                </div>
-                            @endforeach
-                            <!-- /FORM ROW -->
-                            <!-- /FORM -->
+                                            <!-- /FORM ITEM -->
+                                        @elseif ($field['type'] == 'boolean')
+                                            <div class="switch-option w-100">
+                                                <p class="switch-option-title">
+                                                    {{ $field['title'] }}
+                                                </p>
+                                                <p class="switch-option-text">
+                                                    {{ $field['placeholder'] ?? '' }}
+                                                </p>
+                                                <div class="form-switch {{ $field['value'] ? 'active' : '' }}"
+                                                    onclick="updateCheck(this)">
+                                                    <input type="hidden" name="{{ $field['identifier'] }}"
+                                                        value="{{ $field['value'] ?? '0' }}">
+                                                    <!-- FORM SWITCH BUTTON -->
+                                                    <div class="form-switch-button"></div>
+                                                    <!-- /FORM SWITCH BUTTON -->
+                                                </div>
+                                                <!-- /FORM SWITCH -->
+                                            </div>
+                                            <!-- /SWITCH OPTION -->
+                                        @else
+                                            <!-- FORM ITEM -->
+                                            <div class="form-item">
+                                                <!-- FORM INPUT -->
+                                                <div
+                                                    class="form-input {{ $field['value'] ?? '' ? 'active' : '' }} {{ $field['type'] == 'textarea' ? 'mid-textarea' : '' }} {{ $field['required'] ? 'required' : '' }}">
+                                                    <label for="{{ $field['identifier'] }}">{{ $field['title'] }}</label>
+                                                    @if ($field['type'] == 'textarea')
+                                                        <textarea id="{{ $field['identifier'] }}" name="{{ $field['identifier'] }}"
+                                                            placeholder="{{ $field['placeholder'] ?? '' }}">{{ $field['value'] ?? '' }}</textarea>
+                                                    @elseif ($field['type'] == 'select')
+                                                    @else
+                                                        <input type="{{ $field['type'] }}" id="{{ $field['identifier'] }}"
+                                                            name="{{ $field['identifier'] }}"
+                                                            value="{{ $field['value'] ?? '' }}"
+                                                            placeholder="{{ $field['placeholder'] ?? '' }}" />
+                                                    @endif
+                                                </div>
+                                                <!-- /FORM INPUT -->
+                                            </div>
+                                            <!-- /FORM ITEM -->
+                                        @endif
+                                    </div>
+                                @endforeach
+                                <!-- /FORM ROW -->
+                                <!-- /FORM -->
+                            </div>
+                            <!-- WIDGET BOX CONTENT -->
                         </div>
-                        <!-- WIDGET BOX CONTENT -->
-                    </div>
-                    <!-- /WIDGET BOX -->
+                        <!-- /WIDGET BOX -->
+                    @endif
                 @endforeach
+
+
+                <!-- WIDGET BOX -->
+                <div class="widget-box datablock" style="display:none" id="social">
+                    <!-- WIDGET BOX TITLE -->
+                    <p class="widget-box-title">Social Networks</p>
+                    <input type="hidden" id="socials" name="socials" value="">
+
+                    <!-- /WIDGET BOX TITLE -->
+                    <!-- WIDGET BOX CONTENT -->
+                    <div class="widget-box-content">
+
+                        @foreach ($socials as $social)
+                            <!-- FORM ROW -->
+                            <div class="form-row split">
+
+                                {{-- @foreach ($pair as $social) --}}
+                                <!-- FORM ITEM -->
+                                <div class="form-item">
+                                    <!-- FORM INPUT -->
+                                    <div class="form-input social-input">
+                                        <!-- SOCIAL LINK -->
+                                        <div class="social-link no-hover {{ $social }}">
+                                            <!-- ICON FACEBOOK -->
+                                            <svg class="icon-icon">
+                                                <use xlink:href="#svg-{{ $social }}"></use>
+                                            </svg>
+                                            <!-- /ICON FACEBOOK -->
+                                        </div>
+                                        <!-- /SOCIAL LINK -->
+
+                                        <label for="social-account-facebook">Startup {{ ucfirst($social) }}
+                                            Link</label>
+                                        <input type="text" id="social-{{ $social }}"
+                                            name="{{ $social }}" value="{{ $user->socials[$social] ?? '' }}"
+                                            onchange="updateSocials()">
+                                    </div>
+                                    <!-- /FORM INPUT -->
+                                </div>
+                                <!-- /FORM ITEM -->
+                                {{-- @endforeach --}}
+
+                            </div>
+                            <!-- /FORM ROW -->
+                        @endforeach
+                    </div>
+                    <!-- WIDGET BOX CONTENT -->
+                </div>
+                <!-- /WIDGET BOX -->
+
+
+                <!-- WIDGET BOX -->
+                <div class="widget-box datablock" style="display:none" id="logocover">
+                    <!-- WIDGET BOX TITLE -->
+                    <p class="widget-box-title">Logo and Cover</p>
+
+                    <!-- /WIDGET BOX TITLE -->
+                    <!-- WIDGET BOX CONTENT -->
+                    <div class="widget-box-content">
+
+
+                        Yha
+                    </div>
+                    <!-- WIDGET BOX CONTENT -->
+                </div>
+                <!-- /WIDGET BOX -->
 
             </div>
             <!-- /POPUP BOX CONTENT -->
@@ -603,6 +704,14 @@ $page['title'] = 'Manage Startups | ConnectUp';
             margin-bottom: 0.5rem;
             margin-left: 10px
         }
+
+        .nogap+.nogap {
+            margin-top: 15px;
+        }
+
+        .form-select {
+            height: auto;
+        }
     </style>
 @endpush
 
@@ -639,6 +748,13 @@ $page['title'] = 'Manage Startups | ConnectUp';
             $('.single-select').selectize({
                 placeholder: 'Select...',
             });
+
+            $('input[name="name"]').on('keyup', function() {
+                $("#preview-name").text($(this).val());
+            });
+            $('input[name="bio"]').on('keyup', function() {
+                $("#preview-bio").text($(this).val());
+            });
         });
 
         function updateCheck(el) {
@@ -648,6 +764,19 @@ $page['title'] = 'Manage Startups | ConnectUp';
             } else {
                 input.val('1');
             }
+        }
+
+        function updateSocials() {
+            var socials = {};
+            $('.social-input').each(function() {
+                var social = $(this).find('input').attr('name');
+                var value = $(this).find('input').val();
+                if (value) {
+                    socials[social] = value;
+                }
+            });
+            $('#socials').val(JSON.stringify(socials));
+            console.log(socials);
         }
     </script>
 @endpush
