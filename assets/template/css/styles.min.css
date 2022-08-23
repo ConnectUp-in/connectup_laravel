@@ -42,6 +42,8 @@ ul {
 button,
 input[type="password"],
 input[type="text"],
+input[type="email"],
+input[type="url"],
 input[type="date"],
 label,
 select,
@@ -57,6 +59,8 @@ label {
 button,
 input[type="password"],
 input[type="text"],
+input[type="email"],
+input[type="url"],
 input[type="date"],
 select,
 textarea {
@@ -67,6 +71,8 @@ textarea {
 }
 input[type="password"],
 input[type="text"],
+input[type="email"],
+input[type="url"],
 input[type="date"],
 select,
 textarea {
@@ -77,6 +83,8 @@ textarea {
 }
 input[type="password"]:focus,
 input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
 input[type="date"]:focus,
 select:focus,
 textarea:focus {
@@ -84,7 +92,9 @@ textarea:focus {
 }
 input[type="password"],
 input[type="date"],
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="url"] {
     height: 54px;
     padding: 0 18px;
 }
@@ -230,6 +240,8 @@ textarea::placeholder {
 }
 .form-input.dark input[type="password"],
 .form-input.dark input[type="text"],
+.form-input.dark input[type="email"],
+.form-input.dark input[type="url"],
 .form-input.dark input[type="date"],
 .form-input.dark textarea {
     border: none;
