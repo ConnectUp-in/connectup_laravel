@@ -200,7 +200,8 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                 <!-- USER AVATAR CONTENT -->
                                 <div class="user-avatar-content">
                                     <!-- HEXAGON -->
-                                    <div class="hexagon-image-84-92" data-src="/assets/template/img/avatar/24.jpg"></div>
+                                    <div class="hexagon-image-84-92 preview-logo"
+                                        data-src="/assets/template/img/avatar/23.jpg"></div>
                                     <!-- /HEXAGON -->
                                 </div>
                                 <!-- /USER AVATAR CONTENT -->
@@ -1012,8 +1013,11 @@ $page['title'] = 'Manage Startups | ConnectUp';
                         size: 'original'
                     }).then(function(response) {
                         console.log(response);
-                        $('#preview-logo').css('background-image', 'url(' + response +
-                            ')');
+                        // $('.preview-logo').data('src', response);
+                        // vanilla js
+                        document.querySelector('.preview-logo').setAttribute('data-src',
+                            response);
+                        updateAvatar();
                         $('#preview_logo').attr('src', response);
 
                         $('#logo').val(response);
@@ -1158,5 +1162,15 @@ $page['title'] = 'Manage Startups | ConnectUp';
                 }
             });
         });
+
+        function updateAvatar() {
+            app.plugins.createHexagon({
+                container: '.hexagon-image-84-92',
+                width: 84,
+                height: 92,
+                roundedCorners: true,
+                clip: true
+            });
+        }
     </script>
 @endpush
