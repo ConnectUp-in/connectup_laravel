@@ -178,8 +178,8 @@ $page['title'] = 'Manage Startups | ConnectUp';
                 <!-- USER PREVIEW -->
                 <div class="user-preview small">
                     <!-- USER PREVIEW COVER -->
-                    <figure class="user-preview-cover liquid">
-                        <img src="/assets/defaults/covers/19.jpg" id="preview-cover" alt="cover-29" />
+                    <figure class="user-preview-cover liquid" id="preview-cover">
+                        <img src="/assets/defaults/covers/19.jpg" alt="cover-29" />
                     </figure>
                     <!-- /USER PREVIEW COVER -->
 
@@ -583,8 +583,6 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
                 <!-- WIDGET BOX -->
                 <div class="widget-box datablock" style="display:none" id="logocover">
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Logo and Cover</p>
 
                     <!-- /WIDGET BOX TITLE -->
                     <!-- WIDGET BOX CONTENT -->
@@ -593,26 +591,68 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
                         <div class="container" id="coveruploadbody">
                             <div>
-                                <div class="preview-container">
+                                <p class="up-title">Select Logo</p>
+
+                                <label class="droparea logo_droparea" for="upload_logo">
+                                    Select a file to upload Logo
+                                </label>
+
+                                <div class="cropper-container logo_cropper-container">
+
+                                    <div id="logo_cropper"></div>
+                                </div>
+
+                                <div class="logo_pb_container">
+
+                                    <div class="preview-container logo_preview-container">
+                                        <img id="preview_logo" src="" alt="">
+                                    </div>
+                                    <div class="button-container logo_button-container">
+                                        <div>
+                                            <!-- Limit only Image File -->
+                                            {{-- <input type="file" name="abc" id=""> --}}
+                                            <input type="file" id="upload_logo" name="upload_logo" accept="image/*">
+                                            <input type="hidden" name="logo" id="logo">
+                                            <button class="button secondary" type="button"
+                                                id="logo_crop_button">Crop</button>
+                                            <button class="button secondary" type="button"
+                                                id="logo_recrop_button">ReCrop</button>
+                                            <button class="button white" type="button" id="logo_change_image">Change
+                                                <span class="hide-text-mobile">Image</span></button>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+
+                                <p class="up-title">Select Cover</p>
+                                <div class="preview-container cover_preview-container">
                                     <img id="preview_cover" src="" alt="">
                                 </div>
-                                <label class="droparea" for="upload_cover">
+                                <label class="droparea cover_droparea" for="upload_cover">
                                     Select a file to upload Cover
                                 </label>
 
-                                <div class="cropper-container">
+                                <div class="cropper-container cover_cropper-container">
 
-                                    <div id="image_demo"></div>
+                                    <div id="cover_cropper"></div>
                                 </div>
-                                <div class="button-container">
+                                <div class="button-container cover_button-container">
                                     <div>
                                         @csrf
                                         <!-- Limit only Image File -->
                                         {{-- <input type="file" name="abc" id=""> --}}
                                         <input type="file" id="upload_cover" name="upload_cover" accept="image/*">
-                                        <input type="hidden" name="cover_photo_path" id="cover_photo_path">
-                                        <button class="button secondary" type="button" id="crop_button">Crop</button>
-                                        <button class="button primary" type="submit" id="recrop_button">ReCrop</button>
+                                        <input type="hidden" name="cover" id="cover">
+                                        <button class="button secondary" type="button"
+                                            id="cover_crop_button">Crop</button>
+                                        <button class="button secondary " type="button"
+                                            id="cover_recrop_button">ReCrop</button>
+                                        <button class="button white " type="button" id="cover_change_image">Change
+                                            <span class="hide-text-mobile">Image</span></button>
 
                                     </div>
                                 </div>
@@ -749,13 +789,17 @@ $page['title'] = 'Manage Startups | ConnectUp';
             display: none;
         }
 
+        .logo_preview-container {
+            max-width: 240px;
+        }
+
         .preview-container img {
             width: 100%;
             height: auto;
         }
 
         .droparea {
-            margin: 1em 1em;
+            margin: 0.5em 0.5em;
             padding: 2em;
             /* width: 100%; */
             box-sizing: border-box;
@@ -765,11 +809,6 @@ $page['title'] = 'Manage Startups | ConnectUp';
             font-size: 2em;
             color: #fff9;
             text-align: center;
-        }
-
-
-        input[name="upload_cover"] {
-            display: none;
         }
 
         .cropper-container {
@@ -783,9 +822,22 @@ $page['title'] = 'Manage Startups | ConnectUp';
             margin-bottom: 1em;
         }
 
-        .button-container>div>form {
+        .button-container>div {
             display: flex;
             justify-content: center;
+        }
+
+        .logo_button-container>div {
+            flex-direction: column;
+            gap: 0.6em;
+        }
+
+
+        .logo_pb_container {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+
         }
 
         .button-container>div button {
@@ -795,7 +847,16 @@ $page['title'] = 'Manage Startups | ConnectUp';
             min-width: 100px;
         }
 
-        #recrop_button {
+        .logo_button-container>div button {
+            width: initial !important;
+        }
+
+        #cover_recrop_button,
+        #cover_change_image,
+        input[name="upload_cover"],
+        #logo_recrop_button,
+        #logo_change_image,
+        input[name="upload_logo"] {
             display: none;
         }
 
@@ -812,6 +873,14 @@ $page['title'] = 'Manage Startups | ConnectUp';
                 margin: 1em 0.5em;
                 padding: 1em;
             }
+        }
+
+        .up-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            margin-left: 10px
         }
     </style>
 @endpush
@@ -889,7 +958,87 @@ $page['title'] = 'Manage Startups | ConnectUp';
     <script>
         $(document).ready(function() {
 
-            $('input[type="file"]').change(function() {
+            $('input[name="upload_logo"]').change(function() {
+                console.log('Image Selected or Changed');
+
+
+
+
+                const bodywidth = $('#coveruploadbody').width();
+                const width = bodywidth * 0.9;
+                const config = {
+                    enableExif: true,
+                    viewport: {
+                        width: width / 2,
+                        height: width / 2,
+                        type: 'square'
+                    },
+                    boundary: {
+                        width: width * 1.06,
+                        height: width / 2
+                    }
+                }
+
+
+
+                var file = this.files[0];
+                var reader = new FileReader();
+                $('#logo_cropper').croppie('destroy');
+                $logo_crop = $('#logo_cropper').croppie(config);
+                reader.onload = function(event) {
+                    $('.logo_droparea').hide();
+                    $('.logo_button-container').show();
+
+                    $('#logo_recrop_button').hide();
+                    $('#logo_change_image').hide();
+                    $('#logo_crop_button').show();
+                    $('#logo_cropper').show();
+                    $('.logo_preview-container').hide();
+                    $logo_crop.croppie('bind', {
+                        url: event.target.result
+                    }).then(function() {
+                        // $('#submitbtn').removeClass('btn-primary').addClass('btn-dark').prop(
+                        //     'disabled', true);
+                    });
+                }
+                reader.readAsDataURL(file);
+
+
+                $('#logo_crop_button').click(function() {
+                    console.log('Crop Button clicked');
+                    $logo_crop.croppie('result', {
+                        type: 'canvas',
+                        size: 'original'
+                    }).then(function(response) {
+                        console.log(response);
+                        $('#preview-logo').css('background-image', 'url(' + response +
+                            ')');
+                        $('#preview_logo').attr('src', response);
+
+                        $('#logo').val(response);
+                        $('#logo_recrop_button').show();
+                        $('#logo_change_image').show();
+                        $('#logo_crop_button').hide();
+                        $('#logo_cropper').hide();
+                        $('.logo_preview-container').show();
+                    });
+                });
+
+                $('#logo_change_image').click(function() {
+                    $('input[name="upload_logo"]').click();
+                })
+
+                $('#logo_recrop_button').click(function() {
+                    $('#logo_cropper').show();
+                    $('.logo_preview-container').hide();
+                    $('#logo_recrop_button').hide();
+                    $('#logo_change_image').hide();
+                    $('#logo_crop_button').show();
+                });
+
+            });
+            $('input[name="upload_cover"]').change(function() {
+                console.log('Image Selected or Changed');
 
 
 
@@ -913,37 +1062,57 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
                 var file = this.files[0];
                 var reader = new FileReader();
-                $crop = $('#image_demo').croppie(config);
+                $('#cover_cropper').croppie('destroy');
+                $cover_crop = $('#cover_cropper').croppie(config);
                 reader.onload = function(event) {
-                    $('.droparea').hide();
-                    $('.button-container').show();
-                    $crop.croppie('bind', {
+                    $('.cover_droparea').hide();
+                    $('.cover_button-container').show();
+
+                    $('#cover_recrop_button').hide();
+                    $('#cover_change_image').hide();
+                    $('#cover_crop_button').show();
+                    $('#cover_cropper').show();
+                    $('.cover_preview-container').hide();
+                    $cover_crop.croppie('bind', {
                         url: event.target.result
                     }).then(function() {
-                        $('#submitbtn').removeClass('btn-primary').addClass('btn-dark').prop(
-                            'disabled', true);
+                        // $('#submitbtn').removeClass('btn-primary').addClass('btn-dark').prop(
+                        //     'disabled', true);
                     });
                 }
                 reader.readAsDataURL(file);
 
 
-                $('#crop_button').click(function() {
+                $('#cover_crop_button').click(function() {
                     console.log('Crop Button clicked');
-                    $crop.croppie('result', {
+                    $cover_crop.croppie('result', {
                         type: 'canvas',
                         size: 'original'
                     }).then(function(response) {
                         console.log(response);
-                        $('.user-preview-cover').css('background-image', 'url(' + response +
+                        $('#preview-cover').css('background-image', 'url(' + response +
                             ')');
                         $('#preview_cover').attr('src', response);
 
-                        $('#cover_photo_path').val(response);
-                        $('#recrop_button').show();
-                        $('#crop_button').hide();
-                        $('#image_demo').hide();
-                        $('.preview-container').show();
+                        $('#cover').val(response);
+                        $('#cover_recrop_button').show();
+                        $('#cover_change_image').show();
+                        $('#cover_crop_button').hide();
+                        $('#cover_cropper').hide();
+                        $('.cover_preview-container').show();
                     });
+                });
+
+                $('#cover_change_image').click(function() {
+                    $('input[name="upload_cover"]').click();
+                })
+
+                $('#cover_recrop_button').click(function() {
+                    $('#cover_cropper').show();
+                    $('.cover_preview-container').hide();
+                    $('#cover_recrop_button').hide();
+                    $('#cover_change_image').hide();
+                    $('#cover_crop_button').show();
                 });
 
             });
