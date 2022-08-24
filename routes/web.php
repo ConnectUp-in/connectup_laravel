@@ -49,6 +49,7 @@ Route::prefix('user')
             Route::get('/manage', [StartupController::class, 'manage'])->name('startup.manage');
             Route::post('/create', [StartupController::class, 'create'])->name('startup.create');
             Route::get('/update/{id}/info', [StartupController::class, 'updateInfo'])->name('startup.update.info');
+            Route::get('/update/{id}/socials', [StartupController::class, 'updateSocials'])->name('startup.update.socials');
         });
     });
 

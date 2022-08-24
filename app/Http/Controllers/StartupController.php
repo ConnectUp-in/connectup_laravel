@@ -101,6 +101,20 @@ class StartupController extends Controller
         if (!$startup) {
             return view('pages.startup.404');
         }
+        page('startup/manage/{id}');
+        $data = [
+            'startup' => $startup,
+        ];
+        return view('pages.startup.info', $data);
+
+    }
+
+    public function updateSocials($id)
+    {
+        $startup = Startup::find($id);
+        if (!$startup) {
+            return view('pages.startup.404');
+        }
         $interests = Interest::all();
         $stages = Stage::where('active', 1)->get();
         $categories = Category::where('active', 1)->get();
@@ -113,7 +127,6 @@ class StartupController extends Controller
             'categories' => $categories,
             'objectives' => $objectives,
         ];
-        return view('pages.startup.info', $data);
-
+        return view('pages.startup.socials', $data);
     }
 }

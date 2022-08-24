@@ -12,7 +12,7 @@ $sidebaritems = [
             ],
             [
                 'title' => 'Social Info',
-                'url' => route('startup.update.info', $startup->id),
+                'url' => route('startup.update.socials', $startup->id),
             ],
         ],
     ],
