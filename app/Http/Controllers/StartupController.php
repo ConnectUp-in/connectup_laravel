@@ -10,6 +10,16 @@ use App\Models\Interest;
 use App\Models\Stage;
 use App\Models\Category;
 use App\Models\Objective;
+function saveBase64($base64, $path = '/uploads/')
+{
+    $image = str_replace('data:image/png;base64,', '', $base64);
+    $image = str_replace(' ', '+', $image);
+    $imageName =
+        $path . Auth::user()->name . time() . rand(1, 1000) . '.' . 'png';
+    \File::put(storage_path() . $imageName, base64_decode($image));
+    echo 'Image Uploaded: ' . $imageName . '<br>';
+    return '/storage' . $imageName;
+}
 class StartupController extends Controller
 {
     //
@@ -53,6 +63,35 @@ class StartupController extends Controller
 
     function create(Request $request)
     {
-        return $request->all();
+        try {
+            if ($request->socials) {
+                $socials = json_decode($request->socials);
+            } else {
+                $socials = [];
+            }
+            if ($request->cover) {
+                $cover = saveBase64($request->cover);
+            } else {
+                $cover = '/storage/uploads/default.png';
+            }
+
+            if ($request->logo) {
+                $logo = saveBase64($request->logo);
+            } else {
+                $logo = '/storage/uploads/default.png';
+            }
+
+            $startup = Startup::create($request->all());
+            $startup->logo = $logo;
+            $startup->cover = $cover;
+            $startup->socials = $socials;
+            $startup->founder = Auth::user()->id;
+            $startup->save();
+            return redirect()
+                ->back()
+                ->with('success', 'Startup created successfully');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }
