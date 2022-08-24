@@ -139,9 +139,9 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                 <!-- /USER SHORT DESCRIPTION -->
 
                                 <!-- BUTTON -->
-                                <p class="button white full popup-manage-group-trigger">
+                                <a class="button white full" href="{{ route('startup.update.info', $startup->id) }}">
                                     Manage Group
-                                </p>
+                                </a>
                                 <!-- /BUTTON -->
                             </div>
                             <!-- /USER PREVIEW INFO -->
