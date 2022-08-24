@@ -15,7 +15,31 @@ class Startup extends Model
         'id' => 'string',
         'socials' => 'array',
         'interests' => 'array',
-        'lookingfor' => 'array',
+        'objectives' => 'array',
+    ];
+    // id, name, bio, about, logo, cover,website, socials, founded_at, contact_email, hiring_email, founder, category, stage, contact, funded, interests, active, lookingfor, created_at, updated_at
+
+    // Add _token to fillable array
+    protected $fillable = [
+        'id',
+        'name',
+        'bio',
+        'about',
+        'website',
+        'founded_at',
+        'username',
+        'contact_email',
+        'hiring_email',
+        'founder',
+        'category',
+        'stage',
+        'contact',
+        'funded',
+        'interests',
+        'active',
+        'objectives',
+        'created_at',
+        'updated_at',
     ];
 
     public static function boot()
