@@ -129,4 +129,28 @@ class StartupController extends Controller
         ];
         return view('pages.startup.socials', $data);
     }
+
+    public function update($id, Request $request)
+    {
+
+        $startup = Startup::find($id);
+        if (!$startup) {
+            return view('pages.startup.404');
+        }
+
+        if ($startup->founder != Auth::user()->id) {
+            return redirect()->back()->with('error', 'You are not authorized to update this startup');
+        }
+        page('startup/manage/{id}');
+        $startup->update($request->all());
+
+        if ($request->socials) {
+            $startup->socials = json_decode($request->socials);
+        }
+        $startup->save();
+        return redirect()
+            ->back()
+            ->with('success', 'Startup updated successfully');
+
+    }
 }

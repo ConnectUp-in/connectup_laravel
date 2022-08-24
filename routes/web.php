@@ -50,6 +50,7 @@ Route::prefix('user')
             Route::post('/create', [StartupController::class, 'create'])->name('startup.create');
             Route::get('/update/{id}/info', [StartupController::class, 'updateInfo'])->name('startup.update.info');
             Route::get('/update/{id}/socials', [StartupController::class, 'updateSocials'])->name('startup.update.socials');
+            Route::post('/update/{id}r', [StartupController::class, 'update'])->name('startup.update');
         });
     });
 

@@ -25,7 +25,7 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
             <!-- GRID COLUMN -->
             <div class="account-hub-content">
 
-                <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('startup.update', $startup->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" id="socials" name="socials" value="">
 
@@ -107,7 +107,7 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
                                             {{-- <input type="text" list="colleges-list"> --}}
                                             <select id="stage" name="stage" class="single-select">
                                                 @foreach ($stages as $stage)
-                                                    <option value="{{ $stage }}"
+                                                    <option value="{{ $stage->id }}"
                                                         {{ $startup->stage == $stage->id ? 'selected' : '' }}>
                                                         {{ $stage->name }}
                                                     </option>
@@ -126,9 +126,9 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
                                         <div class="form-select">
                                             {{-- <label for="profile-city">Institute or College</label> --}}
                                             {{-- <input type="text" list="colleges-list"> --}}
-                                            <select id="stage" name="stage" class="single-select">
+                                            <select id="category" name="category" class="single-select">
                                                 @foreach ($categories as $category)
-                                                    <option value="{{ $category }}"
+                                                    <option value="{{ $category->id }}"
                                                         {{ $startup->category == $category->id ? 'selected' : '' }}>
                                                         {{ $category->name }}
                                                     </option>
@@ -346,7 +346,7 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
 
         $(document).ready(function() {
             $('.single-select').selectize({
-                placeholder: "Select Academic Background",
+                placeholder: "Select...",
             });
             $('.multi-select').selectize({
                 placeholder: "Select your Interests",
