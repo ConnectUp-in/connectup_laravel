@@ -50,4 +50,9 @@ class StartupController extends Controller
         ];
         return view('pages.startup.manage', $data);
     }
+
+    function create(Request $request)
+    {
+        return $request->all();
+    }
 }
