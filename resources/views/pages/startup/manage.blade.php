@@ -765,8 +765,8 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
         .form-select-title {
             font-size: 0.875rem;
-            font-weight: 700;
-            color: #fff;
+            font-weight: 500;
+            color: #fffc;
             margin-bottom: 0.5rem;
             margin-left: 10px
         }
@@ -877,8 +877,8 @@ $page['title'] = 'Manage Startups | ConnectUp';
 
         .up-title {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
+            font-weight: 500;
+            color: #fffc;
             margin-bottom: 0.5rem;
             margin-left: 10px
         }
@@ -956,6 +956,7 @@ $page['title'] = 'Manage Startups | ConnectUp';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>
 
     <script>
+        var allgood = [true]
         $(document).ready(function() {
 
             $('input[name="upload_logo"]').change(function() {
@@ -1115,6 +1116,46 @@ $page['title'] = 'Manage Startups | ConnectUp';
                     $('#cover_crop_button').show();
                 });
 
+            });
+
+
+
+            $('input[name="username"]').on('keyup', function() {
+                var username = $(this).val();
+
+                if (username != '') {
+                    $('#submitbutton').prop('disabled', true);
+
+                    $.get('{{ route('isavailable.username') }}', {
+                        username: username
+                    }, function(data) {
+                        if (data.success) {
+                            if (data.data) {
+                                $('input[name="username"]').removeClass('is-invalid');
+                                $('input[name="username"]').addClass('is-valid');
+                                allgood[0] = true;
+                                updateButton();
+
+                            } else {
+                                $('input[name="username"]').removeClass('is-valid');
+                                $('input[name="username"]').addClass('is-invalid');
+                                allgood[0] = false;
+                                updateButton();
+
+                            }
+                        } else {
+                            toastr.error(data.message);
+
+                        }
+                    });
+
+                } else {
+                    $('input[name="username"]').removeClass('is-valid');
+                    $('input[name="username"]').addClass('is-invalid');
+                    allgood[0] = false;
+                    updateButton();
+
+                }
             });
         });
     </script>
