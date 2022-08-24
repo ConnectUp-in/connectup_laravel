@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Startup;
-use Auth;
-use App\Models\Interest;
-use App\Models\Stage;
 use App\Models\Category;
+use App\Models\Interest;
 use App\Models\Objective;
+use App\Models\Stage;
+use App\Models\Startup;
+use App\Models\User;
+use Auth;
+use Illuminate\Http\Request;
+
 function saveBase64($base64, $path = '/uploads/')
 {
     $image = str_replace('data:image/png;base64,', '', $base64);
     $image = str_replace(' ', '+', $image);
-    $imageName =
-        $path . Auth::user()->name . time() . rand(1, 1000) . '.' . 'png';
+    $imageName = $path . Auth::user()->name . time() . rand(1, 1000) . '.' . 'png';
     \File::put(storage_path() . $imageName, base64_decode($image));
     echo 'Image Uploaded: ' . $imageName . '<br>';
     return '/storage' . $imageName;
@@ -23,7 +23,7 @@ function saveBase64($base64, $path = '/uploads/')
 class StartupController extends Controller
 {
     //
-    function startup($username)
+    public function startup($username)
     {
         $startup = Startup::where('username', $username)->first();
         if (!$startup) {
@@ -43,7 +43,7 @@ class StartupController extends Controller
         return view('pages.startup.timeline', $data);
     }
 
-    function manage()
+    public function manage()
     {
         page('startup/manage');
         $startups = Startup::where('founder', Auth::user()->id)->get();
@@ -61,7 +61,7 @@ class StartupController extends Controller
         return view('pages.startup.manage', $data);
     }
 
-    function create(Request $request)
+    public function create(Request $request)
     {
         try {
             if ($request->socials) {
@@ -90,8 +90,30 @@ class StartupController extends Controller
             return redirect()
                 ->back()
                 ->with('success', 'Startup created successfully');
-        } catch (\Exception $e) {
+        } catch (\Exception$e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
+    }
+
+    public function updateInfo($id)
+    {
+        $startup = Startup::find($id);
+        if (!$startup) {
+            return view('pages.startup.404');
+        }
+        $interests = Interest::all();
+        $stages = Stage::where('active', 1)->get();
+        $categories = Category::where('active', 1)->get();
+        $objectives = Objective::where('active', 1)->get();
+        page('startup/manage/{id}');
+        $data = [
+            'startup' => $startup,
+            'interests' => $interests,
+            'stages' => $stages,
+            'categories' => $categories,
+            'objectives' => $objectives,
+        ];
+        return view('pages.startup.info', $data);
+
     }
 }
