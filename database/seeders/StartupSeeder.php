@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Startup;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class StartupSeeder extends Seeder
 {
@@ -32,7 +31,7 @@ class StartupSeeder extends Seeder
                 'website' => 'https://connectup.in',
                 'socials' => [
                     'linkedin' =>
-                        'https://www.linkedin.com/company/connectupin',
+                    'https://www.linkedin.com/company/connectupin',
                     'instagram' => 'https://www.instagram.com/connectup.in',
                 ],
                 'founded_at' => '2022-08-21',
@@ -51,11 +50,11 @@ class StartupSeeder extends Seeder
                 'name' => 'Brickstox',
                 'bio' => 'RealEstate ecosystem in Decentralized Finance.',
                 'about' =>
-                    'Brickstox is a blockchain powered platform where users can invest in RealEstate backed NFTs and leverage inly in the DeFi world.',
+                'Brickstox is a blockchain powered platform where users can invest in RealEstate backed NFTs and leverage inly in the DeFi world.',
                 'logo' =>
-                    'https://cdn.discordapp.com/icons/886972630320676894/ed34537ba9f74f31750ebb2668123a6c.webp?size=240',
+                'https://cdn.discordapp.com/icons/886972630320676894/ed34537ba9f74f31750ebb2668123a6c.webp?size=240',
                 'cover' =>
-                    'https://media-exp1.licdn.com/dms/image/C4D16AQEUUuv1htmSuw/profile-displaybackgroundimage-shrink_350_1400/0/1646210107350?e=1666828800&v=beta&t=g0sKt7kXurn8PxiWldDluRVv9OY-tbM72VUz6ffVsJw',
+                'https://media-exp1.licdn.com/dms/image/C4D16AQEUUuv1htmSuw/profile-displaybackgroundimage-shrink_350_1400/0/1646210107350?e=1666828800&v=beta&t=g0sKt7kXurn8PxiWldDluRVv9OY-tbM72VUz6ffVsJw',
                 'username' => 'brickstox',
                 'website' => 'https://brickstox.in',
                 'socials' => [
@@ -65,7 +64,7 @@ class StartupSeeder extends Seeder
                 'founded_at' => '2022-08-21',
                 'contact_email' => 'rkdy49@gmail.com',
                 'hiring_email' => 'rkdy49@gmail.com',
-                'founder' => $rkdy49->id,
+                'founder' => $rkdy49->id ?? null,
                 'category' => rand(1, 3),
                 'stage' => rand(1, 3),
                 'contact' => '9479861680',
