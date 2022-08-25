@@ -830,8 +830,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
 
 
 
-
-    {{-- @popup('avatarupload') --}}
+    @popup('startuplogoupload')
     @popup('startupcoverupload')
 @endsection
 

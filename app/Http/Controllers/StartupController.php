@@ -167,6 +167,9 @@ class StartupController extends Controller
         if ($request->cover) {
             $startup->cover = saveBase64($request->cover);
         }
+        if ($request->logo) {
+            $startup->logo = saveBase64($request->logo);
+        }
         $startup->save();
         return redirect()
             ->back()
