@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -37,6 +37,7 @@ return new class extends Migration {
             $table->json('interests')->nullable();
             $table->boolean('active')->default(true);
             $table->json('objectives')->nullable();
+            $table->boolean('suspended')->default(false);
             $table->timestamps();
         });
     }
