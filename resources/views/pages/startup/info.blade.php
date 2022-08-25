@@ -32,7 +32,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
             <!-- GRID COLUMN -->
             <div class="account-hub-content">
 
-                <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('startup.update', $startup->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <!-- SECTION HEADER -->
@@ -267,7 +267,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
                                     <div class="form-item">
                                         <!-- FORM INPUT -->
                                         <div class="form-input small full">
-                                            <textarea id="profile-description" name="bio" placeholder="Write a little description about you...">{{ $startup->about }}</textarea>
+                                            <textarea id="profile-description" name="about" placeholder="Write a little description about you...">{{ $startup->about }}</textarea>
                                         </div>
                                         <!-- /FORM INPUT -->
                                     </div>
@@ -327,7 +327,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
                                         <div class="form-select">
                                             {{-- <label for="profile-city">Institute or College</label> --}}
                                             {{-- <input type="text" list="colleges-list"> --}}
-                                            <select id="college" name="college">
+                                            <select id="funded" name="funded">
                                                 {{-- <datalist id="colleges-list"> --}}
                                                 <option value="" disabled selected>Is Startup Funded</option>
                                                 <option value="1" {{ $startup->funded ? 'selected' : '' }}>Yes,
@@ -831,8 +831,8 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
 
 
 
-    {{-- @popup('avatarupload')
-    @popup('coverupload') --}}
+    {{-- @popup('avatarupload') --}}
+    @popup('startupcoverupload')
 @endsection
 
 @push('styles')
@@ -949,7 +949,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
         var allgood = [true, true]
 
         $(document).ready(function() {
-            $('#background').selectize({
+            $('#funded').selectize({
                 placeholder: "Select Academic Background",
             });
             $('#country').selectize({
@@ -1094,6 +1094,15 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
                 $('#submitbutton').prop('disabled', true);
             } else {
                 $('#submitbutton').prop('disabled', false);
+            }
+        }
+
+        function updateCheck(el) {
+            var input = $(el).find('input');
+            if (input.val() == '1') {
+                input.val('0');
+            } else {
+                input.val('1');
             }
         }
     </script>
