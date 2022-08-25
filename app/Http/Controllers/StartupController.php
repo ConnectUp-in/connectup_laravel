@@ -153,4 +153,23 @@ class StartupController extends Controller
             ->with('success', 'Startup updated successfully');
 
     }
+
+    public function updateCover($id, Request $request)
+    {
+        $startup = Startup::find($id);
+        if (!$startup) {
+            return view('pages.startup.404');
+        }
+        if ($startup->founder != Auth::user()->id) {
+            return redirect()->back()->with('error', 'You are not authorized to update this startup');
+        }
+        page('startup/manage/{id}');
+        if ($request->cover) {
+            $startup->cover = saveBase64($request->cover);
+        }
+        $startup->save();
+        return redirect()
+            ->back()
+            ->with('success', 'Startup updated successfully');
+    }
 }
