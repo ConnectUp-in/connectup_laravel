@@ -160,7 +160,8 @@ $page['description'] = $startup->about;
 
                     @if (Auth::check() && Auth::user()->id == $startup->founder->id)
                         <!-- PROFILE HEADER INFO ACTION -->
-                        <a class="profile-header-info-action button" href="{{ route('startup.manage') }}">
+                        <a class="profile-header-info-action button"
+                            href="{{ route('startup.update.info', $startup->id) }}">
                             <!-- ICON MORE DOTS -->
                             <svg class="icon-icon">
                                 <use xlink:href="#svg-manage"></use>
@@ -313,33 +314,6 @@ $page['description'] = $startup->about;
 
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
-                            </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">
-                                    Widget Settings
-                                </p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /WIDGET BOX SETTINGS -->
 
                     <!-- WIDGET BOX TITLE -->
                     <p class="widget-box-title">Group Info</p>
@@ -550,33 +524,6 @@ $page['description'] = $startup->about;
                 @widget('socials', ['socials' => $startup->socials])
                 <!-- WIDGET BOX -->
                 <div class="widget-box">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
-                            </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">
-                                    Widget Settings
-                                </p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /WIDGET BOX SETTINGS -->
 
                     <!-- WIDGET BOX TITLE -->
                     <p class="widget-box-title">Founder Info</p>
@@ -679,7 +626,7 @@ $page['description'] = $startup->about;
     </div>
     <!-- /CONTENT GRID -->
 
-    <!-- POPUP VIDEO -->
+    {{-- <!-- POPUP VIDEO -->
     <div class="popup-video">
         <!-- POPUP CLOSE BUTTON -->
         <div class="popup-close-button popup-video-trigger">
@@ -3351,5 +3298,5 @@ $page['description'] = $startup->about;
         </div>
         <!-- /POST COMMENT LIST -->
     </div>
-    <!-- /POPUP EVENT -->
+    <!-- /POPUP EVENT --> --}}
 @endsection
