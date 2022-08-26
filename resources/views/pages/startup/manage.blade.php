@@ -1139,7 +1139,7 @@ $page['title'] = 'Manage Startups | ConnectUp';
                 if (username != '') {
                     $('#submitbutton').prop('disabled', true);
 
-                    $.get('{{ route('isavailable.username') }}', {
+                    $.get('{{ route('isavailable.startupusername') }}', {
                         username: username
                     }, function(data) {
                         if (data.success) {

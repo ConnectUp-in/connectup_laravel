@@ -1003,7 +1003,7 @@ $page['title'] = 'Info | ' . $startup->name . ' | ConnectUp';
                     if (username != prevusername) {
                         $('#submitbutton').prop('disabled', true);
 
-                        $.get('{{ route('isavailable.username') }}', {
+                        $.get('{{ route('isavailable.startupusername') }}', {
                             username: username
                         }, function(data) {
                             if (data.success) {

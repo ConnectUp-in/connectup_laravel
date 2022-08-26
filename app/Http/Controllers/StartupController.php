@@ -175,4 +175,14 @@ class StartupController extends Controller
             ->back()
             ->with('success', 'Startup updated successfully');
     }
+
+    public function isavailableusername(Request $request)
+    {
+        $startup = Startup::where('username', $request->username)->first();
+        if ($startup) {
+            return $this->sendResponse(false, 'Username is not available');
+        } else {
+            return $this->sendResponse(true, 'Username is available');
+        }
+    }
 }
