@@ -203,7 +203,7 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
                                         <div class="hexagon-image-84-92 preview-logo"
-                                            data-src="/assets/defaults/startuplogo.jpg"></div>
+                                            data-src="/assets/defaults/startuplogo.png"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
