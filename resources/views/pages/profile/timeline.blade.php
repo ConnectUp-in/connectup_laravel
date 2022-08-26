@@ -514,22 +514,16 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /INFORMATION LINE -->
                             @endif
 
-                            @if (isset($user->interests))
+                            @if (isset($user->college))
                                 <!-- INFORMATION LINE -->
                                 <div class="information-line">
                                     <!-- INFORMATION LINE TITLE -->
-                                    <p class="information-line-title">Interests</p>
+                                    <p class="information-line-title">College</p>
                                     <!-- /INFORMATION LINE TITLE -->
 
                                     <!-- INFORMATION LINE TEXT -->
-                                    <p class="information-line-text">
-                                        @foreach ($user->interests as $i)
-                                            {{ $i['name'] }}
-                                            @if (!$loop->last)
-                                                ,
-                                            @endif
-                                        @endforeach
-                                    </p>
+                                    <p class="information-line-text">{{ $user->college->name }}</p>
+
                                     <!-- /INFORMATION LINE TEXT -->
                                 </div>
                                 <!-- /INFORMATION LINE -->
@@ -5387,7 +5381,31 @@ $page['description'] = $user->bio ?? null;
 
 
                 @widget('startups')
-                @widget('refferal')
+                {{-- @widget('refferal') --}}
+
+                <!-- WIDGET BOX -->
+                <div class="widget-box">
+
+                    <!-- WIDGET BOX TITLE -->
+                    <p class="widget-box-title">Interests</p>
+                    <!-- /WIDGET BOX TITLE -->
+
+                    <!-- WIDGET BOX CONTENT -->
+                    <div class="widget-box-content">
+
+                        <p class="information-line-text">
+                            @if ($user->interests)
+                                @forelse ($user->interests as $interest)
+                                    {{ $interest['name'] }}
+
+                                    @if (!$loop->last)
+                                        ,
+                                    @endif
+                                @empty
+                                @endforelse
+                            @endif
+                    </div>
+                </div>
 
                 {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
