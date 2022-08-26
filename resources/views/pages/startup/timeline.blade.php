@@ -359,7 +359,8 @@ $page['description'] = $startup->about;
                                 $infos = [
                                     'Founded' => ['type' => 'date', 'data' => $startup->founded_at],
                                     'Website' => ['type' => 'url', 'data' => $startup->website],
-                                    'Type' => ['type' => 'text', 'data' => $startup->funded ? 'Funded' : 'Bootstrap'],
+                                    'Stage' => ['type' => 'text', 'data' => $startup->stage->name],
+                                    'Category' => ['type' => 'text', 'data' => $startup->category->name],
                                     'Email' => ['type' => 'email', 'data' => $startup->contact_email],
                                 ];
                             @endphp
@@ -644,11 +645,37 @@ $page['description'] = $startup->about;
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
                 <!-- /WIDGET BOX -->
+                <!-- WIDGET BOX -->
+                <div class="widget-box">
 
+                    <!-- WIDGET BOX TITLE -->
+                    <p class="widget-box-title">Interests</p>
+                    <!-- /WIDGET BOX TITLE -->
+
+                    <!-- WIDGET BOX CONTENT -->
+                    <div class="widget-box-content">
+
+                        <p class="information-line-text">
+                            @if ($startup->interests)
+                                @forelse ($startup->interests as $interest)
+                                    {{ $interest['name'] }}
+
+                                    @if (!$loop->last)
+                                        ,
+                                    @endif
+                                @empty
+                                @endforelse
+                            @endif
+                    </div>
+                </div>
+                <!-- /WIDGET BOX CONTENT -->
             </div>
-            <!-- /GRID COLUMN -->
+            <!-- /WIDGET BOX -->
+
         </div>
-        <!-- /GRID -->
+        <!-- /GRID COLUMN -->
+    </div>
+    <!-- /GRID -->
     </div>
     <!-- /CONTENT GRID -->
 

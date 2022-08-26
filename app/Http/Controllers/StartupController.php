@@ -35,6 +35,9 @@ class StartupController extends Controller
             ->select('id', 'name', 'username', 'profile_photo_path')
             ->first();
 
+        $startup->interests = Interest::whereIn('id', $startup->interests)
+            ->select('id', 'name')
+            ->get();
         $data = [
             'startup' => $startup,
         ];
