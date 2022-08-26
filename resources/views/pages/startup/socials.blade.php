@@ -108,7 +108,7 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
                                             <select id="stage" name="stage" class="single-select">
                                                 @foreach ($stages as $stage)
                                                     <option value="{{ $stage->id }}"
-                                                        {{ $startup->stage == $stage->id ? 'selected' : '' }}>
+                                                        {{ $startup->stage->id == $stage->id ? 'selected' : '' }}>
                                                         {{ $stage->name }}
                                                     </option>
                                                 @endforeach
@@ -129,7 +129,7 @@ $page['title'] = 'Edit Socials | ' . $startup->name . ' | ConnectUp';
                                             <select id="category" name="category" class="single-select">
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}"
-                                                        {{ $startup->category == $category->id ? 'selected' : '' }}>
+                                                        {{ $startup->category->id == $category->id ? 'selected' : '' }}>
                                                         {{ $category->name }}
                                                     </option>
                                                 @endforeach

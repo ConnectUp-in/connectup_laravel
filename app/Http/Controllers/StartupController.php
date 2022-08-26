@@ -64,6 +64,8 @@ class StartupController extends Controller
     public function create(Request $request)
     {
         try {
+
+            $startup = Startup::create($request->all());
             if ($request->socials) {
                 $socials = json_decode($request->socials);
             } else {
@@ -71,19 +73,14 @@ class StartupController extends Controller
             }
             if ($request->cover) {
                 $cover = saveBase64($request->cover);
-            } else {
-                $cover = '/storage/uploads/default.png';
+                $startup->cover = $cover;
             }
 
             if ($request->logo) {
                 $logo = saveBase64($request->logo);
-            } else {
-                $logo = '/storage/uploads/default.png';
+                $startup->logo = $logo;
             }
 
-            $startup = Startup::create($request->all());
-            $startup->logo = $logo;
-            $startup->cover = $cover;
             $startup->socials = $socials;
             $startup->founder = Auth::user()->id;
             $startup->save();

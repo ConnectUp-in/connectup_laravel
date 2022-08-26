@@ -518,7 +518,9 @@ $page['title'] = 'Manage Startups | ConnectUp';
                                                                 id="{{ $field['identifier'] }}"
                                                                 name="{{ $field['identifier'] }}"
                                                                 value="{{ $field['value'] ?? '' }}"
-                                                                placeholder="{{ $field['placeholder'] ?? '' }}" />
+                                                                placeholder="{{ $field['placeholder'] ?? '' }}"
+                                                                {{ $field['required'] ?? false ? 'required' : '' }}>
+                                                            />
                                                         @endif
                                                     </div>
                                                     <!-- /FORM INPUT -->
