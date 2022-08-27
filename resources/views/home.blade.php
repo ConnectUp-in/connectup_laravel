@@ -120,7 +120,7 @@
     <!-- /BANNER WRAP -->
 
 
-    <!-- ARCHITECTURE ITEM LIST -->
+    {{-- <!-- ARCHITECTURE ITEM LIST -->
     <div class="architecture-item-list">
         <!-- ARCHITECTURE ITEM -->
         <div class="architecture-item">
@@ -188,7 +188,45 @@
         </div>
         <!-- /ARCHITECTURE ITEM -->
     </div>
-    <!-- /ARCHITECTURE ITEM LIST -->
+    <!-- /ARCHITECTURE ITEM LIST --> --}}
+
+
+
+    <!-- SECTION WRAP -->
+    <div class="section-wrap dark" id="about">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">What we are</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">About ConnectUp</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">ConnectUp is a Centralized Startup Networking Platform that brings together
+                    startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss
+                    opportunities for collaboration. .
+                    We are building the largest network of incubators, mentors, investors, and startups</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- SECTION IMAGE -->
+            <img class="section-image" src="/assets/template-landing/img/section/01.png" alt="section-image-01">
+            <!-- /SECTION IMAGE -->
+
+            <!-- SECTION BUTTON -->
+            <a class="section-button button tertiary" href="#' target="_blank">Browse all in the
+                Live Demo!</a>
+            <!-- /SECTION BUTTON -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
 
 
     <!-- SECTION WRAP -->
@@ -295,41 +333,6 @@
     </div>
     <!-- /SECTION WRAP -->
 
-    <!-- SECTION WRAP -->
-    <div class="section-wrap" id="about">
-        <!-- SECTION -->
-        <section class="section grid-limit">
-            <!-- SECTION INFO -->
-            <div class="section-info">
-                <!-- SECTION PRETITLE -->
-                <p class="section-pretitle">What we are</p>
-                <!-- /SECTION PRETITLE -->
-
-                <!-- SECTION TITLE -->
-                <h2 class="section-title">About ConnectUp</h2>
-                <!-- /SECTION TITLE -->
-
-                <!-- SECTION TEXT -->
-                <p class="section-text">We carefully crafted lots of widgets for you to have an incredible amount of
-                    customization options! Everything you may need like different post updates, badge boxes, about
-                    boxes, calendars, product boxes, media, quests, infographics, streams, discussions, blog posts and
-                    much more!</p>
-                <!-- /SECTION TEXT -->
-            </div>
-            <!-- /SECTION INFO -->
-
-            <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/template-landing/img/section/01.png" alt="section-image-01">
-            <!-- /SECTION IMAGE -->
-
-            <!-- SECTION BUTTON -->
-            <a class="section-button button tertiary" href="#' target="_blank">Browse all in the
-                Live Demo!</a>
-            <!-- /SECTION BUTTON -->
-        </section>
-        <!-- /SECTION -->
-    </div>
-    <!-- /SECTION WRAP -->
 
     <!-- PROMO SECTION WRAP -->
     <div class="promo-section-wrap">
@@ -355,8 +358,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/template-landing/img/section/02.png"
-                alt="section-image-02">
+            <img class="promo-section-image" src="/assets/template-landing/img/section/02.png" alt="section-image-02">
             <!-- /PROMO SECTION IMAGE -->
         </section>
         <!-- /PROMO SECTION -->
@@ -390,8 +392,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/template-landing/img/section/03.png"
-                alt="section-image-03">
+            <img class="promo-section-image" src="/assets/template-landing/img/section/03.png" alt="section-image-03">
             <!-- /PROMO SECTION IMAGE -->
         </section>
         <!-- /PROMO SECTION -->
@@ -420,8 +421,7 @@
             <!-- /PROMO SECTION INFO -->
 
             <!-- PROMO SECTION IMAGE -->
-            <img class="promo-section-image" src="/assets/template-landing/img/section/04.png"
-                alt="section-image-04">
+            <img class="promo-section-image" src="/assets/template-landing/img/section/04.png" alt="section-image-04">
             <!-- /PROMO SECTION IMAGE -->
         </section>
         <!-- /PROMO SECTION -->

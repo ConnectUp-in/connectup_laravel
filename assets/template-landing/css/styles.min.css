@@ -463,9 +463,12 @@ figure > img {
 .section {
     padding: 136px 0 74px;
 }
+.section-wrap.dark {
+    background-color: #161b28;
+}
 .section .section-info {
     width: 584px;
-    margin: 0 auto 136px;
+    margin: 0 auto 50px;
     text-align: center;
 }
 .section .section-pretitle {
@@ -479,6 +482,9 @@ figure > img {
     font-size: 2.875rem;
     font-weight: 700;
     line-height: 0.9565217391em;
+}
+.dark .section .section-title {
+    color: #fff;
 }
 .section .section-text {
     margin-top: 40px;
