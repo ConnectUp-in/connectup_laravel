@@ -122,7 +122,7 @@
             <!-- ACTION LIST -->
             <div class="action-list dark">
                 <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="marketplace-cart.html">
+                <a class="action-list-item" href="#">
                     <!-- ACTION LIST ITEM ICON -->
                     <svg class="action-list-item-icon icon-shopping-bag">
                         <use xlink:href="#svg-shopping-bag"></use>
@@ -132,7 +132,7 @@
                 <!-- /ACTION LIST ITEM -->
 
                 <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="hub-profile-requests.html">
+                <a class="action-list-item" href="#">
                     <!-- ACTION LIST ITEM ICON -->
                     <svg class="action-list-item-icon icon-friend">
                         <use xlink:href="#svg-friend"></use>
@@ -142,7 +142,7 @@
                 <!-- /ACTION LIST ITEM -->
 
                 <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="hub-profile-messages.html">
+                <a class="action-list-item" href="#">
                     <!-- ACTION LIST ITEM ICON -->
                     <svg class="action-list-item-icon icon-messages">
                         <use xlink:href="#svg-messages"></use>
@@ -152,7 +152,7 @@
                 <!-- /ACTION LIST ITEM -->
 
                 <!-- ACTION LIST ITEM -->
-                <a class="action-list-item unread" href="hub-profile-notifications.html">
+                <a class="action-list-item unread" href="#">
                     <!-- ACTION LIST ITEM ICON -->
                     <svg class="action-list-item-icon icon-notification">
                         <use xlink:href="#svg-notification"></use>
@@ -164,7 +164,7 @@
             <!-- /ACTION LIST -->
 
             <!-- ACTION ITEM WRAP -->
-            <a class="action-item-wrap" href="hub-profile-info.html">
+            <a class="action-item-wrap" href="#">
                 <!-- ACTION ITEM -->
                 <div class="action-item dark">
                     <!-- ACTION ITEM ICON -->
@@ -248,7 +248,7 @@
                         <!-- USER STATUS -->
                         <div class="user-status">
                             <!-- USER STATUS AVATAR -->
-                            <a class="user-status-avatar" href="profile-timeline.html">
+                            <a class="user-status-avatar" href="#">
                                 <!-- USER AVATAR -->
                                 <div class="user-avatar small no-outline">
                                     <!-- USER AVATAR CONTENT -->
@@ -305,7 +305,7 @@
 
                             <!-- USER STATUS TITLE -->
                             <p class="user-status-title medium"><a class="bold"
-                                    href="profile-timeline.html">Marina Valentine</a></p>
+                                    href="#">Marina Valentine</a></p>
                             <!-- /USER STATUS TITLE -->
 
                             <!-- USER STATUS TEXT -->
@@ -323,23 +323,23 @@
                         <!-- TAG LIST -->
                         <div class="tag-list">
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Cover</a>
+                            <a class="tag-item secondary" href="#">Cover</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Preview</a>
+                            <a class="tag-item secondary" href="#">Preview</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Art</a>
+                            <a class="tag-item secondary" href="#">Art</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Machine</a>
+                            <a class="tag-item secondary" href="#">Machine</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Wasteland</a>
+                            <a class="tag-item secondary" href="#">Wasteland</a>
                             <!-- /TAG ITEM -->
                         </div>
                         <!-- /TAG LIST -->
@@ -607,7 +607,7 @@
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -660,7 +660,7 @@
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text"><a class="post-comment-text-author"
-                                href="profile-timeline.html">Neko Bebop</a>It's always a pleasure to do this streams
+                                href="#">Neko Bebop</a>It's always a pleasure to do this streams
                             with you! If we have at least half the fun than last time it will be an incredible success!
                         </p>
                         <!-- /POST COMMENT TEXT -->
@@ -870,7 +870,7 @@
                     <!-- POST COMMENT -->
                     <div class="post-comment unread reply-2">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -923,7 +923,7 @@
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text"><a class="post-comment-text-author"
-                                href="profile-timeline.html">Nick Grissom</a>I wouldn't miss it for anything!! Love
+                                href="#">Nick Grissom</a>I wouldn't miss it for anything!! Love
                             both streams!</p>
                         <!-- /POST COMMENT TEXT -->
 
@@ -1101,7 +1101,7 @@
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1154,8 +1154,8 @@
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text"><a class="post-comment-text-author"
-                                href="profile-timeline.html">Destroy Dex</a>YEAHHH!! <a
-                                href="profile-timeline.html">@MarinaValentine</a> I really enjoyed your last stream
+                                href="#">Destroy Dex</a>YEAHHH!! <a
+                                href="#">@MarinaValentine</a> I really enjoyed your last stream
                             and it also was really funny! Can't wait!</p>
                         <!-- /POST COMMENT TEXT -->
 
@@ -1298,7 +1298,7 @@
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1351,7 +1351,7 @@
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text"><a class="post-comment-text-author"
-                                href="profile-timeline.html">Sarah Diamond</a>That sounds awesome Marina! And also
+                                href="#">Sarah Diamond</a>That sounds awesome Marina! And also
                             thanks a lot for the art sneak peek! I went to the GameCon last week and had a great time
                             playing the game's open demo.</p>
                         <!-- /POST COMMENT TEXT -->

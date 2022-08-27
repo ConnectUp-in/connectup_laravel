@@ -672,7 +672,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -728,7 +728,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Neko
+                <p class="user-status-title medium"><a class="bold" href="#">Neko
                         Bebop</a> uploaded a <span class="bold">video</span></p>
                 <!-- /USER STATUS TITLE -->
 
@@ -757,19 +757,19 @@
             <!-- TAG LIST -->
             <div class="tag-list">
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">Stream</a>
+                <a class="tag-item secondary" href="#">Stream</a>
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">StrikerGO</a>
+                <a class="tag-item secondary" href="#">StrikerGO</a>
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">Outlaws</a>
+                <a class="tag-item secondary" href="#">Outlaws</a>
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
+                <a class="tag-item secondary" href="#">Gaming</a>
                 <!-- /TAG ITEM -->
             </div>
             <!-- /TAG LIST -->
@@ -1219,7 +1219,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -1275,7 +1275,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Sarah
+                <p class="user-status-title medium"><a class="bold" href="#">Sarah
                         Diamond</a> created a <span class="bold">poll</span></p>
                 <!-- /USER STATUS TITLE -->
 
@@ -1810,7 +1810,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -1866,7 +1866,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Destroy Dex</a>
+                <p class="user-status-title medium"><a class="bold" href="#">Destroy Dex</a>
                     uploaded <span class="bold">26 new
                         photos</span></p>
                 <!-- /USER STATUS TITLE -->
@@ -2093,7 +2093,7 @@
                     <!-- PICTURE COLLAGE ITEM -->
                     <div class="picture-collage-item">
                         <!-- PICTURE COLLAGE ITEM OVERLAY -->
-                        <a class="picture-collage-item-overlay" href="profile-photos.html">
+                        <a class="picture-collage-item-overlay" href="#">
                             <!-- PICTURE COLLAGE ITEM OVERLAY TEXT -->
                             <p class="picture-collage-item-overlay-text">+22</p>
                             <!-- /PICTURE COLLAGE ITEM OVERLAY TEXT -->
@@ -2155,15 +2155,15 @@
             <!-- TAG LIST -->
             <div class="tag-list">
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">Photos</a>
+                <a class="tag-item secondary" href="#">Photos</a>
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">StreamCon</a>
+                <a class="tag-item secondary" href="#">StreamCon</a>
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="newsfeed.html">StarGirl</a>
+                <a class="tag-item secondary" href="#">StarGirl</a>
                 <!-- /TAG ITEM -->
             </div>
             <!-- /TAG LIST -->
@@ -2538,7 +2538,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -2594,7 +2594,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Bearded Wonder</a>
+                <p class="user-status-title medium"><a class="bold" href="#">Bearded Wonder</a>
                 </p>
                 <!-- /USER STATUS TITLE -->
 
@@ -3052,7 +3052,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -3108,7 +3108,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Nick
+                <p class="user-status-title medium"><a class="bold" href="#">Nick
                         Grissom</a>
                     shared a <span class="bold">post</span></p>
                 <!-- /USER STATUS TITLE -->
@@ -3133,7 +3133,7 @@
                         <!-- USER STATUS -->
                         <div class="user-status">
                             <!-- USER STATUS AVATAR -->
-                            <a class="user-status-avatar" href="profile-timeline.html">
+                            <a class="user-status-avatar" href="#">
                                 <!-- USER AVATAR -->
                                 <div class="user-avatar small no-outline">
                                     <!-- USER AVATAR CONTENT -->
@@ -3191,7 +3191,7 @@
 
                             <!-- USER STATUS TITLE -->
                             <p class="user-status-title medium"><a class="bold"
-                                    href="profile-timeline.html">Destroy Dex</a></p>
+                                    href="#">Destroy Dex</a></p>
                             <!-- /USER STATUS TITLE -->
 
                             <!-- USER STATUS TEXT -->
@@ -3684,7 +3684,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -3740,12 +3740,12 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <div class="user-status-title medium"><a class="bold" href="profile-timeline.html">Neko
-                        Bebop</a> replied to the discussion <a class="bold" href="forums-discussion.html">In your
+                <div class="user-status-title medium"><a class="bold" href="#">Neko
+                        Bebop</a> replied to the discussion <a class="bold" href="#">In your
                         opinion, who has the
                         best Cosplay?</a> in the forum
                     <!-- USER AVATAR -->
-                    <a class="user-avatar micro no-stats" href="group-timeline.html">
+                    <a class="user-avatar micro no-stats" href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -3763,7 +3763,7 @@
                         <!-- /USER AVATAR CONTENT -->
                     </a>
                     <!-- /USER AVATAR -->
-                    <a class="bold" href="group-timeline.html">Cosplayers of the World</a>
+                    <a class="bold" href="#">Cosplayers of the World</a>
                 </div>
                 <!-- /USER STATUS TITLE -->
 
@@ -4233,7 +4233,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -4289,7 +4289,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Nick
+                <p class="user-status-title medium"><a class="bold" href="#">Nick
                         Grissom</a></p>
                 <!-- /USER STATUS TITLE -->
 
@@ -4759,7 +4759,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-outline">
                         <!-- USER AVATAR CONTENT -->
@@ -4815,7 +4815,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Sarah
+                <p class="user-status-title medium"><a class="bold" href="#">Sarah
                         Diamond</a> created a <span class="bold">poll</span></p>
                 <!-- /USER STATUS TITLE -->
 

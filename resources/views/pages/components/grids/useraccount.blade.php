@@ -28,15 +28,15 @@ $sidebaritems = [
     //     'links' => [
     //         [
     //             'title' => 'Account Info',
-    //             'url' => 'hub-account-settings.html',
+    //             'url' => '#',
     //         ],
     //         [
     //             'title' => 'Change Password',
-    //             'url' => 'hub-account-notifications.html',
+    //             'url' => '#',
     //         ],
     //         [
     //             'title' => 'General Settings',
-    //             'url' => 'hub-account-privacy.html',
+    //             'url' => '#',
     //         ],
     //     ],
     // ],
@@ -105,23 +105,23 @@ $current_url = Request::url();
                 <!-- SIDEBAR MENU BODY -->
                 <div class="sidebar-menu-body accordion-content-linked accordion-open">
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link active" href="hub-profile-info.html">Profile Info</a>
+                    <a class="sidebar-menu-link active" href="#">Profile Info</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-profile-social.html">Social &amp; Stream</a>
+                    <a class="sidebar-menu-link" href="#">Social &amp; Stream</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-profile-notifications.html">Notifications</a>
+                    <a class="sidebar-menu-link" href="#">Notifications</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-profile-messages.html">Messages</a>
+                    <a class="sidebar-menu-link" href="#">Messages</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-profile-requests.html">Friend Requests</a>
+                    <a class="sidebar-menu-link" href="#">Friend Requests</a>
                     <!-- /SIDEBAR MENU LINK -->
                 </div>
                 <!-- /SIDEBAR MENU BODY -->
@@ -168,15 +168,15 @@ $current_url = Request::url();
                 <!-- SIDEBAR MENU BODY -->
                 <div class="sidebar-menu-body accordion-content-linked">
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-account-info.html">Account Info</a>
+                    <a class="sidebar-menu-link" href="#">Account Info</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-account-password.html">Change Password</a>
+                    <a class="sidebar-menu-link" href="#">Change Password</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-account-settings.html">General Settings</a>
+                    <a class="sidebar-menu-link" href="#">General Settings</a>
                     <!-- /SIDEBAR MENU LINK -->
                 </div>
                 <!-- /SIDEBAR MENU BODY -->
@@ -223,11 +223,11 @@ $current_url = Request::url();
                 <!-- SIDEBAR MENU BODY -->
                 <div class="sidebar-menu-body accordion-content-linked">
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-group-management.html">Manage Groups</a>
+                    <a class="sidebar-menu-link" href="#">Manage Groups</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-group-invitations.html">Invitations</a>
+                    <a class="sidebar-menu-link" href="#">Invitations</a>
                     <!-- /SIDEBAR MENU LINK -->
                 </div>
                 <!-- /SIDEBAR MENU BODY -->
@@ -274,19 +274,19 @@ $current_url = Request::url();
                 <!-- SIDEBAR MENU BODY -->
                 <div class="sidebar-menu-body accordion-content-linked">
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-store-account.html">My Account</a>
+                    <a class="sidebar-menu-link" href="#">My Account</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-store-statement.html">Sales Statement</a>
+                    <a class="sidebar-menu-link" href="#">Sales Statement</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-store-items.html">Manage Items</a>
+                    <a class="sidebar-menu-link" href="#">Manage Items</a>
                     <!-- /SIDEBAR MENU LINK -->
 
                     <!-- SIDEBAR MENU LINK -->
-                    <a class="sidebar-menu-link" href="hub-store-downloads.html">Downloads</a>
+                    <a class="sidebar-menu-link" href="#">Downloads</a>
                     <!-- /SIDEBAR MENU LINK -->
                 </div>
                 <!-- /SIDEBAR MENU BODY -->

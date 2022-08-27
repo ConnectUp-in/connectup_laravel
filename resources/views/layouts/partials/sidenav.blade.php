@@ -98,7 +98,7 @@ $current_url = Request::url();
     <!-- USER SHORT DESCRIPTION -->
     <div class="user-short-description">
         <!-- USER SHORT DESCRIPTION AVATAR -->
-        <a class="user-short-description-avatar user-avatar medium" href="profile-timeline.html">
+        <a class="user-short-description-avatar user-avatar medium" href="#">
             <!-- USER AVATAR BORDER -->
             <div class="user-avatar-border">
                 <!-- HEXAGON -->
@@ -158,7 +158,7 @@ $current_url = Request::url();
         <!-- /USER SHORT DESCRIPTION AVATAR -->
 
         <!-- USER SHORT DESCRIPTION TITLE -->
-        <p class="user-short-description-title"><a href="profile-timeline.html">Harsh Valentine</a></p>
+        <p class="user-short-description-title"><a href="#">Harsh Valentine</a></p>
         <!-- /USER SHORT DESCRIPTION TITLE -->
 
         <!-- USER SHORT DESCRIPTION TEXT -->
@@ -194,7 +194,7 @@ $current_url = Request::url();
         <!-- /BADGE ITEM -->
 
         <!-- BADGE ITEM -->
-        <a class="badge-item" href="profile-badges.html">
+        <a class="badge-item" href="#">
             <img src="/assets/template/img/badge/blank-s.png" alt="badge-blank-s">
             <!-- BADGE ITEM TEXT -->
             <p class="badge-item-text">+9</p>
@@ -249,7 +249,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item active">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="newsfeed.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-newsfeed">
                     <use xlink:href="#svg-newsfeed"></use>
@@ -264,7 +264,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="overview.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-overview">
                     <use xlink:href="#svg-overview"></use>
@@ -279,7 +279,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="groups.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-group">
                     <use xlink:href="#svg-group"></use>
@@ -294,7 +294,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="members.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-members">
                     <use xlink:href="#svg-members"></use>
@@ -309,7 +309,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="badges.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-badges">
                     <use xlink:href="#svg-badges"></use>
@@ -324,7 +324,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="quests.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-quests">
                     <use xlink:href="#svg-quests"></use>
@@ -339,7 +339,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="streams.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-streams">
                     <use xlink:href="#svg-streams"></use>
@@ -354,7 +354,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="events.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-events">
                     <use xlink:href="#svg-events"></use>
@@ -369,7 +369,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="forums.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-forums">
                     <use xlink:href="#svg-forums"></use>
@@ -384,7 +384,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="marketplace.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-marketplace">
                     <use xlink:href="#svg-marketplace"></use>
@@ -475,7 +475,7 @@ $current_url = Request::url();
         {{-- <!-- MENU ITEM -->
         <li class="menu-item active">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="newsfeed.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-newsfeed">
                     <use xlink:href="#svg-newsfeed"></use>
@@ -490,7 +490,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="overview.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-overview">
                     <use xlink:href="#svg-overview"></use>
@@ -505,7 +505,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="groups.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-group">
                     <use xlink:href="#svg-group"></use>
@@ -520,7 +520,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="members.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-members">
                     <use xlink:href="#svg-members"></use>
@@ -535,7 +535,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="badges.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-badges">
                     <use xlink:href="#svg-badges"></use>
@@ -550,7 +550,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="quests.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-quests">
                     <use xlink:href="#svg-quests"></use>
@@ -565,7 +565,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="streams.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-streams">
                     <use xlink:href="#svg-streams"></use>
@@ -580,7 +580,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="events.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-events">
                     <use xlink:href="#svg-events"></use>
@@ -595,7 +595,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="forums.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-forums">
                     <use xlink:href="#svg-forums"></use>
@@ -610,7 +610,7 @@ $current_url = Request::url();
         <!-- MENU ITEM -->
         <li class="menu-item">
             <!-- MENU ITEM LINK -->
-            <a class="menu-item-link" href="marketplace.html">
+            <a class="menu-item-link" href="#">
                 <!-- MENU ITEM LINK ICON -->
                 <svg class="menu-item-link-icon icon-marketplace">
                     <use xlink:href="#svg-marketplace"></use>
@@ -644,23 +644,23 @@ $current_url = Request::url();
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-profile-info.html">Profile Info</a>
+    <a class="navigation-widget-section-link" href="#">Profile Info</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-profile-social.html">Social &amp; Stream</a>
+    <a class="navigation-widget-section-link" href="#">Social &amp; Stream</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-profile-notifications.html">Notifications</a>
+    <a class="navigation-widget-section-link" href="#">Notifications</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-profile-messages.html">Messages</a>
+    <a class="navigation-widget-section-link" href="#">Messages</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-profile-requests.html">Friend Requests</a>
+    <a class="navigation-widget-section-link" href="#">Friend Requests</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->
@@ -668,15 +668,15 @@ $current_url = Request::url();
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-account-info.html">Account Info</a>
+    <a class="navigation-widget-section-link" href="#">Account Info</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-account-password.html">Change Password</a>
+    <a class="navigation-widget-section-link" href="#">Change Password</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-account-settings.html">General Settings</a>
+    <a class="navigation-widget-section-link" href="#">General Settings</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->
@@ -684,11 +684,11 @@ $current_url = Request::url();
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-group-management.html">Manage Groups</a>
+    <a class="navigation-widget-section-link" href="#">Manage Groups</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-group-invitations.html">Invitations</a>
+    <a class="navigation-widget-section-link" href="#">Invitations</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->
@@ -696,20 +696,20 @@ $current_url = Request::url();
     <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-store-account.html">My Account <span
+    <a class="navigation-widget-section-link" href="#">My Account <span
             class="highlighted">$250,32</span></a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-store-statement.html">Sales Statement</a>
+    <a class="navigation-widget-section-link" href="#">Sales Statement</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-store-items.html">Manage Items</a>
+    <a class="navigation-widget-section-link" href="#">Manage Items</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION LINK -->
-    <a class="navigation-widget-section-link" href="hub-store-downloads.html">Downloads</a>
+    <a class="navigation-widget-section-link" href="#">Downloads</a>
     <!-- /NAVIGATION WIDGET SECTION LINK -->
 
     <!-- NAVIGATION WIDGET SECTION TITLE -->

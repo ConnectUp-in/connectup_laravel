@@ -322,7 +322,7 @@
 
             <!-- SECTION BUTTON -->
             <a class="section-button button tertiary"
-                href="https://odindesignthemes.com/template/profile-timeline.html" target="_blank">Browse all in the
+                href="#' target="_blank">Browse all in the
                 Live Demo!</a>
             <!-- /SECTION BUTTON -->
         </section>

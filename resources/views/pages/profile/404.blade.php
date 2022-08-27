@@ -21,7 +21,7 @@ $page['image'] = '/assets/defaults/404cover.png';
                 <!-- USER SHORT DESCRIPTION -->
                 <div class="user-short-description big">
                     <!-- USER SHORT DESCRIPTION AVATAR -->
-                    <a class="user-short-description-avatar user-avatar big" href="profile-timeline.html">
+                    <a class="user-short-description-avatar user-avatar big" href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -60,7 +60,7 @@ $page['image'] = '/assets/defaults/404cover.png';
 
                     <!-- USER SHORT DESCRIPTION AVATAR -->
                     <a class="user-short-description-avatar user-short-description-avatar-mobile user-avatar medium"
-                        href="profile-timeline.html">
+                        href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->

@@ -22,7 +22,7 @@ $page['title'] = '404 - Startup Not Found | ConnectUp ';
                 <!-- USER SHORT DESCRIPTION -->
                 <div class="user-short-description big">
                     <!-- USER SHORT DESCRIPTION AVATAR -->
-                    <a class="user-short-description-avatar user-avatar big no-stats" href="group-timeline.html">
+                    <a class="user-short-description-avatar user-avatar big no-stats" href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -66,7 +66,7 @@ $page['title'] = '404 - Startup Not Found | ConnectUp ';
 
                     <!-- USER SHORT DESCRIPTION TITLE -->
                     <p class="user-short-description-title">
-                        <a href="group-timeline.html">Error 404</a>
+                        <a href="#">Error 404</a>
                     </p>
                     <!-- /USER SHORT DESCRIPTION TITLE -->
 

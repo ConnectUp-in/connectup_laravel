@@ -48,7 +48,7 @@
 
                 @if ($loop->iteration == 9)
                     <!-- PICTURE ITEM -->
-                    <a class="picture-item" href="profile-photos.html">
+                    <a class="picture-item" href="#">
                         <!-- PICTURE -->
                         <figure class="picture round liquid">
                             <img src="/assets/template/img/cover/17.jpg" alt="avatar-17">

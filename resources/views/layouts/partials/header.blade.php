@@ -29,15 +29,15 @@ $sidebaritems = [
     //     'links' => [
     //         [
     //             'title' => 'Account Info',
-    //             'url' => 'hub-account-settings.html',
+    //             'url' => '#',
     //         ],
     //         [
     //             'title' => 'Change Password',
-    //             'url' => 'hub-account-notifications.html',
+    //             'url' => '#',
     //         ],
     //         [
     //             'title' => 'General Settings',
-    //             'url' => 'hub-account-privacy.html',
+    //             'url' => '#',
     //         ],
     //     ],
     // ],
@@ -235,7 +235,7 @@ $sidebaritems = [
             {{-- <!-- DROPDOWN BOX LIST -->
             <div class="dropdown-box-list small no-scroll">
                 <!-- DROPDOWN BOX LIST ITEM -->
-                <a class="dropdown-box-list-item" href="profile-timeline.html">
+                <a class="dropdown-box-list-item" href="#">
                     <!-- USER STATUS -->
                     <div class="user-status notification">
                         <!-- USER STATUS AVATAR -->
@@ -318,7 +318,7 @@ $sidebaritems = [
                 <!-- /DROPDOWN BOX LIST ITEM -->
 
                 <!-- DROPDOWN BOX LIST ITEM -->
-                <a class="dropdown-box-list-item" href="profile-timeline.html">
+                <a class="dropdown-box-list-item" href="#">
                     <!-- USER STATUS -->
                     <div class="user-status notification">
                         <!-- USER STATUS AVATAR -->
@@ -413,7 +413,7 @@ $sidebaritems = [
             <!-- DROPDOWN BOX LIST -->
             <div class="dropdown-box-list small no-scroll">
                 <!-- DROPDOWN BOX LIST ITEM -->
-                <a class="dropdown-box-list-item" href="group-timeline.html">
+                <a class="dropdown-box-list-item" href="#">
                     <!-- USER STATUS -->
                     <div class="user-status notification">
                         <!-- USER STATUS AVATAR -->
@@ -468,7 +468,7 @@ $sidebaritems = [
             <!-- DROPDOWN BOX LIST -->
             <div class="dropdown-box-list small no-scroll">
                 <!-- DROPDOWN BOX LIST ITEM -->
-                <a class="dropdown-box-list-item" href="marketplace-product.html">
+                <a class="dropdown-box-list-item" href="#">
                     <!-- USER STATUS -->
                     <div class="user-status no-padding-top">
                         <!-- USER STATUS AVATAR -->
@@ -564,7 +564,7 @@ $sidebaritems = [
                             <!-- CART ITEM PREVIEW -->
                             <div class="cart-item-preview">
                                 <!-- CART ITEM PREVIEW IMAGE -->
-                                <a class="cart-item-preview-image" href="marketplace-product.html">
+                                <a class="cart-item-preview-image" href="#">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
                                         <img src="/assets/template/img/marketplace/items/01.jpg" alt="item-01">
@@ -574,7 +574,7 @@ $sidebaritems = [
                                 <!-- /CART ITEM PREVIEW IMAGE -->
 
                                 <!-- CART ITEM PREVIEW TITLE -->
-                                <p class="cart-item-preview-title"><a href="marketplace-product.html">Twitch
+                                <p class="cart-item-preview-title"><a href="#">Twitch
                                         Stream UI Pack</a></p>
                                 <!-- /CART ITEM PREVIEW TITLE -->
 
@@ -606,7 +606,7 @@ $sidebaritems = [
                             <!-- CART ITEM PREVIEW -->
                             <div class="cart-item-preview">
                                 <!-- CART ITEM PREVIEW IMAGE -->
-                                <a class="cart-item-preview-image" href="marketplace-product.html">
+                                <a class="cart-item-preview-image" href="#">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
                                         <img src="/assets/template/img/marketplace/items/11.jpg" alt="item-11">
@@ -616,7 +616,7 @@ $sidebaritems = [
                                 <!-- /CART ITEM PREVIEW IMAGE -->
 
                                 <!-- CART ITEM PREVIEW TITLE -->
-                                <p class="cart-item-preview-title"><a href="marketplace-product.html">Gaming Coin
+                                <p class="cart-item-preview-title"><a href="#">Gaming Coin
                                         Badges Pack</a></p>
                                 <!-- /CART ITEM PREVIEW TITLE -->
 
@@ -647,7 +647,7 @@ $sidebaritems = [
                             <!-- CART ITEM PREVIEW -->
                             <div class="cart-item-preview">
                                 <!-- CART ITEM PREVIEW IMAGE -->
-                                <a class="cart-item-preview-image" href="marketplace-product.html">
+                                <a class="cart-item-preview-image" href="#">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
                                         <img src="/assets/template/img/marketplace/items/10.jpg" alt="item-10">
@@ -657,7 +657,7 @@ $sidebaritems = [
                                 <!-- /CART ITEM PREVIEW IMAGE -->
 
                                 <!-- CART ITEM PREVIEW TITLE -->
-                                <p class="cart-item-preview-title"><a href="marketplace-product.html">Twitch
+                                <p class="cart-item-preview-title"><a href="#">Twitch
                                         Stream UI Pack</a></p>
                                 <!-- /CART ITEM PREVIEW TITLE -->
 
@@ -689,7 +689,7 @@ $sidebaritems = [
                             <!-- CART ITEM PREVIEW -->
                             <div class="cart-item-preview">
                                 <!-- CART ITEM PREVIEW IMAGE -->
-                                <a class="cart-item-preview-image" href="marketplace-product.html">
+                                <a class="cart-item-preview-image" href="#">
                                     <!-- PICTURE -->
                                     <figure class="picture medium round liquid">
                                         <img src="/assets/template/img/marketplace/items/04.jpg" alt="item-04">
@@ -699,7 +699,7 @@ $sidebaritems = [
                                 <!-- /CART ITEM PREVIEW IMAGE -->
 
                                 <!-- CART ITEM PREVIEW TITLE -->
-                                <p class="cart-item-preview-title"><a href="marketplace-product.html">Generic
+                                <p class="cart-item-preview-title"><a href="#">Generic
                                         Joystick Pack</a></p>
                                 <!-- /CART ITEM PREVIEW TITLE -->
 
@@ -745,7 +745,7 @@ $sidebaritems = [
                         <!-- DROPDOWN BOX ACTION -->
                         <div class="dropdown-box-action">
                             <!-- BUTTON -->
-                            <a class="button secondary" href="marketplace-cart.html">Shopping Cart</a>
+                            <a class="button secondary" href="#">Shopping Cart</a>
                             <!-- /BUTTON -->
                         </div>
                         <!-- /DROPDOWN BOX ACTION -->
@@ -753,7 +753,7 @@ $sidebaritems = [
                         <!-- DROPDOWN BOX ACTION -->
                         <div class="dropdown-box-action">
                             <!-- BUTTON -->
-                            <a class="button primary" href="marketplace-checkout.html">Go to Checkout</a>
+                            <a class="button primary" href="#">Go to Checkout</a>
                             <!-- /BUTTON -->
                         </div>
                         <!-- /DROPDOWN BOX ACTION -->
@@ -805,7 +805,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status request">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -862,7 +862,7 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Ginny
+                                <p class="user-status-title"><a class="bold" href="#">Ginny
                                         Danvers</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -903,7 +903,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status request">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -960,7 +960,7 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Paul
+                                <p class="user-status-title"><a class="bold" href="#">Paul
                                         Lang</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -1001,7 +1001,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status request">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1058,7 +1058,7 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Cassie
+                                <p class="user-status-title"><a class="bold" href="#">Cassie
                                         May</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -1097,7 +1097,7 @@ $sidebaritems = [
                     <!-- /DROPDOWN BOX LIST -->
 
                     <!-- DROPDOWN BOX BUTTON -->
-                    <a class="dropdown-box-button secondary" href="hub-profile-requests.html">View all
+                    <a class="dropdown-box-button secondary" href="#">View all
                         Requests</a>
                     <!-- /DROPDOWN BOX BUTTON -->
                 </div>
@@ -1142,7 +1142,7 @@ $sidebaritems = [
                     <!-- DROPDOWN BOX LIST -->
                     <div class="dropdown-box-list medium" data-simplebar>
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1219,7 +1219,7 @@ $sidebaritems = [
                         <!-- /DROPDOWN BOX LIST ITEM -->
 
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1296,7 +1296,7 @@ $sidebaritems = [
                         <!-- /DROPDOWN BOX LIST ITEM -->
 
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1373,7 +1373,7 @@ $sidebaritems = [
                         <!-- /DROPDOWN BOX LIST ITEM -->
 
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1450,7 +1450,7 @@ $sidebaritems = [
                         <!-- /DROPDOWN BOX LIST ITEM -->
 
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1527,7 +1527,7 @@ $sidebaritems = [
                         <!-- /DROPDOWN BOX LIST ITEM -->
 
                         <!-- DROPDOWN BOX LIST ITEM -->
-                        <a class="dropdown-box-list-item" href="hub-profile-messages.html">
+                        <a class="dropdown-box-list-item" href="#">
                             <!-- USER STATUS -->
                             <div class="user-status">
                                 <!-- USER STATUS AVATAR -->
@@ -1606,7 +1606,7 @@ $sidebaritems = [
                     <!-- /DROPDOWN BOX LIST -->
 
                     <!-- DROPDOWN BOX BUTTON -->
-                    <a class="dropdown-box-button primary" href="hub-profile-messages.html">View all
+                    <a class="dropdown-box-button primary" href="#">View all
                         Messages</a>
                     <!-- /DROPDOWN BOX BUTTON -->
                 </div>
@@ -1655,7 +1655,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status notification">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1713,9 +1713,9 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Nick
+                                <p class="user-status-title"><a class="bold" href="#">Nick
                                         Grissom</a> posted a comment on your <a class="highlighted"
-                                        href="profile-timeline.html">status update</a></p>
+                                        href="#">status update</a></p>
                                 <!-- /USER STATUS TITLE -->
 
                                 <!-- USER STATUS TIMESTAMP -->
@@ -1741,7 +1741,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status notification">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1799,10 +1799,10 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah
+                                <p class="user-status-title"><a class="bold" href="#">Sarah
                                         Diamond</a> left a like <img class="reaction"
                                         src="/assets/template/img/reaction/like.png" alt="reaction-like">
-                                    reaction on your <a class="highlighted" href="profile-timeline.html">status
+                                    reaction on your <a class="highlighted" href="#">status
                                         update</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -1829,7 +1829,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status notification">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1887,9 +1887,9 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Destroy
+                                <p class="user-status-title"><a class="bold" href="#">Destroy
                                         Dex</a> posted a comment on your <a class="highlighted"
-                                        href="profile-photos.html">photo</a></p>
+                                        href="#">photo</a></p>
                                 <!-- /USER STATUS TITLE -->
 
                                 <!-- USER STATUS TIMESTAMP -->
@@ -1915,7 +1915,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status notification">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1973,10 +1973,10 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">The
+                                <p class="user-status-title"><a class="bold" href="#">The
                                         Green Goo</a> left a love <img class="reaction"
                                         src="/assets/template/img/reaction/love.png" alt="reaction-love">
-                                    reaction on your <a class="highlighted" href="profile-timeline.html">status
+                                    reaction on your <a class="highlighted" href="#">status
                                         update</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -2003,7 +2003,7 @@ $sidebaritems = [
                             <!-- USER STATUS -->
                             <div class="user-status notification">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -2061,9 +2061,9 @@ $sidebaritems = [
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Neko
+                                <p class="user-status-title"><a class="bold" href="#">Neko
                                         Bebop</a> posted a comment on your <a class="highlighted"
-                                        href="profile-timeline.html">status update</a></p>
+                                        href="#">status update</a></p>
                                 <!-- /USER STATUS TITLE -->
 
                                 <!-- USER STATUS TIMESTAMP -->
@@ -2087,7 +2087,7 @@ $sidebaritems = [
                     <!-- /DROPDOWN BOX LIST -->
 
                     <!-- DROPDOWN BOX BUTTON -->
-                    <a class="dropdown-box-button secondary" href="hub-profile-notifications.html">View all
+                    <a class="dropdown-box-button secondary" href="#">View all
                         Notifications</a>
                     <!-- /DROPDOWN BOX BUTTON -->
                 </div>

@@ -333,7 +333,7 @@ if ($requests['sort'] ?? '') {
                             <!-- /USER AVATAR -->
 
                             <!-- USER AVATAR -->
-                            <a class="user-avatar smaller no-stats" href="group-members.html">
+                            <a class="user-avatar smaller no-stats" href="#">
                                 <!-- USER AVATAR BORDER -->
                                 <div class="user-avatar-border">
                                     <!-- HEXAGON -->

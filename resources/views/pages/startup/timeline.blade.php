@@ -23,7 +23,7 @@ $page['description'] = $startup->about;
                 <!-- USER SHORT DESCRIPTION -->
                 <div class="user-short-description big">
                     <!-- USER SHORT DESCRIPTION AVATAR -->
-                    <a class="user-short-description-avatar user-avatar big no-stats" href="group-timeline.html">
+                    <a class="user-short-description-avatar user-avatar big no-stats" href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -44,7 +44,7 @@ $page['description'] = $startup->about;
 
                     <!-- USER SHORT DESCRIPTION AVATAR -->
                     <a class="user-short-description-avatar user-short-description-avatar-mobile user-avatar medium no-stats"
-                        href="group-timeline.html">
+                        href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -65,7 +65,7 @@ $page['description'] = $startup->about;
 
                     <!-- USER SHORT DESCRIPTION TITLE -->
                     <p class="user-short-description-title">
-                        <a href="group-timeline.html">{{ $startup->name }}</a>
+                        <a href="#">{{ $startup->name }}</a>
                     </p>
                     <!-- /USER SHORT DESCRIPTION TITLE -->
 
@@ -182,7 +182,7 @@ $page['description'] = $startup->about;
             <!-- SECTION MENU -->
             <div id="section-navigation-medium-slider" class="section-menu secondary">
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item active" href="group-timeline.html">
+                <a class="section-menu-item active" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-timeline">
                         <use xlink:href="#svg-timeline"></use>
@@ -196,7 +196,7 @@ $page['description'] = $startup->about;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="group-info.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-info">
                         <use xlink:href="#svg-info"></use>
@@ -210,7 +210,7 @@ $page['description'] = $startup->about;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="group-members.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-members">
                         <use xlink:href="#svg-members"></use>
@@ -266,7 +266,7 @@ $page['description'] = $startup->about;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="group-events.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-events">
                         <use xlink:href="#svg-events"></use>
@@ -486,23 +486,23 @@ $page['description'] = $startup->about;
                             <!-- TAG LIST -->
                             <div class="tag-list">
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Coming Soon</a>
+                                <a class="tag-item secondary" href="#">Coming Soon</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Upcoming Features</a>
+                                <a class="tag-item secondary" href="#">Upcoming Features</a>
                                 <!-- /TAG ITEM -->
 
                                 {{-- <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Art</a>
+                                <a class="tag-item secondary" href="#">Art</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Machine</a>
+                                <a class="tag-item secondary" href="#">Machine</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Wasteland</a>
+                                <a class="tag-item secondary" href="#">Wasteland</a>
                                 <!-- /TAG ITEM --> --}}
                             </div>
                             <!-- /TAG LIST -->
@@ -715,7 +715,7 @@ $page['description'] = $startup->about;
                         <!-- USER STATUS -->
                         <div class="user-status">
                             <!-- USER STATUS AVATAR -->
-                            <a class="user-status-avatar" href="profile-timeline.html">
+                            <a class="user-status-avatar" href="#">
                                 <!-- USER AVATAR -->
                                 <div class="user-avatar small no-outline">
                                     <!-- USER AVATAR CONTENT -->
@@ -775,7 +775,7 @@ $page['description'] = $startup->about;
 
                             <!-- USER STATUS TITLE -->
                             <p class="user-status-title medium">
-                                <a class="bold" href="profile-timeline.html">Marina Valentine</a>
+                                <a class="bold" href="#">Marina Valentine</a>
                             </p>
                             <!-- /USER STATUS TITLE -->
 
@@ -799,23 +799,23 @@ $page['description'] = $startup->about;
                         <!-- TAG LIST -->
                         <div class="tag-list">
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Cover</a>
+                            <a class="tag-item secondary" href="#">Cover</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Preview</a>
+                            <a class="tag-item secondary" href="#">Preview</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Art</a>
+                            <a class="tag-item secondary" href="#">Art</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Machine</a>
+                            <a class="tag-item secondary" href="#">Machine</a>
                             <!-- /TAG ITEM -->
 
                             <!-- TAG ITEM -->
-                            <a class="tag-item secondary" href="newsfeed.html">Wasteland</a>
+                            <a class="tag-item secondary" href="#">Wasteland</a>
                             <!-- /TAG ITEM -->
                         </div>
                         <!-- /TAG LIST -->
@@ -1115,7 +1115,7 @@ $page['description'] = $startup->about;
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1168,7 +1168,7 @@ $page['description'] = $startup->about;
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text">
-                            <a class="post-comment-text-author" href="profile-timeline.html">Neko Bebop</a>It's always a
+                            <a class="post-comment-text-author" href="#">Neko Bebop</a>It's always a
                             pleasure to do this streams with
                             you! If we have at least half the fun than last
                             time it will be an incredible success!
@@ -1400,7 +1400,7 @@ $page['description'] = $startup->about;
                     <!-- POST COMMENT -->
                     <div class="post-comment unread reply-2">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1453,7 +1453,7 @@ $page['description'] = $startup->about;
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text">
-                            <a class="post-comment-text-author" href="profile-timeline.html">Nick Grissom</a>I wouldn't
+                            <a class="post-comment-text-author" href="#">Nick Grissom</a>I wouldn't
                             miss it for anything!! Love both
                             streams!
                         </p>
@@ -1645,7 +1645,7 @@ $page['description'] = $startup->about;
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1698,8 +1698,8 @@ $page['description'] = $startup->about;
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text">
-                            <a class="post-comment-text-author" href="profile-timeline.html">Destroy Dex</a>YEAHHH!!
-                            <a href="profile-timeline.html">@MarinaValentine</a>
+                            <a class="post-comment-text-author" href="#">Destroy Dex</a>YEAHHH!!
+                            <a href="#">@MarinaValentine</a>
                             I really enjoyed your last stream and it also
                             was really funny! Can't wait!
                         </p>
@@ -1852,7 +1852,7 @@ $page['description'] = $startup->about;
                     <!-- POST COMMENT -->
                     <div class="post-comment">
                         <!-- USER AVATAR -->
-                        <a class="user-avatar small no-outline" href="profile-timeline.html">
+                        <a class="user-avatar small no-outline" href="#">
                             <!-- USER AVATAR CONTENT -->
                             <div class="user-avatar-content">
                                 <!-- HEXAGON -->
@@ -1905,7 +1905,7 @@ $page['description'] = $startup->about;
 
                         <!-- POST COMMENT TEXT -->
                         <p class="post-comment-text">
-                            <a class="post-comment-text-author" href="profile-timeline.html">Sarah Diamond</a>That
+                            <a class="post-comment-text-author" href="#">Sarah Diamond</a>That
                             sounds awesome Marina! And also thanks a
                             lot for the art sneak peek! I went to the
                             GameCon last week and had a great time playing
@@ -2476,7 +2476,7 @@ $page['description'] = $startup->about;
                 <!-- /USER AVATAR -->
 
                 <!-- USER AVATAR -->
-                <a class="user-avatar smaller no-stats" href="group-members.html">
+                <a class="user-avatar smaller no-stats" href="#">
                     <!-- USER AVATAR BORDER -->
                     <div class="user-avatar-border">
                         <!-- HEXAGON -->
@@ -2941,7 +2941,7 @@ $page['description'] = $startup->about;
             <!-- POST COMMENT -->
             <div class="post-comment">
                 <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
+                <a class="user-avatar small no-outline" href="#">
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                         <!-- HEXAGON -->
@@ -2994,7 +2994,7 @@ $page['description'] = $startup->about;
 
                 <!-- POST COMMENT TEXT -->
                 <p class="post-comment-text">
-                    <a class="post-comment-text-author" href="profile-timeline.html">Destroy Dex</a>Can't wait to see
+                    <a class="post-comment-text-author" href="#">Destroy Dex</a>Can't wait to see
                     everyone at the party! Last year's
                     was incredible and I'm hoping this year will be even
                     better!

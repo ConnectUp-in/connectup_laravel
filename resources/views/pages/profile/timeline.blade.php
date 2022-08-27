@@ -22,7 +22,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- USER SHORT DESCRIPTION -->
                 <div class="user-short-description big">
                     <!-- USER SHORT DESCRIPTION AVATAR -->
-                    <a class="user-short-description-avatar user-avatar big" href="profile-timeline.html">
+                    <a class="user-short-description-avatar user-avatar big" href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -60,7 +60,7 @@ $page['description'] = $user->bio ?? null;
 
                     <!-- USER SHORT DESCRIPTION AVATAR -->
                     <a class="user-short-description-avatar user-short-description-avatar-mobile user-avatar medium"
-                        href="profile-timeline.html">
+                        href="#">
                         <!-- USER AVATAR BORDER -->
                         <div class="user-avatar-border">
                             <!-- HEXAGON -->
@@ -97,7 +97,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER SHORT DESCRIPTION AVATAR -->
 
                     <!-- USER SHORT DESCRIPTION TITLE -->
-                    <p class="user-short-description-title"><a href="profile-timeline.html">{{ $user->name }}</a></p>
+                    <p class="user-short-description-title"><a href="#">{{ $user->name }}</a></p>
                     <!-- /USER SHORT DESCRIPTION TITLE -->
 
                     <!-- USER SHORT DESCRIPTION TEXT -->
@@ -255,7 +255,7 @@ $page['description'] = $user->bio ?? null;
             <!-- SECTION MENU -->
             <div id="section-navigation-slider" class="section-menu">
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-about.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-profile">
                         <use xlink:href="#svg-profile"></use>
@@ -269,7 +269,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item active" href="profile-timeline.html">
+                <a class="section-menu-item active" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-timeline">
                         <use xlink:href="#svg-timeline"></use>
@@ -283,7 +283,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-friends.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-friend">
                         <use xlink:href="#svg-friend"></use>
@@ -297,7 +297,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-groups.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-group">
                         <use xlink:href="#svg-group"></use>
@@ -311,7 +311,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-photos.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-photos">
                         <use xlink:href="#svg-photos"></use>
@@ -325,7 +325,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-videos.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-videos">
                         <use xlink:href="#svg-videos"></use>
@@ -339,7 +339,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-badges.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-badges">
                         <use xlink:href="#svg-badges"></use>
@@ -353,7 +353,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-stream.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-streams">
                         <use xlink:href="#svg-streams"></use>
@@ -367,7 +367,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-blog.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-blog-posts">
                         <use xlink:href="#svg-blog-posts"></use>
@@ -381,7 +381,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-forum.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-forum">
                         <use xlink:href="#svg-forum"></use>
@@ -395,7 +395,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- /SECTION MENU ITEM -->
 
                 <!-- SECTION MENU ITEM -->
-                <a class="section-menu-item" href="profile-store.html">
+                <a class="section-menu-item" href="#">
                     <!-- SECTION MENU ITEM ICON -->
                     <svg class="section-menu-item-icon icon-store">
                         <use xlink:href="#svg-store"></use>
@@ -694,7 +694,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -751,7 +751,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah
+                                <p class="user-status-title"><a class="bold" href="#">Sarah
                                         Diamond</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -778,7 +778,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -835,7 +835,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Nick
+                                <p class="user-status-title"><a class="bold" href="#">Nick
                                         Grissom</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -862,7 +862,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -919,7 +919,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Destroy
+                                <p class="user-status-title"><a class="bold" href="#">Destroy
                                         Dex</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -946,7 +946,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1003,7 +1003,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">Neko
+                                <p class="user-status-title"><a class="bold" href="#">Neko
                                         Bebop</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -1030,7 +1030,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="profile-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-outline">
                                         <!-- USER AVATAR CONTENT -->
@@ -1087,7 +1087,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="profile-timeline.html">The Green
+                                <p class="user-status-title"><a class="bold" href="#">The Green
                                         Goo</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -1116,7 +1116,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- WIDGET BOX CONTENT -->
 
                     <!-- WIDGET BOX BUTTON -->
-                    <a class="widget-box-button button small secondary" href="profile-friends.html">See all Friends</a>
+                    <a class="widget-box-button button small secondary" href="#">See all Friends</a>
                     <!-- /WIDGET BOX BUTTON -->
                 </div>
                 <!-- /WIDGET BOX -->
@@ -1310,7 +1310,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- POST PEEK -->
                             <div class="post-peek">
                                 <!-- POST PEEK IMAGE -->
-                                <a class="post-peek-image" href="profile-post.html">
+                                <a class="post-peek-image" href="#">
                                     <figure class="picture small round liquid">
                                         <img src="/assets/template/img/cover/19.jpg" alt="cover-19">
                                     </figure>
@@ -1318,7 +1318,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /POST PEEK IMAGE -->
 
                                 <!-- POST PEEK TITLE -->
-                                <p class="post-peek-title"><a href="profile-post.html">Here's the how and why did I became
+                                <p class="post-peek-title"><a href="#">Here's the how and why did I became
                                         a full time Gaming Streamer</a></p>
                                 <!-- /POST PEEK TITLE -->
 
@@ -1331,7 +1331,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- POST PEEK -->
                             <div class="post-peek">
                                 <!-- POST PEEK IMAGE -->
-                                <a class="post-peek-image" href="profile-post.html">
+                                <a class="post-peek-image" href="#">
                                     <figure class="picture small round liquid">
                                         <img src="/assets/template/img/cover/10.jpg" alt="cover-10">
                                     </figure>
@@ -1339,7 +1339,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /POST PEEK IMAGE -->
 
                                 <!-- POST PEEK TITLE -->
-                                <p class="post-peek-title"><a href="profile-post.html">I spoke with the developers of
+                                <p class="post-peek-title"><a href="#">I spoke with the developers of
                                         RoBot SaMurai II at the 2019 GamingCon</a></p>
                                 <!-- /POST PEEK TITLE -->
 
@@ -1352,7 +1352,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- POST PEEK -->
                             <div class="post-peek">
                                 <!-- POST PEEK IMAGE -->
-                                <a class="post-peek-image" href="profile-post.html">
+                                <a class="post-peek-image" href="#">
                                     <figure class="picture small round liquid">
                                         <img src="/assets/template/img/cover/20.jpg" alt="cover-20">
                                     </figure>
@@ -1360,7 +1360,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /POST PEEK IMAGE -->
 
                                 <!-- POST PEEK TITLE -->
-                                <p class="post-peek-title"><a href="profile-post.html">I will be at this month's StreamCon
+                                <p class="post-peek-title"><a href="#">I will be at this month's StreamCon
                                         with NekoBebop</a></p>
                                 <!-- /POST PEEK TITLE -->
 
@@ -1373,7 +1373,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- POST PEEK -->
                             <div class="post-peek">
                                 <!-- POST PEEK IMAGE -->
-                                <a class="post-peek-image" href="profile-post.html">
+                                <a class="post-peek-image" href="#">
                                     <figure class="picture small round liquid">
                                         <img src="/assets/template/img/cover/06.jpg" alt="cover-06">
                                     </figure>
@@ -1381,7 +1381,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /POST PEEK IMAGE -->
 
                                 <!-- POST PEEK TITLE -->
-                                <p class="post-peek-title"><a href="profile-post.html">[Exclusive!] Check out all the new
+                                <p class="post-peek-title"><a href="#">[Exclusive!] Check out all the new
                                         missions and story of the Fire Witch DLC!</a></p>
                                 <!-- /POST PEEK TITLE -->
 
@@ -1394,7 +1394,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- POST PEEK -->
                             <div class="post-peek">
                                 <!-- POST PEEK IMAGE -->
-                                <a class="post-peek-image" href="profile-post.html">
+                                <a class="post-peek-image" href="#">
                                     <figure class="picture small round liquid">
                                         <img src="/assets/template/img/cover/07.jpg" alt="cover-07">
                                     </figure>
@@ -1402,7 +1402,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /POST PEEK IMAGE -->
 
                                 <!-- POST PEEK TITLE -->
-                                <p class="post-peek-title"><a href="profile-post.html">Old Super Mochi's Island is getting
+                                <p class="post-peek-title"><a href="#">Old Super Mochi's Island is getting
                                         a remake!</a></p>
                                 <!-- /POST PEEK TITLE -->
 
@@ -1511,7 +1511,7 @@ $page['description'] = $user->bio ?? null;
 
                                 <!-- USER STATUS TITLE -->
                                 <p class="user-status-title medium"><a class="bold"
-                                        href="profile-timeline.html">{{ $user->name }}</a></p>
+                                        href="#">{{ $user->name }}</a></p>
                                 <!-- /USER STATUS TITLE -->
 
                                 <!-- USER STATUS TEXT -->
@@ -1539,23 +1539,23 @@ $page['description'] = $user->bio ?? null;
                             <!-- TAG LIST -->
                             <div class="tag-list">
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Coming Soon</a>
+                                <a class="tag-item secondary" href="#">Coming Soon</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Upcoming Features</a>
+                                <a class="tag-item secondary" href="#">Upcoming Features</a>
                                 <!-- /TAG ITEM -->
 
                                 {{-- <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Art</a>
+                                <a class="tag-item secondary" href="#">Art</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Machine</a>
+                                <a class="tag-item secondary" href="#">Machine</a>
                                 <!-- /TAG ITEM -->
 
                                 <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="newsfeed.html">Wasteland</a>
+                                <a class="tag-item secondary" href="#">Wasteland</a>
                                 <!-- /TAG ITEM --> --}}
                             </div>
                             <!-- /TAG LIST -->
@@ -1629,7 +1629,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STATUS -->
                     <div class="user-status">
                         <!-- USER STATUS AVATAR -->
-                        <a class="user-status-avatar" href="profile-timeline.html">
+                        <a class="user-status-avatar" href="#">
                             <!-- USER AVATAR -->
                             <div class="user-avatar small no-outline">
                                 <!-- USER AVATAR CONTENT -->
@@ -1687,7 +1687,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /USER STATUS AVATAR -->
 
                         <!-- USER STATUS TITLE -->
-                        <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Ankur
+                        <p class="user-status-title medium"><a class="bold" href="#">Ankur
                                 Gupta</a></p>
                         <!-- /USER STATUS TITLE -->
 
@@ -1699,7 +1699,7 @@ $page['description'] = $user->bio ?? null;
 
                     <!-- WIDGET BOX STATUS TEXT -->
                     <p class="widget-box-status-text">Hi to all! Remember that today I'll be livestreaming along
-                        with <a href="profile-timeline.html">@NekoBebop</a> the new character of the brand new
+                        with <a href="#">@NekoBebop</a> the new character of the brand new
                         Xenowatch patch "Anya Darkness". See you there!</p>
                     <!-- /WIDGET BOX STATUS TEXT -->
 
@@ -1738,19 +1738,19 @@ $page['description'] = $user->bio ?? null;
                     <!-- TAG LIST -->
                     <div class="tag-list">
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Stream</a>
+                        <a class="tag-item secondary" href="#">Stream</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Xenowatch</a>
+                        <a class="tag-item secondary" href="#">Xenowatch</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
+                        <a class="tag-item secondary" href="#">Gaming</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Twitch</a>
+                        <a class="tag-item secondary" href="#">Twitch</a>
                         <!-- /TAG ITEM -->
                     </div>
                     <!-- /TAG LIST -->
@@ -2197,7 +2197,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STATUS -->
                     <div class="user-status">
                         <!-- USER STATUS AVATAR -->
-                        <a class="user-status-avatar" href="profile-timeline.html">
+                        <a class="user-status-avatar" href="#">
                             <!-- USER AVATAR -->
                             <div class="user-avatar small no-outline">
                                 <!-- USER AVATAR CONTENT -->
@@ -2253,7 +2253,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /USER STATUS AVATAR -->
 
                         <!-- USER STATUS TITLE -->
-                        <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina
+                        <p class="user-status-title medium"><a class="bold" href="#">Marina
                                 Valentine</a></p>
                         <!-- /USER STATUS TITLE -->
 
@@ -2670,7 +2670,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STATUS -->
                     <div class="user-status">
                         <!-- USER STATUS AVATAR -->
-                        <a class="user-status-avatar" href="profile-timeline.html">
+                        <a class="user-status-avatar" href="#">
                             <!-- USER AVATAR -->
                             <div class="user-avatar small no-outline">
                                 <!-- USER AVATAR CONTENT -->
@@ -2726,7 +2726,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /USER STATUS AVATAR -->
 
                         <!-- USER STATUS TITLE -->
-                        <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina
+                        <p class="user-status-title medium"><a class="bold" href="#">Marina
                                 Valentine</a></p>
                         <!-- /USER STATUS TITLE -->
 
@@ -2755,23 +2755,23 @@ $page['description'] = $user->bio ?? null;
                     <!-- TAG LIST -->
                     <div class="tag-list">
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Cover</a>
+                        <a class="tag-item secondary" href="#">Cover</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Preview</a>
+                        <a class="tag-item secondary" href="#">Preview</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Art</a>
+                        <a class="tag-item secondary" href="#">Art</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Machine</a>
+                        <a class="tag-item secondary" href="#">Machine</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Wasteland</a>
+                        <a class="tag-item secondary" href="#">Wasteland</a>
                         <!-- /TAG ITEM -->
                     </div>
                     <!-- /TAG LIST -->
@@ -3170,7 +3170,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- POST COMMENT -->
                 <div class="post-comment">
                     <!-- USER AVATAR -->
-                    <a class="user-avatar small no-outline" href="profile-timeline.html">
+                    <a class="user-avatar small no-outline" href="#">
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
@@ -3223,7 +3223,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER AVATAR -->
 
                     <!-- POST COMMENT TEXT -->
-                    <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Neko
+                    <p class="post-comment-text"><a class="post-comment-text-author" href="#">Neko
                             Bebop</a>It's always a pleasure to do this streams
                         with you! If we have at least half the fun than last time it will be an incredible success!
                     </p>
@@ -3434,7 +3434,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- POST COMMENT -->
                 <div class="post-comment unread reply-2">
                     <!-- USER AVATAR -->
-                    <a class="user-avatar small no-outline" href="profile-timeline.html">
+                    <a class="user-avatar small no-outline" href="#">
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
@@ -3487,7 +3487,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER AVATAR -->
 
                     <!-- POST COMMENT TEXT -->
-                    <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Nick
+                    <p class="post-comment-text"><a class="post-comment-text-author" href="#">Nick
                             Grissom</a>I wouldn't miss it for anything!! Love
                         both streams!</p>
                     <!-- /POST COMMENT TEXT -->
@@ -3666,7 +3666,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- POST COMMENT -->
                 <div class="post-comment">
                     <!-- USER AVATAR -->
-                    <a class="user-avatar small no-outline" href="profile-timeline.html">
+                    <a class="user-avatar small no-outline" href="#">
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
@@ -3719,8 +3719,8 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER AVATAR -->
 
                     <!-- POST COMMENT TEXT -->
-                    <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Destroy
-                            Dex</a>YEAHHH!! <a href="profile-timeline.html">@MarinaValentine</a> I really enjoyed your last
+                    <p class="post-comment-text"><a class="post-comment-text-author" href="#">Destroy
+                            Dex</a>YEAHHH!! <a href="#">@MarinaValentine</a> I really enjoyed your last
                         stream
                         and it also was really funny! Can't wait!</p>
                     <!-- /POST COMMENT TEXT -->
@@ -3864,7 +3864,7 @@ $page['description'] = $user->bio ?? null;
                 <!-- POST COMMENT -->
                 <div class="post-comment">
                     <!-- USER AVATAR -->
-                    <a class="user-avatar small no-outline" href="profile-timeline.html">
+                    <a class="user-avatar small no-outline" href="#">
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
@@ -3917,7 +3917,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER AVATAR -->
 
                     <!-- POST COMMENT TEXT -->
-                    <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Sarah
+                    <p class="post-comment-text"><a class="post-comment-text-author" href="#">Sarah
                             Diamond</a>That sounds awesome Marina! And also
                         thanks a lot for the art sneak peek! I went to the GameCon last week and had a great time
                         playing the game's open demo.</p>
@@ -4194,7 +4194,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STATUS -->
                     <div class="user-status">
                         <!-- USER STATUS AVATAR -->
-                        <a class="user-status-avatar" href="profile-timeline.html">
+                        <a class="user-status-avatar" href="#">
                             <!-- USER AVATAR -->
                             <div class="user-avatar small no-outline">
                                 <!-- USER AVATAR CONTENT -->
@@ -4251,7 +4251,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /USER STATUS AVATAR -->
 
                         <!-- USER STATUS TITLE -->
-                        <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina
+                        <p class="user-status-title medium"><a class="bold" href="#">Marina
                                 Valentine</a></p>
                         <!-- /USER STATUS TITLE -->
 
@@ -4263,7 +4263,7 @@ $page['description'] = $user->bio ?? null;
 
                     <!-- WIDGET BOX STATUS TEXT -->
                     <p class="widget-box-status-text">Tomorow I'll be livestreaming along with <a
-                            href="profile-timeline.html">@DestroyDex</a> on my Youtube channel. We are gonna do a
+                            href="#">@DestroyDex</a> on my Youtube channel. We are gonna do a
                         spedrun of Super Mochi Bros 3!</p>
                     <!-- /WIDGET BOX STATUS TEXT -->
 
@@ -4295,19 +4295,19 @@ $page['description'] = $user->bio ?? null;
                     <!-- TAG LIST -->
                     <div class="tag-list">
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Stream</a>
+                        <a class="tag-item secondary" href="#">Stream</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Youtube</a>
+                        <a class="tag-item secondary" href="#">Youtube</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
+                        <a class="tag-item secondary" href="#">Gaming</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Retro</a>
+                        <a class="tag-item secondary" href="#">Retro</a>
                         <!-- /TAG ITEM -->
                     </div>
                     <!-- /TAG LIST -->
@@ -4755,7 +4755,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STATUS -->
                     <div class="user-status">
                         <!-- USER STATUS AVATAR -->
-                        <a class="user-status-avatar" href="profile-timeline.html">
+                        <a class="user-status-avatar" href="#">
                             <!-- USER AVATAR -->
                             <div class="user-avatar small no-outline">
                                 <!-- USER AVATAR CONTENT -->
@@ -4812,7 +4812,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /USER STATUS AVATAR -->
 
                         <!-- USER STATUS TITLE -->
-                        <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina
+                        <p class="user-status-title medium"><a class="bold" href="#">Marina
                                 Valentine</a> wrote a <span class="bold">Blog Post</span></p>
                         <!-- /USER STATUS TITLE -->
 
@@ -4860,7 +4860,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- /POST PREVIEW TEXT -->
 
                         <!-- POST PREVIEW LINK -->
-                        <a class="post-preview-link" href="profile-post.html">Read more...</a>
+                        <a class="post-preview-link" href="#">Read more...</a>
                         <!-- /POST PREVIEW LINK -->
                     </div>
                     <!-- /POST PREVIEW INFO -->
@@ -4872,23 +4872,23 @@ $page['description'] = $user->bio ?? null;
                     <!-- TAG LIST -->
                     <div class="tag-list">
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Streamer</a>
+                        <a class="tag-item secondary" href="#">Streamer</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
+                        <a class="tag-item secondary" href="#">Gaming</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Job</a>
+                        <a class="tag-item secondary" href="#">Job</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Life</a>
+                        <a class="tag-item secondary" href="#">Life</a>
                         <!-- /TAG ITEM -->
 
                         <!-- TAG ITEM -->
-                        <a class="tag-item secondary" href="newsfeed.html">Experience</a>
+                        <a class="tag-item secondary" href="#">Experience</a>
                         <!-- /TAG ITEM -->
                     </div>
                     <!-- /TAG LIST -->
@@ -5362,7 +5362,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- STREAM BOX INFO -->
                             <div class="stream-box-info">
                                 <!-- STREAM BOX TITLE -->
-                                <p class="stream-box-title"><a href="profile-stream.html">I'm Playing Athena’s Goddess
+                                <p class="stream-box-title"><a href="#">I'm Playing Athena’s Goddess
                                         Story...</a></p>
                                 <!-- /STREAM BOX TITLE -->
 
@@ -5504,7 +5504,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="group-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-border">
                                         <!-- USER AVATAR CONTENT -->
@@ -5521,7 +5521,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="group-timeline.html">Twitch
+                                <p class="user-status-title"><a class="bold" href="#">Twitch
                                         Streamers</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -5548,7 +5548,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="group-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-border">
                                         <!-- USER AVATAR CONTENT -->
@@ -5565,7 +5565,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="group-timeline.html">Cosplayers
+                                <p class="user-status-title"><a class="bold" href="#">Cosplayers
                                         of the World</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -5592,7 +5592,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="group-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-border">
                                         <!-- USER AVATAR CONTENT -->
@@ -5609,7 +5609,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="group-timeline.html">Stream
+                                <p class="user-status-title"><a class="bold" href="#">Stream
                                         Designers</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -5636,7 +5636,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="group-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-border">
                                         <!-- USER AVATAR CONTENT -->
@@ -5653,7 +5653,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="group-timeline.html">Street
+                                <p class="user-status-title"><a class="bold" href="#">Street
                                         Artists</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -5680,7 +5680,7 @@ $page['description'] = $user->bio ?? null;
                             <!-- USER STATUS -->
                             <div class="user-status request-small">
                                 <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="group-timeline.html">
+                                <a class="user-status-avatar" href="#">
                                     <!-- USER AVATAR -->
                                     <div class="user-avatar small no-border">
                                         <!-- USER AVATAR CONTENT -->
@@ -5697,7 +5697,7 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /USER STATUS AVATAR -->
 
                                 <!-- USER STATUS TITLE -->
-                                <p class="user-status-title"><a class="bold" href="group-timeline.html">Gaming
+                                <p class="user-status-title"><a class="bold" href="#">Gaming
                                         Watchtower</a></p>
                                 <!-- /USER STATUS TITLE -->
 
@@ -5764,7 +5764,7 @@ $page['description'] = $user->bio ?? null;
                         <!-- PRODUCT PREVIEW -->
                         <div class="product-preview small">
                             <!-- PRODUCT PREVIEW IMAGE -->
-                            <a href="marketplace-product.html">
+                            <a href="#">
                                 <figure class="product-preview-image liquid">
                                     <img src="/assets/template/img/marketplace/items/01.jpg" alt="item-01">
                                 </figure>
@@ -5778,12 +5778,12 @@ $page['description'] = $user->bio ?? null;
                                 <!-- /TEXT STICKER -->
 
                                 <!-- PRODUCT PREVIEW TITLE -->
-                                <p class="product-preview-title"><a href="marketplace-product.html">Twitch Stream UI
+                                <p class="product-preview-title"><a href="#">Twitch Stream UI
                                         Pack</a></p>
                                 <!-- /PRODUCT PREVIEW TITLE -->
 
                                 <!-- PRODUCT PREVIEW CATEGORY -->
-                                <p class="product-preview-category digital"><a href="marketplace-category.html">Stream
+                                <p class="product-preview-category digital"><a href="#">Stream
                                         Packs</a></p>
                                 <!-- /PRODUCT PREVIEW CATEGORY -->
                             </div>
