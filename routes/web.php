@@ -36,6 +36,8 @@ Route::get('post/{id}', [PostController::class, 'post'])->name('post');
 Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
 Route::get('redirect', [HelperController::class, 'redirect']);
 Route::get('startups', [AppController::class, 'startups'])->name('startups');
+Route::get('superpreneurs', [AppController::class, 'superpreneurs'])->name('superpreneurs');
+Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
 
 Route::prefix('user')
     ->middleware('auth')

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\User;
 use App\Models\Startup;
+use App\Models\User;
 use Auth;
+
 class AppController extends Controller
 {
     //
@@ -50,5 +50,24 @@ class AppController extends Controller
             'startups' => $startups,
         ];
         return view('pages.startups', $data);
+    }
+
+    public function superpreneurs()
+    {
+        page('entrepreneurs');
+        $entrepreneurs = User::where('active', true)->get();
+        $data = [
+            'users' => $entrepreneurs,
+        ];
+        // return $data;
+        return view('pages.superpreneurs', $data);
+    }
+
+    public function onlyforonce()
+    {
+        // Select all users and change their active status to true
+        User::where('active', false)->update(['active' => true]);
+
+        return "Everything went well";
     }
 }

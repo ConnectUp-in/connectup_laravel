@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role')->default(0);
-            $table->boolean('active')->default(false);
+            $table->boolean('active')->default(true);
             $table->string('academic_background')->nullable();
             $table->string('college')->nullable();
             $table->integer('country')->default(98);
@@ -50,7 +50,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     text
+    text
      * @return void
      */
     public function down()
