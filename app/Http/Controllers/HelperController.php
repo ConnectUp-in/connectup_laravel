@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Redirect;
 use Auth;
+use Illuminate\Http\Request;
+use Image;
 
 class HelperController extends Controller
 {
     //
-    function redirect(Request $request)
+    public function redirect(Request $request)
     {
         $url = $request->url ?? "";
 
@@ -21,8 +22,27 @@ class HelperController extends Controller
         return redirect($url);
     }
 
-    function testmail(){
+    public function testmail()
+    {
         sendRegistrationMail(Auth::user());
         return "done";
+    }
+    public function image()
+    {
+        $text = 'TEst text';
+
+        $img = Image::make('assets/defaults/cover.png');
+
+        // Resize image instance
+        $img->resize(null, 200, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+
+        $img->text($text, 20, 20, function ($font) {
+            $font->size(4);
+            $font->color("#FFF");
+        });
+
+        return $img->response("jpg");
     }
 }

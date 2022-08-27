@@ -66,6 +66,7 @@ Route::post('title', function () {
 });
 
 Route::get('/testmail', [HelperController::class, 'testmail']);
+Route::get('/image', [HelperController::class, 'image']);
 Route::view('viewmail', 'emails.test');
 
 // Social Authentication Routes
