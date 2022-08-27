@@ -248,6 +248,9 @@ figure > img {
 .feature-item .feature-item-title {
     font-size: 1.5rem;
 }
+.dark .feature-item-title {
+    color: #fffc;
+}
 .feature-item .feature-item-text {
     margin-top: 18px;
     font-size: 1.125rem;

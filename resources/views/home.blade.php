@@ -229,7 +229,7 @@
 
 
     <!-- SECTION WRAP -->
-    <div id="benefits" class="section-wrap">
+    <div id="benefits" class="section-wrap dark">
         <!-- SECTION -->
         <section class="section grid-limit">
             <!-- SECTION INFO -->
@@ -258,47 +258,47 @@
                 
                 $benefits = [
                     [
-                        'title' => 'HTML, CSS & JS Files',
+                        'title' => 'Networking Sessions',
                         'text' => 'We included in the pack HTML, CSS and JS files for you to customize them all you like! (Photos not included).',
                         'image' => '/assets/template-landing/img/feature/html5.png',
                     ],
                     [
-                        'title' => 'Bootstrap Compatible',
+                        'title' => 'Fundraising Opportunities',
                         'text' => 'We made the template compatible with Bootstrap v4.4.1, and ensured that there are no style conflicts.',
                         'image' => '/assets/template-landing/img/feature/bootstrap.png',
                     ],
                     [
-                        'title' => "PSD Files! (Save $12!)",
+                        'title' => 'Product Testing',
                         'text' => 'We included in the pack 56 Photoshop PSD files for you to customize them all you like! (Photos not included).',
                         'image' => '/assets/template-landing/img/feature/psd.png',
                     ],
                     [
-                        'title' => 'SASS',
+                        'title' => 'Idea Validation',
                         'text' => 'Easily customize styles by using variables, nesting, mixins, inheritance and more!',
                         'image' => '/assets/template-landing/img/feature/sass.png',
                     ],
                     [
-                        'title' => 'Illustrations Included',
+                        'title' => 'Mentoring Sessions',
                         'text' => "You'll find inside the PSD files all illustrations, like the forum icons, badges, banners and more!",
                         'image' => '/assets/template-landing/img/feature/illustrations.png',
                     ],
                     [
-                        'title' => 'npm &amp; Grunt',
+                        'title' => 'Early Userbase',
                         'text' => 'Includes a preconfigured version using npm &amp; Grunt, just start customizing and let them do the work!',
                         'image' => '/assets/template-landing/img/feature/npmgrunt.png',
                     ],
                     [
-                        'title' => 'SVG Custom Icons',
+                        'title' => 'Rewards &amp; Badges',
                         'text' => "Inside the pack you'll find custom SVG icons made for this template! Easily change things like color via code!",
                         'image' => '/assets/template-landing/img/feature/svg.png',
                     ],
                     [
-                        'title' => 'Fully Responsive',
+                        'title' => 'Accelerator Kits',
                         'text' => 'template is fully responsive so you can easily browse it from any device: desktop, tablets and smartphones.',
                         'image' => '/assets/template-landing/img/feature/responsive.png',
                     ],
                     [
-                        'title' => 'Help Documentation',
+                        'title' => 'Offline Meetups',
                         'text' => "Inside the documentation file you'll find help to guide you with all the features and plugins included.",
                         'image' => '/assets/template-landing/img/feature/documentation.png',
                     ],
@@ -314,7 +314,7 @@
                         <!-- /FEATURE ITEM IMAGE -->
 
                         <!-- FEATURE ITEM TITLE -->
-                        <h2 class="feature-item-title">{{ $b['title'] }}</h2>
+                        <h2 class="feature-item-title">{!! $b['title'] !!}</h2>
                         <!-- /FEATURE ITEM TITLE -->
 
                         <!-- FEATURE ITEM TEXT -->
