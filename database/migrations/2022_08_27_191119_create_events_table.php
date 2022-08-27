@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            // title, slug, type, content, image, r_dates, e_dates, location, attachments, active, suspended, creator, creator_type, interests, tags, required_fields, additional_fields , created_at, updated_at
+            // title, slug, type, content, image, r_dates, e_dates, location, attachments, active, event_link, suspended, creator, creator_type, interests, tags, required_fields, additional_fields , created_at, updated_at
             $table->string('id');
             $table->primary('id');
             $table->string('title');
