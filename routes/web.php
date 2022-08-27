@@ -22,6 +22,10 @@ Route::get('/', function () {
     page('Home');
     return view('welcome');
 });
+Route::get('/home', function () {
+    page('Home');
+    return view('home');
+});
 
 Route::get('test', function () {
     return md5(uniqid('post_', true));
