@@ -536,31 +536,31 @@ textarea::placeholder {
 }
 .interactive-input.dark input {
     border: none;
-    background-color: #5538b5;
+    background-color: #0003;
     color: #fff;
 }
 .interactive-input.dark input::-webkit-input-placeholder {
-    color: #8b88ff;
+    color: #ffff;
     opacity: 0.6;
 }
 .interactive-input.dark input::-moz-placeholder {
-    color: #8b88ff;
+    color: #ffff;
     opacity: 0.6;
 }
 .interactive-input.dark input:-ms-input-placeholder {
-    color: #8b88ff;
+    color: #ffff;
     opacity: 0.6;
 }
 .interactive-input.dark input::-ms-input-placeholder {
-    color: #8b88ff;
+    color: #ffff;
     opacity: 0.6;
 }
 .interactive-input.dark input::placeholder {
-    color: #8b88ff;
+    color: #ffff;
     opacity: 0.6;
 }
 .interactive-input.dark .interactive-input-icon-wrap .interactive-input-icon {
-    fill: #9b7dff;
+    fill: #fff;
 }
 .interactive-input.dark
     .interactive-input-action:hover
@@ -11766,7 +11766,7 @@ figure > img {
     justify-content: space-between;
     width: 100%;
     height: 80px;
-    background-color: #7750f8;
+    background-color: #615dfa;
     position: fixed;
     top: 0;
     left: 0;

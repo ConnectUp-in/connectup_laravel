@@ -220,8 +220,7 @@
             <!-- /SECTION IMAGE -->
 
             <!-- SECTION BUTTON -->
-            <a class="section-button button tertiary" href="#' target="_blank">Browse all in the
-                Live Demo!</a>
+            <a class="section-button button tertiary" href="{{ route('login') }}">Join Now</a>
             <!-- /SECTION BUTTON -->
         </section>
         <!-- /SECTION -->
