@@ -32,6 +32,7 @@ class Event extends Model
     ];
 
     protected $casts = [
+        'id' => 'string',
         'r_dates' => 'array',
         'e_dates' => 'array',
         'attachments' => 'array',
