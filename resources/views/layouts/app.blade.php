@@ -18,6 +18,9 @@
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
 
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/c5fe5e7547.js" crossorigin="anonymous"></script>
+
     {{-- <div id="toast-container" class="toast-bottom-right">
         <div class="toast toast-success" aria-live="polite" style="opacity: 0.212;">
             <div class="toast-progress" style="width: 0.12%;"></div>
