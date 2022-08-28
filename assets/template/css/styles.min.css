@@ -1663,6 +1663,9 @@ figure > img {
 .social-link.github {
     background-color: #333;
 }
+.social-link.whatsapp {
+    background-color: #25d366;
+}
 
 .social-link.patreon {
     background-color: #ff7a51;
@@ -8673,8 +8676,18 @@ figure > img {
     background-color: #1d2333;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.06);
 }
+.event .post-open-body {
+    width: 100%;
+    padding-top: 0px;
+    margin: 0px auto 0;
+    background-color: transparent;
+    box-shadow: none;
+}
 .post-open .post-open-body .post-open-heading {
     padding: 0 100px;
+}
+.event .post-open-body .post-open-heading {
+    padding: 0;
 }
 .post-open .post-open-body .post-open-heading .post-open-timestamp {
     color: #9aa4bf;
@@ -8701,6 +8714,9 @@ figure > img {
     display: flex;
     margin-top: 70px;
     padding: 0 100px;
+}
+.event .post-open-body .post-open-content {
+    padding: 0;
 }
 .post-open .post-open-body .post-open-content .post-open-content-sidebar {
     width: 84px;
