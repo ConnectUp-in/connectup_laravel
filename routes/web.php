@@ -94,3 +94,7 @@ Route::prefix('join')->group(function () {
 Route::prefix('startup')->group(function () {
     Route::get('/{username}', [StartupController::class, 'startup'])->name('startup');
 });
+
+Route::prefix('event')->group(function () {
+    Route::get('/{slug}', [EventController::class, 'event'])->name('event');
+});
