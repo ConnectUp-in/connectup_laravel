@@ -18,6 +18,7 @@ class VerifyCsrfToken extends Middleware
         '/user/profile/update-cover-photo',
         '/user/startup/create',
         '/user/startup/update/*',
+        '/event/register',
         //
     ];
 }

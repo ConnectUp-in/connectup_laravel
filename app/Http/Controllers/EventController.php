@@ -10,6 +10,7 @@ use App\Models\Interest;
 use App\Models\Startup;
 use App\Models\User;
 use Auth;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -68,4 +69,11 @@ class EventController extends Controller
         // return $data;
         return view('pages.event.event', $data);
     }
+
+    public function register(Request $request)
+    {
+        return $request->all();
+
+    }
+
 }

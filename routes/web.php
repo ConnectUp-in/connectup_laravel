@@ -99,4 +99,5 @@ Route::prefix('startup')->group(function () {
 
 Route::prefix('event')->group(function () {
     Route::get('/{slug}', [EventController::class, 'event'])->name('event');
+    Route::post('/register', [EventController::class, 'register'])->name('event.register');
 });

@@ -344,19 +344,22 @@ $page['title'] = $event->title . ' | ConnectUp';
                         </div>
 
                         <div class="user-registration {{ $profileUpdateRequired ? 'hidden' : '' }}">
-                            <form action="" method="POST" id="register">
+                            <form action="{{ route('event.register') }}" method="POST" id="register">
                                 @csrf
+                                <input type="hidden" name="id" value="{{ $event->id }}">
 
 
 
-                                <p class="widget-box-title mb-3 " style="text-align: center ">Haan bhai yeh form bharna
-                                    hai continue karne ke liye
-                                </p>
+                                {{-- <p class="widget-box-title mb-3 " style="text-align: center ">
+                                </p> --}}
                                 <div class="widget-box-content">
                                     @helper('generateFormHTML', [
                                         'fields' => $event->additional_fields,
                                     ])
                                 </div>
+                                <button class="button primary mt-3" id="registerbutton">Register
+                                    <span class="hide-text-mobile">for Event</span> </button>
+
                             </form>
 
                         </div>
