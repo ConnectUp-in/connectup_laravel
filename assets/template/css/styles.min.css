@@ -8746,6 +8746,9 @@ figure > img {
     width: 500px;
     padding-bottom: 80px;
 }
+.event .post-open-body .post-open-content .post-open-content-body {
+    width: auto;
+}
 .post-open
     .post-open-body
     .post-open-content
@@ -12933,3 +12936,7 @@ figure > img {
     }
 }
 /*# sourceMappingURL=styles.min.css.map */
+
+.nocursor {
+    cursor: not-allowed;
+}
