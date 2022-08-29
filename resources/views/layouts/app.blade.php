@@ -1633,6 +1633,12 @@
     {{-- Import Toasterjs from cdn --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
+        function showLoader() {
+            $('.page-loader').css('display', 'flex').css('visibility', 'visible').css('opacity', '1');
+        }
+
+
+
         toastr.options = {
             "closeButton": false,
             "debug": false,
