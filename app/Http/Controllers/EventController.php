@@ -23,7 +23,17 @@ class EventController extends Controller
         if (!$event) {
             return view('pages.event.404');
         }
+
         $profileUpdateRequired = false;
+        $registered = false;
+
+        if (Auth::check()) {
+            // Check if the user has already registered for this event
+            $eventRegistration = EventRegistration::where('user_id', Auth::user()->id)->where('event_id', $event->id)->first();
+            if ($eventRegistration) {
+                $registered = true;
+            }
+        }
 
         if ($event->creator_type == 'e') {
             $event->creator = User::where('id', $event->creator)->select('id', 'name', 'username', 'profile_photo_path')->first();
@@ -31,41 +41,45 @@ class EventController extends Controller
             $event->creator = Startup::where('id', $event->creator)->select('id', 'name', 'username', 'logo')->first();
         }
 
-        if (in_array('interests', $event->required_fields) && !Auth::user()->interests) {
-            $event->interests = Interest::select('id', 'name')->get();
-            $profileUpdateRequired = true;
-        }
-        if (in_array('academic_background', $event->required_fields) && !Auth::user()->academic_background) {
-            $event->academic_background = AcademicBackground::select('id', 'name')->get();
-            $profileUpdateRequired = true;
-        }
-        if (in_array('college', $event->required_fields) && !Auth::user()->college) {
-            $event->college = array();
-            $profileUpdateRequired = true;
-        }
-        if (in_array('country', $event->required_fields) && !Auth::user()->country) {
-            $event->country = Country::select('id', 'name')->get();
-            $profileUpdateRequired = true;
-        }
-        if (in_array('graduation_year', $event->required_fields) && !Auth::user()->graduation_year) {
-            $event->graduation_year = array_map(function ($year) {
-                return [
-                    'id' => $year,
-                    'name' => $year,
-                ];
-            }, range(date('Y') + 5, date('Y') - 20));
-            $profileUpdateRequired = true;
-        }
+        if (!$registered) {
 
-        foreach ($event->required_fields as $field) {
-            if (!Auth::user()->$field) {
+            if (in_array('interests', $event->required_fields) && !Auth::user()->interests) {
+                $event->interests = Interest::select('id', 'name')->get();
                 $profileUpdateRequired = true;
+            }
+            if (in_array('academic_background', $event->required_fields) && !Auth::user()->academic_background) {
+                $event->academic_background = AcademicBackground::select('id', 'name')->get();
+                $profileUpdateRequired = true;
+            }
+            if (in_array('college', $event->required_fields) && !Auth::user()->college) {
+                $event->college = array();
+                $profileUpdateRequired = true;
+            }
+            if (in_array('country', $event->required_fields) && !Auth::user()->country) {
+                $event->country = Country::select('id', 'name')->get();
+                $profileUpdateRequired = true;
+            }
+            if (in_array('graduation_year', $event->required_fields) && !Auth::user()->graduation_year) {
+                $event->graduation_year = array_map(function ($year) {
+                    return [
+                        'id' => $year,
+                        'name' => $year,
+                    ];
+                }, range(date('Y') + 5, date('Y') - 20));
+                $profileUpdateRequired = true;
+            }
+
+            foreach ($event->required_fields as $field) {
+                if (!Auth::user()->$field) {
+                    $profileUpdateRequired = true;
+                }
             }
         }
 
         $data = [
             'event' => $event,
             'profileUpdateRequired' => $profileUpdateRequired,
+            'registered' => $registered,
         ];
         // return $data;
         return view('pages.event.event', $data);
