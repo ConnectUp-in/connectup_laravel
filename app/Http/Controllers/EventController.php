@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcademicBackground;
+use App\Models\College;
+use App\Models\Country;
 use App\Models\Event;
+use App\Models\Interest;
 use App\Models\Startup;
 use App\Models\User;
 
@@ -23,6 +27,16 @@ class EventController extends Controller
             $event->creator = Startup::where('id', $event->creator)->select('id', 'name', 'username', 'logo')->first();
         }
 
+        $event->academic_background = AcademicBackground::select('id', 'name')->get();
+        $event->college = array();
+        $event->country = Country::select('id', 'name')->get();
+        $event->interests = Interest::select('id', 'name')->get();
+        $event->graduation_year = array_map(function ($year) {
+            return [
+                'id' => $year,
+                'name' => $year,
+            ];
+        }, range(date('Y') + 5, date('Y') - 20));
         $data = [
             'event' => $event,
         ];
