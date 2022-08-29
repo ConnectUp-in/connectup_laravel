@@ -27,3 +27,4 @@ Route::get('/getposts', [PostController::class, 'getposts'])->name('getposts');
 Route::get('/isavailable/username', [ProfileController::class, 'isavailableusername'])->name('isavailable.username');
 Route::get('/isavailable/startupusername', [StartupController::class, 'isavailableusername'])->name('isavailable.startupusername');
 Route::get('/isavailable/email', [ProfileController::class, 'isavailableemail'])->name('isavailable.email');
+// Route::post('/profile/update', [ProfileController::class, 'apiupdate'])->name('api.profile.update');
