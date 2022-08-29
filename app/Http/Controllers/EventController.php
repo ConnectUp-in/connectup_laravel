@@ -6,6 +6,7 @@ use App\Models\AcademicBackground;
 use App\Models\College;
 use App\Models\Country;
 use App\Models\Event;
+use App\Models\EventRegistration;
 use App\Models\Interest;
 use App\Models\Startup;
 use App\Models\User;
@@ -72,7 +73,20 @@ class EventController extends Controller
 
     public function register(Request $request)
     {
-        return $request->all();
+        $event = Event::where('id', $request->id)->select('required_fields')->first();
+        $reg = new EventRegistration();
+        $reg->user_id = Auth::user()->id;
+        $reg->event_id = $request->id;
+        $reg->name = Auth::user()->name;
+        $reg->email = Auth::user()->email;
+        $required_data = [];
+        foreach ($event->required_fields as $field) {
+            $required_data[$field] = Auth::user()->$field;
+        }
+        $reg->required_fields = $required_data;
+        $reg->additional_fields = $request->except('id', '_token');
+        $reg->save();
+        return redirect()->back()->with('success', 'You have successfully registered for this event.');
 
     }
 
