@@ -352,6 +352,11 @@ $page['title'] = $event->title . ' | ConnectUp';
                                 <p class="widget-box-title mb-3 " style="text-align: center ">Haan bhai yeh form bharna
                                     hai continue karne ke liye
                                 </p>
+                                <div class="widget-box-content">
+                                    @helper('generateFormHTML', [
+                                        'fields' => $event->additional_fields,
+                                    ])
+                                </div>
                             </form>
 
                         </div>
