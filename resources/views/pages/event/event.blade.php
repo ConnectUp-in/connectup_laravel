@@ -161,10 +161,18 @@ $page['title'] = $event->title . ' | ConnectUp';
                                 </div>
                                 <!-- /TAG LIST -->
 
-                                <!-- Register Button with Trigger -->
-                                <button class="button secondary popup-event-information-trigger ">
-                                    Register Now {{ Carbon::parse($event->e_dates[1])->diffForHumans() }}
-                                </button>
+
+                                @if ($registered)
+                                    <button class="button white" onmousedown="party.confetti(this)">
+                                        <i class="fas fa-check"></i> &nbsp;
+                                        You are registered for this event
+                                    </button>
+                                @else
+                                    <!-- Register Button with Trigger -->
+                                    <button class="button secondary popup-event-information-trigger ">
+                                        Register Now {{ Carbon::parse($event->e_dates[1])->diffForHumans() }}
+                                    </button>
+                                @endif
                             </div>
                             <!-- /POST OPEN CONTENT BODY -->
                         </div>
@@ -307,7 +315,8 @@ $page['title'] = $event->title . ' | ConnectUp';
                                                     <div class="form-item">
                                                         <!-- FORM INPUT -->
                                                         <div class="form-input active nocursor">
-                                                            <label for="{{ $field }}">{{ ucfirst($field) }}</label>
+                                                            <label
+                                                                for="{{ $field }}">{{ ucfirst($field) }}</label>
                                                             <input type="text" id="{{ $field }}"
                                                                 name="{{ $field }}" class="form-control" />
                                                         </div>
@@ -705,4 +714,7 @@ $page['title'] = $event->title . ' | ConnectUp';
 
             });
         </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+        <script></script>
     @endpush
