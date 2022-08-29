@@ -253,7 +253,7 @@ $page['title'] = $event->title . ' | ConnectUp';
 
                         <hr style="background:#fff6;">
 
-                        @if ($event->required_fields)
+                        @if ($profileUpdateRequired)
                             <div class="user-info">
                                 <form action="{{ route('api.profile.update') }}" method="POST" id="profile">
                                     @csrf
@@ -343,7 +343,7 @@ $page['title'] = $event->title . ' | ConnectUp';
                             <!-- /LOADER BARS -->
                         </div>
 
-                        <div class="user-registration hidden">
+                        <div class="user-registration {{ $profileUpdateRequired ? 'hidden' : '' }}">
                             <form action="" method="POST" id="register">
                                 @csrf
 
