@@ -255,7 +255,7 @@ $page['title'] = $event->title . ' | ConnectUp';
 
                         @if ($event->required_fields)
                             <div class="user-info">
-                                <form action="{{ route('profile.update') }}" method="POST">
+                                <form action="{{ route('api.profile.update') }}" method="POST" id="profile">
                                     @csrf
 
 
@@ -321,10 +321,40 @@ $page['title'] = $event->title . ' | ConnectUp';
                                     @endforeach
 
                                     <!-- Update Profile Button -->
-                                    <button class="button primary mt-3">Update Profile</button>
+                                    <button class="button primary mt-3" id="profile-update">Update Profile</button>
                                 </form>
                             </div>
                         @endif
+
+                        <div class="loader-container">
+
+
+                            <!-- LOADER BARS -->
+                            <div class="loader-bars">
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                                <div class="loader-bar"></div>
+                            </div>
+                            <!-- /LOADER BARS -->
+                        </div>
+
+                        <div class="user-registration hidden">
+                            <form action="" method="POST" id="register">
+                                @csrf
+
+
+
+                                <p class="widget-box-title mb-3 " style="text-align: center ">Haan bhai yeh form bharna
+                                    hai continue karne ke liye
+                                </p>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
                 <!-- /POPUP BOX CONTENT -->
@@ -550,6 +580,15 @@ $page['title'] = $event->title . ' | ConnectUp';
                 margin-bottom: 0.5rem;
                 margin-left: 10px
             }
+
+            .loader-container {
+                margin-top: 2em;
+                display: none;
+            }
+
+            .hidden {
+                display: none;
+            }
         </style>
     @endpush
 
@@ -575,6 +614,9 @@ $page['title'] = $event->title . ' | ConnectUp';
                 });
                 $('#country').selectize({
                     placeholder: "Select your Country",
+                });
+                $('#graduation_year').selectize({
+                    placeholder: "Select Graduation Year",
                 });
                 $('#interests').selectize({
                     placeholder: "Select your Interests",
@@ -614,6 +656,44 @@ $page['title'] = $event->title . ' | ConnectUp';
                         });
                     },
                 });
+
+
+                // on profile-update form submit
+                $("#profile").submit(function(e) {
+                    $(".loader-container").show();
+                    $('.user-info').hide();
+                    e.preventDefault();
+                    var form = $(this);
+                    var formData = new FormData(this);
+                    $.ajax({
+                        url: form.attr("action"),
+                        type: form.attr("method"),
+                        data: formData,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(data) {
+                            console.log(data);
+                            if (data.success) {
+                                $(".loader-container").hide();
+                                $('.user-registration').show();
+                                toastr.success(data.message);
+                            } else {
+                                $(".loader-container").hide();
+                                $('.user-info').show();
+                                toastr.error(data.message);
+                            }
+                        },
+                        error: function(data) {
+                            console.log(data);
+                            $(".loader-container").hide();
+                            $('.user-info').show();
+                            toastr.error(data.message);
+                        }
+
+                    });
+                });
+
 
             });
         </script>

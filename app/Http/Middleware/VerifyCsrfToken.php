@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/api/*',
         '/user/profile/update',
+        '/user/profile/update/api',
         '/user/profile/update-cover-photo',
         '/user/startup/create',
         '/user/startup/update/*',
