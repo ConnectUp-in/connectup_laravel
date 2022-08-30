@@ -1,5 +1,7 @@
 @php
 $page['title'] = $event->title . ' | ConnectUp';
+$page['description'] = preg_replace("/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($event->content))));
+$page['image'] = $event->image ?? '';
 
 @endphp
 
@@ -150,7 +152,6 @@ $page['title'] = $event->title . ' | ConnectUp';
                             <div class="post-open-content-body">
 
                                 {!! $event->content !!}
-
 
 
                                 <!-- TAG LIST -->

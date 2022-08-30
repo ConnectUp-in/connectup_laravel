@@ -33,7 +33,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web', 'sitemap')
+            // Add sitemap and web middleware to the web routes
+            Route::middleware(['web', 'sitemap'])
                 ->group(base_path('routes/web.php'));
         });
     }
