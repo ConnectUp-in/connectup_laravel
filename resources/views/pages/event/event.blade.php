@@ -163,15 +163,28 @@ $page['title'] = $event->title . ' | ConnectUp';
 
 
                                 @if ($registered)
-                                    <button class="button white" onmousedown="party.confetti(this)">
+                                    <button class="button void white  nohover" onmousedown="party.confetti(this)">
                                         <i class="fas fa-check"></i> &nbsp;
                                         You are registered for this event
                                     </button>
                                 @else
-                                    <!-- Register Button with Trigger -->
-                                    <button class="button secondary popup-event-information-trigger ">
-                                        Register Now {{ Carbon::parse($event->e_dates[1])->diffForHumans() }}
-                                    </button>
+                                    {{-- If current date and time is before registration starts --}}
+                                    @if (Carbon::parse($event->r_dates[0]) > now())
+                                        <button class="button void nohover">
+                                            Registration will start soon
+                                            ({{ Carbon::parse($event->r_dates[0])->diffForHumans() }})
+                                        </button>
+                                    @elseif(Carbon::parse($event->r_dates[1]) < now())
+                                        <button class="button void nohover">
+                                            Registration has been closed
+                                            ({{ Carbon::parse($event->r_dates[1])->diffForHumans() }})
+                                        </button>
+                                    @else
+                                        <!-- Register Button with Trigger -->
+                                        <button class="button secondary popup-event-information-trigger ">
+                                            Register Now
+                                        </button>
+                                    @endif
                                 @endif
                             </div>
                             <!-- /POST OPEN CONTENT BODY -->

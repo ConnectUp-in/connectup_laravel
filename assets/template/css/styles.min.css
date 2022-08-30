@@ -1525,6 +1525,13 @@ figure > img {
 .button.twitter:hover {
     background-color: #0aabed;
 }
+
+.button.nohover:hover {
+    background-color: transparent;
+    color: #9aa4bf;
+    box-shadow: none;
+    outline: none;
+}
 .button.add-field-button {
     width: 128px;
     margin-top: 40px;
