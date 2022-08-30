@@ -41,7 +41,7 @@ class EventController extends Controller
             $event->creator = Startup::where('id', $event->creator)->select('id', 'name', 'username', 'logo')->first();
         }
 
-        if (!$registered) {
+        if (!$registered && Auth::check()) {
 
             if (in_array('interests', $event->required_fields) && !Auth::user()->interests) {
                 $event->interests = Interest::select('id', 'name')->get();
