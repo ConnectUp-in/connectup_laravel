@@ -19,6 +19,7 @@ return new class extends Migration
             $table->primary('id');
             $table->string('title');
             $table->string('slug');
+            $table->string('link')->nullable();
             $table->string('type')->default('w');
             $table->longText('content')->nullable();
             $table->string('image')->nullable();

@@ -619,6 +619,10 @@ $page['title'] = $event->title . ' | ConnectUp';
             .hidden {
                 display: none;
             }
+
+            .post-open-image {
+                width: 100%
+            }
         </style>
     @endpush
 
