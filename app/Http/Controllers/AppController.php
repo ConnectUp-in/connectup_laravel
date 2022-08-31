@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
@@ -69,5 +70,17 @@ class AppController extends Controller
         User::where('active', false)->update(['active' => true]);
 
         return "Everything went well";
+    }
+    public function events()
+    {
+        page('events');
+        $events = Event::where('active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $data = [
+            'events' => $events,
+        ];
+        return $data;
+        return view('pages.events', $data);
     }
 }
