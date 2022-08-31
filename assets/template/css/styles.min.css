@@ -11237,9 +11237,11 @@ figure > img {
     flex-direction: column;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    height: 385px;
     padding: 40px 28px 32px;
     position: relative;
+}
+.event-preview .event-preview-info-top {
+    margin-bottom: 1em;
 }
 .event-preview .event-preview-info .date-sticker {
     position: absolute;

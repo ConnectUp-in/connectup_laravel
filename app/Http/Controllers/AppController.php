@@ -80,7 +80,7 @@ class AppController extends Controller
         $data = [
             'events' => $events,
         ];
-        return $data;
+        // return $data;
         return view('pages.events', $data);
     }
 }
