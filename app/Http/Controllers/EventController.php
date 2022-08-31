@@ -106,4 +106,9 @@ class EventController extends Controller
 
     }
 
+    public function eventredirect($slug)
+    {
+        return redirect(route('event', $slug));
+    }
+
 }

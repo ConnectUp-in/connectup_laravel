@@ -99,5 +99,6 @@ Route::prefix('startup')->group(function () {
 
 Route::prefix('event')->group(function () {
     Route::get('/{slug}', [EventController::class, 'event'])->name('event');
+    Route::middleware('auth')->get('/{slug}/redirect', [EventController::class, 'eventredirect'])->name('event.redirect');
     Route::post('/register', [EventController::class, 'register'])->name('event.register');
 });
