@@ -25,7 +25,36 @@ class EventSeeder extends Seeder
                 'title' => 'How to make money with Blogging',
                 'slug' => 'how-to-make-money-with-blogging',
                 'type' => 'w',
-                'content' => '<p>This is a simple tutorial on how to make money with blogging. You can read this tutorial on <a href="https://www.youtube.com/watch?v=_q-Q-q-Q-Q">YouTube</a>.</p>',
+                'content' => '
+
+
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span>You are probably asking yourself, &ldquo;how do I start a blog from scratch?&rdquo; or maybe you&#39;ve discovered the website and don&#39;t know how to get ranked. You should know that you don&#39;t need millions or even thousands of dollars to create a blog site and earn good money. In fact, there are a few steps that any individual can take so he or she can start a blog without financial restrictions. This is why; In this workshop, we will discuss &quot;How to write a high-ranking Blog from scratch for true beginners allowing them to become profitable Bloggers !&quot;</span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:11pt"><span style="font-family:Arial"><span>In this workshop, we will discover</span></span></span></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>What is a blog?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to set up your blog site in 5 minutes?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>What are the secrets to ranking your blog high?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to write a High Ranking Blog from scratch?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to get traffic on your blog site?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>Ways to earn money from your blog site?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to promote your blog site?</span></span></span></li>
+	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>And a lot more!</span></span></span></li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:11pt"><span style="font-family:Arial"><span>Register now to be part of this workshop.</span></span></span></p>
+
+<p></p>
+
+
+                ',
                 'image' => '/assets/defaults/eventimage.png',
                 'r_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
                 'e_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
