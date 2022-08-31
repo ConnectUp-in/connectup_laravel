@@ -46,8 +46,8 @@ $page['image'] = $event->image ?? '';
                         <div class="post-open-heading">
                             <!-- POST OPEN TIMESTAMP -->
                             <p class="post-open-timestamp">
-                                Published: <span class="highlighted">
-                                    {{ $event->created_at->diffForHumans() }}
+                                Last Updated: <span class="highlighted">
+                                    {{ $event->updated_at->diffForHumans() }}
                                 </span>
                             </p>
                             <!-- /POST OPEN TIMESTAMP -->
@@ -66,9 +66,10 @@ $page['image'] = $event->image ?? '';
                                     {{ $event->location }}
                                 </span>
                                 <span class="float-right">
+                                    <i class="fas fa-eye"></i>
                                     <span class="highlighted">
-                                        <i class="fas fa-history"></i>
-                                    </span>{{ $event->updated_at->diffForHumans() }}
+                                        {{ changeIntoKMG(profileview($event->id)) }}
+                                    </span>
                                 </span>
                             </p>
                         </div>

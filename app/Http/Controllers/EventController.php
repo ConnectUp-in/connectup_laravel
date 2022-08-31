@@ -24,6 +24,8 @@ class EventController extends Controller
             return view('pages.event.404');
         }
 
+        page('event/{slug}', $event->id);
+
         $profileUpdateRequired = false;
         $registered = false;
 
