@@ -631,6 +631,22 @@ $page['image'] = $event->image ?? '';
         .post-open-image {
             width: 100%
         }
+
+        .post-open-content-body * {
+            color: #fffe !important;
+            font-size: 18px;
+            word-spacing: 0.3em;
+            font-family: Rajdhani, sans-serif !important;
+        }
+
+
+        .post-open-content-body p {
+            line-height: 1.3em !important;
+        }
+
+        .post-open-content-body ol {
+            list-style: inside circle !important;
+        }
     </style>
 @endpush
 
