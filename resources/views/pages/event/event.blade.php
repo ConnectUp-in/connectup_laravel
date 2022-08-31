@@ -151,7 +151,9 @@ $page['image'] = $event->image ?? '';
                             <!-- POST OPEN CONTENT BODY -->
                             <div class="post-open-content-body">
 
-                                {!! $event->content !!}
+                                <div class="post-content">
+                                    {!! $event->content !!}
+                                </div>
 
 
                                 <!-- TAG LIST -->
@@ -632,7 +634,7 @@ $page['image'] = $event->image ?? '';
             width: 100%
         }
 
-        .post-open-content-body * {
+        .post-content * {
             color: #fffe !important;
             font-size: 18px;
             word-spacing: 0.3em;
@@ -640,11 +642,11 @@ $page['image'] = $event->image ?? '';
         }
 
 
-        .post-open-content-body p {
+        .post-content p {
             line-height: 1.3em !important;
         }
 
-        .post-open-content-body ol {
+        .post-content ol {
             list-style: inside circle !important;
         }
     </style>
