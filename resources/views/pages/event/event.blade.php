@@ -247,41 +247,6 @@ $page['image'] = $event->image ?? '';
                     <div class="widget-box">
                         <!-- WIDGET BOX CONTENT -->
                         <div class="widget-box-content">
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input active nocursor">
-                                        <label for="name">Your Name</label>
-                                        <input type="text" id="name" name="" disabled
-                                            value="{{ Auth::user()->name }}" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
-
-
-                            <!-- FORM ROW -->
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input active nocursor">
-                                        <label for="email">Public Email</label>
-                                        <input type="text" id="email" name="" disabled
-                                            value="{{ Auth::user()->email }}" />
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
-                            <!-- /FORM ROW -->
-
-                            <hr style="background:#fff6;">
-
                             @if ($profileUpdateRequired)
                                 <div class="user-info">
                                     <form action="{{ route('api.profile.update') }}" method="POST" id="profile">
