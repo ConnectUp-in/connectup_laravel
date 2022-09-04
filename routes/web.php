@@ -72,6 +72,7 @@ Route::get('/testmail', [HelperController::class, 'testmail']);
 Route::get('/image', [HelperController::class, 'image']);
 Route::view('viewmail', 'pdf.invoice');
 Route::view('privacypolicy', 'others.privacypolicy');
+Route::view('termsofservice', 'others.termsofservice');
 
 // Social Authentication Routes
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirectToGoogle');
