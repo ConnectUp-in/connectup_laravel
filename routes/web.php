@@ -70,7 +70,7 @@ Route::post('title', function () {
 
 Route::get('/testmail', [HelperController::class, 'testmail']);
 Route::get('/image', [HelperController::class, 'image']);
-Route::view('viewmail', 'emails.test');
+Route::view('viewmail', 'pdf.invoice');
 
 // Social Authentication Routes
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirectToGoogle');
