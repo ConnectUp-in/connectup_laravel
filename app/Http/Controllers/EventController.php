@@ -111,4 +111,19 @@ class EventController extends Controller
         return redirect(route('event', $slug));
     }
 
+    public function registrations($id)
+    {
+        $event = Event::where('id', $id)->first();
+        if (!$event) {
+            return view('pages.event.404');
+        }
+        $registrations = EventRegistration::where('event_id', $id)->get();
+        $data = [
+            'event' => $event,
+            'registrations' => $registrations,
+        ];
+        // return $data;
+        return view('pages.event.registrations', $data);
+    }
+
 }
