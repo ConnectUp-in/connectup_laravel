@@ -621,6 +621,7 @@ $page['image'] = $event->image ?? '';
 
             .post-content p {
                 line-height: 1.3em !important;
+                margin-bottom: 1em;
             }
 
             .post-content ol {

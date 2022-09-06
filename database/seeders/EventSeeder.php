@@ -21,52 +21,98 @@ class EventSeeder extends Seeder
 
         $events = [
             // Event on How to make money with Blogging
+            // [
+            //     'title' => 'How to make money with Blogging',
+            //     'slug' => 'how-to-make-money-with-blogging',
+            //     'type' => 'w',
+            //     'content' => '
+
+            //     <p><span style="font-size:11pt"><span style="font-family:Arial"><span>You are probably asking yourself, &ldquo;how do I start a blog from scratch?&rdquo; or maybe you&#39;ve discovered the website and don&#39;t know how to get ranked. You should know that you don&#39;t need millions or even thousands of dollars to create a blog site and earn good money. In fact, there are a few steps that any individual can take so he or she can start a blog without financial restrictions. This is why; In this workshop, we will discuss &quot;How to write a high-ranking Blog from scratch for true beginners allowing them to become profitable Bloggers !&quot;</span></span></span></p>
+
+            //         <p>&nbsp;</p>
+
+            //         <p><span style="font-size:11pt"><span style="font-family:Arial"><span>In this workshop, we will discover</span></span></span></p>
+
+            //         <p>&nbsp;</p>
+
+            //         <ol>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>What is a blog?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to set up your blog site in 5 minutes?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>What are the secrets to ranking your blog high?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to write a High Ranking Blog from scratch?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to get traffic on your blog site?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>Ways to earn money from your blog site?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to promote your blog site?</span></span></span></li>
+            //             <li><span style="font-size:11pt"><span style="font-family:Arial"><span>And a lot more!</span></span></span></li>
+            //         </ol>
+
+            //         <p>&nbsp;</p>
+
+            //         <p><span style="font-size:11pt"><span style="font-family:Arial"><span>Register now to be part of this workshop.</span></span></span></p>
+
+            //         <p></p>
+
+            //     ',
+            //     'image' => '/assets/defaults/eventimage.png',
+            //     'r_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
+            //     'e_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
+            //     'location' => 'Youtube & Streamyard',
+            //     'attachments' => [],
+            //     'active' => true,
+            //     'suspended' => false,
+            //     'creator' => $founder->id,
+            //     'creator_type' => 'e',
+            //     'interests' => [1, 2, 3],
+            //     'tags' => ['blogging', 'money', 'youtube'],
+            //     'required_fields' => ["name", "email", "contact", "college"],
+            //     'additional_fields' => [
+            //         [
+            //             'title' => 'Whatsapp Contact Number',
+            //             'identifier' => 'field1',
+            //             'type' => 'text',
+            //             'required' => true,
+            //         ],
+            //         [
+            //             'title' => 'Anything else you want to share',
+            //             'identifier' => 'field2',
+            //             'type' => 'textarea',
+            //             'required' => false,
+            //         ],
+            //     ],
+            //     'created_at' => now(),
+            //     'updated_at' => now(),
+            // ],
             [
-                'title' => 'How to make money with Blogging',
-                'slug' => 'how-to-make-money-with-blogging',
+                'title' => 'Getting Started with Arduino',
+                'slug' => 'getting-started-with-arduino',
                 'type' => 'w',
                 'content' => '
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The most captivating platform, Innovations@EC, the official club of the Electronics and Communication Department, UIT RGPV Bhopal is conducting a workshop on the topic &ldquo;Getting Started with Basic Computing with Arduino&rdquo;.&nbsp;<br />
+                Grab the opportunity to get an insight into what an Arduino is and its functioning. Gain the hands-on experience of working with an Arduino and much more. </span></span></span></p>
 
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The further details of the workshop are as follows:<br />
+                Date: 12th September 2022<br />
+                Venue: Conference Hall, ECE Department</span></span></span></p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span>You are probably asking yourself, &ldquo;how do I start a blog from scratch?&rdquo; or maybe you&#39;ve discovered the website and don&#39;t know how to get ranked. You should know that you don&#39;t need millions or even thousands of dollars to create a blog site and earn good money. In fact, there are a few steps that any individual can take so he or she can start a blog without financial restrictions. This is why; In this workshop, we will discuss &quot;How to write a high-ranking Blog from scratch for true beginners allowing them to become profitable Bloggers !&quot;</span></span></span></p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The workshop will be conducted in two parts:<br />
+                Before Lunch: learn the concepts behind building an Arduino<br />
+                After Lunch: Build basic projects with Arduino</span></span></span></p>
 
-<p>&nbsp;</p>
-
-<p><span style="font-size:11pt"><span style="font-family:Arial"><span>In this workshop, we will discover</span></span></span></p>
-
-<p>&nbsp;</p>
-
-<ol>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>What is a blog?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to set up your blog site in 5 minutes?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>What are the secrets to ranking your blog high?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to write a High Ranking Blog from scratch?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to get traffic on your blog site?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>Ways to earn money from your blog site?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>How to promote your blog site?</span></span></span></li>
-	<li><span style="font-size:11pt"><span style="font-family:Arial"><span>And a lot more!</span></span></span></li>
-</ol>
-
-<p>&nbsp;</p>
-
-<p><span style="font-size:11pt"><span style="font-family:Arial"><span>Register now to be part of this workshop.</span></span></span></p>
-
-<p></p>
 
 
                 ',
-                'image' => '/assets/defaults/eventimage.png',
-                'r_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
-                'e_dates' => ['2022-08-25 12:00:00', '2022-09-05 12:00:00'],
-                'location' => 'Youtube & Streamyard',
+                'image' => '/assets/defaults/unoworkshop.jpg',
+                'r_dates' => ['2022-08-06 12:00:00', '2022-09-11 12:00:00'],
+                'e_dates' => ['2022-08-12 10:00:00', '2022-09-12 17:00:00'],
+                'location' => 'Conference Hall, ECE Department',
                 'attachments' => [],
                 'active' => true,
                 'suspended' => false,
                 'creator' => $founder->id,
                 'creator_type' => 'e',
                 'interests' => [1, 2, 3],
-                'tags' => ['blogging', 'money', 'youtube'],
-                'required_fields' => ["name", "email", "contact", "college"],
+                'tags' => ['innovations', 'electronics', 'arduino'],
+                'required_fields' => ["college"],
                 'additional_fields' => [
                     [
                         'title' => 'Whatsapp Contact Number',
@@ -75,8 +121,20 @@ class EventSeeder extends Seeder
                         'required' => true,
                     ],
                     [
-                        'title' => 'Anything else you want to share',
+                        'title' => 'Semester',
                         'identifier' => 'field2',
+                        'type' => 'text',
+                        'required' => true,
+                    ],
+                    [
+                        'title' => 'Are you Familiar with Arduino?',
+                        'identifier' => 'field3',
+                        'type' => 'text',
+                        'required' => true,
+                    ],
+                    [
+                        'title' => 'What excites you most about electronics?',
+                        'identifier' => 'field4',
                         'type' => 'textarea',
                         'required' => false,
                     ],
