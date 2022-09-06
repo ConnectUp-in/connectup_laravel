@@ -265,9 +265,9 @@ if ($requests['sort'] ?? '') {
                             <!-- /META LINE --> --}}
 
                             <!-- BUTTON -->
-                            <p class="button white white-secondary">
+                            <a href="{{ route('event', $event->slug) }}" class="button white white-secondary">
                                 View Event
-                            </p>
+                            </a>
                             <!-- /BUTTON -->
                         </div>
                         <!-- /EVENT PREVIEW INFO BOTTOM -->
