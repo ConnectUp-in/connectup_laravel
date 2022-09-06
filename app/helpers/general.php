@@ -1,24 +1,25 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\PageView;
 
 // Import DOMDocument class
 // use DOMDocument;
-use App\Models\PageView;
-use App\Models\Redirect;
+use Illuminate\Support\Facades\Auth;
 
-function makeHyperText($text){
-    return preg_replace('!(https://[a-z0-9_./?=&-]+)!i', '<a href="$1">$1</a> ', $text." ");
+function makeHyperText($text)
+{
+    return preg_replace('!(https://[a-z0-9_./?=&-]+)!i', '<a href="$1">$1</a> ', $text . " ");
 }
 
-function getURLfromText($text){
+function getURLfromText($text)
+{
     preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $text, $match);
     $string = implode(',', $match[0]);
     return $string;
 }
 
-
-function getMetaData($url){
+function getMetaData($url)
+{
     $resp = [];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -34,28 +35,28 @@ function getMetaData($url){
     // Parse DOM to get Title
     $nodes = $dom->getElementsByTagName('title');
     $title = '';
-    if($nodes->length > 0){
+    if ($nodes->length > 0) {
         $title = $nodes->item(0)->nodeValue;
     }
     // Parse DOM to get Meta Description
     $metas = $dom->getElementsByTagName('meta');
     $body = "";
     $imageURL = "";
-    for ($i = 0; $i < $metas->length; $i ++) {
+    for ($i = 0; $i < $metas->length; $i++) {
         $meta = $metas->item($i);
         if ($meta->getAttribute('name') == 'Description' || $meta->getAttribute('name') == 'description') {
             $body = $meta->getAttribute('content');
         }
         if ($meta->getAttribute('property') == 'og:image:url') {
             $imageURL = $meta->getAttribute('content');
-        }elseif($meta->getAttribute('property') == 'og:image'){
+        } elseif ($meta->getAttribute('property') == 'og:image') {
             $imageURL = $meta->getAttribute('content');
         }
     }
 
     $images = $dom->getElementsByTagName('img');
 
-    if(!isset($imageURL) && $images->length > 0){
+    if (!isset($imageURL) && $images->length > 0) {
         $imageURL = $images->item(0)->getAttribute('src');
     }
 
@@ -63,13 +64,13 @@ function getMetaData($url){
         'title' => $title,
         'image_url' => $imageURL,
         'url' => $url,
-        'body' => preg_replace('/[^\00-\255]+/u', '', $body)
+        'body' => preg_replace('/[^\00-\255]+/u', '', $body),
     );
     return $output;
 }
 
-
-function getYoutubeVideoId($url){
+function getYoutubeVideoId($url)
+{
     $url = parse_url($url);
     if (isset($url['query'])) {
         parse_str($url['query'], $output);
@@ -84,9 +85,10 @@ function getYoutubeVideoId($url){
     return false;
 }
 
-function page($page, $profile_id=null){
+function page($page, $profile_id = null)
+{
     $p = new PageView();
-    if(Auth::check()){
+    if (Auth::check()) {
         $p->user_id = Auth::user()->id;
     }
     $p->page = $page;
@@ -96,22 +98,25 @@ function page($page, $profile_id=null){
     $p->save();
 }
 
-function profileview($profile_id){
+function profileview($profile_id)
+{
     $count = PageView::where('profile_id', $profile_id)->count();
     return $count;
 }
 
-function changeIntoKMG($number){
-    if($number > 100000){
-        return round($number/1000000, 1).'M';
-    }elseif($number > 100){
-        return round($number/1000, 1).'K';
-    }else{
+function changeIntoKMG($number)
+{
+    if ($number > 1000000) {
+        return round($number / 1000000, 1) . 'M';
+    } elseif ($number > 1000) {
+        return round($number / 1000, 1) . 'K';
+    } else {
         return $number;
     }
 }
 
-function shorten($url){
+function shorten($url)
+{
     $url = urlencode($url);
-    return url('/redirect?url='.$url);
+    return url('/redirect?url=' . $url);
 }
