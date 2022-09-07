@@ -158,7 +158,7 @@ $page['description'] = $startup->about;
                     <!-- /PROFILE HEADER INFO ACTION -->
 
 
-                    @if (Auth::check() && Auth::user()->id == $startup->founder->id)
+                    @if (Auth::check() && Auth::user()->id == ($startup->founder->id ?? null))
                         <!-- PROFILE HEADER INFO ACTION -->
                         <a class="profile-header-info-action button"
                             href="{{ route('startup.update.info', $startup->id) }}">
