@@ -9,9 +9,11 @@
 </head>
 
 <body>
+    {{-- Download Buttons --}}
+    <button id="downloadCSV">Download CSV</button>
+    {{-- Table --}}
 
-
-
+    <hr>
     <table>
         <thead>
 
@@ -53,6 +55,9 @@
     </table>
 
 
+
+
+
     {{-- Import jquery --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -67,7 +72,50 @@
         $(document).ready(function() {
             $('table').DataTable();
         });
+
+        // Download CSV without using jQuery plugin
+        $('#downloadCSV').click(function() {
+            var csv = 'Sno.,Name,Email,';
+            @foreach ($event->required_fields as $field)
+                csv += '{{ ucfirst($field) }}' + ',';
+            @endforeach
+
+            @foreach ($event->additional_fields as $field)
+                csv += '{{ ucfirst($field['title']) }}' + ',';
+            @endforeach
+
+            csv += '\n';
+
+            @foreach ($registrations as $registration)
+                csv += '{{ $loop->iteration }}' + ',';
+                csv += '{{ $registration->name }}' + ',';
+                csv += '{{ $registration->email }}' + ',';
+                @foreach ($event->required_fields as $field)
+                    @if (is_array($registration->required_fields[$field]))
+                        csv += '{{ $registration->required_fields[$field]['name'] ?? '' }}' + ',';
+                    @else
+                        csv += '{{ $registration->required_fields[$field] }}' + ',';
+                    @endif
+                @endforeach
+
+                @foreach ($event->additional_fields as $field)
+                    csv += '{{ $registration->additional_fields[$field['identifier']] ?? '' }}' + ',';
+                @endforeach
+
+                csv += '\n';
+            @endforeach
+
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = 'registrations.csv';
+            hiddenElement.click();
+        });
     </script>
+
+
+
+
 
 
 </body>
