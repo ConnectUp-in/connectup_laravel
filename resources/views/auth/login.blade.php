@@ -58,15 +58,50 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                 <img class="form-box-decoration overflowing" src="/assets/template/img/landing/rocket.png" alt="rocket">
                 <!-- /FORM BOX DECORATION -->
 
-                <!-- FORM BOX TITLE -->
+
+                {{-- <!-- FORM BOX TITLE -->
                 <h2 class="form-box-title">Account Login</h2>
-                <!-- /FORM BOX TITLE -->
+                <!-- /FORM BOX TITLE --> --}}
+
+
+                <!-- LINED TEXT -->
+                <p class="lined-text">Login with your Social Account</p>
+                <!-- /LINED TEXT -->
+
+                <!-- SOCIAL LINKS -->
+                <div class="social-links">
+
+                    <!-- SOCIAL LINK -->
+                    <a class="social-link youtube" href="/auth/google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <!-- /SOCIAL LINK -->
+                    <!-- SOCIAL LINK -->
+                    <a class="social-link github" href="/auth/github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- /SOCIAL LINK -->
+
+                    <!-- SOCIAL LINK -->
+                    <a class="social-link linkedin" href="/auth/linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <!-- /SOCIAL LINK -->
+
+                </div>
+                <!-- /SOCIAL LINKS -->
+                <p class="lined-text">Account Login</p>
+
 
                 <center style="    color: #fff;
             font-family: 'RAJDHANI';
             margin-bottom: 10px;">
                     <x-jet-validation-errors class="mb-4" />
                 </center>
+
+
+
+
                 <!-- FORM -->
                 <form class="form" method="POST" action="/login">
 
@@ -147,32 +182,6 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                 </form>
                 <!-- /FORM -->
 
-                <!-- LINED TEXT -->
-                <p class="lined-text">Login with your Social Account</p>
-                <!-- /LINED TEXT -->
-
-                <!-- SOCIAL LINKS -->
-                <div class="social-links">
-
-                    <!-- SOCIAL LINK -->
-                    <a class="social-link youtube" href="/auth/google">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <!-- /SOCIAL LINK -->
-                    <!-- SOCIAL LINK -->
-                    <a class="social-link github" href="/auth/github">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <!-- /SOCIAL LINK -->
-
-                    <!-- SOCIAL LINK -->
-                    <a class="social-link linkedin" href="/auth/linkedin">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <!-- /SOCIAL LINK -->
-
-                </div>
-                <!-- /SOCIAL LINKS -->
             </div>
             <!-- /FORM BOX -->
 
