@@ -624,7 +624,8 @@ $page['image'] = $event->image ?? '';
                 margin-bottom: 1em;
             }
 
-            .post-content ol {
+            .post-content ol,
+            .post-content ul {
                 list-style: inside circle !important;
             }
         </style>

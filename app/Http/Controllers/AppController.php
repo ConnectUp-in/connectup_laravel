@@ -56,7 +56,8 @@ class AppController extends Controller
     public function superpreneurs()
     {
         page('entrepreneurs');
-        $entrepreneurs = User::where('active', true)->get();
+// sort by last updated
+        $entrepreneurs = User::where('active', true)->orderBy('updated_at', 'desc')->get();
         $data = [
             'users' => $entrepreneurs,
         ];

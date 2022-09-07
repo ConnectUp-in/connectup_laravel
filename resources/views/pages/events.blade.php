@@ -1,5 +1,5 @@
 @php
-$page['title'] = 'Startups | ConnectUp - Connecting the Dots...';
+$page['title'] = 'Events | ConnectUp - Connecting the Dots...';
 $currenturl = Request::url() . '?';
 $requests = Request::all();
 foreach ($requests as $key => $value) {
