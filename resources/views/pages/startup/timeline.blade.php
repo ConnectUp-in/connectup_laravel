@@ -537,7 +537,8 @@ $page['description'] = $startup->about;
                                 <!-- USER STATUS -->
                                 <div class="user-status">
                                     <!-- USER STATUS AVATAR -->
-                                    <a class="user-status-avatar" href="{{ route('user', $startup->founder->id) }}">
+                                    <a class="user-status-avatar"
+                                        href="{{ route('user', $startup->founder->username) }}">
                                         <!-- USER AVATAR -->
                                         <div class="user-avatar small no-outline">
                                             <!-- USER AVATAR CONTENT -->
