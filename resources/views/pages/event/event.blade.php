@@ -370,6 +370,12 @@ $page['image'] = $event->image ?? '';
                                     href="{{ route('event.redirect', $event->slug) }}">login</a>
                                 to continue.
                             </p>
+
+                            <a href="{{ route('event.redirect', $event->slug) }}" class="button w-100 secondary mt-3"
+                                id="registerbutton">
+                                Login
+                                <span class="hide-text-mobile">to continue</span> </a>
+                            </button>
                         </div>
                     </div>
 
