@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 // use Mail;
 
@@ -18,7 +19,7 @@ function profileNotCompleted()
         "interests",
         "socials",
         "birthday",
-        "power"
+        "power",
     ];
 
     $total = count($factors);
@@ -40,8 +41,8 @@ function profileNotCompleted()
     }
 }
 
-
-function sendRegistrationMail($user){
+function sendRegistrationMail($user)
+{
     $data = [
         'name' => $user->name,
         'email' => $user->email,
@@ -52,11 +53,11 @@ function sendRegistrationMail($user){
         $message->to($user->email);
         $message->subject('Welcome to ConnectUp');
     });
-    
 
 }
 
-function sendRefferalAppliedMail($data){
+function sendRefferalAppliedMail($data)
+{
     Mail::send('emails.refferal', $data, function ($message) use ($data) {
         $message->from('connectup.in@gmail.com');
         $message->to(Auth::user()->email);
@@ -64,14 +65,26 @@ function sendRefferalAppliedMail($data){
     });
 }
 
-function sendJoinedUsingRefferalMail($email){
+function sendJoinedUsingRefferalMail($email)
+{
     $data = [
         'name' => Auth::user()->name,
-        'username' => Auth::user()->username
+        'username' => Auth::user()->username,
     ];
     Mail::send('emails.joined', $data, function ($message) use ($email) {
         $message->from('connectup.in@gmail.com');
         $message->to($email);
-        $message->subject(Auth::user()->name.' has joined using using Your refferal');
+        $message->subject(Auth::user()->name . ' has joined using using Your refferal');
     });
+}
+
+function getTicketFromRegistration($registration)
+{
+
+    // return $registration;
+    // Create Custom PDF and mail it to user
+    $pdf = \PDF::loadView('pdf.eventticket', ['registration' => $registration])
+        ->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
+
+    return $pdf->stream('invoice.pdf');
 }
