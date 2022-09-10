@@ -88,3 +88,12 @@ function getTicketFromRegistration($registration)
 
     return $pdf->stream('invoice.pdf');
 }
+
+function sendConfirmationTicketMail($registration)
+{
+    $event = Event::where('id', $registration->event_id)->first();
+    $user = User::where('id', $registration->user_id)->first();
+    return [
+        'message' => 'Ruk ja bhai, abhi ispe chal raha hai',
+    ];
+}
