@@ -133,7 +133,11 @@ class EventController extends Controller
             return back()->with('error', 'Invalid registration id.');
         }
         $registration->confirmed_at = date('Y-m-d H:i:s');
+
+        // Send Ticket to the user
         $registration->save();
+        sendConfirmationTicketMail($registration);
+
         return redirect()->back()->with('success', 'Registration confirmed.');
     }
 

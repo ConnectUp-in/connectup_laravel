@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 // use Mail;
@@ -86,14 +87,29 @@ function getTicketFromRegistration($registration)
     $pdf = \PDF::loadView('pdf.eventticket', ['registration' => $registration])
         ->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
 
-    return $pdf->stream('invoice.pdf');
+    return $pdf->output();
 }
 
 function sendConfirmationTicketMail($registration)
 {
     $event = Event::where('id', $registration->event_id)->first();
     $user = User::where('id', $registration->user_id)->first();
-    return [
-        'message' => 'Ruk ja bhai, abhi ispe chal raha hai',
+    $registration->event = $event;
+    $registration->user = $user;
+    $pdf = getTicketFromRegistration($registration);
+    $email = $user->email;
+    $data = [
+        'user' => $user,
+        'event' => $event,
+        'registration' => $registration,
     ];
+    Mail::send('emails.ticketconfirmation', $data, function ($message) use ($email, $pdf) {
+        $message->from('connectup.in@gmail.com');
+        $message->to($email);
+        $message->subject(Auth::user()->name . ' has joined using using Your refferal');
+        $message->attachData($pdf, 'ticket.pdf', [
+            'mime' => 'application/pdf',
+        ]);
+
+    });
 }
