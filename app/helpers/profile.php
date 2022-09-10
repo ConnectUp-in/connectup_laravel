@@ -103,10 +103,10 @@ function sendConfirmationTicketMail($registration)
         'event' => $event,
         'registration' => $registration,
     ];
-    Mail::send('emails.ticketconfirmation', $data, function ($message) use ($email, $pdf) {
+    Mail::send('emails.ticketconfirmation', $data, function ($message) use ($email, $pdf,$event) {
         $message->from('connectup.in@gmail.com');
         $message->to($email);
-        $message->subject(Auth::user()->name . ' has joined using using Your refferal');
+        $message->subject('Your ticket has been confirmed for ' . $event->title);
         $message->attachData($pdf, 'ticket.pdf', [
             'mime' => 'application/pdf',
         ]);
