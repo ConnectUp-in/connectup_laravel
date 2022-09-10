@@ -23,5 +23,5 @@
     <b>Team Innovations@EC</b>
 
     <br>
-    <center>Powered by <a href="https://connectup.in"> </a> </center>
+    <center>Powered by <a href="https://connectup.in">ConnectUp </a> </center>
 @endsection
