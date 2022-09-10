@@ -181,29 +181,42 @@
         </div>
     </div>
 
+    @php
+        $event_start_date = Carbon::parse($registration->event->e_dates[0]);
+        $event_end_date = Carbon::parse($registration->event->e_dates[1]);
+    @endphp
 
     <div class="ticket">
         <div class="left">
             <div class="ticket-info">
                 <div class="date">
-                    <div class="date-left">MONDAY</div>
-                    <div class="date-center">Sept 12</div>
-                    <div class="date-right">2022</div>
+                    <div class="date-left">
+                        {{ $event_start_date->format('l') }}
+                    </div>
+                    <div class="date-center">
+                        {{ $event_start_date->format('M d') }}
+                    </div>
+                    <div class="date-right">
+                        {{ $event_start_date->format('Y') }}
+                    </div>
                 </div>
                 <div class="ticket-body">
 
                     <div class="name">
                         <h2>
-                            Getting Started with Arduino and Basic Computing
+                            {{ $registration->event->title }}
                         </h2>
                     </div>
-                    <p class="info"> Issued to: <span class="info-content">Harsh Vishwakarma</span> </p>
-                    <p class="info"> Location: <span class="info-content">ECE, Conferrence Hall, UIT RGPV Bhopal,
-                            (Some
-                            Random Address) (462022)</span> </p>
+                    <p class="info"> Issued to: <span class="info-content">
+                            {{ $registration->user->name }}
+                        </span> </p>
+                    <p class="info"> Location: <span class="info-content">
+                            {{ $registration->event->location }}
+
+                        </span> </p>
                 </div>
                 <p class="ticket-id">
-                    ID: <span class="ticket-id-content">{{ hexdec(uniqid()) }}</span>
+                    ID: <span class="ticket-id-content">{{ $registration->ticket_id }}</span>
                 </p>
             </div>
         </div>
@@ -218,12 +231,14 @@
                     <h2>CONGRATS!!</h2>
                 </div>
                 <div class="time">
-                    <p>7:00 PM - 10:00 PM</p>
+                    {{-- <p>7:00 PM - 10:00 PM</p> --}}
+                    <p>{{ $event_start_date->format('h:i A') }} - {{ $event_end_date->format('h:i A') }}
+                    </p>
                 </div>
                 <div class="barcode">
 
                     <img src="data:image/png;base64, {!! base64_encode(
-                        QrCode::format('png')->style('round')->size(150)->generate('https://connectup.in'),
+                        QrCode::format('png')->style('round')->size(150)->generate(route('event.verify', [$registration->event_id, $registration->ticket_id])),
                     ) !!} ">
                 </div>
                 <p class="ticket-number">
