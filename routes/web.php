@@ -105,4 +105,7 @@ Route::prefix('event')->group(function () {
     Route::middleware('auth')->get('/{slug}/redirect', [EventController::class, 'eventredirect'])->name('event.redirect');
     Route::post('/register', [EventController::class, 'register'])->name('event.register');
     Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('event.registrations');
+    Route::get('/registration/confirm/{id}', [EventController::class, 'registrationConfirm'])->name('event.registration.confirm');
+    Route::get('/registration/sendticket/{id}', [EventController::class, 'registrationSendticket'])->name('event.registration.sendticket');
+    Route::get('verify/{event_id}/{ticket_id}', [EventController::class, 'verify'])->name('event.verify');
 });
