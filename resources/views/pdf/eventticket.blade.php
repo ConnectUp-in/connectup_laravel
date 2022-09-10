@@ -238,7 +238,7 @@
                 <div class="barcode">
 
                     <img src="data:image/png;base64, {!! base64_encode(
-                        QrCode::format('png')->style('round')->size(150)->generate(route('event.verify', [$registration->event_id, $registration->ticket_id])),
+                        QrCode::format('png')->size(150)->generate(route('event.verify', [$registration->event_id, $registration->ticket_id])),
                     ) !!} ">
                 </div>
                 <p class="ticket-number">
