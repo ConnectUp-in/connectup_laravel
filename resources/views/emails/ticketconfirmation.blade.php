@@ -17,8 +17,11 @@
     </center>
 
 
-    Enjoy the event! <br>
+    Keep Learning, Keep Innovating <br>
     <br>
     Best Regards, <br>
-    <b>Team ConnectUp</b>
+    <b>Team Innovations@EC</b>
+
+    <br>
+    <center>Powered by <a href="https://connectup.in"> </a> </center>
 @endsection
