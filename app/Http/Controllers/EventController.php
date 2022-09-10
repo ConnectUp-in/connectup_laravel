@@ -126,4 +126,37 @@ class EventController extends Controller
         return view('pages.event.registrations', $data);
     }
 
+    public function registrationConfirm($id)
+    {
+        $registration = EventRegistration::where('id', $id)->first();
+        if (!$registration) {
+            return back()->with('error', 'Invalid registration id.');
+        }
+        $registration->confirmed_at = date('Y-m-d H:i:s');
+        $registration->save();
+        return redirect()->back()->with('success', 'Registration confirmed.');
+    }
+
+    public function verify($event_id, $ticket_id)
+    {
+        $registration = EventRegistration::where('event_id', $event_id)->where('ticket_id', $ticket_id)->first();
+        if (!$registration) {
+            return [
+                'status' => 'error',
+                'message' => 'Invalid ticket or Event id.',
+            ];
+        }
+        $registration->event = Event::where('id', $event_id)->first();
+        // return $registration;
+        $text = 'This Ticket was issued to ' . $registration->name . ' for "' . $registration->event->title . '".';
+        if ($registration->confirmed_at) {
+            $text .= ' This ticket has been confirmed on ' . $registration->confirmed_at . '.';
+        } else {
+            $text .= ' This ticket has not been confirmed yet.';
+
+        }
+        return $text;
+        return view('pages.event.verify', $data);
+    }
+
 }
