@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventRegistration;
 use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
@@ -67,9 +68,15 @@ class AppController extends Controller
 
     public function onlyforonce()
     {
-        // Select all users and change their active status to true
-        User::where('active', false)->update(['active' => true]);
+        // // Select all users and change their active status to true
+        // User::where('active', false)->update(['active' => true]);
 
+        // Select all Event Registrations and change their Ticket_id to unique random number where ticket_id is null
+        $registrations = EventRegistration::where('ticket_id', null)->get();
+        foreach ($registrations as $registration) {
+            $registration->ticket_id = rand(10000000, 99999999);
+            $registration->save();
+        }
         return "Everything went well";
     }
     public function events()
