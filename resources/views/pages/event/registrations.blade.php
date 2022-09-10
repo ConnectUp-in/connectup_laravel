@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrations</title>
+    <style>
+        .confirmed {
+            background: #c3e6cb;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,12 +33,13 @@
                 @foreach ($event->additional_fields as $field)
                     <td>{{ ucfirst($field['title']) }}</td>
                 @endforeach
+                <td>Actions</td>
             </tr>
         </thead>
         @foreach ($registrations as $registration)
             <tbody>
 
-                <tr>
+                <tr class="{{ $registration->confirmed_at ? 'confirmed' : '' }}">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $registration->name }}</td>
                     <td>{{ $registration->email }}</td>
@@ -49,6 +55,15 @@
                     @foreach ($event->additional_fields as $field)
                         <td>{{ $registration->additional_fields[$field['identifier']] ?? '' }}</td>
                     @endforeach
+                    <td>
+                        @if ($registration->confirmed_at)
+                            <a href="{{ route('event.registration.sendticket', $registration->id) }}">Send Ticket</a>
+                        @else
+                            <a href="{{ route('event.registration.confirm', $registration->id) }}">Confirm</a>
+                        @endif
+                        <a
+                            href="{{ route('event.verify', [$registration->event_id, $registration->ticket_id]) }}">Verify</a>
+                    </td>
                 </tr>
             </tbody>
         @endforeach
@@ -69,9 +84,9 @@
 
     {{-- Datatable --}}
     <script>
-        $(document).ready(function() {
-            $('table').DataTable();
-        });
+        // $(document).ready(function() {
+        //     $('table').DataTable();
+        // });
 
         // Download CSV without using jQuery plugin
         $('#downloadCSV').click(function() {
