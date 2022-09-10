@@ -88,44 +88,52 @@
         //     $('table').DataTable();
         // });
 
-        // Download CSV without using jQuery plugin
+        // Download CSV  from table without using jQuery plugin
         $('#downloadCSV').click(function() {
-            var csv = 'Sno.,Name,Email,';
-            @foreach ($event->required_fields as $field)
-                csv += '{{ ucfirst($field) }}' + ',';
-            @endforeach
+            var csv = [];
+            var rows = document.querySelectorAll("table tr");
 
-            @foreach ($event->additional_fields as $field)
-                csv += '{{ ucfirst($field['title']) }}' + ',';
-            @endforeach
+            for (var i = 0; i < rows.length; i++) {
+                var row = [],
+                    cols = rows[i].querySelectorAll("td, th");
 
-            csv += '\n';
+                for (var j = 0; j < cols.length; j++)
+                    row.push(cols[j].innerText);
 
-            @foreach ($registrations as $registration)
-                csv += '{{ $loop->iteration }}' + ',';
-                csv += '{{ $registration->name }}' + ',';
-                csv += '{{ $registration->email }}' + ',';
-                @foreach ($event->required_fields as $field)
-                    @if (is_array($registration->required_fields[$field]))
-                        csv += '{{ $registration->required_fields[$field]['name'] ?? '' }}' + ',';
-                    @else
-                        csv += '{{ $registration->required_fields[$field] }}' + ',';
-                    @endif
-                @endforeach
+                csv.push(row.join(","));
+            }
 
-                @foreach ($event->additional_fields as $field)
-                    csv += '{{ $registration->additional_fields[$field['identifier']] ?? '' }}' + ',';
-                @endforeach
-
-                csv += '\n';
-            @endforeach
-
-            var hiddenElement = document.createElement('a');
-            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-            hiddenElement.target = '_blank';
-            hiddenElement.download = 'registrations.csv';
-            hiddenElement.click();
+            // Download CSV
+            downloadCSV(csv.join("\n"), 'registrations.csv');
         });
+
+        function downloadCSV(csv, filename) {
+            var csvFile;
+            var downloadLink;
+
+            // CSV file
+            csvFile = new Blob([csv], {
+                type: "text/csv"
+            });
+
+            // Download link
+            downloadLink = document.createElement("a");
+
+            // File name
+            downloadLink.download = filename;
+
+            // Create a link to the file
+            downloadLink.href = window.URL.createObjectURL(csvFile);
+
+            // Hide download link
+            downloadLink.style.display = "none";
+
+            // Add the link to DOM
+            document.body.appendChild(downloadLink);
+
+            // Click download link
+            downloadLink.click();
+        }
     </script>
 
 
