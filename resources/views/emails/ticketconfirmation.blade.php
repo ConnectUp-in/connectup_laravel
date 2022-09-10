@@ -10,7 +10,7 @@
         <h3> Here's your ticket </h3>
         <span> Bring this ticket to the event. </span>
         <br>
-        <img src="{{ url('/assets/defauls/dummyticket.png') }}" alt="ticket">
+        <img src="{{ url('/assets/defaults/dummyticket.png') }}" alt="ticket">
         <br>
         <span> Ticket is attached below. </span>
 
