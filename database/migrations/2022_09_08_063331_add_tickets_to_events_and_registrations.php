@@ -21,9 +21,8 @@ return new class extends Migration
         });
 
         Schema::table('event_registrations', function (Blueprint $table) {
-
             // Add ticket_id, confirmed_at, checked_in_at columns
-            $table->integer('ticket_id')->nullable();
+            $table->string('ticket_id')->nullable();
             $table->timestamp('confirmed_at')->nullable();
             $table->timestamp('checked_in_at')->nullable();
 
