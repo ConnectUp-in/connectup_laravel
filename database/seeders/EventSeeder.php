@@ -83,35 +83,37 @@ class EventSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'title' => 'Getting Started with Arduino',
-                'slug' => 'getting-started-with-arduino',
+                'title' => 'Techfest - IIT Bombay Workshop',
+                'slug' => 'Techfest-IIT-Bombay-Workshop',
                 'type' => 'w',
                 'content' => '
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The most captivating platform, Innovations@EC, the official club of the Electronics and Communication Department, UIT RGPV Bhopal is conducting a workshop on the topic &ldquo;Getting Started with Basic Computing with Arduino&rdquo;.&nbsp;<br />
-                Grab the opportunity to get an insight into what an Arduino is and its functioning. Gain the hands-on experience of working with an Arduino and much more. </span></span></span></p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Hey Innovators 🚀🚀<br />
+                Techfest, IIT Bombay, Asia&#39;s largest Science and Technology Festival, is organizing a workshop at UIT RGPV with Innovations@EC.</span></span></span></p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The further details of the workshop are as follows:<br />
-                Date: 12th September 2022<br />
-                Venue: Conference Hall, ECE Department</span></span></span></p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Grab the opportunity to learn Robotics and dive into its abstraction. This one-day workshop will aid in learning robotics that can help in engineering fields and explore technology to the best extent.🤖</span></span></span></p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">The workshop will be conducted in two parts:<br />
-                Before Lunch: learn the concepts behind building an Arduino<br />
-                After Lunch: Build basic projects with Arduino</span></span></span></p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">This workshop will help in the upcoming magnificent nationwide Zonal Competition, Technorion&#39;22 in Bhopal. The top 5 teams from the center will get direct entry to compete against each other for the final Techfest Trophy in IIT Bombay.</span></span></span></p>
+
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Speaker of the Event: Mr. Arpit Soni, Center Head &amp; Certified Trainer in Robonauts India.<br />
+                Date:19 September<br />
+                Venue: RGPV Conference Hall</span></span></span></p>
+
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Here is the chance to begin your journey of competing in unique and breathtaking challenges. Hurry up and register now.</span></span></span></p>
 
 
 
                 ',
-                'image' => '/assets/defaults/unoworkshop.jpg',
-                'r_dates' => ['2022-08-06 12:00:00', '2022-09-11 12:00:00'],
-                'e_dates' => ['2022-08-12 10:00:00', '2022-09-12 17:00:00'],
-                'location' => 'Conference Hall, ECE Department',
+                'image' => '/assets/defaults/events/techfest.jpg',
+                'r_dates' => ['2022-09-14 12:00:00', '2022-09-16 12:00:00'],
+                'e_dates' => ['2022-09-16 11:00:00', '2022-09-16 16:00:00'],
+                'location' => 'Conference Hall, RGPV Bhopal (462033)',
                 'attachments' => [],
                 'active' => true,
                 'suspended' => false,
                 'creator' => $founder->id,
                 'creator_type' => 'e',
                 'interests' => [1, 2, 3],
-                'tags' => ['innovations', 'electronics', 'arduino'],
+                'tags' => ['techfest', 'electronics', 'robotics'],
                 'required_fields' => ["college"],
                 'additional_fields' => [
                     [
@@ -127,14 +129,8 @@ class EventSeeder extends Seeder
                         'required' => true,
                     ],
                     [
-                        'title' => 'Are you Familiar with Arduino?',
+                        'title' => 'Why you want to join this workshop?',
                         'identifier' => 'field3',
-                        'type' => 'text',
-                        'required' => true,
-                    ],
-                    [
-                        'title' => 'What excites you most about electronics?',
-                        'identifier' => 'field4',
                         'type' => 'textarea',
                         'required' => false,
                     ],
