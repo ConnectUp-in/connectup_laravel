@@ -10,3 +10,6 @@
 
     gtag('config', 'G-Y94P20ZVQS');
 </script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811600246173013"
+    crossorigin="anonymous"></script>
