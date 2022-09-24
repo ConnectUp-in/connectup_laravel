@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {{-- Disable all Crawlers and Bots --}}
+    <meta name="robots" content="noindex, nofollow">
+
+
+
     <title>Registrations</title>
     <style>
         .confirmed {
