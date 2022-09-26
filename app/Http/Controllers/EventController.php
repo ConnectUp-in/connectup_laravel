@@ -136,7 +136,7 @@ class EventController extends Controller
 
         // Send Ticket to the user
         $registration->save();
-        sendConfirmationTicketMail($registration);
+        // sendConfirmationTicketMail($registration);
 
         return redirect()->back()->with('success', 'Registration confirmed.');
     }
