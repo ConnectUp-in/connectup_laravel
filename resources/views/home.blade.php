@@ -9,6 +9,10 @@
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
+    <!-- Import Font Awesome Icons Set -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <title>Home | ConnectUp - Connecting the Dots...</title>
     @include('layouts.partials.meta')
 
@@ -622,6 +626,146 @@
         <!-- /SECTION -->
     </div>
     <!-- /SECTION WRAP -->
+
+
+
+    <footer class="section-wrap dark footer">
+
+        <div class="footer-top">
+            <h3>
+                <a href="https://connectup.in">ConnectUp.in</a>
+            </h3>
+            <ul class="footer-nav">
+
+                <li>
+                    <a href="{{ route('home') }}"> Home </a>
+                </li>
+                <li>
+                    <a href="{{ route('home') }}#about"> About </a>
+                </li>
+                <li>
+                    <a href="{{ route('privacypolicy') }}"> Privacy </a>
+                </li>
+                <li>
+                    <a href="{{ route('termsofservice') }}"> Terms </a>
+                </li>
+                <li>
+                    <a href="mailto:{{ env('APP_CONTACT_EMAIL') ?? 'connectup.in@gmail.com' }}"> Contact </a>
+                </li>
+            </ul>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/connectup-in" class="linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/connectup.in/" class="instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2022 <a href="https://connectup.in"> ConnectUp.in</a>. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <style>
+        /* Styling for Footer */
+        .footer {
+            padding: 5em 1em;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5em;
+        }
+
+        .footer-top h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .footer-top h3 a {
+            color: #fff;
+            font-size: 2em;
+            text-decoration: none;
+        }
+
+        .footer-top h3 a:hover {
+            color: #fffc;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1em;
+            font-size: 1.3em;
+        }
+
+        .footer-nav li a {
+            color: #fffa;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .footer-nav li a:hover {
+            color: #fff;
+        }
+
+        .footer-socials {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+        }
+
+        .footer-socials a {
+            color: #fff;
+            font-size: 1.3em;
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .instagram {
+            background-color: #f8468d;
+        }
+
+        .linkedin {
+            background-color: #0077b5;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .footer-bottom p {
+            font-size: 1.2em;
+        }
+
+        .footer-bottom a {
+            color: inherit;
+        }
+
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+    </style>
 
     <!-- app -->
     <script src="/assets/template-landing/app.bundle.min.js"></script>

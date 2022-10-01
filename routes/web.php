@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     page('Home');
     return view('welcome');
-});
+})->name('home');
 Route::get('/home', function () {
     page('Home');
     return view('home');
@@ -71,8 +71,8 @@ Route::post('title', function () {
 Route::get('/testmail', [HelperController::class, 'testmail']);
 Route::get('/image', [HelperController::class, 'image']);
 Route::view('viewmail', 'pdf.invoice');
-Route::view('privacypolicy', 'others.privacypolicy');
-Route::view('termsofservice', 'others.termsofservice');
+Route::view('privacypolicy', 'others.privacypolicy')->name('privacypolicy');
+Route::view('termsofservice', 'others.termsofservice')->name('termsofservice');
 
 // Social Authentication Routes
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirectToGoogle');
