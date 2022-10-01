@@ -133,6 +133,7 @@
             flex-direction: column;
             align-items: center;
             gap: 2em;
+            background: #10121a !important;
         }
 
         .footer-top {
