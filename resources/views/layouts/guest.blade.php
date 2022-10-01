@@ -16,114 +16,6 @@
     <title>Home | ConnectUp - Connecting the Dots...</title>
     @include('layouts.partials.meta')
 
-</head>
-
-<body>
-
-    <!-- NAVIGATION WRAP -->
-    <div class="navigation-wrap">
-        <!-- NAVIGATION -->
-        <nav class="navigation grid-limit">
-            <!-- LOGO -->
-            <div class="logo void">
-                <a href="/">
-                    <img src="/assets/template/img/landing/logo.png" width="50px" alt="logo">
-                </a>
-            </div>
-            <!-- /LOGO -->
-
-            <!-- MENU -->
-            <ul class="menu">
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#benefits">Benefits</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
-
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#about">About</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
-
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#program">Programmes</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
-
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="mailto:connectup.in@gmail.com">Support</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
-
-            </ul>
-            <!-- /MENU -->
-
-
-            <!-- BUTTON -->
-            @if (Auth::check())
-                <a href="/feed" class="button small primary">Go to Feed</a>
-            @else
-                <a class="button small primary" href="/login">Join Now</a>
-            @endif
-            <!-- /BUTTON -->
-        </nav>
-        <!-- /NAVIGATION -->
-    </div>
-    <!-- /NAVIGATION WRAP -->
-    @yield('content')
-
-    <footer class="section-wrap dark footer">
-
-        <div class="footer-top">
-            <h3>
-                <a href="https://connectup.in">ConnectUp.in</a>
-            </h3>
-            <ul class="footer-nav">
-
-                <li>
-                    <a href="{{ route('home') }}"> Home </a>
-                </li>
-                <li>
-                    <a href="{{ route('home') }}#about"> About </a>
-                </li>
-                <li>
-                    <a href="{{ route('privacypolicy') }}"> Privacy </a>
-                </li>
-                <li>
-                    <a href="{{ route('termsofservice') }}"> Terms </a>
-                </li>
-                <li>
-                    <a href="mailto:{{ env('APP_CONTACT_EMAIL') ?? 'connectup.in@gmail.com' }}"> Contact </a>
-                </li>
-            </ul>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/connectup-in" class="linkedin" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/connectup.in/" class="instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="footer-bottom">
-            <p>© 2022 <a href="https://connectup.in"> ConnectUp.in</a>. All rights reserved.</p>
-        </div>
-    </footer>
-
-
     <style>
         /* Styling for Footer */
         .footer {
@@ -221,6 +113,114 @@
             color: #fff;
         }
     </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION WRAP -->
+    <div class="navigation-wrap">
+        <!-- NAVIGATION -->
+        <nav class="navigation grid-limit">
+            <!-- LOGO -->
+            <div class="logo void">
+                <a href="/">
+                    <img src="/assets/template/img/landing/logo.png" width="50px" alt="logo">
+                </a>
+            </div>
+            <!-- /LOGO -->
+
+            <!-- MENU -->
+            <ul class="menu">
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#benefits">Benefits</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#about">About</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#program">Programmes</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="mailto:connectup.in@gmail.com">Support</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
+            </ul>
+            <!-- /MENU -->
+
+
+            <!-- BUTTON -->
+            @if (Auth::check())
+                <a href="/feed" class="button small primary">Go to Feed</a>
+            @else
+                <a class="button small primary" href="/login">Join Now</a>
+            @endif
+            <!-- /BUTTON -->
+        </nav>
+        <!-- /NAVIGATION -->
+    </div>
+    <!-- /NAVIGATION WRAP -->
+    @yield('content')
+
+    <footer class="section-wrap dark footer">
+
+        <div class="footer-top">
+            <h3>
+                <a href="https://connectup.in">ConnectUp.in</a>
+            </h3>
+            <ul class="footer-nav">
+
+                <li>
+                    <a href="{{ route('home') }}"> Home </a>
+                </li>
+                <li>
+                    <a href="{{ route('home') }}#about"> About </a>
+                </li>
+                <li>
+                    <a href="{{ route('privacypolicy') }}"> Privacy </a>
+                </li>
+                <li>
+                    <a href="{{ route('termsofservice') }}"> Terms </a>
+                </li>
+                <li>
+                    <a href="mailto:{{ env('APP_CONTACT_EMAIL') ?? 'connectup.in@gmail.com' }}"> Contact </a>
+                </li>
+            </ul>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/connectupin" class="linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/connectup.in/" class="instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2022 <a href="https://connectup.in"> ConnectUp.in</a>. All rights reserved.</p>
+        </div>
+    </footer>
+
+
 
     <!-- app -->
     <script src="/assets/template-landing/app.bundle.min.js"></script>
