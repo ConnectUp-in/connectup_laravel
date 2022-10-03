@@ -14,7 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mentors', function (Blueprint $table) {
+            // user, about, contact, founder, startupname, description, reasons, website, expertise, organization, position, linkedin
             $table->id();
+            $table->string('user');
+            $table->string('contact');
+            $table->string('founder');
+            $table->string('startupname')->nullable();
+            $table->string('description')->nullable();
+            $table->string('reasons')->nullable();
+            $table->string('website')->nullable();
+            $table->string('expertise')->nullable();
+            $table->string('organization')->nullable();
+            $table->string('position')->nullable();
+            $table->string('linkedin')->nullable();
             $table->timestamps();
         });
     }
