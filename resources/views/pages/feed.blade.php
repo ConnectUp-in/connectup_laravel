@@ -23,10 +23,16 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
             <!-- GRID COLUMN -->
             <div class="grid-column">
 
-
-
                 @import('components.posts')
 
+                @if (Session::has('success'))
+                    <div class="alert alert-info">
+                        <a class="close" data-dismiss="alert">×</a>
+                        <strong>Heads Up!</strong> {!! Session::get('success') !!}
+                    </div>
+                @endif
+
+                {{ json_encode(Session::all()) }}
                 <!-- LOADER BARS -->
                 <div class="loader-bars">
                     <div class="loader-bar"></div>

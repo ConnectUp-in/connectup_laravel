@@ -87,6 +87,8 @@ class StartupController extends Controller
             $startup->socials = $socials;
             $startup->founder = Auth::user()->id;
             $startup->save();
+
+            \Session::flash('success', 'Startup Created Successfully');
             return redirect()
                 ->back()
                 ->with('success', 'Startup created successfully');
@@ -139,6 +141,8 @@ class StartupController extends Controller
         }
 
         if ($startup->founder != Auth::user()->id) {
+
+            \Session::flash('error', 'You are not the founder of this startup');
             return redirect()->back()->with('error', 'You are not authorized to update this startup');
         }
         page('startup/manage/{id}');
@@ -148,6 +152,8 @@ class StartupController extends Controller
             $startup->socials = json_decode($request->socials);
         }
         $startup->save();
+
+        \Session::flash('success', 'Startup Updated Successfully');
         return redirect()
             ->back()
             ->with('success', 'Startup updated successfully');
@@ -161,6 +167,8 @@ class StartupController extends Controller
             return view('pages.startup.404');
         }
         if ($startup->founder != Auth::user()->id) {
+
+            \Session::flash('error', 'You are not the founder of this startup');
             return redirect()->back()->with('error', 'You are not authorized to update this startup');
         }
         page('startup/manage/{id}');
@@ -171,6 +179,8 @@ class StartupController extends Controller
             $startup->logo = saveBase64($request->logo);
         }
         $startup->save();
+
+        \Session::flash('success', 'Startup Updated Successfully');
         return redirect()
             ->back()
             ->with('success', 'Startup updated successfully');

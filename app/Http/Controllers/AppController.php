@@ -40,6 +40,7 @@ class AppController extends Controller
         ];
 
         return view('pages.feed', $data);
+
     }
 
     public function startups()

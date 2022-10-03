@@ -102,6 +102,8 @@ class EventController extends Controller
         $reg->required_fields = $required_data;
         $reg->additional_fields = $request->except('id', '_token');
         $reg->save();
+
+        \Session::flash('success', 'You have successfully registered for this event.');
         return redirect()->back()->with('success', 'You have successfully registered for this event.');
 
     }
@@ -130,6 +132,8 @@ class EventController extends Controller
     {
         $registration = EventRegistration::where('id', $id)->first();
         if (!$registration) {
+
+            \Session::flash('error', 'Invalid registration id.');
             return back()->with('error', 'Invalid registration id.');
         }
         $registration->confirmed_at = date('Y-m-d H:i:s');
@@ -138,6 +142,7 @@ class EventController extends Controller
         $registration->save();
         // sendConfirmationTicketMail($registration);
 
+        \Session::flash('success', 'Registration confirmed.');
         return redirect()->back()->with('success', 'Registration confirmed.');
     }
 
