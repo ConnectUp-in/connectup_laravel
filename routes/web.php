@@ -71,8 +71,9 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::prefix('join')->group(function () {
-        // Redicrect to https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc
-        Route::get('/wa', function () {
+        Route::get('member', [CommunityController::class, 'member'])->name('join.member');
+        Route::get('mentor', [CommunityController::class, 'mentor'])->name('join.mentor');
+        Route::get('wa', function () {
             return redirect('https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc');
         });
     });
