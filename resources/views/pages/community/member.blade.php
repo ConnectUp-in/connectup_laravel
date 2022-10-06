@@ -27,6 +27,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            font-family: 'RAJDHANI';
 
         }
 
@@ -48,6 +49,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             width: 100%;
             font-size: 0.875rem;
             font-weight: 700;
+            font-family: 'RAJDHANI';
         }
 
         /* add custom scrollbar*/
@@ -68,6 +70,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             background: #f2f2f233;
             color: #fffc;
             border-radius: 5px;
+            font-family: 'RAJDHANI';
         }
 
         .selectize-control.multi .selectize-input.has-items {
@@ -109,6 +112,16 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
         .founder {
             display: none;
+        }
+
+        form {
+            margin-top: 0 !important;
+        }
+
+        .landing {
+            overflow-y: scroll;
+            overflow-x: hidden;
+
         }
     </style>
 @endsection
@@ -163,17 +176,17 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             @if (Auth::check())
                 <!-- FORM BOX -->
                 <div class="form-box login-register-form-element">
-
+                    {{-- 
                     <!-- FORM BOX TITLE -->
                     <h2 class="form-box-title">Join Community</h2>
                     <!-- /FORM BOX TITLE -->
 
 
-
+ --}}
 
 
                     <!-- FORM -->
-                    <form class="form" method="POST" action="/register">
+                    <form class="form" method="POST" action="{{ route('register.member') }}">
                         <!-- FORM ROW -->
                         @csrf
 
@@ -211,7 +224,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                                         Are you a Startup Founder
                                     </p>
                                     <div class="form-switch " onclick="updateCheck(this)">
-                                        <input type="hidden" name="active" value="">
+                                        <input type="hidden" name="founder" value="0">
                                         <!-- FORM SWITCH BUTTON -->
                                         <div class="form-switch-button"></div>
                                         <!-- /FORM SWITCH BUTTON -->
@@ -246,24 +259,6 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                                 <!-- /FORM ITEM -->
                             </div>
 
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input">
-                                        <label for="reasons">What are you looking forward to?</label>
-                                        <select id="reasons" name="reasons[]" multiple>
-                                            <option value="1">Networking</option>
-                                            <option value="2">Mentorship</option>
-                                            <option value="3">Investment</option>
-                                            <option value="4">Collaboration</option>
-                                            <option value="5">Others</option>
-                                        </select>
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
 
 
                         </div>
@@ -272,6 +267,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                             {{-- 
                                 Startup Name - text - startupname,
                                 Describe your Startup in short - textarea - startupdesc,
+                                Startup Website - text - website,
                                 What are you looking forward to? - multi-select - lookingfor,
                                  --}}
 
@@ -293,8 +289,8 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                                 <div class="form-item">
                                     <!-- FORM INPUT -->
                                     <div class="form-input">
-                                        <label for="startupdesc">Describe your Startup in short</label>
-                                        <textarea id="startupdesc" name="startupdesc"></textarea>
+                                        <label for="about">About your Startup</label>
+                                        <textarea id="about" name="about"></textarea>
                                     </div>
                                     <!-- /FORM INPUT -->
                                 </div>
@@ -306,14 +302,8 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                                 <div class="form-item">
                                     <!-- FORM INPUT -->
                                     <div class="form-input">
-                                        <label for="lookingfor">What are you looking forward to?</label>
-                                        <select id="lookingfor" name="lookingfor[]" multiple>
-                                            <option value="1">Networking</option>
-                                            <option value="2">Mentorship</option>
-                                            <option value="3">Investment</option>
-                                            <option value="4">Collaboration</option>
-                                            <option value="5">Others</option>
-                                        </select>
+                                        <label for="website">Startup Website</label>
+                                        <input type="text" id="website" name="website">
                                     </div>
                                     <!-- /FORM INPUT -->
                                 </div>
@@ -323,39 +313,48 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                         </div>
 
 
-
-
-
-                        <!-- FORM ROW -->
                         <div class="form-row">
                             <!-- FORM ITEM -->
                             <div class="form-item">
-                                <!-- CHECKBOX WRAP -->
-                                <div class="checkbox-wrap">
-                                    <input type="checkbox" id="register-newsletter" name="register_newsletter" checked>
-                                    <!-- CHECKBOX BOX -->
-                                    <div class="checkbox-box">
-                                        <!-- ICON CROSS -->
-                                        <svg class="icon-cross">
-                                            <use xlink:href="#svg-cross"></use>
-                                        </svg>
-                                        <!-- /ICON CROSS -->
-                                    </div>
-                                    <!-- /CHECKBOX BOX -->
-                                    <label for="register-newsletter">Send me news and updates via email</label>
+                                <!-- FORM INPUT -->
+                                <div class="form-input">
+                                    <label for="linkedin">Your LinkedIn</label>
+                                    <input type="text" id="linkedin" name="linkedin">
                                 </div>
-                                <!-- /CHECKBOX WRAP -->
+                                <!-- /FORM INPUT -->
                             </div>
                             <!-- /FORM ITEM -->
                         </div>
-                        <!-- /FORM ROW -->
+
+
+
+                        <div class="form-row">
+                            <!-- FORM ITEM -->
+                            <div class="form-item">
+                                <!-- FORM INPUT -->
+                                <div class="form-input">
+                                    <label for="reasons">What are you looking forward to?</label>
+                                    <select id="reasons" name="reasons[]" multiple>
+                                        @forelse ($objectives as $objective)
+                                            <option value="{{ $objective->id }}">{{ $objective->name }}</option>
+                                        @empty
+                                            <option value="0">No Objectives</option>
+                                        @endforelse
+
+                                    </select>
+                                </div>
+                                <!-- /FORM INPUT -->
+                            </div>
+                            <!-- /FORM ITEM -->
+                        </div>
+
 
                         <!-- FORM ROW -->
                         <div class="form-row">
                             <!-- FORM ITEM -->
                             <div class="form-item">
                                 <!-- BUTTON -->
-                                <button class="button medium primary">Register Now!</button>
+                                <button class="button medium primary">Join Community</button>
                                 <!-- /BUTTON -->
                             </div>
                             <!-- /FORM ITEM -->
@@ -408,7 +407,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
 
                     <!-- FORM -->
-                    <form class="form" method="POST" action="/login">
+                    <form class="form" method="POST" action="#">
 
 
 
@@ -484,12 +483,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
         $(document).ready(function() {
             $('#reasons').selectize({
-                placeholder: "Select Academic Background",
-                plugins: ["remove_button", "restore_on_backspace"],
-            });
-
-            $('#lookingfor').selectize({
-                placeholder: "Select Looking For",
+                placeholder: "What are you looking forward to?",
                 plugins: ["remove_button", "restore_on_backspace"],
             });
         })

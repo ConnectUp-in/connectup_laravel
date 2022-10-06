@@ -73,6 +73,8 @@ Route::middleware('sitemap')->group(function () {
     Route::prefix('join')->group(function () {
         Route::get('member', [CommunityController::class, 'member'])->name('join.member');
         Route::get('mentor', [CommunityController::class, 'mentor'])->name('join.mentor');
+        Route::post('member', [CommunityController::class, 'registerMember'])->name('register.member');
+        Route::post('mentor', [CommunityController::class, 'registerMentor'])->name('register.mentor');
         Route::get('wa', function () {
             return redirect('https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc');
         });
