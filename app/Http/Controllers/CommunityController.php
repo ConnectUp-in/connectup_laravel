@@ -7,10 +7,10 @@ class CommunityController extends Controller
     //
     public function member()
     {
-        return "Community Member";
+        return view('pages.community.member');
     }
     public function mentor()
     {
-        return "Community Mentor";
+        return view('pages.community.mentor');
     }
 }
