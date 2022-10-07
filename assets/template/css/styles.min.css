@@ -7346,9 +7346,10 @@ figure > img {
     top: -10px;
 }
 .landing-info .landing-info-text {
-    width: 384px;
+    max-width: 424px;
+    width: 90%;
     margin: 30px auto 0;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.3333333333em;
     font-weight: 500;
 }

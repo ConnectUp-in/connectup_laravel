@@ -119,7 +119,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
         }
 
         .landing {
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
 
         }
@@ -127,16 +127,26 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
         .hidden {
             display: none;
         }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
     </style>
 @endsection
 
 
 @section('content')
     <!-- LANDING -->
-    <div class="landing">
-        <!-- LANDING DECORATION -->
-        <div class="landing-decoration"></div>
-        <!-- /LANDING DECORATION -->
+    <div class="landing member">
+
+        {{-- overlay --}}
+        <div class="overlay"></div>
 
         <!-- LANDING INFO -->
         <div class="landing-info">
@@ -147,16 +157,16 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             <!-- /LOGO -->
 
             <!-- LANDING INFO PRETITLE -->
-            <h2 class="landing-info-pretitle">Welcome to</h2>
+            <h2 class="landing-info-pretitle">Join ConnectUp Community as</h2>
             <!-- /LANDING INFO PRETITLE -->
 
             <!-- LANDING INFO TITLE -->
-            <h1 class="landing-info-title">ConnectUp</h1>
+            <h1 class="landing-info-title">Member</h1>
             <!-- /LANDING INFO TITLE -->
 
             <!-- LANDING INFO TEXT -->
-            <p class="landing-info-text">The next generation social network &amp; community! Connect with your friends
-                and play with our quests and badges gamification system!</p>
+            <p class="landing-info-text">ConnectUp Community is a Platform that brings together startups, entrepreneurs,
+                investors, and friends to come together to share ideas, and discuss opportunities for collaboration.</p>
             <!-- /LANDING INFO TEXT -->
 
             <!-- TAB SWITCH -->
