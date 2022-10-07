@@ -31,7 +31,7 @@
                 <!-- BUTTON -->
                 <div>
 
-                    <a class="button" href="/login">Join Now</a>
+                    <a class="button" href="{{ route('join.member') }}">Join Community</a>
                     <a class="button" style="cursor:not-allowed" href="#">Register StartUp</a>
                 </div>
                 <!-- /BUTTON -->

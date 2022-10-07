@@ -1,6 +1,5 @@
 @php
-$page['title'] = 'Login | ConnectUp | Connecting the Dots...';
-
+$page['title'] = 'Join Community | ConnectUp';
 @endphp
 
 
