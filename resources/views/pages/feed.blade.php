@@ -14,6 +14,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
         <div class="grid grid-3-6-3 mobile-prefer-content">
             <!-- GRID COLUMN -->
             <div class="grid-column">
+                @widget('communitycta')
                 @widget('redeemrefferal')
                 @widget('profilecompletion')
 
