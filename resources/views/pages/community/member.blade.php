@@ -7,6 +7,9 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 @extends('layouts/auth')
 
 @section('styles')
+    <!-- toasterjs css from cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.css"
         integrity="sha512-6skR4yyaANUKXypVS+nB+HMmq8Xd17CSwFsBEHCRaa3UicPlksbwVtBTZl13Fea6zqsnnmqc7fRH97/M6JcwCA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -104,6 +107,12 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
         }
     </style>
     <style>
+        .toast-warning {
+            background-color: #e6d21e;
+            font-family: 'RAJDHANI';
+            color: #000;
+        }
+
         .founder,
         .nofounder {
             margin: 1em 0;
@@ -177,7 +186,8 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
                 <!-- TAB SWITCH BUTTON -->
                 <p class="tab-switch-button hidden login-register-form-trigger">Mentor</p>
-                <a href="{{ route('join.mentor') }}" class=" tab-switch-button ">Mentor</a>
+                {{-- <a href="{{ route('join.mentor') }}" class=" tab-switch-button ">Mentor</a> --}}
+                <p onclick="toastr.warning('Launching Soon', 'Mentor Registration');" class=" tab-switch-button ">Mentor</p>
 
 
 
@@ -195,7 +205,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
                 @if ($isAlreadyMember)
                     <!-- FORM BOX -->
-                    <div class="form-box login-register-form-element">
+                    <div class="form-box login-register-form-element" id="confetti">
 
                         {{-- <!-- FORM BOX TITLE -->
                         <h2 class="form-box-title">Hurray!!!</h2>
@@ -223,9 +233,10 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
                         <lottie-player src="{{ $json['src'] }}" background="transparent" speed="1"
                             style="width: {{ $json['width'] }}; height: auto;margin:auto" loop autoplay></lottie-player>
 
-                        <h2 class="form-box-title">Congratulations!!!
+                        <h2 class="form-box-title">
+                            <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span>
                             <br>
-                            You are now a member of ConnectUp!
+                            You are now a member of ConnectUp Community!
                         </h2>
 
 
@@ -461,7 +472,7 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
                     </div>
                     <!-- /SOCIAL LINKS -->
-                    <p class="lined-text">Account Login</p>
+                    <p class="lined-text" style="margin-bottom:20px">Account Login</p>
 
 
 
@@ -519,6 +530,44 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/selectize.min.js"
         integrity="sha512-DBOconMAY06o4R79zeXKKM3h/g5pca647Eabb+6viK4dRpiMOlZFS4gsbukTbHo+ppdKx4yr+/0m2JnpeAIrSw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+
+
+        }
+        $(document).ready(function() {
+
+            function confetti() {
+
+                party.confetti(document.getElementById('confetti'), {
+                    count: party.variation.range(50, 170)
+                });
+            }
+            confetti();
+            setInterval(() => {
+                    confetti()
+                },
+                5000);
+        });
+    </script>
     <script>
         function updateCheck(el) {
             var input = $(el).find('input');
