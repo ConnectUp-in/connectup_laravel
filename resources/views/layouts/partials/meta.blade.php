@@ -6,7 +6,7 @@
 <meta name='description'
     content='{{ $page['description'] ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
-                                                                                                                                                                We are building the largest network of incubators, mentors, investors, and startups' }}'>
+                                                                                                                                                                    We are building the largest network of incubators, mentors, investors, and startups' }}'>
 <meta name='subject' content='ConnectUp'>
 <meta name='copyright' content='ConnectUp'>
 <meta name='language' content='ES'>
@@ -38,8 +38,8 @@ We are building the largest network of incubators, mentors, investors, and start
 <meta itemprop="description"
     content="{{ $description ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
-                                                                                                                We are building the largest network of incubators, mentors, investors, and startups' }}">
-<meta itemprop="image" content="{{ $page['image'] ?? '/assets/defaults/metaimage.png' }}">
+                                                                                                                    We are building the largest network of incubators, mentors, investors, and startups' }}">
+<meta itemprop="image" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}">
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
@@ -48,20 +48,20 @@ We are building the largest network of incubators, mentors, investors, and start
 <meta name="twitter:description"
     content="{{ $page['description'] ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
-                                                                We are building the largest network of incubators, mentors, investors, and startups' }}">
+                                                                    We are building the largest network of incubators, mentors, investors, and startups' }}">
 <meta name="twitter:creator" content="@connectupin">
 <!-- Twitter summary card with large image must be at least 280x150px -->
-<meta name="twitter:image:src" content="{{ $page['image'] ?? '/assets/defaults/metaimage.png' }}">
+<meta name="twitter:image:src" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}">
 
 <!-- Open Graph data -->
 <meta property="og:title" content="{{ $page['title'] ?? 'ConnectUp | Connecting the Dots...' }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://connectup.in/" />
-<meta property="og:image" content="{{ $page['image'] ?? '/assets/defaults/metaimage.png' }}" />
+<meta property="og:image" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}" />
 <meta property="og:description"
     content="{{ $page['description'] ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
-                                                                                    We are building the largest network of incubators, mentors, investors, and startups' }}" />
+                                                                                        We are building the largest network of incubators, mentors, investors, and startups' }}" />
 <meta property="og:site_name" content="{{ $page['title'] ?? 'ConnectUp | Connecting the Dots...' }}" />
 <meta property="article:published_time" content="{{ $published_time ?? '' }}" />
 <meta property="article:modified_time" content="{{ $updated_time ?? '' }}" />
