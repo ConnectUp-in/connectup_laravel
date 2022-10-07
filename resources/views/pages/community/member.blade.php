@@ -145,6 +145,12 @@ $page['title'] = 'Join Community | ConnectUp';
             background: rgba(0, 0, 0, 0.3);
             z-index: 0;
         }
+
+        @media screen and (max-width: 1365px) {
+            .overlay {
+                display: none;
+            }
+        }
     </style>
 @endsection
 
