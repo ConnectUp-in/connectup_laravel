@@ -123,6 +123,10 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             overflow-x: hidden;
 
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 @endsection
 
@@ -158,11 +162,15 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
             <!-- TAB SWITCH -->
             <div class="tab-switch">
                 <!-- TAB SWITCH BUTTON -->
-                <p class="tab-switch-button login-register-form-trigger">Login</p>
+                <p class="tab-switch-button login-register-form-trigger">Member</p>
                 <!-- /TAB SWITCH BUTTON -->
 
                 <!-- TAB SWITCH BUTTON -->
-                <p class="tab-switch-button login-register-form-trigger">Register</p>
+                <p class="tab-switch-button hidden login-register-form-trigger">Mentor</p>
+                <a href="{{ route('join.mentor') }}" class=" tab-switch-button ">Mentor</a>
+
+
+
                 <!-- /TAB SWITCH BUTTON -->
             </div>
             <!-- /TAB SWITCH -->
@@ -174,197 +182,240 @@ $page['title'] = 'Login | ConnectUp | Connecting the Dots...';
 
 
             @if (Auth::check())
-                <!-- FORM BOX -->
-                <div class="form-box login-register-form-element">
-                    {{-- 
-                    <!-- FORM BOX TITLE -->
-                    <h2 class="form-box-title">Join Community</h2>
-                    <!-- /FORM BOX TITLE -->
+
+                @if ($isAlreadyMember)
+                    <!-- FORM BOX -->
+                    <div class="form-box login-register-form-element">
+
+                        {{-- <!-- FORM BOX TITLE -->
+                        <h2 class="form-box-title">Hurray!!!</h2>
+                        <!-- /FORM BOX TITLE --> --}}
+
+                        @php
+                            $jsons = [
+                                [
+                                    'src' => 'https://assets4.lottiefiles.com/packages/lf20_xb2j7dcm.json',
+                                    'width' => '80%',
+                                ],
+                                [
+                                    'src' => 'https://assets4.lottiefiles.com/packages/lf20_pJo4Hp.json',
+                                    'width' => '70%',
+                                ],
+                            ];
+                            
+                            $json = $jsons[array_rand($jsons)];
+                            $json = [
+                                'src' => 'https://assets4.lottiefiles.com/packages/lf20_xb2j7dcm.json',
+                                'width' => '80%',
+                            ];
+                        @endphp
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="{{ $json['src'] }}" background="transparent" speed="1"
+                            style="width: {{ $json['width'] }}; height: auto;margin:auto" loop autoplay></lottie-player>
+
+                        <h2 class="form-box-title">Congratulations!!!
+                            <br>
+                            You are now a member of ConnectUp!
+                        </h2>
 
 
- --}}
+
+                    </div>
+                    <!-- /FORM BOX -->
+                @else
+                    <!-- FORM BOX -->
+                    <div class="form-box
+                            login-register-form-element">
+                        {{-- 
+                        <!-- FORM BOX TITLE -->
+                        <h2 class="form-box-title">Join Community</h2>
+                        <!-- /FORM BOX TITLE -->
 
 
-                    <!-- FORM -->
-                    <form class="form" method="POST" action="{{ route('register.member') }}">
-                        <!-- FORM ROW -->
-                        @csrf
+                                --}}
 
-                        {{-- Contact Number(WhatsApp) - text - contact, 
+
+                        <!-- FORM -->
+                        <form class="form" method="POST" action="{{ route('register.member') }}">
+                            <!-- FORM ROW -->
+                            @csrf
+
+                            {{-- Contact Number(WhatsApp) - text - contact, 
                             Are you a Startup Founder - boolean - founder,
 
                             --}}
-
-                        <div class="form-row">
-                            <!-- FORM ITEM -->
-                            <div class="form-item">
-                                <!-- FORM INPUT -->
-                                <div class="form-input">
-                                    <label for="contact">Contact Number (WhatsApp)</label>
-                                    <input type="text" id="contact" name="contact">
-                                </div>
-                                <!-- /FORM INPUT -->
-                            </div>
-                            <!-- /FORM ITEM -->
-                        </div>
-                        <!-- /FORM ROW -->
-
-
-                        <div class="form-row">
-                            <!-- FORM ITEM -->
-                            <div class="form-item">
-
-
-
-                                <div class="switch-option  " style="margin-right:1em;margin-left:0.5em">
-                                    <p class="switch-option-title">
-                                        Founder
-                                    </p>
-                                    <p class="switch-option-text">
-                                        Are you a Startup Founder
-                                    </p>
-                                    <div class="form-switch " onclick="updateCheck(this)">
-                                        <input type="hidden" name="founder" value="0">
-                                        <!-- FORM SWITCH BUTTON -->
-                                        <div class="form-switch-button"></div>
-                                        <!-- /FORM SWITCH BUTTON -->
-                                    </div>
-                                    <!-- /FORM SWITCH -->
-                                </div>
-                                <!-- /SWITCH OPTION -->
-
-
-                            </div>
-                            <!-- /FORM ITEM -->
-                        </div>
-                        <!-- /FORM ROW -->
-
-
-                        <div class="nofounder">
-                            {{-- 
-                                Any Idea you want to start with - textarea - idea,
-                                What are you looking forward to? - multi-select - reasons,
-                                --}}
 
                             <div class="form-row">
                                 <!-- FORM ITEM -->
                                 <div class="form-item">
                                     <!-- FORM INPUT -->
                                     <div class="form-input">
-                                        <label for="idea">Any Idea you want to start with</label>
-                                        <textarea id="idea" name="idea"></textarea>
+                                        <label for="contact">Contact Number (WhatsApp)</label>
+                                        <input type="text" id="contact" name="contact" required>
                                     </div>
                                     <!-- /FORM INPUT -->
                                 </div>
                                 <!-- /FORM ITEM -->
                             </div>
+                            <!-- /FORM ROW -->
+
+
+                            <div class="form-row">
+                                <!-- FORM ITEM -->
+                                <div class="form-item">
 
 
 
-                        </div>
+                                    <div class="switch-option  " style="margin-right:1em;margin-left:0.5em">
+                                        <p class="switch-option-title">
+                                            Founder
+                                        </p>
+                                        <p class="switch-option-text">
+                                            Are you a Startup Founder
+                                        </p>
+                                        <div class="form-switch " onclick="updateCheck(this)">
+                                            <input type="hidden" name="founder" value="0">
+                                            <!-- FORM SWITCH BUTTON -->
+                                            <div class="form-switch-button"></div>
+                                            <!-- /FORM SWITCH BUTTON -->
+                                        </div>
+                                        <!-- /FORM SWITCH -->
+                                    </div>
+                                    <!-- /SWITCH OPTION -->
 
-                        <div class="founder">
-                            {{-- 
+
+                                </div>
+                                <!-- /FORM ITEM -->
+                            </div>
+                            <!-- /FORM ROW -->
+
+
+                            <div class="nofounder">
+                                {{-- 
+                                Any Idea you want to start with - textarea - idea,
+                                What are you looking forward to? - multi-select - reasons,
+                                --}}
+
+                                <div class="form-row">
+                                    <!-- FORM ITEM -->
+                                    <div class="form-item">
+                                        <!-- FORM INPUT -->
+                                        <div class="form-input">
+                                            <label for="idea">Any Idea you want to start with</label>
+                                            <textarea id="idea" name="idea"></textarea>
+                                        </div>
+                                        <!-- /FORM INPUT -->
+                                    </div>
+                                    <!-- /FORM ITEM -->
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="founder">
+                                {{-- 
                                 Startup Name - text - startupname,
                                 Describe your Startup in short - textarea - startupdesc,
                                 Startup Website - text - website,
                                 What are you looking forward to? - multi-select - lookingfor,
                                  --}}
 
+                                <div class="form-row">
+                                    <!-- FORM ITEM -->
+                                    <div class="form-item">
+                                        <!-- FORM INPUT -->
+                                        <div class="form-input">
+                                            <label for="startupname">Startup Name</label>
+                                            <input type="text" id="startupname" name="startupname">
+                                        </div>
+                                        <!-- /FORM INPUT -->
+                                    </div>
+                                    <!-- /FORM ITEM -->
+                                </div>
+
+                                <div class="form-row">
+                                    <!-- FORM ITEM -->
+                                    <div class="form-item">
+                                        <!-- FORM INPUT -->
+                                        <div class="form-input">
+                                            <label for="about">About your Startup</label>
+                                            <textarea id="about" name="about"></textarea>
+                                        </div>
+                                        <!-- /FORM INPUT -->
+                                    </div>
+                                    <!-- /FORM ITEM -->
+                                </div>
+
+                                <div class="form-row">
+                                    <!-- FORM ITEM -->
+                                    <div class="form-item">
+                                        <!-- FORM INPUT -->
+                                        <div class="form-input">
+                                            <label for="website">Startup Website</label>
+                                            <input type="text" id="website" name="website">
+                                        </div>
+                                        <!-- /FORM INPUT -->
+                                    </div>
+                                    <!-- /FORM ITEM -->
+                                </div>
+
+                            </div>
+
+
                             <div class="form-row">
                                 <!-- FORM ITEM -->
                                 <div class="form-item">
                                     <!-- FORM INPUT -->
                                     <div class="form-input">
-                                        <label for="startupname">Startup Name</label>
-                                        <input type="text" id="startupname" name="startupname">
+                                        <label for="linkedin">Your LinkedIn</label>
+                                        <input type="text" id="linkedin" name="linkedin">
                                     </div>
                                     <!-- /FORM INPUT -->
                                 </div>
                                 <!-- /FORM ITEM -->
                             </div>
 
-                            <div class="form-row">
-                                <!-- FORM ITEM -->
-                                <div class="form-item">
-                                    <!-- FORM INPUT -->
-                                    <div class="form-input">
-                                        <label for="about">About your Startup</label>
-                                        <textarea id="about" name="about"></textarea>
-                                    </div>
-                                    <!-- /FORM INPUT -->
-                                </div>
-                                <!-- /FORM ITEM -->
-                            </div>
+
 
                             <div class="form-row">
                                 <!-- FORM ITEM -->
                                 <div class="form-item">
                                     <!-- FORM INPUT -->
                                     <div class="form-input">
-                                        <label for="website">Startup Website</label>
-                                        <input type="text" id="website" name="website">
+                                        <label for="reasons">What are you looking forward to?</label>
+                                        <select id="reasons" name="reasons[]" required multiple>
+                                            @forelse ($objectives as $objective)
+                                                <option value="{{ $objective->id }}">{{ $objective->name }}</option>
+                                            @empty
+                                                <option value="0">No Objectives</option>
+                                            @endforelse
+
+                                        </select>
                                     </div>
                                     <!-- /FORM INPUT -->
                                 </div>
                                 <!-- /FORM ITEM -->
                             </div>
 
-                        </div>
 
-
-                        <div class="form-row">
-                            <!-- FORM ITEM -->
-                            <div class="form-item">
-                                <!-- FORM INPUT -->
-                                <div class="form-input">
-                                    <label for="linkedin">Your LinkedIn</label>
-                                    <input type="text" id="linkedin" name="linkedin">
+                            <!-- FORM ROW -->
+                            <div class="form-row">
+                                <!-- FORM ITEM -->
+                                <div class="form-item">
+                                    <!-- BUTTON -->
+                                    <button class="button medium primary">Join Community</button>
+                                    <!-- /BUTTON -->
                                 </div>
-                                <!-- /FORM INPUT -->
+                                <!-- /FORM ITEM -->
                             </div>
-                            <!-- /FORM ITEM -->
-                        </div>
+                            <!-- /FORM ROW -->
+                        </form>
+                        <!-- /FORM -->
 
-
-
-                        <div class="form-row">
-                            <!-- FORM ITEM -->
-                            <div class="form-item">
-                                <!-- FORM INPUT -->
-                                <div class="form-input">
-                                    <label for="reasons">What are you looking forward to?</label>
-                                    <select id="reasons" name="reasons[]" multiple>
-                                        @forelse ($objectives as $objective)
-                                            <option value="{{ $objective->id }}">{{ $objective->name }}</option>
-                                        @empty
-                                            <option value="0">No Objectives</option>
-                                        @endforelse
-
-                                    </select>
-                                </div>
-                                <!-- /FORM INPUT -->
-                            </div>
-                            <!-- /FORM ITEM -->
-                        </div>
-
-
-                        <!-- FORM ROW -->
-                        <div class="form-row">
-                            <!-- FORM ITEM -->
-                            <div class="form-item">
-                                <!-- BUTTON -->
-                                <button class="button medium primary">Join Community</button>
-                                <!-- /BUTTON -->
-                            </div>
-                            <!-- /FORM ITEM -->
-                        </div>
-                        <!-- /FORM ROW -->
-                    </form>
-                    <!-- /FORM -->
-
-                </div>
-                <!-- /FORM BOX -->
+                    </div>
+                    <!-- /FORM BOX -->
+                @endif
             @else
                 <!-- FORM BOX -->
                 <div class="form-box login-register-form-element">

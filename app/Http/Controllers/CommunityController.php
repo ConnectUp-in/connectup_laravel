@@ -13,8 +13,18 @@ class CommunityController extends Controller
     //
     public function member()
     {
+
         $objectives = Objective::where('active', 1)->get();
-        return view('pages.community.member', compact('objectives'));
+        if (Auth::check()) {
+            $isAlreadyMember = Member::where('user', Auth::id())->first();
+        } else {
+            $isAlreadyMember = null;
+        }
+        $data = [
+            'objectives' => $objectives,
+            'isAlreadyMember' => $isAlreadyMember,
+        ];
+        return view('pages.community.member', $data);
     }
     public function mentor()
     {
