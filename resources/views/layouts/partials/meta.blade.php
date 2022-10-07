@@ -39,7 +39,7 @@ We are building the largest network of incubators, mentors, investors, and start
     content="{{ $description ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
                                                                                                                     We are building the largest network of incubators, mentors, investors, and startups' }}">
-<meta itemprop="image" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}">
+<meta itemprop="image" content="{{ $page['image'] ?? '/assets/defaults/maincover.jpg' }}">
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
@@ -51,13 +51,13 @@ We are building the largest network of incubators, mentors, investors, and start
                                                                     We are building the largest network of incubators, mentors, investors, and startups' }}">
 <meta name="twitter:creator" content="@connectupin">
 <!-- Twitter summary card with large image must be at least 280x150px -->
-<meta name="twitter:image:src" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}">
+<meta name="twitter:image:src" content="{{ $page['image'] ?? '/assets/defaults/maincover.jpg' }}">
 
 <!-- Open Graph data -->
 <meta property="og:title" content="{{ $page['title'] ?? 'ConnectUp | Connecting the Dots...' }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://connectup.in/" />
-<meta property="og:image" content="{{ $page['image'] ?? '/assets/defaultsmaincover.jpg' }}" />
+<meta property="og:image" content="{{ $page['image'] ?? '/assets/defaults/maincover.jpg' }}" />
 <meta property="og:description"
     content="{{ $page['description'] ??
         'ConnectUp is a Centralized Startup Networking Platform that brings together startups, entrepreneurs, investors, and friends to come together to share ideas, and discuss opportunities for collaboration. .
