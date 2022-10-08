@@ -17,7 +17,7 @@ class GitHubController extends Controller
     {
         // try {
 
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('github')->stateless()->user();
         // return (array) $user;
 
         $searchUser = User::where('github_id', $user->id)->orWhere('email', $user->email)->first();

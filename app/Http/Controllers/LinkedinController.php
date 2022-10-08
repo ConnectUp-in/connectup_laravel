@@ -21,7 +21,7 @@ class LinkedinController extends Controller
     {
         // try {
      
-            $user = Socialite::driver('linkedin')->user();
+            $user = Socialite::driver('linkedin')->stateless()->user();
             // return (array) $user;
       
             $linkedinUser = User::where('linkedin_id', $user->id)->orWhere('email',$user->email)->first();
