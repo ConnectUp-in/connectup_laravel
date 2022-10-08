@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class SuperAdminController extends Controller
 {
-    //
+    public function members()
+    {
+        return view('admin.community.members');
+    }
 }
