@@ -14,6 +14,7 @@ class CommunityController extends Controller
     public function member()
     {
 
+        page('Member Community');
         $objectives = Objective::where('active', 1)->get();
         if (Auth::check()) {
             $isAlreadyMember = Member::where('user', Auth::id())->first();
