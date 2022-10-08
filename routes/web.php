@@ -116,3 +116,5 @@ Route::get('/sitemap', function () {
         ->view('sitemap')
         ->header('Content-Type', 'application/xml');
 });
+
+Route::view('admin', 'admin.blank');
