@@ -116,3 +116,9 @@ Route::get('/sitemap', function () {
         ->view('sitemap')
         ->header('Content-Type', 'application/xml');
 });
+
+Route::prefix('superadmin')->group(function () {
+    Route::prefix('community')->group(function () {
+        Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
+    });
+});
