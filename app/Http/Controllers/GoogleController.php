@@ -27,7 +27,7 @@ class GoogleController extends Controller
     {
         // try {
 
-        $user = Socialite::driver('google')->user();
+        $user = Socialite::driver('google')->stateless()->user();
         // return all data from user
         // return (array) $user;
 
