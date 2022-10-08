@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -68,7 +69,6 @@ return [
     |
      */
 
-    //  India Timezone
     'timezone' => 'Asia/Kolkata',
 
     /*
@@ -155,6 +155,7 @@ return [
      */
 
     'providers' => [
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -180,8 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        // Intervention\Image\ImageServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -196,6 +196,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        // Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
     ],
 
@@ -210,13 +212,12 @@ return [
     |
      */
 
-    'aliases' => Facade::defaultAliases()
-        ->merge([
-            // 'ExampleClass' => App\Example\ExampleClass::class,
-            'Carbon' => Carbon\Carbon::class,
-            'PDF' => Barryvdh\DomPDF\Facade::class,
-            'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-            // 'Image' => Intervention\Image\Facades\Image::class,
-        ])
-        ->toArray(),
+    'aliases' => Facade::defaultAliases()->merge([
+        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Carbon' => Carbon\Carbon::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        // 'Image' => Intervention\Image\Facades\Image::class,
+    ])->toArray(),
+
 ];
