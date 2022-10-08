@@ -19,7 +19,7 @@ class LinkedinController extends Controller
 
     public function linkedinCallback()
     {
-        try {
+        // try {
      
             $user = Socialite::driver('linkedin')->user();
             // return (array) $user;
@@ -47,8 +47,8 @@ class LinkedinController extends Controller
                 return redirect('/dash');
             }
      
-        } catch (Exception $e) {
-            dd($e->getMessage());
-        }
+        // } catch (Exception $e) {
+        //     dd($e->getMessage());
+        // }
     }
 }
