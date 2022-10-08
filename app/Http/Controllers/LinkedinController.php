@@ -27,7 +27,7 @@ class LinkedinController extends Controller
 
             Auth::login($linkedinUser, true);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');
@@ -44,7 +44,7 @@ class LinkedinController extends Controller
             Auth::login($user, true);
             sendRegistrationMail($user);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');

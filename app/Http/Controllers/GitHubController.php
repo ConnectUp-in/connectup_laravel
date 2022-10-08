@@ -27,7 +27,7 @@ class GitHubController extends Controller
 
             Auth::login($searchUser, true);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');
@@ -44,7 +44,7 @@ class GitHubController extends Controller
             Auth::login($gitUser, true);
             sendRegistrationMail($gitUser);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');

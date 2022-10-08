@@ -40,7 +40,7 @@ class GoogleController extends Controller
 
             Auth::login($finduser, true);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');
@@ -58,7 +58,7 @@ class GoogleController extends Controller
             Auth::login($newUser, true);
             sendRegistrationMail($newUser);
 
-            if (isset($_SESSION['member'])) {
+            if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
             return redirect('/feed');

@@ -22,10 +22,11 @@ class CommunityController extends Controller
         $objectives = Objective::where('active', 1)->get();
         if (Auth::check()) {
             $isAlreadyMember = Member::where('user', Auth::id())->first();
+            if ($isAlreadyMember) {
+                session_destroy();
+            }
         } else {
             $isAlreadyMember = null;
-            session_destroy();
-
         }
         $data = [
             'objectives' => $objectives,
