@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
-//  Import blade
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -46,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
             $args = Blade::stripParentheses($args);
             return "<?php echo \$__env->make('pages.components.widgets.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
         });
+
         Blade::directive('helper', function ($args) {
             $args = Blade::stripParentheses($args);
             return "<?php echo \$__env->make('pages.components.helpers.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
