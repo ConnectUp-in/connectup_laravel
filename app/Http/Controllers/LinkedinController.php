@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Auth;
-use Exception;
-use Socialite;
 use App\Models\User;
+use Auth;
+use Socialite;
 
 class LinkedinController extends Controller
 {
@@ -15,38 +12,44 @@ class LinkedinController extends Controller
     {
         return Socialite::driver('linkedin')->redirect();
     }
-       
 
     public function linkedinCallback()
     {
+        session_start();
         // try {
-     
-            $user = Socialite::driver('linkedin')->stateless()->user();
-            // return (array) $user;
-      
-            $linkedinUser = User::where('linkedin_id', $user->id)->orWhere('email',$user->email)->first();
-      
-            if($linkedinUser){
-      
-                Auth::login($linkedinUser, true);
-     
-                return redirect('/feed');
-      
-            }else{
-                $user = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'linkedin_id' => $user->id,
-                    'password' => encrypt('admin12345'),
-                    'profile_photo_path' => $user->avatar_original,
-                ]);
-     
-                Auth::login($user, true);
-                sendRegistrationMail($user);
-      
-                return redirect('/dash');
+
+        $user = Socialite::driver('linkedin')->stateless()->user();
+        // return (array) $user;
+
+        $linkedinUser = User::where('linkedin_id', $user->id)->orWhere('email', $user->email)->first();
+
+        if ($linkedinUser) {
+
+            Auth::login($linkedinUser, true);
+
+            if (isset($_SESSION['member'])) {
+                return redirect()->route('join.member');
             }
-     
+            return redirect('/feed');
+
+        } else {
+            $user = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'linkedin_id' => $user->id,
+                'password' => encrypt('admin12345'),
+                'profile_photo_path' => $user->avatar_original,
+            ]);
+
+            Auth::login($user, true);
+            sendRegistrationMail($user);
+
+            if (isset($_SESSION['member'])) {
+                return redirect()->route('join.member');
+            }
+            return redirect('/feed');
+        }
+
         // } catch (Exception $e) {
         //     dd($e->getMessage());
         // }

@@ -15,11 +15,17 @@ class CommunityController extends Controller
     {
 
         page('Member Community');
+
+        session_start();
+        $_SESSION['member'] = true;
+
         $objectives = Objective::where('active', 1)->get();
         if (Auth::check()) {
             $isAlreadyMember = Member::where('user', Auth::id())->first();
         } else {
             $isAlreadyMember = null;
+            session_destroy();
+
         }
         $data = [
             'objectives' => $objectives,

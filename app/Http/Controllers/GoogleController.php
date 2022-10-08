@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
@@ -25,6 +26,8 @@ class GoogleController extends Controller
      */
     public function handleGoogleCallback()
     {
+
+        session_start();
         // try {
 
         $user = Socialite::driver('google')->stateless()->user();
@@ -37,7 +40,10 @@ class GoogleController extends Controller
         if ($finduser) {
 
             Auth::login($finduser, true);
-            // return Auth::user()->name;
+
+            if (isset($_SESSION['member'])) {
+                return redirect()->route('join.member');
+            }
             return redirect('/feed');
 
         } else {
@@ -53,6 +59,11 @@ class GoogleController extends Controller
             Auth::login($newUser, true);
             sendRegistrationMail($newUser);
 
+            return session()->all();
+
+            if (isset($_SESSION['member'])) {
+                return redirect()->route('join.member');
+            }
             return redirect('/feed');
         }
 
