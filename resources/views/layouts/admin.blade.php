@@ -15,12 +15,14 @@
     <link href="/assets/admin/src/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/admin/layouts/collapsible-menu/css/light/plugins.css" rel="stylesheet" type="text/css" />
     <link href="/assets/admin/layouts/collapsible-menu/css/dark/plugins.css" rel="stylesheet" type="text/css" />
+
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link href="/assets/admin/src/plugins/src/apex/apexcharts.css" rel="stylesheet" type="text/css">
     <link href="/assets/admin/src/assets/css/light/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
     <link href="/assets/admin/src/assets/css/dark/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/c5fe5e7547.js" crossorigin="anonymous"></script>
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
