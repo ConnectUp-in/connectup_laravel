@@ -28,7 +28,7 @@ class SuperAdminController extends Controller
     public function views()
     {
         // get 1000 latest pageviews
-        $views = Pageview::orderBy('updated_at', 'desc')->limit(1000)->get();
+        $views = Pageview::orderBy('updated_at', 'desc')->get();
         $data = [
             'views' => $views,
         ];

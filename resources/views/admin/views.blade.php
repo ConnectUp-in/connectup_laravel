@@ -23,8 +23,8 @@
                                 <th>By</th>
                                 <th>Page/Action</th>
                                 <th>IP</th>
-                                <th>Description</th>
-                                <th>Looking For</th>
+                                <th>Profile Viewed</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,9 +53,8 @@
 
                                         {{ $view->ip_address }}
                                     </td>
-                                    <td>sdf</td>
-                                    <td>sd
-                                    </td>
+                                    <td></td>
+                                    <td>{{ $view->created_at->diffForHumans() }}</td>
                                 </tr>
 
                             @empty
