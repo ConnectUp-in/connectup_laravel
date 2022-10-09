@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use App\Models\Objective;
-use App\Models\Pageview;
+use App\Models\PageView;
 
 class SuperAdminController extends Controller
 {
