@@ -32,6 +32,7 @@ class SuperAdminController extends Controller
         $data = [
             'views' => $views,
         ];
+        // return $data;
         return view('admin.views', $data);
     }
 }

@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
     <div class="middle-content container-xxl p-0">
-
         <!-- BREADCRUMB -->
         <div class="page-meta">
             <nav class="breadcrumb-style-one" aria-label="breadcrumb">
@@ -53,7 +52,18 @@
 
                                         {{ $view->ip_address }}
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        @if ($view->profile)
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame me-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle"
+                                                        src=" {{ $view->profile->profile_photo_path }}">
+                                                </div>
+                                                <p class="align-self-center mb-0 admin-name"> {{ $view->profile->name }}
+                                                </p>
+                                            </div>
+                                        @endif
+                                    </td>
                                     <td>{{ $view->created_at->diffForHumans() }}</td>
                                 </tr>
 
