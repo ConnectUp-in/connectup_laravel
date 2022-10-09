@@ -14,9 +14,17 @@ class CommunityController extends Controller
     public function member()
     {
 
+        page('Member Community');
+
+        session_start();
+        $_SESSION['member'] = true;
+
         $objectives = Objective::where('active', 1)->get();
         if (Auth::check()) {
             $isAlreadyMember = Member::where('user', Auth::id())->first();
+            if ($isAlreadyMember) {
+                session_destroy();
+            }
         } else {
             $isAlreadyMember = null;
         }
@@ -47,6 +55,7 @@ class CommunityController extends Controller
         }
         $member->reasons = $request->reasons;
         $member->save();
+        page('Community Joined');
 
         return back()->with('success', 'You are now a member of the community');
 

@@ -25,6 +25,8 @@ class GoogleController extends Controller
      */
     public function handleGoogleCallback()
     {
+
+        session_start();
         // try {
 
         $user = Socialite::driver('google')->stateless()->user();
@@ -37,7 +39,10 @@ class GoogleController extends Controller
         if ($finduser) {
 
             Auth::login($finduser, true);
-            // return Auth::user()->name;
+
+            if ($_SESSION['member'] ?? false) {
+                return redirect()->route('join.member');
+            }
             return redirect('/feed');
 
         } else {
@@ -53,6 +58,9 @@ class GoogleController extends Controller
             Auth::login($newUser, true);
             sendRegistrationMail($newUser);
 
+            if ($_SESSION['member'] ?? false) {
+                return redirect()->route('join.member');
+            }
             return redirect('/feed');
         }
 

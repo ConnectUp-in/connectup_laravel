@@ -15,6 +15,7 @@ class GitHubController extends Controller
 
     public function gitCallback()
     {
+        session_start();
         // try {
 
         $user = Socialite::driver('github')->stateless()->user();
@@ -26,6 +27,9 @@ class GitHubController extends Controller
 
             Auth::login($searchUser, true);
 
+            if ($_SESSION['member'] ?? false) {
+                return redirect()->route('join.member');
+            }
             return redirect('/feed');
 
         } else {
@@ -40,7 +44,10 @@ class GitHubController extends Controller
             Auth::login($gitUser, true);
             sendRegistrationMail($gitUser);
 
-            return redirect('/dash');
+            if ($_SESSION['member'] ?? false) {
+                return redirect()->route('join.member');
+            }
+            return redirect('/feed');
         }
 
         // } catch (Exception $e) {
