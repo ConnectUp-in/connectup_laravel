@@ -300,7 +300,7 @@
                             <div class="media-body">
                                 <h5>Hi, {{ ucfirst(explode(' ', Auth::user()->name)[0]) }}
                                 </h5>
-                                <p>ConnectUp Member</p>
+                                <p>Member</p>
                             </div>
                         </div>
                     </div>
