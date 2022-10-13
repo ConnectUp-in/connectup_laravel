@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use App\Models\Objective;
+use App\Models\PageView;
 
 class SuperAdminController extends Controller
 {
@@ -22,5 +23,16 @@ class SuperAdminController extends Controller
         // return $data;
 
         return view('admin.community.members', $data);
+    }
+
+    public function views()
+    {
+        // get 1000 latest pageviews
+        $views = Pageview::orderBy('updated_at', 'desc')->get();
+        $data = [
+            'views' => $views,
+        ];
+        // return $data;
+        return view('admin.views', $data);
     }
 }

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('user_id')->nullable();
             $table->string('page')->nullable();
             $table->string('profile_id')->nullable();
-            $table->string('ip_address')->nullable();
-            $table->string('user_agent')->nullable();
+            $table->text('ip_address')->nullable();
+            $table->text('user_agent')->nullable();
             $table->timestamps();
         });
     }

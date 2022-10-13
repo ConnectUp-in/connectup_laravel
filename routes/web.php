@@ -78,6 +78,9 @@ Route::middleware('sitemap')->group(function () {
         Route::get('wa', function () {
             return redirect('https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc');
         });
+        Route::get('team', function () {
+            return redirect('https://forms.gle/CUHvK4y6bgPcBm2LA');
+        });
     });
 
     Route::prefix('startup')->group(function () {
@@ -120,5 +123,8 @@ Route::get('/sitemap', function () {
 Route::prefix('superadmin')->group(function () {
     Route::prefix('community')->group(function () {
         Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
+    });
+    Route::prefix('views')->group(function () {
+        Route::get('/', [SuperAdminController::class, 'views'])->name('superadmin.views');
     });
 });
