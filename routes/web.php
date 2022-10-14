@@ -30,7 +30,7 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::get('test', function () {
-        return md5(uniqid('post_', true));
+        return view('emails.teamjoin');
     });
     Route::get('logout', function () {
         auth()->logout();
@@ -127,4 +127,9 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('views')->group(function () {
         Route::get('/', [SuperAdminController::class, 'views'])->name('superadmin.views');
     });
+});
+
+Route::prefix('mail')->group(function () {
+    Route::get('teamjoin', [MailController::class, 'teamjoin'])->name('mail.teamjoin');
+
 });
