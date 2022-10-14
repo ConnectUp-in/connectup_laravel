@@ -16,37 +16,35 @@ class MailController extends Controller
     public function teamjoin()
     {
 
-        // Rahul Karda    rahulkarda2002@gmail.com
-        // Sudhanshu Tiwari    sudhanshut2017.st@gmail.com
-        // Mayank Ghatpande     mayankghatpande10@gmail.com
-        // Akshay Bagde     akshaybagde35@gmail.com
-        // Vansh Saxena    vanshsaxena26@gmail.com
-        // Yogesh Magarde     yogeshmagarde123@gmail.com
-        // Chetna Patel    patelaero100@gmail.com
-        // Chitransha Varshney    chitranshav@gmail.com
-        // Himanshu Gupta     hg343860@gmail.com
-        // Shivansh Gupta    shivanshkush254@gmail.com
-        // Kush Gupta    mekushgupta@gmail.com
-        // Nikhil Patil    nikhilpatil18012004@gmail.com
-        // priyanshu mundra    Mundrapriyanshu15@gmail.com
-        // Sunil Kumar     sunilkumar088839@gmail.com
-        // Rehan Rawat    rehanrawat100@gmail.com
-        // Jaideep Singh    jaideep320@gmail.com
-        // Kritika Taank    taank.kritika@gmail.com
-        // DEVANSHU SAXENA    devanshu.2125csme@kiet.edu
-        // Alpana Choubey     choubeyalpana545@gmail.com
-        // Atharva Gade    atharvagade.128@gmail.com
-        // Pranay Pawar    pranay.pawar.58989@gmail.com
-        // Ravi Bhojane     ravi.d.lord@gmail.com
-        // Aditya jain     ajkings007@gmail.com
-        // Nithan Kambadal    nuthanjogi@gmail.com
-        // Aman Sagar    luckysagar6265@gmail.com
-        // K vamshi     kasaramvamshi7143@gmail.com
         $users = [
-            [
-                'name' => 'Harsh Vishwakarma',
-                'email' => 'harshprogrammer782@gmail.com',
-            ],
+            // ["name" => "Rahul Karda", "email" => "rahulkarda2002@gmail.com"],
+            // ["name" => "Sudhanshu Tiwari", "email" => "sudhanshut2017.st@gmail.com"],
+            // ["name" => "Mayank Ghatpande", "email" => "mayankghatpande10@gmail.com"],
+            // ["name" => "Akshay Bagde", "email" => "akshaybagde35@gmail.com"],
+            // ["name" => "Vansh Saxena", "email" => "vanshsaxena26@gmail.com"],
+            // ["name" => "Yogesh Magarde", "email" => "yogeshmagarde123@gmail.com"],
+            // ["name" => "Chetna Patel", "email" => "patelaero100@gmail.com"],
+            // ["name" => "Chitransha Varshney", "email" => "chitranshav@gmail.com"],
+            // ["name" => "Himanshu Gupta", "email" => "hg343860@gmail.com"],
+            // ["name" => "Shivansh Gupta", "email" => "shivanshkush254@gmail.com"],
+            // ["name" => "Kush Gupta", "email" => "mekushgupta@gmail.com"],
+            // ["name" => "Nikhil Patil", "email" => "nikhilpatil18012004@gmail.com"],
+            // ["name" => "priyanshu mundra", "email" => "Mundrapriyanshu15@gmail.com"],
+            // ["name" => "Sunil Kumar", "email" => "sunilkumar088839@gmail.com"],
+            // ["name" => "Rehan Rawat", "email" => "rehanrawat100@gmail.com"],
+            // ["name" => "Jaideep Singh", "email" => "jaideep320@gmail.com"],
+            // ["name" => "Kritika Taank", "email" => "taank.kritika@gmail.com"],
+            // ["name" => "DEVANSHU SAXENA", "email" => "devanshu.2125csme@kiet.edu"],
+            // ["name" => "Alpana Choubey", "email" => "choubeyalpana545@gmail.com"],
+            // ["name" => "Atharva Gade", "email" => "atharvagade.128@gmail.com"],
+            // ["name" => "Pranay Pawar", "email" => "pranay.pawar.58989@gmail.com"],
+            // ["name" => "Ravi Bhojane", "email" => "ravi.d.lord@gmail.com"],
+            // ["name" => "Aditya jain", "email" => "ajkings007@gmail.com"],
+            // ["name" => "Nithan Kambadal", "email" => "nuthanjogi@gmail.com"],
+            // ["name" => "Aman Sagar", "email" => "luckysagar6265@gmail.com"],
+            // ["name" => "K vamshi", "email" => "kasaramvamshi7143@gmail.com"],
+            // ["name" => "Ankur Gupta", "email" => "ankurg052@gmail.com"],
+            // ['name' => 'Harsh Vishwakarma', 'email' => 'harshprogrammer782@gmail.com'],
         ];
 
         foreach ($users as $user) {
