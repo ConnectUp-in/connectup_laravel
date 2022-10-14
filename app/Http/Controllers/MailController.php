@@ -54,7 +54,7 @@ class MailController extends Controller
                 'name' => $user['name'],
                 'email' => $user['email'],
             ];
-            Mail::send('emails.test', $data, function ($message) use ($data) {
+            Mail::send('emails.teamjoin', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
                 $message->subject('Congratulations!!! You are just one step away from joining ConnectUp');
