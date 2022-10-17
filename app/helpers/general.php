@@ -120,3 +120,8 @@ function shorten($url)
     $url = urlencode($url);
     return url('/redirect?url=' . $url);
 }
+
+function html2text($html)
+{
+    return preg_replace("/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($html))));
+}
