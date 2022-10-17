@@ -17,18 +17,7 @@ class BlogSeeder extends Seeder
     {
         $founder = User::where('username', 'founder')->first();
 
-        // $table->string('title');
-        // $table->longText('content');
-        // $table->string('creator');
-        // $table->string('creator_type');
-        // $table->integer('category')->nullable();
-        // $table->json('attachments')->nullable();
-        // $table->string('slug');
-        // $table->string('tags')->nullable();
-        // $table->integer('readtime')->nullable();
-        // $table->string('image');
-
-        $events = [
+        $blogs = [
             [
                 'title' => 'Techfest - IIT Bombay Workshop',
                 'slug' => 'Techfest-IIT-Bombay-Workshop',
