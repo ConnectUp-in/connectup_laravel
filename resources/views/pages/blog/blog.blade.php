@@ -162,7 +162,7 @@
                                     <b>Category:</b>
                                     <span class="post-content-text">
                                         <a href="#">
-                                            {{ $blog->category }}
+                                            {{ $blog->category->name ?? 'No Category selected' }}
                                         </a>
                                     </span>
                                 </div>

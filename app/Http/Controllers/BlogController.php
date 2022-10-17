@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,7 @@ class BlogController extends Controller
         } elseif ($blog->creator_type == 's') {
             $blog->creator = Startup::where('id', $blog->creator)->select('id', 'name', 'username', 'logo')->first();
         }
+        $blog->category = Category::where('id', $blog->category)->select('id', 'name')->first();
         $data = [
             'blog' => $blog,
         ];
