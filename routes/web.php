@@ -44,6 +44,7 @@ Route::middleware('sitemap')->group(function () {
     Route::get('startups', [AppController::class, 'startups'])->name('startups');
     Route::get('superpreneurs', [AppController::class, 'superpreneurs'])->name('superpreneurs');
     Route::get('events', [AppController::class, 'events'])->name('events');
+    Route::get('blogs', [AppController::class, 'blogs'])->name('blogs');
     Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
 
     Route::prefix('user')
@@ -95,6 +96,10 @@ Route::middleware('sitemap')->group(function () {
         Route::get('/registration/confirm/{id}', [EventController::class, 'registrationConfirm'])->name('event.registration.confirm');
         Route::get('/registration/sendticket/{id}', [EventController::class, 'registrationSendticket'])->name('event.registration.sendticket');
         Route::get('verify/{event_id}/{ticket_id}', [EventController::class, 'verify'])->name('event.verify');
+    });
+
+    Route::prefix('blog')->group(function () {
+        Route::get('/{slug}', [BlogController::class, 'blog'])->name('blog');
     });
 
 });

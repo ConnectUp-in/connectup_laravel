@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\Startup;
@@ -90,5 +91,18 @@ class AppController extends Controller
         ];
         // return $data;
         return view('pages.events', $data);
+    }
+
+    public function blogs()
+    {
+        page('blogs');
+        $blogs = Blog::where('active', 1)
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
+        $data = [
+            'blogs' => $blogs,
+        ];
+        // return $data;
+        return view('pages.blogs', $data);
     }
 }
