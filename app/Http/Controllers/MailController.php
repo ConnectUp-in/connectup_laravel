@@ -15,7 +15,8 @@ class MailController extends Controller
     //
     public function teamjoin()
     {
-
+        // yashgulhane99@gmail.com    Yash
+        // patelmuskan560@gmail.com    Muskan Patel
         $users = [
             // ["name" => "Rahul Karda", "email" => "rahulkarda2002@gmail.com"],
             // ["name" => "Sudhanshu Tiwari", "email" => "sudhanshut2017.st@gmail.com"],
@@ -43,8 +44,16 @@ class MailController extends Controller
             // ["name" => "Nithan Kambadal", "email" => "nuthanjogi@gmail.com"],
             // ["name" => "Aman Sagar", "email" => "luckysagar6265@gmail.com"],
             // ["name" => "K vamshi", "email" => "kasaramvamshi7143@gmail.com"],
-            // ["name" => "Ankur Gupta", "email" => "ankurg052@gmail.com"],
-            // ['name' => 'Harsh Vishwakarma', 'email' => 'harshprogrammer782@gmail.com'],
+            // ['name' => 'Hemant Gupta', 'email' => 'hemant9111118581@gmail.com'],
+            // ['name' => 'Yash Daga', 'email' => 'yash.20bce7323@vitap.ac.in'],
+            // ['name' => 'Shivam Yadav', 'email' => 'itsmeshivam00@gmail.com'],
+            // ['name' => 'Santosh P', 'email' => 'purisanthosh2002@gmail.com'],
+            // ['name' => 'ANUJ KUSHWAHA', 'email' => 'anuj.092775@gmail.com'],
+            // ['name' => 'Ansh Sharma', 'email' => 'kushansh0904@gmail.com'],
+            // ['name' => 'Anushka Kathal', 'email' => 'kathal.anushka@gmail.com'],
+            // ['name' => 'ABHISHEK SINGH', 'email' => 'abhishk2181@gmail.com'],
+            // ['name' => 'Ishan Marwadya', 'email' => 'ishanmarwadya02@gmail.com'],
+            ['name' => 'Harsh Vishwakarma', 'email' => 'harshprogrammer782@gmail.com'],
         ];
 
         foreach ($users as $user) {
