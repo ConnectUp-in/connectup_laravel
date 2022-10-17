@@ -19,31 +19,39 @@ class BlogSeeder extends Seeder
 
         $blogs = [
             [
-                'title' => 'Techfest - IIT Bombay Workshop',
-                'slug' => 'Techfest-IIT-Bombay-Workshop',
+                'title' => 'Physics Wallah acquihired PrepOnline and Altis Vortex',
+                'slug' => 'physicswallah-acquired-preponline-and-altisvortex',
                 'content' => '
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Hey Innovators 🚀🚀<br />
-                Techfest, IIT Bombay, Asia&#39;s largest Science and Technology Festival, is organizing a workshop at UIT RGPV with Innovations@EC.</span></span></span></p>
+                <p>Edtech unicorn Physics Wallah(PW) acquihires PrepOnline and Altis Vortex other startups in the edtech segment. PrepOnline is an edtech platform for NEET, JEE and board exams, founded by Vivek Gaur, Manish Kumar and Anurag Pathak in 2019. Altis Vortex, founded by Vivek Gaur and Manish Kumar in 2015, is a publisher for NCERT books for classes 11 and 12, NEET and CET-UG exams.<br />
+                    Physics Wallah brings in experienced teachers from PrepOnline into the unicorn. Along with seven plus years of publication experience from Altis Vortex.<br />
+                    Physics Wallah aims to bring the same quality and affordability that they already give to JEE and NEET aspirants, to those aspiring government jobs.</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Grab the opportunity to learn Robotics and dive into its abstraction. This one-day workshop will aid in learning robotics that can help in engineering fields and explore technology to the best extent.🤖</span></span></span></p>
+                    <p><br />
+                    &ldquo;Our acquisition thesis is more towards acqui-hiring, where we are looking to have better entrepreneur leadership in place. We are also entering into multiple exam categories, so we are considering better content creation areas or the missing segments in those categories, as we build. We are aspiring to go global and will look at international assets as well,&rdquo; cofounder Prateek Maheshwari said, referring to acquisitions.</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">This workshop will help in the upcoming magnificent nationwide Zonal Competition, Technorion&#39;22 in Bhopal. The top 5 teams from the center will get direct entry to compete against each other for the final Techfest Trophy in IIT Bombay.</span></span></span></p>
+                    <p><br />
+                    As a part of the acqui hiring, Vivek joined PW as its chief growth officer and Manish Kumar as Chief of projects.</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Speaker of the Event: Mr. Arpit Soni, Center Head &amp; Certified Trainer in Robonauts India.<br />
-                Date:19 September<br />
-                Venue: RGPV Conference Hall</span></span></span></p>
+                    <p><br />
+                    Altis Vortex will merge with the Physics Wallah editorial team to enhance the PW study material for the PW publication, with focus to cover exams like GATE, SSC, UPSC, NDA, to name a few.<br />
+                    The new acquisitions will also support PW in other domains such as ecommerce and retail marketing to name a few. The sum amount of the acquisition is not publicly disclosed.</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Here is the chance to begin your journey of competing in unique and breathtaking challenges. Hurry up and register now.</span></span></span></p>
+                    <p><br />
+                    Physics Wallah was launched by Alakh Pandey and Prateek Maheshwari 2020 and became an unicorn in June this year, raising $100 million in its maiden funding round from West Bridge Capital and GSV ventures, at an evaluation of $1.1 billion. PW became India&rsquo;s 101st unicorn.</p>
 
+                    <p><br />
+                    The company is also earmarking $20 million for acquisitions this year from the recent fundraise, Maheshwari told &lsquo;The Economic Times&rsquo;.</p>
 
-
+                    <p><br />
+                    This acquisition is PW&rsquo;s third major announcement thi s year, after becoming an unicorn and acquiring FreeCo, a doubt-solving and resource management startup, in August. In June the company also announced the launch of its offline learning centres &lsquo;PW Vidyapeeth&rsquo; in cities like Kota, Jaipur and Delhi to begin with.</p>
                 ',
-                'image' => '/assets/defaults/events/techfest.jpg',
+                'image' => '/assets/defaults/events/pwpreponline.jpg',
                 'attachments' => [],
                 'creator' => $founder->id,
                 'creator_type' => 'e',
-                'tags' => ['techfest', 'electronics', 'robotics'],
-                'readtime' => 5,
+                'category' => 17,
+                'tags' => ['physicswallah', 'preponline', 'altis vortex', 'acqui-hire', 'edtech'],
+                'readtime' => 8,
             ],
 
         ];
