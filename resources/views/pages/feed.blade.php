@@ -1,6 +1,6 @@
 @php
-$page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
-
+    $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
+    
 @endphp
 
 @extends('layouts/app')
@@ -23,7 +23,7 @@ $page['title'] = 'Feed | ConnectUp | Connecting the Dots...';
 
             <!-- GRID COLUMN -->
             <div class="grid-column">
-
+                @widget('quickpost')
                 @import('components.posts')
 
                 <!-- LOADER BARS -->

@@ -71,7 +71,7 @@
         <div class="widget-box-status-content">
             <div class="tag-list">
 
-                @forelse ($post->tags as $tag)
+                @forelse ($post->tags ?? [] as $tag)
                     <a class="tag-item secondary" href="#">{{ $tag }}</a>
                 @empty
                 @endforelse
