@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use Auth;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     //
-    public function getposts(){
+    public function getposts()
+    {
         $posts = Post::where('active', 1)->get();
         return $posts;
     }
-    
-    public function post($id){
+
+    public function post($id)
+    {
         page('post');
-        $post = Post::find($id);  
-        if(Auth::check()){
-            $refferals = User::where('invited_by', Auth::user()->invite_refferal)->select('name', 'username','email', 'profile_photo_path', 'created_at')->get();
-        }
-        else{
+        $post = Post::find($id);
+        if (Auth::check()) {
+            $refferals = User::where('invited_by', Auth::user()->invite_refferal)->select('name', 'username', 'email', 'profile_photo_path', 'created_at')->get();
+        } else {
             $refferals = [];
         }
         $data = [
@@ -30,5 +31,23 @@ class PostController extends Controller
         ];
         // return $data;
         return view('pages.post', $data);
+    }
+
+    public function create(Request $request)
+    {
+
+        $content = html2text($request->content);
+        $post = new Post;
+        $post->caption = $content;
+        $post->ytlink = extract_ytlink($content);
+        $url = getURLfromText($content);
+        if ($url) {
+            $post->metadata = getMetaData();
+        }
+
+        $post->user_id = Auth::id();
+        $post->save();
+        // return $post;
+        return redirect()->route('post', $post->id);
     }
 }
