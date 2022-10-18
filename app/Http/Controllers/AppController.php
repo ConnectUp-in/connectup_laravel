@@ -11,9 +11,17 @@ use Auth;
 
 class AppController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only([
+            'feed',
+        ]);
+    }
     //
     public function feed()
     {
+
         page('feed');
         $posts = Post::where('active', 1)
             ->orderBy('created_at', 'desc')
