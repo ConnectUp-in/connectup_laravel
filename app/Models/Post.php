@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Support\Str;
+
 class Post extends Model
 {
     use HasFactory;
@@ -15,7 +15,7 @@ class Post extends Model
         parent::boot();
 
         static::creating(function ($post) {
-            if (! $post->id) {
+            if (!$post->id) {
                 $post->id = Str::uuid();
             }
         });
@@ -23,42 +23,39 @@ class Post extends Model
 
     protected $appends = [
         'user',
-        'meta'
+        'meta',
     ];
 
-            // json fields - images, tags, options, shares, likes, dislikes
-            protected $casts = [
-                'images' => 'array',
-                'tags' => 'array',
-                'options' => 'array',
-                'shares' => 'array',
-                'likes' => 'array',
-                'dislikes' => 'array',
-                'id' => 'string',
-            ];
-            
-            
-            public function getUserAttribute($value)
-            {
-                return User::where('id',$this->attributes['user_id'])->select('id', 'name', 'email','username','profile_photo_path')->first();
-            }
+    // json fields - images, tags, options, shares, likes, dislikes
+    protected $casts = [
+        'images' => 'array',
+        'tags' => 'array',
+        'options' => 'array',
+        'shares' => 'array',
+        'likes' => 'array',
+        'dislikes' => 'array',
+        'id' => 'string',
+        'metadata' => 'array',
+    ];
+    public $incrementing = false;
+    public function getUserAttribute($value)
+    {
+        return User::where('id', $this->attributes['user_id'])->select('id', 'name', 'email', 'username', 'profile_photo_path')->first();
+    }
 
+    public function getCaptionAttribute($value)
+    {
+        return makeHyperText($value);
+    }
 
-            public function getCaptionAttribute($value)
-            {
-                return makeHyperText($value);
-            }
-
-
-            public function getMetaAttribute($value)
-            {
-                // if(getURLfromText($this->attributes['caption']) != ""){
-                //     $url = getURLfromText($this->attributes['caption']);
-                //     $meta = getMetaData($url);
-                //     return $meta;           
-                // }
-                return null;
-            }
-            
+    public function getMetaAttribute($value)
+    {
+        // if(getURLfromText($this->attributes['caption']) != ""){
+        //     $url = getURLfromText($this->attributes['caption']);
+        //     $meta = getMetaData($url);
+        //     return $meta;
+        // }
+        return null;
+    }
 
 }

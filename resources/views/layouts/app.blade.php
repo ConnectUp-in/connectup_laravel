@@ -50,6 +50,11 @@
             border-radius: 10px !important;
             font-weight: bold !important;
         }
+
+        .non-functional {
+            /* pointer-events: none; */
+            cursor: not-allowed;
+        }
     </style>
 
     @include('layouts.partials.meta')

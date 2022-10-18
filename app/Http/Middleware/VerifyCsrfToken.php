@@ -20,6 +20,7 @@ class VerifyCsrfToken extends Middleware
         '/user/startup/update/*',
         '/event/register',
         '/join/*',
+        '/post/*',
         //
     ];
 }

@@ -30,7 +30,7 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::get('test', function () {
-        return md5(uniqid('post_', true));
+        return view('emails.teamjoin');
     });
     Route::get('logout', function () {
         auth()->logout();
@@ -38,14 +38,19 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::get('feed', [AppController::class, 'feed'])->name('feed');
-    Route::get('post/{id}', [PostController::class, 'post'])->name('post');
     Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
     Route::get('redirect', [HelperController::class, 'redirect']);
     Route::get('startups', [AppController::class, 'startups'])->name('startups');
     Route::get('superpreneurs', [AppController::class, 'superpreneurs'])->name('superpreneurs');
     Route::get('events', [AppController::class, 'events'])->name('events');
+    Route::get('blogs', [AppController::class, 'blogs'])->name('blogs');
     Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
 
+    Route::prefix('post')->group(function () {
+        Route::get('/{id}', [PostController::class, 'post'])->name('post');
+        Route::post('create', [PostController::class, 'create'])->name('post.create');
+
+    });
     Route::prefix('user')
         ->middleware('auth')
         ->group(function () {
@@ -97,6 +102,10 @@ Route::middleware('sitemap')->group(function () {
         Route::get('verify/{event_id}/{ticket_id}', [EventController::class, 'verify'])->name('event.verify');
     });
 
+    Route::prefix('blog')->group(function () {
+        Route::get('/{slug}', [BlogController::class, 'blog'])->name('blog');
+    });
+
 });
 
 Route::get('/testmail', [HelperController::class, 'testmail']);
@@ -127,4 +136,9 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('views')->group(function () {
         Route::get('/', [SuperAdminController::class, 'views'])->name('superadmin.views');
     });
+});
+
+Route::prefix('mail')->group(function () {
+    Route::get('teamjoin', [MailController::class, 'teamjoin'])->name('mail.teamjoin');
+
 });
