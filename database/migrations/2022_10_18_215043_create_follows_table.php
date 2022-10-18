@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('user');
             $table->string('type')->default('user');
-            $table->foreignId('followed_id');
+            $table->string('followed_id');
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

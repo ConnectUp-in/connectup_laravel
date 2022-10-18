@@ -1,8 +1,8 @@
 @php
-$page['title'] = $user->name . '`s Profile Timeline | ConnectUp';
-$page['image'] = $user->profile_photo_path;
-$page['description'] = $user->bio ?? null;
-
+    $page['title'] = $user->name . '`s Profile Timeline | ConnectUp';
+    $page['image'] = $user->profile_photo_path;
+    $page['description'] = $user->bio ?? null;
+    
 @endphp
 @extends('layouts.app')
 
@@ -240,7 +240,16 @@ $page['description'] = $user->bio ?? null;
                             Message</p>
                         <!-- /PROFILE HEADER INFO ACTION --> --}}
                         <!-- PROFILE HEADER INFO ACTION -->
-                        <p class="profile-header-info-action button primary">Follow</p>
+
+                        @if ($is_following)
+                            <p id="follow" class="profile-header-info-action button secondary"
+                                onclick="follow('{{ $user->id }}')">UnFollow
+                            </p>
+                        @else
+                            <p id="follow" class="profile-header-info-action button primary"
+                                onclick="follow('{{ $user->id }}')">Follow
+                            </p>
+                        @endif
                         <!-- /PROFILE HEADER INFO ACTION -->
                     @endif
                 </div>
@@ -5801,3 +5810,29 @@ $page['description'] = $user->bio ?? null;
     </div>
     <!-- /CONTENT GRID -->
 @endsection
+
+@push('scripts')
+    <script>
+        function follow(id) {
+            console.log(id);
+            // post request ajax
+            $.ajax({
+                url: "{{ route('follow') }}",
+                type: 'POST',
+                data: {
+                    id: id,
+                    type: 'user'
+                },
+                success: function(data) {
+                    // console.log(data);
+                    if (!data.data) {
+                        $('#follow').html('Follow').removeClass('secondary').addClass('primary');
+                    } else {
+                        $('#follow').html('Unfollow').removeClass('primary').addClass('secondary');
+                    }
+                }
+            });
+
+        }
+    </script>
+@endpush

@@ -69,6 +69,8 @@ Route::middleware('sitemap')->group(function () {
                 Route::post('/update/{id}', [StartupController::class, 'update'])->name('startup.update');
                 Route::post('/update/{id}/cover', [StartupController::class, 'updateCover'])->name('startup.update.cover');
             });
+
+            Route::post('follow', [ProfileController::class, 'follow'])->name('follow');
         });
 
     Route::post('title', function () {

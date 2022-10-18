@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AcademicBackground as AcadBack;
 use App\Models\College;
 use App\Models\Country;
+use App\Models\Follow;
 use App\Models\Interest;
 use App\Models\User;
 use Auth;
@@ -36,9 +37,9 @@ class ProfileController extends Controller
         }
         page('user/{username}', $user->id);
         $refferals = User::where('invited_by', $user->invite_refferal)->select('name', 'username', 'email', 'profile_photo_path', 'created_at')->get();
-
+        $is_following = Follow::where('user', Auth::user()->id)->where('followed_id', $user->id)->count();
         // return $user;
-        return view('pages.profile.timeline', compact('user', 'refferals'));
+        return view('pages.profile.timeline', compact('user', 'refferals', 'is_following'));
     }
     public function info()
     {
@@ -139,4 +140,22 @@ class ProfileController extends Controller
             return $this->sendResponse(true, 'Email is available');
         }
     }
+
+    public function follow(Request $request)
+    {
+        $user = Auth::user();
+        $follow = Follow::where('user', $user->id)->where('followed_id', $request->id)->first();
+        if ($follow) {
+            $follow->delete();
+            return $this->sendResponse(null, 'Unfollowed');
+        } else {
+            $follow = new Follow;
+            $follow->user = $user->id;
+            $follow->followed_id = $request->id;
+            $follow->type = $request->type;
+            $follow->save();
+            return $this->sendResponse(true, 'Followed');
+        }
+    }
+
 }
