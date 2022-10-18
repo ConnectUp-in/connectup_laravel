@@ -38,7 +38,6 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::get('feed', [AppController::class, 'feed'])->name('feed');
-    Route::get('post/{id}', [PostController::class, 'post'])->name('post');
     Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
     Route::get('redirect', [HelperController::class, 'redirect']);
     Route::get('startups', [AppController::class, 'startups'])->name('startups');
@@ -47,6 +46,11 @@ Route::middleware('sitemap')->group(function () {
     Route::get('blogs', [AppController::class, 'blogs'])->name('blogs');
     Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
 
+    Route::prefix('post')->group(function () {
+        Route::get('/{id}', [PostController::class, 'post'])->name('post');
+        Route::post('create', [PostController::class, 'create'])->name('post.create');
+
+    });
     Route::prefix('user')
         ->middleware('auth')
         ->group(function () {
