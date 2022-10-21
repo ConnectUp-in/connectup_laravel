@@ -97,6 +97,18 @@ function page($page, $profile_id = null)
     $p->user_agent = request()->header('User-Agent');
     $p->save();
 }
+function action($action, $action_item = null)
+{
+    $p = new PageView();
+    if (Auth::check()) {
+        $p->user_id = Auth::user()->id;
+    }
+    $p->action = $action;
+    $p->ip_address = request()->ip();
+    $p->action_item = $action_item;
+    $p->user_agent = request()->header('User-Agent');
+    $p->save();
+}
 
 function profileview($profile_id)
 {

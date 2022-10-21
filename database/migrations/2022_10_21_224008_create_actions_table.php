@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('actions', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->nullable();
-            $table->string('code')->nullable();
+            $table->string('action')->nullable();
             $table->string('action_item')->nullable();
             $table->text('ip_address')->nullable();
             $table->text('user_agent')->nullable();
