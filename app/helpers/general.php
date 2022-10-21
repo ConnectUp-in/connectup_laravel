@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Action;
 use App\Models\PageView;
 
 // Import DOMDocument class
@@ -97,17 +98,17 @@ function page($page, $profile_id = null)
     $p->user_agent = request()->header('User-Agent');
     $p->save();
 }
-function action($action, $action_item = null)
+function _action($action, $action_item = null)
 {
-    $p = new PageView();
+    $a = new Action();
     if (Auth::check()) {
-        $p->user_id = Auth::user()->id;
+        $a->user_id = Auth::user()->id;
     }
-    $p->action = $action;
-    $p->ip_address = request()->ip();
-    $p->action_item = $action_item;
-    $p->user_agent = request()->header('User-Agent');
-    $p->save();
+    $a->action = $action;
+    $a->ip_address = request()->ip();
+    $a->action_item = $action_item;
+    $a->user_agent = request()->header('User-Agent');
+    $a->save();
 }
 
 function profileview($profile_id)
