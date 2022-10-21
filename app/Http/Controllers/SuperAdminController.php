@@ -27,11 +27,13 @@ class SuperAdminController extends Controller
 
     public function views()
     {
+        $start = microtime(true);
         // get 1000 latest pageviews
         $views = Pageview::orderBy('updated_at', 'desc')->get();
         $data = [
             'views' => $views,
         ];
+        return microtime(true) - $start;
         // return $data;
         return view('admin.views', $data);
     }
