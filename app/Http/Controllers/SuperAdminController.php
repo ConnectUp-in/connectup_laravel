@@ -10,7 +10,8 @@ class SuperAdminController extends Controller
 {
     public function members()
     {
-        $members = Member::all();
+        // Get all latest members
+        $members = Member::orderBy('created_at', 'desc')->get();
 
         // attach objectives
         foreach ($members as $member) {
