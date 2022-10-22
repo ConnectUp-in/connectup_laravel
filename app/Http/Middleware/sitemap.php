@@ -55,7 +55,7 @@ class sitemap
                 'priority' => 1 - substr_count($request->getPathInfo(), '/') / 10,
                 'changefreq' => $changefreq,
             ];
-            \Cache::put('sitemap', $aSiteMap, 2880);
+            \Cache::put('sitemap', $aSiteMap, 78800);
         }
         return $next($request);
     }
