@@ -15,44 +15,25 @@ class MailController extends Controller
     //
     public function teamjoin()
     {
-        // yashgulhane99@gmail.com    Yash
-        // patelmuskan560@gmail.com    Muskan Patel
+//         officialkowsalya@gmail.com    Kowsalya
+// chandolasaksham@gmail.com    Saksham Chandola
+// anknalitoriya@gmail.com    Ankna Litoriya
+// ro3498727@gmail.com    Rohan Sharma
+// kathal.anushka@gmail.com    Anushka Kathal
+// fusheikh11@gmail.com    Faizanuddin Sheikh
+// harikishantk@gmail.com    Harikishan TK
+// ankurkumar4715@gmail.com    Ankur Kumar
+// rahulkarda2002@gmail.com    Rahul Karda
+// abhiramhsivam@gmail.com    ABHIRAM H SIVAM
+// ishanmarwadya02@gmail.com    Ishan Marwadya
+// ravi.d.lord@gmail.com    Ravi Bhojane
+// vanshsaxena26@gmail.com    Vansh Saxena
+// sandeshv414@gmail.com    Sandesh Verma
+// kongarapiaashamadhuri@gmail.com    Aasha madhuri
+// imteyazahmad5426@gmail.com    Md Imteyaz Ahmad
         $users = [
-            // ["name" => "Rahul Karda", "email" => "rahulkarda2002@gmail.com"],
-            // ["name" => "Sudhanshu Tiwari", "email" => "sudhanshut2017.st@gmail.com"],
-            // ["name" => "Mayank Ghatpande", "email" => "mayankghatpande10@gmail.com"],
-            // ["name" => "Akshay Bagde", "email" => "akshaybagde35@gmail.com"],
-            // ["name" => "Vansh Saxena", "email" => "vanshsaxena26@gmail.com"],
-            // ["name" => "Yogesh Magarde", "email" => "yogeshmagarde123@gmail.com"],
-            // ["name" => "Chetna Patel", "email" => "patelaero100@gmail.com"],
-            // ["name" => "Chitransha Varshney", "email" => "chitranshav@gmail.com"],
-            // ["name" => "Himanshu Gupta", "email" => "hg343860@gmail.com"],
-            // ["name" => "Shivansh Gupta", "email" => "shivanshkush254@gmail.com"],
-            // ["name" => "Kush Gupta", "email" => "mekushgupta@gmail.com"],
-            // ["name" => "Nikhil Patil", "email" => "nikhilpatil18012004@gmail.com"],
-            // ["name" => "priyanshu mundra", "email" => "Mundrapriyanshu15@gmail.com"],
-            // ["name" => "Sunil Kumar", "email" => "sunilkumar088839@gmail.com"],
-            // ["name" => "Rehan Rawat", "email" => "rehanrawat100@gmail.com"],
-            // ["name" => "Jaideep Singh", "email" => "jaideep320@gmail.com"],
-            // ["name" => "Kritika Taank", "email" => "taank.kritika@gmail.com"],
-            // ["name" => "DEVANSHU SAXENA", "email" => "devanshu.2125csme@kiet.edu"],
-            // ["name" => "Alpana Choubey", "email" => "choubeyalpana545@gmail.com"],
-            // ["name" => "Atharva Gade", "email" => "atharvagade.128@gmail.com"],
-            // ["name" => "Pranay Pawar", "email" => "pranay.pawar.58989@gmail.com"],
-            // ["name" => "Ravi Bhojane", "email" => "ravi.d.lord@gmail.com"],
-            // ["name" => "Aditya jain", "email" => "ajkings007@gmail.com"],
-            // ["name" => "Nithan Kambadal", "email" => "nuthanjogi@gmail.com"],
-            // ["name" => "Aman Sagar", "email" => "luckysagar6265@gmail.com"],
-            // ["name" => "K vamshi", "email" => "kasaramvamshi7143@gmail.com"],
-            // ['name' => 'Hemant Gupta', 'email' => 'hemant9111118581@gmail.com'],
-            // ['name' => 'Yash Daga', 'email' => 'yash.20bce7323@vitap.ac.in'],
-            // ['name' => 'Shivam Yadav', 'email' => 'itsmeshivam00@gmail.com'],
-            // ['name' => 'Santosh P', 'email' => 'purisanthosh2002@gmail.com'],
-            // ['name' => 'ANUJ KUSHWAHA', 'email' => 'anuj.092775@gmail.com'],
-            // ['name' => 'Ansh Sharma', 'email' => 'kushansh0904@gmail.com'],
-            // ['name' => 'Anushka Kathal', 'email' => 'kathal.anushka@gmail.com'],
-            // ['name' => 'ABHISHEK SINGH', 'email' => 'abhishk2181@gmail.com'],
-            // ['name' => 'Ishan Marwadya', 'email' => 'ishanmarwadya02@gmail.com'],
+            // ['name' => 'Ryan Stonebanks', 'email' => 'ryan.stonebanks@gmail.com'],
+            // ['name' => 'Krupesh Vithlani', 'email' => 'krupesh123vithlani@gmail.com'],
             ['name' => 'Harsh Vishwakarma', 'email' => 'harshprogrammer782@gmail.com'],
         ];
 
@@ -61,10 +42,10 @@ class MailController extends Controller
                 'name' => $user['name'],
                 'email' => $user['email'],
             ];
-            Mail::send('emails.teamjoin', $data, function ($message) use ($data) {
+            Mail::send('emails.testsite', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
-                $message->subject('Congratulations!!! You are just one step away from joining ConnectUp');
+                $message->subject("Hurrah! You've been selected to proceed to the next round");
             });
         }
 
