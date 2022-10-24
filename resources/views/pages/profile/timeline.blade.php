@@ -183,7 +183,7 @@
                     <!-- USER STAT -->
                     <div class="user-stat big">
                         <!-- USER STAT TITLE -->
-                        <p class="user-stat-title">{{ $user->followers ?? 0 }}</p>
+                        <p class="user-stat-title" id="followers">{{ $user->followers ?? 0 }}</p>
                         <!-- /USER STAT TITLE -->
 
                         <!-- USER STAT TEXT -->
@@ -242,13 +242,15 @@
                         <!-- PROFILE HEADER INFO ACTION -->
 
                         @if ($is_following)
-                            <p id="follow" class="profile-header-info-action button secondary"
-                                onclick="follow('{{ $user->id }}')">UnFollow
-                            </p>
+                            <div id="follow" class="profile-header-info-action button secondary"
+                                onclick="follow('{{ $user->id }}')">
+                                Unfollow
+                            </div>
                         @else
-                            <p id="follow" class="profile-header-info-action button primary"
-                                onclick="follow('{{ $user->id }}')">Follow
-                            </p>
+                            <div id="follow" class="profile-header-info-action button primary"
+                                onclick="follow('{{ $user->id }}')">
+                                Follow
+                            </div>
                         @endif
                         <!-- /PROFILE HEADER INFO ACTION -->
                     @endif
@@ -5813,7 +5815,10 @@
 
 @push('scripts')
     <script>
+        var loaderHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
+
         function follow(id) {
+            $('#follow').html(loaderHTML);
             console.log(id);
             // post request ajax
             $.ajax({
@@ -5827,8 +5832,11 @@
                     // console.log(data);
                     if (!data.data) {
                         $('#follow').html('Follow').removeClass('secondary').addClass('primary');
+                        document.querySelector('#followers').innerHTML -= 1;
                     } else {
                         $('#follow').html('Unfollow').removeClass('primary').addClass('secondary');
+                        document.querySelector('#followers').innerHTML = parseInt(document.querySelector(
+                            '#followers').innerHTML) + 1;
                     }
                 }
             });
