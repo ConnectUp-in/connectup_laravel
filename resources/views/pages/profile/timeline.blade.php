@@ -220,17 +220,17 @@
                     <!-- /USER STAT -->
                 </div>
                 <!-- /USER STATS -->
+                @if (Auth::check())
+                    <!-- PROFILE HEADER INFO ACTIONS -->
+                    <div class="profile-header-info-actions">
 
-                <!-- PROFILE HEADER INFO ACTIONS -->
-                <div class="profile-header-info-actions">
 
-
-                    @if (Auth::check() && $user->username == Auth::user()->username)
-                        <a href="{{ route('profile.info') }}" class="profile-header-info-action button secondary">Edit
-                            <span class="hide-text-mobile">Profile</span></a>
-                    @else
-                        <!-- PROFILE HEADER INFO ACTION -->
-                        {{-- <a href="#" class="profile-header-info-action button secondary"><span
+                        @if ($user->username == Auth::user()->username)
+                            <a href="{{ route('profile.info') }}" class="profile-header-info-action button secondary">Edit
+                                <span class="hide-text-mobile">Profile</span></a>
+                        @else
+                            <!-- PROFILE HEADER INFO ACTION -->
+                            {{-- <a href="#" class="profile-header-info-action button secondary"><span
                                 class="hide-text-mobile">Add</span>
                             Friend +</a>
                         <!-- /PROFILE HEADER INFO ACTION -->
@@ -239,23 +239,24 @@
                         <p class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span>
                             Message</p>
                         <!-- /PROFILE HEADER INFO ACTION --> --}}
-                        <!-- PROFILE HEADER INFO ACTION -->
+                            <!-- PROFILE HEADER INFO ACTION -->
 
-                        @if ($is_following)
-                            <div id="follow" class="profile-header-info-action button secondary"
-                                onclick="follow('{{ $user->id }}')">
-                                Unfollow
-                            </div>
-                        @else
-                            <div id="follow" class="profile-header-info-action button primary"
-                                onclick="follow('{{ $user->id }}')">
-                                Follow
-                            </div>
+                            @if ($is_following)
+                                <div id="follow" class="profile-header-info-action button secondary"
+                                    onclick="follow('{{ $user->id }}')">
+                                    Unfollow
+                                </div>
+                            @else
+                                <div id="follow" class="profile-header-info-action button primary"
+                                    onclick="follow('{{ $user->id }}')">
+                                    Follow
+                                </div>
+                            @endif
+                            <!-- /PROFILE HEADER INFO ACTION -->
                         @endif
-                        <!-- /PROFILE HEADER INFO ACTION -->
-                    @endif
-                </div>
-                <!-- /PROFILE HEADER INFO ACTIONS -->
+                    </div>
+                    <!-- /PROFILE HEADER INFO ACTIONS -->
+                @endif
             </div>
             <!-- /PROFILE HEADER INFO -->
         </div>
