@@ -37,8 +37,12 @@ class ProfileController extends Controller
             $user->interests = [];
         }
         page('user/{username}', $user->id);
+        if (Auth::check()) {
+            $is_following = Follow::where('user', Auth::user()->id)->where('followed_id', $user->id)->count();
+        } else {
+            $is_following = 0;
+        }
         $refferals = User::where('invited_by', $user->invite_refferal)->select('name', 'username', 'email', 'profile_photo_path', 'created_at')->get();
-        $is_following = Follow::where('user', Auth::user()->id)->where('followed_id', $user->id)->count();
         // return $user;
         return view('pages.profile.timeline', compact('user', 'refferals', 'is_following'));
     }
