@@ -183,7 +183,7 @@
                     <!-- USER STAT -->
                     <div class="user-stat big">
                         <!-- USER STAT TITLE -->
-                        <p class="user-stat-title">0</p>
+                        <p class="user-stat-title">{{ $user->followers ?? 0 }}</p>
                         <!-- /USER STAT TITLE -->
 
                         <!-- USER STAT TEXT -->

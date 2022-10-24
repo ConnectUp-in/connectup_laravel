@@ -31,6 +31,7 @@ class ProfileController extends Controller
             return view('pages.profile.404');
         }
         $user->startups = [];
+        $user->followers = Follow::where('followed_id', $user->id)->count();
         $user->interests = Interest::whereIn('id', $user->interests)->get();
         if (!$user->interests) {
             $user->interests = [];
