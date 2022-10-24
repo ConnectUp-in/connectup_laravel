@@ -27,7 +27,7 @@
     <!-- /WIDGET BOX SETTINGS --> --}}
 
     <!-- WIDGET BOX TITLE -->
-    <p class="widget-box-title">Startups <span class="highlighted">0</span></p>
+    <p class="widget-box-title">Startups <span class="highlighted">{{ $user->startups->count() }}</span></p>
     <!-- /WIDGET BOX TITLE -->
 
     <!-- WIDGET BOX CONTENT -->
@@ -35,49 +35,52 @@
         <!-- PICTURE ITEM LIST -->
         <div class="picture-item-list small">
             @forelse ($user->startups as $startup)
-                <!-- PICTURE ITEM -->
-                <div class="picture-item">
-                    <!-- PICTURE -->
-                    <figure class="picture round liquid">
-                        <img src="/assets/template/img/avatar/01.jpg" alt="avatar-01">
-                    </figure>
-                    <!-- /PICTURE -->
-                </div>
-                <!-- /PICTURE ITEM -->
-
-
-                @if ($loop->iteration == 9)
+                @if ($loop->iteration == 4)
                     <!-- PICTURE ITEM -->
-                    <a class="picture-item" href="#">
+                    <a class="picture-item" href="{{ route('startup', $startup->username) }}">
                         <!-- PICTURE -->
                         <figure class="picture round liquid">
-                            <img src="/assets/template/img/cover/17.jpg" alt="avatar-17">
+                            <img src="{{ $startup->logo }}" alt="avatar-17">
                         </figure>
                         <!-- /PICTURE -->
 
                         <!-- PICTURE ITEM OVERLAY -->
                         <div class="picture-item-overlay round">
                             <!-- PICTURE ITEM OVERLAY TEXT -->
-                            <p class="picture-item-overlay-text">+61</p>
+                            <p class="picture-item-overlay-text">
+                                {{ $user->startups->count() - 3 }}+
+                            </p>
                             <!-- /PICTURE ITEM OVERLAY TEXT -->
                         </div>
                         <!-- /PICTURE ITEM OVERLAY -->
                     </a>
                     <!-- /PICTURE ITEM -->
                 @break
+
+            @else
+                <!-- PICTURE ITEM -->
+                <a class="picture-item" href="{{ route('startup', $startup->username) }}">
+                    <!-- PICTURE -->
+                    <figure class="picture round liquid">
+                        <img src="{{ $startup->logo }}" alt="avatar-01">
+                    </figure>
+                    <!-- /PICTURE -->
+                </a>
+                <!-- /PICTURE ITEM -->
             @endif
 
         @empty
+            <p>No startups Created Yet</p>
+
+            @if (Auth::check() && Auth::user()->id == $user->id)
+                <a style="cursor: not-allowed" href="#" class="button warning w-100 mt-3">Create Startup</a>
+            @endif
         @endforelse
 
     </div>
     <!-- /PICTURE ITEM LIST -->
 
-    <p>No startups Created Yet</p>
 
-    @if (Auth::check() && Auth::user()->id == $user->id)
-        <a style="cursor: not-allowed" href="#" class="button warning w-100 mt-3">Create Startup</a>
-    @endif
 </div>
 <!-- /WIDGET BOX CONTENT -->
 </div>

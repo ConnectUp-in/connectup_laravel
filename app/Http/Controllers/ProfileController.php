@@ -7,6 +7,7 @@ use App\Models\College;
 use App\Models\Country;
 use App\Models\Follow;
 use App\Models\Interest;
+use App\Models\Startup;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class ProfileController extends Controller
         if (!$user) {
             return view('pages.profile.404');
         }
-        $user->startups = [];
+        $user->startups = Startup::where('founder', $user->id)->get();
         $user->followers = Follow::where('followed_id', $user->id)->count();
         $user->interests = Interest::whereIn('id', $user->interests)->get();
         if (!$user->interests) {
