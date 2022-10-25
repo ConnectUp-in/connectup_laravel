@@ -10,7 +10,8 @@ class SuperAdminController extends Controller
 {
     public function members()
     {
-        $members = Member::all();
+        // Get all latest members
+        $members = Member::orderBy('created_at', 'desc')->get();
 
         // attach objectives
         foreach ($members as $member) {
@@ -28,7 +29,7 @@ class SuperAdminController extends Controller
     public function views()
     {
         // get 1000 latest pageviews
-        $views = Pageview::orderBy('updated_at', 'desc')->get();
+        $views = Pageview::orderBy('updated_at', 'desc')->select('user_id', 'page', 'ip_address', 'created_at', 'page', 'profile_id')->get();
         $data = [
             'views' => $views,
         ];

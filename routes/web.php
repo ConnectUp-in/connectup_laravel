@@ -69,6 +69,8 @@ Route::middleware('sitemap')->group(function () {
                 Route::post('/update/{id}', [StartupController::class, 'update'])->name('startup.update');
                 Route::post('/update/{id}/cover', [StartupController::class, 'updateCover'])->name('startup.update.cover');
             });
+
+            Route::post('follow', [ProfileController::class, 'follow'])->name('follow');
         });
 
     Route::post('title', function () {
@@ -80,12 +82,13 @@ Route::middleware('sitemap')->group(function () {
         Route::get('mentor', [CommunityController::class, 'mentor'])->name('join.mentor');
         Route::post('member', [CommunityController::class, 'registerMember'])->name('register.member');
         Route::post('mentor', [CommunityController::class, 'registerMentor'])->name('register.mentor');
-        Route::get('wa', function () {
-            return redirect('https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc');
-        });
-        Route::get('team', function () {
-            return redirect('https://forms.gle/CUHvK4y6bgPcBm2LA');
-        });
+
+        Route::redirect('team/design', 'https://forms.gle/4TFTJFzavqt8jH9z5', 301);
+        Route::redirect('team/dev', 'https://forms.gle/qbYC4dxfx6MkMbZW7', 301);
+        Route::redirect('team/operations', 'https://forms.gle/9UqAh9yyuwN2gfFZA', 301);
+        Route::redirect('wa', 'https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc', 301);
+        Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
+
     });
 
     Route::prefix('startup')->group(function () {

@@ -1,8 +1,8 @@
 @php
-$page['title'] = $user->name . '`s Profile Timeline | ConnectUp';
-$page['image'] = $user->profile_photo_path;
-$page['description'] = $user->bio ?? null;
-
+    $page['title'] = $user->name . '`s Profile Timeline | ConnectUp';
+    $page['image'] = $user->profile_photo_path;
+    $page['description'] = $user->bio ?? null;
+    
 @endphp
 @extends('layouts.app')
 
@@ -183,7 +183,7 @@ $page['description'] = $user->bio ?? null;
                     <!-- USER STAT -->
                     <div class="user-stat big">
                         <!-- USER STAT TITLE -->
-                        <p class="user-stat-title">0</p>
+                        <p class="user-stat-title" id="followers">{{ $user->followers ?? 0 }}</p>
                         <!-- /USER STAT TITLE -->
 
                         <!-- USER STAT TEXT -->
@@ -220,17 +220,17 @@ $page['description'] = $user->bio ?? null;
                     <!-- /USER STAT -->
                 </div>
                 <!-- /USER STATS -->
+                @if (Auth::check())
+                    <!-- PROFILE HEADER INFO ACTIONS -->
+                    <div class="profile-header-info-actions">
 
-                <!-- PROFILE HEADER INFO ACTIONS -->
-                <div class="profile-header-info-actions">
 
-
-                    @if (Auth::check() && $user->username == Auth::user()->username)
-                        <a href="{{ route('profile.info') }}" class="profile-header-info-action button secondary">Edit
-                            <span class="hide-text-mobile">Profile</span></a>
-                    @else
-                        <!-- PROFILE HEADER INFO ACTION -->
-                        {{-- <a href="#" class="profile-header-info-action button secondary"><span
+                        @if ($user->username == Auth::user()->username)
+                            <a href="{{ route('profile.info') }}" class="profile-header-info-action button secondary">Edit
+                                <span class="hide-text-mobile">Profile</span></a>
+                        @else
+                            <!-- PROFILE HEADER INFO ACTION -->
+                            {{-- <a href="#" class="profile-header-info-action button secondary"><span
                                 class="hide-text-mobile">Add</span>
                             Friend +</a>
                         <!-- /PROFILE HEADER INFO ACTION -->
@@ -239,12 +239,24 @@ $page['description'] = $user->bio ?? null;
                         <p class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span>
                             Message</p>
                         <!-- /PROFILE HEADER INFO ACTION --> --}}
-                        <!-- PROFILE HEADER INFO ACTION -->
-                        <p class="profile-header-info-action button primary">Follow</p>
-                        <!-- /PROFILE HEADER INFO ACTION -->
-                    @endif
-                </div>
-                <!-- /PROFILE HEADER INFO ACTIONS -->
+                            <!-- PROFILE HEADER INFO ACTION -->
+
+                            @if ($is_following)
+                                <div id="follow" class="profile-header-info-action button secondary"
+                                    onclick="follow('{{ $user->id }}')">
+                                    Unfollow
+                                </div>
+                            @else
+                                <div id="follow" class="profile-header-info-action button primary"
+                                    onclick="follow('{{ $user->id }}')">
+                                    Follow
+                                </div>
+                            @endif
+                            <!-- /PROFILE HEADER INFO ACTION -->
+                        @endif
+                    </div>
+                    <!-- /PROFILE HEADER INFO ACTIONS -->
+                @endif
             </div>
             <!-- /PROFILE HEADER INFO -->
         </div>
@@ -5801,3 +5813,35 @@ $page['description'] = $user->bio ?? null;
     </div>
     <!-- /CONTENT GRID -->
 @endsection
+
+@push('scripts')
+    <script>
+        var loaderHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
+
+        function follow(id) {
+            $('#follow').html(loaderHTML);
+            console.log(id);
+            // post request ajax
+            $.ajax({
+                url: "{{ route('follow') }}",
+                type: 'POST',
+                data: {
+                    id: id,
+                    type: 'user'
+                },
+                success: function(data) {
+                    // console.log(data);
+                    if (!data.data) {
+                        $('#follow').html('Follow').removeClass('secondary').addClass('primary');
+                        document.querySelector('#followers').innerHTML -= 1;
+                    } else {
+                        $('#follow').html('Unfollow').removeClass('primary').addClass('secondary');
+                        document.querySelector('#followers').innerHTML = parseInt(document.querySelector(
+                            '#followers').innerHTML) + 1;
+                    }
+                }
+            });
+
+        }
+    </script>
+@endpush

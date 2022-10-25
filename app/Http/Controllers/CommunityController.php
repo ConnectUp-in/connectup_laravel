@@ -55,7 +55,7 @@ class CommunityController extends Controller
         }
         $member->reasons = $request->reasons;
         $member->save();
-        page('Community Joined');
+        _action('joined_community', $member->id);
 
         return back()->with('success', 'You are now a member of the community');
 
