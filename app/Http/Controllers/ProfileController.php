@@ -7,6 +7,7 @@ use App\Models\College;
 use App\Models\Country;
 use App\Models\Follow;
 use App\Models\Interest;
+use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
 use Auth;
@@ -34,6 +35,7 @@ class ProfileController extends Controller
         $user->startups = Startup::where('founder', $user->id)->get();
         $user->followers = Follow::where('followed_id', $user->id)->count();
         $user->interests = Interest::whereIn('id', $user->interests)->get();
+        $user->posts = Post::where('user_id', $user->id)->where('active', true)->orderBy('created_at', 'desc')->get();
         if (!$user->interests) {
             $user->interests = [];
         }

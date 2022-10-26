@@ -1437,128 +1437,135 @@
                 {{-- @widget('quickpost') --}}
 
 
-                <!-- WIDGET BOX -->
-                <div class="widget-box no-padding">
-                    <!-- WIDGET BOX SETTINGS -->
-                    <div class="widget-box-settings">
-                        <!-- POST SETTINGS WRAP -->
-                        <div class="post-settings-wrap">
-                            <!-- POST SETTINGS -->
-                            <div class="post-settings widget-box-post-settings-dropdown-trigger">
-                                <!-- POST SETTINGS ICON -->
-                                <svg class="post-settings-icon icon-more-dots">
-                                    <use xlink:href="#svg-more-dots"></use>
-                                </svg>
-                                <!-- /POST SETTINGS ICON -->
+                @forelse ($user->posts as $post)
+                    @include('pages.components.post', ['post' => $post])
+                @empty
+
+                    <!-- WIDGET BOX -->
+
+
+                    <div class="widget-box no-padding">
+                        <!-- WIDGET BOX SETTINGS -->
+                        <div class="widget-box-settings">
+                            <!-- POST SETTINGS WRAP -->
+                            <div class="post-settings-wrap">
+                                <!-- POST SETTINGS -->
+                                <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                                    <!-- POST SETTINGS ICON -->
+                                    <svg class="post-settings-icon icon-more-dots">
+                                        <use xlink:href="#svg-more-dots"></use>
+                                    </svg>
+                                    <!-- /POST SETTINGS ICON -->
+                                </div>
+                                <!-- /POST SETTINGS -->
+
+                                <!-- SIMPLE DROPDOWN -->
+                                <div class="simple-dropdown widget-box-post-settings-dropdown">
+                                    <!-- SIMPLE DROPDOWN LINK -->
+                                    <p class="simple-dropdown-link">Edit Post</p>
+                                    <!-- /SIMPLE DROPDOWN LINK -->
+
+                                    <!-- SIMPLE DROPDOWN LINK -->
+                                    <p class="simple-dropdown-link">Delete Post</p>
+                                    <!-- /SIMPLE DROPDOWN LINK -->
+
+                                    <!-- SIMPLE DROPDOWN LINK -->
+                                    <p class="simple-dropdown-link">Make it Featured</p>
+                                    <!-- /SIMPLE DROPDOWN LINK -->
+
+                                    <!-- SIMPLE DROPDOWN LINK -->
+                                    <p class="simple-dropdown-link">Report Post</p>
+                                    <!-- /SIMPLE DROPDOWN LINK -->
+
+                                    <!-- SIMPLE DROPDOWN LINK -->
+                                    <p class="simple-dropdown-link">Report Author</p>
+                                    <!-- /SIMPLE DROPDOWN LINK -->
+                                </div>
+                                <!-- /SIMPLE DROPDOWN -->
                             </div>
-                            <!-- /POST SETTINGS -->
-
-                            <!-- SIMPLE DROPDOWN -->
-                            <div class="simple-dropdown widget-box-post-settings-dropdown">
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Edit Post</p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Delete Post</p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Make it Featured</p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Report Post</p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-
-                                <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Report Author</p>
-                                <!-- /SIMPLE DROPDOWN LINK -->
-                            </div>
-                            <!-- /SIMPLE DROPDOWN -->
+                            <!-- /POST SETTINGS WRAP -->
                         </div>
-                        <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /WIDGET BOX SETTINGS -->
+                        <!-- /WIDGET BOX SETTINGS -->
 
-                    <!-- WIDGET BOX STATUS -->
-                    <div class="widget-box-status">
-                        <!-- WIDGET BOX STATUS CONTENT -->
-                        <div class="widget-box-status-content">
-                            <!-- USER STATUS -->
-                            <div class="user-status">
-                                <!-- USER STATUS AVATAR -->
-                                <a class="user-status-avatar" href="{{ route('user', $user->id) }}">
-                                    <!-- USER AVATAR -->
-                                    <div class="user-avatar small no-outline">
-                                        <!-- USER AVATAR CONTENT -->
-                                        <div class="user-avatar-content">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-image-30-32" data-src="{{ $user->profile_photo_path }}">
+                        <!-- WIDGET BOX STATUS -->
+                        <div class="widget-box-status">
+                            <!-- WIDGET BOX STATUS CONTENT -->
+                            <div class="widget-box-status-content">
+                                <!-- USER STATUS -->
+                                <div class="user-status">
+                                    <!-- USER STATUS AVATAR -->
+                                    <a class="user-status-avatar" href="{{ route('user', $user->id) }}">
+                                        <!-- USER AVATAR -->
+                                        <div class="user-avatar small no-outline">
+                                            <!-- USER AVATAR CONTENT -->
+                                            <div class="user-avatar-content">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-image-30-32"
+                                                    data-src="{{ $user->profile_photo_path }}">
+                                                </div>
+                                                <!-- /HEXAGON -->
                                             </div>
-                                            <!-- /HEXAGON -->
+                                            <!-- /USER AVATAR CONTENT -->
+
+                                            <!-- USER AVATAR PROGRESS -->
+                                            <div class="user-avatar-progress">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-progress-40-44"></div>
+                                                <!-- /HEXAGON -->
+                                            </div>
+                                            <!-- /USER AVATAR PROGRESS -->
+
+                                            <!-- USER AVATAR PROGRESS BORDER -->
+                                            <div class="user-avatar-progress-border">
+                                                <!-- HEXAGON -->
+                                                <div class="hexagon-border-40-44"></div>
+                                                <!-- /HEXAGON -->
+                                            </div>
+                                            <!-- /USER AVATAR PROGRESS BORDER -->
+
                                         </div>
-                                        <!-- /USER AVATAR CONTENT -->
+                                        <!-- /USER AVATAR -->
+                                    </a>
+                                    <!-- /USER STATUS AVATAR -->
 
-                                        <!-- USER AVATAR PROGRESS -->
-                                        <div class="user-avatar-progress">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-progress-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS -->
+                                    <!-- USER STATUS TITLE -->
+                                    <p class="user-status-title medium"><a class="bold"
+                                            href="#">{{ $user->name }}</a></p>
+                                    <!-- /USER STATUS TITLE -->
 
-                                        <!-- USER AVATAR PROGRESS BORDER -->
-                                        <div class="user-avatar-progress-border">
-                                            <!-- HEXAGON -->
-                                            <div class="hexagon-border-40-44"></div>
-                                            <!-- /HEXAGON -->
-                                        </div>
-                                        <!-- /USER AVATAR PROGRESS BORDER -->
+                                    <!-- USER STATUS TEXT -->
+                                    <p class="user-status-text small">few minutes ago</p>
+                                    <!-- /USER STATUS TEXT -->
+                                </div>
+                                <!-- /USER STATUS -->
 
-                                    </div>
-                                    <!-- /USER AVATAR -->
-                                </a>
-                                <!-- /USER STATUS AVATAR -->
-
-                                <!-- USER STATUS TITLE -->
-                                <p class="user-status-title medium"><a class="bold"
-                                        href="#">{{ $user->name }}</a></p>
-                                <!-- /USER STATUS TITLE -->
-
-                                <!-- USER STATUS TEXT -->
-                                <p class="user-status-text small">few minutes ago</p>
-                                <!-- /USER STATUS TEXT -->
+                                <!-- WIDGET BOX STATUS TEXT -->
+                                <p class="widget-box-status-text">
+                                    User hasn't posted anything yet!
+                                </p>
+                                <!-- /WIDGET BOX STATUS TEXT -->
                             </div>
-                            <!-- /USER STATUS -->
+                            <!-- /WIDGET BOX STATUS CONTENT -->
 
-                            <!-- WIDGET BOX STATUS TEXT -->
-                            <p class="widget-box-status-text">Soon, You will be able to Post here. Just similar to this
-                                Post
-                            </p>
-                            <!-- /WIDGET BOX STATUS TEXT -->
-                        </div>
-                        <!-- /WIDGET BOX STATUS CONTENT -->
+                            <!-- WIDGET BOX PICTURE -->
+                            <figure class="widget-box-picture popup-picture-trigger">
+                                <img src="/assets/defaults/nopost.png" alt="cover-04">
+                            </figure>
+                            <!-- /WIDGET BOX PICTURE -->
 
-                        <!-- WIDGET BOX PICTURE -->
-                        <figure class="widget-box-picture popup-picture-trigger">
-                            <img src="/assets/defaults/post.png" alt="cover-04">
-                        </figure>
-                        <!-- /WIDGET BOX PICTURE -->
+                            {{-- <!-- WIDGET BOX STATUS CONTENT -->
+                            <div class="widget-box-status-content">
+                                <!-- TAG LIST -->
+                                <div class="tag-list">
+                                    <!-- TAG ITEM -->
+                                    <a class="tag-item secondary" href="#">Coming Soon</a>
+                                    <!-- /TAG ITEM -->
 
-                        <!-- WIDGET BOX STATUS CONTENT -->
-                        <div class="widget-box-status-content">
-                            <!-- TAG LIST -->
-                            <div class="tag-list">
-                                <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="#">Coming Soon</a>
-                                <!-- /TAG ITEM -->
+                                    <!-- TAG ITEM -->
+                                    <a class="tag-item secondary" href="#">Upcoming Features</a>
+                                    <!-- /TAG ITEM -->
 
-                                <!-- TAG ITEM -->
-                                <a class="tag-item secondary" href="#">Upcoming Features</a>
-                                <!-- /TAG ITEM -->
-
-                                {{-- <!-- TAG ITEM -->
+                                    {{-- <!-- TAG ITEM -->
                                 <a class="tag-item secondary" href="#">Art</a>
                                 <!-- /TAG ITEM -->
 
@@ -1569,18 +1576,19 @@
                                 <!-- TAG ITEM -->
                                 <a class="tag-item secondary" href="#">Wasteland</a>
                                 <!-- /TAG ITEM --> --}}
-                            </div>
-                            <!-- /TAG LIST -->
-
                         </div>
-                        <!-- /WIDGET BOX STATUS CONTENT -->
+                        <!-- /TAG LIST -->
+
                     </div>
-                    <!-- /WIDGET BOX STATUS -->
+                    <!-- /WIDGET BOX STATUS CONTENT --> --}}
+            </div>
+            <!-- /WIDGET BOX STATUS -->
 
-                </div>
-                <!-- /WIDGET BOX -->
+        </div>
+        <!-- /WIDGET BOX -->
+        @endforelse
 
-                {{-- <!-- WIDGET BOX -->
+        {{-- <!-- WIDGET BOX -->
                 <div class="widget-box no-padding">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -5304,24 +5312,24 @@
         </div>
         <!-- /WIDGET BOX --> --}}
 
-                <!-- LOADER BARS -->
-                <div class="loader-bars">
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                    <div class="loader-bar"></div>
-                </div>
-                <!-- /LOADER BARS -->
-            </div>
-            <!-- /GRID COLUMN -->
+        <!-- LOADER BARS -->
+        <div class="loader-bars">
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+        </div>
+        <!-- /LOADER BARS -->
+    </div>
+    <!-- /GRID COLUMN -->
 
-            <!-- GRID COLUMN -->
-            <div class="grid-column">
-                {{-- <!-- WIDGET BOX -->
+    <!-- GRID COLUMN -->
+    <div class="grid-column">
+        {{-- <!-- WIDGET BOX -->
                 <div class="widget-box no-padding">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -5392,34 +5400,34 @@
                 <!-- /WIDGET BOX --> --}}
 
 
-                @widget('startups')
-                {{-- @widget('refferal') --}}
+        @widget('startups')
+        {{-- @widget('refferal') --}}
 
-                <!-- WIDGET BOX -->
-                <div class="widget-box">
+        <!-- WIDGET BOX -->
+        <div class="widget-box">
 
-                    <!-- WIDGET BOX TITLE -->
-                    <p class="widget-box-title">Interests</p>
-                    <!-- /WIDGET BOX TITLE -->
+            <!-- WIDGET BOX TITLE -->
+            <p class="widget-box-title">Interests</p>
+            <!-- /WIDGET BOX TITLE -->
 
-                    <!-- WIDGET BOX CONTENT -->
-                    <div class="widget-box-content">
+            <!-- WIDGET BOX CONTENT -->
+            <div class="widget-box-content">
 
-                        <p class="information-line-text">
-                            @if ($user->interests)
-                                @forelse ($user->interests as $interest)
-                                    {{ $interest['name'] }}
+                <p class="information-line-text">
+                    @if ($user->interests)
+                        @forelse ($user->interests as $interest)
+                            {{ $interest['name'] }}
 
-                                    @if (!$loop->last)
-                                        ,
-                                    @endif
-                                @empty
-                                @endforelse
+                            @if (!$loop->last)
+                                ,
                             @endif
-                    </div>
-                </div>
+                        @empty
+                        @endforelse
+                    @endif
+            </div>
+        </div>
 
-                {{-- <!-- WIDGET BOX -->
+        {{-- <!-- WIDGET BOX -->
                 <div class="widget-box">
                     <!-- WIDGET BOX SETTINGS -->
                     <div class="widget-box-settings">
@@ -5806,10 +5814,10 @@
                     <!-- /WIDGET BOX CONTENT -->
                 </div>
                 <!-- /WIDGET BOX --> --}}
-            </div>
-            <!-- /GRID COLUMN -->
-        </div>
-        <!-- /GRID -->
+    </div>
+    <!-- /GRID COLUMN -->
+    </div>
+    <!-- /GRID -->
     </div>
     <!-- /CONTENT GRID -->
 @endsection
