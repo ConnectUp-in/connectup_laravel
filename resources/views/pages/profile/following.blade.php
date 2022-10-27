@@ -59,7 +59,7 @@
                         <!-- SECTION TITLE -->
                         <h2 class="section-title">
                             Following
-                            <span class="highlighted">
+                            <span class="highlighted" id="followingcount">
                                 {{ $user->following->count() }}
                             </span>
                         </h2>
@@ -216,13 +216,13 @@
                         button.innerHTML = 'Follow';
                         button.classList.remove('secondary');
                         button.classList.add('primary');
-                        // document.querySelector('#followers').innerHTML -= 1;
+                        document.querySelector('#followingcount').innerHTML -= 1;
                     } else {
                         button.innerHTML = 'UnFollow';
                         button.classList.remove('primary');
                         button.classList.add('secondary');
-                        // document.querySelector('#followers').innerHTML = parseInt(document.querySelector(
-                        //     '#followers').innerHTML) + 1;
+                        document.querySelector('#followingcount').innerHTML = parseInt(document.querySelector(
+                            '#followingcount').innerHTML) + 1;
                     }
                 }
             });
