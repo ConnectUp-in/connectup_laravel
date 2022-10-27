@@ -70,6 +70,18 @@ class ProfileController extends Controller
         return view('pages.profile.socials', compact('user'));
     }
 
+    public function followers()
+    {
+        $user = Auth::user();
+        $user->followers = Follow::where('followed_id', $user->id)->get();
+        foreach ($user->followers as $follower) {
+            $follower->user = User::where('id', $follower->user)->select('name', 'username', 'profile_photo_path')->first();
+        }
+        // return $user;
+
+        return view('pages.profile.followers', compact('user'));
+    }
+
     public function update(Request $request)
     {
         // if $request contains invited_by
