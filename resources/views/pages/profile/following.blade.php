@@ -5,6 +5,37 @@
 @endphp
 @extends('layouts.app')
 
+@push('styles')
+    <style>
+        .action-request.with-text {
+            padding: 0 25px;
+            color: #fff;
+        }
+
+        .mini-loader {
+            border: 2px solid #f3f3f355;
+            /* Light grey */
+            border-top: 2px solid #fff;
+            /* Blue */
+            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 1/1;
+            min-width: 15px;
+            min-height: 15px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+@endpush
 
 
 @section('content')
@@ -27,7 +58,7 @@
 
                         <!-- SECTION TITLE -->
                         <h2 class="section-title">
-                            Followers
+                            Following
                             <span class="highlighted">
                                 {{ $user->following->count() }}
                             </span>
@@ -109,18 +140,12 @@
 
                                 <!-- ACTION REQUEST LIST -->
                                 <div class="action-request-list">
-                                    <!-- ACTION REQUEST -->
-                                    <p class="action-request accept with-text non-functional">
-                                        <!-- ACTION REQUEST ICON -->
-                                        <svg class="action-request-icon icon-send-message">
-                                            <use xlink:href="#svg-send-message"></use>
-                                        </svg>
-                                        <!-- /ACTION REQUEST ICON -->
 
-                                        <!-- ACTION REQUEST TEXT -->
-                                        <span class="action-request-text">Message</span>
-                                        <!-- /ACTION REQUEST TEXT -->
-                                    </p>
+                                    <!-- ACTION REQUEST -->
+                                    <div class="action-request button secondary with-text"
+                                        onclick="follow('{{ $following->followed_id }}')">
+                                        UnFollow
+                                    </div>
                                     <!-- /ACTION REQUEST -->
 
                                 </div>
@@ -164,6 +189,44 @@
             });
             $('#socials').val(JSON.stringify(socials));
             console.log(socials);
+        }
+    </script>
+@endpush
+
+@push('scripts')
+    <script>
+        var loaderHTML = `<div class="mini-loader"></div>`;
+
+        function follow(id) {
+            // select clicked button using target
+            var button = event.target;
+
+            button.innerHTML = loaderHTML;
+            // post request ajax
+            $.ajax({
+                url: "{{ route('follow') }}",
+                type: 'POST',
+                data: {
+                    id: id,
+                    type: 'user'
+                },
+                success: function(data) {
+                    // console.log(data);
+                    if (!data.data) {
+                        button.innerHTML = 'Follow';
+                        button.classList.remove('secondary');
+                        button.classList.add('primary');
+                        // document.querySelector('#followers').innerHTML -= 1;
+                    } else {
+                        button.innerHTML = 'UnFollow';
+                        button.classList.remove('primary');
+                        button.classList.add('secondary');
+                        // document.querySelector('#followers').innerHTML = parseInt(document.querySelector(
+                        //     '#followers').innerHTML) + 1;
+                    }
+                }
+            });
+
         }
     </script>
 @endpush
