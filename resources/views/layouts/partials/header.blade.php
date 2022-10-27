@@ -1,60 +1,68 @@
 @php
-
-$sidebaritems = [
-    [
-        'title' => 'My Profile',
-        'svg' => 'profile',
-        'text' => 'Change your avatar & cover, accept friends, read messages and more!',
-        'identifier' => 'profile',
-        'links' => [
-            [
-                'title' => 'Profile Info',
-                'url' => route('profile.info'),
-            ],
-            [
-                'title' => 'Social & Streams',
-                'url' => route('profile.socials'),
-            ],
-            [
-                'title' => 'Refferals',
-                'url' => route('profile.refferals'),
-            ],
-        ],
-    ],
-    // [
-    //     'title' => 'Account',
-    //     'svg' => 'settings',
-    //     'text' => 'Change settings, configure notifications, and review your privacy',
-    //     'identifier' => 'account',
-    //     'links' => [
-    //         [
-    //             'title' => 'Account Info',
-    //             'url' => '#',
-    //         ],
-    //         [
-    //             'title' => 'Change Password',
-    //             'url' => '#',
-    //         ],
-    //         [
-    //             'title' => 'General Settings',
-    //             'url' => '#',
-    //         ],
-    //     ],
-    // ],
-
-    [
-        'title' => 'My Startups',
-        'svg' => 'profile',
-        'text' => 'Create new groups, manage the ones you created or accept invites!',
-        'identifier' => 'startup',
-        'links' => [
-            [
-                'title' => 'Manage Startups',
-                'url' => route('startup.manage'),
+    
+    $sidebaritems = [
+        [
+            'title' => 'My Profile',
+            'svg' => 'profile',
+            'text' => 'Change your avatar & cover, accept friends, read messages and more!',
+            'identifier' => 'profile',
+            'links' => [
+                [
+                    'title' => 'Profile Info',
+                    'url' => route('profile.info'),
+                ],
+                [
+                    'title' => 'Social & Streams',
+                    'url' => route('profile.socials'),
+                ],
+                [
+                    'title' => 'Refferals',
+                    'url' => route('profile.refferals'),
+                ],
+                [
+                    'title' => 'Followers',
+                    'url' => route('profile.followers'),
+                ],
+                [
+                    'title' => 'Following',
+                    'url' => route('profile.following'),
+                ],
             ],
         ],
-    ],
-];
+        // [
+        //     'title' => 'Account',
+        //     'svg' => 'settings',
+        //     'text' => 'Change settings, configure notifications, and review your privacy',
+        //     'identifier' => 'account',
+        //     'links' => [
+        //         [
+        //             'title' => 'Account Info',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'title' => 'Change Password',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'title' => 'General Settings',
+        //             'url' => '#',
+        //         ],
+        //     ],
+        // ],
+    
+        [
+            'title' => 'My Startups',
+            'svg' => 'profile',
+            'text' => 'Create new groups, manage the ones you created or accept invites!',
+            'identifier' => 'startup',
+            'links' => [
+                [
+                    'title' => 'Manage Startups',
+                    'url' => route('startup.manage'),
+                ],
+            ],
+        ],
+    ];
 @endphp
 
 <!-- HEADER -->

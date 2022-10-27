@@ -56,6 +56,8 @@ Route::middleware('sitemap')->group(function () {
         ->group(function () {
             Route::get('/profile/info', [ProfileController::class, 'info'])->name('profile.info');
             Route::get('/profile/socials', [ProfileController::class, 'socials'])->name('profile.socials');
+            Route::get('/profile/followers', [ProfileController::class, 'followers'])->name('profile.followers');
+            Route::get('/profile/following', [ProfileController::class, 'following'])->name('profile.following');
             Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
             Route::post('/profile/update/api', [ProfileController::class, 'apiupdate'])->name('api.profile.update');
 

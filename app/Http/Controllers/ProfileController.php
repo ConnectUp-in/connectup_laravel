@@ -7,6 +7,7 @@ use App\Models\College;
 use App\Models\Country;
 use App\Models\Follow;
 use App\Models\Interest;
+use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
 use Auth;
@@ -34,6 +35,7 @@ class ProfileController extends Controller
         $user->startups = Startup::where('founder', $user->id)->get();
         $user->followers = Follow::where('followed_id', $user->id)->count();
         $user->interests = Interest::whereIn('id', $user->interests)->get();
+        $user->posts = Post::where('user_id', $user->id)->where('active', true)->orderBy('created_at', 'desc')->get();
         if (!$user->interests) {
             $user->interests = [];
         }
@@ -66,6 +68,30 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         return view('pages.profile.socials', compact('user'));
+    }
+
+    public function followers()
+    {
+        $user = Auth::user();
+        $user->followers = Follow::where('followed_id', $user->id)->get();
+        foreach ($user->followers as $follower) {
+            $follower->user = User::where('id', $follower->user)->select('name', 'username', 'profile_photo_path')->first();
+        }
+        // return $user;
+
+        return view('pages.profile.followers', compact('user'));
+    }
+
+    public function following()
+    {
+        $user = Auth::user();
+        $user->following = Follow::where('user', $user->id)->get();
+        foreach ($user->following as $following) {
+            $following->user = User::where('id', $following->followed_id)->select('name', 'username', 'profile_photo_path')->first();
+        }
+        // return $user;
+
+        return view('pages.profile.following', compact('user'));
     }
 
     public function update(Request $request)
