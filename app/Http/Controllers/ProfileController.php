@@ -82,6 +82,18 @@ class ProfileController extends Controller
         return view('pages.profile.followers', compact('user'));
     }
 
+    public function following()
+    {
+        $user = Auth::user();
+        $user->following = Follow::where('user', $user->id)->get();
+        foreach ($user->following as $following) {
+            $following->user = User::where('id', $following->followed_id)->select('name', 'username', 'profile_photo_path')->first();
+        }
+        // return $user;
+
+        return view('pages.profile.following', compact('user'));
+    }
+
     public function update(Request $request)
     {
         // if $request contains invited_by
