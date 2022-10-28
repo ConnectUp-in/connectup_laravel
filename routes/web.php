@@ -30,8 +30,9 @@ Route::middleware('sitemap')->group(function () {
     });
 
     Route::get('test', function () {
-        return view('emails.teamjoin');
+        return view('test');
     });
+    Route::post('test', [HelperController::class, 'test'])->name('test');
     Route::get('logout', function () {
         auth()->logout();
         return redirect('/login');
