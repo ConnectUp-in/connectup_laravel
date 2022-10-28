@@ -54,14 +54,26 @@
                                     </td>
                                     <td>
                                         @if ($view->profile)
-                                            <a href="{{ route('user', $view->profile->username) }}" class="d-flex">
-                                                <div class="usr-img-frame me-2 rounded-circle">
-                                                    <img alt="avatar" class="img-fluid rounded-circle"
-                                                        src=" {{ $view->profile->profile_photo_path }}">
-                                                </div>
-                                                <p class="align-self-center mb-0 admin-name"> {{ $view->profile->name }}
-                                                </p>
-                                            </a>
+                                            @if ($view->page == 'user/{username}')
+                                                <a href="{{ route('user', $view->profile->username) }}" class="d-flex">
+                                                    <div class="usr-img-frame me-2 rounded-circle">
+                                                        <img alt="avatar" class="img-fluid rounded-circle"
+                                                            src=" {{ $view->profile->profile_photo_path }}">
+                                                    </div>
+                                                    <p class="align-self-center mb-0 admin-name"> {{ $view->profile->name }}
+                                                    </p>
+                                                </a>
+                                            @elseif($view->page == 'startup/{username}')
+                                                <a href="{{ route('startup', $view->profile->username) }}" class="d-flex">
+                                                    <div class="usr-img-frame me-2 rounded-circle">
+                                                        <img alt="avatar" class="img-fluid rounded-circle"
+                                                            src=" {{ $view->profile->logo }}">
+                                                    </div>
+                                                    <p class="align-self-center mb-0 admin-name">
+                                                        {{ $view->profile->name }}
+                                                    </p>
+                                                </a>
+                                            @endif
                                         @endif
                                     </td>
                                     <td>{{ $view->created_at->diffForHumans() }}</td>
