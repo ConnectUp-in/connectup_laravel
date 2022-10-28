@@ -32,7 +32,7 @@
                                 <tr>
                                     <td>
                                         @if ($view->user)
-                                            <a href="{{ route('user', $view->profile->username) }}" class="d-flex">
+                                            <a href="{{ route('user', $view->user->username) }}" class="d-flex">
                                                 <div class="usr-img-frame me-2 rounded-circle">
                                                     <img alt="avatar" class="img-fluid rounded-circle"
                                                         src=" {{ $view->user->profile_photo_path }}">
