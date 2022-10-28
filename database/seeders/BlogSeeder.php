@@ -19,38 +19,44 @@ class BlogSeeder extends Seeder
 
         $blogs = [
             [
-                'title' => 'Physics Wallah acquihired PrepOnline and Altis Vortex',
-                'slug' => 'physicswallah-acquired-preponline-and-altisvortex',
+                'title' => 'Elon Musk is now in charge of Twitter and has fired CEO Parag Agrawal, as well as several top executives',
+                'slug' => 'elonmusk-fires-twitter-ceo-parag-agrawal',
                 'content' => '
-                <p>Edtech unicorn Physics Wallah(PW) acquihires PrepOnline and Altis Vortex other startups in the edtech segment. PrepOnline is an edtech platform for NEET, JEE and board exams, founded by Vivek Gaur, Manish Kumar and Anurag Pathak in 2019. Altis Vortex, founded by Vivek Gaur and Manish Kumar in 2015, is a publisher for NCERT books for classes 11 and 12, NEET and CET-UG exams.<br />
-                    Physics Wallah brings in experienced teachers from PrepOnline into the unicorn. Along with seven plus years of publication experience from Altis Vortex.<br />
-                    Physics Wallah aims to bring the same quality and affordability that they already give to JEE and NEET aspirants, to those aspiring government jobs.</p>
+                <p>According to media sources, Elon Musk finalized his takeover of Twitter and sacked a number of top executives hours before the deadline set by the court.</p>
 
-                    <p><br />
-                    &ldquo;Our acquisition thesis is more towards acqui-hiring, where we are looking to have better entrepreneur leadership in place. We are also entering into multiple exam categories, so we are considering better content creation areas or the missing segments in those categories, as we build. We are aspiring to go global and will look at international assets as well,&rdquo; cofounder Prateek Maheshwari said, referring to acquisitions.</p>
+                <p><br />
+                Elon Musk is now in charge of operations at Twitter following the departures of its CEO Parag Agrawal and chief financial officer Ned Segal, according to US media.</p>
 
-                    <p><br />
-                    As a part of the acqui hiring, Vivek joined PW as its chief growth officer and Manish Kumar as Chief of projects.</p>
+                <p>Both of them, according to sources cited by CNBC, won&#39;t be coming back, and Vijaya Gadde, the head of legal policy, trust, and safety who decided to block Trump&#39;s account, was also sacked, according to the Washington Post.</p>
 
-                    <p><br />
-                    Altis Vortex will merge with the Physics Wallah editorial team to enhance the PW study material for the PW publication, with focus to cover exams like GATE, SSC, UPSC, NDA, to name a few.<br />
-                    The new acquisitions will also support PW in other domains such as ecommerce and retail marketing to name a few. The sum amount of the acquisition is not publicly disclosed.</p>
+                <p>The 51-year-old tycoon had until October 28 to finish his $44 billion acquisition deal, failing which he would be tried in November.</p>
 
-                    <p><br />
-                    Physics Wallah was launched by Alakh Pandey and Prateek Maheshwari 2020 and became an unicorn in June this year, raising $100 million in its maiden funding round from West Bridge Capital and GSV ventures, at an evaluation of $1.1 billion. PW became India&rsquo;s 101st unicorn.</p>
+                <p>Musk had indicated an interest in purchasing the microblogging platform in April, but he later withdrew his offer in May.</p>
 
-                    <p><br />
-                    The company is also earmarking $20 million for acquisitions this year from the recent fundraise, Maheshwari told &lsquo;The Economic Times&rsquo;.</p>
+                <p>He later changed his mind once more after Twitter filed a lawsuit to have Musk finalize the agreement.</p>
 
-                    <p><br />
-                    This acquisition is PW&rsquo;s third major announcement thi s year, after becoming an unicorn and acquiring FreeCo, a doubt-solving and resource management startup, in August. In June the company also announced the launch of its offline learning centres &lsquo;PW Vidyapeeth&rsquo; in cities like Kota, Jaipur and Delhi to begin with.</p>
+                <p>This week, Musk has been meeting with Twitter staff; he will likely speak to them on Friday.</p>
+
+                <p>According to the New York Stock Exchange website, Friday&#39;s trading in the shares of the social media platform has been halted.</p>
+
+                <p>Musk previously claimed that he purchased Twitter to benefit humanity and create &quot;a shared digital town square for civilization.&quot;</p>
+
+                <p>There is currently a significant risk that social media will fragment into far-right and far-left echo chambers that incite more hatred and split our society, according to Musk.</p>
+
+                <p>&quot;Many traditional media outlets have fueled and catered to those polarised extremes in the constant search of clicks since they believe that is what brings in the money, but, in doing so, the chance for dialogue is lost,&quot; Musk stated.</p>
+
+                <p>The richest man in the world tweeted a video of himself carrying a kitchen sink into Twitter&#39;s San Francisco headquarters earlier this week with the comment, &quot;Let that sink in!&quot;</p>
+
+                <p>He also altered the name of his Twitter account to &quot;Chief Twit.&quot;</p>
+
+                <p>&nbsp;</p>
                 ',
-                'image' => '/assets/defaults/events/pwpreponline.jpg',
+                'image' => '/assets/defaults/blogs/twitter.jpg',
                 'attachments' => [],
                 'creator' => $founder->id,
                 'creator_type' => 'e',
-                'category' => 17,
-                'tags' => ['physicswallah', 'preponline', 'altis vortex', 'acqui-hire', 'edtech'],
+                'category' => 14,
+                'tags' => ['twitter', 'elonmusk', 'layoff', 'firing'],
                 'readtime' => 8,
             ],
 
