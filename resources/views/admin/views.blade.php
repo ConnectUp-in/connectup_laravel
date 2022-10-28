@@ -73,6 +73,13 @@
                                                         {{ $view->profile->name }}
                                                     </p>
                                                 </a>
+                                            @elseif($view->page == 'blog/{slug}')
+                                                <a href="{{ route('blog', $view->profile->slug) }}" class="d-flex">
+
+                                                    <p class="align-self-center mb-0 admin-name">
+                                                        {{ Str::limit($view->profile->title, 30) }}
+                                                    </p>
+                                                </a>
                                             @endif
                                         @endif
                                     </td>
