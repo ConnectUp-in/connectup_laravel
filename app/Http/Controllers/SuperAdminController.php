@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
@@ -35,5 +36,16 @@ class SuperAdminController extends Controller
         ];
         // return $data;
         return view('admin.views', $data);
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        $data = [
+            'blogs' => $blogs,
+        ];
+        // return $data;
+        return view('admin.blogs', $data);
+
     }
 }

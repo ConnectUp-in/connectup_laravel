@@ -139,6 +139,10 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('community')->group(function () {
         Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
     });
+    Route::prefix('blog')->group(function () {
+        Route::get('blogs', [SuperAdminController::class, 'blogs'])->name('superadmin.blogs');
+    });
+
     Route::prefix('views')->group(function () {
         Route::get('/', [SuperAdminController::class, 'views'])->name('superadmin.views');
     });
