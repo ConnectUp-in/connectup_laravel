@@ -72,11 +72,11 @@
         <!-- HEADER BRAND -->
         <div class="header-brand">
             <!-- LOGO -->
-            <div class="logo">
+            <a href="{{ route('feed') }}" class="logo">
                 <!-- LOGO IMAGE -->
                 <img src="/assets/template/img/landing/logo.png" alt="template" width="50px">
                 <!-- /LOGO IMAGE -->
-            </div>
+            </a>
             <!-- /LOGO -->
 
             <!-- HEADER BRAND TEXT -->
