@@ -52,7 +52,17 @@ class SuperAdminController extends Controller
             'blogs' => $blogs,
         ];
         // return $data;
-        return view('admin.blogs', $data);
+        return view('admin.blog.blogs', $data);
 
+    }
+
+    public function editblog($id)
+    {
+        $blog = Blog::find($id);
+        $data = [
+            'blog' => $blog,
+        ];
+        // return $data;
+        return view('admin.blog.edit', $data);
     }
 }

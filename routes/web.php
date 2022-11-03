@@ -141,6 +141,7 @@ Route::prefix('superadmin')->group(function () {
     });
     Route::prefix('blog')->group(function () {
         Route::get('blogs', [SuperAdminController::class, 'blogs'])->name('superadmin.blogs');
+        Route::get('edit/{id}', [SuperAdminController::class, 'editblog'])->name('superadmin.blog.edit');
     });
 
     Route::prefix('views')->group(function () {
