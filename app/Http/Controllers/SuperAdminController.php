@@ -9,6 +9,13 @@ use App\Models\PageView;
 
 class SuperAdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isSuperAdmin');
+    }
+
     public function members()
     {
         // Get all latest members
