@@ -64,4 +64,10 @@ class HelperController extends Controller
         return getTicketFromRegistration($registration);
 
     }
+
+    public function test(Request $request)
+    {
+        return $request->all();
+    }
+
 }

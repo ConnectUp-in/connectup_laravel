@@ -32,7 +32,7 @@
                                 <tr>
                                     <td>
                                         @if ($view->user)
-                                            <div class="d-flex">
+                                            <a href="{{ route('user', $view->user->username) }}" class="d-flex">
                                                 <div class="usr-img-frame me-2 rounded-circle">
                                                     <img alt="avatar" class="img-fluid rounded-circle"
                                                         src=" {{ $view->user->profile_photo_path }}">
@@ -40,7 +40,7 @@
                                                 <p class="align-self-center mb-0 admin-name"> {{ $view->user->name }}
                                                 </p>
 
-                                            </div>
+                                            </a>
                                         @else
                                             <p class="align-self-center mb-0 admin-name"> Guest User
                                             </p>
@@ -54,14 +54,33 @@
                                     </td>
                                     <td>
                                         @if ($view->profile)
-                                            <div class="d-flex">
-                                                <div class="usr-img-frame me-2 rounded-circle">
-                                                    <img alt="avatar" class="img-fluid rounded-circle"
-                                                        src=" {{ $view->profile->profile_photo_path }}">
-                                                </div>
-                                                <p class="align-self-center mb-0 admin-name"> {{ $view->profile->name }}
-                                                </p>
-                                            </div>
+                                            @if ($view->page == 'user/{username}')
+                                                <a href="{{ route('user', $view->profile->username) }}" class="d-flex">
+                                                    <div class="usr-img-frame me-2 rounded-circle">
+                                                        <img alt="avatar" class="img-fluid rounded-circle"
+                                                            src=" {{ $view->profile->profile_photo_path }}">
+                                                    </div>
+                                                    <p class="align-self-center mb-0 admin-name"> {{ $view->profile->name }}
+                                                    </p>
+                                                </a>
+                                            @elseif($view->page == 'startup/{username}')
+                                                <a href="{{ route('startup', $view->profile->username) }}" class="d-flex">
+                                                    <div class="usr-img-frame me-2 rounded-circle">
+                                                        <img alt="avatar" class="img-fluid rounded-circle"
+                                                            src=" {{ $view->profile->logo }}">
+                                                    </div>
+                                                    <p class="align-self-center mb-0 admin-name">
+                                                        {{ $view->profile->name }}
+                                                    </p>
+                                                </a>
+                                            @elseif($view->page == 'blog/{slug}')
+                                                <a href="{{ route('blog', $view->profile->slug) }}" class="d-flex">
+
+                                                    <p class="align-self-center mb-0 admin-name">
+                                                        {{ Str::limit($view->profile->title, 30) }}
+                                                    </p>
+                                                </a>
+                                            @endif
                                         @endif
                                     </td>
                                     <td>{{ $view->created_at->diffForHumans() }}</td>

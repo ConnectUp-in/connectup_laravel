@@ -15,23 +15,23 @@ class MailController extends Controller
     //
     public function teamjoin()
     {
-//         officialkowsalya@gmail.com    Kowsalya
-// chandolasaksham@gmail.com    Saksham Chandola
-// anknalitoriya@gmail.com    Ankna Litoriya
-// ro3498727@gmail.com    Rohan Sharma
-// kathal.anushka@gmail.com    Anushka Kathal
-// fusheikh11@gmail.com    Faizanuddin Sheikh
-// harikishantk@gmail.com    Harikishan TK
-// ankurkumar4715@gmail.com    Ankur Kumar
-// rahulkarda2002@gmail.com    Rahul Karda
-// abhiramhsivam@gmail.com    ABHIRAM H SIVAM
-// ishanmarwadya02@gmail.com    Ishan Marwadya
-// ravi.d.lord@gmail.com    Ravi Bhojane
-// vanshsaxena26@gmail.com    Vansh Saxena
-// sandeshv414@gmail.com    Sandesh Verma
-// kongarapiaashamadhuri@gmail.com    Aasha madhuri
-// imteyazahmad5426@gmail.com    Md Imteyaz Ahmad
         $users = [
+            // ["name" => " Kowsalya", "email" => "officialkowsalya@gmail.com"],
+            // ["name" => "Saksham Chandola", "email" => "chandolasaksham@gmail.com"],
+            // ["name" => "Ankna Litoriya", "email" => "anknalitoriya@gmail.com"],
+            // ["name" => "Rohan Sharma", "email" => "ro3498727@gmail.com"],
+            // ["name" => "Anushka Kathal", "email" => "kathal.anushka@gmail.com"],
+            // ["name" => "Faizanuddin Sheikh", "email" => "fusheikh11@gmail.com"],
+            // ["name" => "Harikishan TK", "email" => "harikishantk@gmail.com"],
+            // ["name" => "Ankur Kumar", "email" => "ankurkumar4715@gmail.com"],
+            // ["name" => "Rahul Karda", "email" => "rahulkarda2002@gmail.com"],
+            // ["name" => "Abhiram H SIVAM", "email" => "abhiramhsivam@gmail.com"],
+            // ["name" => "Ishan Marwadya", "email" => "ishanmarwadya02@gmail.com"],
+            // ["name" => "Ravi Bhojane", "email" => "ravi.d.lord@gmail.com"],
+            // ["name" => "Vansh Saxena", "email" => "vanshsaxena26@gmail.com"],
+            // ["name" => "Sandesh Verma", "email" => "sandeshv414@gmail.com"],
+            // ["name" => "Aasha madhuri", "email" => "kongarapiaashamadhuri@gmail.com"],
+            // ["name" => "Md Imteyaz Ahmad", "email" => "imteyazahmad5426@gmail.com"],
             // ['name' => 'Ryan Stonebanks', 'email' => 'ryan.stonebanks@gmail.com'],
             // ['name' => 'Krupesh Vithlani', 'email' => 'krupesh123vithlani@gmail.com'],
             ['name' => 'Harsh Vishwakarma', 'email' => 'harshprogrammer782@gmail.com'],
@@ -42,10 +42,10 @@ class MailController extends Controller
                 'name' => $user['name'],
                 'email' => $user['email'],
             ];
-            Mail::send('emails.testsite', $data, function ($message) use ($data) {
+            Mail::send('emails.teamjoin', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
-                $message->subject("Hurrah! You've been selected to proceed to the next round");
+                $message->subject("Congratulations!!! You are just one step away from joining ConnectUp");
             });
         }
 
