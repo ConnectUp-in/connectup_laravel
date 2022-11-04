@@ -135,6 +135,6 @@ class SuperAdminController extends Controller
 
         $blog->save();
         // redirect to edit page
-        return redirect()->route('editblog', $blog->id);
+        return redirect()->route('superadmin.blog.edit', $blog->id);
     }
 }

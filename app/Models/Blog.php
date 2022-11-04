@@ -36,6 +36,7 @@ class Blog extends Model
     protected $appends = [
         'user',
     ];
+    public $incrementing = false;
 
     public function getUserAttribute()
     {
