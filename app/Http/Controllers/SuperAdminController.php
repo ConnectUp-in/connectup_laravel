@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
+use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
 {
@@ -61,8 +62,35 @@ class SuperAdminController extends Controller
         $blog = Blog::find($id);
         $data = [
             'blog' => $blog,
+            'way' => 'edit',
         ];
         // return $data;
         return view('admin.blog.edit', $data);
+    }
+
+    public function updateblog($id, Request $request)
+    {
+        // title, content, tags, slug, active, suspended, category, image
+        // return $request->all();
+        $blog = Blog::find($id);
+        $blog->title = $request->title;
+        $blog->content = $request->content;
+        $blog->tags = $request->tags;
+        $blog->slug = $request->slug;
+        $blog->active = $request->active == 'on' ? 1 : 0;
+        $blog->suspended = $request->suspended == 'on' ? 1 : 0;
+        $blog->category = $request->category;
+
+        // save image
+        $image = $request->file('image');
+        // return $image;
+        if ($image) {
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/blogs'), $image_name);
+            $blog->image = $image_name;
+        }
+
+        $blog->save();
+        return redirect()->back();
     }
 }
