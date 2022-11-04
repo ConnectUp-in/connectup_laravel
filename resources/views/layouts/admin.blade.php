@@ -34,7 +34,9 @@
     <link href="/assets/admin/src/assets/css/dark/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/c5fe5e7547.js" crossorigin="anonymous"></script>
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.css"
+        integrity="sha512-6skR4yyaANUKXypVS+nB+HMmq8Xd17CSwFsBEHCRaa3UicPlksbwVtBTZl13Fea6zqsnnmqc7fRH97/M6JcwCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Blogs -->
     <link rel="stylesheet" href="/assets/admin/src/plugins/src/filepond/filepond.min.css">
@@ -147,9 +149,6 @@
 
     <script src="/assets/admin/src/assets/js/apps/blog-create.js"></script>
 
-    <script>
-        ecommerce.addFiles('../src/assets/img/product-1.jpg');
-    </script>
     <!-- blog -->
 
 
@@ -177,6 +176,33 @@
             "aaSorting": [],
         });
     </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.4/sifter.min.js"
+        integrity="sha512-B60IUvYpG4cibCeQ30J8k/+qtN+fxKAIENb3DL2DVdzIt76IDIynAt92chPEwlCuKejOt//+OZL61i1xsvCIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microplugin/0.0.3/microplugin.min.js"
+        integrity="sha512-7amIsiQ/hxbdPNawBZwmWBWPiwQRNEJlxTj6eVO+xmWd71fs79Iydr4rYARHwDf0rKHpysFxWbj64fjPRHbqfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/selectize.min.js"
+        integrity="sha512-DBOconMAY06o4R79zeXKKM3h/g5pca647Eabb+6viK4dRpiMOlZFS4gsbukTbHo+ppdKx4yr+/0m2JnpeAIrSw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.single-select').selectize({
+                placeholder: "Select your choice",
+            });
+            $('.multi-select').selectize({
+                placeholder: "Search & Select",
+                plugins: ["remove_button", "restore_on_backspace"],
+            });
+
+        });
+    </script>
+    @yield('scripts')
+
 
 </body>
 
