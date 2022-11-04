@@ -67,6 +67,15 @@ class SuperAdminController extends Controller
         // return $data;
         return view('admin.blog.edit', $data);
     }
+    public function addblog()
+    {
+        $data = [
+
+            'way' => 'add',
+        ];
+        // return $data;
+        return view('admin.blog.edit', $data);
+    }
 
     public function updateblog($id, Request $request)
     {
