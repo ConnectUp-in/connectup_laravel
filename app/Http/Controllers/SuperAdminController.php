@@ -86,8 +86,10 @@ class SuperAdminController extends Controller
         // return $image;
         if ($image) {
             $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/blogs'), $image_name);
-            $blog->image = $image_name;
+            $path = 'storage/covers/blogs/';
+            $image->move($path, $image_name);
+            $blog->image = '/' . $path . $image_name;
+            // return $path . $image_name;
         }
 
         $blog->save();
