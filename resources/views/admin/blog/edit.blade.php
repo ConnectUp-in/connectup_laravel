@@ -18,35 +18,36 @@
             </nav>
         </div>
         <!-- /BREADCRUMB -->
+        <form method="POST" enctype="multipart/form-data"
+            action="{{ $way == 'add' ? route('superadmin.blog.create') : route('superadmin.blog.update', $blog->id) }}">
+            <div class="row mb-4 layout-spacing layout-top-spacing">
 
-        <div class="row mb-4 layout-spacing layout-top-spacing">
+                <div class="col-xxl-9 col-xl-12 col-lg-12 col-md-12 col-sm-12">
 
-            <div class="col-xxl-9 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="widget-content widget-content-area blog-create-section">
 
-                <div class="widget-content widget-content-area blog-create-section">
-
-                    <div class="row mb-4">
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="title" id="title"
-                                placeholder="Blog Title" value="{{ $blog->title ?? '' }}">
+                        <div class="row mb-4">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="title" id="title"
+                                    placeholder="Blog Title" value="{{ $blog->title ?? '' }}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon3">{{ url('blogs/') . '/' }}</span>
-                        <input type="text" class="form-control" id="slug" placeholder="Blog Slug"
-                            value="{{ $blog->slug ?? '' }}" aria-describedby="basic-addon3">
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-sm-12">
-                            <label>Content</label>
-                            <textarea class="form-control w-100" id="editor" rows="30">{{ $blog->content ?? '' }}</textarea>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon3">{{ url('blogs/') . '/' }}</span>
+                            <input type="text" class="form-control" name="slug" id="slug" placeholder="Blog Slug"
+                                value="{{ $blog->slug ?? '' }}" aria-describedby="basic-addon3">
                         </div>
+
+                        <div class="row mb-4">
+                            <div class="col-sm-12">
+                                <label>Content</label>
+                                <textarea name="content" class="form-control w-100" id="editor" rows="30">{{ $blog->content ?? '' }}</textarea>
+                            </div>
+                        </div>
+
                     </div>
 
-                </div>
-
-                {{-- <div class="widget-content widget-content-area blog-create-section mt-4">
+                    {{-- <div class="widget-content widget-content-area blog-create-section mt-4">
 
                     <h5 class="mb-4">SEO Settings</h5>
 
@@ -63,59 +64,62 @@
 
                 </div> --}}
 
-            </div>
+                </div>
 
-            <div class="col-xxl-3 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-xxl-0 mt-4">
-                <div class="widget-content widget-content-area blog-create-section">
-                    <div class="row">
-                        <div class="col-xxl-12 mb-4">
-                            <div class="switch form-switch-custom switch-inline form-switch-primary">
-                                <input class="switch-input" type="checkbox" role="switch" id="showPublicly" checked>
-                                <label class="switch-label" for="showPublicly">Active</label>
+                <div class="col-xxl-3 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-xxl-0 mt-4">
+                    <div class="widget-content widget-content-area blog-create-section">
+                        <div class="row">
+                            <div class="col-xxl-12 mb-4">
+                                <div class="switch form-switch-custom switch-inline form-switch-primary">
+                                    <input name="active" class="switch-input" type="checkbox" role="switch"
+                                        id="showPublicly" checked>
+                                    <label class="switch-label" for="showPublicly">Active</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xxl-12 mb-4">
-                            <div class="switch form-switch-custom switch-inline form-switch-primary">
-                                <input class="switch-input" type="checkbox" role="switch" id="enableComment" checked>
-                                <label class="switch-label" for="enableComment">Suspended</label>
+                            <div class="col-xxl-12 mb-4">
+                                <div class="switch form-switch-custom switch-inline form-switch-primary">
+                                    <input name="suspended" class="switch-input" type="checkbox" role="switch"
+                                        id="enableComment" checked>
+                                    <label class="switch-label" for="enableComment">Suspended</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xxl-12 col-md-12 mb-4">
-                            <label for="tags">Tags</label>
-                            <select id="objectives" class="tags" name="tags" multiple>
-                                @foreach ($blog->tags as $tag)
-                                    <option value="{{ $tag }}" selected>{{ $tag }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-xxl-12 col-md-12 mb-4">
-                            <div class="form-group mb-4">
-                                <label for="category">Select Category</label>
-                                <select class="form-select " id="category">
-                                    @foreach (getCategories() as $category)
-                                        <option value="{{ $category->id }}"
-                                            {{ $blog->category == $category->id ? 'selected' : '' }}>
-                                            {{ $category->name }}</option>
+                            <div class="col-xxl-12 col-md-12 mb-4">
+                                <label for="tags">Tags</label>
+                                <select id="objectives" class="tags" name="tags[]" multiple>
+                                    @foreach ($blog->tags as $tag)
+                                        <option value="{{ $tag }}" selected>{{ $tag }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-xxl-12 col-md-12 mb-4">
-                            <label for="product-images">Featured Image</label>
-                            <div class="multiple-file-upload">
-                                <input type="file" class="filepond file-upload-multiple" name="filepond"
-                                    id="product-images" multiple data-allow-reorder="true" data-max-file-size="3MB"
-                                    data-max-files="1">
+                            <div class="col-xxl-12 col-md-12 mb-4">
+                                <div class="form-group mb-4">
+                                    <label for="category">Select Category</label>
+                                    <select class="form-select " name="category" id="category">
+                                        @foreach (getCategories() as $category)
+                                            <option value="{{ $category->id }}"
+                                                {{ $blog->category == $category->id ? 'selected' : '' }}>
+                                                {{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xxl-12 col-sm-4 col-12 mx-auto">
-                            <button class="btn btn-success w-100">Update Post</button>
+                            <div class="col-xxl-12 col-md-12 mb-4">
+                                <label for="product-images">Featured Image</label>
+                                <div class="multiple-file-upload">
+                                    <input type="file" name="image">
+                                    <img src="{{ $blog->image }}" onerror="this.style.display == 'none'" class="w-100"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-sm-4 col-12 mx-auto">
+                                <button class="btn btn-success w-100">Update Post</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        </form>
 
     </div>
 @endsection
