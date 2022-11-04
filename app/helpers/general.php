@@ -148,3 +148,9 @@ function extract_ytlink($text)
         return null;
     }
 }
+
+function getCategories()
+{
+    $categories = \App\Models\Category::where('active', 1)->get();
+    return $categories;
+}
