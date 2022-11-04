@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
+use Auth;
 use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
@@ -103,5 +104,37 @@ class SuperAdminController extends Controller
 
         $blog->save();
         return redirect()->back();
+    }
+    public function createblog(Request $request)
+    {
+        // title, content, tags, slug, active, suspended, category, image
+        // return $request->all();
+        $blog = new Blog;
+        $blog->title = $request->title;
+        $blog->content = $request->content;
+        $blog->tags = $request->tags;
+        $blog->creator = Auth::user()->id;
+        $blog->creator_type = 'e';
+        $blog->slug = $request->slug;
+        $blog->active = $request->active == 'on' ? 1 : 0;
+        $blog->suspended = $request->suspended == 'on' ? 1 : 0;
+        $blog->category = $request->category;
+
+        // save image
+        $image = $request->file('image');
+        // return $image;
+        if ($image) {
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = 'storage/covers/blogs/';
+            $image->move($path, $image_name);
+            $blog->image = '/' . $path . $image_name;
+            // return $path . $image_name;
+        } else {
+            $blog->image = '/assets/defauls/blog.jpg';
+        }
+
+        $blog->save();
+        // redirect to edit page
+        return redirect()->route('editblog', $blog->id);
     }
 }

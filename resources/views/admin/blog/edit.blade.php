@@ -86,7 +86,7 @@
                             <div class="col-xxl-12 col-md-12 mb-4">
                                 <label for="tags">Tags</label>
                                 <select id="objectives" class="tags" name="tags[]" multiple>
-                                    @foreach ($blog->tags as $tag)
+                                    @foreach ($blog->tags ?? [] as $tag)
                                         <option value="{{ $tag }}" selected>{{ $tag }}</option>
                                     @endforeach
                                 </select>
@@ -97,7 +97,7 @@
                                     <select class="form-select " name="category" id="category">
                                         @foreach (getCategories() as $category)
                                             <option value="{{ $category->id }}"
-                                                {{ $blog->category == $category->id ? 'selected' : '' }}>
+                                                {{ $blog->category ?? '' == $category->id ? 'selected' : '' }}>
                                                 {{ $category->name }}</option>
                                         @endforeach
                                     </select>
@@ -107,8 +107,8 @@
                                 <label for="product-images">Featured Image</label>
                                 <div class="multiple-file-upload">
                                     <input type="file" name="image">
-                                    <img src="{{ $blog->image }}" onerror="this.style.display == 'none'" class="w-100"
-                                        alt="">
+                                    <img src="{{ $blog->image ?? '' }}" onerror="this.style.display == 'none'"
+                                        class="w-100" alt="">
                                 </div>
                             </div>
                             <div class="col-xxl-12 col-sm-4 col-12 mx-auto">
@@ -126,9 +126,6 @@
 
 @section('scripts')
     <script>
-        @if ($blog->image)
-            ecommerce.addFiles('{{ $blog->image }}');
-        @endif
         $('.tags').selectize({
             placeholder: "Enter Tags",
             delimiter: ",",
