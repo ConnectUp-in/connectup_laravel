@@ -8,6 +8,10 @@
                     <li class="breadcrumb-item"><a href="#">Blog</a></li>
                     <li class="breadcrumb-item active" aria-current="page">All</li>
                 </ol>
+                <a href="{{ route('superadmin.blog.add') }}" class="btn float-right btn-primary">Add New</a>
+
+                {{-- Add button to Right --}}
+
             </nav>
         </div>
         <!-- /BREADCRUMB -->
