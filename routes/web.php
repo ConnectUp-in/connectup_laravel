@@ -50,6 +50,8 @@ Route::middleware('sitemap')->group(function () {
     Route::prefix('post')->group(function () {
         Route::get('/{id}', [PostController::class, 'post'])->name('post');
         Route::post('create', [PostController::class, 'create'])->name('post.create');
+        Route::post('update', [PostController::class, 'update'])->name('post.update');
+        Route::post('delete', [PostController::class, 'delete'])->name('post.delete');
 
     });
     Route::prefix('user')

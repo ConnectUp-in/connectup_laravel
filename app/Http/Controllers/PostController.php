@@ -50,4 +50,19 @@ class PostController extends Controller
         // return $post;
         return redirect()->route('post', $post->id);
     }
+
+    public function delete(Request $request)
+    {
+        try {
+            $post = Post::find($request->id);
+            if ($post->user_id == Auth::id()) {
+                $post->delete();
+                return $this->sendResponse(true, 'Post deleted successfully');
+            } else {
+                return $this->sendResponse(false, 'You are not authorized to delete this post');
+            }
+        } catch (\Throwable$th) {
+            return $this->sendResponse(false, 'Post not deleted');
+        }
+    }
 }

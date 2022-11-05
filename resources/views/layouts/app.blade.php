@@ -1750,6 +1750,32 @@
 
         // toastr.success("Yeh to mast chal rha hai")
     </script>
+    <script>
+        function deletePost(id) {
+            //  get this element
+            var element = this.event.target;
+            $.ajax({
+                url: "{{ route('post.delete') }}",
+                type: 'POST',
+                data: {
+                    id: id,
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function(result) {
+
+                    // find parent element of this element having class post-parent
+                    $(element).closest('.post-parent').remove();
+
+                    console.log(result);
+                    if (result.data) {
+                        toastr.success(result.message);
+                    } else {
+                        toastr.error(result.message);
+                    }
+                }
+            });
+        }
+    </script>
     @yield('scripts')
     @stack('scripts')
     @stack('customscript')
