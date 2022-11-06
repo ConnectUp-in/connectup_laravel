@@ -574,10 +574,10 @@
                 });
             }
             confetti();
-            setInterval(() => {
-                    confetti()
-                },
-                5000);
+            // setInterval(() => {
+            //         confetti()
+            //     },
+            //     5000);
         });
     </script>
     <script>
@@ -620,7 +620,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
         <script>
             $('.js-tilt').tilt({
-                scale: 1.1
+                scale: 1.3,
+                speed: 600,
+                glare: true,
             })
 
 
@@ -691,6 +693,14 @@
                         ctx.fillText('@' + username, frame.width / 2, 600);
                     }
                 };
+            });
+
+            canvas.addEventListener("click", function() {
+                var dataURL = canvas.toDataURL("image/png");
+                var link = document.createElement('a');
+                link.download = 'ConnectUp_ConnectCard.png';
+                link.href = dataURL;
+                link.click();
             });
         </script>
     @endif
