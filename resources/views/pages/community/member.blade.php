@@ -615,79 +615,83 @@
         integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script>
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
 
-        //  Initializing variables
-        var defaultCertPNG = "/assets/defaults/cards/blank.png";
-        var url = "{{ route('user', Auth::user()->username) ?? '' }}";
-        var name = "{{ Auth::user()->name ?? '' }}";
-        var username = "{{ Auth::user()->username ?? '' }}";
-        var profile = "{{ Auth::user()->profile_photo_path ?? '' }}";
+    @if (Auth::check())
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
 
 
-        // Defining Canvas
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-        var frame = new Image();
+            //  Initializing variables
+            var defaultCertPNG = "/assets/defaults/cards/blank.png";
+            var url = "{{ route('user', Auth::user()->username) ?? '' }}";
+            var name = "{{ Auth::user()->name ?? '' }}";
+            var username = "{{ Auth::user()->username ?? '' }}";
+            var profile = "{{ Auth::user()->profile_photo_path ?? '' }}";
 
-        // On Document Load
-        document.addEventListener("DOMContentLoaded", function() {
-            // Creating Image from PNG file
-            frame.src = defaultCertPNG;
-            var dimentionRatio = frame.width / frame.height;
 
-            var qrImage = new Image();
-            var qrcode = new QRious({
-                element: qrImage,
-                background: '#ffffff',
-                backgroundAlpha: 1,
-                foreground: '#0d1117',
-                foregroundAlpha: 1,
-                level: 'H',
-                padding: 0,
-                mime: 'image/png',
-                value: url,
-                size: 200,
+            // Defining Canvas
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var frame = new Image();
+
+            // On Document Load
+            document.addEventListener("DOMContentLoaded", function() {
+                // Creating Image from PNG file
+                frame.src = defaultCertPNG;
+                var dimentionRatio = frame.width / frame.height;
+
+                var qrImage = new Image();
+                var qrcode = new QRious({
+                    element: qrImage,
+                    background: '#ffffff',
+                    backgroundAlpha: 1,
+                    foreground: '#0d1117',
+                    foregroundAlpha: 1,
+                    level: 'H',
+                    padding: 0,
+                    mime: 'image/png',
+                    value: url,
+                    size: 200,
+                });
+                // When Image Loads Successfully
+                frame.onload = function() {
+                    // Setting Canvas Size
+                    canvas.width = frame.width;
+                    canvas.height = frame.height;
+
+                    // add profile image
+                    var profileImage = new Image();
+                    profileImage.src = profile;
+                    profileImage.onload = function() {
+                        var profileImageWidth = 275;
+                        var profileImageHeight = 275;
+                        var profileImageX = 260;
+                        var profileImageY = 200;
+
+
+                        ctx.drawImage(profileImage, profileImageX, profileImageY, profileImageWidth,
+                            profileImageHeight);
+
+                        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+                        // baseline to center
+                        ctx.textBaseline = "middle";
+                        ctx.drawImage(qrImage, (frame.width / 2) - 100, 650, 200, 200);
+
+                        // Adding Text
+                        ctx.font = "bold 60px 'Rajdhani'";
+                        ctx.fillStyle = "#0d1117";
+                        ctx.textAlign = "center";
+                        ctx.fillText(name, frame.width / 2, 550);
+
+                        ctx.font = "bold 40px 'Rajdhani'";
+                        ctx.fillStyle = "#0d1117";
+                        ctx.fillText('@' + username, frame.width / 2, 600);
+                    }
+                };
             });
-            // When Image Loads Successfully
-            frame.onload = function() {
-                // Setting Canvas Size
-                canvas.width = frame.width;
-                canvas.height = frame.height;
-
-                // add profile image
-                var profileImage = new Image();
-                profileImage.src = profile;
-                profileImage.onload = function() {
-                    var profileImageWidth = 275;
-                    var profileImageHeight = 275;
-                    var profileImageX = 260;
-                    var profileImageY = 200;
-
-
-                    ctx.drawImage(profileImage, profileImageX, profileImageY, profileImageWidth,
-                        profileImageHeight);
-
-                    ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
-                    // baseline to center
-                    ctx.textBaseline = "middle";
-                    ctx.drawImage(qrImage, (frame.width / 2) - 100, 650, 200, 200);
-
-                    // Adding Text
-                    ctx.font = "bold 60px 'Rajdhani'";
-                    ctx.fillStyle = "#0d1117";
-                    ctx.textAlign = "center";
-                    ctx.fillText(name, frame.width / 2, 550);
-
-                    ctx.font = "bold 40px 'Rajdhani'";
-                    ctx.fillStyle = "#0d1117";
-                    ctx.fillText('@' + username, frame.width / 2, 600);
-                }
-            };
-        });
-    </script>
+        </script>
+    @endif
 @endsection
