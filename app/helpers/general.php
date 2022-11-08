@@ -98,7 +98,7 @@ function page($page, $profile_id = null)
     $p->user_agent = request()->header('User-Agent');
     $p->save();
 }
-function _action($action, $action_item = null)
+function _action($action, $action_item = null, $prev = null, $new = null)
 {
     $a = new Action();
     if (Auth::check()) {
@@ -107,6 +107,8 @@ function _action($action, $action_item = null)
     $a->action = $action;
     $a->ip_address = request()->ip();
     $a->action_item = $action_item;
+    $a->prev = $prev;
+    $a->new = $new;
     $a->user_agent = request()->header('User-Agent');
     $a->save();
 }
