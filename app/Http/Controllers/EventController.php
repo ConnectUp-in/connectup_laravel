@@ -102,6 +102,7 @@ class EventController extends Controller
         $reg->required_fields = $required_data;
         $reg->additional_fields = $request->except('id', '_token');
         $reg->save();
+        _action('event_registered', $reg->id, null, $reg);
 
         \Session::flash('success', 'You have successfully registered for this event.');
         return redirect()->back()->with('success', 'You have successfully registered for this event.');
@@ -141,6 +142,7 @@ class EventController extends Controller
         // Send Ticket to the user
         $registration->save();
         // sendConfirmationTicketMail($registration);
+        _action('event_registration_confirmed', $registration->id, null, $registration);
 
         \Session::flash('success', 'Registration confirmed.');
         return redirect()->back()->with('success', 'Registration confirmed.');

@@ -83,6 +83,7 @@ class SuperAdminController extends Controller
         // title, content, tags, slug, active, suspended, category, image
         // return $request->all();
         $blog = Blog::find($id);
+        $old = Blog::find($id);
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->tags = $request->tags;
@@ -103,6 +104,7 @@ class SuperAdminController extends Controller
         }
 
         $blog->save();
+        _action('blog_updated', $blog->id, $old, $blog);
         return redirect()->back();
     }
     public function createblog(Request $request)
@@ -134,6 +136,7 @@ class SuperAdminController extends Controller
         }
 
         $blog->save();
+        _action('blog_created', $blog->id, null, $blog);
         // redirect to edit page
         return redirect()->route('superadmin.blog.edit', $blog->id);
     }

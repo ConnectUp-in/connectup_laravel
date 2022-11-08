@@ -87,6 +87,7 @@ class StartupController extends Controller
             $startup->socials = $socials;
             $startup->founder = Auth::user()->id;
             $startup->save();
+            _action('startup_created', $startup->id, null, $startup);
 
             \Session::flash('success', 'Startup Created Successfully');
             return redirect()
@@ -136,6 +137,7 @@ class StartupController extends Controller
     {
 
         $startup = Startup::find($id);
+        $old = Startup::find($id);
         if (!$startup) {
             return view('pages.startup.404');
         }
@@ -152,6 +154,7 @@ class StartupController extends Controller
             $startup->socials = json_decode($request->socials);
         }
         $startup->save();
+        _action('startup_updated', $startup->id, $old, $startup);
 
         \Session::flash('success', 'Startup Updated Successfully');
         return redirect()
@@ -163,6 +166,7 @@ class StartupController extends Controller
     public function updateCover($id, Request $request)
     {
         $startup = Startup::find($id);
+        $old = Startup::find($id);
         if (!$startup) {
             return view('pages.startup.404');
         }
@@ -179,6 +183,7 @@ class StartupController extends Controller
             $startup->logo = saveBase64($request->logo);
         }
         $startup->save();
+        _action('startup_updated_cover', $startup->id, $old, $startup);
 
         \Session::flash('success', 'Startup Updated Successfully');
         return redirect()
