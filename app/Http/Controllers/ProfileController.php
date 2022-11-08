@@ -119,7 +119,9 @@ class ProfileController extends Controller
         }
 
         $user = Auth::user();
+        $old = Auth::user();
         $user->update($request->all());
+        _action('profile_updated', $user->id, $old, $user);
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
     public function apiupdate(Request $request)
@@ -128,8 +130,10 @@ class ProfileController extends Controller
 
         try {
             $user = Auth::user();
+            $old = Auth::user();
             // return $user;
             $user->update($request->all());
+            _action('profile_updated_api', $user->id, $old, $user);
             return $this->sendResponse($user->id, 'Profile updated successfully');
         } catch (\Exception$e) {
             return $this->sendError('Error updating profile', $e->getMessage());
@@ -138,11 +142,13 @@ class ProfileController extends Controller
     public function updateCoverPhoto(Request $request)
     {
         $user = Auth::user();
+        $old = Auth::user();
         if ($request->cover_photo_path) {
             $image = $this->saveBase64($request->cover_photo_path, '/uploads/cover_photos/');
             $user->cover_photo_path = $image;
             $user->save();
         }
+        _action('profile_updated_cover', $user->id, $old, $user);
         return redirect()->back()->with('success', 'Cover Image Updated');
     }
     public function refferals()
@@ -179,6 +185,7 @@ class ProfileController extends Controller
         $follow = Follow::where('user', $user->id)->where('followed_id', $request->id)->first();
         if ($follow) {
             $follow->delete();
+            _action('unfollowed', $follow->id, $follow, null);
             return $this->sendResponse(null, 'Unfollowed');
         } else {
             $follow = new Follow;
@@ -186,6 +193,7 @@ class ProfileController extends Controller
             $follow->followed_id = $request->id;
             $follow->type = $request->type;
             $follow->save();
+            _action('followed', $follow->id, null, $follow);
             return $this->sendResponse(true, 'Followed');
         }
     }
