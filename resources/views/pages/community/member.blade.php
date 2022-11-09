@@ -638,6 +638,7 @@
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             var frame = new Image();
+            frame.crossOrigin = "anonymous"
 
             // On Document Load
             document.addEventListener("DOMContentLoaded", function() {
