@@ -8,7 +8,7 @@
             </div>
             <div class="simple-dropdown widget-box-post-settings-dropdown">
                 <p class="simple-dropdown-link"> <a href="{{ route('post', $post->id) }}"> View Post</a></p>
-                @if (Auth::user()->id == $post->user->id)
+                @if (Auth::user()->id ?? '' == $post->user->id)
                     <p class="simple-dropdown-link" onclick="deletePost('{{ $post->id }}')">Delete Post</p>
                 @endif
             </div>
