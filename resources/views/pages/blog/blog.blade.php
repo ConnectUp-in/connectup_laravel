@@ -101,7 +101,7 @@
         }
 
         .banner .banner-title {
-            font-size: 4.5rem;
+            font-size: 4rem;
             text-align: center;
             text-transform: inherit;
             font-family: 'Mitr', sans-serif;
