@@ -58,11 +58,11 @@
 @section('styles')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         .banner-wrap {
-            background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);
+            background-image: url(https://cdn.wallpapersafari.com/31/2/A7C1GQ.jpg);
         }
 
         .banner {
@@ -74,22 +74,13 @@
             padding-top: 15vh;
         }
 
-        .banner-info {
-            color: #0d1117;
-        }
-
-        .banner .banner-pretitle,
-        .banner .banner-text,
-        .banner .banner-title {
-            color: unset;
-            /* font-family: Rajdhani; */
-        }
 
         .banner .banner-title {
             font-size: 4.5rem;
             text-align: center;
             text-transform: inherit;
-            font-family: 'Lalezar', cursive;
+            font-family: 'Mitr', sans-serif;
+            text-shadow: 0 0 50px #0009;
             margin-top: 0.3em;
         }
 
