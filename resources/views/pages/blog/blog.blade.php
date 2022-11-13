@@ -1,3 +1,10 @@
+@php
+    $page['title'] = $blog->title . ' | ConnectUp';
+    $page['description'] = preg_replace("/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($blog->content))));
+    $page['image'] = $blog->image ?? '';
+    
+@endphp
+
 @extends('layouts.guest')
 
 
