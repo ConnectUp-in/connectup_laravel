@@ -113,6 +113,7 @@
             color: #fff;
         }
     </style>
+    @yield('styles')
 </head>
 
 <body>
