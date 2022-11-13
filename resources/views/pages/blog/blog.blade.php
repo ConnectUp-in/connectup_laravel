@@ -40,6 +40,9 @@
 
         <div class="container row">
             <div class="main-container col-md-9">
+                <div class="cover-container">
+                    <img src="{{ $blog->image }}" alt="cover" class="cover-img" onerror="this.display='none'">
+                </div>
 
                 <div class="blog-content">
                     {!! $blog->content !!}
@@ -100,6 +103,13 @@
 
         .side-container {
             width: 30%;
+        }
+
+        .cover-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 1em;
         }
 
         .blog-content {
