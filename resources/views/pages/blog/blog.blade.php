@@ -118,6 +118,11 @@
             margin-bottom: 1em;
         }
 
+        .cover-img {
+            width: 100%;
+            object-fit: cover;
+        }
+
         .blog-content {
             color: #fff !important;
             font-size: 1.4em;
