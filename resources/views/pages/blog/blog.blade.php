@@ -49,6 +49,22 @@
                 <div class="blog-content">
                     {!! $blog->content !!}
                 </div>
+
+                <div class="category-holder">
+                    <b>Category:</b>
+                    <span class="category-name">
+                        <a href="#">
+                            {{ $blog->category->name ?? 'No Category selected' }}
+                        </a>
+                    </span>
+                </div>
+                <!-- TAG LIST -->
+                <div class="tag-holder">
+                    @foreach ($blog->tags as $tag)
+                        <a class="tag" href="#">{{ $tag }}</a>
+                    @endforeach
+                </div>
+                <!-- /TAG LIST -->
             </div>
             <div class="side-container col-md-3">
                 Hey
@@ -128,10 +144,51 @@
             font-size: 1.4em;
         }
 
+        .blog-content>* {
+            color: #b6b7ce !important;
+        }
+
+
         .blog-content p {
             margin-bottom: 0.1em;
-            color: #b6b7ce;
             line-height: 1.5;
+        }
+
+        .category-holder {
+            margin-top: 1em 0;
+            font-family: Rajdhani, sans-serif;
+            color: #b6b7ce;
+            font-size: 1.2em;
+        }
+
+
+        .category-name a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500
+        }
+
+        .tag-holder {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            padding: 0.5em 1em;
+            background-color: #23D2E2;
+            border-radius: 10px;
+            color: #0d1117;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        .tag:hover {
+            cursor: pointer;
+            transform: translateY(-3px);
         }
 
         @media screen and (max-width: 768px) {
