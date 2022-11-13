@@ -434,7 +434,7 @@ figure > img {
         /* min-height: auto; */
     }
     .banner .banner-info {
-        width: 480px;
+        /* width: 480px; */
         margin: 0 auto;
         padding: 180px 0 120px;
         text-align: center;

@@ -192,6 +192,16 @@
         }
 
         @media screen and (max-width: 768px) {
+
+            .banner .banner-info {
+                padding: 10vh 0;
+                padding-top: 15vh;
+            }
+
+            .banner .banner-title {
+                font-size: 2.5em;
+            }
+
             .container {
                 flex-direction: column;
             }
@@ -200,9 +210,12 @@
                 width: 100%;
             }
 
+
+
             .side-container {
                 width: 100%;
             }
+
         }
     </style>
 @endsection
