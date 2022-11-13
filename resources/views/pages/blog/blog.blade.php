@@ -10,7 +10,9 @@
             <div class="banner-info">
 
                 <!-- BANNER PRETITLE -->
-                <p class="banner-pretitle">Welcome To</p>
+                <p class="banner-pretitle">
+                    Last Updated: &nbsp;{{ $blog->updated_at->diffForHumans() }}
+                </p>
                 <!-- /BANNER PRETITLE -->
 
                 <!-- BANNER TITLE -->
@@ -18,9 +20,9 @@
                 <!-- /BANNER TITLE -->
 
                 <!-- BANNER TEXT -->
-                <p class="banner-text">The next generation Entrepreneurs community! <br>
+                <p class="banner-text">
 
-
+                    {{ $blog->readtime }} min read &nbsp;|&nbsp; {{ changeIntoKMG(profileview($blog->id)) }} Views
 
                 </p>
                 <!-- /BANNER TEXT -->
@@ -77,6 +79,10 @@
             padding-top: 15vh;
         }
 
+
+        .banner .banner-pretitle {
+            text-transform: none;
+        }
 
         .banner .banner-title {
             font-size: 4.5rem;
