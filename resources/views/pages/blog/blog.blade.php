@@ -193,6 +193,10 @@
 
         @media screen and (max-width: 768px) {
 
+            .section-wrap {
+                padding: 2em 0;
+            }
+
             .banner .banner-info {
                 padding: 10vh 0;
                 padding-top: 15vh;
