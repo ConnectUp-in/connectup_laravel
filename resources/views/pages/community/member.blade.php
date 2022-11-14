@@ -647,6 +647,8 @@
                 var dimentionRatio = frame.width / frame.height;
 
                 var qrImage = new Image();
+                qrImage.setAttribute('crossOrigin', 'anonymous');
+
                 var qrcode = new QRious({
                     element: qrImage,
                     background: '#ffffff',
@@ -667,6 +669,8 @@
 
                     // add profile image
                     var profileImage = new Image();
+                    profileImage.setAttribute('crossOrigin', 'anonymous');
+
                     profileImage.src = profile;
                     profileImage.onload = function() {
                         var profileImageWidth = 275;
