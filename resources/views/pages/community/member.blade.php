@@ -1,7 +1,13 @@
 @php
     $page['title'] = 'Join Community | ConnectUp';
+    $message = [
+        'content' => 'Hey! Connections.  
+I am delighted to announce that finally I am a part of ConnectUp community. Join us in the entrepreneurial journey and become a part of an startup ecosystem.',
+        'code' => 'Checkout my ConnectUp Profile: ',
+        // 'link' => 'https://connectup.in/login?refferal=' . $user->invite_refferal,
+        'link' => route('user', Auth::user()->username ?? ''),
+    ];
 @endphp
-
 
 @extends('layouts/auth')
 
@@ -160,6 +166,14 @@
         .form-box-title a:hover {
             transform: translateY(-5px);
         }
+
+        .download-button {
+            background: #23D2E2;
+        }
+
+        .download-button:hover {
+            background: #1ca8b5;
+        }
     </style>
 @endsection
 
@@ -268,10 +282,69 @@
                             <canvas class="js-tilt w-100" id="canvas"></canvas>
                         </div>
 
+
+                        <!-- REACTION OPTIONS -->
+                        {{-- <div class=" share-options nobg share-options-dropdown ">
+
+
+                        <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
+
+                            <a
+                                href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}">
+                                <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                <img class="reaction-option-image"
+                                    src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
+                                    alt="reaction-like">
+                                <!-- /REACTION OPTION IMAGE -->
+                            </a>
+                        </div>
+                        <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
+                            <a
+                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . ' ' . $message['code'] }}&source=https://connectup.in">
+                                <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                <img class="reaction-option-image"
+                                    src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
+                                    alt="reaction-like">
+                                <!-- /REACTION OPTION IMAGE -->
+                            </a>
+                        </div>
+
+                        <div class="reaction-option text-tooltip-tft" data-title="Twitter">
+                            <a
+                                href="https://twitter.com/intent/tweet?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}&via=connectup">
+                                <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                <img class="reaction-option-image"
+                                    src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
+                                    alt="reaction-like">
+                                <!-- /REACTION OPTION IMAGE -->
+                            </a>
+                        </div>
+
+                        <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
+                            <a
+                                onclick="copyCode('{{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
+
+                                <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                <img class="reaction-option-image"
+                                    src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
+                                    alt="reaction-like">
+                                <!-- /REACTION OPTION IMAGE -->
+                            </a>
+                        </div>
+
+                    </div> --}}
+
+                        <button onclick="downloadCard()" class=" download-button button small mt-3">Download</button>
+                        {{-- <span class="share-options-dropdown-trigger" style="font-size: 12px;cursor: pointer;">Share</span> --}}
+
                         <h2 class="form-box-title">
-                            <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span>
+                            {{-- <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span> --}}
                             <br>
-                            Check you <a href="{{ route('user', Auth::user()->username ?? '') }}">Profile</a> or goto
+                            Check your <a href="{{ route('user', Auth::user()->username ?? '') }}">Profile</a> or go to
                             <a href="{{ route('feed') }}">Feed</a>
                         </h2>
 
@@ -725,12 +798,18 @@
             });
 
             canvas.addEventListener("click", function() {
+                downloadCard();
+            });
+
+
+
+            function downloadCard() {
                 var dataURL = canvas.toDataURL("image/png");
                 var link = document.createElement('a');
                 link.download = 'ConnectUp_ConnectCard.png';
                 link.href = dataURL;
                 link.click();
-            });
+            }
         </script>
     @endif
 @endsection
