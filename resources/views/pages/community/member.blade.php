@@ -151,6 +151,15 @@
                 display: none;
             }
         }
+
+        .form-box-title a {
+            color: #23D2E2;
+            transition: 0.1s ease;
+        }
+
+        .form-box-title a:hover {
+            transform: translateY(-5px);
+        }
     </style>
 @endsection
 
@@ -171,11 +180,25 @@
             <!-- /LOGO -->
 
             <!-- LANDING INFO PRETITLE -->
-            <h2 class="landing-info-pretitle">Join ConnectUp Community as</h2>
+            <h2 class="landing-info-pretitle">
+
+                @if ($isAlreadyMember)
+                    You are now Member of ConnectUp
+                @else
+                    Join ConnectUp Community as
+                @endif
+            </h2>
             <!-- /LANDING INFO PRETITLE -->
 
             <!-- LANDING INFO TITLE -->
-            <h1 class="landing-info-title">Member</h1>
+            <h1 class="landing-info-title">
+
+                @if ($isAlreadyMember)
+                    Community
+                @else
+                    Member
+                @endif
+            </h1>
             <!-- /LANDING INFO TITLE -->
 
             <!-- LANDING INFO TEXT -->
@@ -248,7 +271,8 @@
                         <h2 class="form-box-title">
                             <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span>
                             <br>
-                            You are now a member of ConnectUp Community!
+                            Check you <a href="{{ route('user', Auth::user()->username ?? '') }}">Profile</a> or goto
+                            <a href="{{ route('feed') }}">Feed</a>
                         </h2>
 
 
