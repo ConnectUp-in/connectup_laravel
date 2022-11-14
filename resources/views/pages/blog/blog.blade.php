@@ -74,7 +74,7 @@
                 <!-- /TAG LIST -->
             </div>
             <div class="side-container col-md-3">
-                Hey
+
             </div>
         </div>
 
