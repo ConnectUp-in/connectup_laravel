@@ -83,29 +83,24 @@ class EventSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'title' => 'Techfest - IIT Bombay Workshop',
-                'slug' => 'Techfest-IIT-Bombay-Workshop',
+                'title' => 'Getting familiar with Basic Electronics Circuits',
+                'slug' => 'Getting-familiar-with-Basic-Electronics-Circuits',
                 'type' => 'w',
                 'content' => '
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Hey Innovators 🚀🚀<br />
-                Techfest, IIT Bombay, Asia&#39;s largest Science and Technology Festival, is organizing a workshop at UIT RGPV with Innovations@EC.</span></span></span></p>
+                <p>Innovations@EC, the official club of the Electronics and Communication Department, UIT RGPV Bhopal is conducting a workshop on the topic &ldquo;Getting familiar with Basic Electronics Circuits &rdquo;.&nbsp;</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Grab the opportunity to learn Robotics and dive into its abstraction. This one-day workshop will aid in learning robotics that can help in engineering fields and explore technology to the best extent.🤖</span></span></span></p>
+                <p>Grab the opportunity to get an insight into basic electronics components and it&#39;s functioning. Gain the hands-on experience of working with ICs, circuits and much more.🔥</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">This workshop will help in the upcoming magnificent nationwide Zonal Competition, Technorion&#39;22 in Bhopal. The top 5 teams from the center will get direct entry to compete against each other for the final Techfest Trophy in IIT Bombay.</span></span></span></p>
+                <p>Date: 17th November 2022<br />
+                Time: from 2.00 PM<br />
+                Venue: EC Conference Hall</p>
 
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Speaker of the Event: Mr. Arpit Soni, Center Head &amp; Certified Trainer in Robonauts India.<br />
-                Date:19 September<br />
-                Venue: RGPV Conference Hall</span></span></span></p>
-
-                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Here is the chance to begin your journey of competing in unique and breathtaking challenges. Hurry up and register now.</span></span></span></p>
-
-
+                <p>Register now as the seats are limited!</p>
 
                 ',
-                'image' => '/assets/defaults/events/techfest.jpg',
-                'r_dates' => ['2022-09-14 12:00:00', '2022-09-16 12:00:00'],
-                'e_dates' => ['2022-09-16 11:00:00', '2022-09-16 16:00:00'],
+                'image' => '/assets/defaults/events/electronics.jpg',
+                'r_dates' => ['2022-11-14 12:00:00', '2022-11-16 12:00:00'],
+                'e_dates' => ['2022-11-17 14:00:00', '2022-11-17 16:30:00'],
                 'location' => 'Conference Hall, RGPV Bhopal (462033)',
                 'attachments' => [],
                 'active' => true,
@@ -113,7 +108,7 @@ class EventSeeder extends Seeder
                 'creator' => $founder->id,
                 'creator_type' => 'e',
                 'interests' => [1, 2, 3],
-                'tags' => ['techfest', 'electronics', 'robotics'],
+                'tags' => ['innovations', 'electronics', 'basics'],
                 'required_fields' => ["college"],
                 'additional_fields' => [
                     [
@@ -123,14 +118,20 @@ class EventSeeder extends Seeder
                         'required' => true,
                     ],
                     [
-                        'title' => 'Semester',
+                        'title' => 'Academic Branch',
                         'identifier' => 'field2',
                         'type' => 'text',
                         'required' => true,
                     ],
                     [
-                        'title' => 'Why you want to join this workshop?',
+                        'title' => 'Semester',
                         'identifier' => 'field3',
+                        'type' => 'text',
+                        'required' => true,
+                    ],
+                    [
+                        'title' => 'Why you want to join this workshop?',
+                        'identifier' => 'field4',
                         'type' => 'textarea',
                         'required' => false,
                     ],
