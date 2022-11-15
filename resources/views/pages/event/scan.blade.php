@@ -27,14 +27,18 @@
         integrity="sha512-x3LIt0LY57mPvHaXNMcFqnVZvVBayzopR4WfWQid5alkV0Rx/mMrrmoNu+U9K9o9iXj5UGQ4Vx+EZKkoWtofGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        var prevUrl = "";
+
         function onScanSuccess(url, decodedResult) {
             var ticket_id = url.split('/')[6];
             var event_id = url.split('/')[5];
 
             console.log("Ticket ID: " + ticket_id);
             console.log("Event ID: " + event_id);
-
-            markAttendance(ticket_id, event_id);
+            if (url != prevUrl) {
+                markAttendance(ticket_id, event_id);
+                prevUrl = url;
+            }
         }
 
         function onScanError(errorMessage) {
