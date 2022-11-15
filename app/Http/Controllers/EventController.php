@@ -17,6 +17,12 @@ class EventController extends Controller
 {
     //]
 
+    public function __construct()
+    {
+        $this->middleware('auth')->only([
+            'scan', 'registrationConfirm',
+        ]);
+    }
     public function event($slug)
     {
         $event = Event::where('slug', $slug)->first();
@@ -141,7 +147,7 @@ class EventController extends Controller
 
         // Send Ticket to the user
         $registration->save();
-        // sendConfirmationTicketMail($registration);
+        sendConfirmationTicketMail($registration);
         _action('event_registration_confirmed', $registration->id, null, $registration);
 
         \Session::flash('success', 'Registration confirmed.');
@@ -168,6 +174,35 @@ class EventController extends Controller
         }
         return $text;
         return view('pages.event.verify', $data);
+    }
+
+    public function scan()
+    {
+        return view('pages.event.scan');
+    }
+
+    public function markattendance(Request $request)
+    {
+        $registration = EventRegistration::where('event_id', $request->event_id)->where('ticket_id', $request->ticket_id)->first();
+        if (!$registration) {
+            return $this->sendError('Invalid ticket or Event id.');
+        }
+
+        if ($registration->confirmed_at) {
+
+            if ($registration->checked_in_at) {
+                return $this->sendError('This ticket has already been scanned.');
+                return "Hello";
+            }
+
+            $registration->checked_in_at = date('Y-m-d H:i:s');
+            $registration->save();
+            _action('event_attendance_marked', $registration->id, null, $registration);
+            return $this->sendResponse($registration, 'Attendance marked.');
+        } else {
+            return $this->sendError('This ticket has not been confirmed yet.');
+        }
+
     }
 
 }
