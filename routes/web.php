@@ -104,7 +104,6 @@ Route::middleware('sitemap')->group(function () {
         Route::get('/{slug}', [EventController::class, 'event'])->name('event');
         Route::middleware('auth')->get('/{slug}/redirect', [EventController::class, 'eventredirect'])->name('event.redirect');
         Route::post('/register', [EventController::class, 'register'])->name('event.register');
-        Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('event.registrations');
         Route::get('/registration/confirm/{id}', [EventController::class, 'registrationConfirm'])->name('event.registration.confirm');
         Route::get('/registration/sendticket/{id}', [EventController::class, 'registrationSendticket'])->name('event.registration.sendticket');
         Route::get('verify/{event_id}/{ticket_id}', [EventController::class, 'verify'])->name('event.verify');
@@ -147,6 +146,10 @@ Route::prefix('superadmin')->group(function () {
         Route::get('add', [SuperAdminController::class, 'addblog'])->name('superadmin.blog.add');
         Route::post('update/{id}', [SuperAdminController::class, 'updateblog'])->name('superadmin.blog.update');
         Route::post('create', [SuperAdminController::class, 'createblog'])->name('superadmin.blog.create');
+    });
+
+    Route::prefix('event')->group(function () {
+        Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('event.registrations');
     });
 
     Route::prefix('views')->group(function () {
