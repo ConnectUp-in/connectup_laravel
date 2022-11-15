@@ -2,7 +2,7 @@
     $page['title'] = 'Join Community | ConnectUp';
     $message = [
         'content' => 'Hey! Connections.  
-I am delighted to announce that finally I am a part of ConnectUp community. Join us in the entrepreneurial journey and become a part of an startup ecosystem.',
+I am delighted to announce that finally I am a part of ConnectUp community. Join us in the entrepreneurial journey and become a part of an startup ecosystem. %0a',
         'code' => 'Checkout my ConnectUp Profile: ',
         // 'link' => 'https://connectup.in/login?refferal=' . $user->invite_refferal,
         'link' => route('user', Auth::user()->username ?? ''),
@@ -309,9 +309,9 @@ I am delighted to announce that finally I am a part of ConnectUp community. Join
                                 <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
 
                                     <a
-                                        href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}">
+                                        href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . '' . $message['link'] }}">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
                                             alt="reaction-like">
@@ -320,9 +320,9 @@ I am delighted to announce that finally I am a part of ConnectUp community. Join
                                 </div>
                                 <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
                                     <a
-                                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . ' ' . $message['code'] }}&source=https://connectup.in">
+                                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . '' . $message['code'] }}&source=https://connectup.in">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
                                             alt="reaction-like">
@@ -332,9 +332,9 @@ I am delighted to announce that finally I am a part of ConnectUp community. Join
 
                                 <div class="reaction-option text-tooltip-tft" data-title="Twitter">
                                     <a
-                                        href="https://twitter.com/intent/tweet?text={{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}&via=connectup">
+                                        href="https://twitter.com/intent/tweet?text={{ $message['content'] . '' . $message['code'] . ' ' . $message['link'] }}&via=connectup">
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
                                             alt="reaction-like">
@@ -344,10 +344,10 @@ I am delighted to announce that finally I am a part of ConnectUp community. Join
 
                                 <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
                                     <a
-                                        onclick="copyCode('{{ $message['content'] . ' ' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
+                                        onclick="copyCode('{{ $message['content'] . '' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
 
                                         <!-- REACTION OPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            IMAGE -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
                                         <img class="reaction-option-image"
                                             src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
                                             alt="reaction-like">
