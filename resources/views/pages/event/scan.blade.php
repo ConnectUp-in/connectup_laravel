@@ -39,7 +39,7 @@
 
         function onScanError(errorMessage) {
             // handle on error condition, with error message
-            alert(`OOPs Something Wrong \n ${errorMessage}`);
+            // alert(`OOPs Something Wrong \n ${errorMessage}`);
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner(
