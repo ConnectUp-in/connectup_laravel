@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Event;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
@@ -139,5 +140,16 @@ class SuperAdminController extends Controller
         _action('blog_created', $blog->id, null, $blog);
         // redirect to edit page
         return redirect()->route('superadmin.blog.edit', $blog->id);
+    }
+
+    public function events()
+    {
+        $events = Event::orderBy('created_at', 'desc')->get();
+        $data = [
+            'events' => $events,
+        ];
+        // return $data;
+        return view('admin.events.events', $data);
+
     }
 }
