@@ -157,7 +157,7 @@ class SuperAdminController extends Controller
     public function eventAttendance($id)
     {
         $event = Event::where('id', $id)->first();
-        $registrations = EventRegistration::where('event_id', $id)->get();
+        $registrations = EventRegistration::where('event_id', $id)->where('checked_in_at', '!=', null)->get();
         $data = [
             'event' => $event,
             'registrations' => $registrations,
