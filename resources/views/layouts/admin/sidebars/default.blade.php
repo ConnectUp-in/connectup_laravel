@@ -15,6 +15,20 @@
                 'url' => route('superadmin.community.members'),
             ],
             [
+                'name' => 'Events',
+                'icon' => 'feather-dollar-sign',
+                'type' => 'collapse',
+                'url' => '#',
+                'links' => [
+                    [
+                        'name' => 'All Events',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.events'),
+                    ],
+                ],
+            ],
+            [
                 'name' => 'Blog',
                 'icon' => 'feather-dollar-sign',
                 'type' => 'collapse',
