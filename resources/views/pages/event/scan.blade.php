@@ -5,11 +5,53 @@
 
 @extends('layouts/app')
 
+@push('styles')
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            display: none;
+        }
+
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+@endpush
+
 
 @section('content')
     <!-- CONTENT GRID -->
     <div class="content-grid">
-        sdfs
+        <div id="loader">
+
+            <div class="loader-container">
+
+
+                <!-- PAGE LOADER INDICATOR -->
+                <div class="page-loader-indicator loader-bars">
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                    <div class="loader-bar"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /PAGE LOADER INDICATOR -->
         <div id="reader"></div>
     </div>
     <!-- /CONTENT GRID -->
@@ -30,6 +72,7 @@
         var prevUrl = "";
 
         function onScanSuccess(url, decodedResult) {
+            $('#loader').show();
             var ticket_id = url.split('/')[6];
             var event_id = url.split('/')[5];
 
@@ -63,6 +106,7 @@
                     event_id: event_id
                 },
                 success: function(data) {
+                    $('#loader').hide();
                     console.log(data);
                     if (data.success) {
                         toastr.success(data.message);
