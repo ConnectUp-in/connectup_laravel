@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Event;
+use App\Models\EventRegistration;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
@@ -151,5 +152,17 @@ class SuperAdminController extends Controller
         // return $data;
         return view('admin.events.events', $data);
 
+    }
+
+    public function eventAttendance($id)
+    {
+        $event = Event::where('id', $id)->first();
+        $registrations = EventRegistration::where('event_id', $id)->get();
+        $data = [
+            'event' => $event,
+            'registrations' => $registrations,
+        ];
+        // return $data;
+        return view('admin.events.attendance', $data);
     }
 }

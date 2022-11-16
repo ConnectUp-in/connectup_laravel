@@ -205,19 +205,4 @@ class EventController extends Controller
 
     }
 
-    public function attendance($id)
-    {
-        $event = Event::where('id', $id)->first();
-        if (!$event) {
-            return view('pages.event.404');
-        }
-        $registrations = EventRegistration::where('event_id', $id)->get();
-        $data = [
-            'event' => $event,
-            'registrations' => $registrations,
-        ];
-        // return $data;
-        return view('pages.event.attendance', $data);
-    }
-
 }

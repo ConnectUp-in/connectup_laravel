@@ -153,7 +153,7 @@ Route::prefix('superadmin')->group(function () {
         Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('superadmin.event.registrations');
         Route::get('/attendance/scan', [EventController::class, 'scan'])->name('event.attendance.scan');
         Route::post('/markattendance', [EventController::class, 'markattendance'])->name('event.markattendance');
-        Route::get('/attendance/{id}', [EventController::class, 'attendance'])->name('superadmin.event.attendance');
+        Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
     });
 
     Route::prefix('views')->group(function () {
