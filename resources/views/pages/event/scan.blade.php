@@ -81,6 +81,7 @@
             if (url != prevUrl) {
                 markAttendance(ticket_id, event_id);
                 prevUrl = url;
+                $('#loader').hide();
             }
         }
 
