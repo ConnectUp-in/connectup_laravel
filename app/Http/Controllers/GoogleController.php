@@ -44,6 +44,11 @@ class GoogleController extends Controller
             if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
+
+            if ($_SESSION['prev_url'] ?? false) {
+                return redirect($_SESSION['prev_url']);
+            }
+
             return redirect('/feed');
 
         } else {
@@ -62,6 +67,10 @@ class GoogleController extends Controller
 
             if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
+            }
+
+            if ($_SESSION['prev_url'] ?? false) {
+                return redirect($_SESSION['prev_url']);
             }
             return redirect('/feed');
         }

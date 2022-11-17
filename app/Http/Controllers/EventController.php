@@ -41,6 +41,10 @@ class EventController extends Controller
             if ($eventRegistration) {
                 $registered = true;
             }
+        } else {
+            session_start();
+            // set session variable prev url
+            $_SESSION['prev_url'] = url()->current();
         }
 
         if ($event->creator_type == 'e') {
