@@ -23,6 +23,7 @@ class VerifyCsrfToken extends Middleware
         '/post/*',
         '/user/*',
         'register',
+        'superadmin/*',
         //
     ];
 }

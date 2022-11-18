@@ -79,6 +79,24 @@ app.plugins.createDropdown({
 });
 
 app.plugins.createDropdown({
+    trigger: ".card-share-dropdown-trigger",
+    container: ".card-share-dropdown",
+    triggerEvent: "click",
+    offset: {
+        top: 34,
+        right: -16,
+    },
+    animation: {
+        type: "translate-top",
+        speed: 0.3,
+        translateOffset: {
+            vertical: 20,
+        },
+    },
+    closeOnDropdownClick: true,
+});
+
+app.plugins.createDropdown({
     trigger: ".reaction-options-small-dropdown-trigger",
     container: ".reaction-options-small-dropdown",
     triggerEvent: "click",

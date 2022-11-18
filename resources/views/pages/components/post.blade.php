@@ -1,4 +1,4 @@
-<div class="widget-box no-padding">
+<div class="widget-box post-parent no-padding">
     <div class="widget-box-settings">
         <div class="post-settings-wrap">
             <div class="post-settings widget-box-post-settings-dropdown-trigger">
@@ -7,7 +7,10 @@
                 </svg>
             </div>
             <div class="simple-dropdown widget-box-post-settings-dropdown">
-                <a href="{{ route('post', $post->id) }}" class="simple-dropdown-link">View Post</a>
+                <p class="simple-dropdown-link"> <a href="{{ route('post', $post->id) }}"> View Post</a></p>
+                @if ((Auth::user()->id ?? '') == $post->user->id)
+                    <p class="simple-dropdown-link" onclick="deletePost('{{ $post->id }}')">Delete Post</p>
+                @endif
             </div>
         </div>
     </div>

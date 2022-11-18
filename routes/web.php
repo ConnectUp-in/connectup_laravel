@@ -50,6 +50,8 @@ Route::middleware('sitemap')->group(function () {
     Route::prefix('post')->group(function () {
         Route::get('/{id}', [PostController::class, 'post'])->name('post');
         Route::post('create', [PostController::class, 'create'])->name('post.create');
+        Route::post('update', [PostController::class, 'update'])->name('post.update');
+        Route::post('delete', [PostController::class, 'delete'])->name('post.delete');
 
     });
     Route::prefix('user')
@@ -89,7 +91,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('team/design', 'https://forms.gle/4TFTJFzavqt8jH9z5', 301);
         Route::redirect('team/dev', 'https://forms.gle/qbYC4dxfx6MkMbZW7', 301);
         Route::redirect('team/operations', 'https://forms.gle/9UqAh9yyuwN2gfFZA', 301);
-        Route::redirect('wa', 'https://chat.whatsapp.com/K9d7FNCF3w0GB0gvVBxmqc', 301);
+        Route::redirect('wa', 'https://chat.whatsapp.com/EON6L3i0HNbL3dKwdUYd63', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
 
     });
@@ -102,7 +104,6 @@ Route::middleware('sitemap')->group(function () {
         Route::get('/{slug}', [EventController::class, 'event'])->name('event');
         Route::middleware('auth')->get('/{slug}/redirect', [EventController::class, 'eventredirect'])->name('event.redirect');
         Route::post('/register', [EventController::class, 'register'])->name('event.register');
-        Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('event.registrations');
         Route::get('/registration/confirm/{id}', [EventController::class, 'registrationConfirm'])->name('event.registration.confirm');
         Route::get('/registration/sendticket/{id}', [EventController::class, 'registrationSendticket'])->name('event.registration.sendticket');
         Route::get('verify/{event_id}/{ticket_id}', [EventController::class, 'verify'])->name('event.verify');
@@ -139,6 +140,22 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('community')->group(function () {
         Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
     });
+    Route::prefix('blog')->group(function () {
+        Route::get('blogs', [SuperAdminController::class, 'blogs'])->name('superadmin.blogs');
+        Route::get('edit/{id}', [SuperAdminController::class, 'editblog'])->name('superadmin.blog.edit');
+        Route::get('add', [SuperAdminController::class, 'addblog'])->name('superadmin.blog.add');
+        Route::post('update/{id}', [SuperAdminController::class, 'updateblog'])->name('superadmin.blog.update');
+        Route::post('create', [SuperAdminController::class, 'createblog'])->name('superadmin.blog.create');
+    });
+
+    Route::prefix('event')->group(function () {
+        Route::get('events', [SuperAdminController::class, 'events'])->name('superadmin.events');
+        Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('superadmin.event.registrations');
+        Route::get('/attendance/scan', [EventController::class, 'scan'])->name('event.attendance.scan');
+        Route::post('/markattendance', [EventController::class, 'markattendance'])->name('event.markattendance');
+        Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
+    });
+
     Route::prefix('views')->group(function () {
         Route::get('/', [SuperAdminController::class, 'views'])->name('superadmin.views');
     });

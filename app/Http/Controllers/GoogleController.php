@@ -39,10 +39,16 @@ class GoogleController extends Controller
         if ($finduser) {
 
             Auth::login($finduser, true);
+            _action('login_google', $finduser->id);
 
             if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
             }
+
+            if ($_SESSION['prev_url'] ?? false) {
+                return redirect($_SESSION['prev_url']);
+            }
+
             return redirect('/feed');
 
         } else {
@@ -56,10 +62,15 @@ class GoogleController extends Controller
             ]);
 
             Auth::login($newUser, true);
+            _action('user_registered_google', $newUser->id, null, $newUser);
             sendRegistrationMail($newUser);
 
             if ($_SESSION['member'] ?? false) {
                 return redirect()->route('join.member');
+            }
+
+            if ($_SESSION['prev_url'] ?? false) {
+                return redirect($_SESSION['prev_url']);
             }
             return redirect('/feed');
         }

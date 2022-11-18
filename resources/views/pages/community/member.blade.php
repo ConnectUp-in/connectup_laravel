@@ -1,7 +1,13 @@
 @php
-$page['title'] = 'Join Community | ConnectUp';
+    $page['title'] = 'Join Community | ConnectUp';
+    $message = [
+        'content' => 'Hey! Connections.  
+I am delighted to announce that finally I am a part of ConnectUp community. Join us in the entrepreneurial journey and become a part of an startup ecosystem. %0a',
+        'code' => 'Checkout my ConnectUp Profile: ',
+        // 'link' => 'https://connectup.in/login?refferal=' . $user->invite_refferal,
+        'link' => route('user', Auth::user()->username ?? ''),
+    ];
 @endphp
-
 
 @extends('layouts/auth')
 
@@ -151,6 +157,42 @@ $page['title'] = 'Join Community | ConnectUp';
                 display: none;
             }
         }
+
+        .form-box-title a {
+            color: #23D2E2;
+            transition: 0.1s ease;
+        }
+
+        .form-box-title a:hover {
+            transform: translateY(-5px);
+        }
+
+        .button-holder {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.2em;
+        }
+
+        .download-button {
+            background: #23D2E2;
+            width: fit-content;
+            padding: 0 20px;
+        }
+
+        .download-button:hover {
+            background: #1ca8b5;
+        }
+
+        .card-share-dropdown-trigger {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 @endsection
 
@@ -171,11 +213,25 @@ $page['title'] = 'Join Community | ConnectUp';
             <!-- /LOGO -->
 
             <!-- LANDING INFO PRETITLE -->
-            <h2 class="landing-info-pretitle">Join ConnectUp Community as</h2>
+            <h2 class="landing-info-pretitle">
+
+                @if ($isAlreadyMember)
+                    You are now Member of ConnectUp
+                @else
+                    Join ConnectUp Community as
+                @endif
+            </h2>
             <!-- /LANDING INFO PRETITLE -->
 
             <!-- LANDING INFO TITLE -->
-            <h1 class="landing-info-title">Member</h1>
+            <h1 class="landing-info-title">
+
+                @if ($isAlreadyMember)
+                    Community
+                @else
+                    Member
+                @endif
+            </h1>
             <!-- /LANDING INFO TITLE -->
 
             <!-- LANDING INFO TEXT -->
@@ -234,14 +290,82 @@ $page['title'] = 'Join Community | ConnectUp';
                                 'width' => '80%',
                             ];
                         @endphp
-                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                         <lottie-player src="{{ $json['src'] }}" background="transparent" speed="1"
-                            style="width: {{ $json['width'] }}; height: auto;margin:auto" loop autoplay></lottie-player>
+                            style="width: {{ $json['width'] }}; height: auto;margin:auto" loop autoplay></lottie-player> --}}
+
+                        <div style="width:70%;margin:auto">
+
+                            {{-- <img src="/assets/defaults/cards/result.png" class="js-tilt w-100" alt=""> --}}
+
+                            <canvas class="js-tilt w-100" id="canvas"></canvas>
+                        </div>
+
+                        <div class="button-holder">
+                            <!-- REACTION OPTIONS -->
+                            <div class=" share-options nobg card-share-dropdown ">
+
+
+                                <div class="reaction-option text-tooltip-tft" data-title="Whatsapp">
+
+                                    <a
+                                        href="whatsapp://send?text={{ $message['content'] . ' ' . $message['code'] . '' . $message['link'] }}">
+                                        <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+                                <div class="reaction-option text-tooltip-tft" data-title="Linkedin">
+                                    <a
+                                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ $message['link'] }}&title={{ $message['content'] . '' . $message['code'] }}&source=https://connectup.in">
+                                        <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                                <div class="reaction-option text-tooltip-tft" data-title="Twitter">
+                                    <a
+                                        href="https://twitter.com/intent/tweet?text={{ $message['content'] . '' . $message['code'] . ' ' . $message['link'] }}&via=connectup">
+                                        <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-twitter-circle-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                                <div class="reaction-option text-tooltip-tft" data-title="Copy Link">
+                                    <a
+                                        onclick="copyCode('{{ $message['content'] . '' . $message['code'] . ' ' . $message['link'] }}');toast.success('Copied to Clipboard')">
+
+                                        <!-- REACTION OPTION
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    IMAGE -->
+                                        <img class="reaction-option-image"
+                                            src="https://cdn3.iconfinder.com/data/icons/text-editing-2/100/Artboard_12-512.png"
+                                            alt="reaction-like">
+                                        <!-- /REACTION OPTION IMAGE -->
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <button onclick="downloadCard()" class=" download-button button small mt-3">Download</button>
+                            <span class="card-share-dropdown-trigger"><i class="fas fa-share"></i></span>
+                        </div>
 
                         <h2 class="form-box-title">
-                            <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span>
+                            {{-- <span style="font-size:1.2em;line-height:2.3em;">Congratulations!!!</span> --}}
                             <br>
-                            You are now a member of ConnectUp Community!
+                            Check your <a href="{{ route('user', Auth::user()->username ?? '') }}">Profile</a> or go to
+                            <a href="{{ route('feed') }}">Feed</a>
                         </h2>
 
 
@@ -567,10 +691,10 @@ $page['title'] = 'Join Community | ConnectUp';
                 });
             }
             confetti();
-            setInterval(() => {
-                    confetti()
-                },
-                5000);
+            // setInterval(() => {
+            //         confetti()
+            //     },
+            //     5000);
         });
     </script>
     <script>
@@ -603,4 +727,109 @@ $page['title'] = 'Join Community | ConnectUp';
             });
         })
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js"
+        integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    @if (Auth::check())
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.3,
+                speed: 600,
+                glare: true,
+            })
+
+
+            //  Initializing variables
+            var defaultCertPNG = "/assets/defaults/cards/blank.png";
+            var url = "{{ route('user', Auth::user()->username) ?? '' }}";
+            var name = "{{ Auth::user()->name ?? '' }}";
+            var username = "{{ Auth::user()->username ?? '' }}";
+            var profile = "{{ Auth::user()->profile_photo_path ?? '' }}";
+
+
+            // Defining Canvas
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var frame = new Image();
+            frame.setAttribute('crossOrigin', 'anonymous');
+
+            // On Document Load
+            document.addEventListener("DOMContentLoaded", function() {
+                // Creating Image from PNG file
+                frame.src = defaultCertPNG;
+                var dimentionRatio = frame.width / frame.height;
+
+                var qrImage = new Image();
+                qrImage.setAttribute('crossOrigin', 'anonymous');
+
+                var qrcode = new QRious({
+                    element: qrImage,
+                    background: '#ffffff',
+                    backgroundAlpha: 1,
+                    foreground: '#0d1117',
+                    foregroundAlpha: 1,
+                    level: 'H',
+                    padding: 0,
+                    mime: 'image/png',
+                    value: url,
+                    size: 200,
+                });
+                // When Image Loads Successfully
+                frame.onload = function() {
+                    // Setting Canvas Size
+                    canvas.width = frame.width;
+                    canvas.height = frame.height;
+
+                    // add profile image
+                    var profileImage = new Image();
+                    profileImage.setAttribute('crossOrigin', 'anonymous');
+
+                    profileImage.src = profile;
+                    profileImage.onload = function() {
+                        var profileImageWidth = 275;
+                        var profileImageHeight = 275;
+                        var profileImageX = 260;
+                        var profileImageY = 200;
+
+
+                        ctx.drawImage(profileImage, profileImageX, profileImageY, profileImageWidth,
+                            profileImageHeight);
+
+                        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+                        // baseline to center
+                        ctx.textBaseline = "middle";
+                        ctx.drawImage(qrImage, (frame.width / 2) - 100, 650, 200, 200);
+
+                        // Adding Text
+                        ctx.font = "bold 60px 'Rajdhani'";
+                        ctx.fillStyle = "#0d1117";
+                        ctx.textAlign = "center";
+                        ctx.fillText(name, frame.width / 2, 550);
+
+                        ctx.font = "bold 40px 'Rajdhani'";
+                        ctx.fillStyle = "#0d1117";
+                        ctx.fillText('@' + username, frame.width / 2, 600);
+                    }
+                };
+            });
+
+            canvas.addEventListener("click", function() {
+                downloadCard();
+            });
+
+
+
+            function downloadCard() {
+                var dataURL = canvas.toDataURL("image/png");
+                var link = document.createElement('a');
+                link.download = 'ConnectUp_ConnectCard.png';
+                link.href = dataURL;
+                link.click();
+            }
+        </script>
+    @endif
 @endsection

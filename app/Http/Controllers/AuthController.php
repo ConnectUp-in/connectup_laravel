@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-// import Hash
-use Illuminate\Support\Facades\Hash;
 use Auth;
+// import Hash
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     //
-    function register(Request $request)
+    public function register(Request $request)
     {
         // request has name, email, password, password_confirmation
 
@@ -29,6 +29,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
         sendRegistrationMail($user);
+        _action('user_registered', $user->id, null, $user);
         Auth::login($user, true);
         return redirect('/feed');
     }

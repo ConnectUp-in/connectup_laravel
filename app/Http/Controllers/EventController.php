@@ -17,6 +17,12 @@ class EventController extends Controller
 {
     //]
 
+    public function __construct()
+    {
+        $this->middleware('auth')->only([
+            'scan', 'registrationConfirm',
+        ]);
+    }
     public function event($slug)
     {
         $event = Event::where('slug', $slug)->first();
@@ -35,6 +41,10 @@ class EventController extends Controller
             if ($eventRegistration) {
                 $registered = true;
             }
+        } else {
+            session_start();
+            // set session variable prev url
+            $_SESSION['prev_url'] = url()->current();
         }
 
         if ($event->creator_type == 'e') {
@@ -102,6 +112,7 @@ class EventController extends Controller
         $reg->required_fields = $required_data;
         $reg->additional_fields = $request->except('id', '_token');
         $reg->save();
+        _action('event_registered', $reg->id, null, $reg);
 
         \Session::flash('success', 'You have successfully registered for this event.');
         return redirect()->back()->with('success', 'You have successfully registered for this event.');
@@ -140,7 +151,8 @@ class EventController extends Controller
 
         // Send Ticket to the user
         $registration->save();
-        // sendConfirmationTicketMail($registration);
+        sendConfirmationTicketMail($registration);
+        _action('event_registration_confirmed', $registration->id, null, $registration);
 
         \Session::flash('success', 'Registration confirmed.');
         return redirect()->back()->with('success', 'Registration confirmed.');
@@ -166,6 +178,35 @@ class EventController extends Controller
         }
         return $text;
         return view('pages.event.verify', $data);
+    }
+
+    public function scan()
+    {
+        return view('pages.event.scan');
+    }
+
+    public function markattendance(Request $request)
+    {
+        $registration = EventRegistration::where('event_id', $request->event_id)->where('ticket_id', $request->ticket_id)->first();
+        if (!$registration) {
+            return $this->sendError('Invalid ticket or Event id.');
+        }
+
+        if ($registration->confirmed_at) {
+
+            if ($registration->checked_in_at) {
+                return $this->sendError('This ticket has already been scanned.');
+                return "Hello";
+            }
+
+            $registration->checked_in_at = date('Y-m-d H:i:s');
+            $registration->save();
+            _action('event_attendance_marked', $registration->id, null, $registration);
+            return $this->sendResponse($registration, 'Attendance marked.');
+        } else {
+            return $this->sendError('This ticket has not been confirmed yet.');
+        }
+
     }
 
 }
