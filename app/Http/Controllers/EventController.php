@@ -136,7 +136,7 @@ class EventController extends Controller
             'registrations' => $registrations,
         ];
         // return $data;
-        return view('pages.event.registrations', $data);
+        return view('admin.events.registrations', $data);
     }
 
     public function registrationConfirm($id)

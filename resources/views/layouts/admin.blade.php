@@ -170,6 +170,14 @@
                 "sSearchPlaceholder": "Search...",
                 "sLengthMenu": "Results :  _MENU_",
             },
+            "createdRow": function(row, data, dataIndex) {
+                //  if row has class confirmed then add class bg-success-light
+                if ($(row).hasClass('confirmed')) {
+                    // background color as important
+                    $(row).attr('style', 'background-color: #14ce8d !important');
+                }
+
+            },
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 10,
