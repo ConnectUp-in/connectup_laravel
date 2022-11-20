@@ -180,7 +180,7 @@
             },
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
-            "pageLength": 10,
+            "pageLength": 100,
             "aaSorting": [],
         });
     </script>
