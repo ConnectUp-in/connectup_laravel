@@ -20,10 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('sitemap')->group(function () {
 
-    Route::get('/', function () {
-        page('Home');
-        return view('welcome');
-    })->name('home');
+    Route::get('/',[AppController::class,'home'])->name('home');
     Route::get('/home', function () {
         page('Home');
         return view('home');

@@ -81,6 +81,91 @@
     <!-- /SECTION WRAP -->
 
 
+    <!-- SECTION WRAP -->
+    <div class="section-wrap dark" id="blogs">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle"></p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Latest Blogs</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text">Articles and Blogs, just for you</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <div class="grid grid-4-4-4 centered">
+
+                @forelse ($blogs as $blog)
+                    <!-- POST PREVIEW -->
+                    <div class="post-preview">
+                        <!-- POST PREVIEW IMAGE -->
+                        <figure class="post-preview-image liquid">
+                            <img src="{{ $blog->image }}" alt="cover-19" />
+                        </figure>
+                        <!-- /POST PREVIEW IMAGE -->
+
+                        <!-- POST PREVIEW INFO -->
+                        <div class="post-preview-info fixed-height">
+                            <!-- POST PREVIEW INFO TOP -->
+                            <div class="post-preview-info-top">
+                                <!-- POST PREVIEW TIMESTAMP -->
+                                <p class="post-preview-timestamp">{{ $blog->updated_at->diffForHumans() }}</p>
+                                <!-- /POST PREVIEW TIMESTAMP -->
+
+                                <!-- POST PREVIEW TITLE -->
+                                <p class="post-preview-title">
+                                    <a style="color:#fff" href="{{ route('blog', $blog->slug) }}">
+                                        {{ Str::limit($blog->title, 60) }}</a>
+                                </p>
+                                <!-- /POST PREVIEW TITLE -->
+                            </div>
+                            <!-- /POST PREVIEW INFO TOP -->
+
+                            <!-- POST PREVIEW INFO BOTTOM -->
+                            <div class="post-preview-info-bottom">
+                                <!-- POST PREVIEW TEXT -->
+                                <p class="post-preview-text">
+                                    {{-- {{ html2text($blog->content) }} --}}
+                                    {{ Str::limit(html2text($blog->content), 280) }}
+                                </p>
+                                <!-- /POST PREVIEW TEXT -->
+
+                                <!-- POST PREVIEW LINK -->
+                                <a class="post-preview-link" href="{{ route('blog', $blog->slug) }}">Read more...</a>
+                                <!-- /POST PREVIEW LINK -->
+                            </div>
+                            <!-- /POST PREVIEW INFO BOTTOM -->
+                        </div>
+                        <!-- /POST PREVIEW INFO -->
+
+                    </div>
+                    <!-- /POST PREVIEW -->
+                @empty
+                    <div class="post-preview">
+                        <div class="post-preview-text">
+                            <p class="text-header">No Blogs Found</p>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+
+            <!-- SECTION BUTTON -->
+            <a class="section-button button tertiary" href="{{ route('blogs') }}">View Blogs</a>
+            <!-- /SECTION BUTTON -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+
     {{-- <!-- SECTION WRAP -->
     <div id="benefits" class="section-wrap">
         <!-- SECTION -->

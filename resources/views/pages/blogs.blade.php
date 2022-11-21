@@ -159,7 +159,8 @@
 
                             <!-- POST PREVIEW TITLE -->
                             <p class="post-preview-title">
-                                <a style="color:#fff" href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a>
+                                <a style="color:#fff"
+                                    href="{{ route('blog', $blog->slug) }}">{{ Str::limit($blog->title, 60) }}</a>
                             </p>
                             <!-- /POST PREVIEW TITLE -->
                         </div>
