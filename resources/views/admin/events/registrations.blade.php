@@ -1,8 +1,14 @@
+@php
+    
+    $page['title'] = 'Registrations - ' . $event->title . ' | ConnectUp';
+@endphp
+
 @extends('layouts.admin')
 @section('content')
     <style>
         .confirmed {
             background: #14ce8d !important;
+            color: #fff;
         }
     </style>
     <div class="middle-content container-xxl p-0">
