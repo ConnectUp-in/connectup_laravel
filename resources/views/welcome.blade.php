@@ -165,6 +165,186 @@
     </div>
     <!-- /SECTION WRAP -->
 
+    <!-- SECTION WRAP -->
+    <div class="section-wrap dark" id="events">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle"></p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Recent Events</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                <p class="section-text"> Events going on around you, so you can't miss anything.</p>
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+
+            <!-- GRID -->
+            <div class="grid grid-3-3-3-3 centered">
+
+                @foreach ($events as $event)
+                    <!-- EVENT PREVIEW -->
+                    <div class="event-preview">
+                        <!-- EVENT PREVIEW COVER -->
+                        <figure class="event-preview-cover liquid">
+                            <img src="{{ $event->image }}" alt="cover-47" />
+                        </figure>
+                        <!-- /EVENT PREVIEW COVER -->
+
+                        <!-- EVENT PREVIEW INFO -->
+                        <div class="event-preview-info">
+                            <!-- EVENT PREVIEW INFO TOP -->
+                            <div class="event-preview-info-top">
+                                <!-- DATE STICKER -->
+                                <div class="date-sticker">
+                                    <!-- DATE STICKER DAY -->
+                                    <p class="date-sticker-day">
+                                        {{ Carbon::parse($event->e_dates[0])->format('d') }}
+                                    </p>
+                                    <!-- /DATE STICKER DAY -->
+
+                                    <!-- DATE STICKER MONTH -->
+                                    <p class="date-sticker-month">
+                                        {{ Carbon::parse($event->e_dates[0])->format('M') }}
+                                    </p>
+                                    <!-- /DATE STICKER MONTH -->
+                                </div>
+                                <!-- /DATE STICKER -->
+
+                                <!-- EVENT PREVIEW TITLE -->
+                                <p class="event-preview-title popup-event-information-trigger">
+                                    {{ $event->title }}
+                                </p>
+                                <!-- /EVENT PREVIEW TITLE -->
+
+                                <!-- EVENT PREVIEW TIMESTAMP -->
+                                <p class="event-preview-timestamp">
+                                    {{ Carbon::parse($event->e_dates[0])->format('g:i A') }}
+
+
+                                    <span class="float-right">
+                                        <i class="fa fa-eye"></i>
+
+                                        {{ changeIntoKMG(profileview($event->id)) }}
+                                    </span>
+
+                                </p>
+                                <!-- /EVENT PREVIEW TIMESTAMP -->
+
+                                {{-- <!-- EVENT PREVIEW TEXT -->
+                            <p class="event-preview-text">
+                                Hi Neko! I'm creating this event to invite you
+                                to have breakfast before work. Meet me at
+                                Coffebucks.
+                            </p>
+                            <!-- /EVENT PREVIEW TEXT --> --}}
+                            </div>
+                            <!-- /EVENT PREVIEW INFO TOP -->
+
+                            <!-- EVENT PREVIEW INFO BOTTOM -->
+                            <div class="event-preview-info-bottom">
+                                <!-- DECORATED TEXT -->
+                                <div class="decorated-text">
+                                    <!-- DECORATED TEXT ICON -->
+                                    <svg class="decorated-text-icon icon-pin">
+                                        <use xlink:href="#svg-pin"></use>
+                                    </svg>
+                                    <!-- /DECORATED TEXT ICON -->
+
+                                    <!-- DECORATED TEXT CONTENT -->
+                                    <p class="decorated-text-content">
+                                        {{ $event->location }}
+                                    </p>
+                                    <!-- /DECORATED TEXT CONTENT -->
+
+
+
+                                </div>
+                                <!-- /DECORATED TEXT -->
+
+                                {{-- <!-- META LINE -->
+                            <div class="meta-line">
+                                <!-- META LINE LIST -->
+                                <div class="meta-line-list user-avatar-list">
+                                    <!-- USER AVATAR -->
+                                    <div class="user-avatar micro no-stats">
+                                        <!-- USER AVATAR BORDER -->
+                                        <div class="user-avatar-border">
+                                            <!-- HEXAGON -->
+                                            <div class="hexagon-22-24"></div>
+                                            <!-- /HEXAGON -->
+                                        </div>
+                                        <!-- /USER AVATAR BORDER -->
+
+                                        <!-- USER AVATAR CONTENT -->
+                                        <div class="user-avatar-content">
+                                            <!-- HEXAGON -->
+                                            <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/05.jpg">
+                                            </div>
+                                            <!-- /HEXAGON -->
+                                        </div>
+                                        <!-- /USER AVATAR CONTENT -->
+                                    </div>
+                                    <!-- /USER AVATAR -->
+
+                                    <!-- USER AVATAR -->
+                                    <div class="user-avatar micro no-stats">
+                                        <!-- USER AVATAR BORDER -->
+                                        <div class="user-avatar-border">
+                                            <!-- HEXAGON -->
+                                            <div class="hexagon-22-24"></div>
+                                            <!-- /HEXAGON -->
+                                        </div>
+                                        <!-- /USER AVATAR BORDER -->
+
+                                        <!-- USER AVATAR CONTENT -->
+                                        <div class="user-avatar-content">
+                                            <!-- HEXAGON -->
+                                            <div class="hexagon-image-18-20" data-src="/assets/template/img/avatar/01.jpg">
+                                            </div>
+                                            <!-- /HEXAGON -->
+                                        </div>
+                                        <!-- /USER AVATAR CONTENT -->
+                                    </div>
+                                    <!-- /USER AVATAR -->
+                                </div>
+                                <!-- /META LINE LIST -->
+
+                                <!-- META LINE TEXT -->
+                                <p class="meta-line-text">will assist</p>
+                                <!-- /META LINE TEXT -->
+                            </div>
+                            <!-- /META LINE --> --}}
+
+                                <!-- BUTTON -->
+                                <a href="{{ route('event', $event->slug) }}" class="button white white-secondary">
+                                    View Event
+                                </a>
+                                <!-- /BUTTON -->
+                            </div>
+                            <!-- /EVENT PREVIEW INFO BOTTOM -->
+                        </div>
+                        <!-- /EVENT PREVIEW INFO -->
+                    </div>
+                    <!-- /EVENT PREVIEW -->
+                @endforeach
+            </div>
+            <!-- /GRID -->
+
+            <!-- SECTION BUTTON -->
+            <a class="section-button button tertiary" href="{{ route('events') }}">View Events</a>
+            <!-- /SECTION BUTTON -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
 
     {{-- <!-- SECTION WRAP -->
     <div id="benefits" class="section-wrap">
