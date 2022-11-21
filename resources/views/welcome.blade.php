@@ -158,7 +158,7 @@
             </div>
 
             <!-- SECTION BUTTON -->
-            <a class="section-button button tertiary" href="{{ route('blogs') }}">View Blogs</a>
+            <a class="section-button button tertiary" href="{{ route('blogs') }}">More Blogs...</a>
             <!-- /SECTION BUTTON -->
         </section>
         <!-- /SECTION -->
@@ -338,7 +338,7 @@
             <!-- /GRID -->
 
             <!-- SECTION BUTTON -->
-            <a class="section-button button tertiary" href="{{ route('events') }}">View Events</a>
+            <a class="section-button button tertiary" href="{{ route('events') }}">More Events...</a>
             <!-- /SECTION BUTTON -->
         </section>
         <!-- /SECTION -->

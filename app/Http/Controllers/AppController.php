@@ -23,8 +23,8 @@ class AppController extends Controller
     public function home()
     {
         page('Home');
-        $blogs = Blog::orderBy('id', 'desc')->limit(3)->get();
-        $events = Event::orderBy('id', 'desc')->limit(3)->get();
+        $blogs = Blog::orderBy('updated_at', 'desc')->limit(3)->get();
+        $events = Event::orderBy('updated_at', 'desc')->limit(4)->get();
         $data = [
             'blogs' => $blogs,
             'events' => $events,
