@@ -135,13 +135,7 @@
 
             <!-- MENU -->
             <ul class="menu">
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#benefits">Benefits</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
+
 
                 <!-- MENU ITEM -->
                 <li class="menu-item">
@@ -150,11 +144,19 @@
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#blogs">Blogs</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
 
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#program">Programmes</a>
+                    <a class="menu-item-link" href="#events">Events</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
