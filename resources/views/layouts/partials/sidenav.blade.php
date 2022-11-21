@@ -3,11 +3,12 @@
         ['title' => 'Dashboard | Coming Soon', 'url' => false, 'svg' => 'overview', 'icon' => 'icon-overview'],
         ['title' => 'Feed', 'url' => route('feed'), 'svg' => 'newsfeed', 'icon' => 'icon-newsfeed'],
         ['title' => 'User Account', 'url' => route('profile.info'), 'svg' => 'profile', 'icon' => 'icon-members'],
+        ['title' => 'Events', 'url' => route('events'), 'svg' => 'events', 'icon' => 'icon-events'],
+        ['title' => 'Blogs', 'url' => route('blogs'), 'svg' => 'blog-posts', 'icon' => 'icon-blog-posts'],
         ['title' => 'Members | Coming soon', 'url' => false, 'svg' => 'group', 'icon' => 'icon-group'],
         ['title' => 'StartUps', 'url' => route('startups'), 'svg' => 'quests', 'icon' => 'icon-quests'],
         // ['title' => 'Badges', 'url' => false, 'svg' => 'badges', 'icon' => 'icon-badges'],
         // ['title' => 'Streams', 'url' => false, 'svg' => 'streams', 'icon' => 'icon-streams'],
-        ['title' => 'Events', 'url' => route('events'), 'svg' => 'events', 'icon' => 'icon-events'],
         ['title' => 'Forums - Coming Soon', 'url' => false, 'svg' => 'forums', 'icon' => 'icon-forums'],
         ['title' => 'Join StartUp - Launching Soon', 'url' => false, 'svg' => 'store', 'icon' => 'icon-marketplace'],
     ];
