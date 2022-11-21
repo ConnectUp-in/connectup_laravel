@@ -1,22 +1,22 @@
 @php
-$page['title'] = 'Events | ConnectUp - Connecting the Dots...';
-$currenturl = Request::url() . '?';
-$requests = Request::all();
-foreach ($requests as $key => $value) {
-    $currenturl .= '&' . $key . '=' . $value;
-}
-
-$tabitems = [
-    'new' => 'Newly Created',
-    'members' => 'Most Members',
-    'alpha' => 'Alphabetical',
-];
-if ($requests['sort'] ?? '') {
-    $stab = $requests['sort'];
-} else {
-    $stab = 'new';
-}
-
+    $page['title'] = 'Events | ConnectUp - Connecting the Dots...';
+    $currenturl = Request::url() . '?';
+    $requests = Request::all();
+    foreach ($requests as $key => $value) {
+        $currenturl .= '&' . $key . '=' . $value;
+    }
+    
+    $tabitems = [
+        'new' => 'Newly Created',
+        'members' => 'Most Members',
+        'alpha' => 'Alphabetical',
+    ];
+    if ($requests['sort'] ?? '') {
+        $stab = $requests['sort'];
+    } else {
+        $stab = 'new';
+    }
+    
 @endphp
 
 @extends('layouts/app')
@@ -26,7 +26,7 @@ if ($requests['sort'] ?? '') {
     <!-- CONTENT GRID -->
     <div class="content-grid">
 
-        <!-- SECTION FILTERS BAR -->
+        {{-- <!-- SECTION FILTERS BAR -->
         <div class="section-filters-bar v1">
             <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
@@ -50,7 +50,7 @@ if ($requests['sort'] ?? '') {
                     </div>
                     <!-- /FORM INPUT -->
 
-                    {{-- <!-- FORM SELECT -->
+                    <!-- FORM SELECT -->
                     <div class="form-select">
                         <label for="groups-filter-category">Filter By</label>
                         <select id="groups-filter-category" name="groups_filter_category">
@@ -64,7 +64,7 @@ if ($requests['sort'] ?? '') {
                         </svg>
                         <!-- /FORM SELECT ICON -->
                     </div>
-                    <!-- /FORM SELECT --> --}}
+                    <!-- /FORM SELECT -->
                 </form>
                 <!-- /FORM -->
 
@@ -87,7 +87,7 @@ if ($requests['sort'] ?? '') {
             </div>
             <!-- /SECTION FILTERS BAR ACTIONS -->
 
-            {{-- <!-- SECTION FILTERS BAR ACTIONS -->
+            <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
                 <!-- VIEW ACTIONS -->
                 <div class="view-actions">
@@ -123,7 +123,17 @@ if ($requests['sort'] ?? '') {
                 </div>
                 <!-- /VIEW ACTIONS -->
             </div>
-            <!-- /SECTION FILTERS BAR ACTIONS --> --}}
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+        </div>
+        <!-- /SECTION FILTERS BAR --> --}}
+
+
+        <!-- SECTION FILTERS BAR -->
+        <div class="section-filters-bar ">
+
+            <center style="width: 100%">
+                <h3>Events</h3>
+            </center>
         </div>
         <!-- /SECTION FILTERS BAR -->
 
