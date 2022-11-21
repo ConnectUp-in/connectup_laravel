@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/template/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/template-landing/css/custom.css">
     <link rel="stylesheet" href="/assets/template-landing/css/styles.min.css">
 
 
