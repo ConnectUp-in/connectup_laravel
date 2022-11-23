@@ -19,8 +19,6 @@
 
     Keep Learning, Keep Innovating <br>
     <br>
-    Best Regards, <br>
-    <b>Team Innovations@EC</b>
 
     <br>
     <center>Powered by <a href="https://connectup.in">ConnectUp </a> </center>

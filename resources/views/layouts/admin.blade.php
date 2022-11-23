@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Dashboard - ConnectUp | Connecting the Dots...</title>
+    <title>{{ $page['title'] ?? 'Dashboard | ConnectUp' }}</title>
     <link href="/assets/admin/layouts/collapsible-menu/css/light/loader.css" rel="stylesheet" type="text/css" />
     <link href="/assets/admin/layouts/collapsible-menu/css/dark/loader.css" rel="stylesheet" type="text/css" />
     <script src="/assets/admin/layouts/collapsible-menu/loader.js"></script>
@@ -155,11 +155,42 @@
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="/assets/admin/src/plugins/src/table/datatable/datatables.js"></script>
+
+
+    <script src="/assets/admin/src/plugins/src/table/datatable/button-ext/dataTables.buttons.min.js"></script>
+    <script src="/assets/admin/src/plugins/src/table/datatable/button-ext/jszip.min.js"></script>
+    <script src="/assets/admin/src/plugins/src/table/datatable/button-ext/buttons.html5.min.js"></script>
+    <script src="/assets/admin/src/plugins/src/table/datatable/button-ext/buttons.print.min.js"></script>
+    <script src="/assets/admin/src/plugins/src/table/datatable/custom_miscellaneous.js"></script>
+
+
+
+
+
     <script>
         $('#zero-config').DataTable({
-            "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
+            "dom": "<'dt--top-section'<'row'<'col-sm-12 col-md-6 d-flex justify-content-md-start justify-content-center'B><'col-sm-12 col-md-6 d-flex justify-content-md-end justify-content-center mt-md-0 mt-3'f>>>" +
                 "<'table-responsive'tr>" +
                 "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
+            buttons: {
+                buttons: [{
+                        extend: 'copy',
+                        className: 'btn'
+                    },
+                    {
+                        extend: 'csv',
+                        className: 'btn'
+                    },
+                    {
+                        extend: 'excel',
+                        className: 'btn'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn'
+                    }
+                ]
+            },
             "oLanguage": {
                 "oPaginate": {
                     "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
@@ -171,9 +202,8 @@
                 "sLengthMenu": "Results :  _MENU_",
             },
             "stripeClasses": [],
-            "lengthMenu": [7, 10, 20, 50],
-            "pageLength": 10,
-            "aaSorting": [],
+            "lengthMenu": [10, 50, 100, 200],
+            "pageLength": 50
         });
     </script>
 

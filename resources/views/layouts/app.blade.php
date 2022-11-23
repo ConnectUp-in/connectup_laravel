@@ -129,6 +129,8 @@
 </head>
 
 <body>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-7811600246173013">
+    </amp-auto-ads>
 
     <!-- PAGE LOADER -->
     <div class="page-loader">

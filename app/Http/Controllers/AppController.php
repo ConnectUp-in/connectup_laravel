@@ -19,6 +19,18 @@ class AppController extends Controller
         ]);
     }
     //
+
+    public function home()
+    {
+        page('Home');
+        $blogs = Blog::orderBy('updated_at', 'desc')->limit(3)->get();
+        $events = Event::orderBy('updated_at', 'desc')->limit(4)->get();
+        $data = [
+            'blogs' => $blogs,
+            'events' => $events,
+        ];
+        return view('welcome', $data);
+    }
     public function feed()
     {
 

@@ -83,24 +83,18 @@ class EventSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'title' => 'Getting familiar with Basic Electronics Circuits',
-                'slug' => 'Getting-familiar-with-Basic-Electronics-Circuits',
+                'title' => 'The Entrepreneurs Way: Mantras of Success',
+                'slug' => 'The-Entrepreneurs-Way-Mantras-of-Success',
                 'type' => 'w',
                 'content' => '
-                <p>Innovations@EC, the official club of the Electronics and Communication Department, UIT RGPV Bhopal is conducting a workshop on the topic &ldquo;Getting familiar with Basic Electronics Circuits &rdquo;.&nbsp;</p>
+                <p>Learn the timeless art of turning trials into triumph from top founders/entrepreneurs. We are bringing an exciting founders&#39; talk session where students will get to interact with some of our famous industries&#39; experts. From revisiting their failures to climbing success stories, we are bringing a platform to sum up all the things.</p>
 
-                <p>Grab the opportunity to get an insight into basic electronics components and it&#39;s functioning. Gain the hands-on experience of working with ICs, circuits and much more.🔥</p>
-
-                <p>Date: 17th November 2022<br />
-                Time: from 2.00 PM<br />
-                Venue: EC Conference Hall</p>
-
-                <p>Register now as the seats are limited!</p>
+                    <p>This talk will bring together some of our top founders and experts to talk about how they became successful entrepreneurs and what we can learn from their experiences. We have chosen these experts because they have been through all the ups and downs and finally got to the top of their game. They will share their stories with you on how they made it big, what made them tick and what their secrets are for success.&nbsp;</p>
 
                 ',
                 'image' => '/assets/defaults/events/electronics.jpg',
-                'r_dates' => ['2022-11-14 12:00:00', '2022-11-16 12:00:00'],
-                'e_dates' => ['2022-11-17 14:00:00', '2022-11-17 16:30:00'],
+                'r_dates' => ['2022-11-19 20:00:00', '2022-11-22 23:59:00'],
+                'e_dates' => ['2022-11-25 10:15:00', '2022-11-25 13:30:00'],
                 'location' => 'Conference Hall, RGPV Bhopal (462033)',
                 'attachments' => [],
                 'active' => true,
@@ -108,7 +102,7 @@ class EventSeeder extends Seeder
                 'creator' => $founder->id,
                 'creator_type' => 'e',
                 'interests' => [1, 2, 3],
-                'tags' => ['innovations', 'electronics', 'basics'],
+                'tags' => ['entrepreneurship', 'rgpv', 'founders talks', 'success'],
                 'required_fields' => ["college"],
                 'additional_fields' => [
                     [

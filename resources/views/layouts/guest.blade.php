@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- styles -->
+    <link rel="stylesheet" href="/assets/template-landing/css/custom.css">
     <link rel="stylesheet" href="/assets/template-landing/css/styles.min.css">
+
+
+
     <!-- favicon -->
     <link rel="icon" href="/assets/template/img/landing/favicon.png">
 
@@ -116,6 +120,8 @@
 </head>
 
 <body>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-7811600246173013">
+    </amp-auto-ads>
 
     <!-- NAVIGATION WRAP -->
     <div class="navigation-wrap">
@@ -131,13 +137,7 @@
 
             <!-- MENU -->
             <ul class="menu">
-                <!-- MENU ITEM -->
-                <li class="menu-item">
-                    <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#benefits">Benefits</a>
-                    <!-- /MENU ITEM LINK -->
-                </li>
-                <!-- /MENU ITEM -->
+
 
                 <!-- MENU ITEM -->
                 <li class="menu-item">
@@ -146,11 +146,19 @@
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->
+                <!-- MENU ITEM -->
+                <li class="menu-item">
+                    <!-- MENU ITEM LINK -->
+                    <a class="menu-item-link" href="#blogs">Blogs</a>
+                    <!-- /MENU ITEM LINK -->
+                </li>
+                <!-- /MENU ITEM -->
+
 
                 <!-- MENU ITEM -->
                 <li class="menu-item">
                     <!-- MENU ITEM LINK -->
-                    <a class="menu-item-link" href="#program">Programmes</a>
+                    <a class="menu-item-link" href="#events">Events</a>
                     <!-- /MENU ITEM LINK -->
                 </li>
                 <!-- /MENU ITEM -->

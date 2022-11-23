@@ -26,7 +26,7 @@
     <!-- CONTENT GRID -->
     <div class="content-grid">
 
-        <!-- SECTION FILTERS BAR -->
+        {{-- <!-- SECTION FILTERS BAR -->
         <div class="section-filters-bar v1">
             <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
@@ -50,7 +50,7 @@
                     </div>
                     <!-- /FORM INPUT -->
 
-                    {{-- <!-- FORM SELECT -->
+                    <!-- FORM SELECT -->
                     <div class="form-select">
                         <label for="groups-filter-category">Filter By</label>
                         <select id="groups-filter-category" name="groups_filter_category">
@@ -64,7 +64,7 @@
                         </svg>
                         <!-- /FORM SELECT ICON -->
                     </div>
-                    <!-- /FORM SELECT --> --}}
+                    <!-- /FORM SELECT -->
                 </form>
                 <!-- /FORM -->
 
@@ -87,7 +87,7 @@
             </div>
             <!-- /SECTION FILTERS BAR ACTIONS -->
 
-            {{-- <!-- SECTION FILTERS BAR ACTIONS -->
+            <!-- SECTION FILTERS BAR ACTIONS -->
             <div class="section-filters-bar-actions">
                 <!-- VIEW ACTIONS -->
                 <div class="view-actions">
@@ -123,10 +123,20 @@
                 </div>
                 <!-- /VIEW ACTIONS -->
             </div>
-            <!-- /SECTION FILTERS BAR ACTIONS --> --}}
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+        </div>
+        <!-- /SECTION FILTERS BAR --> --}}
+
+
+
+        <!-- SECTION FILTERS BAR -->
+        <div class="section-filters-bar ">
+
+            <center style="width: 100%">
+                <h3>Blogs</h3>
+            </center>
         </div>
         <!-- /SECTION FILTERS BAR -->
-
         <!-- GRID -->
         <div class="grid grid-4-4-4 centered">
 
@@ -149,7 +159,8 @@
 
                             <!-- POST PREVIEW TITLE -->
                             <p class="post-preview-title">
-                                <a style="color:#fff" href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a>
+                                <a style="color:#fff"
+                                    href="{{ route('blog', $blog->slug) }}">{{ Str::limit($blog->title, 60) }}</a>
                             </p>
                             <!-- /POST PREVIEW TITLE -->
                         </div>

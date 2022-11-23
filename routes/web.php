@@ -20,10 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('sitemap')->group(function () {
 
-    Route::get('/', function () {
-        page('Home');
-        return view('welcome');
-    })->name('home');
+    Route::get('/',[AppController::class,'home'])->name('home');
     Route::get('/home', function () {
         page('Home');
         return view('home');
@@ -93,6 +90,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('team/operations', 'https://forms.gle/9UqAh9yyuwN2gfFZA', 301);
         Route::redirect('wa', 'https://chat.whatsapp.com/EON6L3i0HNbL3dKwdUYd63', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
+        Route::redirect('ecell', 'https://ru1pr7e2uk9.typeform.com/to/iUdWLktz', 301);
 
     });
 
