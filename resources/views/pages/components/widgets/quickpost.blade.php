@@ -61,7 +61,8 @@
                 <div class="form-item">
                     <!-- FORM TEXTAREA -->
                     <div class="form-textarea">
-                        <textarea id="quick-post-text" name="content" placeholder="Hi {{ Auth::user()->name }}! Share your post here..."></textarea>
+                        <textarea id="quick-post-text" required name="content"
+                            placeholder="Hi {{ Auth::user()->name }}! Share your post here..."></textarea>
                         <!-- FORM TEXTAREA LIMIT TEXT -->
                         <p class="form-textarea-limit-text">998/1000</p>
                         <!-- /FORM TEXTAREA LIMIT TEXT -->
