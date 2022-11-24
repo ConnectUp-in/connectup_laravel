@@ -83,19 +83,22 @@ class EventSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'title' => 'The Entrepreneurs Way: Mantras of Success',
-                'slug' => 'The-Entrepreneurs-Way-Mantras-of-Success',
+                'title' => 'One Day Workshop for Research Methodology',
+                'slug' => 'One-Day-Workshop-for-Research-Methodology',
                 'type' => 'w',
                 'content' => '
-                <p>Learn the timeless art of turning trials into triumph from top founders/entrepreneurs. We are bringing an exciting founders&#39; talk session where students will get to interact with some of our famous industries&#39; experts. From revisiting their failures to climbing success stories, we are bringing a platform to sum up all the things.</p>
+              <p>&quot;Research methodology🔬 is the backbone of any research project.&quot;<br />
+                Want🤔 to make your research more effective?&nbsp;</p>
 
-                    <p>This talk will bring together some of our top founders and experts to talk about how they became successful entrepreneurs and what we can learn from their experiences. We have chosen these experts because they have been through all the ups and downs and finally got to the top of their game. They will share their stories with you on how they made it big, what made them tick and what their secrets are for success.&nbsp;</p>
+                <p>🧑&zwj;🎓Learn the latest research methodology at a one-day workshop✨with the official club of the electronics and communication department, UIT RGPV.&nbsp;<br />
+                The session will discuss ways to make research methodology more effective💫.</p>
 
+                <p>Join this workshop⏳ to interact with an expert in this field.</p>
                 ',
-                'image' => '/assets/defaults/events/electronics.jpg',
-                'r_dates' => ['2022-11-19 20:00:00', '2022-11-22 23:59:00'],
-                'e_dates' => ['2022-11-25 10:15:00', '2022-11-25 13:30:00'],
-                'location' => 'Conference Hall, RGPV Bhopal (462033)',
+                'image' => '/assets/defaults/events/research.jpg',
+                'r_dates' => ['2022-11-24 12:00:00', '2022-11-31 12:00:00'],
+                'e_dates' => ['2022-12-02 10:30:00', '2022-11-17 15:30:00'],
+                'location' => 'Conference Hall, EC Department, RGPV Bhopal (462033)',
                 'attachments' => [],
                 'active' => true,
                 'suspended' => false,
