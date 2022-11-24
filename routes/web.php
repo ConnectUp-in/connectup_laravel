@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('sitemap')->group(function () {
 
-    Route::get('/',[AppController::class,'home'])->name('home');
+    Route::get('/', [AppController::class, 'home'])->name('home');
     Route::get('/home', function () {
         page('Home');
         return view('home');
@@ -149,6 +149,7 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('event')->group(function () {
         Route::get('events', [SuperAdminController::class, 'events'])->name('superadmin.events');
         Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('superadmin.event.registrations');
+        Route::get('/registrationstick/{id}', [EventController::class, 'registrationstick'])->name('superadmin.event.registrationstick');
         Route::get('/attendance/scan', [EventController::class, 'scan'])->name('event.attendance.scan');
         Route::post('/markattendance', [EventController::class, 'markattendance'])->name('event.markattendance');
         Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
