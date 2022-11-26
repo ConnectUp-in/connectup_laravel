@@ -154,6 +154,59 @@ class SuperAdminController extends Controller
 
     }
 
+    public function editevent($id)
+    {
+        $event = Event::find($id);
+        $data = [
+            'event' => $event,
+            'way' => 'edit',
+        ];
+        // return $data;
+        return view('admin.events.edit', $data);
+    }
+
+    public function addevent()
+    {
+        $data = [
+
+            'way' => 'add',
+        ];
+        // return $data;
+        return view('admin.events.edit', $data);
+    }
+
+    public function updateevent($id, Request $request)
+    {
+        // title, content, tags, slug, active, suspended, category, image, r_dates, e_dates, link
+        // return $request->all();
+        $event = Event::find($id);
+        $old = Event::find($id);
+        $event->title = $request->title;
+        $event->content = $request->content;
+        $event->tags = $request->tags;
+        $event->slug = $request->slug;
+        $event->active = $request->active == 'on' ? 1 : 0;
+        $event->suspended = $request->suspended == 'on' ? 1 : 0;
+        // $event->category = $request->category;
+        $event->link = $request->link;
+        $event->r_dates = [$request->r_date_start, $request->r_date_end];
+        $event->e_dates = [$request->e_date_start, $request->e_date_end];
+
+// save image
+        $image = $request->file('image');
+        // return $image;
+        if ($image) {
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = 'storage/covers/events/';
+            $image->move($path, $image_name);
+            $event->image = '/' . $path . $image_name;
+            // return $path . $image_name;
+        }
+        $event->save();
+        _action('event_updated', $event->id, $old, $event);
+        return redirect()->back();
+    }
+
     public function eventAttendance($id)
     {
         $event = Event::where('id', $id)->first();
