@@ -152,6 +152,10 @@ Route::prefix('superadmin')->group(function () {
         Route::get('/registrationstick/{id}', [EventController::class, 'registrationstick'])->name('superadmin.event.registrationstick');
         Route::get('/attendance/scan', [EventController::class, 'scan'])->name('event.attendance.scan');
         Route::post('/markattendance', [EventController::class, 'markattendance'])->name('event.markattendance');
+        Route::get('edit/{id}', [SuperAdminController::class, 'editevent'])->name('superadmin.event.edit');
+        Route::get('add', [SuperAdminController::class, 'addevent'])->name('superadmin.event.add');
+        Route::post('update/{id}', [SuperAdminController::class, 'updateevent'])->name('superadmin.event.update');
+        Route::post('create', [SuperAdminController::class, 'createevent'])->name('superadmin.event.create');
         Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
     });
 
