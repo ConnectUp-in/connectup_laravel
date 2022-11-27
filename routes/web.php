@@ -88,7 +88,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('team/design', 'https://forms.gle/4TFTJFzavqt8jH9z5', 301);
         Route::redirect('team/dev', 'https://forms.gle/qbYC4dxfx6MkMbZW7', 301);
         Route::redirect('team/operations', 'https://forms.gle/9UqAh9yyuwN2gfFZA', 301);
-        Route::redirect('wa', 'https://chat.whatsapp.com/EON6L3i0HNbL3dKwdUYd63', 301);
+        Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
         Route::redirect('ecell', 'https://ru1pr7e2uk9.typeform.com/to/iUdWLktz', 301);
 
