@@ -203,7 +203,8 @@
             },
             "stripeClasses": [],
             "lengthMenu": [10, 50, 100, 200],
-            "pageLength": 50
+            "pageLength": 50,
+            "aaSorting": [],
         });
     </script>
 
