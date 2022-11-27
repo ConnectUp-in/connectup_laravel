@@ -1,8 +1,8 @@
 @php
-$page['title'] = $event->title . ' | ConnectUp';
-$page['description'] = preg_replace("/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($event->content))));
-$page['image'] = $event->image ?? '';
-
+    $page['title'] = $event->title . ' | ConnectUp';
+    $page['description'] = preg_replace("/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($event->content))));
+    $page['image'] = $event->image ?? '';
+    
 @endphp
 
 @extends('layouts/app')
@@ -184,10 +184,17 @@ $page['image'] = $event->image ?? '';
                                             ({{ Carbon::parse($event->r_dates[1])->diffForHumans() }})
                                         </button>
                                     @else
-                                        <!-- Register Button with Trigger -->
-                                        <button class="button secondary popup-event-information-trigger ">
-                                            Register Now
-                                        </button>
+                                        @if ($event->link)
+                                            <!-- Register Button with Trigger -->
+                                            <a class="button secondary w-100" href="{{ shorten($event->link) }}">
+                                                Register Now
+                                            </a>
+                                        @else
+                                            <!-- Register Button with Trigger -->
+                                            <button class="button secondary popup-event-information-trigger ">
+                                                Register Now
+                                            </button>
+                                        @endif
                                     @endif
                                 @endif
                             </div>
