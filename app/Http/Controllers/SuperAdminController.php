@@ -187,7 +187,7 @@ class SuperAdminController extends Controller
         $event->slug = $request->slug;
         $event->active = $request->active == 'on' ? 1 : 0;
         $event->suspended = $request->suspended == 'on' ? 1 : 0;
-        // $event->category = $request->category;
+        $event->location = $request->location;
         $event->link = $request->link;
         $event->r_dates = [$request->r_date_start, $request->r_date_end];
         $event->e_dates = [$request->e_date_start, $request->e_date_end];
@@ -205,6 +205,45 @@ class SuperAdminController extends Controller
         $event->save();
         _action('event_updated', $event->id, $old, $event);
         return redirect()->back();
+    }
+
+    public function createevent(Request $request)
+    {
+        // title, content, tags, slug, active, suspended, category, image, r_dates, e_dates, link, required_fields, additional_fields
+        // return $request->all();
+        $event = new Event;
+        $event->title = $request->title;
+        $event->content = $request->content;
+        $event->tags = $request->tags;
+        $event->creator = Auth::user()->id;
+        $event->creator_type = 'e';
+        $event->slug = $request->slug;
+        $event->active = $request->active == 'on' ? 1 : 0;
+        $event->suspended = $request->suspended == 'on' ? 1 : 0;
+        $event->location = $request->location;
+        $event->link = $request->link;
+        $event->r_dates = [$request->r_date_start, $request->r_date_end];
+        $event->e_dates = [$request->e_date_start, $request->e_date_end];
+        $event->required_fields = [];
+        $event->additional_fields = [];
+
+        // save image
+        $image = $request->file('image');
+        // return $image;
+        if ($image) {
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = 'storage/covers/events/';
+            $image->move($path, $image_name);
+            $event->image = '/' . $path . $image_name;
+            // return $path . $image_name;
+        } else {
+            $event->image = '/assets/defauls/event.jpg';
+        }
+
+        $event->save();
+        _action('event_created', $event->id, null, $event);
+        // redirect to edit page
+        return redirect()->route('superadmin.event.edit', $event->id);
     }
 
     public function eventAttendance($id)

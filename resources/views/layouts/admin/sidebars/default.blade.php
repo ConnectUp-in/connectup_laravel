@@ -26,6 +26,12 @@
                         'type' => 'link',
                         'url' => route('superadmin.events'),
                     ],
+                    [
+                        'name' => 'Add Event',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.event.add'),
+                    ],
                 ],
             ],
             [

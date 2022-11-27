@@ -110,14 +110,14 @@
                             <div class="col-xxl-12 mb-4">
                                 <div class="switch form-switch-custom switch-inline form-switch-primary">
                                     <input name="active" class="switch-input" type="checkbox" role="switch"
-                                        id="showPublicly" {{ $event->active == 1 ? 'checked' : '' }}>
+                                        id="showPublicly" {{ $event->active ?? '' ? 'checked' : '' }}>
                                     <label class="switch-label" for="showPublicly">Active</label>
                                 </div>
                             </div>
                             <div class="col-xxl-12 mb-4">
                                 <div class="switch form-switch-custom switch-inline form-switch-primary">
                                     <input name="suspended" class="switch-input" type="checkbox" role="switch"
-                                        id="enableComment" {{ $event->suspended == 1 ? 'checked' : '' }}>
+                                        id="enableComment" {{ $event->suspended ?? '' ? 'checked' : '' }}>
 
                                     <label class="switch-label" for="enableComment">Suspended</label>
                                 </div>
@@ -132,14 +132,10 @@
                             </div>
                             <div class="col-xxl-12 col-md-12 mb-4">
                                 <div class="form-group mb-4">
-                                    <label for="category">Select Category</label>
-                                    <select class="form-select " name="category" id="category">
-                                        @foreach (getCategories() as $category)
-                                            <option value="{{ $category->id }}"
-                                                {{ $event->category ?? '' == $category->id ? 'selected' : '' }}>
-                                                {{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="location">Event Location</label>
+                                    <input type="text" class="form-control" name="location" id="location"
+                                        placeholder="Event Location" value="{{ $event->location ?? '' }}">
+
                                 </div>
                             </div>
                             <div class="col-xxl-12 col-md-12 mb-4">
