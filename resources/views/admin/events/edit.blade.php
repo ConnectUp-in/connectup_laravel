@@ -131,6 +131,39 @@
                                 </select>
                             </div>
                             <div class="col-xxl-12 col-md-12 mb-4">
+                                <label for="tags">Required Fields</label>
+                                <select id="objectives" class="multiple" name="required_fields[]" multiple>
+                                    <option value="academic_background"
+                                        {{ in_array('academic_background', $event->required_fields ?? []) ? 'selected' : '' }}>
+                                        Academic Background</option>
+                                    <option value="college"
+                                        {{ in_array('college', $event->required_fields ?? []) ? 'selected' : '' }}>College
+                                    </option>
+                                    <option value="country"
+                                        {{ in_array('country', $event->required_fields ?? []) ? 'selected' : '' }}>Country
+                                    </option>
+                                    <option value="graduation_year"
+                                        {{ in_array('graduation_year', $event->required_fields ?? []) ? 'selected' : '' }}>
+                                        Graduation Year</option>
+                                    <option value="interests"
+                                        {{ in_array('interests', $event->required_fields ?? []) ? 'selected' : '' }}>
+                                        Interests</option>
+                                    <option value="birthday"
+                                        {{ in_array('birthday', $event->required_fields ?? []) ? 'selected' : '' }}>
+                                        Birthday</option>
+                                    <option value="bio"
+                                        {{ in_array('bio', $event->required_fields ?? []) ? 'selected' : '' }}>Bio</option>
+                                    <option value="about"
+                                        {{ in_array('about', $event->required_fields ?? []) ? 'selected' : '' }}>About
+                                    </option>
+                                    <option value="website"
+                                        {{ in_array('website', $event->required_fields ?? []) ? 'selected' : '' }}>Website
+                                    </option>
+
+
+                                </select>
+                            </div>
+                            <div class="col-xxl-12 col-md-12 mb-4">
                                 <div class="form-group mb-4">
                                     <label for="location">Event Location</label>
                                     <input type="text" class="form-control" name="location" id="location"
@@ -172,6 +205,12 @@
                     text: input,
                 };
             },
+        });
+        $('.multiple').selectize({
+            placeholder: "Search...",
+            delimiter: ",",
+            persist: false,
+            plugins: ["remove_button", "restore_on_backspace"],
         });
 
         $(document).ready(function() {
