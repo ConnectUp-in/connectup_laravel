@@ -53,6 +53,8 @@
                     <img src="{{ $blog->image }}" alt="cover" class="cover-img" onerror="this.display='none'">
                 </div>
 
+                @ad('display-horizontal')
+
                 <div class="blog-content">
                     {!! $blog->content !!}
                 </div>
@@ -74,6 +76,7 @@
                 <!-- /TAG LIST -->
             </div>
             <div class="side-container col-md-3">
+                @ad('display-square')
 
             </div>
         </div>
