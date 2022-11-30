@@ -58,6 +58,10 @@ class AppServiceProvider extends ServiceProvider
             $args = Blade::stripParentheses($args);
             return "<?php echo \$__env->make('pages.components.popup.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
         });
+        Blade::directive('ad', function ($args) {
+            $args = Blade::stripParentheses($args);
+            return "<?php echo \$__env->make('meta.ads.'.$args, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
+        });
 
     }
 }
