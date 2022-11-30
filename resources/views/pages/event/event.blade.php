@@ -78,6 +78,8 @@
                         <img class="post-open-image mt-4" src="{{ $event->image }}" alt="{{ $event->title }}"
                             onerror="this.style.display='none'">
 
+                        @ad('display-horizontal')
+
                         <!-- POST OPEN CONTENT -->
                         <div class="post-open-content">
                             <!-- POST OPEN CONTENT SIDEBAR -->
@@ -213,6 +215,7 @@
             <!-- GRID COLUMN -->
             <div class="grid-column">
                 @widget('statbox')
+                @ad('display-vertical')
                 {{-- @widget('refferal') --}}
             </div>
             <!-- /GRID COLUMN -->
