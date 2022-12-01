@@ -76,12 +76,73 @@
                             </div>
                         </div>
 
-                        <div class="row mb-4">
-                            <div class="col-sm-12">
-                                <label>Content</label>
-                                <textarea name="content" class="form-control w-100" id="editor" rows="30">{{ $event->content ?? '' }}</textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <ul class="nav nav-tabs  mb-3 mt-3" id="simpletab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">Content</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
+                                    aria-controls="contact" aria-selected="false">Additonal Fields</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="simpletabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                aria-labelledby="home-tab">
+
+
+                                <div class="row mb-4">
+                                    <div class="col-sm-12">
+                                        <label>Content</label>
+                                        <textarea name="content" class="form-control w-100" id="editor" rows="30">{{ $event->content ?? '' }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <p class="">
+                                    Our Additional Feature Portion will go here
+                                </p>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     </div>
 
