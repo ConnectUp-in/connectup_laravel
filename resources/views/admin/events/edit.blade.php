@@ -3,6 +3,14 @@
 @section('styles')
     <link rel="stylesheet" href="/assets/admin/src/assets/css/light/apps/blog-create.css">
     <link rel="stylesheet" href="/assets/admin/src/assets/css/dark/apps/blog-create.css">
+    <style>
+        .question {
+            padding: 2em;
+            border: 1px solid #ccc3;
+            border-radius: 5px;
+            margin-bottom: 3em;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -62,6 +70,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">Event Date</label>
                                 <div class="row mb-4">
+
                                     <div class="col-md-6">
                                         <input id="e_date_start"name="e_date_start" value="{{ $event->e_dates[0] ?? '' }}"
                                             class="form-control flatpickr flatpickr-input active" type="datetime-local"
@@ -119,9 +128,38 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <p class="">
-                                    Our Additional Feature Portion will go here
-                                </p>
+                                <input type="hidden" name="additional_fields" id="additional_fields"
+                                    value="{{ json_encode($event->additonal_fields ?? []) }}">
+                                <div class="questions-body">
+
+                                    <div class="p-2 question">
+                                        <label class="form-label">Text Question</label>
+
+                                        <div class="row ">
+                                            <div class="col-sm-11">
+                                                <input type="text" class="form-control" name="field_1" id="field_1"
+                                                    placeholder="Field 1">
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="button" class="btn btn-secondary btn-sm delete-question">
+                                                    <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="button-container">
+                                    <button type="button" onclick="addText()"
+                                        class="btn btn-primary add-question">Text</button>
+                                    <button type="button" onclick="addTextarea()"
+                                        class="btn btn-primary add-question">Textarea</button>
+                                    <button type="button" onclick="addCheckbox()"
+                                        class="btn btn-primary add-question">Checkbox</button>
+                                    <button type="button" onclick="addRadio()"
+                                        class="btn btn-primary add-question">Radio</button>
+                                    <button type="button" onclick="addSelect()"
+                                        class="btn btn-primary add-question">Select</button>
+                                </div>
                             </div>
                         </div>
 
@@ -498,5 +536,105 @@
         //         theme: 'monokai'
         //     }
         // });
+    </script>
+    <script>
+        var dummy_additional_fields = JSON.parse(`{!! json_encode($event->additional_fields ?? []) !!}`);
+        console.log(dummy_additional_fields);
+        var questions = dummy_additional_fields;
+        displayQuestions(questions);
+
+
+        function deleteQuestion(index) {
+            questions.splice(index, 1);
+            displayQuestions(questions);
+        }
+
+
+        function addText() {
+            updateQuestions();
+
+            var question = {
+                "title": "Untitled Question",
+                "identifier": "field" + (questions.length + 1),
+                "type": "text",
+                "required": false
+            };
+            questions.push(question);
+            displayQuestions(questions);
+        }
+
+        function addTextarea() {
+            updateQuestions();
+            var question = {
+                "title": "Untitled Question",
+                "identifier": "field" + (questions.length + 1),
+                "type": "textarea",
+                "required": false
+            };
+            questions.push(question);
+            displayQuestions(questions);
+        }
+
+
+
+
+
+        function displayQuestions(questions) {
+
+            $("#additional_fields").val(JSON.stringify(questions));
+            var html = "";
+            for (var i = 0; i < questions.length; i++) {
+                var question = questions[i];
+                var required = question.required ? "required" : "";
+                var type = question.type;
+                var identifier = question.identifier;
+                var title = question.title;
+                if (type == "text") {
+                    html += `
+                                    <div class="p-2 question">
+                                        <label class="form-label">Text Question</label>
+
+                                        <div class="row ">
+                                            <div class="col-sm-11">
+                                                <input type="text" value="${title}" class="form-control" placeholder="Enter your answer" ${required} name="question-${identifier}">
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="button" onclick="deleteQuestion(${i})" class="btn btn-secondary btn-sm delete-question">
+                                                    <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                } else if (type == "textarea") {
+                    html += `
+                                    <div class="p-2 question">
+                                        <label class="form-label">Text Area Question</label>
+
+                                        <div class="row ">
+                                            <div class="col-sm-11">
+                                                <input type="text" value="${title}" class="form-control" placeholder="Enter your answer" ${required} name="question-${identifier}">
+                                           </div>
+                                            <div class="col-sm-1">
+                                                <button type="button" onclick="deleteQuestion(${i})" class="btn btn-secondary btn-sm delete-question">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                }
+            }
+            $(".questions-body").html(html);
+        }
+
+
+
+        function updateQuestions() {
+            var newquestions = [];
+            questions.forEach(question => {
+                var identifier = question.identifier;
+                question.title = $(`input[name="question-${identifier}"]`).val();
+                newquestions.push(question);
+            });
+            questions = newquestions;
+        }
     </script>
 @endsection

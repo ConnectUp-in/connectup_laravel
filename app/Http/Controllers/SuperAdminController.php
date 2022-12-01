@@ -191,7 +191,9 @@ class SuperAdminController extends Controller
         $event->link = $request->link;
         $event->r_dates = [$request->r_date_start, $request->r_date_end];
         $event->e_dates = [$request->e_date_start, $request->e_date_end];
-        $event->required_fields = $request->required_fields;
+        $event->required_fields = $request->required_fields ?? [];
+        $event->additional_fields = json_decode($request->additional_fields) ?? [];
+        // return $event;
 
 // save image
         $image = $request->file('image');
@@ -225,8 +227,8 @@ class SuperAdminController extends Controller
         $event->link = $request->link;
         $event->r_dates = [$request->r_date_start, $request->r_date_end];
         $event->e_dates = [$request->e_date_start, $request->e_date_end];
-        $event->required_fields = $request->required_fields;
-        $event->additional_fields = [];
+        $event->required_fields = $request->required_fields ?? [];
+        $event->additional_fields = json_decode($request->additional_fields) ?? [];
 
         // save image
         $image = $request->file('image');
