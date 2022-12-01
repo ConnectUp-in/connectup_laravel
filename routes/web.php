@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('sitemap')->group(function () {
 
-    Route::get('/',[AppController::class,'home'])->name('home');
+    Route::get('/', [AppController::class, 'home'])->name('home');
     Route::get('/home', function () {
         page('Home');
         return view('home');
@@ -88,9 +88,9 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('team/design', 'https://forms.gle/4TFTJFzavqt8jH9z5', 301);
         Route::redirect('team/dev', 'https://forms.gle/qbYC4dxfx6MkMbZW7', 301);
         Route::redirect('team/operations', 'https://forms.gle/9UqAh9yyuwN2gfFZA', 301);
-        Route::redirect('wa', 'https://chat.whatsapp.com/EON6L3i0HNbL3dKwdUYd63', 301);
+        Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
-        Route::redirect('ecell', 'https://ru1pr7e2uk9.typeform.com/to/iUdWLktz', 301);
+        Route::redirect('ecell', 'https://forms.gle/RKb1rwqkozA2d95y5', 301);
 
     });
 
@@ -149,8 +149,13 @@ Route::prefix('superadmin')->group(function () {
     Route::prefix('event')->group(function () {
         Route::get('events', [SuperAdminController::class, 'events'])->name('superadmin.events');
         Route::get('/registrations/{id}', [EventController::class, 'registrations'])->name('superadmin.event.registrations');
+        Route::get('/registrationstick/{id}', [EventController::class, 'registrationstick'])->name('superadmin.event.registrationstick');
         Route::get('/attendance/scan', [EventController::class, 'scan'])->name('event.attendance.scan');
         Route::post('/markattendance', [EventController::class, 'markattendance'])->name('event.markattendance');
+        Route::get('edit/{id}', [SuperAdminController::class, 'editevent'])->name('superadmin.event.edit');
+        Route::get('add', [SuperAdminController::class, 'addevent'])->name('superadmin.event.add');
+        Route::post('update/{id}', [SuperAdminController::class, 'updateevent'])->name('superadmin.event.update');
+        Route::post('create', [SuperAdminController::class, 'createevent'])->name('superadmin.event.create');
         Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
     });
 

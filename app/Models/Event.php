@@ -11,6 +11,7 @@ class Event extends Model
     use HasFactory;
     // title, slug, type, content, image, r_dates, e_dates, location, attachments, active, event_link, suspended, creator, creator_type, interests, tags, required_fields, additional_fields , created_at, updated_at
 
+    public $incrementing = false;
     protected $fillable = [
         'title',
         'slug',

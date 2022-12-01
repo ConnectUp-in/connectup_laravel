@@ -158,6 +158,8 @@
                                                         href="{{ route('superadmin.event.registrations', $event->id) }}">Registrations</a>
                                                     <a class="dropdown-item position-relative"
                                                         href="{{ route('superadmin.event.attendance', $event->id) }}">Attendance</a>
+                                                    <a class="dropdown-item position-relative"
+                                                        href="{{ route('superadmin.event.edit', $event->id) }}">Edit</a>
                                                     {{-- <a class="dropdown-item position-relative" href="{{route('event.edit',$event->id)}}">Edit</a> --}}
 
                                                 </div>
