@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                font-size: 18px;
-                                                                                background: #fff; */
+                                                                                                    font-size: 18px;
+                                                                                                    background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -42,6 +42,12 @@
 
         .swiper-wrapper {
             width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .swiper-wrapper {
+                width: 100%;
+            }
         }
     </style>
 @endsection
@@ -557,7 +563,7 @@
                     spaceBetween: 10,
                 },
                 480: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                 },
                 640: {
