@@ -7,7 +7,7 @@
             <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Community</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Community Members</li>
+                  <li class="breadcrumb-item active" aria-current="page">All Members</li>
                 </ol>
             </nav>
         </div>
