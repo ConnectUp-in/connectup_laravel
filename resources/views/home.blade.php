@@ -43,6 +43,39 @@
     <!-- /BANNER WRAP -->
 
 
+    <!-- ARCHITECTURE ITEM LIST -->
+    <div class="architecture-item-list">
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/sass.png" alt="feature-sass">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/sass-hover.png"
+                alt="feature-sass-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+
+        <!-- ARCHITECTURE ITEM -->
+        <div class="architecture-item">
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image" src="/assets/template-landing/img/architecture/googlef.png"
+                alt="feature-googlef">
+            <!-- /ARCHITECTURE IMAGE -->
+
+            <!-- ARCHITECTURE IMAGE -->
+            <img class="architecture-image-hover" src="/assets/template-landing/img/architecture/googlef-hover.png"
+                alt="feature-googlef-hover">
+            <!-- /ARCHITECTURE IMAGE -->
+        </div>
+        <!-- /ARCHITECTURE ITEM -->
+    </div>
+    <!-- /ARCHITECTURE ITEM LIST -->
+
+
     {{-- <!-- ARCHITECTURE ITEM LIST -->
     <div class="architecture-item-list">
         <!-- ARCHITECTURE ITEM -->
