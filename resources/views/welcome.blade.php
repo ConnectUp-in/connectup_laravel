@@ -1,5 +1,57 @@
 @extends('layouts.guest')
 
+@section('styles')
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            max-height: 90px;
+            /* text-align: center;
+                                                                                                    font-size: 18px;
+                                                                                                    background: #fff; */
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .swiper-wrapper {
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .swiper-wrapper {
+                width: 100%;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- BANNER WRAP -->
     <div id="top" class="banner-wrap">
@@ -47,6 +99,7 @@
 
     <!-- SECTION WRAP -->
     <div class="section-wrap dark" id="about">
+
         <!-- SECTION -->
         <section class="section grid-limit">
             <!-- SECTION INFO -->
@@ -75,6 +128,48 @@
             <!-- SECTION BUTTON -->
             <a class="section-button button tertiary" href="{{ route('login') }}">Join Now</a>
             <!-- /SECTION BUTTON -->
+        </section>
+        <!-- /SECTION -->
+    </div>
+    <!-- /SECTION WRAP -->
+
+
+    <!-- SECTION WRAP -->
+    <div class="section-wrap dark" id="partners">
+        <!-- SECTION -->
+        <section class="section grid-limit">
+            <!-- SECTION INFO -->
+            <div class="section-info">
+                <!-- SECTION PRETITLE -->
+                <p class="section-pretitle">Our Lovely</p>
+                <!-- /SECTION PRETITLE -->
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-title">Partners</h2>
+                <!-- /SECTION TITLE -->
+
+                <!-- SECTION TEXT -->
+                {{-- <p class="section-text">Articles and Blogs, just for you</p> --}}
+                <!-- /SECTION TEXT -->
+            </div>
+            <!-- /SECTION INFO -->
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://bnest.in/" target="_blank">
+                            <img src="/assets/defaults/partners/bnest.png" alt="Bnest Incubation Partner">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="http://ahoy.twilio.com/startup" target="_blank">
+                            <img src="/assets/defaults/partners/twillio.png" alt="Twillio Customer Engagement Partner">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
         </section>
         <!-- /SECTION -->
     </div>
@@ -449,4 +544,33 @@
         <!-- /SECTION -->
     </div>
     <!-- /SECTION WRAP --> --}}
+@endsection
+
+@section('scripts')
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        // Responsive breakpoints
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            freeMode: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
 @endsection
