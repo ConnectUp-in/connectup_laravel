@@ -11,8 +11,28 @@
             [
                 'name' => 'Members',
                 'icon' => 'feather-calendar',
-                'type' => 'link',
-                'url' => route('superadmin.community.members'),
+                'type' => 'collapse',
+                'url' =>'#',
+                'links' => [
+                    [
+                        'name' => 'All Members',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.allmembers'),
+                    ],
+                    [
+                        'name' => 'Community Members',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.members'),
+                    ],
+                    [
+                        'name' => 'Founders',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.founders'),
+                    ],
+                ],
             ],
             [
                 'name' => 'Events',

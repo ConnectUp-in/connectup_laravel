@@ -19,12 +19,10 @@ class SuperAdminController extends Controller
         $this->middleware('auth');
         $this->middleware('isSuperAdmin');
     }
-
-    public function members()
+    public function allmembers()
     {
         // Get all latest members
         $members = Member::orderBy('created_at', 'desc')->get();
-
         // attach objectives
         foreach ($members as $member) {
             $member->reasons = Objective::whereIn('id', $member->reasons)->get();
@@ -33,9 +31,38 @@ class SuperAdminController extends Controller
         $data = [
             'members' => $members,
         ];
-        // return $data;
+
+        return view('admin.community.allmembers', $data);
+    }
+    public function members()
+    {
+        // Get all latest members
+        $members = Member::where('founder', '=', '0')->orderBy('created_at', 'desc')->get();
+        // attach objectives
+        foreach ($members as $member) {
+            $member->reasons = Objective::whereIn('id', $member->reasons)->get();
+        }
+
+        $data = [
+            'members' => $members,
+        ];
 
         return view('admin.community.members', $data);
+    }
+    public function founders()
+    {
+        // Get all latest members
+        $members = Member::where('founder', '=', '1')->orderBy('created_at', 'desc')->get();
+        // attach objectives
+        foreach ($members as $member) {
+            $member->reasons = Objective::whereIn('id', $member->reasons)->get();
+        }
+
+        $data = [
+            'members' => $members,
+        ];
+
+        return view('admin.community.founders', $data);
     }
 
     public function views()
@@ -73,7 +100,6 @@ class SuperAdminController extends Controller
     public function addblog()
     {
         $data = [
-
             'way' => 'add',
         ];
         // return $data;
@@ -168,7 +194,6 @@ class SuperAdminController extends Controller
     public function addevent()
     {
         $data = [
-
             'way' => 'add',
         ];
         // return $data;
@@ -195,7 +220,7 @@ class SuperAdminController extends Controller
         $event->additional_fields = json_decode($request->additional_fields) ?? [];
         // return $event;
 
-// save image
+        // save image
         $image = $request->file('image');
         // return $image;
         if ($image) {

@@ -91,6 +91,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
         Route::redirect('ecell', 'https://forms.gle/RKb1rwqkozA2d95y5', 301);
+        Route::get('ecell2', [PartnerEcellController::class, 'render'])->name('partner.ecell');
 
     });
 
@@ -137,6 +138,8 @@ Route::get('/sitemap', function () {
 Route::prefix('superadmin')->group(function () {
     Route::prefix('community')->group(function () {
         Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
+        Route::get('allmembers', [SuperAdminController::class, 'allmembers'])->name('superadmin.community.allmembers');
+        Route::get('founders', [SuperAdminController::class, 'founders'])->name('superadmin.community.founders');
     });
     Route::prefix('blog')->group(function () {
         Route::get('blogs', [SuperAdminController::class, 'blogs'])->name('superadmin.blogs');
