@@ -10,6 +10,7 @@ use App\Models\Objective;
 use App\Models\PageView;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SuperAdminController extends Controller
 {
@@ -175,9 +176,29 @@ class SuperAdminController extends Controller
         $data = [
             'events' => $events,
         ];
-        // return $data;
-        return view('admin.events.events', $data);
 
+        return view('admin.events.events', $data);
+    }
+
+    public function eventinfo($id)
+    {
+        $event = Event::find($id);
+        $registrations = [];
+        $redirected = false;
+        if (is_null($event->link)) {
+            // Registrations are done on connectup website 
+            $registrations = DB::table('event_registrations')->where('event_id','=',$id)->get();
+        } else {
+            // Registrations are done on foreign website
+            $redirected = true;
+            $registrations = DB::table('redirects')->where('url','=', $event->link)->get();
+        }
+        $data = [
+            'event' => $event,
+            'registrations' => $registrations,
+            'redirected' => $redirected,
+        ];
+        return view('admin.events.info', $data);
     }
 
     public function editevent($id)
@@ -187,7 +208,6 @@ class SuperAdminController extends Controller
             'event' => $event,
             'way' => 'edit',
         ];
-        // return $data;
         return view('admin.events.edit', $data);
     }
 
@@ -196,7 +216,6 @@ class SuperAdminController extends Controller
         $data = [
             'way' => 'add',
         ];
-        // return $data;
         return view('admin.events.edit', $data);
     }
 
