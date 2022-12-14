@@ -160,6 +160,7 @@ Route::prefix('superadmin')->group(function () {
         Route::post('update/{id}', [SuperAdminController::class, 'updateevent'])->name('superadmin.event.update');
         Route::post('create', [SuperAdminController::class, 'createevent'])->name('superadmin.event.create');
         Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
+        Route::get('info/{id}',[SuperAdminController::class,'eventinfo'])->name('superadmin.event.info');
     });
 
     Route::prefix('views')->group(function () {
