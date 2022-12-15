@@ -758,7 +758,7 @@
     if ($recent_blog_views->count() < 28) {
         $recent_blog_views = $recent_blog_views->pad(-28, 0);
     }
-    // $recent_blog_views = json_encode($recent_blog_views);
+    $recent_blog_views = json_encode($recent_blog_views->values()->all());
 @endphp
 
 @section('scripts')
