@@ -127,13 +127,7 @@
     <script src="/assets/admin/src/assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="/assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
-    <script src="/assets/admin/src/assets/js/dashboard/dash_1.js"></script>
 
-
-
-    <!-- blog -->
 
     <script src="/assets/admin/src/plugins/src/editors/quill/quill.js"></script>
     <script src="/assets/admin/src/plugins/src/filepond/filepond.min.js"></script>

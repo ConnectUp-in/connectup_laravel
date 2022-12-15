@@ -11,7 +11,7 @@
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="widget widget-six">
                     <div class="widget-heading">
-                        <h6 class="">Statistics</h6>
+                        <h6 class="">Page Views (last 28 days)</h6>
                         <div class="task-action">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="statistics"
@@ -37,8 +37,10 @@
                     <div class="w-chart">
                         <div class="w-chart-section">
                             <div class="w-detail">
-                                <p class="w-title">Total Visits</p>
-                                <p class="w-stats">423,964</p>
+                                <p class="w-title">Blogs</p>
+                                <p class="w-stats">
+                                    {{ $pageviews->where('page', 'blog/{slug}')->where('created_at', '>=', now()->subDays(28))->count() }}
+                                </p>
                             </div>
                             <div class="w-chart-render-one">
                                 <div id="total-users"></div>
@@ -47,8 +49,10 @@
 
                         <div class="w-chart-section">
                             <div class="w-detail">
-                                <p class="w-title">Paid Visits</p>
-                                <p class="w-stats">7,929</p>
+                                <p class="w-title">Events</p>
+                                <p class="w-stats">
+                                    {{ $pageviews->where('page', 'event/{slug}')->where('created_at', '>=', now()->subDays(28))->count() }}
+                                </p>
                             </div>
                             <div class="w-chart-render-one">
                                 <div id="paid-visits"></div>
@@ -735,4 +739,14 @@
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="/assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
+    <script src="/assets/admin/src/assets/js/dashboard/dash_1.js"></script>
+
+
+
+    <!-- blog -->
 @endsection
