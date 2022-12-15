@@ -43,7 +43,8 @@
                                 </p>
                             </div>
                             <div class="w-chart-render-one">
-                                <div id="total-users"></div>
+                                <div id="blog-recent-views"></div>
+
                             </div>
                         </div>
 
@@ -741,10 +742,137 @@
     </div>
 @endsection
 
+@php
+    
+    $recent_blog_views = $pageviews
+        ->where('page', 'blog/{slug}')
+        ->where('created_at', '>=', now()->subDays(28))
+        ->groupBy(function ($date) {
+            return Carbon::parse($date->created_at)->format('d');
+        })
+        ->map(function ($item) {
+            return $item->count();
+        });
+    
+    // if it's empty, fill it with 0's in the start
+    if ($recent_blog_views->count() < 28) {
+        $recent_blog_views = $recent_blog_views->pad(-28, 0);
+    }
+    // $recent_blog_views = json_encode($recent_blog_views);
+@endphp
+
 @section('scripts')
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="/assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
     <script src="/assets/admin/src/assets/js/dashboard/dash_1.js"></script>
+
+    <script>
+        window.addEventListener("load", function() {
+
+            var recent_blog_views = JSON.parse('{!! $recent_blog_views !!}');
+            console.log(recent_blog_views);
+
+            var recent_blog_chart = {
+                chart: {
+                    id: 'total-users',
+                    group: 'sparks1',
+                    type: 'line',
+                    height: 80,
+                    sparkline: {
+                        enabled: true
+                    },
+                    dropShadow: {
+                        enabled: true,
+                        top: 3,
+                        left: 1,
+                        blur: 3,
+                        color: '#e2a03f',
+                        opacity: 0.7,
+                    }
+                },
+                series: [{
+                    data: recent_blog_views
+                }],
+                stroke: {
+                    curve: 'smooth',
+                    width: 2,
+                },
+                markers: {
+                    size: 0
+                },
+                grid: {
+                    padding: {
+                        top: 35,
+                        bottom: 0,
+                        left: 40
+                    }
+                },
+                colors: ['#e2a03f'],
+                tooltip: {
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function formatter(val) {
+                                return '';
+                            }
+                        }
+                    }
+                },
+                responsive: [{
+                        breakpoint: 1351,
+                        options: {
+                            chart: {
+                                height: 95,
+                            },
+                            grid: {
+                                padding: {
+                                    top: 35,
+                                    bottom: 0,
+                                    left: 0
+                                }
+                            },
+                        },
+                    },
+                    {
+                        breakpoint: 1200,
+                        options: {
+                            chart: {
+                                height: 80,
+                            },
+                            grid: {
+                                padding: {
+                                    top: 35,
+                                    bottom: 0,
+                                    left: 40
+                                }
+                            },
+                        },
+                    },
+                    {
+                        breakpoint: 576,
+                        options: {
+                            chart: {
+                                height: 95,
+                            },
+                            grid: {
+                                padding: {
+                                    top: 35,
+                                    bottom: 0,
+                                    left: 0
+                                }
+                            },
+                        },
+                    }
+                ]
+            }
+
+
+            d_1C_2 = new ApexCharts(document.querySelector("#blog-recent-views"), recent_blog_chart);
+            d_1C_2.render();
+        });
+    </script>
 
 
 
