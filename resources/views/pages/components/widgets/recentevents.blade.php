@@ -17,9 +17,9 @@
             <!-- SIMPLE DROPDOWN -->
             <div class="simple-dropdown widget-box-post-settings-dropdown">
                 <!-- SIMPLE DROPDOWN LINK -->
-                <p class="simple-dropdown-link">
-                    Widget Settings
-                </p>
+                <a href="{{ route('events') }}" class="simple-dropdown-link">
+                    View More
+                </a>
                 <!-- /SIMPLE DROPDOWN LINK -->
             </div>
             <!-- /SIMPLE DROPDOWN -->
@@ -30,7 +30,7 @@
 
     <!-- WIDGET BOX TITLE -->
     <p class="widget-box-title">
-        Latest Events <span class="highlighted">2</span>
+        Latest Events <span class="highlighted">3</span>
     </p>
     <!-- /WIDGET BOX TITLE -->
 
