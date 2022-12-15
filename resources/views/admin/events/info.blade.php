@@ -107,7 +107,6 @@
                                         </td>
                                         <td> {{ Carbon::parse($registree->created_at)->diffForHumans() }} </td>
                                         @php
-                                            require 'vendor/autoload.php';
                                             $result = new \WhichBrowser\Parser($registree->agent);
                                         @endphp
                                         <td> {{ $result->toString() }} </td>
