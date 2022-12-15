@@ -65,14 +65,14 @@
                         <!-- /DATE STICKER -->
 
                         <!-- EVENT PREVIEW TITLE -->
-                        <p class="event-preview-title popup-event-information-trigger">
+                        <a href='{{ route('event', $event->slug) }}' class="event-preview-title">
                             {{ $event->title }}
-                        </p>
+                        </a>
                         <!-- /EVENT PREVIEW TITLE -->
 
 
                         <!-- EVENT PREVIEW LOCATION -->
-                        <p class="event-preview-location">
+                        <p class="event-preview-location mt-1">
                             {{ $event->location }}
                         </p>
                         <!-- /EVENT PREVIEW LOCATION -->
