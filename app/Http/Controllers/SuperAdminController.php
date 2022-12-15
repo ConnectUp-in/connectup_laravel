@@ -21,6 +21,20 @@ class SuperAdminController extends Controller
         $this->middleware('auth');
         $this->middleware('isSuperAdmin');
     }
+
+    public function dashboard()
+    {
+        $data = [
+            'users' => User::all(),
+            'members' => Member::all(),
+            'events' => Event::all(),
+            'eventregistrations' => EventRegistration::all(),
+            'blogs' => Blog::all(),
+            'pageviews' => PageView::all(),
+        ];
+        return view('admin.dashboard', $data);
+    }
+
     public function allmembers()
     {
         // Get all latest members
