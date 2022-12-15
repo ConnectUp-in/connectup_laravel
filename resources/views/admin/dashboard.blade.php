@@ -791,8 +791,9 @@
                     }
                 },
                 series: [{
-                    data: recent_blog_views
+                    data: recent_blog_views,
                 }],
+
                 stroke: {
                     curve: 'smooth',
                     width: 2,
@@ -807,10 +808,17 @@
                         left: 40
                     }
                 },
+                xaxis: {
+                    categories: [
+                        @for ($i = 28; $i > 0; $i--)
+                            '{{ now()->subDays($i - 1)->format('d M') }}',
+                        @endfor
+                    ],
+                },
                 colors: ['#e2a03f'],
                 tooltip: {
                     x: {
-                        show: false
+                        show: true
                     },
                     y: {
                         title: {
