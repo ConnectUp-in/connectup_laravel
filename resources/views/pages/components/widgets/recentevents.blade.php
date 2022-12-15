@@ -53,12 +53,12 @@
                         <!-- DATE STICKER -->
                         <div class="date-sticker">
                             <!-- DATE STICKER DAY -->
-                            <p class="date-sticker-day">{{ $event->created_at->format('d') }}</p>
+                            <p class="date-sticker-day">{{ Carbon::parse($event->e_dates[0])->format('d') }}</p>
                             <!-- /DATE STICKER DAY -->
 
                             <!-- DATE STICKER MONTH -->
                             <p class="date-sticker-month">
-                                {{ $event->created_at->format('M') }}
+                                {{ Carbon::parse($event->e_dates[0])->format('M') }}
                             </p>
                             <!-- /DATE STICKER MONTH -->
                         </div>
@@ -70,11 +70,6 @@
                         </p>
                         <!-- /EVENT PREVIEW TITLE -->
 
-                        <!-- EVENT PREVIEW TIMESTAMP -->
-                        <p class="event-preview-timestamp">
-                            {{ $event->created_at->format('h:i A') }}
-                        </p>
-                        <!-- /EVENT PREVIEW TIMESTAMP -->
 
                         <!-- EVENT PREVIEW LOCATION -->
                         <p class="event-preview-location">
