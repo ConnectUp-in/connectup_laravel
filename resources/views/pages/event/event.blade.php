@@ -222,7 +222,7 @@
 
             <!-- GRID COLUMN -->
             <div class="grid-column">
-                @widget('statbox')
+                @widget('recentevents')
                 @ad('display-vertical')
                 {{-- @widget('refferal') --}}
             </div>
