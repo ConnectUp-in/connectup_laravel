@@ -92,8 +92,19 @@
                             <tbody>
                                 @forelse ($registrations as $registree)
                                     <tr>
-                                        <td> {{ $registree->user }} </td>
-                                        <td> {{ $registree->created_at }} </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame me-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle"
+                                                        src=" {{ $registree->user->profile_photo_path }}">
+                                                </div>
+                                                <p class="align-self-center mb-0 admin-name">
+                                                    {{ $registree->user->name }}
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td> {{ Carbon::parse($registree->created_at)->diffForHumans() }} </td>
                                         @php
                                             $result = new \WhichBrowser\Parser($registree->agent);
                                         @endphp

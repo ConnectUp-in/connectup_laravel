@@ -8,6 +8,7 @@ use App\Models\EventRegistration;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -186,12 +187,16 @@ class SuperAdminController extends Controller
         $registrations = [];
         $redirected = false;
         if (is_null($event->link)) {
-            // Registrations are done on connectup website 
-            $registrations = DB::table('event_registrations')->where('event_id','=',$id)->get();
+            // Registrations are done on connectup website
+            $registrations = DB::table('event_registrations')->where('event_id', '=', $id)->get();
         } else {
             // Registrations are done on foreign website
             $redirected = true;
-            $registrations = DB::table('redirects')->where('url','=', $event->link)->get();
+            $registrations = DB::table('redirects')->where('url', '=', $event->link)->get();
+
+            foreach ($registrations as $registration) {
+                $registration->user = User::find($registration->user);
+            }
         }
         $data = [
             'event' => $event,
