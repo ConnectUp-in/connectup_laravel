@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Events - SuperAdmin | ConnectUp';
+@endphp
 @extends('layouts.admin')
 
 @section('styles')

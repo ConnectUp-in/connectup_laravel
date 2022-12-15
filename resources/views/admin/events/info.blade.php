@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Info - ' . $event->title . ' | ConnectUp';
+@endphp
 @extends('layouts.admin')
 
 @section('styles')

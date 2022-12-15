@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Blogs - SuperAdmin | ConnectUp';
+@endphp
 @extends('layouts.admin')
 @section('content')
     <div class="middle-content container-xxl p-0">

@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Dashboard - SuperAdmin | ConnectUp';
+@endphp
 @extends('layouts.admin')
 
 @section('content')

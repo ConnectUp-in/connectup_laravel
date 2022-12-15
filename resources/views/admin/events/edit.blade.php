@@ -1,3 +1,10 @@
+@php
+    if ($way == 'add') {
+        $page['title'] = 'Add New Event | ConnectUp';
+    } else {
+        $page['title'] = 'Edit - ' . $event->title . ' | ConnectUp';
+    }
+@endphp
 @extends('layouts.admin')
 
 @section('styles')

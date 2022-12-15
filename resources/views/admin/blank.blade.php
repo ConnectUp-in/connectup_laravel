@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Page Title | ConnectUp';
+@endphp
 @extends('layouts.admin')
 
 @section('content')

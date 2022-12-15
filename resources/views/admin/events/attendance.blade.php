@@ -1,3 +1,6 @@
+@php
+    $page['title'] = 'Attendance - ' . $event->title . ' | ConnectUp';
+@endphp
 @extends('layouts.admin')
 @section('content')
     <div class="middle-content container-xxl p-0">

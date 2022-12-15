@@ -1,3 +1,6 @@
+@php    
+    $page['title'] = 'Founders - Community | ConnectUp';
+@endphp
 @extends('layouts.admin')
 @section('content')
 <div class="middle-content container-xxl p-0">

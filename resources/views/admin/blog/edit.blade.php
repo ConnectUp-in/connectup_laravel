@@ -1,3 +1,10 @@
+@php
+    if ($way == 'add') {
+        $page['title'] = 'Add New Blog | ConnectUp';
+    } else {
+        $page['title'] = 'Registrations - ' . $blog->title . ' | ConnectUp';
+    }
+@endphp
 @extends('layouts.admin')
 
 @section('styles')
