@@ -89,7 +89,6 @@
                                     <th>User</th>
                                     <th>Registered At</th>
                                     <th>Agent</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,7 +103,6 @@
                                                 <p class="align-self-center mb-0 admin-name">
                                                     {{ $registree->user->name }}
                                                 </p>
-
                                             </div>
                                         </td>
                                         <td> {{ Carbon::parse($registree->created_at)->diffForHumans() }} </td>
@@ -156,20 +154,11 @@
                                         <td> {{ $registree->email }} </td>
                                         <td> {{ $registree->created_at }} </td>
                                         <td> {{ $registree->ticket_id }} </td>
-                                        @if (count($event->required_fields) != 0)
-                                            <td>
-                                                @foreach ($registree->required_fields as $r_fields)
-                                                    {{ $reason['name'] }}
-                                                    @if (!$loop->last)
-                                                        ,
-                                                    @endif
-                                                @endforeach
-                                            </td>
-                                        @endif
+                                        <td> {{ $registree->required_fields }} </td>
+                                        <td> {{ $registree->additional_fields }} </td>
                                     </tr>
                                 @empty
                                 @endforelse
-
                             </tbody>
                         </table>
                     </div>
