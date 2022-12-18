@@ -187,10 +187,18 @@
                                         </button>
                                     @else
                                         @if ($event->link)
-                                            <!-- Register Button with Trigger -->
-                                            <a class="button secondary w-100" href="{{ shorten($event->link) }}">
-                                                Register Now
-                                            </a>
+                                            @if (Auth::check())
+                                                <!-- Register Button with Trigger -->
+                                                <a class="button secondary w-100" href="{{ shorten($event->link) }}">
+                                                    Register Now
+                                                </a>
+                                            @else
+                                                <!-- Register Button with Trigger -->
+                                                <a class="button secondary w-100"
+                                                    href="{{ route('event.redirect', $event->slug) }}">
+                                                    Login to Register
+                                                </a>
+                                            @endif
                                         @else
                                             <!-- Register Button with Trigger -->
                                             <button class="button secondary popup-event-information-trigger ">
@@ -214,7 +222,7 @@
 
             <!-- GRID COLUMN -->
             <div class="grid-column">
-                @widget('statbox')
+                @widget('recentevents')
                 @ad('display-vertical')
                 {{-- @widget('refferal') --}}
             </div>

@@ -8,8 +8,10 @@ use App\Models\EventRegistration;
 use App\Models\Member;
 use App\Models\Objective;
 use App\Models\PageView;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SuperAdminController extends Controller
 {
@@ -20,11 +22,23 @@ class SuperAdminController extends Controller
         $this->middleware('isSuperAdmin');
     }
 
-    public function members()
+    public function dashboard()
+    {
+        $data = [
+            'users' => User::all(),
+            'members' => Member::all(),
+            'events' => Event::all(),
+            'eventregistrations' => EventRegistration::all(),
+            'blogs' => Blog::all(),
+            'pageviews' => PageView::all(),
+        ];
+        return view('admin.dashboard', $data);
+    }
+
+    public function allmembers()
     {
         // Get all latest members
         $members = Member::orderBy('created_at', 'desc')->get();
-
         // attach objectives
         foreach ($members as $member) {
             $member->reasons = Objective::whereIn('id', $member->reasons)->get();
@@ -33,9 +47,38 @@ class SuperAdminController extends Controller
         $data = [
             'members' => $members,
         ];
-        // return $data;
+
+        return view('admin.community.allmembers', $data);
+    }
+    public function members()
+    {
+        // Get all latest members
+        $members = Member::where('founder', '=', '0')->orderBy('created_at', 'desc')->get();
+        // attach objectives
+        foreach ($members as $member) {
+            $member->reasons = Objective::whereIn('id', $member->reasons)->get();
+        }
+
+        $data = [
+            'members' => $members,
+        ];
 
         return view('admin.community.members', $data);
+    }
+    public function founders()
+    {
+        // Get all latest members
+        $members = Member::where('founder', '=', '1')->orderBy('created_at', 'desc')->get();
+        // attach objectives
+        foreach ($members as $member) {
+            $member->reasons = Objective::whereIn('id', $member->reasons)->get();
+        }
+
+        $data = [
+            'members' => $members,
+        ];
+
+        return view('admin.community.founders', $data);
     }
 
     public function views()
@@ -73,7 +116,6 @@ class SuperAdminController extends Controller
     public function addblog()
     {
         $data = [
-
             'way' => 'add',
         ];
         // return $data;
@@ -149,9 +191,33 @@ class SuperAdminController extends Controller
         $data = [
             'events' => $events,
         ];
-        // return $data;
-        return view('admin.events.events', $data);
 
+        return view('admin.events.events', $data);
+    }
+
+    public function eventinfo($id)
+    {
+        $event = Event::find($id);
+        $registrations = [];
+        $redirected = false;
+        if (is_null($event->link)) {
+            // Registrations are done on connectup website
+            $registrations = DB::table('event_registrations')->where('event_id', '=', $id)->get();
+        } else {
+            // Registrations are done on foreign website
+            $redirected = true;
+            $registrations = DB::table('redirects')->where('url', '=', $event->link)->get();
+
+            foreach ($registrations as $registration) {
+                $registration->user = User::find($registration->user);
+            }
+        }
+        $data = [
+            'event' => $event,
+            'registrations' => $registrations,
+            'redirected' => $redirected,
+        ];
+        return view('admin.events.info', $data);
     }
 
     public function editevent($id)
@@ -161,17 +227,14 @@ class SuperAdminController extends Controller
             'event' => $event,
             'way' => 'edit',
         ];
-        // return $data;
         return view('admin.events.edit', $data);
     }
 
     public function addevent()
     {
         $data = [
-
             'way' => 'add',
         ];
-        // return $data;
         return view('admin.events.edit', $data);
     }
 
@@ -195,7 +258,7 @@ class SuperAdminController extends Controller
         $event->additional_fields = json_decode($request->additional_fields) ?? [];
         // return $event;
 
-// save image
+        // save image
         $image = $request->file('image');
         // return $image;
         if ($image) {

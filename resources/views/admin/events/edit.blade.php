@@ -1,3 +1,10 @@
+@php
+    if ($way == 'add') {
+        $page['title'] = 'Add New Event | ConnectUp';
+    } else {
+        $page['title'] = 'Edit - ' . $event->title . ' | ConnectUp';
+    }
+@endphp
 @extends('layouts.admin')
 
 @section('styles')
@@ -29,11 +36,8 @@
         <form method="POST" enctype="multipart/form-data"
             action="{{ $way == 'add' ? route('superadmin.event.create') : route('superadmin.event.update', $event->id) }}">
             <div class="row mb-4 layout-spacing layout-top-spacing">
-
                 <div class="col-xxl-9 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-
                     <div class="widget-content widget-content-area blog-create-section">
-
                         <div class="row mb-4">
                             <div class="col-sm-12">
                                 <input type="text" class="form-control" name="title" id="title"
@@ -70,7 +74,6 @@
                             <div class="col-md-6">
                                 <label class="form-label">Event Date</label>
                                 <div class="row mb-4">
-
                                     <div class="col-md-6">
                                         <input id="e_date_start"name="e_date_start" value="{{ $event->e_dates[0] ?? '' }}"
                                             class="form-control flatpickr flatpickr-input active" type="datetime-local"
@@ -84,26 +87,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <ul class="nav nav-tabs  mb-3 mt-3" id="simpletab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
@@ -162,26 +145,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
 
                     {{-- <div class="widget-content widget-content-area blog-create-section mt-4">
@@ -284,7 +247,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </form>
 

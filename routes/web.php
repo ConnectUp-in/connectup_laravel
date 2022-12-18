@@ -91,6 +91,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
         Route::redirect('ecell', 'https://forms.gle/RKb1rwqkozA2d95y5', 301);
+        Route::get('ecell2', [PartnerEcellController::class, 'render'])->name('partner.ecell');
 
     });
 
@@ -135,8 +136,14 @@ Route::get('/sitemap', function () {
 });
 
 Route::prefix('superadmin')->group(function () {
+
+    Route::get('/', [SuperAdminController::class, 'dashboard'])->name('superadmin');
+    Route::get('dashboard', [SuperAdminController::class, 'dashboard'])->name('superadmin.dashboard');
+
     Route::prefix('community')->group(function () {
         Route::get('members', [SuperAdminController::class, 'members'])->name('superadmin.community.members');
+        Route::get('allmembers', [SuperAdminController::class, 'allmembers'])->name('superadmin.community.allmembers');
+        Route::get('founders', [SuperAdminController::class, 'founders'])->name('superadmin.community.founders');
     });
     Route::prefix('blog')->group(function () {
         Route::get('blogs', [SuperAdminController::class, 'blogs'])->name('superadmin.blogs');
@@ -157,6 +164,7 @@ Route::prefix('superadmin')->group(function () {
         Route::post('update/{id}', [SuperAdminController::class, 'updateevent'])->name('superadmin.event.update');
         Route::post('create', [SuperAdminController::class, 'createevent'])->name('superadmin.event.create');
         Route::get('/attendance/{id}', [SuperAdminController::class, 'eventAttendance'])->name('superadmin.event.attendance');
+        Route::get('info/{id}', [SuperAdminController::class, 'eventinfo'])->name('superadmin.event.info');
     });
 
     Route::prefix('views')->group(function () {

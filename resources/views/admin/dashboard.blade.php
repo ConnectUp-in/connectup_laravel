@@ -1,5 +1,5 @@
 @php
-    $page['title'] = 'Page Title | ConnectUp';
+    $page['title'] = 'Dashboard - SuperAdmin | ConnectUp';
 @endphp
 @extends('layouts.admin')
 
@@ -11,7 +11,7 @@
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="widget widget-six">
                     <div class="widget-heading">
-                        <h6 class="">Statistics</h6>
+                        <h6 class="">Page Views (last 28 days)</h6>
                         <div class="task-action">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="statistics"
@@ -37,21 +37,26 @@
                     <div class="w-chart">
                         <div class="w-chart-section">
                             <div class="w-detail">
-                                <p class="w-title">Total Visits</p>
-                                <p class="w-stats">423,964</p>
+                                <p class="w-title">Blogs</p>
+                                <p class="w-stats">
+                                    {{ $pageviews->where('page', 'blog/{slug}')->where('created_at', '>=', now()->subDays(28))->count() }}
+                                </p>
                             </div>
                             <div class="w-chart-render-one">
-                                <div id="total-users"></div>
+                                <div id="blog-recent-views"></div>
+
                             </div>
                         </div>
 
                         <div class="w-chart-section">
                             <div class="w-detail">
-                                <p class="w-title">Paid Visits</p>
-                                <p class="w-stats">7,929</p>
+                                <p class="w-title">Events</p>
+                                <p class="w-stats">
+                                    {{ $pageviews->where('page', 'event/{slug}')->where('created_at', '>=', now()->subDays(28))->count() }}
+                                </p>
                             </div>
                             <div class="w-chart-render-one">
-                                <div id="paid-visits"></div>
+                                <div id="event-recent-views"></div>
                             </div>
                         </div>
                     </div>
@@ -735,4 +740,181 @@
         </div>
 
     </div>
+@endsection
+
+@php
+    
+    // create function getRecentViews($page) with access to $pageviews
+    
+    $getRecentViews = function ($page) use ($pageviews) {
+        //     return $pageviews
+        //         ->where('page', $page)
+        //         ->where('created_at', '>=', now()->subDays(28))
+        //         ->groupBy(function ($date) {
+        //             return Carbon::parse($date->created_at)->format('d');
+        //         })
+        //         ->map(function ($item) {
+        //             return $item->count();
+        //         });
+        // };
+    
+        // function getRecentViews($page)
+        // {
+        $recent_views = $pageviews
+            ->where('page', $page)
+            ->where('created_at', '>=', now()->subDays(28))
+            ->groupBy(function ($date) {
+                return Carbon::parse($date->created_at)->format('d');
+            })
+            ->map(function ($item) {
+                return $item->count();
+            });
+    
+        // if it's empty, fill it with 0's in the start
+        if ($recent_views->count() < 28) {
+            $recent_views = $recent_views->pad(-28, 0);
+        }
+        return json_encode($recent_views->values()->all());
+    };
+    
+    $recent_blog_views = $getRecentViews('blog/{slug}');
+    $recent_events_views = $getRecentViews('event/{slug}');
+    
+@endphp
+
+@section('scripts')
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="/assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
+    <script src="/assets/admin/src/assets/js/dashboard/dash_1.js"></script>
+
+    <script>
+        window.addEventListener("load", function() {
+
+            var recent_blog_views = JSON.parse('{!! $recent_blog_views !!}');
+            var recent_events_views = JSON.parse('{!! $recent_events_views !!}');
+            console.log(recent_blog_views);
+            console.log(recent_events_views)
+
+
+            function createChartOptions(chartID, color, data) {
+                return {
+                    chart: {
+                        id: 'blog-recent-views',
+                        group: 'sparks1',
+                        type: 'line',
+                        height: 80,
+                        sparkline: {
+                            enabled: true
+                        },
+                        dropShadow: {
+                            enabled: true,
+                            top: 3,
+                            left: 1,
+                            blur: 3,
+                            color: color,
+                            opacity: 0.7,
+                        }
+                    },
+                    series: [{
+                        data: data,
+                    }],
+
+                    stroke: {
+                        curve: 'smooth',
+                        width: 2,
+                    },
+                    markers: {
+                        size: 0
+                    },
+                    grid: {
+                        padding: {
+                            top: 35,
+                            bottom: 0,
+                            left: 40
+                        }
+                    },
+                    xaxis: {
+                        categories: [
+                            @for ($i = 28; $i > 0; $i--)
+                                '{{ now()->subDays($i - 1)->format('d M') }}',
+                            @endfor
+                        ],
+                    },
+                    colors: [color],
+                    tooltip: {
+                        x: {
+                            show: true
+                        },
+                        y: {
+                            title: {
+                                formatter: function formatter(val) {
+                                    return '';
+                                }
+                            }
+                        }
+                    },
+                    responsive: [{
+                            breakpoint: 1351,
+                            options: {
+                                chart: {
+                                    height: 95,
+                                },
+                                grid: {
+                                    padding: {
+                                        top: 35,
+                                        bottom: 0,
+                                        left: 0
+                                    }
+                                },
+                            },
+                        },
+                        {
+                            breakpoint: 1200,
+                            options: {
+                                chart: {
+                                    height: 80,
+                                },
+                                grid: {
+                                    padding: {
+                                        top: 35,
+                                        bottom: 0,
+                                        left: 40
+                                    }
+                                },
+                            },
+                        },
+                        {
+                            breakpoint: 576,
+                            options: {
+                                chart: {
+                                    height: 95,
+                                },
+                                grid: {
+                                    padding: {
+                                        top: 35,
+                                        bottom: 0,
+                                        left: 0
+                                    }
+                                },
+                            },
+                        }
+                    ]
+                }
+
+            }
+
+            var recent_blog_chart = createChartOptions("blog-recent-views", "#e2a03f", recent_blog_views);
+            var recent_event_chart = createChartOptions("event-recent-views", "#009688", recent_events_views);
+
+            d_1C_2 = new ApexCharts(document.querySelector("#blog-recent-views"), recent_blog_chart);
+            d_1C_2.render();
+
+            d_1C_3 = new ApexCharts(document.querySelector("#event-recent-views"), recent_event_chart);
+            d_1C_3.render();
+        });
+    </script>
+
+
+
+    <!-- blog -->
 @endsection

@@ -11,8 +11,28 @@
             [
                 'name' => 'Members',
                 'icon' => 'feather-calendar',
-                'type' => 'link',
-                'url' => route('superadmin.community.members'),
+                'type' => 'collapse',
+                'url' => '#',
+                'links' => [
+                    [
+                        'name' => 'All Members',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.allmembers'),
+                    ],
+                    [
+                        'name' => 'Community Members',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.members'),
+                    ],
+                    [
+                        'name' => 'Founders',
+                        'icon' => 'feather-list',
+                        'type' => 'link',
+                        'url' => route('superadmin.community.founders'),
+                    ],
+                ],
             ],
             [
                 'name' => 'Events',
@@ -60,7 +80,7 @@
 @endphp
 <ul class="list-unstyled menu-categories" id="accordionExample">
     <li class="menu active">
-        <a href="#dashboard" data-bs-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+        <a href="{{ route('superadmin.dashboard') }}" class="dropdown-toggle">
             <div class="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

@@ -1,5 +1,4 @@
 @php
-    
     $page['title'] = 'Registrations - ' . $event->title . ' | ConnectUp';
 @endphp
 
