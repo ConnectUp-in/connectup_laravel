@@ -28,34 +28,51 @@ class HelperController extends Controller
         sendRegistrationMail(Auth::user());
         return "done";
     }
-    // public function image()
-    // {
-    //     $text = 'TEst text';
-
-    //     $img = Image::make('assets/defaults/cover.png');
-
-    //     // Resize image instance
-    //     $img->resize(null, 200, function ($constraint) {
-    //         $constraint->aspectRatio();
-    //     });
-
-    //     $img->text($text, 20, 20, function ($font) {
-    //         $font->size(4);
-    //         $font->color("#FFF");
-    //     });
-
-    //     return $img->response("jpg");
-    // }
 
     public function image()
     {
-        // Compress image
-        $img = Image::make('assets/defaults/cover.png');
-        $img->resize(200, null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        // echo ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
+        // return "nothing";
+        // Get all images from Event Table and compress them
+        $events = \App\Models\Event::all();
 
-        return $img->response("jpg");
+        // $img = Image::make(url("/assets/defaults/events/research.jpg"));
+        // return $img->response('jpg', 50);
+
+        $flag = true;
+        $try = 1;
+        while ($flag && $try <= 3):
+            try {
+                $img = Image::make(url("/assets/defaults/events/research.jpg"));
+
+                $img->resize(200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                // Trim last 4 letters and add _compressed to the image name and save it
+                $compressed = substr($event->image, 0, -4) . '_compressed.jpg';
+                $img->save($compressed);
+                $flag = false;
+            } catch (\Exception$e) {
+                //not throwing  error when exception occurs
+            }
+            $try++;
+        endwhile;
+
+        // foreach ($events as $event) {
+        //     // $img = Image::make($event->image);
+        //     $img = Image::make(url("/assets/defaults/events/research.jpg"));
+        //     return $img->response('jpg', 50);
+        //     // $img->resize(null, 200, function ($constraint) {
+        //     //     $constraint->aspectRatio();
+        //     // });
+        //     // // Trim last 4 letters and add _compressed to the image name and save it
+        //     // $compressed = substr($event->image, 0, -4) . '_compressed.jpg';
+        //     // $img->save($compressed);
+
+        //     // $image->image_compressed = $compressed;
+        // }
+
+        return "done";
 
     }
 
