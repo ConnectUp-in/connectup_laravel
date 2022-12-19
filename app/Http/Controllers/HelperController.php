@@ -49,7 +49,7 @@ class HelperController extends Controller
                     $constraint->aspectRatio();
                 });
                 // Trim last 4 letters and add _compressed to the image name and save it
-                $compressed = substr($event->image, 0, -4) . '_compressed.jpg';
+                $compressed = substr("/assets/defaults/events/research.jpg", 0, -4) . '_compressed.jpg';
                 $img->save($compressed);
                 $flag = false;
             } catch (\Exception$e) {
