@@ -1,9 +1,6 @@
 <div class="posts-container" style="display: flex;flex-direction:column;gap:16px"></div>
 
-<div class="no-data">
-    Great! You have read all the posts. <br>
-    <a href="{{ route('feed') }}">Refresh</a>
-</div>
+<div class="no-data  button void white "> Great! You have read all the posts </div>
 
 {{-- @forelse ($posts as $post)
     @import('post', ['post' => $post])
