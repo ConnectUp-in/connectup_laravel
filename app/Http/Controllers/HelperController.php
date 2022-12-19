@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
-use App\Models\EventRegistration;
 use App\Models\Redirect;
 use App\Models\User;
 use Auth;
@@ -51,17 +49,13 @@ class HelperController extends Controller
 
     public function image()
     {
-        // // Create Custom PDF and mail it to user
-        // $pdf = \PDF::loadView('pdf.invoice', ['text' => 'test text'])
-        //     ->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
-        // return $pdf->stream('invoice.pdf');
+        // Compress image
+        $img = Image::make('assets/defaults/cover.png');
+        $img->resize(200, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
 
-        $registration = EventRegistration::skip(1)->first();
-        $registration->event = Event::where('id', $registration->event_id)->first();
-        $registration->user = User::where('id', $registration->user_id)->first();
-        // return $registration;
-
-        return getTicketFromRegistration($registration);
+        return $img->response("jpg");
 
     }
 
