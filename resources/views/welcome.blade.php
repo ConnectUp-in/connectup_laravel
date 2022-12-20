@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                    font-size: 18px;
-                                                                                                    background: #fff; */
+                                                                                                        font-size: 18px;
+                                                                                                        background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -203,7 +203,8 @@
                     <div class="post-preview">
                         <!-- POST PREVIEW IMAGE -->
                         <figure class="post-preview-image liquid">
-                            <img src="{{ $blog->image }}" alt="cover-19" />
+                            <img src="{{ $blog->image_compressed }}" onerror="this.src='{{ $blog->image }}'"
+                                alt="cover-19" />
                         </figure>
                         <!-- /POST PREVIEW IMAGE -->
 
@@ -288,7 +289,8 @@
                     <div class="event-preview">
                         <!-- EVENT PREVIEW COVER -->
                         <figure class="event-preview-cover liquid">
-                            <img src="{{ $event->image }}" alt="cover-47" />
+                            <img src="{{ $event->image_compressed }}" onerror="this.src='{{ $event->image }}'"
+                                alt="cover-47" />
                         </figure>
                         <!-- /EVENT PREVIEW COVER -->
 
