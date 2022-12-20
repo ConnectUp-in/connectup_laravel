@@ -31,54 +31,85 @@ class HelperController extends Controller
 
     public function image()
     {
-        // echo ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
-        // return "nothing";
-        // Get all images from Event Table and compress them
-        $events = \App\Models\Event::all();
+        function updateImage($field)
+        {
 
-        // $img = Image::make(url("/assets/defaults/events/research.jpg"));
-        // return $img->response('jpg', 50);
-
-        $flag = true;
-        $try = 1;
-        while ($flag && $try <= 3):
             try {
-                $img = Image::make(url("/assets/defaults/events/research.jpg"));
-
-                $img->resize(200, null, function ($constraint) {
+                $img = Image::make(base_path($field->image));
+                $img->resize(250, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
-                // Trim last 4 letters and add _compressed to the image name and save it
-                $compressed = substr("/assets/defaults/events/research.jpg", 0, -4) . '_compressed.jpg';
-                $img->save($compressed);
-                $flag = false;
+                $compressed = substr($field->image, 0, -4) . '_compressed.jpg';
+                $img->save(base_path($compressed));
+                $field->image_compressed = $compressed;
+                $field->save();
+                echo $field->image . " compressed to " . $compressed . "<br>";
             } catch (\Exception$e) {
-                //not throwing  error when exception occurs
+                echo "Failed to compress " . $field->image . "<br>";
+                echo $e->getMessage();
             }
-            $try++;
-        endwhile;
+        }
+        $events = \App\Models\Event::all();
+        foreach ($events as $event) {
+            updateImage($event);
+        }
 
-        // foreach ($events as $event) {
-        //     // $img = Image::make($event->image);
-        //     $img = Image::make(url("/assets/defaults/events/research.jpg"));
-        //     return $img->response('jpg', 50);
-        //     // $img->resize(null, 200, function ($constraint) {
-        //     //     $constraint->aspectRatio();
-        //     // });
-        //     // // Trim last 4 letters and add _compressed to the image name and save it
-        //     // $compressed = substr($event->image, 0, -4) . '_compressed.jpg';
-        //     // $img->save($compressed);
-
-        //     // $image->image_compressed = $compressed;
-        // }
-
-        return "done";
+        $blogs = \App\Models\Blog::all();
+        foreach ($blogs as $blog) {
+            updateImage($blog);
+        }
 
     }
 
     public function test(Request $request)
     {
         return $request->all();
+    }
+
+    public function image0()
+    {
+        $image_path = 'assets/defaults/cover.png';
+        // resize image with Intervention Image
+
+        function resizeImage($src, $dst, $width, $height)
+        {
+            // Load the image
+            $image = imagecreatefromstring(file_get_contents($src));
+
+            // Get the original width and height of the image
+            $originalWidth = imagesx($image);
+            $originalHeight = imagesy($image);
+
+            // Calculate the aspect ratio of the original image
+            $aspectRatio = $originalWidth / $originalHeight;
+
+            // Calculate the width and height of the resized image
+            if ($width / $height > $aspectRatio) {
+                $width = $height * $aspectRatio;
+            } else {
+                $height = $width / $aspectRatio;
+            }
+
+            // Create a new image with the desired dimensions
+            $resizedImage = imagecreatetruecolor($width, $height);
+
+            // Resize the image
+            imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $width, $height, $originalWidth, $originalHeight);
+
+            // Save the resized image to the destination file path
+            imagejpeg($resizedImage, $dst);
+
+            // Clean up
+            imagedestroy($image);
+            imagedestroy($resizedImage);
+        }
+
+        $src = '/assets/defaults/cover.png';
+        $dst = 'assets/defaults/cover2.png';
+        $width = 100;
+        $height = 78;
+
+        resizeImage($image_path, $dst, $width, $height);
     }
 
 }
