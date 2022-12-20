@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('type')->default('w');
             $table->longText('content')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_compressed')->nullable();
             $table->json('r_dates')->nullable();
             $table->json('e_dates')->nullable();
             $table->string('location')->nullable();

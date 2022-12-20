@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
-use App\Models\EventRegistration;
 use App\Models\Redirect;
 use App\Models\User;
 use Auth;
@@ -30,44 +28,89 @@ class HelperController extends Controller
         sendRegistrationMail(Auth::user());
         return "done";
     }
-    // public function image()
-    // {
-    //     $text = 'TEst text';
-
-    //     $img = Image::make('assets/defaults/cover.png');
-
-    //     // Resize image instance
-    //     $img->resize(null, 200, function ($constraint) {
-    //         $constraint->aspectRatio();
-    //     });
-
-    //     $img->text($text, 20, 20, function ($font) {
-    //         $font->size(4);
-    //         $font->color("#FFF");
-    //     });
-
-    //     return $img->response("jpg");
-    // }
 
     public function image()
     {
-        // // Create Custom PDF and mail it to user
-        // $pdf = \PDF::loadView('pdf.invoice', ['text' => 'test text'])
-        //     ->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
-        // return $pdf->stream('invoice.pdf');
+        function updateImage($field)
+        {
 
-        $registration = EventRegistration::skip(1)->first();
-        $registration->event = Event::where('id', $registration->event_id)->first();
-        $registration->user = User::where('id', $registration->user_id)->first();
-        // return $registration;
+            try {
+                $img = Image::make(base_path($field->image));
+                $img->encode('webp', 50);
+                $img->resize(250, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $compressed = substr($field->image, 0, -4) . '_compressed.webp';
+                $img->save(base_path($compressed));
+                $field->image_compressed = $compressed;
+                $field->save();
+                echo $field->image . " compressed to " . $compressed . "<br>";
+            } catch (\Exception$e) {
+                echo "Failed to compress " . $field->image . "<br>";
+                echo $e->getMessage();
+            }
+        }
+        $events = \App\Models\Event::all();
+        foreach ($events as $event) {
+            updateImage($event);
+        }
 
-        return getTicketFromRegistration($registration);
+        $blogs = \App\Models\Blog::all();
+        foreach ($blogs as $blog) {
+            updateImage($blog);
+        }
 
     }
 
     public function test(Request $request)
     {
         return $request->all();
+    }
+
+    public function image0()
+    {
+        $image_path = 'assets/defaults/cover.png';
+        // resize image with Intervention Image
+
+        function resizeImage($src, $dst, $width, $height)
+        {
+            // Load the image
+            $image = imagecreatefromstring(file_get_contents($src));
+
+            // Get the original width and height of the image
+            $originalWidth = imagesx($image);
+            $originalHeight = imagesy($image);
+
+            // Calculate the aspect ratio of the original image
+            $aspectRatio = $originalWidth / $originalHeight;
+
+            // Calculate the width and height of the resized image
+            if ($width / $height > $aspectRatio) {
+                $width = $height * $aspectRatio;
+            } else {
+                $height = $width / $aspectRatio;
+            }
+
+            // Create a new image with the desired dimensions
+            $resizedImage = imagecreatetruecolor($width, $height);
+
+            // Resize the image
+            imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $width, $height, $originalWidth, $originalHeight);
+
+            // Save the resized image to the destination file path
+            imagejpeg($resizedImage, $dst);
+
+            // Clean up
+            imagedestroy($image);
+            imagedestroy($resizedImage);
+        }
+
+        $src = '/assets/defaults/cover.png';
+        $dst = 'assets/defaults/cover2.png';
+        $width = 100;
+        $height = 78;
+
+        resizeImage($image_path, $dst, $width, $height);
     }
 
 }

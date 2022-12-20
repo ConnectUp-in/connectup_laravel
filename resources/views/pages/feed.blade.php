@@ -27,7 +27,7 @@
                 @import('components.posts')
 
                 <!-- LOADER BARS -->
-                <div class="loader-bars">
+                <div class="loader-bars ajax-load" style="display: none">
                     <div class="loader-bar"></div>
                     <div class="loader-bar"></div>
                     <div class="loader-bar"></div>

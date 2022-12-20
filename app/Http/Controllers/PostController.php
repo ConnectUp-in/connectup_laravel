@@ -12,7 +12,8 @@ class PostController extends Controller
     //
     public function getposts()
     {
-        $posts = Post::where('active', 1)->get();
+        $posts = Post::where('active', 1)
+            ->orderBy('created_at', 'desc')->limit(10)->get();
         return $posts;
     }
 

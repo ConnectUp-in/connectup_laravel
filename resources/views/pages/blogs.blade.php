@@ -145,7 +145,7 @@
                 <div class="post-preview">
                     <!-- POST PREVIEW IMAGE -->
                     <figure class="post-preview-image liquid">
-                        <img src="{{ $blog->image }}" alt="cover-19" />
+                        <img src="{{ $blog->image_compressed }}" onerror="this.src='{{ $blog->image }}'" alt="cover-19" />
                     </figure>
                     <!-- /POST PREVIEW IMAGE -->
 

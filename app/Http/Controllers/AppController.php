@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
 use Auth;
+use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
@@ -31,13 +32,22 @@ class AppController extends Controller
         ];
         return view('welcome', $data);
     }
-    public function feed()
+    public function feed(Request $request)
     {
 
         page('feed');
         $posts = Post::where('active', 1)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
+
+        if ($request->ajax()) {
+            // $posts = Post::where('active', 1)
+            //     ->orderBy('created_at', 'desc')
+            //     ->paginate(10);
+
+            return response()->json(['data' => $posts]);
+        }
+
         if (Auth::check()) {
             $refferals = User::where(
                 'invited_by',

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('tags')->nullable();
             $table->integer('readtime')->nullable();
             $table->string('image');
+            $table->string('image_compressed')->nullable();
             $table->boolean('active')->default(true);
             $table->boolean('suspended')->default(false);
             $table->timestamps();

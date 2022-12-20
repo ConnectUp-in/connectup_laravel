@@ -89,7 +89,7 @@ h6 {
     font-weight: 700;
 }
 p {
-    color: #7d7e9e;
+    color: #b2b3d0;
 }
 figure > img {
     width: 100%;
@@ -374,7 +374,7 @@ figure > img {
             right -25px bottom,
         url(/assets/template-landing/img/banner/banner-bg.jpg) no-repeat 50%;
     background-size: auto, auto, auto, cover; */
-    background: url(/assets/template-landing/img/banner/landing.png) no-repeat;
+    background: url(/assets/template-landing/img/banner/landing.webp) no-repeat;
     background-size: cover;
     background-position: bottom;
 }

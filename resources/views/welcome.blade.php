@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                    font-size: 18px;
-                                                                                                    background: #fff; */
+                                                                                                                font-size: 18px;
+                                                                                                                background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -122,7 +122,7 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/template-landing/img/section/01.png" alt="section-image-01">
+            <img class="section-image" src="/assets/template-landing/img/section/01.webp" alt="section-image-01">
             <!-- /SECTION IMAGE -->
 
             <!-- SECTION BUTTON -->
@@ -158,12 +158,12 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="https://bnest.in/" target="_blank">
-                            <img src="/assets/defaults/partners/bnest.png" alt="Bnest Incubation Partner">
+                            <img src="/assets/defaults/partners/bnest.webp" alt="Bnest Incubation Partner">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="http://ahoy.twilio.com/startup" target="_blank">
-                            <img src="/assets/defaults/partners/twillio.png" alt="Twillio Customer Engagement Partner">
+                            <img src="/assets/defaults/partners/twillio.webp" alt="Twillio Customer Engagement Partner">
                         </a>
                     </div>
                 </div>
@@ -203,7 +203,8 @@
                     <div class="post-preview">
                         <!-- POST PREVIEW IMAGE -->
                         <figure class="post-preview-image liquid">
-                            <img src="{{ $blog->image }}" alt="cover-19" />
+                            <img src="{{ $blog->image_compressed }}" onerror="this.src='{{ $blog->image }}'"
+                                alt="cover-19" />
                         </figure>
                         <!-- /POST PREVIEW IMAGE -->
 
@@ -288,7 +289,8 @@
                     <div class="event-preview">
                         <!-- EVENT PREVIEW COVER -->
                         <figure class="event-preview-cover liquid">
-                            <img src="{{ $event->image }}" alt="cover-47" />
+                            <img src="{{ $event->image_compressed }}" onerror="this.src='{{ $event->image }}'"
+                                alt="cover-47" />
                         </figure>
                         <!-- /EVENT PREVIEW COVER -->
 
