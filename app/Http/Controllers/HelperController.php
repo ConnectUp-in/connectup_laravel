@@ -36,10 +36,11 @@ class HelperController extends Controller
 
             try {
                 $img = Image::make(base_path($field->image));
+                $img->encode('webp', 50);
                 $img->resize(250, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
-                $compressed = substr($field->image, 0, -4) . '_compressed.jpg';
+                $compressed = substr($field->image, 0, -4) . '_compressed.webp';
                 $img->save(base_path($compressed));
                 $field->image_compressed = $compressed;
                 $field->save();
