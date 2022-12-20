@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                            font-size: 18px;
-                                                                                                            background: #fff; */
+                                                                                                                font-size: 18px;
+                                                                                                                background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -122,7 +122,7 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/template-landing/img/section/01.png" alt="section-image-01">
+            <img class="section-image" src="/assets/template-landing/img/section/01.webp" alt="section-image-01">
             <!-- /SECTION IMAGE -->
 
             <!-- SECTION BUTTON -->
