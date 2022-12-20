@@ -374,7 +374,7 @@ figure > img {
             right -25px bottom,
         url(/assets/template-landing/img/banner/banner-bg.jpg) no-repeat 50%;
     background-size: auto, auto, auto, cover; */
-    background: url(/assets/template-landing/img/banner/landing.png) no-repeat;
+    background: url(/assets/template-landing/img/banner/landing.webp) no-repeat;
     background-size: cover;
     background-position: bottom;
 }

@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                        font-size: 18px;
-                                                                                                        background: #fff; */
+                                                                                                            font-size: 18px;
+                                                                                                            background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -158,12 +158,12 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="https://bnest.in/" target="_blank">
-                            <img src="/assets/defaults/partners/bnest.png" alt="Bnest Incubation Partner">
+                            <img src="/assets/defaults/partners/bnest.webp" alt="Bnest Incubation Partner">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="http://ahoy.twilio.com/startup" target="_blank">
-                            <img src="/assets/defaults/partners/twillio.png" alt="Twillio Customer Engagement Partner">
+                            <img src="/assets/defaults/partners/twillio.webp" alt="Twillio Customer Engagement Partner">
                         </a>
                     </div>
                 </div>
