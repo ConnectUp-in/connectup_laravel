@@ -214,10 +214,12 @@
                 </li>
             </ul>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/connectupin" class="linkedin" target="_blank">
+                <a href="https://www.linkedin.com/company/connectupin" aria-label="ConnectUp Linkedin" class="linkedin"
+                    target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/connectup.in/" class="instagram" target="_blank">
+                <a href="https://www.instagram.com/connectup.in/" aria-label="ConnectUp Instagram" class="instagram"
+                    target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
