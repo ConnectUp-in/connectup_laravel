@@ -234,7 +234,7 @@
 
     {{-- import jquery from cdn --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- app -->
     <script src="/assets/template-landing/app.bundle.min.js"></script>
