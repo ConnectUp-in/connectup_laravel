@@ -130,7 +130,7 @@
             <!-- LOGO -->
             <div class="logo void">
                 <a href="/">
-                    <img src="/assets/template/img/landing/logo.png" width="50px" alt="logo">
+                    <img src="/assets/template/img/landing/logo.png" width="50px" height="50px" alt="ConnectUp Logo">
                 </a>
             </div>
             <!-- /LOGO -->
