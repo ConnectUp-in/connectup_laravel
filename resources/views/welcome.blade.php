@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                                                                                    font-size: 18px;
-                                                                                                                                                                    background: #fff; */
+                                                                                                                                                                        font-size: 18px;
+                                                                                                                                                                        background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -310,7 +310,7 @@
                                     <!-- /DATE STICKER DAY -->
 
                                     <!-- DATE STICKER MONTH -->
-                                    <p class="date-sticker-month">
+                                    <p class="date-sticker-month" style="color:#0d1117;background:#fff">
                                         {{ Carbon::parse($event->e_dates[0])->format('M') }}
                                     </p>
                                     <!-- /DATE STICKER MONTH -->
