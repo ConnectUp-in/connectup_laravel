@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                                            font-size: 18px;
-                                                                                                                            background: #fff; */
+                                                                                                                                                                    font-size: 18px;
+                                                                                                                                                                    background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -36,7 +36,7 @@
         }
 
         .swiper-slide img {
-            height: 90px;
+            height: 90px !important;
             object-fit: cover;
         }
 
@@ -122,7 +122,7 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/template-landing/img/section/01.webp" height="auto" width="100%"
+            <img class="section-image" src="/assets/template-landing/img/section/01.webp" height="961" width="1530"
                 alt="ConnectUp Screenshot">
             <!-- /SECTION IMAGE -->
 
@@ -159,14 +159,14 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="https://bnest.in/" target="_blank">
-                            <img src="/assets/defaults/partners/bnest.webp" height="90px" width="auto"
-                                alt="Bnest Incubation Partner">
+                            <img src="/assets/defaults/partners/bnest.webp" height="90"
+                                style="aspect-ratio: auto 500/237" alt="Bnest Incubation Partner">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="http://ahoy.twilio.com/startup" target="_blank">
-                            <img src="/assets/defaults/partners/twillio.webp" height="90px" width="auto"
-                                alt="Twillio Customer Engagement Partner">
+                            <img src="/assets/defaults/partners/twillio.webp" height="90"
+                                style="aspect-ratio: auto 430/125" alt="Twillio Customer Engagement Partner">
                         </a>
                     </div>
                 </div>
