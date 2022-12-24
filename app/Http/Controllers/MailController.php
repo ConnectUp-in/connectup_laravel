@@ -17,20 +17,8 @@ class MailController extends Controller
     {
         $usersjson = '[
             {
-                "email": "spayasi78@gmail.com",
-                "name": "Santosh kumar payasi"
-            },
-            {
-                "email": "arjundhilip38@gmail.com",
-                "name": "S B Arjun Dhilip"
-            },
-            {
                 "email": "lingeshblogger0612@gmail.com",
                 "name": "Love ngesh"
-            },
-            {
-                "email": "kanakvishwakarma000@gmail.com",
-                "name": "Kanak vishwakarma"
             },
             {
                 "email": "aryangupta98711@gmail.com",
@@ -43,14 +31,6 @@ class MailController extends Controller
             {
                 "email": "rahulkarda2002@gmail.com",
                 "name": "Rahul Karda"
-            },
-            {
-                "email": "saharshsaxena007@gmail.com",
-                "name": "Saharsh Saxena"
-            },
-            {
-                "email": "abirbhattacharya82@gmail.com",
-                "name": "Abir Bhattacharya"
             },
             {
                 "email": "pbansod96@gmail.com",
@@ -69,10 +49,6 @@ class MailController extends Controller
                 "name": "Vidit Parashar "
             },
             {
-                "email": "fs20if022@gmail.com",
-                "name": "Dhruv Pralhad Paste "
-            },
-            {
                 "email": "vineetksc@gmail.com",
                 "name": "Vineet Singh Chauhan"
             },
@@ -86,15 +62,7 @@ class MailController extends Controller
             },
             {
                 "email": "sarthak2002tyagi@gmail.com",
-                "name": "Sarthak Tyagi "
-            },
-            {
-                "email": "prempandey812743@gmail.com",
-                "name": "Prem Prakash Pandey"
-            },
-            {
-                "email": "loveguptaofficials@gmail.com",
-                "name": "love gupta"
+                "name": "Sarthak Tyagi"
             },
             {
                 "email": "dhruvabhattacharya130102@gmail.com",
@@ -145,24 +113,12 @@ class MailController extends Controller
                 "name": "Satish Kumar Dwivedi"
             },
             {
-                "email": "kapiljadon5849@gmail.com",
-                "name": "Kapil Jadon "
-            },
-            {
                 "email": "prathamakkewar7@gmail.com",
                 "name": "Pratham Akkewar"
             },
             {
-                "email": "kachamsatwika@gmail.com",
-                "name": "satwika Kacham"
-            },
-            {
                 "email": "chetanpal315@gmail.com",
                 "name": "Chetan Pal"
-            },
-            {
-                "email": "kongarapiaashamadhuri@gmail.com",
-                "name": "Aasha madhuri Kongarapi"
             },
             {
                 "email": "pradyumnchandore7@gmail.com",
@@ -190,23 +146,11 @@ class MailController extends Controller
             },
             {
                 "email": "somilagrawal1510@gmail.com",
-                "name": "Somil Agrawal "
-            },
-            {
-                "email": "akshatmishra782@gmail.com",
-                "name": "Akshat Mishra "
-            },
-            {
-                "email": "alamshah1617@gmail.com",
-                "name": "Shah Alam"
+                "name": "Somil Agrawal"
             },
             {
                 "email": "utkarsharjariyaofficial@gmail.com",
                 "name": "Utkarsh Arjariya "
-            },
-            {
-                "email": "guptasurajkumar577@gmail.com",
-                "name": "Suraj Kumar Gupta"
             },
             {
                 "email": "dhineshwaran02@gmail.com",
@@ -221,10 +165,6 @@ class MailController extends Controller
                 "name": "ANKIT PAWAR"
             },
             {
-                "email": "rrsaggarwal@gmail.com",
-                "name": "Roshni Aggarwal"
-            },
-            {
                 "email": "pathraberavishakar@gmail.com",
                 "name": "Saurabh pathrabe"
             },
@@ -233,16 +173,8 @@ class MailController extends Controller
                 "name": "Kushagra Paliwal"
             },
             {
-                "email": "sonamaafremah@gmail.com",
-                "name": "Sonam Aafre "
-            },
-            {
                 "email": "nabeelahammedpckdy@gmail.com",
                 "name": "Nabeel Ahamed "
-            },
-            {
-                "email": "ashwinihinge6666@gmail.com",
-                "name": "Ashwini Hinge"
             },
             {
                 "email": "shrutisingh04503@gmail.com",
@@ -253,24 +185,28 @@ class MailController extends Controller
                 "name": "NITISH KUMAR UPADHYAY"
             },
             {
-                "email": "anushkayadav7987@gmail.com",
-                "name": "Anushka Yadav"
-            },
-            {
-                "email": "piyushpjani@gmail.com",
-                "name": "PIYUSH JANI"
-            },
-            {
-                "email": "jitendraaakde8959@gmail.com",
-                "name": "Jitendra Aakde "
-            },
-            {
-                "email": "jitendraaakde8959@gmail.com",
-                "name": "Jitendra Aakde "
-            },
-            {
                 "email": "pummys480@gmail.com",
                 "name": "Pummy Baby"
+            },
+            {
+                "email": "navneetlodhi73@gmail.com",
+                "name": "Navneet lodhi "
+            },
+            {
+                "email": "rohit7067842611@gmail.com",
+                "name": "Rohit Chakrawarti"
+            },
+            {
+                "email": "pavanverma057@gmail.com",
+                "name": "Pawan Verma"
+            },
+            {
+                "email": "dharamveersingh1715@gmail.com",
+                "name": "Dharamveer Singh "
+            },
+            {
+                "email": "boradesanket13@gmail.com",
+                "name": "Sanket Borade"
             },
             {
                 "email": "harshprogrammer782@gmail.com",
@@ -294,11 +230,13 @@ class MailController extends Controller
                 'email' => $user['email'],
             ];
             // $data = [];
-            Mail::send('emails.testlink', $data, function ($message) use ($data) {
+            Mail::send('emails.testreminder', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
-                $message->subject("Congratulations!!! You are just one step away from joining ConnectUp");
+                $message->subject("[Action Required] Complete the Round-1 Test by deadline");
             });
+
+            echo "Mail Sent to " . $user['name'] . " <" . $user['email'] . "> <BR>";
         }
 
         return 'Mail Sent';

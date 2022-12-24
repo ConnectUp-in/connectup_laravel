@@ -11,7 +11,7 @@
     <br>
     As part of this process, we would like you to complete a test through the following link: <a
         href="https://connectup.in/join/team/dev/test"> https://connectup.in/join/team/dev/test</a>. Please
-    make sure to complete this test before the deadline of 23th Dec 11:59 PM. This test will help us evaluate your skills
+    make sure to complete this test before the deadline of 25th Dec 11:59 PM. This test will help us evaluate your skills
     and abilities, and is an important part of our selection process.
     <br>
     <br>
