@@ -17,40 +17,120 @@ class MailController extends Controller
     {
         $usersjson = '[
             {
-                "email": "abhishekvish877@gmail.com",
-                "name": "Abhishek Vishwakarma "
+                "email": "alamshah1617@gmail.com",
+                "name": "Shah Alam"
             },
             {
-                "email": "vishalvermao.pcm121@gmail.com",
-                "name": "Vishal Verma"
+                "email": "kanakvishwakarma000@gmail.com",
+                "name": "Kanak Vishwakarma"
             },
             {
-                "email": "dhananjaydogne@gmail.com",
-                "name": "Dhananjay Dogne Samrat Ashok"
+                "email": "piyushpjani@gmail.com",
+                "name": "PIYUSH JANI"
             },
             {
-                "email": "mv270302@gmail.com",
-                "name": "Mohit Verma"
+                "email": "kachamsatwika@gmail.com",
+                "name": "kacham satwika"
             },
             {
-                "email": "200801011@rajalakshmi.edu.in",
-                "name": "Ajaikrishna S"
+                "email": "spayasi78@gmail.com",
+                "name": "Santosh kumar Payasi"
             },
             {
-                "email": "princepal9120111@gmail.com",
-                "name": "Prince Pal"
+                "email": "loveguptaofficials@gmail.com",
+                "name": "love gupta"
             },
             {
-                "email": "muhammadwaseem7755@gmail.com",
-                "name": "Muhammad waseem "
+                "email": "kapiljadon5849@gmail.com",
+                "name": "Kapil Jadon"
             },
             {
-                "email": "kirthibagrecha4@gmail.com",
-                "name": "Kirthi Bagrecha"
+                "email": "prempandey812743@gmail.com",
+                "name": "Prem Prakash Pandey"
             },
             {
-                "email": "sans.sg1701@gmail.com",
-                "name": "Sanskriti Gupta"
+                "email": "rrsaggarwal@gmail.com",
+                "name": "Roshni Aggarwal"
+            },
+            {
+                "email": "sonamaafremah@gmail.com",
+                "name": "Sonam Aafre"
+            },
+            {
+                "email": "anushkayadav7987@gmail.com",
+                "name": "Anushka yadav "
+            },
+            {
+                "email": "kongarapiaashamadhuri@gmail.com",
+                "name": "K.Aasha madhuri"
+            },
+            {
+                "email": "guptasurajkumar577@gmail.com",
+                "name": "Suraj Kumar"
+            },
+            {
+                "email": "arjundhilip38@gmail.com",
+                "name": "S B Arjun Dhilip "
+            },
+            {
+                "email": "fs20if022@gmail.com",
+                "name": "Dhruv Pralhad Paste"
+            },
+            {
+                "email": "ashwinihinge6666@gmail.com",
+                "name": "Ashwini hinge"
+            },
+            {
+                "email": "jitendraaakde8959@gmail.com",
+                "name": "Jitendra Aakde "
+            },
+            {
+                "email": "akshatmishra782@gmail.com",
+                "name": "Akshat Mishra "
+            },
+            {
+                "email": "saharshsaxena007@gmail.com",
+                "name": "Saharsh Saxena"
+            },
+            {
+                "email": "ravirungta51@gmail.com",
+                "name": "Ravi Kumar Singh"
+            },
+            {
+                "email": "pbansod96@gmail.com",
+                "name": "AMAN NARENDRA BANSOD"
+            },
+            {
+                "email": "tanmaywaykar17@gmail.com",
+                "name": "Tanmay Waykar"
+            },
+            {
+                "email": "pathraberavishakar@gmail.com",
+                "name": "Saurabh pathrabe "
+            },
+            {
+                "email": "amansinghkushwaha2003@gmail.com",
+                "name": "Aman Kumar Singh Kushwaha"
+            },
+            {
+                "email": "utkarsharjariyaofficial@gmail.com",
+                "name": "Utkarsh Arjariya"
+            },
+            {
+                "email": "sunilkumar088839@gmail.com",
+                "name": "Sunil Kumar"
+            },
+            {
+                "email": "emmanuelesin950@gmail.com",
+                "name": "Esin Emmanuel William "
+            },
+            {
+                "email": "pawarankit.jec@gmail.com",
+                "name": "Ankit Pawar"
+            },
+            {
+                "email": "prathamakkewar7@gmail.com",
+                "name": "Pratham Manoj Akkewar"
             },
             {
                 "email": "harshprogrammer782@gmail.com",
@@ -74,12 +154,13 @@ class MailController extends Controller
                 'email' => $user['email'],
             ];
             // $data = [];
-            Mail::send('emails.testlink', $data, function ($message) use ($data) {
+            Mail::send('emails.taskreminder', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
                 // $message->subject("Time to shine: Complete Round II | Web Developer @ConnectUp");
                 $message->subject("Congratulations!!! Your application has been shortlisted for Round-I | Web Developer @ConnectUp");
                 // $message->subject("[Action Required] Complete the Round-1 Test by deadline");
+                $message->subject(" [Reminder] Clock is Ticking: Submit your Web Development Round-2 Task ");
 
             });
 
