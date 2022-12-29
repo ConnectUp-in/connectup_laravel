@@ -130,7 +130,7 @@
             <!-- LOGO -->
             <div class="logo void">
                 <a href="/">
-                    <img src="/assets/template/img/landing/logo.png" width="50px" alt="logo">
+                    <img src="/assets/template/img/landing/logo.png" width="50px" height="50px" alt="ConnectUp Logo">
                 </a>
             </div>
             <!-- /LOGO -->
@@ -214,10 +214,12 @@
                 </li>
             </ul>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/connectupin" class="linkedin" target="_blank">
+                <a href="https://www.linkedin.com/company/connectupin" aria-label="ConnectUp Linkedin" class="linkedin"
+                    target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/connectup.in/" class="instagram" target="_blank">
+                <a href="https://www.instagram.com/connectup.in/" aria-label="ConnectUp Instagram" class="instagram"
+                    target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -231,8 +233,8 @@
 
 
     {{-- import jquery from cdn --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- app -->
     <script src="/assets/template-landing/app.bundle.min.js"></script>

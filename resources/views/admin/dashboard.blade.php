@@ -3,6 +3,15 @@
 @endphp
 @extends('layouts.admin')
 
+@section('styles')
+    <link href="/assets/admin/src/plugins/src/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/src/assets/css/light/components/list-group.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/src/assets/css/light/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/admin/src/assets/css/dark/components/list-group.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/src/assets/css/dark/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('content')
     <div class="middle-content container-xxl p-0">
 
@@ -165,38 +174,38 @@
             </div>
 
             <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                <div class="widget widget-chart-three">
+                <div class="widget widget-chart-one">
                     <div class="widget-heading">
-                        <div class="">
-                            <h5 class="">Unique Visitors</h5>
-                        </div>
-
-                        <div class="dropdown ">
-                            <a class="dropdown-toggle" href="#" role="button" id="uniqueVisitors"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-more-horizontal">
-                                    <circle cx="12" cy="12" r="1"></circle>
-                                    <circle cx="19" cy="12" r="1"></circle>
-                                    <circle cx="5" cy="12" r="1"></circle>
-                                </svg>
-                            </a>
-
-                            <div class="dropdown-menu left" aria-labelledby="uniqueVisitors">
-                                <a class="dropdown-item" href="javascript:void(0);">View</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Update</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                        <h5 class="">Revenue</h5>
+                        <div class="task-action">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="renvenue"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-more-horizontal">
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <circle cx="19" cy="12" r="1"></circle>
+                                        <circle cx="5" cy="12" r="1"></circle>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu left" aria-labelledby="renvenue"
+                                    style="will-change: transform;">
+                                    <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="widget-content">
-                        <div id="uniqueVisits"></div>
+                        <div id="mixed-chart"></div>
                     </div>
                 </div>
             </div>
+
 
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
                 <div class="widget widget-activity-five">
@@ -780,21 +789,42 @@
     $recent_blog_views = $getRecentViews('blog/{slug}');
     $recent_events_views = $getRecentViews('event/{slug}');
     
+    // Create array of last 28 dates with format 'YYYY-MM-DD'
+    $dates = [];
+    for ($i = 28; $i > 0; $i--) {
+        $dates[] = now()
+            ->subDays($i)
+            ->format('Y-m-d');
+    }
+    
+    $totalusers = [];
+    $usersgrowth = [];
+    
+    foreach ($dates as $date) {
+        $totalusers[] = $users->where('created_at', '<=', $date)->count();
+        // take users created on this date
+        $usersgrowth[] = $users
+            ->where('created_at', '>=', $date . ' 00:00:00')
+            ->where('created_at', '<=', $date . ' 23:59:59')
+            ->count();
+    }
+    
+    $totalusers = json_encode($totalusers);
+    $usersgrowth = json_encode($usersgrowth);
+    
 @endphp
 
 @section('scripts')
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="/assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
     <script src="/assets/admin/src/assets/js/dashboard/dash_1.js"></script>
+    <script src="/assets/admin/src/assets/js/dashboard/dash_2.js"></script>
 
     <script>
         window.addEventListener("load", function() {
 
             var recent_blog_views = JSON.parse('{!! $recent_blog_views !!}');
             var recent_events_views = JSON.parse('{!! $recent_events_views !!}');
-            console.log(recent_blog_views);
-            console.log(recent_events_views)
-
 
             function createChartOptions(chartID, color, data) {
                 return {
@@ -914,6 +944,62 @@
         });
     </script>
 
+    <script>
+        var totalusers = JSON.parse('{!! $totalusers !!}');
+        var usersgrowth = JSON.parse('{!! $usersgrowth !!}');
+
+        var options = {
+            chart: {
+                height: 350,
+                type: 'line',
+                toolbar: {
+                    show: false,
+                }
+            },
+            series: [{
+                name: 'User Growth',
+                type: 'column',
+                data: usersgrowth
+            }, {
+                name: 'Total Users',
+                type: 'line',
+                data: totalusers
+            }, ],
+            stroke: {
+                width: [0, 4]
+            },
+            title: {
+                text: 'Traffic Sources'
+            },
+            labels: [
+                @for ($i = 28; $i > 0; $i--)
+                    '{{ now()->subDays($i - 1)->format('d M') }}',
+                @endfor
+            ],
+            xaxis: {
+                type: 'datetime'
+            },
+            yaxis: [{
+                title: {
+                    text: 'User Growth',
+                },
+
+            }, {
+                opposite: true,
+                title: {
+                    text: 'Total Users'
+                }
+            }]
+
+        }
+
+        var chart = new ApexCharts(
+            document.querySelector("#mixed-chart"),
+            options
+        );
+
+        chart.render();
+    </script>
 
 
     <!-- blog -->

@@ -17,8 +17,8 @@
         .swiper-slide {
             max-height: 90px;
             /* text-align: center;
-                                                                                                                font-size: 18px;
-                                                                                                                background: #fff; */
+                                                                                                                                                                        font-size: 18px;
+                                                                                                                                                                        background: #fff; */
 
             /* Center slide text vertically */
             display: -webkit-box;
@@ -36,7 +36,7 @@
         }
 
         .swiper-slide img {
-            height: 90px;
+            height: 90px !important;
             object-fit: cover;
         }
 
@@ -122,7 +122,8 @@
             <!-- /SECTION INFO -->
 
             <!-- SECTION IMAGE -->
-            <img class="section-image" src="/assets/template-landing/img/section/01.webp" alt="section-image-01">
+            <img class="section-image" src="/assets/template-landing/img/section/01.webp" height="961" width="1530"
+                alt="ConnectUp Screenshot">
             <!-- /SECTION IMAGE -->
 
             <!-- SECTION BUTTON -->
@@ -158,12 +159,14 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="https://bnest.in/" target="_blank">
-                            <img src="/assets/defaults/partners/bnest.webp" alt="Bnest Incubation Partner">
+                            <img src="/assets/defaults/partners/bnest.webp" height="90"
+                                style="aspect-ratio: auto 500/237" alt="Bnest Incubation Partner">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="http://ahoy.twilio.com/startup" target="_blank">
-                            <img src="/assets/defaults/partners/twillio.webp" alt="Twillio Customer Engagement Partner">
+                            <img src="/assets/defaults/partners/twillio.webp" height="90"
+                                style="aspect-ratio: auto 430/125" alt="Twillio Customer Engagement Partner">
                         </a>
                     </div>
                 </div>
@@ -307,7 +310,7 @@
                                     <!-- /DATE STICKER DAY -->
 
                                     <!-- DATE STICKER MONTH -->
-                                    <p class="date-sticker-month">
+                                    <p class="date-sticker-month" style="color:#0d1117;background:#fff">
                                         {{ Carbon::parse($event->e_dates[0])->format('M') }}
                                     </p>
                                     <!-- /DATE STICKER MONTH -->
