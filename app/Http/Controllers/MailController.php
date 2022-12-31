@@ -158,7 +158,7 @@ class MailController extends Controller
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
                 // $message->subject("Time to shine: Complete Round II | Web Developer @ConnectUp");
-                $message->subject("Congratulations!!! Your application has been shortlisted for Round-I | Web Developer @ConnectUp");
+                // $message->subject("Congratulations!!! Your application has been shortlisted for Round-I | Web Developer @ConnectUp");
                 // $message->subject("[Action Required] Complete the Round-1 Test by deadline");
                 $message->subject(" [Reminder] Clock is Ticking: Submit your Web Development Round-2 Task ");
 
