@@ -150,7 +150,7 @@
                         </div>
                     </a>
                     <p class="user-status-title medium"><a class="bold"
-                            href="${post.user.username}">${ post.user.name }</a> shared a
+                            href="/e/${post.user.username}">${ post.user.name }</a> shared a
                         <span class="bold">post</span>
                     </p>
                     <p class="user-status-text small">
