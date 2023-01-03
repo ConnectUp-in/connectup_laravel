@@ -18,7 +18,7 @@
     </ul>
     <br>
     Please choose any two of the tasks above and complete it to the best of your ability. You should submit your task via
-    email by 3rd Dec 2023 11:59 PM.
+    email by 3rd Jan 2023 11:59 PM.
     <br><br>
     Do acknowledge this email and let us know which tasks you have chosen to complete.
     We look forward to reviewing your work and discussing your skills and knowledge further in the personal interview round.
