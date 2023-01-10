@@ -119,7 +119,7 @@ Route::middleware('sitemap')->group(function () {
 
 Route::get('/testmail', [HelperController::class, 'testmail']);
 Route::get('/image', [HelperController::class, 'image']);
-Route::view('viewmail', 'emails.testlink');
+Route::view('viewmail', 'emails.taponn');
 Route::view('privacypolicy', 'others.privacypolicy')->name('privacypolicy');
 Route::view('termsofservice', 'others.termsofservice')->name('termsofservice');
 
