@@ -14,10 +14,9 @@
                     src="https://connectup.in/assets/defaults/mails/taponn/71.png" style="height: 100%"></a>
             <a href="https://linkedin.com/company/taponn"><img
                     src="https://connectup.in/assets/defaults/mails/taponn/72.png" style="height: 100%"></a>
-            <a href="https://taponn.digital"><img src="https://connectup.in/assets/defaults/mails/taponn/73.png"
-                    style="height: 100%"></a>
-            <a href="https://play.google.com/store/apps/details?id=com.tap_onn"><img
-                    src="https://connectup.in/assets/defaults/mails/taponn/74.png" style="height: 100%"></a>
+            <a href="https://www.facebook.com/taponn.digital"><img
+                    src="https://connectup.in/assets/defaults/mails/taponn/73.png" style="height: 100%"></a>
+            {{-- <a href="#"><img src="https://connectup.in/assets/defaults/mails/taponn/74.png" style="height: 100%"></a> --}}
             <a href="https://youtube.com/@Taponn"><img src="https://connectup.in/assets/defaults/mails/taponn/75.png"
                     style="height: 100%"></a>
         </div>
