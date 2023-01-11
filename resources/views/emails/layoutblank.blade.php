@@ -15,19 +15,34 @@
             font-family: Arial, sans-serif;
         }
 
-        * {
+        td {
+            font-size: 0
+        }
+
+        td>img {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            display: block;
         }
     </style>
 </head>
 
 <body style="margin:0;padding:50px 0; background:#ddd">
-    <div style="width:700px;margin:auto;display:flex;flex-direction:column">
-        @yield('content')
-    </div>
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ddd;">
+        <tr>
+            <td align="center" style="padding:0;">
+                <table role="presentation"
+                    style="width:602px;border-collapse:collapse;border:0px solid #fff;background:#fff;border-spacing:0;text-align:left;">
 
+                    <tr>
+                        <td>
+                            @yield('content')
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
