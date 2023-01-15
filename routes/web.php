@@ -94,6 +94,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
         Route::redirect('ecell', 'https://forms.gle/RKb1rwqkozA2d95y5', 301);
+        Route::redirect('envoy', 'https://forms.gle/9zSJwTYEYSvTvtWK8', 301);
         Route::get('ecell2', [PartnerEcellController::class, 'render'])->name('partner.ecell');
 
     });
