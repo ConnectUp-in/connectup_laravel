@@ -1,3 +1,4 @@
+<title>Privacy Policy | Rishteyy </title>
 <style>
     [data-custom-class='body'],
     [data-custom-class='body'] * {
