@@ -43,7 +43,7 @@ class MailController extends Controller
                 'email' => $user['email'],
             ];
             // $data = [];
-            Mail::send('emails.taponn', $data, function ($message) use ($data) {
+            Mail::send('emails.taponn.02', $data, function ($message) use ($data) {
                 $message->from('connectup.in@gmail.com', 'Team ConnectUp');
                 $message->to($data['email'], $data['name']);
                 $message->subject("Taponn Mail Campaign");
