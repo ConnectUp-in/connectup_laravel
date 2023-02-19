@@ -124,6 +124,7 @@ Route::view('viewmail', 'emails.taponn.02');
 Route::view('privacypolicy', 'others.privacypolicy')->name('privacypolicy');
 Route::view('rishteyy/privacypolicy', 'others.rishteyypp')->name('rishteyypp');
 Route::redirect('rishteyy/support', 'https://chat.whatsapp.com/E0npF7IgP2a0fK3DtiCjOJ');
+Route::redirect('kutumb', 'https://kutumb.vercel.app/');
 Route::view('termsofservice', 'others.termsofservice')->name('termsofservice');
 
 // Social Authentication Routes
