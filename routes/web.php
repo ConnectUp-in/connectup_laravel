@@ -38,6 +38,7 @@ Route::middleware('sitemap')->group(function () {
 
     Route::get('feed', [AppController::class, 'feed'])->name('feed');
     Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
+    Route::get('e/{username}/links', [ProfileController::class, 'links'])->name('links');
     Route::get('redirect', [HelperController::class, 'redirect']);
     Route::get('startups', [AppController::class, 'startups'])->name('startups');
     Route::get('superpreneurs', [AppController::class, 'superpreneurs'])->name('superpreneurs');
