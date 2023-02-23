@@ -90,12 +90,12 @@
         <span class="page_title">Links | {{ $user->name }}</span>
 
         <div class="socials">
-            <a href="mailto:{{ $user->email }}">
+            <a href="{{ shorten('mailto:' . $user->email) }}">
                 <i class="fas fa-envelope"></i>
             </a>
 
             @foreach ($user->socials as $social => $link)
-                <a href="{{ $link }}">
+                <a href="{{ shorten($link) }}">
                     <i class="fab fa-{{ $social }}"></i>
                 </a>
             @endforeach
@@ -103,7 +103,7 @@
 
         <div class="links">
             @foreach ($links as $link)
-                <a href="{{ $link->link }}" target="_blank">{{ $link->title }}</a>
+                <a href="{{ shorten($link->link) }}" target="_blank">{{ $link->title ?? $link->link }}</a>
             @endforeach
         </div>
     </div>
