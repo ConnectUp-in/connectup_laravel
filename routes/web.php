@@ -45,6 +45,7 @@ Route::middleware('sitemap')->group(function () {
     Route::get('events', [AppController::class, 'events'])->name('events');
     Route::get('blogs', [AppController::class, 'blogs'])->name('blogs');
     Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
+    Route::get('jobs', [AppController::class, 'jobs'])->name('jobs');
 
     Route::prefix('post')->group(function () {
         Route::get('/{id}', [PostController::class, 'post'])->name('post');
