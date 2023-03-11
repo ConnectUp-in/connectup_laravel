@@ -8,7 +8,7 @@
             </div>
             <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
-                    <h3 class="text-white fs-30 mb-0">Sandbox</h3>
+                    <h3 class="text-white fs-30 mb-0">ConnectUp</h3>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
@@ -22,13 +22,11 @@
                     <!-- /.navbar-nav -->
                     <div class="offcanvas-footer d-lg-none">
                         <div>
-                            <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
-                            <br /> 00 (123) 456 78 90 <br />
+                            <a href="mailto:connectup.in@gmail.com" class="link-inverse">connectup.in@gmail.com</a>
+                            {{-- <br /> 00 (123) 456 78 90 <br /> --}}
                             <nav class="nav social social-white mt-4">
-                                <a href="#"><i class="uil uil-twitter"></i></a>
-                                <a href="#"><i class="uil uil-facebook-f"></i></a>
-                                <a href="#"><i class="uil uil-instagram"></i></a>
-                                <a href="#"><i class="uil uil-youtube"></i></a>
+                                <a href="https://linkedin.com/company/connectupin"><i class="uil uil-linkedin"></i></a>
+                                <a href="https://instagram.com/connectup.in"><i class="uil uil-instagram"></i></a>
                             </nav>
                             <!-- /.social -->
                         </div>
@@ -42,7 +40,6 @@
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                     <li class="nav-item">
                         <nav class="nav social social-muted justify-content-end text-end">
-                            <a href="#"><i class="uil uil-twitter"></i></a>
                             <a href="https://linkedin.com/company/connectupin"><i class="uil uil-linkedin"></i></a>
                             <a href="https://instagram.com/connectup.in"><i class="uil uil-instagram"></i></a>
                         </nav>
