@@ -37,14 +37,15 @@
                         <div class="row text-center">
                             <div class="col-xl-11 col-xxl-9 mx-auto">
                                 <h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">Join Our Community</h2>
-                                <h3 class="display-4 mb-7 px-lg-17">We are trusted by over 5000+ clients. Join them
-                                    now and grow your business.</h3>
+                                <h3 class="display-4 mb-7 px-lg-17">Join ConnectUp Community and accelerate your success
+                                    to new heights!</h3>
                             </div>
                             <!-- /column -->
                         </div>
                         <!-- /.row -->
                         <div class="d-flex justify-content-center">
-                            <span><a class="btn btn-lg btn-gradient gradient-1 rounded">Get Started</a></span>
+                            <span><a href="/join/member" class="btn btn-lg btn-gradient gradient-1 rounded">Get
+                                    Started</a></span>
                         </div>
                     </div>
                     <!--/.container -->
