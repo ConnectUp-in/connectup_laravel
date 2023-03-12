@@ -123,8 +123,8 @@
                 <div class="row">
                     <div class="col-xl-7 col-xxl-6 mx-auto text-center">
                         <i class="icn-flower text-leaf fs-30 opacity-25"></i>
-                        <h2 class="display-5 text-center mt-2 mb-10">Here are the latest posts from my blog that grabbed the
-                            most attention.</h2>
+                        <h2 class="display-5 text-center mt-2 mb-10">Never Miss an Hackathon, Meetup or
+                            Competition again</h2>
                     </div>
                     <!--/column -->
                 </div>
@@ -189,6 +189,93 @@
     </section>
     <!-- /section -->
 
+
+    <section class="wrapper bg-light">
+        <div class="container py-14 py-md-16">
+            <div class="row">
+                <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                    <h2 class="fs-15 text-uppercase text-primary text-center">Our News</h2>
+                    <h3 class="display-4 mb-6 text-center">Here are the latest company news from our blog that got the most
+                        attention.</h3>
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+            <div class="position-relative">
+                <div class="shape bg-dot primary rellax w-17 h-20" data-rellax-speed="1" style="top: 0; left: -1.7rem;">
+                </div>
+                <div class="swiper-container dots-closer blog grid-view mb-6" data-margin="0" data-dots="true"
+                    data-items-xl="3" data-items-md="2" data-items-xs="1">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            @foreach (getRecentBlogs() as $blog)
+                                <div class="swiper-slide">
+                                    <div class="item-inner">
+                                        <article>
+                                            <div class="card">
+                                                <figure class="card-img-top overlay overlay-1 hover-scale"><a
+                                                        href="{{ route('blog', $blog->slug) }}">
+                                                        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" /></a>
+                                                    <figcaption>
+                                                        <h5 class="from-top mb-0">Read More</h5>
+                                                    </figcaption>
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="post-header">
+                                                        {{-- <div class="post-category text-line">
+                                                            <a href="#" class="hover" rel="category">Coding</a>
+                                                        </div> --}}
+                                                        <!-- /.post-category -->
+                                                        <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark"
+                                                                href="{{ route('blog', $blog->slug) }}">
+                                                                {{ Str::limit($blog->title, 50) }}
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <!-- /.post-header -->
+                                                    <div class="post-content">
+                                                        <p>
+                                                            {{ html2text(Str::limit($blog->title, 100)) }}
+                                                        </p>
+                                                    </div>
+                                                    <!-- /.post-content -->
+                                                </div>
+                                                <!--/.card-body -->
+                                                <div class="card-footer">
+                                                    <ul class="post-meta d-flex mb-0">
+                                                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span>
+                                                                {{ $blog->updated_at->diffForHumans() }}
+                                                            </span></li>
+                                                        {{-- <li class="post-comments"><a href="#"><i
+                                                                    class="uil uil-comment"></i>4</a></li> --}}
+                                                        <li class="post-likes ms-auto"><i class="uil uil-eye"></i>
+                                                            {{ changeIntoKMG(profileview($blog->id)) }}
+                                                        </li>
+                                                    </ul>
+                                                    <!-- /.post-meta -->
+                                                </div>
+                                                <!-- /.card-footer -->
+                                            </div>
+                                            <!-- /.card -->
+                                        </article>
+                                        <!-- /article -->
+                                    </div>
+                                    <!-- /.item-inner -->
+                                </div>
+                            @endforeach
+                            <!--/.swiper-slide -->
+                        </div>
+                        <!--/.swiper-wrapper -->
+                    </div>
+                    <!-- /.swiper -->
+                </div>
+                <!-- /.swiper-container -->
+            </div>
+            <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
     <!-- /section -->
     <section class="wrapper bg-light">
         <div class="container pt-14 pt-md-17 pb-14 pb-md-18">

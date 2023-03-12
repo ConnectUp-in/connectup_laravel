@@ -162,3 +162,9 @@ function getRecentEvents()
     $events = \App\Models\Event::where('active', 1)->orderBy('id', 'desc')->limit(6)->get();
     return $events;
 }
+
+function getRecentBlogs()
+{
+    $blogs = \App\Models\Blog::where('active', 1)->orderBy('id', 'desc')->limit(6)->get();
+    return $blogs;
+}
