@@ -156,3 +156,9 @@ function getCategories()
     $categories = \App\Models\Category::where('active', 1)->get();
     return $categories;
 }
+
+function getRecentEvents()
+{
+    $events = \App\Models\Event::where('active', 1)->orderBy('id', 'desc')->limit(6)->get();
+    return $events;
+}

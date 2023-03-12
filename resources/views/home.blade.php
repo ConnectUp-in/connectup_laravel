@@ -117,6 +117,78 @@
     </section>
     <!-- /section -->
 
+    <section class="wrapper bg-light">
+        <div class="overflow-hidden">
+            <div class="container py-14 py-md-16">
+                <div class="row">
+                    <div class="col-xl-7 col-xxl-6 mx-auto text-center">
+                        <i class="icn-flower text-leaf fs-30 opacity-25"></i>
+                        <h2 class="display-5 text-center mt-2 mb-10">Here are the latest posts from my blog that grabbed the
+                            most attention.</h2>
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="swiper-container nav-bottom nav-color mb-14" data-margin="30" data-dots="false" data-nav="true"
+                    data-items-lg="3" data-items-md="2" data-items-xs="1">
+                    <div class="swiper overflow-visible pb-2">
+                        <div class="swiper-wrapper">
+
+                            @foreach (getRecentEvents() as $event)
+                                <div class="swiper-slide">
+                                    <article>
+                                        <div class="card shadow-lg">
+                                            <figure class="card-img-top overlay overlay-1"><a
+                                                    href="{{ route('event', $event->slug) }}"> <img
+                                                        src="{{ $event->image }}" alt="" /></a>
+                                                <figcaption>
+                                                    <h5 class="from-top mb-0">Know More</h5>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="card-body p-6">
+                                                <div class="post-header">
+                                                    {{-- <div class="post-category">
+                                                        <a href="#" class="hover" rel="category">Wedding</a>
+                                                    </div> --}}
+                                                    <!-- /.post-category -->
+                                                    <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark"
+                                                            href="{{ route('event', $event->slug) }}">{{ $event->title }}</a>
+                                                    </h2>
+                                                </div>
+                                                <!-- /.post-header -->
+                                                <div class="post-footer">
+                                                    <ul class="post-meta d-flex mb-0">
+                                                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span>
+                                                                {{ $event->updated_at->diffForHumans() }}
+                                                            </span></li>
+                                                        <li class="post-comments"><a href="#"><i
+                                                                    class="uil uil-eye"></i>{{ changeIntoKMG(profileview($event->id)) }}</a>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- /.post-meta -->
+                                                </div>
+                                                <!-- /.post-footer -->
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!-- /.card -->
+                                    </article>
+                                    <!-- /article -->
+                                </div>
+                            @endforeach
+                        </div>
+                        <!--/.swiper-wrapper -->
+                    </div>
+                    <!-- /.swiper -->
+                </div>
+                <!-- /.swiper-container -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.overflow-hidden -->
+    </section>
+    <!-- /section -->
+
     <!-- /section -->
     <section class="wrapper bg-light">
         <div class="container pt-14 pt-md-17 pb-14 pb-md-18">
@@ -134,7 +206,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/script.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">Software & Integration</h3>
@@ -148,7 +221,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/verify.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">Network Security</h3>
@@ -162,7 +236,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/cloud-network.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">Cloud Services</h3>
@@ -176,7 +251,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/director.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">Wireless Networking</h3>
