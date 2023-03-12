@@ -9,10 +9,10 @@
                     <div class="container">
                         <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
                             <div class="col-lg-6" data-cues="slideInDown" data-group="page-title" data-delay="900">
-                                <h1 class="display-2 mb-4 me-xl-5 me-xxl-0">Networking <span
-                                        class="text-gradient gradient-1">solutions</span> for Startups & Entrpreneurs</h1>
-                                <p class="lead fs-23 lh-sm mb-7 pe-xxl-15">Connect, collaborate, and grow your startup with
-                                    our network of incubators, mentors, investors, and startups.</p>
+                                <h1 class="display-1 mb-4 me-xl-5 me-xxl-0">Have a <span
+                                        class="text-gradient gradient-1">Startup </span><br> Let's ConnectUp</h1>
+                                <p class="lead fs-23 lh-sm mb-7 pe-xxl-15">Join ConnectUp Community and accelerate your
+                                    success to new heights! </p>
                                 <div><a href="/join/member" class="btn btn-lg btn-gradient gradient-1 rounded">Join
                                         Now</a></div>
                             </div>
@@ -34,6 +34,89 @@
         </div>
         <!-- /.container-card -->
     </section>
+
+
+    <section class="wrapper bg-light">
+        <div class="container py-14 py-md-16">
+            <div class="row gy-10 gy-sm-13 gx-md-8 gx-xl-12 align-items-center">
+                <div class="col-lg-5 offset-lg-1">
+                    <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/3d2.png"
+                            srcset="/assets/home/assets/img/illustrations/3d2@2x.png 2x" alt="">
+                    </figure>
+                </div>
+                <!--/column -->
+                <div class="col-lg-6">
+                    <h2 class="fs-16 text-uppercase text-muted mb-3">What Makes Us Different?</h2>
+                    <h3 class="display-3 mb-10">Our <span class="underline-3 style-2 yellow">Solution</span> for
+                        Entrepreneurs</h3>
+                    <div class="row gy-8">
+                        <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <img src="/assets/home/assets/img/icons/solid/bulb.svg"
+                                        class="svg-inject icon-svg icon-svg-xs solid-mono text-fuchsia me-4"
+                                        alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">Networking</h4>
+                                    <p class="mb-0">Connect and collaborate with like-minded peoples
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/column -->
+                        <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <img src="/assets/home/assets/img/icons/solid/lamp.svg"
+                                        class="svg-inject icon-svg icon-svg-xs solid-mono text-violet me-4"
+                                        alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">Mentorship</h4>
+                                    <p class="mb-0">Get guidance from mentors in your niche</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/column -->
+                        <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <img src="/assets/home/assets/img/icons/solid/puzzle.svg"
+                                        class="svg-inject icon-svg icon-svg-xs solid-mono text-orange me-4"
+                                        alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">Resources</h4>
+                                    <p class="mb-0">Access a wealth of resources to help grow your business.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/column -->
+                        <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <img src="/assets/home/assets/img/icons/solid/headphone.svg"
+                                        class="svg-inject icon-svg icon-svg-xs solid-mono text-green me-4" alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">Events</h4>
+                                    <p class="mb-0">Attend ongoing workshops & events in the ecosystem.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/column -->
+                    </div>
+                    <!--/.row -->
+                </div>
+                <!--/column -->
+            </div>
+            <!--/.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
+
     <!-- /section -->
     <section class="wrapper bg-light">
         <div class="container pt-14 pt-md-17 pb-14 pb-md-18">
@@ -107,7 +190,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/setting.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">IT Solutions</h3>
@@ -121,7 +205,8 @@
                     <div class="d-flex flex-row">
                         <div>
                             <img src="/assets/home/assets/img/icons/solid/server.svg"
-                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4" alt="" />
+                                class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-4"
+                                alt="" />
                         </div>
                         <div>
                             <h3 class="fs-22 mb-1">Server Configuration</h3>

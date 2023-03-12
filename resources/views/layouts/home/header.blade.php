@@ -3,7 +3,7 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
             <div class="navbar-brand w-100">
                 <a href="./index.html">
-                    <img src="/assets/template/img/landing/logotext.png" style="height:50px" alt="" />
+                    <img src="/assets/template/img/landing/logotext.png" style="height:40px" alt="" />
                     {{-- <span class="text-dark fs-30 mb-0">ConnectUp</span> --}}
 
                 </a>
@@ -19,7 +19,7 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
                         <li class="nav-item"><a class="nav-link" href="/events">Events</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/join/member">Join</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="/join/member">Join</a></li> --}}
                     </ul>
                     <!-- /.navbar-nav -->
                     <div class="offcanvas-footer d-lg-none">
@@ -46,6 +46,10 @@
                             <a href="https://instagram.com/connectup.in"><i class="uil uil-instagram"></i></a>
                         </nav>
                         <!-- /.social -->
+                    </li>
+
+                    <li class="nav-item d-none d-md-block">
+                        <a href="/join/member" class="btn btn-sm btn-primary rounded-pill">Join Now</a>
                     </li>
                     <li class="nav-item d-lg-none">
                         <button class="hamburger offcanvas-nav-btn"><span></span></button>
