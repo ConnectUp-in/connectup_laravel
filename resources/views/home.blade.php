@@ -140,7 +140,8 @@
                                         <div class="card shadow-lg">
                                             <figure class="card-img-top overlay overlay-1"><a
                                                     href="{{ route('event', $event->slug) }}"> <img
-                                                        src="{{ $event->image }}" alt="" /></a>
+                                                        src="{{ $event->image_compressed }}"
+                                                        onerror="this.src='{{ $event->image }}'" alt="" /></a>
                                                 <figcaption>
                                                     <h5 class="from-top mb-0">Know More</h5>
                                                 </figcaption>
@@ -215,7 +216,9 @@
                                             <div class="card">
                                                 <figure class="card-img-top overlay overlay-1 hover-scale"><a
                                                         href="{{ route('blog', $blog->slug) }}">
-                                                        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" /></a>
+                                                        <img src="{{ $blog->image_compressed }}"
+                                                            onerror="this.src='{{ $blog->image }}'"
+                                                            alt="{{ $blog->title }}" /></a>
                                                     <figcaption>
                                                         <h5 class="from-top mb-0">Read More</h5>
                                                     </figcaption>
