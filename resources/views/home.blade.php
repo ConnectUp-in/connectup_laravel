@@ -194,9 +194,9 @@
         <div class="container py-14 py-md-16">
             <div class="row">
                 <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
-                    <h2 class="fs-15 text-uppercase text-primary text-center">Our News</h2>
-                    <h3 class="display-4 mb-6 text-center">Here are the latest company news from our blog that got the most
-                        attention.</h3>
+                    <h2 class="fs-15 text-uppercase text-primary text-center">Read our Blogs</h2>
+                    <h3 class="display-4 mb-6 text-center">Stay Informed with Our Latest Entrepreneurial Insights and Tips
+                    </h3>
                 </div>
                 <!-- /column -->
             </div>

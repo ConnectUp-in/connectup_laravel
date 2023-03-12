@@ -157,14 +157,14 @@ function getCategories()
     return $categories;
 }
 
-function getRecentEvents()
+function getRecentEvents($count = 6)
 {
-    $events = \App\Models\Event::where('active', 1)->orderBy('id', 'desc')->limit(6)->get();
+    $events = \App\Models\Event::where('active', 1)->orderBy('id', 'desc')->limit($count)->get();
     return $events;
 }
 
-function getRecentBlogs()
+function getRecentBlogs($count = 6)
 {
-    $blogs = \App\Models\Blog::where('active', 1)->orderBy('id', 'desc')->limit(6)->get();
+    $blogs = \App\Models\Blog::where('active', 1)->orderBy('id', 'desc')->limit($count)->get();
     return $blogs;
 }
