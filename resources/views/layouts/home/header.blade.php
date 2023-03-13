@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg center-nav transparent navbar-light caret-none">
         <div class="container flex-lg-row flex-nowrap align-items-center">
             <div class="navbar-brand w-100">
-                <a href="./index.html">
+                <a href="/">
                     <img src="/assets/template/img/landing/logotext.png" style="height:40px" alt="" />
                     {{-- <span class="text-dark fs-30 mb-0">ConnectUp</span> --}}
 
