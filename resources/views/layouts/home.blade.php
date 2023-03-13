@@ -27,47 +27,42 @@
         <!-- /header -->
         @yield('content')
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="bg-light">
-        <div class="container-card">
-            <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mb-14"
-                data-image-src="/assets/home/assets/img/photos/bg22.png">
-                <div class="card-body py-14 px-0">
-                    <div class="container">
-                        <div class="row text-center">
-                            <div class="col-xl-11 col-xxl-9 mx-auto">
-                                <h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">Join Our Community</h2>
-                                <h3 class="display-4 mb-7 px-lg-17">Join ConnectUp Community and accelerate your success
-                                    to new heights!</h3>
-                            </div>
-                            <!-- /column -->
+    <div class="container-card">
+        <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mb-14"
+            data-image-src="/assets/home/assets/img/photos/bg22.png">
+            <div class="card-body py-14 px-0">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-xl-11 col-xxl-9 mx-auto">
+                            <h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">Join Our Community</h2>
+                            <h3 class="display-4 mb-7 px-lg-17">Join ConnectUp Community and accelerate your success
+                                to new heights!</h3>
                         </div>
-                        <!-- /.row -->
-                        <div class="d-flex justify-content-center">
-                            <span><a href="/join/member" class="btn btn-lg btn-gradient gradient-1 rounded">Get
-                                    Started</a></span>
-                        </div>
+                        <!-- /column -->
                     </div>
-                    <!--/.container -->
+                    <!-- /.row -->
+                    <div class="d-flex justify-content-center">
+                        <span><a href="/join/member" class="btn btn-lg btn-gradient gradient-1 rounded">Get
+                                Started</a></span>
+                    </div>
                 </div>
-                <!--/.card-body -->
+                <!--/.container -->
             </div>
-            <!--/.card -->
+            <!--/.card-body -->
         </div>
-        <!-- /.container-card -->
-        <div class="container pb-13 pb-md-15"">
-            <div class=" row gy-6 gy-lg-0">
+        <!--/.card -->
+    </div>
+    <footer class="bg-dark text-inverse">
+        <div class="container py-13 py-md-15">
+            <div class="row gy-6 gy-lg-0">
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <img class="mb-4" src="/assets/home/assets/img/logo-dark.png"
-                            srcset="/assets/home/assets/img/logo-dark@2x.png 2x" alt="" />
-                        <p class="mb-4">© 2023 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
-                        <nav class="nav social ">
-                            <a href="#"><i class="uil uil-twitter"></i></a>
-                            <a href="#"><i class="uil uil-facebook-f"></i></a>
-                            <a href="#"><i class="uil uil-dribbble"></i></a>
-                            <a href="#"><i class="uil uil-instagram"></i></a>
-                            <a href="#"><i class="uil uil-youtube"></i></a>
+                        <img class="mb-4" src="/assets/template/img/landing/logotextdark.png" style="height:40px"
+                            alt="" />
+                        <p class="mb-4">© 2023 ConnectUp <br class="d-none d-lg-block" />All rights reserved.</p>
+                        <nav class="nav social social-white">
+                            <a href="https://linkedin.com/company/connectupin"><i class="uil uil-linkedin"></i></a>
+                            <a href="https://instagram.com/connectup.in"><i class="uil uil-instagram"></i></a>
                         </nav>
                         <!-- /.social -->
                     </div>
@@ -76,23 +71,22 @@
                 <!-- /column -->
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <h4 class="widget-title  mb-3">Get in Touch</h4>
-                        <address class="pe-xl-15 pe-xxl-17">Moonshine St. 14/05 Light City, London, United Kingdom
-                        </address>
-                        <a href="mailto:#" class="link-body">info@email.com</a><br /> 00 (123) 456 78 90
+                        <h4 class="widget-title text-white mb-3">Need Help?</h4>
+                        <ul class="list-unstyled text-reset mb-0">
+                            <li><a href="mailto:connectup.in@gmail.com">Support</a></li>
+                            <li><a href="{{ route('termsofservice') }}">Terms of Use</a></li>
+                            <li><a href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
+                        </ul>
                     </div>
-                    <!-- /.widget -->
                 </div>
                 <!-- /column -->
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <h4 class="widget-title  mb-3">Learn More</h4>
-                        <ul class="list-unstyled text-reset mb-0">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our Story</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                        <h4 class="widget-title text-white mb-3">Quick Links</h4>
+                        <ul class="list-unstyled  mb-0">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/events">Events</a></li>
                         </ul>
                     </div>
                     <!-- /.widget -->
@@ -100,15 +94,14 @@
                 <!-- /column -->
                 <div class="col-md-12 col-lg-3">
                     <div class="widget">
-                        <h4 class="widget-title  mb-3">Our Newsletter</h4>
-                        <p class="mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+                        <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
+                        <p class="mb-5">Stay updated with entreprenurial ecosystem.</p>
                         <div class="newsletter-wrapper">
                             <!-- Begin Mailchimp Signup Form -->
                             <div id="mc_embed_signup2">
-                                <form
-                                    action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a"
-                                    method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form"
-                                    class="validate " target="_blank" novalidate>
+                                <form action="/subscribe/newsletter" method="post" id="mc-embedded-subscribe-form2"
+                                    name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank"
+                                    novalidate>
                                     <div id="mc_embed_signup_scroll2">
                                         <div class="mc-field-group input-group form-floating">
                                             <input type="email" value="" name="EMAIL"
@@ -116,8 +109,7 @@
                                                 id="mce-EMAIL2">
                                             <label for="mce-EMAIL2">Email Address</label>
                                             <input type="submit" value="Join" name="subscribe"
-                                                id="mc-embedded-subscribe2"
-                                                class="btn btn-primary btn-gradient gradient-1">
+                                                id="mc-embedded-subscribe2" class="btn btn-primary">
                                         </div>
                                         <div id="mce-responses2" class="clear">
                                             <div class="response" id="mce-error-response2" style="display:none">
@@ -143,6 +135,7 @@
             </div>
             <!--/.row -->
         </div>
+        <!-- /.container -->
     </footer>
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
