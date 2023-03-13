@@ -246,18 +246,22 @@
                 <div class="col-md-10 col-xl-8 mx-auto">
                     <div class="post-header">
                         <div class="post-category text-line text-white">
-                            <a href="#" class="text-reset" rel="category">Teamwork</a>
+                            <a href="#" class="text-reset" rel="category">{{ $blog->category->name }}</a>
                         </div>
                         <!-- /.post-category -->
                         <h1 class="display-1 mb-4 text-white">{{ $blog->title }}</h1>
                         <ul class="post-meta text-white">
-                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>5 Jul 2022</span></li>
-                            <li class="post-author"><i class="uil uil-user"></i><a href="#"
-                                    class="text-reset"><span>By Sandbox</span></a></li>
-                            <li class="post-comments"><i class="uil uil-comment"></i><a href="#"
-                                    class="text-reset">3<span> Comments</span></a></li>
-                            <li class="post-likes"><i class="uil uil-heart-alt"></i><a href="#"
-                                    class="text-reset">3<span> Likes</span></a></li>
+                            <li class="post-date"><i
+                                    class="uil uil-calendar-alt"></i><span>{{ $blog->created_at->diffForHumans() }}</span>
+                            </li>
+                            <li class="post-author"><i class="uil uil-user"></i><a
+                                    href="{{ route('user', $blog->creator->username) }}" class="text-reset"><span>By
+                                        {{ $blog->creator->name }}</span></a></li>
+                            {{-- <li class="post-comments"><i class="uil uil-comment"></i><a href="#"
+                                    class="text-reset">3<span> Comments</span></a></li> --}}
+                            <li class="post-likes"><i
+                                    class="uil uil-eye"></i>{{ changeIntoKMG(profileview($blog->id)) }}<span>
+                                    Views</span></li>
                         </ul>
                         <!-- /.post-meta -->
                     </div>
@@ -276,102 +280,24 @@
                 <div class="col-lg-8">
                     <div class="blog single">
                         <div class="card">
-                            <figure class="card-img-top"><img src="/assets/home/assets/img/photos/b1.jpg" alt="" />
+                            <figure class="card-img-top"><img src="{{ $blog->image }}" alt="" />
                             </figure>
                             <div class="card-body">
                                 <div class="classic-view">
                                     <article class="post">
                                         <div class="post-content mb-5">
-                                            <h2 class="h1 mb-4">Cras mattis consectetur purus fermentum</h2>
-                                            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                                fermentum massa justo sit amet. Vivamus sagittis lacus vel augue laoreet
-                                                rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet
-                                                fermentum. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit
-                                                tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
-                                                dolor auctor. Nullam quis risus eget porta ac consectetur vestibulum.</p>
-                                            <p>Donec sed odio dui consectetur adipiscing elit. Etiam adipiscing tincidunt
-                                                elit, eu convallis felis suscipit ut. Phasellus rhoncus tincidunt auctor.
-                                                Nullam eu sagittis mauris. Donec non dolor ac elit aliquam tincidunt at at
-                                                sapien. Aenean tortor libero, condimentum ac laoreet vitae, varius tempor
-                                                nisi. Duis non arcu vel lectus urna mollis ornare vel eu leo.</p>
-                                            <div class="row g-6 mt-3 mb-10">
-                                                <div class="col-md-6">
-                                                    <figure class="hover-scale rounded cursor-dark"><a
-                                                            href="/assets/home/assets/img/photos/b8-full.jpg"
-                                                            data-glightbox="title: Heading; description: Purus Vulputate Sem Tellus Quam"
-                                                            data-gallery="post"> <img
-                                                                src="/assets/home/assets/img/photos/b8.jpg"
-                                                                alt="" /></a></figure>
-                                                </div>
-                                                <!--/column -->
-                                                <div class="col-md-6">
-                                                    <figure class="hover-scale rounded cursor-dark"><a
-                                                            href="/assets/home/assets/img/photos/b9-full.jpg" data-glightbox
-                                                            data-gallery="post"> <img
-                                                                src="/assets/home/assets/img/photos/b9.jpg"
-                                                                alt="" /></a></figure>
-                                                </div>
-                                                <!--/column -->
-                                                <div class="col-md-6">
-                                                    <figure class="hover-scale rounded cursor-dark"><a
-                                                            href="/assets/home/assets/img/photos/b10-full.jpg"
-                                                            data-glightbox data-gallery="post"> <img
-                                                                src="/assets/home/assets/img/photos/b10.jpg"
-                                                                alt="" /></a></figure>
-                                                </div>
-                                                <!--/column -->
-                                                <div class="col-md-6">
-                                                    <figure class="hover-scale rounded cursor-dark"><a
-                                                            href="/assets/home/assets/img/photos/b11-full.jpg"
-                                                            data-glightbox data-gallery="post"> <img
-                                                                src="/assets/home/assets/img/photos/b11.jpg"
-                                                                alt="" /></a></figure>
-                                                </div>
-                                                <!--/column -->
-                                            </div>
-                                            <!-- /.row -->
-                                            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis
-                                                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                                Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Maecenas
-                                                faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.
-                                                Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit
-                                                amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.
-                                                Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus
-                                                magna.</p>
-                                            <blockquote class="fs-lg my-8">
-                                                <p>Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet,
-                                                    consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi
-                                                    erat porttitor ligula lacinia odio sem nec elit purus.</p>
-                                                <footer class="blockquote-footer">Very important person</footer>
-                                            </blockquote>
-                                            <h3 class="h2 mb-4">Sit Vulputate Bibendum Purus</h3>
-                                            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                                fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed
-                                                consectetur. Cras mattis consectetur purus sit amet fermentum. Praesent
-                                                commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id
-                                                ligula porta felis euismod semper.</p>
-                                            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                                fermentum massa justo sit amet risus. Donec sed odio dui. Cras justo odio,
-                                                dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus
-                                                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-                                                risus. Sed posuere consectetur est at lobortis. Donec id elit non mi porta
-                                                gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Cum sociis
-                                                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                                            {!! $blog->content !!}
                                         </div>
                                         <!-- /.post-content -->
                                         <div
                                             class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
                                             <div>
                                                 <ul class="list-unstyled tag-list mb-0">
-                                                    <li><a href="#"
-                                                            class="btn btn-soft-ash btn-sm rounded-pill mb-0">Still Life</a>
-                                                    </li>
-                                                    <li><a href="#"
-                                                            class="btn btn-soft-ash btn-sm rounded-pill mb-0">Urban</a></li>
-                                                    <li><a href="#"
-                                                            class="btn btn-soft-ash btn-sm rounded-pill mb-0">Nature</a>
-                                                    </li>
+                                                    @foreach ($blog->tags as $tag)
+                                                        <li><a href="#"
+                                                                class="btn btn-soft-ash btn-sm rounded-pill mb-0">{{ $tag }}</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                             <div class="mb-0 mb-md-2">
@@ -399,7 +325,7 @@
                                     <!-- /.post -->
                                 </div>
                                 <!-- /.classic-view -->
-                                <hr />
+                                {{-- <hr />
                                 <div class="author-info d-md-flex align-items-center mb-3">
                                     <div class="d-flex align-items-center">
                                         <figure class="user-avatar"><img class="rounded-circle" alt=""
@@ -425,9 +351,9 @@
                                     <a href="#"><i class="uil uil-dribbble"></i></a>
                                     <a href="#"><i class="uil uil-instagram"></i></a>
                                     <a href="#"><i class="uil uil-youtube"></i></a>
-                                </nav>
+                                </nav> --}}
                                 <!-- /.social -->
-                                <hr />
+                                {{-- <hr />
                                 <h3 class="mb-6">You Might Also Like</h3>
                                 <div class="swiper-container blog grid-view mb-16" data-margin="30" data-dots="true"
                                     data-items-md="2" data-items-xs="1">
@@ -436,8 +362,7 @@
                                             <div class="swiper-slide">
                                                 <article>
                                                     <figure class="overlay overlay-1 hover-scale rounded mb-5"><a
-                                                            href="#"> <img
-                                                                src="/assets/home/assets/img/photos/b4.jpg"
+                                                            href="#"> <img src="/assets/home/assets/img/photos/b4.jpg"
                                                                 alt="" /></a>
                                                         <figcaption>
                                                             <h5 class="from-top mb-0">Read More</h5>
@@ -762,7 +687,7 @@
                                         <label>Comment *</label>
                                     </div>
                                     <button type="submit" class="btn btn-primary rounded-pill mb-0">Submit</button>
-                                </form>
+                                </form> --}}
                                 <!-- /.comment-form -->
                             </div>
                             <!-- /.card-body -->
@@ -773,7 +698,7 @@
                 </div>
                 <!-- /column -->
                 <aside class="col-lg-4 sidebar mt-11 mt-lg-6">
-                    <div class="widget">
+                    {{-- <div class="widget">
                         <form class="search-form">
                             <div class="form-floating mb-0">
                                 <input id="search-form" type="text" class="form-control" placeholder="Search">
@@ -781,75 +706,67 @@
                             </div>
                         </form>
                         <!-- /.search-form -->
-                    </div>
+                    </div> --}}
                     <!-- /.widget -->
+
                     <div class="widget">
-                        <h4 class="widget-title mb-3">About Us</h4>
-                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum. Nulla
-                            vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
-                        <nav class="nav social">
+                        <h4 class="widget-title mb-3">About Author</h4>
+
+                        <div class="author-info d-md-flex align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <figure class="user-avatar"><img class="rounded-circle" alt=""
+                                        src="{{ $blog->creator->profile_photo_path }}" /></figure>
+                                <div>
+                                    <h6><a href="{{ route('user', $blog->creator->username) }}"
+                                            class="link-dark">{{ $blog->creator->name }}</a></h6>
+                                    <span class="post-meta fs-15">{{ $blog->creator->username }}</span>
+                                </div>
+                            </div>
+                            {{-- <div class="mt-3 mt-md-0 ms-auto">
+                                <a href="#"
+                                    class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0"><i
+                                        class="uil uil-file-alt"></i> All Posts</a>
+                            </div> --}}
+                        </div>
+                        {{-- <nav class="nav social">
                             <a href="#"><i class="uil uil-twitter"></i></a>
                             <a href="#"><i class="uil uil-facebook-f"></i></a>
                             <a href="#"><i class="uil uil-dribbble"></i></a>
                             <a href="#"><i class="uil uil-instagram"></i></a>
                             <a href="#"><i class="uil uil-youtube"></i></a>
-                        </nav>
+                        </nav> --}}
                         <!-- /.social -->
                     </div>
                     <!-- /.widget -->
                     <div class="widget">
-                        <h4 class="widget-title mb-3">Popular Posts</h4>
+                        <h4 class="widget-title mb-3">Recent Blogs</h4>
                         <ul class="image-list">
-                            <li>
-                                <figure class="rounded"><a href="./blog-post.html"><img
-                                            src="/assets/home/assets/img/photos/a1.jpg" alt="" /></a></figure>
-                                <div class="post-content">
-                                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">Magna Mollis
-                                            Ultricies</a> </h6>
-                                    <ul class="post-meta">
-                                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span>26 Mar 2022</span>
-                                        </li>
-                                        <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>3</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.post-meta -->
-                                </div>
-                            </li>
-                            <li>
-                                <figure class="rounded"> <a href="./blog-post.html"><img
-                                            src="/assets/home/assets/img/photos/a2.jpg" alt="" /></a></figure>
-                                <div class="post-content">
-                                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">Ornare Nullam
-                                            Risus</a> </h6>
-                                    <ul class="post-meta">
-                                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span>16 Feb 2022</span>
-                                        </li>
-                                        <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>6</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.post-meta -->
-                                </div>
-                            </li>
-                            <li>
-                                <figure class="rounded"><a href="./blog-post.html"><img
-                                            src="/assets/home/assets/img/photos/a3.jpg" alt="" /></a></figure>
-                                <div class="post-content">
-                                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">Euismod Nullam
-                                            Fusce</a> </h6>
-                                    <ul class="post-meta">
-                                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span>8 Jan 2022</span>
-                                        </li>
-                                        <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>5</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.post-meta -->
-                                </div>
-                            </li>
+                            @foreach (getRecentBlogs(3) as $blog)
+                                <li>
+                                    <figure class="rounded"><a href="{{ route('blog', $blog->slug) }}"><img
+                                                src="{{ $blog->image_compressed }}"
+                                                onerror="this.src='{{ $blog->image }}'" alt="" /></a></figure>
+                                    <div class="post-content">
+                                        <h6 class="mb-1"> <a class="link-dark" href="{{ route('blog', $blog->slug) }}">
+                                                {{ Str::limit($blog->title, 30) }}</a> </h6>
+                                        <ul class="post-meta">
+                                            <li class="post-date"><i
+                                                    class="uil uil-calendar-alt"></i><span>{{ $blog->updated_at->diffForHumans() }}</span>
+                                            </li>
+                                            <li class="post-comments"><a href="#"><i
+                                                        class="uil uil-eye"></i>{{ changeIntoKMG(profileview($blog->id)) }}</a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.post-meta -->
+                                    </div>
+                                </li>
+                            @endforeach
+
                         </ul>
                         <!-- /.image-list -->
                     </div>
                     <!-- /.widget -->
-                    <div class="widget">
+                    {{-- <div class="widget">
                         <h4 class="widget-title mb-3">Categories</h4>
                         <ul class="unordered-list bullet-primary text-reset">
                             <li><a href="#">Teamwork (21)</a></li>
@@ -859,23 +776,19 @@
                             <li><a href="#">Meeting (12)</a></li>
                             <li><a href="#">Business Tips (14)</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <!-- /.widget -->
                     <div class="widget">
                         <h4 class="widget-title mb-3">Tags</h4>
                         <ul class="list-unstyled tag-list">
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Still Life</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Urban</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Nature</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Landscape</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Macro</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Fun</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Workshop</a></li>
-                            <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">Photography</a></li>
+                            @foreach ($blog->tags as $tag)
+                                <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill">{{ $tag }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- /.widget -->
-                    <div class="widget">
+                    {{-- <div class="widget">
                         <h4 class="widget-title mb-3">Archive</h4>
                         <ul class="unordered-list bullet-primary text-reset">
                             <li><a href="#">February 2019</a></li>
@@ -884,7 +797,7 @@
                             <li><a href="#">November 2018</a></li>
                             <li><a href="#">October 2018</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <!-- /.widget -->
                 </aside>
                 <!-- /column .sidebar -->
