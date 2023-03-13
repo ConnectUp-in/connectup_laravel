@@ -282,6 +282,7 @@
                         <div class="card">
                             <figure class="card-img-top"><img src="{{ $blog->image }}" alt="" />
                             </figure>
+                            @ad('display-horizontal')
                             <div class="card-body">
                                 <div class="classic-view">
                                     <article class="post">
@@ -737,6 +738,8 @@
                         </nav> --}}
                         <!-- /.social -->
                     </div>
+
+                    @ad('display-square')
                     <!-- /.widget -->
                     <div class="widget">
                         <h4 class="widget-title mb-3">Recent Blogs</h4>
