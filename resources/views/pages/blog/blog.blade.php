@@ -309,12 +309,16 @@
                                                         aria-expanded="false">
                                                         <i class="uil uil-share-alt"></i> Share </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="uil uil-twitter"></i>Twitter</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="uil uil-facebook-f"></i>Facebook</a>
-                                                        <a class="dropdown-item" href="#"><i
+
+                                                        <a class="dropdown-item"
+                                                            href="{{ shareLink('linkedin', route('blog', $blog->slug), $blog->title) }}"><i
                                                                 class="uil uil-linkedin"></i>Linkedin</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ shareLink('twitter', route('blog', $blog->slug), $blog->title) }}"><i
+                                                                class="uil uil-twitter"></i>Twitter</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ shareLink('facebook', route('blog', $blog->slug), $blog->title) }}"><i
+                                                                class="uil uil-facebook-f"></i>Facebook</a>
                                                     </div>
                                                     <!--/.dropdown-menu -->
                                                 </div>
