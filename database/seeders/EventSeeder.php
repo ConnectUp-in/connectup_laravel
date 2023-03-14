@@ -83,21 +83,32 @@ class EventSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'title' => 'One Day Workshop for Research Methodology',
-                'slug' => 'One-Day-Workshop-for-Research-Methodology',
+                'title' => 'Working with Display Devices - Arduino Workshop',
+                'slug' => 'Working-with-Display-Devices-Arduino-Workshop',
                 'type' => 'w',
                 'content' => '
-              <p>&quot;Research methodology🔬 is the backbone of any research project.&quot;<br />
-                Want🤔 to make your research more effective?&nbsp;</p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Hello Innovators!🌟🌟</span></span></span><br />
+                <span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">&ldquo;Exploring the World of Display Devices: Illuminate Your Knowledge in our Electronic Workshop!&rdquo;</span></span></span></p>
 
-                <p>🧑&zwj;🎓Learn the latest research methodology at a one-day workshop✨with the official club of the electronics and communication department, UIT RGPV.&nbsp;<br />
-                The session will discuss ways to make research methodology more effective💫.</p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Presenting to you the most captivating platform, Innovations@EC by the Department of Electronics and Communication UIT RGPV. &nbsp;We are conducting a workshop on &nbsp;&ldquo;Working with Display Devices - Arduino Workshop&rdquo;.🤖</span></span></span></p>
 
-                <p>Join this workshop⏳ to interact with an expert in this field.</p>
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Grab the opportunity to get an insight into what an Arduino is and its functioning. Gain the hands-on experience of working with an Arduino, tinkering, prototyping and much more.&nbsp;</span></span></span><br />
+                <span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Date: 12th September 2022<br />
+                Venue: EC Conference Hall</span></span></span></p>
+
+                <p><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">In this Workshop, You will be acquainted with the following:&nbsp;</span></span></span></p>
+
+                <ul>
+                    <li><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Arduino Uno</span></span></span></li>
+                    <li><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Arduino specific basics&nbsp;</span></span></span></li>
+                    <li><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Building circuits on breadboards.</span></span></span></li>
+                    <li><span style="font-size:11pt"><span style="font-family:Arial"><span style="color:#000000">Controlling LEDs&nbsp;</span></span></span></li>
+                    <li><span style="color:#000000; font-family:Arial"><span style="font-size:14.6667px">Various Projects using Arduino</span></span></li>
+                </ul>
                 ',
                 'image' => '/assets/defaults/events/research.jpg',
-                'r_dates' => ['2022-11-24 12:00:00', '2022-11-31 12:00:00'],
-                'e_dates' => ['2022-12-02 10:30:00', '2022-11-17 15:30:00'],
+                'r_dates' => ['2023-03-14 12:00:00', '2023-03-17 12:00:00'],
+                'e_dates' => ['2023-03-17 14:00:00', '2023-03-17 16:30:00'],
                 'location' => 'Conference Hall, EC Department, RGPV Bhopal (462033)',
                 'attachments' => [],
                 'active' => true,
@@ -105,7 +116,7 @@ class EventSeeder extends Seeder
                 'creator' => $founder->id,
                 'creator_type' => 'e',
                 'interests' => [1, 2, 3],
-                'tags' => ['entrepreneurship', 'rgpv', 'founders talks', 'success'],
+                'tags' => [, 'rgpv', 'electronics', 'arduino'],
                 'required_fields' => ["college"],
                 'additional_fields' => [
                     [
