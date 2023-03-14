@@ -35,9 +35,27 @@
         <!-- /.container-card -->
     </section>
 
-
+    <section class="wrapper image-wrapper bg-auto no-overlay bg-image text-center py-10 py-md-12 bg-map"
+        data-image-src="/assets/home/assets/img/map.png">
+        <div class="container py-0 py-md-9">
+            <div class="row">
+                <div class="col-lg-8 col-xl-7 mx-auto">
+                    <h2 class="display-4 mb-3 text-center">ConnectUp Community</h2>
+                    <p class="lead mb-5 px-md-16 px-lg-3">ConnectUp is a Centralized Startup Networking Platform that brings
+                        together startups, entrepreneurs, investors, and friends to come together to share ideas, and
+                        discuss opportunities for collaboration. . We are building the largest network of incubators,
+                        mentors, investors, and startups</p>
+                    {{-- <a href="#" class="btn btn-primary rounded-pill">Join Us</a> --}}
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
     <section class="wrapper bg-light">
-        <div class="container py-14 py-md-16">
+        <div class="container py-7 py-md-8">
             <div class="row gy-10 gy-sm-13 gx-md-8 gx-xl-12 align-items-center">
                 <div class="col-lg-5 offset-lg-1">
                     <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/3d2.png"
