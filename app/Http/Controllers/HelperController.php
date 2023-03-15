@@ -25,7 +25,10 @@ class HelperController extends Controller
 
     public function testmail()
     {
-        sendRegistrationMail(Auth::user());
+        // run SendTestMail Job
+
+        $user = \App\Models\User::where('username', 'founder')->first();
+        \App\Jobs\SendTestMail::dispatch($user);
         return "done";
     }
 
