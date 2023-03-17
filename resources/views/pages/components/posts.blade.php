@@ -134,7 +134,7 @@
         <div class="widget-box-status">
             <div class="widget-box-status-content">
                 <div class="user-status">
-                    <a class="user-status-avatar" href="${ post.user.username}">
+                    <a class="user-status-avatar" href="/e/${ post.user.username}">
                         <div class="user-avatar small no-outline">
                             <div class="user-avatar-content">
                                 <div class="hexagon-image-30-32" data-src="${post.user.profile_photo_path}">
@@ -150,7 +150,7 @@
                         </div>
                     </a>
                     <p class="user-status-title medium"><a class="bold"
-                            href="${post.user.username}">${ post.user.name }</a> shared a
+                            href="/e/${post.user.username}">${ post.user.name }</a> shared a
                         <span class="bold">post</span>
                     </p>
                     <p class="user-status-text small">

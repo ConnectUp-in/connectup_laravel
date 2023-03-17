@@ -135,4 +135,17 @@ class AppController extends Controller
         // return $data;
         return view('pages.blogs', $data);
     }
+
+    public function jobs()
+    {
+        // page('jobs');
+        // $jobs = Job::where('active', 1)
+        //     ->orderBy('created_at', 'desc')
+        //     ->paginate(12);
+        // $data = [
+        //     'jobs' => $jobs,
+        // ];
+        // // return $data;
+        return view('pages.jobs');
+    }
 }

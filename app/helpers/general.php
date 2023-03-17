@@ -156,3 +156,33 @@ function getCategories()
     $categories = \App\Models\Category::where('active', 1)->get();
     return $categories;
 }
+
+function getRecentEvents($count = 6)
+{
+    $events = \App\Models\Event::where('active', 1)->orderBy('id', 'desc')->limit($count)->get();
+    return $events;
+}
+
+function getRecentBlogs($count = 6)
+{
+    $blogs = \App\Models\Blog::where('active', 1)->orderBy('id', 'desc')->limit($count)->get();
+    return $blogs;
+}
+
+function shareLink($medium, $link, $text)
+{
+    if ($medium == 'linkedin') {
+        $url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $link . '&title=' . $text . '&source=https://connectup.in';
+    } elseif ($medium == 'whatsapp') {
+        $url = 'whatsapp://send?text=' . $link;
+    } elseif ($medium == 'twitter') {
+        $url = 'https://twitter.com/intent/tweet?text=' . $link . '&via=connectup';
+    } elseif ($medium == 'facebook') {
+        $url = 'https://www.facebook.com/sharer/sharer.php?u=' . $link;
+    } elseif ($medium == 'email') {
+        $url = 'mailto:?subject=' . $text . '&body=' . $link;
+    } else {
+        $url = $link;
+    }
+    return $url;
+}

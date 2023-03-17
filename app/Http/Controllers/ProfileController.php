@@ -7,6 +7,7 @@ use App\Models\College;
 use App\Models\Country;
 use App\Models\Follow;
 use App\Models\Interest;
+use App\Models\Link;
 use App\Models\Post;
 use App\Models\Startup;
 use App\Models\User;
@@ -196,6 +197,18 @@ class ProfileController extends Controller
             _action('followed', $follow->id, null, $follow);
             return $this->sendResponse(true, 'Followed');
         }
+    }
+
+    public function links($username)
+    {
+        $user = User::where('username', $username)->first();
+        $links = Link::where('user', $user->id)->get();
+        $data = [
+            'user' => $user,
+            'links' => $links,
+        ];
+        // return $data;
+        return view('pages.profile.links', $data);
     }
 
 }

@@ -38,12 +38,14 @@ Route::middleware('sitemap')->group(function () {
 
     Route::get('feed', [AppController::class, 'feed'])->name('feed');
     Route::get('e/{username}', [ProfileController::class, 'user'])->name('user');
+    Route::get('e/{username}/links', [ProfileController::class, 'links'])->name('links');
     Route::get('redirect', [HelperController::class, 'redirect']);
     Route::get('startups', [AppController::class, 'startups'])->name('startups');
     Route::get('superpreneurs', [AppController::class, 'superpreneurs'])->name('superpreneurs');
     Route::get('events', [AppController::class, 'events'])->name('events');
     Route::get('blogs', [AppController::class, 'blogs'])->name('blogs');
     Route::get('onlyforonce', [AppController::class, 'onlyforonce']);
+    Route::get('jobs', [AppController::class, 'jobs'])->name('jobs');
 
     Route::prefix('post')->group(function () {
         Route::get('/{id}', [PostController::class, 'post'])->name('post');
@@ -94,6 +96,7 @@ Route::middleware('sitemap')->group(function () {
         Route::redirect('wa', 'https://chat.whatsapp.com/LjiYejqWEnVHGaPvQDzMLW', 301);
         Route::redirect('team', 'https://forms.gle/CUHvK4y6bgPcBm2LA', 301);
         Route::redirect('ecell', 'https://forms.gle/RKb1rwqkozA2d95y5', 301);
+        Route::redirect('envoy', 'https://forms.gle/9zSJwTYEYSvTvtWK8', 301);
         Route::get('ecell2', [PartnerEcellController::class, 'render'])->name('partner.ecell');
 
     });
@@ -119,8 +122,11 @@ Route::middleware('sitemap')->group(function () {
 
 Route::get('/testmail', [HelperController::class, 'testmail']);
 Route::get('/image', [HelperController::class, 'image']);
-Route::view('viewmail', 'emails.testlink');
+Route::view('viewmail', 'emails.taponn.02');
 Route::view('privacypolicy', 'others.privacypolicy')->name('privacypolicy');
+Route::view('rishteyy/privacypolicy', 'others.rishteyypp')->name('rishteyypp');
+Route::redirect('rishteyy/support', 'https://chat.whatsapp.com/E0npF7IgP2a0fK3DtiCjOJ');
+Route::redirect('kutumb', 'https://kutumb.vercel.app/');
 Route::view('termsofservice', 'others.termsofservice')->name('termsofservice');
 
 // Social Authentication Routes
