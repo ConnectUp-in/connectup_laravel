@@ -18,8 +18,8 @@
                             </div>
                             <!--/column -->
                             <div class="col-lg-6">
-                                <img class="img-fluid mb-n18" src="/assets/home/assets/img/illustrations/webp3d6.webp"
-                                    srcset="/assets/home/assets/img/illustrations/webp3d6@2x.webp 2x" data-cue="fadeIn"
+                                <img class="img-fluid mb-n18" src="/assets/home/assets/img/illustrations/webp/3d6.webp"
+                                    srcset="/assets/home/assets/img/illustrations/webp/3d6@2x.webp 2x" data-cue="fadeIn"
                                     data-delay="300" alt="" />
                             </div>
                             <!--/column -->
@@ -58,8 +58,8 @@
         <div class="container py-7 py-md-8">
             <div class="row gy-10 gy-sm-13 gx-md-8 gx-xl-12 align-items-center">
                 <div class="col-lg-5 offset-lg-1">
-                    <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/webp3d2.webp"
-                            srcset="/assets/home/assets/img/illustrations/webp3d2@2x.webp 2x" alt="">
+                    <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/webp/3d2.webp"
+                            srcset="/assets/home/assets/img/illustrations/webp/3d2@2x.webp 2x" alt="">
                     </figure>
                 </div>
                 <!--/column -->
