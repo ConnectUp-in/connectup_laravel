@@ -180,9 +180,9 @@
                                                         <li class="post-date"><i class="uil uil-calendar-alt"></i><span>
                                                                 {{ $event->updated_at->diffForHumans() }}
                                                             </span></li>
-                                                        <li class="post-comments"><a href="#"><i
+                                                        {{-- <li class="post-comments"><a href="#"><i
                                                                     class="uil uil-eye"></i>{{ changeIntoKMG(profileview($event->id)) }}</a>
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                     <!-- /.post-meta -->
                                                 </div>
@@ -269,9 +269,9 @@
                                                             </span></li>
                                                         {{-- <li class="post-comments"><a href="#"><i
                                                                     class="uil uil-comment"></i>4</a></li> --}}
-                                                        <li class="post-likes ms-auto"><i class="uil uil-eye"></i>
+                                                        {{-- <li class="post-likes ms-auto"><i class="uil uil-eye"></i>
                                                             {{ changeIntoKMG(profileview($blog->id)) }}
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                     <!-- /.post-meta -->
                                                 </div>
