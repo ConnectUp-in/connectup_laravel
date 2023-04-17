@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('sitemap')->group(function () {
     Route::view('links', 'links');
 
-    Route::get('/', [AppController::class, 'home'])->name('home');
-    Route::get('/home', function () {
+    // Route::get('/', [AppController::class, 'home'])->name('home');
+    Route::get('/', function () {
         page('Home');
         return view('home');
     });

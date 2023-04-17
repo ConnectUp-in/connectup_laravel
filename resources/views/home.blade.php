@@ -4,7 +4,7 @@
     <section class="wrapper bg-light">
         <div class="container-card">
             <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mt-2 mb-5"
-                data-image-src="/assets/home/assets/img/photos/bg22.png">
+                data-image-src="/assets/home/assets/img/photos/webp/bg22.webp">
                 <div class="card-body py-14 px-0">
                     <div class="container">
                         <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
@@ -18,8 +18,8 @@
                             </div>
                             <!--/column -->
                             <div class="col-lg-6">
-                                <img class="img-fluid mb-n18" src="/assets/home/assets/img/illustrations/3d6.png"
-                                    srcset="/assets/home/assets/img/illustrations/3d6@2x.png 2x" data-cue="fadeIn"
+                                <img class="img-fluid mb-n18" src="/assets/home/assets/img/illustrations/webp/3d6.webp"
+                                    srcset="/assets/home/assets/img/illustrations/webp/3d6@2x.webp 2x" data-cue="fadeIn"
                                     data-delay="300" alt="" />
                             </div>
                             <!--/column -->
@@ -58,8 +58,8 @@
         <div class="container py-7 py-md-8">
             <div class="row gy-10 gy-sm-13 gx-md-8 gx-xl-12 align-items-center">
                 <div class="col-lg-5 offset-lg-1">
-                    <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/3d2.png"
-                            srcset="/assets/home/assets/img/illustrations/3d2@2x.png 2x" alt="">
+                    <figure><img class="w-auto" src="/assets/home/assets/img/illustrations/webp/3d2.webp"
+                            srcset="/assets/home/assets/img/illustrations/webp/3d2@2x.webp 2x" alt="">
                     </figure>
                 </div>
                 <!--/column -->
@@ -180,9 +180,9 @@
                                                         <li class="post-date"><i class="uil uil-calendar-alt"></i><span>
                                                                 {{ $event->updated_at->diffForHumans() }}
                                                             </span></li>
-                                                        <li class="post-comments"><a href="#"><i
+                                                        {{-- <li class="post-comments"><a href="#"><i
                                                                     class="uil uil-eye"></i>{{ changeIntoKMG(profileview($event->id)) }}</a>
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                     <!-- /.post-meta -->
                                                 </div>
@@ -269,9 +269,9 @@
                                                             </span></li>
                                                         {{-- <li class="post-comments"><a href="#"><i
                                                                     class="uil uil-comment"></i>4</a></li> --}}
-                                                        <li class="post-likes ms-auto"><i class="uil uil-eye"></i>
+                                                        {{-- <li class="post-likes ms-auto"><i class="uil uil-eye"></i>
                                                             {{ changeIntoKMG(profileview($blog->id)) }}
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                     <!-- /.post-meta -->
                                                 </div>

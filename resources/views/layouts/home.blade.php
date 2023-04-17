@@ -22,7 +22,7 @@
     </div>
     <div class="container-card">
         <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mb-14"
-            data-image-src="/assets/home/assets/img/photos/bg22.png">
+            data-image-src="/assets/home/assets/img/photos/webp/bg22.webp">
             <div class="card-body py-14 px-0">
                 <div class="container">
                     <div class="row text-center">
@@ -50,7 +50,7 @@
             <div class="row gy-6 gy-lg-0">
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <img class="mb-4" src="/assets/template/img/landing/logotextdark.png" style="height:40px"
+                        <img class="mb-4" src="/assets/template/img/landing/logotextdark.webp" style="height:40px"
                             alt="" />
                         <p class="mb-4">© 2023 ConnectUp <br class="d-none d-lg-block" />All rights reserved.</p>
                         <nav class="nav social social-white">
